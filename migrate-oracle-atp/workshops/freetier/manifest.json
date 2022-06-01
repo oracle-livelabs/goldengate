@@ -1,0 +1,38 @@
+{
+    "workshoptitle": "Migrate an HR database and APEX application using GoldenGate",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Welcome to migrate HR database application using OCI GoldenGate workshop.",
+            "filename": "./../../introduction/introduction.md"
+        },
+        {
+          "title": "Getting Started",
+          "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Set Up the Environment",
+            "description": "Provision work environment using Terraform automation script.",
+            "filename": "./../../terraform/terraform.md"
+        },
+        {
+            "title": "Lab 2: Prepare the target ADB environment",
+            "filename": "./../../prepare-target/prepare-target.md"
+        },
+        {
+            "title": "Lab 3: Migrate to the Target",
+            "filename": "./../../migration/migration.md"
+        },
+        {
+            "title": "Lab 4: Import HR application to APEX",
+            "filename": "./../../bonus/bonus.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
