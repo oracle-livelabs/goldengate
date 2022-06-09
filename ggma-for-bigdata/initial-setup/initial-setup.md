@@ -1,0 +1,110 @@
+# Initialize Environment
+
+## Introduction
+In this lab we will setup the initialize required databases and GoldenGate Services.
+
+*Estimated Time*:  30 minutes
+
+### Lab Architecture
+![Architecture](./images/architecture.png " ")
+
+### Objectives
+In this lab you will:
+Understanding how to start and check the status of the Oracle Database,Kafka,Hadoop,Hbase,Cassandra and mongoDB.
+
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+
+## Task 1: Validate That Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
+
+    - Database Listener
+        - LISTENER
+    - Database Server instance
+        - CDB1
+    - Oracle GoldenGate ServiceManager
+    - Kafka cluster
+    - hadoop single-node cluster
+    - Cassandra 
+    - mongoDB
+
+    Open the terminal on the remote desktop and run the following for a clean start.
+
+    ```
+    <copy>
+    sudo systemctl status oracle-database 
+    </copy>
+    ```
+    ![Database status](./images/db-status.png " ") 
+
+    if the output show  ***active (running)*** indicates Oracle Database is up and running,Kindly press ***Ctrl+c*** to exit from the output.
+    ```
+    <copy>
+    sudo systemctl status OracleGoldenGate
+    </copy>
+    ```
+    ![GoldenGate status](./images/gg-status.png " ") 
+    if the output show  ***active (running)*** indicates OracleGoldenGate Services are up and running,Kindly press ***Ctrl+c*** to exit from the output.
+    ```
+    <copy>
+    sudo systemctl status cassandra
+    </copy>
+    ```
+    ![Cassandra-status](./images/cassandra-status.png " ") 
+    if the output show  ***active (running)*** indicates cassandra database up and running,Kindly press ***Ctrl+c*** to exit from the output.
+    ```
+    <copy>
+    sudo systemctl status mongod
+    </copy>
+    ```
+    ![Mongod-status](./images/mongod-status.png " ") 
+    if the output show  ***active (running)*** indicates mongoDB database up and running,Kindly press ***Ctrl+c*** to exit from the output.
+     ```
+    <copy>
+    hadoopstart
+    jps
+
+    </copy>
+    ```
+    ![Hadoop-status](./images/hadoop-status.png " ") 
+    if the output show  ***DataNode,NameNode,NodeManager,SecondaryNameNode,ResourceManager*** under jps indicates Hadoop single-node cluster is up and running.
+
+
+     ```
+    <copy>
+    kafkastart
+    jps
+
+    </copy>
+    ```
+    ![kafka-status](./images/kafka-status.png " ") 
+    if the output show  ***kafka*** under jps indicates Kafka cluster is up and running.
+    ```
+    <copy>
+    hbasestart
+    jps |grep H
+
+    </copy>
+    ```
+    When you're prompted to ***"Are you sure you want to continue connecting (yes/no/[fingerprint])?"*** : kindly type '***yes***' to continue the HBase startup
+    ![HBase start](./images/hbase-start.png " ")
+    ![HBase status](./images/hbase-status.png " ")
+
+    if the output show  ***HMaster,HRegionServer*** under jps indicates Standalone HBase is up and running.
+
+
+3. If you see questionable output(s), failure or down component(s), Please reach out to the workshop instructor.                                     
+
+You may now [proceed to the next lab](#next).
+
+
+
+## Learn More
+
+* [Oracle GoldenGate (MA) for Big Data](https://docs.oracle.com/en/middleware/goldengate/big-data/21.1/gadbd/getting-started-oracle-goldengate-microservices-big-data.htm)
+
+## Acknowledgements
+* **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
+* **Contributors** - Madhu Kumar S
+* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022
