@@ -23,8 +23,8 @@
             "filename": "../../create/create.md"
         },
         {
-            "title": "Lab 3: Register Databases",
-            "filename": "../../register-db/register-db.md"
+            "title": "Lab 3: Create the Extract process and export data using Oracle Data Pump",
+            "filename": "../../extract/extract.md"
         },
         {
             "title": "Lab 4: Create and Run the Extract and Replicat",
