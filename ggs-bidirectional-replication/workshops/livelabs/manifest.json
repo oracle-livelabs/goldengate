@@ -1,0 +1,36 @@
+{
+    "workshoptitle": "Set up bidirectional replication in Oracle Cloud Infrastructure GoldenGate",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/gb-intro.md"
+        },
+        {
+            "title": "Lab 1: Create the OCI GoldenGate resources",
+            "filename": "../../create/create-gb.md"
+        },
+        {
+            "title": "Lab 2: Replicate data from source to target",
+            "filename": "../../one-way/one-way.md"
+        },
+        {
+            "title": "Lab 3: Replicate data from target to source",
+            "filename": "../../two-way/two-way.md"
+        },
+        {
+            "title": "Lab 4: Monitor Extracts and Replicats",
+            "filename": "../../monitor/monitor.md"
+        },
+        {
+            "title": "Lab 5: Purge unused Trail files",
+            "filename": "../../purge/purge.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

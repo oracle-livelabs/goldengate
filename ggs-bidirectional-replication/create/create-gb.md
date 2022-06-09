@@ -1,12 +1,12 @@
-# Create the Oracle Cloud Infrastructure GoldenGate resources
+# Create the Oracle Cloud Infrastructure GoldenGate Deployment
 
 ## Introduction
 
-This lab walks you through the steps to create an Oracle Cloud Infrastructure (OCI) GoldenGate deployment.
+This lab walks you through the steps to create Oracle Cloud Infrastructure (OCI) GoldenGate resources that you'll need to complete this workshop.
 
 Estimated time: 10 minutes
 
-### About Oracle Cloud Infrastructure GoldenGate Deployments and Database Registrations
+### About Oracle Cloud Infrastructure GoldenGate resources
 
 A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
 
@@ -17,8 +17,13 @@ Database Registrations capture source and target credential information. A datab
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
 * Create a OCI GoldenGate deployment
-* Register the source and target databases
+* Create database registrations for the source and target Autonomous Databases
+* Review the OCI GoldenGate deployment details
+* Access the OCI GoldenGate deployment console
 
+### Prerequisites
+
+This lab assumes that you completed all preceding labs.
 
 ## Task 1: Create a deployment
 
@@ -60,8 +65,6 @@ In this lab, you will:
 
 14. For Administrator Password, enter a password. Take note of this password.
 
->**Note:** This password needs to match password of a database user that we will use later. In order to make sure the password works for both, we suggest you enter a password containing only upper case letters, lower case letters, numbers, and underscores. If you are using the green button (run on LiveLabs tenancy), you can use your database admin password given to you on the reservation page.
-
 15. Click **Create**.
 
     ![Completed GoldenGate details](images/02-13.png " ")
@@ -74,7 +77,7 @@ First, follow the steps below to register the source Oracle Autonomous Transacti
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the GoldenGate page.
 
-    ![GoldenGate in Oracle Cloud Console breadcrumb highlighted](images/01-01-breadcrumb.png " ")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](images/01-01-breadcrumb.png " ")
 
 2.  Click **Registered Databases**.
 
@@ -96,27 +99,27 @@ First, follow the steps below to register the source Oracle Autonomous Transacti
 
 9.  Enter the database's password in the Password field, and then click **Register**.
 
-    ![Source Database details](images/01-01-12-regSourceDB.png)
+    ![Source Database details](images/01_01_12_regSourceDB.png)
 
     The database registration becomes Active after a few minutes.
 
-## Task 3: Unlock the GGADMIN user and check support mode for the source database
+## Task 3: Unlock the GGADMIN user and enable supplemental logging for the source database
 
 Oracle Autonomous Databases come with a GGADMIN user that is locked by default. The following steps guide you through how to unlock the GGADMIN user.
 
 1.  From the Oracle Cloud Console **Navigation Menu** (hamburger icon), click **Oracle Database**, and then select **Autonomous Transaction Processing**.
 
-	![Autonomous Transaction Processing in Oracle Cloud Console navigation menu](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
+	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2.  From the list of databases, select **SourceATP**.
 
-    ![Autonomous Databases page](images/02-02-adb.png " ")
+    ![Autonomous Transaction Processing page](images/02-02-sourceatp.png " ")
 
 3.  On the SourceATP Database Details page, click **Database Actions**.
 
-    ![Database Details page](images/02-03-db-tools.png " ")
+    ![SourceATP Database Details page](images/02-03-db-tools.png " ")
 
-    > **Note:** *If you're prompted to log in to Database Actions, use the source database admin credentials.*
+    > **Note:** *If you're prompted to log in to Database Actions, use the SourceATP admin credentials located in the Workshop Details.*
 
 4.  Under **Administration**, click **Database Users**.
 
@@ -124,7 +127,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
-    ![GGADMIN user context menu highlighted](images/02-06-locked.png)
+    ![Database users](images/02-06-locked.png)
 
 6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
 
@@ -132,21 +135,29 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     Note that the user icon changes from a padlock to a checkmark.
 
-7.  From the navigation menu (hamburger icon), click **SQL**.
+7.  Open the navigation menu (hamburger icon), and then under **Development**, select **SQL**.
 
-8.  In the worksheet, enter the following, and then click **Run Statement**:
+    ![Open navigation menu](images/01-08-sql.png)
+
+8.  Enter the following into the Worksheet, and then click **Run Statement**.
+
+    ```
+    <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
+    ```
+
+9.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
 
     ```
     <copy>
-select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
+    select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
     </copy>
     ```
 
     The Script Output panel displays six tables whose Support_Mode is **FULL**.
 
-    ![Script output](images/02-09b.png " ")
+    ![Script Output](images/02-09b.png " ")
 
-You can leave the source database SQL window open for use in a later lab.
+    You can leave the SQL window open and continue with the next Task.
 
 ## Task 4: Register the target database and unlock the GGADMIN user
 
@@ -154,27 +165,65 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
 1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate.
 
-2.  Click **Registered Databases** and then **Register Database**.
+1.  Click **Registered Databases** and then **Register Database**.
 
-    ![Registered Databases page](images/03-02.png)
+    ![Registered Databases in GoldenGate menu](images/03-02.png)
 
-3.  In the Register Database panel, enter **TargetADW** for Name and Alias.
+2.  In the Register Database panel, enter **TargetADW** for Name and Alias.
 
-4.  From the **Compartment** dropdown, select a compartment.
+3.  From the **Compartment** dropdown, select a compartment.
 
-5.  Click **Select Database**.
+4.  Click **Select Database**.
 
-6.  For **Autonomous Database in &lt;compartment-name&gt;**, click **Change Compartment**, select the compartment you created your ADW instance, and then select **TargetADW** from the dropdown. Some fields are autopopulated based on your selection.
+5.  For **Autonomous Database in &lt;compartment-name&gt;**, click **Change Compartment**, select the compartment you created your ADW instance, and then select **TargetADW** from the dropdown. Some fields are autopopulated based on your selection.
 
-7.  Enter the database's password in the Password field, and then click **Register**.
+6.  Enter the database's password in the Password field, and then click **Register**.
 
-    ![Target Database details](images/02-10-ggs-regDB-target.png)
+    ![Target Database details](images/02_10-ggs-regDB_target.png)
 
     The source and target databases appear in the list of Registered Databases. The database registration becomes Active after a few minutes.
 
-8.  Repeat the instructions under Task 2 to unlock the GGADMIN user on the TargetADW database.
+7.  Repeat Task 2, steps 1-8, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
 
-In this lab, you created an OCI GoldenGate deployment, and registered the source and target databases.
+8.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
+
+    ```
+    <copy>
+    select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRCMIRROR_OCIGGLL';
+    </copy>
+    ```
+
+    The Script Output panel displays six tables whose Support_Mode is **FULL**.
+
+    ![Script Output](images/03-08.png " ")
+
+## Task 5: Review the Deployment details
+
+After the deployment is created and active, you can perform the following actions on the deployment details page:
+
+* Review the deployment's status
+* Launch the GoldenGate service deployment console
+* Edit the deployment's name or description
+* Stop and start the deployment
+* Move the deployment to a different compartment
+* Review the deployment resource information
+* Add tags
+
+    ![Deployment Details page](images/02-01-deployment-details.png " ")
+
+## Task 6: Launch the GoldenGate Deployment Console
+
+1. When the deployment is active, click **Launch Console**.
+
+    ![Launch Console](images/03-01.png " ")
+
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided above, and then click **Sign In**.
+
+    ![GoldenGate Deployment Console](images/02-02.png " ")
+
+After you log in, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
+
+In this lab, you created an OCI Deployment, reviewed its Deployment details, and launched the Deployment Console.
 
 ## Learn More
 
@@ -183,5 +232,5 @@ In this lab, you created an OCI GoldenGate deployment, and registered the source
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management; Arabella Yao, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, June 2022
+* **Contributors** -  Denis Gray, Database Product Management
+* **Last Updated By/Date** - Jenny Chan, May 2022
