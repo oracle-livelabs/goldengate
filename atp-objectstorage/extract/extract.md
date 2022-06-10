@@ -257,6 +257,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 12. Click **Create and Run**. The yellow exclamation mark changes to a green check when the Replicat process starts successfully.
 
+
 In this lab, you created and ran an Extract, a Distribution Path, and a Replicat process to replicate data from an Autonomous Transaction Processing instance to an Oracle Object Storage bucket.
 
 
