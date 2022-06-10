@@ -172,7 +172,8 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
     The source and target databases appear in the list of Registered Databases. The database registration becomes Active after a few minutes.
 
-8.  Repeat the instructions under Task 2 to unlock the GGADMIN user on the TargetADW database.
+8.  Repeat Task 3 steps 1 to 6 to unlock the GGADMIN user on the TargetADW database.
+
 
 In this lab, you created an OCI GoldenGate deployment, and registered the source and target databases.
 
