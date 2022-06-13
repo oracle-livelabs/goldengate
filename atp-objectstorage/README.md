@@ -1,18 +1,13 @@
-# Replicating Data Using Oracle Cloud Infrastructure GoldenGate
+# Replicate data from Autonomous Transaction Processing to OCI Object Storage
 
 
 ## How to Prepare for This Workshop
 
 - Once you are viewing the workshop's gitHub page's website, you can see a list of Lab Guides at any time by clicking on the **Menu Icon**
 
-## Oracle Cloud Infrastructure GoldenGate Workshop
-
-Welcome to the Replicate Data Using Oracle Cloud Infrastructure GoldenGate Workshop. The content will give you a basic understanding of OCI GoldenGate.
-
 ## Introduction
 
-The Replicating Data Using Oracle Cloud Infrastructure GoldenGate Workshop is designed to introduce replication capabilities between Autonomous Databases in the cloud.
-
+This workshop is walks you through the steps to set up and run a replication process from an Autonomous Transaction Processing instance to an OCI Object Storage bucket.
 
 ## Workshop Details
 
@@ -20,10 +15,10 @@ There are 5 hands-on labs in this workshop. You first need to set up your enviro
 
 Lab  –   Set up the envrionment
 
-Lab   –  Create the OCI GoldenGate Deployment
+Lab   –  Create the OCI GoldenGate resources
 
-Lab   –  Register Databases
-
-Lab   –  Create and Run the Extract and Replicat
+Lab   –  Replicate data
 
 Lab   –  Monitor Extracts and Replicats
+
+Lab   -  Purge trail files
