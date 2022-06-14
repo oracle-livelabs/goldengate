@@ -16,7 +16,6 @@ In this lab, you learn to:
 * Add and run an Extract
 * Add and run a Distribution path
 * Add and run a Replicat
-* Verify the replication
 
 
 ## Task 1: Review the Deployment details
