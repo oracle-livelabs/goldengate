@@ -37,17 +37,17 @@ On the Deployment Details page, you can:
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details page](images/02-01-deployment-details.png " ")
+    ![Deployment Details page](images/01-03-deployment-details.png " ")
 
 ## Task 2: Launch the GoldenGate Deployment Console
 
 1. On the deployment details page, click **Launch Console**.
 
-    ![Launch Console](images/03-01.png " ")
+    ![Launch Console](images/02-01-launchconsole.png " ")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided in the previous lab (Task 1, Step 15), and then click **Sign In**.
 
-    ![GoldenGate Deployment Console](images/02-02.png " ")
+    ![GoldenGate Deployment Console](images/02-02-oggadmin.png " ")
 
 After you log in, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
 
@@ -57,25 +57,25 @@ After you log in, you're brought to the GoldenGate deployment console home page.
 
 1.  Open the navigation menu and then click **Configuration**.
 
-    ![Administration Service navigation menu](images/02-01-nav-config.png " ")
+    ![Administration Service navigation menu](images/03-01-nav-config.png " ")
 
 2.  Click **Connect to database SourceATP**.
 
-    ![Credentials list with Connect to database SourceATP highlighted](images/02-02-connect-source.png " ")
+    ![Credentials list with Connect to database SourceATP highlighted](images/03-02-connect-source.png " ")
 
 3.  Next to **TRANDATA Information** click **Add TRANDATA** (plus icon).
 
-    ![Add TRANDATA](images/02-03-trandata.png " ")
+    ![Add TRANDATA](images/03-03-trandata.png " ")
 
 4.  For **Schema Name**, enter `SRC_OCIGGLL`, and then click **Submit**.
 
-    ![Schema Name field populated with SRC_OCIGGLL](images/02-04-schema-name.png " ")
+    ![Schema Name field populated with SRC_OCIGGLL](images/03-04-schema-name.png " ")
 
 5.  To verify, click **Search TRANDATA**, and then enter `SRC_OCIGGLL` into the Search field and click **Search**.
 
-    ![Search icon highlighted](images/02-05-search.png " ")
+    ![Search icon highlighted](images/03-05-search.png " ")
 
-    ![SRC_OCIGGLL entered in search field and search results returned](images/01-05-trandata.png " ")
+    ![SRC_OCIGGLL entered in search field and search results returned](images/03-05-trandata.png " ")
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
@@ -83,27 +83,27 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 1.  On the GoldenGate Deployment Console Home page, click **Add Extract** (plus icon).
 
-    ![Click Add Extract](images/02-02-ggs-add-extract.png " ")
+    ![Click Add Extract](images/04-01-ggs-add-extract.png " ")
 
 2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
 
-    ![Add Extract page with Integrated Extract highlighted](images/03-02.png " ")
+    ![Add Extract page with Integrated Extract highlighted](images/04-02-int-extract.png " ")
 
 3.  For **Process Name**, enter UAEXT.
 
 4.  For **Trail Name**, enter E1.
 
-    ![Add Extract - Basic Information](images/02-04-ggs-basic-info.png " ")
+    ![Add Extract - Basic Information](images/04-04-ggs-basic-info.png " ")
 
 5.  Under **Source Database Credential**, for **Credential Domain**, select **OracleGoldenGate**.
 
 6.  For **Credential Alias**, select the **SourceATP**.
 
-    ![Add Extract - Source Database Credential](images/02-04-ggs-src-db-credential.png " ")
+    ![Add Extract - Source Database Credential](images/04-06-ggs-src-db-credential.png " ")
 
 7.  Under Managed Options, enable **Critical to deployment health**.
 
-    ![Critical to deployment health highlighted](images/03-07.png " ")
+    ![Critical to deployment health highlighted](images/04-07-dephealth.png " ")
 
 8.  Click **Next**.
 
@@ -113,17 +113,15 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
     <copy>table SRC_OCIGGLL.*;</copy>
     ```
 
-    ![](images/03-09-params.png " ")
-
 10. Click **Create**. You're returned to the OCI GoldenGate Deployment Console Home page.
 
 11. In the UAEXT **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
-    ![Start Extract](images/02-12-ggs-start-extract.png)
+    ![Start Extract](images/04-11-ggs-start-extract.png)
 
     The yellow exclamation point icon changes to a green checkmark.
 
-    ![Extract started](images/02-ggs-extract-started.png)
+    ![Extract started](images/04-11-ggs-extract-started.png)
 
 ## Task 2: Create a user on the target deployment
 
