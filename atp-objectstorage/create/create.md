@@ -79,7 +79,7 @@ In Task 5, you must upload a private key and enter the corresponding public key 
 
 16. Click **Create**.
 
-    ![Completed GoldenGate details](images/02-16-create-deployment-summary.png " ")
+    ![Completed GoldenGate details](images/01-16-create-deployment-summary.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
@@ -113,7 +113,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 13. Click **Create**.
 
-    ![Completed GoldenGate details](images/02-16-bigdata.png " ")
+    ![Completed GoldenGate details](images/02-13-bigdata.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
