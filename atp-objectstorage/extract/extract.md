@@ -174,7 +174,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 7.  Click **Submit**.
 
-    ![New credential](images/03-07-usercredentials.png " ")
+    ![New credential](images/06-07-usercredentials.png " ")
 
 ## Task 7: Add and run a Distribution Path in the source deployment console
 
