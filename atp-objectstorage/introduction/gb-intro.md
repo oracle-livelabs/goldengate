@@ -1,6 +1,6 @@
 # Introduction
 
-## About this Workshop
+## About this workshop
 
 Oracle GoldenGate, the industry-leading data replication and integration software, is available as a fully-managed, cloud native service on Oracle Cloud Infrastructure. This workshop guides how to replicate data from Autonomous Transaction Processing to Oracle Cloud Infrastructure (OCI) Object Storage using OCI GoldenGate.
 

@@ -184,7 +184,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 1.  In the source ATPinstance deployment console, click **Distribution Service**, and then click **Add Path** (plus icon).
 
-    ![](images/03-01-addpath.png " ")
+    ![Distribution Service Overview](images/03-01-addpath.png " ")
 
 2.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, `GGStoObjStore`.
 
@@ -198,7 +198,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
     >**Note:** *You can copy the host from the browser address bar of target BDinstance deployment console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
 
-  ![](images/04-07-depdetails.png " ")
+  ![Deployment details](images/04-07-depdetails.png " ")
 
 8.  For **Port Number**, enter 443.
 
@@ -208,7 +208,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 11. For **Target Alias**, enter the alias name you created in Oracle GoldenGate. For example, **ocinetwork**.
 
-    ![](images/04-11-distpath.png " ")
+    ![Distribution path options](images/04-11-distpath.png " ")
 
 12. Click **Create Create and Run**. The yellow exclamation mark icon becomes a green checkmark when the Distribution Path starts successfully.
 
@@ -252,7 +252,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 10. On the Properties File page, locate gg.eventhandler.oci.compartment, and then replace the placeholder with your compartment's OCID.
 
-11. Locate gg.eventhandler.oci.bucketMappingTemplate, and then replace the placeholder with a name for your target bucket.
+11. Locate `gg.eventhandler.oci.bucketMappingTemplate`, and then replace the placeholder with a name for your target bucket.
 
     ![Replicat Properties File](images/06-10-properties.png " ")
 
