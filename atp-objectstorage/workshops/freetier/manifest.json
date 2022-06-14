@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Replicating Data Using Oracle Cloud Infrastructure GoldenGate",
+    "workshoptitle": "Replicate data from Autonomous Transaction Processing to OCI Object Storage",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
@@ -19,23 +19,19 @@
             "filename": "../../adb/adb.md"
         },
         {
-            "title": "Lab 2: Create the OCI GoldenGate Deployment",
+            "title": "Lab 2: Create the OCI GoldenGate resources",
             "filename": "../../create/create.md"
         },
         {
-            "title": "Lab 3: Create the Extract process and export data using Oracle Data Pump",
+            "title": "Lab 3: Set up and run replication processes",
             "filename": "../../extract/extract.md"
         },
         {
-            "title": "Lab 4: Create and Run the Extract and Replicat",
-            "filename": "../../extracts-replicats/extracts-replicats.md"
-        },
-        {
-            "title": "Lab 5: Monitor Extracts and Replicats",
+            "title": "Lab 4:  Monitor Extracts and Replicats",
             "filename": "../../monitor/monitor.md"
         },
         {
-            "title": "Lab 6: Purge unused Trail files",
+            "title": "Lab 5: Purge unused Trail files",
             "filename": "../../purge/purge.md"
         },
         {

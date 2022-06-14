@@ -10,20 +10,22 @@ An Extract is a process that extracts, or captures, data from a source database.
 
 ### Objectives
 In this lab, you learn to:
+
 * Log in to the OCI GoldenGate deployment console
 * Connect to the source database to add transaction information
 * Add and run an Extract
 * Add and run a Distribution path
+* Add and run a Replicat
+* Verify the replication
 
 
 ## Task 1: Review the Deployment details
-Return to the OCI GoldenGate deployment you created in the previous lab.
 
 1. In the Oracle Cloud console, open the navigation menu, click **Oracle Database**, and then click **GoldenGate**.
 
 2. Click **Deployments**.
 
-3. On the Deployments page, select ATPDeployment to view its details.
+3. On the Deployments page, select **ATPDeployment** to view its details.
 
 On the Deployment Details page, you can:
 
@@ -43,13 +45,13 @@ On the Deployment Details page, you can:
 
     ![Launch Console](images/03-01.png " ")
 
-2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided in Lab 1 (Task 1, Step 15), and then click **Sign In**.
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided in the previous lab (Task 1, Step 15), and then click **Sign In**.
 
     ![GoldenGate Deployment Console](images/02-02.png " ")
 
 After you log in, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
 
-## Task 3: Add Transaction Data
+## Task 3: Add transaction data
 
 > **Note:** *Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.*
 
@@ -77,7 +79,7 @@ After you log in, you're brought to the GoldenGate deployment console home page.
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
-## Task 4: Add and Run an Extract
+## Task 4: Add and run an Extract
 
 1.  On the GoldenGate Deployment Console Home page, click **Add Extract** (plus icon).
 
@@ -133,7 +135,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 3.  Click **Launch Console**.
 
-4.  Sign in to the deployment console using the **oggadmin** credentials you created in Lab 1, Task 2, Step 12.
+4.  Sign in to the deployment console using the **oggadmin** credentials you created in the previous lab Task 2, Step 12.
 
 5.  In the BDinstance deployment console, open the navigation menu, and then click **Administrator**.
 
@@ -258,8 +260,14 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 12. Click **Create and Run**. The yellow exclamation mark changes to a green check when the Replicat process starts successfully.
 
 
-In this lab, you created and ran an Extract, a Distribution Path, and a Replicat process to replicate data from an Autonomous Transaction Processing instance to an Oracle Object Storage bucket.
+In this lab, you:
+* Added transaction data to the source database
+* Added an Extract
+* Created a user for the source deployment to connect to the target deployments
+* Added a Distribution Path on the source deployment, which created a Receiver Path on the target deployment
+* Added a Replicat process to replicate data from the Autonomous Transaction Processing instance to an OCI Object Storage bucket
 
+You can **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance

@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Replicate from Autonomous Transaction Processing to Oracle Object Storage",
+    "workshoptitle": "Replicate data from Autonomous Transaction Processing to OCI Object Storage",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
@@ -17,7 +17,7 @@
             "filename": "../../create/create-gb.md"
         },
         {
-            "title": "Lab 2: Create the Extract process and export data using Oracle Data Pump",
+            "title": "Lab 2: Set up and run replication processes",
             "filename": "../../extract/extract.md"
         },
         {

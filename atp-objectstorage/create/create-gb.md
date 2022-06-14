@@ -25,7 +25,7 @@ In this lab, you will:
 ### Prerequisites
 In Task 5, you must upload a private key and enter the corresponding public key fingerprint. To add an API key:
 
-1.  Oracle Cloud console global navigation bar, click Profile (user icon).
+1.  Oracle Cloud console global navigation bar, click **Profile** (user icon).
 
 2.  On the user details page, under **Resources**, click API **Keys**.
 
@@ -51,7 +51,7 @@ In Task 5, you must upload a private key and enter the corresponding public key 
 
 4.  On the Deployments page, click **Create Deployment**.
 
-    ![Deployments page](images/01-02-01.png "")
+    ![Deployments page](images/01-04-create-deployment.png "")
 
 5.  In the Create Deployment panel, enter **ATPDeployment** for Name.
 
@@ -65,7 +65,7 @@ In Task 5, you must upload a private key and enter the corresponding public key 
 
 10. Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Completed Create GoldenGate Deployment fields](images/01-09.png " ")
+    ![Completed Create GoldenGate Deployment fields](images/01-10-create-deployment-summary.png " ")
 
 11. Click **Next**.
 
@@ -79,7 +79,7 @@ In Task 5, you must upload a private key and enter the corresponding public key 
 
 16. Click **Create**.
 
-    ![Completed GoldenGate details](images/02-15.png " ")
+    ![Completed GoldenGate details](images/02-16-create-deployment-summary.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
@@ -99,7 +99,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 7.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Completed Create GoldenGate Deployment fields](images/02-10-bigdata.png " ")
+    ![Completed Create GoldenGate Deployment fields](images/02-07-bigdata.png " ")
 
 8.  Click **Next**.
 
@@ -167,7 +167,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 4.  Under **Administration**, click **Database Users**.
 
-    ![Database Actions](images/02-05.png " ")
+    ![Database Actions](images/sql-dbusers.png " ")
 
 5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
@@ -188,18 +188,6 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
     ```
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
-
-9.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
-
-    ```
-    <copy>
-    select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
-    </copy>
-    ```
-
-    The Script Output panel displays six tables whose Support_Mode is **FULL**.
-
-    ![Script Output](images/02-09b.png " ")
 
     You can leave the SQL window open and continue with the next Task.
 
@@ -257,42 +245,12 @@ After your deployments and connections become active, you can assign the connect
 
     ![OBJDeployment details](images/06-07-bdconnection.png " ")
 
-## Task 7: Verify replication
+**Proceed to the next lab**.
 
-13. Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
+## Learn More
 
-14. On the Source ATP Details page, click **Tools**, and then **Database Actions**.
-
-15. Use the Source ATP database credentials in the Workshop details to log in to Database Actions, and then click **SQL**.
-
-16. Enter the following inserts, and then click **Run Script**:
-
-    ```
-    <copy>Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1000,'Houston',20,743113);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1001,'Dallas',20,822416);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1002,'San Francisco',21,157574);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1003,'Los Angeles',21,743878);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1004,'San Diego',21,840689);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1005,'Chicago',23,616472);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1006,'Memphis',23,580075);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1007,'New York City',22,124434);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1008,'Boston',22,275581);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1009,'Washington D.C.',22,688002);</copy>
-    ```
-
-17. In the Oracle GoldenGate Marketplace Administration Server, select **Overview** from the navigation menu (hamburger icon), click the **Extract name (UAEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
-
-    ![](images/04-17.png " ")
-
-18. Navigate to the Oracle GoldenGate Marketplace Distribution Server. From the **Action** menu, select **Details**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** lists 10 inserts.
-
-    ![](images/04-18.png " ")
-
-19. In the OCI GoldenGate Deployment Console, click the name of the Replicat to view its details, and then click **Statistics** to verify the Replicat applied the rows.
-
-    ![](images/image.png " ")
-
-
+* [Managing Deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/deployments.html)
+* [Managing Connections](http://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service&id=ggs-create-connection)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
