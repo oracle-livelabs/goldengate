@@ -264,7 +264,7 @@ In this lab, you:
 * Added a Distribution Path on the source deployment, which created a Receiver Path on the target deployment
 * Added a Replicat process to replicate data from the Autonomous Transaction Processing instance to an OCI Object Storage bucket
 
-You can **proceed to the next lab**.
+**Proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance

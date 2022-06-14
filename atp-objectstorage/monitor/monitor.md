@@ -83,6 +83,8 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 In this lab, you learned to monitor performance in the OCI GoldenGate deployment console and in the Oracle Cloud console.
 
+**Proceed to the next lab.**
+
 ## Learn more
 
 * [Viewing Performance Metrics](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-A533E3ED-ADB9-42EE-A1FF-D3E6C5638DF3)
