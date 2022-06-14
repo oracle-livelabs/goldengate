@@ -112,6 +112,8 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
     <copy>table SRC_OCIGGLL.*;</copy>
     ```
 
+    ![Extract Parameter File](images/04-09-params.png " ")
+
 10. Click **Create**. You're returned to the OCI GoldenGate Deployment Console Home page.
 
 11. In the UAEXT **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
@@ -122,7 +124,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Extract started](images/04-11-ggs-extract-started.png)
 
-## Task 2: Create a user on the target deployment
+## Task 5: Create a user on the target deployment
 
 >**Note**: *Complete the following steps in the target **OBJDeployment**'s deployment console (BDinstance).*
 
@@ -150,7 +152,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Users page](images/02-10-newuser.png " ")
 
-## Task 3: Create a credential on the source deployment for the dpuser
+## Task 6: Create a credential on the source deployment for the dpuser
 
 >**Note**: *Complete the following steps in the source **ATPDeployment** deployment console (ATPinstance).*
 
@@ -174,7 +176,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![New credential](images/03-07-usercredentials.png " ")
 
-## Task 4: Add and run a Distribution Path in the source deployment console
+## Task 7: Add and run a Distribution Path in the source deployment console
 
 >**Note**: *Complete the following steps in the source **ATPDeployment** deployment console (ATPinstance).*
 
@@ -210,7 +212,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 12. Click **Create Create and Run**. The yellow exclamation mark icon becomes a green checkmark when the Distribution Path starts successfully.
 
-## Task 5: Verify Receiver Path creation
+## Task 8: Verify Receiver Path creation
 
 The Distribution path on the source ATPinstance creates a Receiver path on the target BDinstance.
 
@@ -222,7 +224,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 2.  On the Receiver Service Path page, verify that the graph shows the path you created in Task 4.
 
-## Task 6: Add and run a Replicat
+## Task 9: Add and run a Replicat
 
 >**Note**: *Complete the following steps in the **OBJDeployment** deployment console (BDinstance).
 
