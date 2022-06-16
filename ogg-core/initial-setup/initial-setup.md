@@ -1,4 +1,4 @@
-# Initialize Environment
+# Initialize environment
 
 ## Introduction
 In this lab we will setup the required database and Oracle GoldenGate replication users.
