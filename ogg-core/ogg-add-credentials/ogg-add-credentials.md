@@ -26,7 +26,6 @@ This lab assumes that you have:
     <copy>
     CONNECT http://phoenix98251.dev3sub1phx.databasede3phx.oraclevcn.com:9010 DEPLOYMENT NORTH as oggadmin PASSWORD oggadmin
     <copy>
-
     ```
 ## Task 2: Add Database Credentials
 
@@ -50,7 +49,7 @@ To create database credentials in the Administration Client:
     <copy>
 
     ```
-3. . Run the following command to add a user `ggwest`:
+3. Run the following command to add a user `ggwest`:
 
     ```
     <copy>
