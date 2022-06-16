@@ -16,7 +16,7 @@ This lab assumes that you have:
 
 ## Task 1: Connect to the Administration Service from the Admin Client
 
-1. Run the script: `./adminclient` to open the Admin Client.
+1. Run the script: `adminclient` to open the Admin Client.
 
     **Note**: You don’t need to navigate to the *OGG_HOME/bin*  directory to run the Admin Client each time. The PATH environment variable is set for this. This is a client-server connection.
 

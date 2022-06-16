@@ -64,15 +64,7 @@ To add a Replicat:
     <copy>
     ```
 
-4. Register the Replicat:
-
-    ```
-    <copy>
-    REGISTER REPLICAT repe DATABASE
-    <copy>
-    ```
-
-5. Start the REPLICAT:
+4. Start the REPLICAT:
 
     ```
     <copy>
@@ -82,7 +74,7 @@ To add a Replicat:
     ```
     The REPLICAT process **repe** starts.
 
-7. To confirm the REPLICAT has started, run the following command:
+5. To confirm the REPLICAT has started, run the following command:
 
     ```
     <copy>
