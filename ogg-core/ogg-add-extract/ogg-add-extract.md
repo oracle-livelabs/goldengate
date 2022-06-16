@@ -9,16 +9,16 @@ This lab describes how to add an Extract group (`exte`), which then captures dat
 
 ### Objectives
 In this lab, you will:
-* Create an Extract process
-* Edit the parameter file
-* Register the Extract process
-* Add the Extract trail
-* Start the Extract process
+* Create an Extract process.
+* Edit the parameter file.
+* Register the Extract process.
+* Add the Extract trail.
+* Start the Extract process.
 
 ### Prerequisites
 This lab assumes that you have:
 - the appropriate database privileges to be able to execute the commands in the Admin Client.
-- completed the tasks in **Lab - Enable Trandata, Add Heartbeat and Checkpoint Tables**
+- completed the tasks in **Lab - Enable Trandata, Add Heartbeat and Checkpoint Tables**.
 
 ## Task 1: Add an Extract Process
 

@@ -10,16 +10,16 @@ Replicat reads the trail file on the target database, reconstructs the DML or DD
 
 ### Objectives
 In this lab, you will:
-* Create Replicat process
-* Edit the parameter file
-* Register the Replicat process
-* Start the Replicat process
+* Create Replicat process.
+* Edit the parameter file.
+* Register the Replicat process.
+* Start the Replicat process.
 
 ### Prerequisites
 This lab assumes that you have:
 - the appropriate database privileges to be able to execute the commands in the Admin Client.
-- completed the tasks in **Lab - Enable Trandata, Add Heartbeat and Checkpoint Tables**
-- completed the tasks in **Lab - Add Extract**
+- completed the tasks in **Lab - Enable Trandata, Add Heartbeat and Checkpoint Tables**.
+- completed the tasks in **Lab - Add Extract**.
 
 ## Task 1: Add a Replicat
 

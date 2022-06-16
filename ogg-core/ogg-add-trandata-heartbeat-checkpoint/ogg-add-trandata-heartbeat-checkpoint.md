@@ -12,13 +12,13 @@ The use of checkpoint table causes checkpoints to be part of the Replicat transa
 
 ### Objectives
 In this lab, you will:
-* Enable Trandata
-* Add Heartbeat table
-* Add Checkpoint table
+* Enable Trandata.
+* Add Heartbeat table.
+* Add Checkpoint table.
 
 ### Prerequisites
 This lab assumes that you have:
-* Established a database connection by following the steps in **Lab: Add Database Credentials**
+* Established a database connection by following the steps in **Lab: Add Database Credentials**.
 
 ## Task 1: Enable TRANDATA
 

@@ -8,15 +8,15 @@ This lab describes how to test whether or not the replication has begun.
 
 ### Objectives
 In this lab, you will:
-* Test the Replication process
+* Test the Replication process.
 
 
 ### Prerequisites
 This lab assumes that you have:
 - the appropriate database privileges to be able to execute the commands in the Admin Client.
-- completed the tasks in **Lab - Enable Trandata, Add Heartbeat and Checkpoint Tables**
-- completed the tasks in **Lab - Add Extract**
-- completed the tasks in **Lab - Add Replicat**
+- completed the tasks in **Lab - Enable Trandata, Add Heartbeat and Checkpoint Tables**.
+- completed the tasks in **Lab - Add Extract**.
+- completed the tasks in **Lab - Add Replicat**.
 - ensured that there are a few committed DML (INSERT, UPDATE, OR DELETE) transactions in the `EMPLOYEES` table.
 
 ## Task 1: Test the Data Replication
