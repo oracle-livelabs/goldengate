@@ -13,10 +13,9 @@ Understanding how to prepare and set up an Oracle Database for replication and d
 
 ### Prerequisites
 This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-    - Lab: Environment Setup
+    - Lab: Prepare setup
+    - Lab: Environment setup
 
 ## Task 1: Validate That Required Processes are Up and Running.
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
