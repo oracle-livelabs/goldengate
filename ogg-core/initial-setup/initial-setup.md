@@ -46,7 +46,7 @@ This lab assumes you have completed:
 
   3. Confirm successful login. Please note that it may take up to 5 minutes after instance provisioning for all processes to fully start.
 
-    ![](./images/goldengate-login.png" ")
+    ![GoldenGate Login page](./images/goldengate-login.png" ")
 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
