@@ -10,7 +10,7 @@ Replicat reads the trail file on the target database, reconstructs the DML or DD
 
 ### Objectives
 In this lab, you will:
-* Create Replicat process.
+* Create a Replicat process.
 * Edit the parameter file.
 * Start the Replicat process.
 
