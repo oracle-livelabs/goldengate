@@ -1,4 +1,4 @@
-# Enable Trandata, Add Heartbeat and Checkpoint Tables
+# Enable trandata, add Heartbeat and Checkpoint Tables
 
 ## Introduction
 

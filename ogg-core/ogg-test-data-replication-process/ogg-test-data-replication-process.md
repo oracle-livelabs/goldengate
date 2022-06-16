@@ -1,4 +1,4 @@
-# Test the Data Replication Process
+# Test the data replication process
 
 ## Introduction
 
@@ -47,7 +47,7 @@ To test the data replication:
     ```
     You'll see additions to the Insert, Updates, or Deletes columns as follows:
 
-    ![](./images/pdbeast-output1.png " ")
+    ![Additions to Insert, Updates, or Deletes columns](./images/pdbeast-output1.png " ")
 
 
 3. Test the database connection by running the following command:
@@ -70,7 +70,7 @@ To test the data replication:
     ```
     You'll see that the data has been replicated on the target database (`PDBWEST`)
 
-    ![](./images/pdbwest-output2.png " ")
+    ![Replicated data on the target db](./images/pdbwest-output2.png " ")
 
 ## Learn More
 * [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)

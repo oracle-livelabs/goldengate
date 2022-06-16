@@ -1,4 +1,4 @@
-# Add Database Credentials
+# Add database credentials
 
 ## About Workshop
 This lab describes how to add the database credentials to connect to the source and target databases from the Administration Service.

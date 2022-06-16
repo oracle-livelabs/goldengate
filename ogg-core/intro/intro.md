@@ -15,7 +15,7 @@ This diagram illustrates the main components of the Microservices Architecture a
   ![MA Components and Replication Process](./images/replicationprocess-ma.png " ")
 
 Watch this short video about the Oracle GoldenGate product family:
-    [](youtube:kdMUxSf9j0k)
+    [Oracle GoldenGate product family](youtube:kdMUxSf9j0k)
 
 ### Objectives
 
@@ -28,7 +28,6 @@ In this workshop, you will:
   * Add a Replicat process
 
 ### Prerequisites
-* A Free Tier, Paid or LiveLabs Oracle Cloud account
 * The following are required to complete this lab:
     * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
     * Prior knowledge of Database basic concepts
@@ -37,7 +36,7 @@ In this workshop, you will:
 
 Watch this short video on adding Database Credentials, Extract, and Replicat Processes in Oracle GoldenGate Microservices on MySQL database:
 
-  [](youtube:h0J070YIK4E)
+  [Add credentials, extract, and replicat in GoldenGate](youtube:h0J070YIK4E)
 
 You may now **proceed to the next lab**.
 

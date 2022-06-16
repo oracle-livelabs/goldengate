@@ -1,4 +1,4 @@
-# Add a Replicat
+# Add a replicat
 
 ## Introduction
 Use ADD REPLICAT to create a Replicat process.
@@ -83,7 +83,7 @@ To add a Replicat:
     ```
 The following is a sample Replicat output:
 
-    ![](./images/replicat-output.png " ")
+    ![Replicat Output](./images/replicat-output.png " ")
 
 You may now **proceed to the next lab**.
 

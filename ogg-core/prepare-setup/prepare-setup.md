@@ -1,18 +1,15 @@
-# Prepare Setup
+# Prepare setup
 
 ## Introduction
 This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file to set up the resource needed to run this workshop. This workshop requires a compute instance and a Virtual Cloud Network (VCN).
 
 ### Objectives
--   Download ORM stack
--   Configure an existing Virtual Cloud Network (VCN)
+-   Download ORM stack.
+-   Configure an existing Virtual Cloud Network (VCN).
 
-### Prerequisites
-This lab assumes you have:
-- An Oracle Free Tier or Paid Cloud account
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
+1.  Click the link below to download the Resource Manager zip file you need to build your environment:
 
     - [ggma-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JX8hrs75mnqH1ZFZoJ5JgQvD9qZQRKf-KFsQ_K7JsyKWt-rbXDgHLS_uVl-nDQZ2/n/natdsecurity/b/stack/o/ggma-mkplc-freetier.zip)
 
