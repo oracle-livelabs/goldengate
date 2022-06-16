@@ -3,7 +3,7 @@
 ## About this Workshop                             
 The labs in this workshop walk you through use cases to add users and database credentials, enable Trandata, add Heartbeat and Checkpoint tables, and create Extract and Replicat processes.
 
-*Estimated Workshop Time*: 4 hours
+Estimated Workshop Time: 4 hours
 
 ### About Oracle GoldenGate Admin Client
 Oracle GoldenGate is a comprehensive software package for real-time data integration and replication.

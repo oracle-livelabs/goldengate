@@ -3,7 +3,7 @@
 ## About Workshop
 This lab describes how to add the database credentials to connect to the source and target databases from the Administration Service.
 
-*Estimated Time*: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 In this lab, you will:

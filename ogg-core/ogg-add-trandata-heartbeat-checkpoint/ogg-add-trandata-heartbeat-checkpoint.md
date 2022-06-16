@@ -8,7 +8,7 @@ The Heartbeat functionality helps in monitoring replication lags. Add a heartbea
 
 The use of checkpoint table causes checkpoints to be part of the Replicat transaction. Use the `ADD CHECKPOINTTABLE` command to create a checkpoint table in the target database. Replicat uses the table to maintain a record of its read position in the trail for recovery purposes.
 
-*Estimated Time*: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 In this lab, you will:

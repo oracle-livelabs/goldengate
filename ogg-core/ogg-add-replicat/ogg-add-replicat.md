@@ -6,7 +6,7 @@ Use ADD REPLICAT to create a Replicat process.
 This lab describes how to add a Replicat process (`repe`), which then delivers the change data from the trail file (`ea`) created by the Extract, to the target database.
 Replicat reads the trail file on the target database, reconstructs the DML or DDL operations, and applies them to the target database.
 
-*Estimated Time*: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 In this lab, you will:

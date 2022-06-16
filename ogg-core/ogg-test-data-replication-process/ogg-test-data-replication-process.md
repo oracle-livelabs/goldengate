@@ -4,7 +4,7 @@
 
 This lab describes how to test whether or not the replication has begun.
 
-*Estimated Time*: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 In this lab, you will:

@@ -5,7 +5,7 @@ Use `ADD EXTRACT` to create an Extract group/process.
 
 This lab describes how to add an Extract group (`exte`), which then captures data from the source database and writes to a trail file (`ea`).
 
-*Estimated Time*: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 In this lab, you will:
