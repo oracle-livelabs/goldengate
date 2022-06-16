@@ -28,17 +28,17 @@
       "filename": "../../ogg-add-credentials/ogg-add-credentials.md"
     },
     {
-      "title": "Lab 4: Enable trandata, add Heartbeat and Checkpoint Tables",
+      "title": "Lab 4: Enable trandata, add Heartbeat and Checkpoint tables",
       "description": "Enable Trandata, Add Heartbeat and Checkpoint Tables",
       "filename": "../../ogg-add-trandata-heartbeat-checkpoint/ogg-add-trandata-heartbeat-checkpoint.md"
     },
     {
-      "title": "Lab 5: Add extract",
+      "title": "Lab 5: Add Extract",
       "description": "Add Extract",
       "filename": "../../ogg-add-extract/ogg-add-extract.md"
     },
     {
-      "title": "Lab 6: Add replicat",
+      "title": "Lab 6: Add Replicat",
       "description": "Add Replicat",
       "filename": "../../ogg-add-replicat/ogg-add-replicat.md"
     },

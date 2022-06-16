@@ -1,4 +1,4 @@
-# Add an extract
+# Add Extract
 
 ## Introduction
 Use `ADD EXTRACT` to create an Extract group/process.

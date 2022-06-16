@@ -1,4 +1,4 @@
-# Add a replicat
+# Add Replicat
 
 ## Introduction
 Use ADD REPLICAT to create a Replicat process.
