@@ -24,7 +24,7 @@ In this workshop, you will:
   * Enable Trandata
   * Add Heartbeat table
   * Add Checkpoint table
-  * Add an Extract processes
+  * Add an Extract process
   * Add a Replicat process
 
 ### Prerequisites

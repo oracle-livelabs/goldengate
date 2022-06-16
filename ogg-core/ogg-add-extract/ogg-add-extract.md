@@ -17,8 +17,8 @@ In this lab, you will:
 
 ### Prerequisites
 This lab assumes that you have:
-- the appropriate database privileges to be able to execute the commands in the Admin Client.
-- completed the tasks in **Lab - Enable Trandata, Add Heartbeat and Checkpoint Tables**.
+- The appropriate database privileges to be able to execute the commands in the Admin Client.
+- Completed the tasks in **Lab - Enable Trandata, Add Heartbeat and Checkpoint Tables**.
 
 ## Task 1: Add an Extract Process
 
