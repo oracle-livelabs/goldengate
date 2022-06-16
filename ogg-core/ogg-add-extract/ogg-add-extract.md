@@ -25,33 +25,27 @@ This lab assumes that you have:
 To add an extract process and Exttrail:
 
 1. Test the database connection by running the following command:
-
-
     ```
     <copy>
     DBLOGIN USERIDALIAS ggeast
-    <copy>
-
+    </copy>
     ```
 
 2. Add an Extract:
-
     ```
     <copy>
     ADD EXTRACT exte, TRANLOG, BEGIN NOW
-    <copy>
-
+    </copy>
     ```
+
     **exte** is the name of the Extract that is being created. However, the Extract is yet to start.
 3. Configure the Extract parameters in the Extract parameter file (`exte.prm`):
-
     ```
     <copy>
     EDIT PARAMS exte
-    <copy>
+    </copy>
     ```
     The Extract parameter file is as follows:
-
     ```
     <copy>
     EXTRACT exte
@@ -60,46 +54,42 @@ To add an extract process and Exttrail:
     SOURCECATALOG pdbeast
     DDL INCLUDE MAPPED
     TABLE hr.*;
-    <copy>
+    </copy>
     ```
-4. Register the Extract:
 
+4. Register the Extract:
     ```
     <copy>
     REGISTER EXTRACT exte
-    <copy>
+    </copy>
     ```
 
 5.  Add the Extract trail file:
-
     ```
     <copy>
     ADD EXTTRAIL east/ea
-    <copy>
+    </copy>
     ```
 
 6. Start the Extract:
-
     ```
     <copy>
     START EXTRACT exte
-    <copy>
-
+    </copy>
     ```
-    The Extract group **exte** starts.
+  The Extract group **exte** starts.
 
 7. To confirm the Extract has started, run the following command:
 
     ```
     <copy>
     INFO EXTRACT exte
-    <copy>
-
+    </copy>
     ```
 
 The following is a sample Extract output:
 
-  ![](./images/Extract-Output.png " ")  
+  ![Sample Extract](./images/Extract-Output.png " ")  
 
 
 You may now **proceed to the next lab**.

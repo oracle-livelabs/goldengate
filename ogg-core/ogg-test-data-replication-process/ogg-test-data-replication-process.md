@@ -25,48 +25,40 @@ To test the data replication:
 
 1. Test the database connection by running the following command:
 
-
     ```
     <copy>
     DBLOGIN USERIDALIAS ggeast
-    <copy>
-
+    </copy>
     ```
-2. Run the following commands on the Extract side:
 
+2. Run the following commands on the Extract side:
     ```
     <copy>
     STATS EXTRACT exte, TOTAL, HOURLY, TABLE hr.employees, REPORTRATE MIN, RESET, REPORTFETCH
-    <copy>
+    </copy>
     ```
-
     ```
     <copy>
     STATS EXTRACT exte, LATEST, REPORTFETCH
-    <copy>
+    </copy>
     ```
-    You'll see additions to the Insert, Updates, or Deletes columns as follows:
+  You'll see additions to the Insert, Updates, or Deletes columns as follows:
 
     ![Additions to Insert, Updates, or Deletes columns](./images/pdbeast-output1.png " ")
 
 
 3. Test the database connection by running the following command:
-
-
     ```
     <copy>
     DBLOGIN USERIDALIAS ggwest
-    <copy>
-
+    </copy>
     ```
 
 4. Run the following commands on the Replicat side:
-
     ```
     <copy>
     STATS REPLICAT repe, TOTAL, HOURLY, TABLE hr.employees, REPORTRATE MIN, RESET, NOREPORTDETAIL
-    <copy>
-
+    </copy>
     ```
     You'll see that the data has been replicated on the target database (`PDBWEST`)
 

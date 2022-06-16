@@ -25,8 +25,10 @@ This lab assumes that you have:
     ```
     <copy>
     CONNECT http://phoenix98251.dev3sub1phx.databasede3phx.oraclevcn.com:9010 DEPLOYMENT NORTH as oggadmin PASSWORD oggadmin
-    <copy>
+    </copy>
     ```
+
+
 ## Task 2: Add Database Credentials
 
 You need to establish 2 database connections (`pdbeast` and `pdbwest`) through the Admin Client in preparation to issue other Oracle GoldenGate commands that affect the database.
@@ -38,32 +40,29 @@ To create database credentials in the Administration Client:
     ```
     <copy>
     ALTER CREDENTIALSTORE ADD USER ggadmin@orclpdbeast ALIAS ggeast  DOMAIN OracleGoldenGate PASSWORD Welcome1
-    <copy>
-
+    </copy>
     ```
-2.  To test the database connection, run the following command:
 
+2.  To test the database connection, run the following command:
     ```
     <copy>
     DBLOGIN USERIDALIAS ggeast
-    <copy>
-
+    </copy>
     ```
+
 3. Run the following command to add a user `ggwest`:
 
     ```
     <copy>
     ALTER CREDENTIALSTORE ADD USER ggadmin@orclpdbwest ALIAS ggwest  DOMAIN OracleGoldenGate PASSWORD Welcome1
-    <copy>
-
+    </copy>
     ```
 4.  To test the database connection, run the following command:
 
     ```
     <copy>
     DBLOGIN USERIDALIAS ggwest
-    <copy>
-
+    </copy>
     ```
     You have now successfully created database credentials for the source (`ggeast`) and target (`ggwest`) databases.
 

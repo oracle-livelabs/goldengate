@@ -25,30 +25,28 @@ This lab assumes that you have:
 To enable TRANDATA:
 
 1. Execute the following command:
-
     ```
     <copy>
     ADD TRANDATA pdbeast.hr.employees
-    <copy>
+    </copy>
     ```
+
 2. Run the following command to verify the output:
 
     ```
     <copy>
     INFO TRANDATA pdbeast.hr.employees
-    <copy>
+    </copy>
     ```
+
 The Trandata output for **hr.employees** is as follows:
+  ```
+Logging of supplemental transaction log data is disabled for table PDBEAST.HR.COUNTRIES.
+Logging of supplemental transaction log data is disabled for table PDBEAST.HR.DEPARTMENTS.
+Logging of supplemental transaction log data is enabled for table PDBEAST.HR.EMPLOYEES.
 
-    ```
-    Logging of supplemental transaction log data is disabled for table PDBEAST.HR.COUNTRIES.
-    Logging of supplemental transaction log data is disabled for table PDBEAST.HR.DEPARTMENTS.
-    Logging of supplemental transaction log data is enabled for table PDBEAST.HR.EMPLOYEES.
-
-    All columns supplementally logged for table `PDBEAST.HR.EMPLOYEES`.
-
-    ```
-
+All columns supplementally logged for table `PDBEAST.HR.EMPLOYEES`.
+  ```
 
 ## Task 2: Add Heartbeat Tables
 Add the heartbeat tables for both source and target endpoints by connecting to **ggeast** and **ggwest** database credential aliases.
@@ -56,59 +54,52 @@ Add the heartbeat tables for both source and target endpoints by connecting to *
 To add the Heartbeat tables:
 
 1. Execute the following command:
-
     ```
     <copy>
     ADD HEARTBEATTABLE
-    <copy>
-
+    </copy>
     ```
+
 2. Repeat step 1 on the target database.
 
-3.  Run the following command to verify the output:
+3. Run the following command to verify the output:
 
     ```
     <copy>
     INFO HEARTBEATTABLE
-    <copy>
+    </copy>
     ```
+
 The HEARTBEAT table gets added and the output is as follows:
-
-    ```
-    2022-04-19T12:59:16Z  INFO    OGG-14101  Successfully added heartbeat table.
-
-    ```
+  ```
+2022-04-19T12:59:16Z  INFO    OGG-14101  Successfully added heartbeat table.
+  ```
 
 ## Task 3: Add Checkpoint table
 
 To add the Checkpoint table:
 
 1. Execute the following command:
-
     ```
     <copy>
     ADD CHECKPOINTTABLE ggadmin.ggs_checkpointtable
-    <copy>
-
+    </copy>
     ```
+
 2. Run the following command to verify the output:
 
     ```
     <copy>
     INFO CHECKPOINTTABLE ggadmin.ggs_checkpointtable
-    <copy>
-
+    </copy>
     ```
 
-  The Checkpoint table gets added as follows:
-
-    ```
-
-    2022-04-19T06:24:55Z  INFO    OGG-15189  Default catalog name PDBEAST will be used for table specification ggadmin.*.
-    2022-04-19T06:24:55Z  INFO    OGG-08100  Checkpoint table PDBEAST.GGADMIN.GGS_CHKPT has been created on 2022-04-19 06:22:56.
-    2022-04-19T06:24:55Z  INFO    OGG-08100  Checkpoint table PDBEAST.GGADMIN.GGS_CHECKPOINTTABLE has been created on 2022-04-19 06:15:55.
-
-    ```
+The Checkpoint table gets added as follows:
+  ```
+22022-04-19T06:24:55Z  INFO    OGG-15189  Default catalog name PDBEAST will be used for table specification ggadmin.*.
+2022-04-19T06:24:55Z  INFO    OGG-08100  Checkpoint table PDBEAST.GGADMIN.GGS_CHKPT has been created on 2022-04-19 06:22:56.
+2022-04-19T06:24:55Z  INFO    OGG-08100  Checkpoint table PDBEAST.GGADMIN.GGS_CHECKPOINTTABLE has been created on 2022-04-19 06:15:55.
+  ```
 
 You may now **proceed to the next lab**.
 

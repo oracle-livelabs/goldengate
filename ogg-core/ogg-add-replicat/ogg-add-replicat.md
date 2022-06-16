@@ -25,34 +25,27 @@ This lab assumes that you have:
 To add a Replicat:
 
 1. Test the database connection by running the following command:
-
-
     ```
     <copy>
     DBLOGIN USERIDALIAS ggwest
-    <copy>
-
+    </copy>
     ```
 
 2. Add a Replicat:
-
     ```
     <copy>
     ADD REPLICAT repe, INTEGRATED, PARALLEL, EXTTRAIL east/ea CHECKPOINTTABLE ggadmin.ggs_checkpointtable
-    <copy>
-
+    </copy>
     ```
     `repe` is the name of the Replicat that is being created.
 
 3. Edit the parameter file:
-
     ```
     <copy>
     EDIT PARAMS repe
-    <copy>
+    </copy>
     ```
     The Replicat parameter file is as follows:
-
     ```
     <copy>
     REPLICAT repe
@@ -60,26 +53,22 @@ To add a Replicat:
     DDL INCLUDE ALL
     SOURCECATALOG pdbeast
     MAP hr.*, TARGET hr.*;
-    <copy>
+    </copy>
     ```
 
 4. Start the REPLICAT:
-
     ```
     <copy>
     START REPLICAT repe
-    <copy>
-
+    </copy>
     ```
-    The REPLICAT process **repe** starts.
+  The REPLICAT process **repe** starts.
 
 5. To confirm the REPLICAT has started, run the following command:
-
     ```
     <copy>
     INFO REPLICAT repe
-    <copy>
-
+    </copy>
     ```
 The following is a sample Replicat output:
 
