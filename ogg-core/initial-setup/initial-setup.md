@@ -1,7 +1,7 @@
 # Initialize Environment
 
 ## Introduction
-In this lab we will setup the required database and GoldenGate replication users.
+In this lab we will setup the required database and Oracle GoldenGate replication users.
 
 *Estimated Time*:  10 minutes
 
@@ -9,7 +9,7 @@ In this lab we will setup the required database and GoldenGate replication users
 ![](./images/ggmicroservicesarchitecture.png " ")
 
 ### Objectives
-Understanding how to prepare and setup an Oracle Database for replication and define users for replication. Users are created using scripts that populate the multitenant environment with required Oracle Users while applying aliases to be used by GoldenGate. The Databases used in this lab are identified using the SOE schema in source and targets.
+Understanding how to prepare and set up an Oracle Database for replication and define users for replication. Users are created using scripts that populate the multitenant environment with required Oracle Users while applying aliases to be used by GoldenGate. The Databases used in this lab are identified using the SOE schema in source and targets.
 
 ### Prerequisites
 This lab assumes you have:

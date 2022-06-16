@@ -7,7 +7,7 @@ This lab describes how to add the database credentials to connect to the source 
 
 ### Objectives
 In this lab, you will:
-* Connect to the Administration Service from the Administration Client.
+* Connect to the Administration Service from the Admin Client.
 * Create Database credentials for Oracle Multitenant Container Databases.
 
 ### Prerequisites
