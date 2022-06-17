@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to monitor the Extract and Replicat processes that were created and run in the previous lab.
+This lab walks you through the steps to monitor the Extract and Replicat processes created and run in the previous lab.
 
 Estimated Lab Time: 2 minutes
 
