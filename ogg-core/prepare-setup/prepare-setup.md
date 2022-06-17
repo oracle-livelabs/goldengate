@@ -46,4 +46,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2020
 * **Contributors** - Madhu Kumar, Rene Fontcha
-* **Last Updated By/Date** - Anuradha Chepuri, July 2022
+* **Last Updated By/Date** - Anuradha Chepuri, June 2022

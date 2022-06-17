@@ -3,7 +3,7 @@
 ## Introduction
 In this lab we will setup the required database and Oracle GoldenGate replication users.
 
-*Estimated Time*:  10 minutes
+Estimated Times:  10 minutes
 
 ### Lab Architecture
 ![](./images/ggmicroservicesarchitecture.png " ")
@@ -120,4 +120,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration, November 2020
 * **Contributors** - Preeti Shukla, Volker Kuhr
-- **Last Updated By/Date** - Anuradha Chepuri, July 2022
+- **Last Updated By/Date** - Anuradha Chepuri, June 2022

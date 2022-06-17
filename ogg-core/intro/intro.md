@@ -51,4 +51,4 @@ Use these links to get more information about Oracle GoldenGate:
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Preeti Shukla, Volker Kuhr
-* **Last Updated By/Date** - Anuradha Chepuri, July 2022
+* **Last Updated By/Date** - Anuradha Chepuri, June 2022
