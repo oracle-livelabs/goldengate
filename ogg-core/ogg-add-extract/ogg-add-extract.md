@@ -101,5 +101,5 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Preeti Shukla, Volker Kuhr, Madhusudhan Rao
+* **Contributors** -  Preeti Shukla, Volker Kuhr, Madhusudhan Rao, Kevin Lazarz
 * **Last Updated By/Date** - Anuradha Chepuri, June 2022
