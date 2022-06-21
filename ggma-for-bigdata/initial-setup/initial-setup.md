@@ -46,55 +46,8 @@ This lab assumes you have:
     ```
     ![GoldenGate status](./images/gg-status.png " ") 
     if the output show  ***active (running)*** indicates OracleGoldenGate Services are up and running,Kindly press ***Ctrl+c*** to exit from the output.
-    ```
-    <copy>
-    sudo systemctl status cassandra
-    </copy>
-    ```
-    ![Cassandra-status](./images/cassandra-status.png " ") 
-    if the output show  ***active (running)*** indicates cassandra database up and running,Kindly press ***Ctrl+c*** to exit from the output.
-    ```
-    <copy>
-    sudo systemctl status mongod
-    </copy>
-    ```
-    ![Mongod-status](./images/mongod-status.png " ") 
-    if the output show  ***active (running)*** indicates mongoDB database up and running,Kindly press ***Ctrl+c*** to exit from the output.
-     ```
-    <copy>
-    hadoopstart
-    jps
 
-    </copy>
-    ```
-    ![Hadoop-status](./images/hadoop-status.png " ") 
-    if the output show  ***DataNode,NameNode,NodeManager,SecondaryNameNode,ResourceManager*** under jps indicates Hadoop single-node cluster is up and running.
-
-
-     ```
-    <copy>
-    kafkastart
-    jps
-
-    </copy>
-    ```
-    ![kafka-status](./images/kafka-status.png " ") 
-    if the output show  ***kafka*** under jps indicates Kafka cluster is up and running.
-    ```
-    <copy>
-    hbasestart
-    jps |grep H
-
-    </copy>
-    ```
-    When you're prompted to ***"Are you sure you want to continue connecting (yes/no/[fingerprint])?"*** : kindly type '***yes***' to continue the HBase startup
-    ![HBase start](./images/hbase-start.png " ")
-    ![HBase status](./images/hbase-status.png " ")
-
-    if the output show  ***HMaster,HRegionServer*** under jps indicates Standalone HBase is up and running.
-
-
-3. If you see questionable output(s), failure or down component(s), Please reach out to the workshop instructor.                                     
+2. If you see questionable output(s), failure or down component(s), Please reach out to the workshop instructor.                                     
 
 You may now [proceed to the next lab](#next).
 
