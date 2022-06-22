@@ -1,4 +1,4 @@
-# Create a Distribution Path
+# Create and run the Distribution Path
 
 ## Introduction
 

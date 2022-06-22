@@ -1,4 +1,4 @@
-# Create a Replicat
+# Create and run the Replicat
 
 ## Introduction
 
