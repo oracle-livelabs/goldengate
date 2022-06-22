@@ -104,5 +104,6 @@ In this lab, you created an OCI Deployment, reviewed its Deployment details, and
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management; Arabella Yao, Database Product Management
-* **Last Updated By/Date** - Arabella Yao, May 2022
+* **Contributors** -  Denis Gray, Database Product Management; Madhu Kumar S, AppDev and Integration
+* **Last Updated By/Date** - 
+
