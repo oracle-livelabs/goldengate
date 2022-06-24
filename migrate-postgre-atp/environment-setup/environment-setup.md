@@ -29,7 +29,7 @@ In this first lab, we will prepare our work environment and create our lab resou
 -	Modify a terraform variables file to interact with script.
 -   Prepare our work environment and create our lab resources using a Terraform script.
 
-	![Work environment architecture](/images/architecture.png)
+	![Work environment architecture](images/architecture.png)
 
 For a technical overview of this lab step, please watch the following video:
 
@@ -143,7 +143,7 @@ For a technical overview of this lab step, please watch the following video:
 	
 3. Make a copy of your output results in your notepad for later use.
 
-	![Copy and save output results.](/images/git-1.png)
+	![Copy and save output results.](images/git-1.png)
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 
@@ -170,7 +170,7 @@ This lab uses the following compute types but not limited to:
 4. Look for "Standard2 based VM" and "Standard.E4.Flex based VM", then check **Available** column numbers and sum  them up. All you need to have is at least **3** or more. If you have found correct available capacity, please continue to the next step.
 5. Go to `migrate_to_atp` folder in your cloud-shell and modify variables file with: **`vi vars.tf`**
 
-	![Troubleshooting service limits exceeded.](/images/fix-1.png)
+	![Troubleshooting service limits exceeded.](images/fix-1.png)
 
 6. Fix above accordingly to your **Available** resources.
 7. Go to **Step 5: Terraform**, and continue from substep **2**.

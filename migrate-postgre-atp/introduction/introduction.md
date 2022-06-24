@@ -36,7 +36,7 @@ In this workshop you will :
 - GoldenGate for non-Oracle deployment: we will create a GoldenGate classic for PostgreSQL to extract data from the source and ships trail files to the cloud.
 - GoldenGate Microservices deployment: we will create a Microservices environment for an Autonomous Database that applies trails from source to target autonomous database.
 
-	![Architecture diagram of Goldengate deployment.](/images/architecture.png)
+	![Architecture diagram of Goldengate deployment.](images/architecture.png)
 
 All of the above resources are going to be deployed in Oracle Cloud Infrastructure using Terraform. It is not necessary to have prior knowledge of Terraform scripting. All you need to do is follow every step exactly as described.
 
