@@ -60,4 +60,4 @@ All of the above resources are going to be deployed in Oracle Cloud Infrastructu
 
 * **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
 * **Contributors** - John Craig - Technology Strategy Program Manager, Patrick Agreiter - Senior Cloud Engineer
-* **Last Updated By/Date** - Bilegt Bat-Ochir 04/04/2022
+* **Last Updated By/Date** - Bilegt Bat-Ochir 24/06/2022
