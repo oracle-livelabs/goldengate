@@ -38,7 +38,7 @@ This lab assumes that you completed all preceding labs.
 
 4.  On the Deployments page, click **Create Deployment**.
 
-    ![Deployments page](images/01-02-01.png "")
+    ![Deployments page](images/01-02-ggs-overview.png "")
 
 5.  In the Create Deployment panel, enter **OCI GoldenGate Big Data** for Name.
 
@@ -52,7 +52,7 @@ This lab assumes that you completed all preceding labs.
 
 
 10. Click **Next**.
-    ![Completed GoldenGate details](images/create-deployment.png " ")
+    ![Completed GoldenGate details](images/01-02-01.png " ")
 
 11. Select Technology as  **Big Data**.
 

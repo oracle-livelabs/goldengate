@@ -8,7 +8,7 @@ Estimated time: 5 minutes
 
 ### About Create the ATP and Kafka Connection
 
-*************Need to  add the content****************
+You can create and save the database login credentials ,Kafka connectivity ., and assigning the global credentails to appropiate deployments.
 
 ### Objectives
 
@@ -84,7 +84,7 @@ In this lab, you created a connection to source ATP and target Apache Kafka.
 
 ## Learn More
 
-* [Managing Deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/deployments.html)
+* [Manage Deployment users](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/manage-user-accounts.html#GUID-56E2E146-7713-4094-8BEC-7C138064EB21)
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Teame

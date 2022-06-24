@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create a replicat for OCI GoldenGate for Big Data Deployment. 
+This lab walks you through the steps to create a replicat for OCI GoldenGate  Deployment. 
 
 Estimated time: 5 minutes
 
@@ -14,7 +14,7 @@ The Replicat process runs on the target system, reads the trail on that system, 
 
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
-* Create a replicat for OCI GoldenGate for Big Data Deployment.
+* Create a replicat for OCI GoldenGate  Deployment.
 ### Prerequisites
 
 This lab assumes that you completed all preceding labs.
@@ -50,11 +50,10 @@ This lab assumes that you completed all preceding labs.
 
 
 
-In this lab, you created a replicat for OCI GoldenGate for Big Data Deployment.
+In this lab, you created a replicat for OCI GoldenGate  Deployment.
 
 ## Learn More
-
-* [Managing Deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/deployments.html)
+* [Creating a Replicat](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-063CCFD9-81E0-4FEC-AFCC-3C9D9D3B8953)
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Teame

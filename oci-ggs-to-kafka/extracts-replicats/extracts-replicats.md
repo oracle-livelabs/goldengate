@@ -6,9 +6,9 @@ This lab walks you through the steps to create and run an Extract in the Oracle 
 
 Estimated time: 15 minutes
 
-### About Extracts and Replicats
+### About Extracts 
 
-An Extract is a process that extracts, or captures, data from a source database. A Replicat is a process that delivers data to a target database.
+An Extract is a process that extracts, or captures, data from a source database. 
 
 ### Objectives
 
@@ -149,7 +149,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 ## Learn more
 
 * [Creating an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-3B004DB0-2F41-4FC2-BDD4-4DE809F52448)
-* [Creating a Replicat](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-063CCFD9-81E0-4FEC-AFCC-3C9D9D3B8953)
+
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
