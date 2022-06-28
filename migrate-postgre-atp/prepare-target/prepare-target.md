@@ -18,7 +18,7 @@ For a technical overview of this lab step, please watch the following video:
 
 * This lab assumes that you completed all preceding labs.
 
-## **Task 1**: Open SQL Developer Web 
+## Task 1: Open SQL Developer Web 
 
 1. Go to the top-left hamburger icon, navigate to **Oracle Database** and choose **Autonomous Transaction Processing**. It will show you all available ATP workload type databases. Click on **HOL Target ATP** database.
 
@@ -40,7 +40,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![Database development SQL selection](images/sql-dev-5.png)
 
-## **Task 2**: Create Target Tables
+## Task 2: Create Target Tables
 
 1. Let's create our target tables for migration. Please download the target table creation script **[from here](./files/create-tables.sql)**. Make sure to save these with the correct extension **.sql** not txt!
 
@@ -51,7 +51,7 @@ For a technical overview of this lab step, please watch the following video:
 	There should be **5** tables created after script execution.
 
 
-## **Task 3**: Enable GGADMIN 
+## Task 3: Enable GGADMIN 
 
 1. Now let's continue to unlock and change the password for Oracle GoldenGate user (ggadmin) in the Autonomous Database. Enable GGADMIN by running the following query.
 
