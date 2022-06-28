@@ -26,7 +26,7 @@ For a technical overview of this lab step, please watch the following video:
 
 * This lab assumes that you completed all preceding labs.
 
-## **Task 1**: Connect to Microservices Instance
+## Task 1: Connect to Microservices Instance
 
 1. We need to enable network access to Microservices from our GoldenGate Classic instance. Without adding the ports to the Microservices' firewall, it would cause failure in the next step. Let's make a console connection to the Microservices instance, copy the IP address of `OGG_Microservices_Public_ip` from your note and connect using below ssh command.
 
@@ -58,7 +58,7 @@ For a technical overview of this lab step, please watch the following video:
 
 3. Exit from this instance with command **`exit`** and go back to your cloud-shell.
 
-## **Task 2**: Access to GoldenGate Classic Instance
+## Task 2: Access to GoldenGate Classic Instance
 
 1. Oracle GoldenGate Classic for Non-Oracle (PostgreSQL) allows you to quickly access the GoldenGate Service Command Interface (GGCSI) and is preconfigured with a running Manager process. Copy the IP address of `OGG_PGSQL_Public_ip` from your note and connect using next command.
 
@@ -69,7 +69,7 @@ For a technical overview of this lab step, please watch the following video:
 	```
 	When you are connecting to a compute instance for the first time, you will see the question **Are you sure you want to continue connecting (yes/no)?**. Enter **yes**.
 	
-## **Task 3**: Run GGSCI 
+## Task 3: Run GGSCI 
 
 1. After logging in to the compute node, you need to make sure your GoldenGate environment knows about the current odbc driver. Execute the following commands separately in your cloud-shell:
 
@@ -91,7 +91,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![Animation of Cloud Shell environment.](images/gg-pg-config-2.gif)
 
-## **Task 4**: Create GoldenGate Directories 
+## Task 4: Create GoldenGate Directories 
 
 1. We need to create our work directories in GoldenGate before we start working. The below command creates the default directories within the Oracle GoldenGate home directory. When you are in GGSCI console, run the below command to create your directories.
 
@@ -101,7 +101,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-## **Task 5**: Edit GoldenGate Manager Port
+## Task 5: Edit GoldenGate Manager Port
 
 1. We need to set the manager’s port to start the GoldenGate manager process. To do so, issue:
 
@@ -120,7 +120,7 @@ For a technical overview of this lab step, please watch the following video:
 	```
 	_**NOTE:** Editing uses **vi** editor, you have to press key **i** to edit. When you are done editing press **esc** button and press **:wq** keys, then **hit enter** for save & quit._
 
-## **Task 6**: Start GoldenGate Manager
+## Task 6: Start GoldenGate Manager
 
 1. Now start GoldenGate manager process by issuing the below command:
 
@@ -134,7 +134,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![Animation of Cloud Shell outputs.](images/gg-pg-config-3.gif)
 
-## **Task 7**: Connect to Source DB
+## Task 7: Connect to Source DB
 
 1. Run the following command to log into the database from GoldenGate instance:
 
@@ -150,7 +150,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	Now you are logged into the source database from GGSCI console, which means you are ready to proceed. Remember that we need to create three extract processes and we have five tables in the source PostgreSQL database.
 
-## **Task 8**: Enabling Supplemental Logging
+## Task 8: Enabling Supplemental Logging
 
 1. After logging into the source database, you must enable supplemental logging on the source schema for change data capture. The following commands are used to enable supplemental logging at the table level.
 
@@ -166,7 +166,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![Commands to enable supplemental logging at table level.](images/gg-pg-trandata.png)
 
-## **Task 9**: Registering EXTTAR
+## Task 9: Registering EXTTAR
 
 Oracle GoldenGate needs to register an extract with the database replication slot before adding the extract process. Let's begin to create the first extract process, which is continuous replication in the usual migration and replication project scenario. _**Ensure that you are connected to SourceDB using the DBLOGIN command**_ before doing the next steps.
 
@@ -239,7 +239,7 @@ Oracle GoldenGate needs to register an extract with the database replication slo
 
 	This process is capturing change data from your source database. As it was mentioned earlier, this is a necessary step for a continuous replication project. 
 
-## **Task 10**: Registering EXTDMP
+## Task 10: Registering EXTDMP
 
 Now changes are being captured from the source database and we need to send them to GG microservices in order to apply to the target database. Therefore we need another process, which acts as an extract but sends existing trail files to GG microservices. This is also known as a pump process. _**Ensure that you are connected to the source database using the DBLOGIN command**_ before doing the next steps.
 
@@ -318,7 +318,7 @@ Now changes are being captured from the source database and we need to send them
 	We will check them if working properly in the next lab. These two processes are preparation for change synchronization for continuous replication.
 
 
-## **Task 11**: Registering INITLOAD
+## Task 11: Registering INITLOAD
 
 Up to now, we created 2 extract processes that are now capturing changes and shipping to the Goldengate Microservices instance. However, we have not yet loaded our static data directly from our source objects to a target database. This specific process is called Initial-load. Steps are similar to the previous extract processes. _**Ensure that you are connected to the source database using the DBLOGIN command**_ before doing the next steps.
 
