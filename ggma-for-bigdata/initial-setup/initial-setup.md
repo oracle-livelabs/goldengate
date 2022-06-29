@@ -46,6 +46,15 @@ This lab assumes you have:
     ```
     ![GoldenGate status](./images/gg-status.png " ") 
     if the output show  ***active (running)*** indicates OracleGoldenGate Services are up and running,Kindly press ***Ctrl+c*** to exit from the output.
+     ```
+    <copy>
+    sudo systemctl start hadoop.service
+    jps
+
+    </copy>
+    ```
+    ![Hadoop-status](./images/hadoop-status.png " ") 
+    if the output show  ***DataNode,NameNode,NodeManager,SecondaryNameNode,ResourceManager*** under jps indicates Hadoop single-node cluster is up and running.
 
 2. If you see questionable output(s), failure or down component(s), Please reach out to the workshop instructor.                                     
 
