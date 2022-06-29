@@ -19,13 +19,13 @@ For a technical overview of this lab step, please watch the following video:
 
 * This lab assumes that you completed all preceding labs, and ready to migrate to ATP.
 
-## **Task 1**: Access to GoldenGate Microservices Instance
+## Task 1: Access to GoldenGate Microservices Instance
 
 1. After successful creating three extract processes, now it is time to explore your GG Microservices server. Let's make a console connection to Microservice. Copy the IP address of `OGG_Microservices_Public_ip` from your note and connect using:
 
 	**`ssh opc@your_microservice_ip_address -i ~/.ssh/oci`**
 
-## **Task 2**: Retrieve Admin Password
+## Task 2: Retrieve Admin Password
 
 1. Administrator user credentials of GoldenGate Microservices Web console is already created for you. Once you are in the instance, issue following and copy a credential value from the output.
 
@@ -39,13 +39,13 @@ For a technical overview of this lab step, please watch the following video:
 
 2. Good practice is to keep it in your notepad. You will use it very often in the next steps.
 
-## **Task 3**: Login to Microservices Web Console
+## Task 3: Login to Microservices Web Console
 
 1. Open your web browser and point to `https://your_microservices_ip_address`. Provide oggadmin in username and password which you copied, then log in.
 
 	![Microservices web console login.](images/gg-oggadmin.png)
 
-## **Task 4**: Open Target Receiver Server
+## Task 4: Open Target Receiver Server
 
 1. Then click on Target Receiver server's port **9023**, it will redirect you to a new tab. Provide your credentials again for username **oggadmin**.
 
@@ -57,13 +57,13 @@ For a technical overview of this lab step, please watch the following video:
 
 	This is something you will need if you want continuous replication and migration. We will use this configuration in the step 12.
 
-## **Task 5**: Open Target Administration Server
+## Task 5: Open Target Administration Server
 
 1. Click on Target Receiver server port **9021**, it will redirect you to new tab. Provide your credentials again for username **oggadmin**.
 
 	![GoldenGate service manager screen.](images/micro-oggadmin-0.png)
 
-## **Task 6**: Modify GoldenGate Credentials
+## Task 6: Modify GoldenGate Credentials
 
 1. You should be seeing the empty Extracts and Replicats dashboard. Let's add Autonomous Database credentials. Open the hamburger menu on the top-left corner, choose **Configuration**
 
@@ -73,7 +73,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![GoldenGate administration credentials screen.](images/micro-ggadmin-1.png)
 
-## **Task 7**: Update Password and Check Connection
+## Task 7: Update Password and Check Connection
 
 1. Provide the password `GG##lab12345` and verify it. This is your ggadmin password, which we provided in lab 3.
 
@@ -83,7 +83,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![GoldenGate database login.](images/micro-ggadmin-3.png)
 
-## **Task 8**: Add Checkpoint Table
+## Task 8: Add Checkpoint Table
 
 1. Scroll down to the **Checkpoint** and click on **+** icon, then provide `ggadmin.chkpt` and **SUBMIT**. 
 
@@ -97,7 +97,7 @@ For a technical overview of this lab step, please watch the following video:
 
 3. Now we will add two replication processes in the following steps to accomplish our migration target.
 
-## **Task 9**: Add The Initial Load Replication
+## Task 9: Add The Initial Load Replication
 
 1. The apply process for replication, also known as Replicat, is very easy and simple to configure. There are four types of Replicats supported by the Oracle GoldenGate Microservices. On the overview page, go to Replicat part and click on **+** to create our replicat process.
 
@@ -147,7 +147,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![Select create and run.](images/micro-initload-4.png)
 
-## **Task 10**: Check the Initial Load Status
+## Task 10: Check the Initial Load Status
 
 1. In the overview dashboard, you should now be seeing the running INITLOAD replication. Click on **Action** button, choose **Details**.
 
@@ -157,7 +157,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![Running replicat process details.](images/micro-initload-5.png)
 
-## **Task 11**: Make Changes at the Source Database
+## Task 11: Make Changes at the Source Database
 
 1. We've added a special Initial Load replicate the process and applied all the captured data from the source database to the target Autonomous Database. Now it is time to make some changes to the source database. Let's check a record in the Autonomous database. Do you remember how to find **SQL Developer Web**? Issue the below command and identify the error. 
 
@@ -183,7 +183,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![Output of update command in Cloud Shell environment.](images/pg-update.png)
 
-## **Task 12**: Add The Change Capture Replication
+## Task 12: Add The Change Capture Replication
 
 1. Same as step 9, go to **Replicats** area in the overview page, then click on **+** to create our second replicat process.
 
@@ -233,7 +233,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![Select create and run to start the replicat.](images/micro-initload-4.png)
 
-## **Task 13**: Check the Continuous Replication Status
+## Task 13: Check the Continuous Replication Status
 
 1. In the overview dashboard, you should now be seeing the running CHANGES replication. Click on **Action** button, choose **Details**.
 

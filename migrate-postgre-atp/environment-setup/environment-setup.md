@@ -43,13 +43,13 @@ For a technical overview of this lab step, please watch the following video:
 * Your cloud account user must have the required IAM (Identity and Access Management) policy or admin user.
 * Successfully logged in to your cloud tenancy, if not please [login](https://www.oracle.com/cloud/sign-in.html) to your cloud account.
 
-## **Task 1**: Open Cloud-Shell
+## Task 1: Open Cloud-Shell
 
 1. Let's prepare our work directory. We will use Cloud Shell, it is located at the top right corner of the OCI web console
 
 	![](images/prereq-0.png)
 
-## **Task 2**: Clone Lab Repository
+## Task 2: Clone Lab Repository
 
 1. Let's begin our lab. First, we'll make a copy of the lab repository and go to the cloned directory. In your cloud-shell web terminal, issue the below commands.
 
@@ -63,7 +63,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![Cloned directory in Cloud Shell Terminal.](images/git.png)
 
-## **Task 3**: Generate SSH keys
+## Task 3: Generate SSH keys
 
 1. Once the cloud shell environment is ready, issue the below 4 lines of commands. This will create the ssh key files and the api signing keys:
 
@@ -86,7 +86,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![Image showing steps to copy pem file from Cloud Shell.](images/prereq-1.png)
 
-## **Task 4**: Add Public API keys and Modify Terraform variables
+## Task 4: Add Public API keys and Modify Terraform variables
 
 1. Click on the top right corner of your OCI web console and click on your **profile**. Then navigate to the **API Keys** from the left pane and click on the **Add API Key** button. A small pop-up will appear and you need to choose the "Paste Public Key" radio button. Paste your **copied public pem key** there and click on the **Add** button.
 
@@ -118,7 +118,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	_**NOTE:** if you are an experienced OCI user, I'd highly suggest you use your own compartment to isolate all resources. To do so, provide your preferred compartment OCID in `compartment_ocid`. If you are new to OCI cloud, just enter your Tenancy value as compartment OCID._
 
-## **Task 5**: Terraforming
+## Task 5: Terraforming
 
 1. It is time to initialize terraform. Run the below command to download necessary terraform files from the OCI provider.
 
