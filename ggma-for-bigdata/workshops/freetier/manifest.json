@@ -1,0 +1,61 @@
+{
+  "workshoptitle": "Getting Started with Oracle GoldenGate (MA) for Big Data",
+  "help": "livelabs-help-license_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Introduction to GoldenGate Microservices",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started with noVNC Remote Desktop",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+    },
+    {
+      "title": "Lab 1: Initialize Environment",
+      "description": "GG Initial Setup",
+      "filename": "../../initial-setup/initial-setup.md"
+    },
+    {
+      "title": "Lab 2: Oracle to Kafka",
+      "description": "GGBD Oracle-to-Kafka",
+      "filename": "../../oracle-to-kafka/oracle-to-kafka.md"
+    },
+        {
+      "title": "Lab 3: Oracle to HDFS",
+      "description": "GGBD Oracle-to-hdfs",
+      "filename": "../../oracle-to-hdfs/oracle-to-hdfs.md"
+    },
+    {
+      "title": "Lab 4: Oracle to HBase",
+      "description": "GGBD Oracle-to-HBase",
+      "filename": "../../oracle-to-hbase/oracle-to-hbase.md"
+    },  
+    {
+      "title": "Lab 5: Oracle to Cassandra",
+      "description": "GGBD Oracle-to-Cassandra",
+      "filename": "../../oracle-to-cassandra/oracle-to-cassandra.md"
+    },
+    {
+      "title": "Lab 6: Oracle to MongoDB",
+      "description": "GGBD Oracle to MongoDB",
+      "filename": "../../oracle-to-mongodb/oracle-to-mongodb.md"
+    },
+    {
+      "title": "Lab 7: GGMA Adminclient",
+      "description": "GGMA Adminclient",
+      "filename": "../../ggma-adminclient/ggma-adminclient.md"
+    },
+    {
+      "title": "Appendix",
+      "description": "GGBD Appendix",
+      "filename": "../../appendix/appendix.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}

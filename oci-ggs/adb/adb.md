@@ -96,7 +96,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 4.  Click **Open DB Actions**.
 
-5.  Log in with the ADMIN user and password provided when you created the ATP instance.
+5.  If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
 
     ![DB Actions log in page](./images/02-05-login.png " ")
 
@@ -118,13 +118,15 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 11. Click **Run Script**. The Script Output tab displays confirmation messages.
 
-	>**Note:** *If you find that running the entire script does not create the tables, then try running each table creation statement one at a time until all the tables are created.*
+	>**Note:** *If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.*
 
-12. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
+12. Close the SQL window and then open DB Actions from the database details page again.
+
+13. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
 
     ![Displays the SRC\_OCIGGLL tables](./images/02-11-verify.png " ")
 
-13. To enable supplemental logging, run the following command:
+14. To enable supplemental logging, run the following command:
 
     ```
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
@@ -177,5 +179,5 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated** - March 2022
-- **PAR Expiration date** - March 31, 2022
+- **Last Updated by** - Jenny Chan, June 2022
+- **PAR Expiration date** - February 2024
