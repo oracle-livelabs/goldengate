@@ -35,7 +35,7 @@ Aliases have been created for this workshop, so that you can focus on GG functio
 
 Workshop folder structure reference will give board idea about the Oracle Database home,GoldenGate homes ,Hadoop home, HBase home, Cassandra home ,MongoDB home and Kafka home.
 
-  ![](./images/folder_structure.png " ")
+  ![](./images/folder-structure.png " ")
   
   
 ## Learn More
