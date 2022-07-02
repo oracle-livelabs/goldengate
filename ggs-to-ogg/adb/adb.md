@@ -23,7 +23,7 @@ This lab assumes you have completed the Getting Started lab.
 ## Task 1: Create a VCN and Subnet
 1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
+	![](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
 
 2.  Click **Start VCN Wizard**.
 
@@ -43,7 +43,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
+	![](https://oracle-livelabs.github.io/common/images/console/database-atp.png " ")
 
 2.  Click **Create Autonomous Database**.
 
@@ -124,7 +124,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+	![](https://oracle-livelabs.github.io/common/images/console/database-adw.png " ")
 
 2.  Click **Create Autonomous Database**.
 

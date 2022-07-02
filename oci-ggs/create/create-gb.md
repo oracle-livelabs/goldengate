@@ -127,7 +127,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 1.  From the Oracle Cloud Console **Navigation Menu** (hamburger icon), click **Oracle Database**, and then select **Autonomous Transaction Processing**.
 
-	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
+	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/common/images/console/database-atp.png " ")
 
 2.  From the list of databases, select **SourceATP**.
 
