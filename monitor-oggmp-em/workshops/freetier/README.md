@@ -4,7 +4,7 @@ This workshop contains a LiveLab, which describes how to open the Oracle GoldenG
 
 ## Access the Labs Using Our Web Interface
 
-**[Click here](https://oracle.github.io/learning-library/data-management-library/goldengate/monitor-oggmp-em/workshops/freetier)** to use our easy to navigate HTML format.
+**[Click here](https://oracle-livelabs.github.io/goldengate/monitor-oggmp-em/workshops/freetier)** to use our easy to navigate HTML format.
 
 
 ## Access the Labs on the Repo

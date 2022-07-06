@@ -1,0 +1,51 @@
+{
+  "workshoptitle": "Oracle GoldenGate Microservices",
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Introduction to GoldenGate Microservices",
+      "filename": "../../intro/intro.md"
+    },
+    {
+    "title": "Get started with noVNC remote desktop",
+    "description": "Using noVNC Remote Desktop",
+    "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+  },
+  {
+    "title": "Lab 1: Initialize environment",
+    "description": "Initialize Environment",
+    "filename": "../../initial-setup/initial-setup.md"
+  },
+  {
+    "title": "Lab 2: Add database credentials",
+    "description": " Add Database Credentials",
+    "filename": "../../ogg-add-credentials/ogg-add-credentials.md"
+  },
+  {
+    "title": "Lab 3: Enable trandata, add Heartbeat and Checkpoint Tables",
+    "description": "Enable Trandata, Add Heartbeat and Checkpoint Tables",
+    "filename": "../../ogg-add-trandata-heartbeat-checkpoint/ogg-add-trandata-heartbeat-checkpoint.md"
+  },
+  {
+    "title": "Lab 4: Add Extract",
+    "description": "Add Extract",
+    "filename": "../../ogg-add-extract/ogg-add-extract.md"
+  },
+  {
+    "title": "Lab 5: Add Replicat",
+    "description": "Add Replicat",
+    "filename": "../../ogg-add-replicat/ogg-add-replicat.md"
+  },
+  {
+    "title": "Lab 6: Test the data replication process",
+    "description": "Test Data Replication",
+    "filename": "../../ogg-test-data-replication-process/ogg-test-data-replication-process.md"
+  },
+  {
+    "title": "Need Help?",
+    "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+    "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}
