@@ -5,7 +5,7 @@
     {
       "title": "Getting Started",
       "description": "Login to Oracle Cloud",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
     },
     {
       "title": "Introduction",
@@ -16,7 +16,7 @@
       "title": "Lab 1: Environment Setup (Verify Only) - Optional",
       "description": "Verify Setup of compute instance",
       "publisheddate": "09/30/2020",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
+      "filename": "https://oracle-livelabs.github.io/common/labs/verify-compute/verify-compute.md"
     },
     {
       "title": "Lab 2: Deploy GoldenGate for Big Data",
@@ -66,7 +66,7 @@
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }
