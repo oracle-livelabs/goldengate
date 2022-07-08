@@ -10,7 +10,7 @@ In this lab we will setup the initialize required databases and GoldenGate Servi
 
 ### Objectives
 In this lab you will:
-Understanding how to start and check the status of the Oracle Database,Kafka,Hadoop,Hbase,Cassandra and mongoDB.
+- Understanding how to start and check the status of the Oracle Database,Kafka,Hadoop,Hbase,Cassandra and mongoDB.
 
 ### Prerequisites
 This lab assumes you have:
