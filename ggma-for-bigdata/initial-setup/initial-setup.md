@@ -41,7 +41,7 @@ This lab assumes you have:
     if the output show  ***active (running)*** indicates Oracle Database is up and running,Kindly press ***Ctrl+c*** to exit from the output.
     ```
     <copy>
-    sudo systemctl status OracleGoldenGate hadoop kafka hbase zookeeper
+    sudo systemctl status OracleGoldenGate hadoop kafka hbase zookeeper 
     </copy>
     ```
     ![GoldenGate status](./images/goldengate-command-status.png " ") 
