@@ -1,6 +1,6 @@
 {
     "workshoptitle": "Getting Started with Oracle GoldenGate (MA) for Big Data",
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "help": "livelabs-help-license_us@oracle.com",
     "variables": ["../../variables/variables.json",
         "../../variables/variables-in-another-file.json"],
     "tutorials": [
