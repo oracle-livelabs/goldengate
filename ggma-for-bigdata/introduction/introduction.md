@@ -5,11 +5,13 @@ Oracle GoldenGate Microservices for Big Data  offers high-performance, fault-tol
 
 This hands-on lab is designed to demonstrate how  **Oracle GoldenGate Microservices Architecture** and  **Oracle GoldenGate (MA) for Big Data** can be used to setup a replication environment by a mix of web page, shell scripts and Rest API interfaces. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.The labs will walk the end-user through how to add all components of Oracle GoldenGate replication. 
 
+*Estimated Time*:  4 hours
+
 **Workshop  Microservices Architecture**
     ![Architecture](./images/architecture.png " ")
 
 ### Objectives
-In this workshop, you will learn how to:
+In this workshop, you will learn:
 - How to  replicate from  Oracle to Kafka.
 - How to  replicate from  Oracle to Hadoop cluster.
 - How to  replicate from  Oracle to HBase.
