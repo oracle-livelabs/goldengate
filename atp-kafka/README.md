@@ -1,4 +1,4 @@
-# Replicate data from Autonomous Transaction Processing to Apache Kafka
+# Replicate data from Autonomous Transaction Processing to OCI Streaming
 
 
 ## How to Prepare for This Workshop
@@ -7,11 +7,11 @@
 
 ## Introduction
 
-This workshop is walks you through the steps to set up and run a replication process from an Autonomous Transaction Processing instance to an Apache Kafka node.
+This workshop is walks you through the steps to set up and run a replication process from an Autonomous Transaction Processing instance to OCI Streaming.
 
 ## Workshop Details
 
-There are 5 hands-on labs in this workshop. You first need to set up your environment by provisioning a Virtual Cloud Network and Subnet, an Autonomous Transaction Processing database, and an Autonomous Data Warehouse. After reviewing the Prerequisites and Introduction, complete the labs in this order:
+There are 5 hands-on labs in this workshop. You first need to set up your environment by provisioning a Virtual Cloud Network and Subnet, an Autonomous Transaction Processing database, and an Apache Kafka node. After reviewing the Prerequisites and Introduction, complete the labs in this order:
 
 Lab  –   Set up the environment
 
