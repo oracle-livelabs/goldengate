@@ -41,15 +41,15 @@ We will complete the below tasks:
 
 1. Click the left-top hamburger icon, navigate to **Oracle Database** and choose **GoldenGate**. The page will list all available GoldenGate deployments. Click on **_`HOL_GG_Service`_**, this is what terraform has been created in the first lab.
 
-	![](/images/3.goldengate.png)
+	![](./images/3.goldengate.png)
 
 2. Then click on **Launch Console** button, this will open in a new tab.
 
-	![](/images/3.goldengate-0.png)
+	![](./images/3.goldengate-0.png)
 
 3. On the OCI GoldenGate Deployment Console sign-in page, please provide **_`oggadmin`_** in User Name and password is _**`CloudStars#123`**_ then sign in.
 
-	![](/images/3.goldengate-1.png)
+	![](./images/3.goldengate-1.png)
 
 	You successfully have signed in GoldenGate Deployment Console.
 
@@ -57,29 +57,29 @@ We will complete the below tasks:
 
 1.  You should see the empty Administration dashboard. Let's configure our source and target database for the extract and replication processes. Open the hamburger menu on the top-left corner, choose **Configuration**.
 
-	![](/images/3.goldengate-config.png)
+	![](./images/3.goldengate-config.png)
 
 2. You can see that our Source and Target databases have already been added here. It is because we did database registration in the first lab using Terraform automation. Click on **Connect to database. source12** icon in the Action column.
 
-	![](/images/3.goldengate-config-source.png)
+	![](./images/3.goldengate-config-source.png)
 
 3. Scroll down to the **Checkpoint** and click on **+** icon, then provide **_`ggadmin.chkpt`_** and click **SUBMIT**.
 
-	![](/images/3.goldengate-config-source-0.png)
+	![](./images/3.goldengate-config-source-0.png)
 
 	The checkpoint table contains the data necessary for tracking the progress of capture process from source database's transactions.
 
 4. Now let's add trandata for HR schema, right below the checkpoint, find **TRANDATA Information**. Make sure you choose **Schema** option then click on the **+** icon. Enter **_`HR`_** in the **Schema Name**, then click submit to save. This will enable trandata for all objects in the HR schema.
 
-	![](/images/3.goldengate-config-source-trandata.png)
+	![](./images/3.goldengate-config-source-trandata.png)
 
 5. You will see the **Successfully added Trandata!** notification when you click on a bell icon located at the left-top corner.
 
-	![](/images/3.goldengate-config-source-trandata-notification.png)
+	![](./images/3.goldengate-config-source-trandata-notification.png)
 
 	However, you can verify it by your choice, enter **HR** in the search field and click on the search icon.
 
-	![](/images/3.goldengate-config-source-trandata-check.png)
+	![](./images/3.goldengate-config-source-trandata-check.png)
 
 	The result will verify that you have prepared seven tables for trandata instantiation in HR schema. These are necessary steps for the source database.
 
@@ -87,11 +87,11 @@ We will complete the below tasks:
 
 1.  It is time to configure the target database. Similar to **Step 2**, click on **Connect to database. target19** icon in the available databases.
 
-	![](/images/3.goldengate-config-target.png)
+	![](./images/3.goldengate-config-target.png)
 
 3. Scroll down to the **Checkpoint** and click on **+** icon, then provide **_`ggadmin.chkpt`_** and **SUBMIT**.
 
-	![](/images/3.goldengate-config-target-0.png)
+	![](./images/3.goldengate-config-target-0.png)
 
 	The checkpoint table contains the data necessary for tracking the progress of the Replicat as it applies transactions to the target system. Regardless of the Replicat that is being used, it is best practice to enable the checkpoint table for the target system.
 
@@ -101,19 +101,19 @@ We will complete the below tasks:
 
 1. This is the first and primary extract, or should I say continuous extract process to initiate change data capture. In the administration server, click the **+** icon for adding the extract.
 
-	![](/images/3.goldengate-ext-0.png)
+	![](./images/3.goldengate-ext-0.png)
 
 2. On the Add Extract page, select **Integrated Extract**, and then click Next.
 
-	![](/images/3.goldengate-ext-1.png)
+	![](./images/3.goldengate-ext-1.png)
 
 3. Please provide **_`extprim`_** as it is our primary extract in  **Process Name**, and **_`ex`_** in **Trail Name**, then click Next.
 
-	![](/images/3.goldengate-ext-2.png)
+	![](./images/3.goldengate-ext-2.png)
 
 4. Scroll down to **Source Database Credential**, then click on the **Credentials Domain** drop-down list and choose **OracleGoldenGate**. In the **Credential Alias**, choose **source12** from the drop-down list. Click **Next** button.
 
-	![](/images/3.goldengate-ext-3.png)
+	![](./images/3.goldengate-ext-3.png)
 
 5. OCI GoldenGate created a draft parameter file for your convenience. Add the below line after the last line of the existing draft parameter:
 
@@ -131,11 +131,11 @@ We will complete the below tasks:
 
 	Parameter file should be looking like the below image.
 
-	![](/images/3.goldengate-ext-4.png)
+	![](./images/3.goldengate-ext-4.png)
 
 6. Make sure everything is correct until this stage. Click **Create and Run** to start our extract.
 
-	![](/images/3.goldengate-ext-5.png)
+	![](./images/3.goldengate-ext-5.png)
 
 	> **NOTE:** You need to make sure [purge old trail files](https://docs.oracle.com/en/middleware/goldengate/core/21.3/ggmas/working-data-replications.html#GUID-41771EA7-8C7B-40D9-80EF-AF4DC0CA2FB5) in production scenario. The Purge Trail page works the same way as the Manager `PURGEOLDEXTRACTS` parameter in the Classic Architecture. It allows you to purge trail files when Oracle GoldenGate has finished processing them. Automating this task ensures that the trail files are periodically deleted to avoid excessive consumption of disk space.
 
@@ -163,22 +163,22 @@ We will complete the below tasks:
 
 3. Copy the SCN output! The below image shows the successful output. In this workshop, SCN is **1667664**. We will also use this in the last step.
 
-	![](/images/3.goldengate-ext-scn-1.png)
+	![](./images/3.goldengate-ext-scn-1.png)
 
 ## **Task 6**: Configure the Initial-Load Extract at the Source Database.
 
 1. Let's go back to the GoldenGate deployment console. In the administration server, click the **+** icon for adding the extract. This is the second and initial-load extract, which will extract all rows in tables into a file.
 
-	![](/images/3.goldengate-ext-6.png)
+	![](./images/3.goldengate-ext-6.png)
 
 
 2. On the Add Extract page, select **Initial Load Extract**, and then click Next.
 
-	![](/images/3.goldengate-ext-7.png)
+	![](./images/3.goldengate-ext-7.png)
 
 3. In **Process Name**, please provide **_`initload`_** because this initial load extract, and then click Next.
 
-	![](/images/3.goldengate-ext-8.png)
+	![](./images/3.goldengate-ext-8.png)
 
 4. Open a notepad, and replace _xxxxxx_ in the below parameter with your SCN output:
 
@@ -192,15 +192,15 @@ We will complete the below tasks:
 
 5. Then modify the initload parameter file should be looking like the below image.
 
-	![](/images/3.goldengate-ext-9.png)
+	![](./images/3.goldengate-ext-9.png)
 
 6. Make sure everything is correct until this stage. Click **Create and Run** to start our extract.
 
-	![](/images/3.goldengate-ext-5.png)
+	![](./images/3.goldengate-ext-5.png)
 
 7. In the overview dashboard, you should see **initload** extract is stopped. Click on **Action** button, choose **Details**. Initial-load takes only a matter of seconds to finish sample 7 tables. You can see actual extract process details in the **Report** tab. Please refer to the below recording for your reference of this step.
 
-	![](/images/3.goldengate-initial-load-1.gif)
+	![](./images/3.goldengate-initial-load-1.gif)
 
 	_RECAP:_ So far, we have configured two extract processes. EXTPRIM is capturing change data and INITLOAD captured every row of the source seven tables. Now we need to create two replicat processes for these two extracts.
 
@@ -208,27 +208,27 @@ We will complete the below tasks:
 
 1. The process for initial load replication is simple and easy to configure. There are four types of Replicats supported by OCI GoldenGate. Go to the Replicat part and click on the **+** icon to create our replicat process on the overview page,
 
-	![](/images/3.goldengate-repload-0.png)
+	![](./images/3.goldengate-repload-0.png)
 
 2. We will choose **Non-Integrated Replicat** for initial load, click **Next**. In non-integrated mode, the Replicat process uses standard SQL to apply data directly to the target tables. In our case, the number of records in the source database is small and we don't need to run in parallel, therefore it will suffice.
 
-	![](/images/3.goldengate-repload-1.png)
+	![](./images/3.goldengate-repload-1.png)
 
 3. Provide a name for the replicat process, for example, **_`repload`_**, because this will be our initial-load replicat process.
 
-	![](/images/3.goldengate-repload-2-1.png)
+	![](./images/3.goldengate-repload-2-1.png)
 
 4. Scroll down to **Credentials Domain**, choose **OracleGoldenGate** from drop-down list. In the **Credential Alias**, choose **target19** from the drop-down list.
 
-	![](/images/3.goldengate-repload-2-2.png)
+	![](./images/3.goldengate-repload-2-2.png)
 
 5. Scroll below and find Trail Name, add _**ix**_ as trail name in the field. Because we configured trail file name to `ix` in the **initload** process's parameter, therefore it _**cannot**_ be just a random name.
 
-	![](/images/3.goldengate-repload-2-3.png)
+	![](./images/3.goldengate-repload-2-3.png)
 
 6. Choose a **Checkpoint Table** from the drop-down list. It is **GGADMIN.CHKPT** in our case. Review everything then click **Next**
 
-	![](/images/3.goldengate-repload-2-4.png)
+	![](./images/3.goldengate-repload-2-4.png)
 
 7. OCI GoldenGate created a draft parameter file, replace the below line from the existing draft parameter:
 
@@ -250,15 +250,15 @@ We will complete the below tasks:
 
 	Correct parameter file should be looking like the below image.
 
-	![](/images/3.goldengate-repload-3.png)
+	![](./images/3.goldengate-repload-3.png)
 
 8. Click **Create and Run** to start our replicat.
 
-	![](/images/3.goldengate-ext-5.png)
+	![](./images/3.goldengate-ext-5.png)
 
 9. Similar to the extract processes, go and see the detail of the **repload** process. In the statistics tab, you will see how many rows were inserted by the repload process. You can also check more detailed information in the Report tab.
 
-	![](/images/3.goldengate-repload-report.png)
+	![](./images/3.goldengate-repload-report.png)
 
 ## **Task 8**: Run Update Statement at The Source Database.
 
@@ -282,33 +282,33 @@ We will complete the below tasks:
 
 	This statement updates a row in the countries table. Also, it must be captured by the **EXTPRIM** process. We now need to create the second replicat process to apply these captured changes at the source to the target database.
 
-	![](/images/3.goldengate-repcont-update.png)
+	![](./images/3.goldengate-repcont-update.png)
 
 ## **Task 9**: Configure The Continuous Replicat at The Target Database.
 
 1. Go to the Replicat part and click on the **+** icon to create our continuous replicat process on the overview page,
 
-	![](/images/3.goldengate-repcont-0.png)
+	![](./images/3.goldengate-repcont-0.png)
 
 2. We will choose **Non-Integrated Replicat** for initial load, click **Next**.
 
-	![](/images/3.goldengate-repcont-1.png)
+	![](./images/3.goldengate-repcont-1.png)
 
 3. Provide a name for the replicat process, for example, **_`REPCONT`_**, because this will be our continuous replication process.
 
-	![](/images/3.goldengate-repcont-2-1.png)
+	![](./images/3.goldengate-repcont-2-1.png)
 
 4. Scroll down to **Credentials Domain**, choose **OracleGoldenGate** from drop-down list. In the **Credential Alias**, choose **target19** from the drop-down list.
 
-	![](/images/3.goldengate-repcont-2-2.png)
+	![](./images/3.goldengate-repcont-2-2.png)
 
 5. Scroll below and find **Trail Name**, add _**ex**_ as trail name in the field. Because we defined this in the **EXTPRIM** process, so it _**cannot**_ be a random name.
 
-	![](/images/3.goldengate-repcont-2-3.png)
+	![](./images/3.goldengate-repcont-2-3.png)
 
 6. Choose a **Checkpoint Table** from the drop-down list. It is **GGADMIN.CHKPT** in our case. Review everything then click **Next**
 
-	![](/images/3.goldengate-repcont-2-4.png)
+	![](./images/3.goldengate-repcont-2-4.png)
 
 7. Again, replace the below line from the existing draft parameter:
 
@@ -330,25 +330,25 @@ We will complete the below tasks:
 
 	Correct parameter file should be looking like the below image.
 
-	![](/images/3.goldengate-repcont-3.png)
+	![](./images/3.goldengate-repcont-3.png)
 
 8. Now do not click run, just choose **Create**. Because we need to add **SCN** to start synchronization.
 
-	![](/images/3.goldengate-repcont-4.png)
+	![](./images/3.goldengate-repcont-4.png)
 
 9. From the replicats area, find **REPCONT** and click on **Action**. You need to select _**Start with Options**_ here. By doing this, you'd be able to provide **SCN** information. Because initial-load process extracted data as of **SCN** that we captured from database then populated our target database. Therefore, the **REPCONT** replicat should start after that point in time.  It will make sure the source and target are consistent.
 
-	![](/images/3.goldengate-repcont-5.png)
+	![](./images/3.goldengate-repcont-5.png)
 
 10. Choose **After CSN** from Start Point, and provide the SCN you retrieved in Step 6 into the **CSN**. In this workshop case, 1667664 was the SCN number I used for the initial-load replicat. As we explained, it makes sense to start our replication after this SCN number. Otherwise, there can be some duplicate records, which will cause the replicat process to abend! Now click **Start**
 
-	![](/images/3.goldengate-repcont-6.png)
+	![](./images/3.goldengate-repcont-6.png)
 
 	> **NOTE:** We captured System Change Number (SCN) from the source database, which increments whenever commit occurs. In GoldenGate terminology Commit Sequence Number (CSN) identifies a point in time when the transaction commits. Different naming, but same concept._
 
 11. You can open the **REPCONT** extract process and navigate to the statistics tab, where you will find if **REPCONT** applied the change data from the **EXTPRIM** replicat.
 
-	![](/images/3.goldengate-repcont-7.png)
+	![](./images/3.goldengate-repcont-7.png)
 
 	Congratulations! You have completed this workshop!
 
