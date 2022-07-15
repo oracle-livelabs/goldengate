@@ -47,7 +47,7 @@ In this workshop you will :
 - GoldenGate database registration: while our databases are being provisioned and configured, we will register them. Database registration is a critical part of GoldenGate deployment. There is no way to connect databases from GoldenGate deployment without active registered databases.
 - GoldenGate deployment: we will create a Microservices environment for an Autonomous Database that applies trails from source to target autonomous database.
 
-	![](/images/architecture.png)
+	![](./images/architecture.png)
 
 All of the above resources are going to be deployed in Oracle Cloud Infrastructure using Terraform. It is not necessary to have prior knowledge of Terraform scripting. All you need to do is follow every step exactly as described.
 
