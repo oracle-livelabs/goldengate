@@ -242,17 +242,17 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 5.  For Trail Name, enter `T1`.
 
-6.  For Target, select **Kakfa**.
+6.  For Target, select **OCI Streaming**.
 
-7.  For Available Aliases, select **TargetKafka**.
+7.  For Available Aliases, select **TargetStream**.
 
 8.  Click **Next**.
 
     ![Replicat Options](images/06-08-repoptions.png " ")
 
-9.  On the Parameter Files page, leave the default parameters, and then click **Next**.
+9.  On the Parameter Files page, replace `MAP *.*, TARGET *.*;`with `MAP SRC_OCIGGLL.*, TARGET *.*;`, and then click **Next**.
 
-10. On the Properties File page, locate `gg.handler.kafkahandler.topicMappingTemplate=`, and then add `FullyQualifiedTableName` to the end.
+10. On the Properties File page, locate `gg.handler.kafkahandler.topicMappingTemplate=<stream-name>`, replace `<stream-name>` with the name of your Stream.
 
 11. Click **Create and Run**. The yellow exclamation mark changes to a green check when the Replicat process starts successfully.
 

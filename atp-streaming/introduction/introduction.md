@@ -15,7 +15,7 @@ Oracle Cloud Infrastructure GoldenGate is a fully-managed service that uses Orac
 ### Prerequisites
 
 * Familiarity with Oracle GoldenGate is helpful, but not required
-* Familiarity with Oracle Cloud Infrastructure is helpful, but not required
+* Familiarity with Oracle Cloud Infrastructure and OCI Streaming is helpful, but not required
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 
 ## Learn more

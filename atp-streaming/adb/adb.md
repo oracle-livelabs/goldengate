@@ -8,9 +8,10 @@ Estimated time: 20 mins
 
 ### Objectives
 
--  Learn to provision a VCN and subnet
--  Learn how to provision, connect, and load data into an Autonomous Transaction Processing (ATP) instance
--  Learn to create an OCI Stream
+-  Provision a VCN and subnet
+-  Provision, connect, and load data into an Autonomous Transaction Processing (ATP) instance
+-  Create and download an Auth Token
+-  Create an OCI Stream
 
 ### Prerequisites
 
@@ -47,10 +48,7 @@ In this section, you will provision a VCN and subnet, an ATP instance, and load 
 
 You can click View VCN Details and see both a Public and Private subnet were created.
 
-## Task 2: Add an Ingres Rule for the Bootstrap server
-
-
-## Task 3: Create an ATP instance
+## Task 2: Create an ATP instance
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
@@ -85,7 +83,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 
-## Task 4: Load the ATP schema
+## Task 3: Load the ATP schema
 
 1.  Click the following link to download the database schema.
 
@@ -134,6 +132,20 @@ You can click View VCN Details and see both a Public and Private subnet were cre
     ```
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
+
+## Task 4: Create and download an Auth Token
+
+1.  In the Oracle Cloud console global header, click **Profile**, and then click **User Settings**.
+
+2.  Under **Resources**, click **Auth Tokens**.
+
+3.  Click **Generate Token**.
+
+4.  In the Generate Token dialog, enter a friendly description, and then click **Generate Token**.
+
+5.  Copy the auth token immediately to a secure location from where you can retrieve it later. You won't be able to retrieve it again from the Oracle Cloud console.
+
+6.  Close the dialog.
 
 ## Task 5: Create an OCI Stream
 

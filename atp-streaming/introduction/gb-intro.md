@@ -2,7 +2,7 @@
 
 ## About this workshop
 
-Oracle GoldenGate, the industry-leading data replication and integration software, is available as a fully-managed, cloud native service on Oracle Cloud Infrastructure. This workshop guides how to replicate data from Autonomous Transaction Processing to OCI Streaming using OCI GoldenGate.
+Oracle GoldenGate, the industry-leading data replication and integration software, is available as a fully-managed, cloud native service on Oracle Cloud Infrastructure (OCI). This workshop guides how to replicate data from Autonomous Transaction Processing to OCI Streaming using OCI GoldenGate.
 
 Estimated Time: 2 hours
 
@@ -15,7 +15,7 @@ Oracle Cloud Infrastructure GoldenGate is a fully-managed service that uses Orac
 ### Prerequisites
 
 * Familiarity with Oracle GoldenGate is helpful, but not required
-* Familiarity with Oracle Cloud Infrastructure is helpful, but not required
+* Familiarity with Oracle Cloud Infrastructure and OCI Streaming is helpful, but not required
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 
 ## Learn more

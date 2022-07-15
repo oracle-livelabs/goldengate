@@ -17,8 +17,9 @@ Connections capture source and target credential information. A connection also 
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
 * Create an OCI GoldenGate deployment for the Autonomous Database
-* Create an OCI GoldenGate deployment for Apache Kafka
-* Create connections for the source Autonomous Databases and target Apache Kafka node
+* Create an OCI GoldenGate deployment for OCI Streaming
+* Create a stream
+* Create connections for the source Autonomous Databases and target Stream
 * Assign connections to deployments
 
 
@@ -74,7 +75,7 @@ On your VCN details page, create an Ingress rule for port 9092 (or another port 
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-## Task 2: Create a deployment for Apache Kafka
+## Task 2: Create a deployment for OCI Streaming
 
 1.  On the Deployments page, click **Create Deployment**.
 
@@ -94,7 +95,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 8.  Click **Next**.
 
-9.  From the Select a technology dropdown, select **Oracle Database**.
+9.  From the Select a technology dropdown, select **Big Data**.
 
 10. For GoldenGate Instance Name, enter **BDinstance**.
 
@@ -182,29 +183,43 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     You can leave the SQL window open and continue with the next Task.
 
-## Task 5: Create a connection for Apache Kafka
+## Task 5: Create an OCI Stream
+
+1.  In the Oracle Cloud console, open the navigation menu and click **Analytics & AI**. Under **Messaging**, click **Streaming**.
+
+2.  Click **Create Stream**.
+
+3.  On the Create Stream page, enter a **Stream Name**.
+
+4.  Select a **Compartment**.
+
+5.  Select a **Stream Pool**, or create a new one, to contain your stream.
+
+6.  Click **Create**.
+
+## Task 6: Create a connection for OCI Streaming
 
 1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate.
 
 2.  Click **Connections** and then **Create Connection**.
 
-3.  In the Create Connection panel, enter **TargetKafka** for Name.
+3.  In the Create Connection panel, enter **TargetStream** for Name.
 
-4.  From the Type dropdown, select **Kafka**.
+4.  From the Type dropdown, select **OCI Streaming**.
 
 5.  Click **Next**.
 
-6.  For Connection Details, enter the Host and Port for the bootstrap server.
+6.  For Connection Details, select the Stream created in Task 5.
 
-7.  For Security Protocol, select
+7.  For Username, enter a username for the Stream. For example, `ggadmin`.
 
-8.  Click **Create**.
+8.  For Password, enter a password for the Stream user.
 
-    ![Target details](images/05-07-objstorageConnection.png)
+9.  Click **Create**.
 
-    The Connection becomes Active after a few minutes.
+The Connection becomes Active after a few minutes.
 
-## Task 6: Assign connections to deployments
+## Task 7: Assign connections to deployments
 
 After your deployments and connections become active, you can assign the connections to the appropriate deployments.
 
@@ -228,7 +243,7 @@ After your deployments and connections become active, you can assign the connect
 
     ![Deployment details breadcrumb](images/06-06-breadcrumb.png " ")
 
-7.  Repeat steps 2 to 6 to assign the TargetKafka connection to the BDDeployment.
+7.  Repeat steps 2 to 6 to assign the TargetStream connection to the BDDeployment.
 
     ![OBJDeployment details](images/06-07-bdconnection.png " ")
 
