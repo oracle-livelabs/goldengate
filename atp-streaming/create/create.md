@@ -132,7 +132,7 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
 8.  Enter a password for the `ggadmin` user in the Password field, and then click **Create**.
 
-    ![Source Database details](images/03-08-atpConnection.png)
+    ![Source Database details](images/03-08-atpconnection.png)
 
     The database registration becomes Active after a few minutes.
 
