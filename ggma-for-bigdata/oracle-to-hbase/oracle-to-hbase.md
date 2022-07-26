@@ -16,7 +16,7 @@ In this lab, we will load data in the Oracle Database schema ***‘SOE’*** sch
 ### Objectives
 In this lab you will:
 -  How to reset the GoldenGate configuration
--  How to create extract for source database and a path to distribute the trail to target deployment 
+-  How to create extract for source database and a path to distribute the trail to target deployment
 -  How to configure the GoldenGate for HBase as target
 -  How to validate of the GoldenGate configuration for HBase as target
 
@@ -54,20 +54,20 @@ This lab assumes you have:
 
     ```
     <copy>Gg.Rocks_99</copy>
-    ``` 
+    ```
 ![GGMA Login Page](./images/ggma-login-page.png " ")
 
 
 3. On welcome pages, a green tick with name ***EXTORA*** indicates extract is up and running on the  Administration Service console.
         ![GGMA Extract Status](./images/ggma-extract-status.png " ")
-4. Navigate to Distribution Service, to validate the path ***SRC2TGT*** 
+4. Navigate to Distribution Service, to validate the path ***SRC2TGT***
         ![GGMA Path Status](./images/ggma-path-status.png " ")
 
     ***Source deployment completed!***
 
 ## Task 3: GoldenGate Configuration  for HBase as Target
 
-1. To create a replicat,logon to Administration service of GoldenGate(MA) of Big Data from the below url with username as '***oggadmin***' and password as '***Gg.Rocks_99***' 
+1. To create a replicat,logon to Administration service of GoldenGate(MA) of Big Data from the below url with username as '***oggadmin***' and password as '***Gg.Rocks_99***'
 
     Click here : [http://localhost:22001/?root=account](http://localhost:22001/?root=account)
 
@@ -127,7 +127,7 @@ This lab assumes you have:
     </copy>
     ```
 ![Add Classpath](./images/add-classpath.png " ")
-    
+
 10. Replicat ***REPHBASE*** created successfully
 
     ![Replicat REPHBASE status](./images/replicat-status.png " ")
@@ -169,7 +169,7 @@ On right side terminal, enter ***hbaseselect*** will  display the row counts of 
     oraselect
     </copy>
     ```
-    
+
 
     On the right side terminal, enter ***hbaseselect*** will  display the row counts of all the tables of HBase(target) database.
 
@@ -186,7 +186,7 @@ On right side terminal, enter ***hbaseselect*** will  display the row counts of 
 
 To summarize, you loaded data in the Oracle Database schema ***‘SOE’*** schema of Pluggable database ***‘PDB’*** .The GG extract process ***‘EXTORA’*** captured the changes from the Oracle Database and wrote them to the local trail file ***‘et’***. The Distrubution Service ***‘SRC2TGT’*** will route the trail file  ***‘et’*** to target GoldenGate(MA) for Big Data Receiver Service as ***‘rt’*** . The replicat process ***‘REPHBASE’*** read the remote trail files, replicated to target hbase database.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab..
 
 ## Learn More
 
@@ -195,5 +195,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
-* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka 
+* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka
 * **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022

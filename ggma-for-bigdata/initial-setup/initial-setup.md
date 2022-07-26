@@ -26,17 +26,17 @@ This lab assumes you have:
     - Oracle GoldenGate ServiceManager
     - Kafka cluster
     - hadoop single-node cluster
-    - Cassandra 
+    - Cassandra
     - mongoDB
 
     Open the terminal on the remote desktop and run the following for a clean start.
 
     ```
     <copy>
-    sudo systemctl status oracle-database 
+    sudo systemctl status oracle-database
     </copy>
     ```
-    ![Database status](./images/db-status.png " ") 
+    ![Database status](./images/db-status.png " ")
 
     if the output show  ***active (running)*** indicates Oracle Database is up and running,Kindly press ***Ctrl+c*** to exit from the output.
     ```
@@ -44,7 +44,7 @@ This lab assumes you have:
     sudo systemctl status OracleGoldenGate
     </copy>
     ```
-    ![GoldenGate status](./images/gg-status.png " ") 
+    ![GoldenGate status](./images/gg-status.png " ")
     if the output show  ***active (running)*** indicates OracleGoldenGate Services are up and running,Kindly press ***Ctrl+c*** to exit from the output.
      ```
     <copy>
@@ -53,13 +53,12 @@ This lab assumes you have:
 
     </copy>
     ```
-    ![Hadoop-status](./images/hadoop-status.png " ") 
+    ![Hadoop-status](./images/hadoop-status.png " ")
     if the output show  ***DataNode,NameNode,NodeManager,SecondaryNameNode,ResourceManager*** under jps indicates Hadoop single-node cluster is up and running.
 
-2. If you see questionable output(s), failure or down component(s), Please reach out to the workshop instructor.                                     
+2. If you see questionable output(s), failure or down component(s), Please reach out to the workshop instructor.
 
-You may now [proceed to the next lab](#next).
-
+You may now proceed to the next lab.
 
 
 ## Learn More

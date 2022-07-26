@@ -15,7 +15,7 @@ In this lab,we will load data in the Oracle Database schema ***‘SOE’*** sche
 ### Objectives
 In this lab you will:
 -  How to reset the GoldenGate configuration.
--  How to create extract for source database and a path to distribute the trail to target deployment. 
+-  How to create extract for source database and a path to distribute the trail to target deployment.
 -  How to configure the GoldenGate for HDFS as target.
 -  How to validate of the GoldenGate configuration for HDFS as target.
 
@@ -59,14 +59,14 @@ This lab assumes you have:
 
 3. On welcome pages, a green tick with name ***EXTORA*** indicates extract is up and running on the  Administration Service console.
         ![GGMA Extract Status](./images/ggma-extract-status.png " ")
-4. Navigate to Distribution Service, to validate the path ***SRC2TGT***. 
+4. Navigate to Distribution Service, to validate the path ***SRC2TGT***.
         ![GGMA Path Status](./images/ggma-path-status.png " ")
 
     ***Source deployment completed!***
 
 ## Task 3: GoldenGate Configuration  for HDFS as Target
 
-1. To create a replicat, logon to Administration Service of GoldenGate(MA) of Big Data from the below url with username as '***oggadmin***' and password as '***Gg.Rocks_99***'. 
+1. To create a replicat, logon to Administration Service of GoldenGate(MA) of Big Data from the below url with username as '***oggadmin***' and password as '***Gg.Rocks_99***'.
 
     Click here : [http://localhost:22001/?root=account](http://localhost:22001/?root=account)
 
@@ -97,7 +97,7 @@ This lab assumes you have:
     <copy>
     REPHDFS
     </copy>
-    ``` 
+    ```
     ![Replicat Name](./images/replicat-name.png " ")
 5.  Enter trail Name as '***rt***' , which is received from the source ***Oracle Database***.
 ![Trail Name](./images/trail-name.png " ")
@@ -113,18 +113,18 @@ This lab assumes you have:
     ```
     ![Add map condition](./images/add-map-condition.png " ")
 
-8. Append **pathMappingTemplate** as "***/livelab***" 
-  
+8. Append **pathMappingTemplate** as "***/livelab***"
+
   **gg.eventhandler.name.pathMappingTemplate**, A string with resolvable keywords and constants used to dynamically generate the path in HDFS to write data files.
     ```
     <copy>
     /livelab
     </copy>
-    ``` 
+    ```
 ![Add PathMapping Template](./images/add-pathmappingtemplate.png " ")
 
-9. Update "**fileNameMappingTemplate**" as "***${fullyQualifiedTableName}_${groupName}_${currentTimestamp}.txt***. 
-  
+9. Update "**fileNameMappingTemplate**" as "***${fullyQualifiedTableName}_${groupName}_${currentTimestamp}.txt***.
+
     fileNameMappingTemplate, A string with resolvable keywords and constants used to dynamically generate the HDFS file name at runtime.
     ```
     <copy>
@@ -133,7 +133,7 @@ This lab assumes you have:
     ```
 ![Add Filename Mapping Template](./images/add-filenamemappingtemplate.png " ")
 10. Update the **gg.classpath** as follows below and click ***create and run*** to complete the replication creation wizard.
- 
+
  gg.classpath includes the HDFS client libraries.Ensure that the directory containing the HDFS core-site.xml file is in gg.classpath. This is so the core-site.xml file can be read at runtime and the connectivity information to HDFS can be resolved.
     ```
     <copy>
@@ -167,7 +167,7 @@ This lab assumes you have:
     ![Source and Target count](./images/source-and-target-count.png " ")
 
 
-2. Enter ***loaddml*** on any one of the terminals to load the data to Oracle Database tables 
+2. Enter ***loaddml*** on any one of the terminals to load the data to Oracle Database tables
     ```
     <copy>
     loaddml
@@ -178,12 +178,12 @@ This lab assumes you have:
 3. To validate the GoldenGate replication,execute the below commands.
 
     On the left side terminal, enter ***oraselect*** will display the row counts of all the tables of the Oracle(Source) Database.
-    ``` 
+    ```
     <copy>
     oraselect
     </copy>
     ```
-    On the right side terminal, enter ***hdfs dfs -ls -t /livelab/***  will  list all the files in an Apache Hadoop (target). 
+    On the right side terminal, enter ***hdfs dfs -ls -t /livelab/***  will  list all the files in an Apache Hadoop (target).
     ```
     <copy>
     hdfs dfs -ls -t /livelab/
@@ -198,7 +198,7 @@ This lab assumes you have:
 ## Summary
 To summarize, you loaded data in the Oracle Database ***`‘SOE’`*** schema of Pluggable Database ***`‘PDB’`*** .The GG extract process ***`‘EXTORA’`*** captured the changes from the Oracle Database and wrote them to the local trail file ***`‘et’`***. The Distrubution Service ***`‘SRC2TGT’`*** will route the trail file  ***`‘et’`*** to target GoldenGate(MA) for Big Data Receiver Service as ***`‘rt’`*** . The replicat process ***`‘REPHDFS’`*** read the remote trail files, replicated to target hadoop file system ***`‘/livelab’`***.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab..
 
 ## Learn More
 
@@ -207,5 +207,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
-* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka 
+* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka
 * **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022

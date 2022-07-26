@@ -13,7 +13,7 @@ In this lab,we will load data in the Oracle Database schema ***‘SOE’*** sche
 ### Objectives
 In this lab you will:
 -  How to reset the GoldenGate configuration.
--  How to create extract for source database and a path to distribute the trail to target deployment. 
+-  How to create extract for source database and a path to distribute the trail to target deployment.
 -  How to configure the GoldenGate for Kafka as target.
 -  How to validate of the GoldenGate configuration for Kafka as target.
 
@@ -57,13 +57,13 @@ This Workshop assumes you have:
 
 3. On welcome pages, a green tick with name ***EXTORA*** indicates extract is up and running on the  Administration Service console.
         ![GGMA Extract Status](./images/ggma-extract-status.png " ")
-4. Navigate to Distribution Service, to validate the path ***SRC2TGT***. 
+4. Navigate to Distribution Service, to validate the path ***SRC2TGT***.
         ![GGMA Path Status](./images/ggma-path-status.png " ")
 
     ***Source deployment completed!***
 ## Task 3: GoldenGate Configuration for Kafka as Target
 
-1. To create a replicat,logon to Administration service of GoldenGate(MA) of Big Data from the below url with username as '***oggadmin***' and password as '***Gg.Rocks_99***' 
+1. To create a replicat,logon to Administration service of GoldenGate(MA) of Big Data from the below url with username as '***oggadmin***' and password as '***Gg.Rocks_99***'
 
     Click here : [http://localhost:22001/?root=account](http://localhost:22001/?root=account)
 
@@ -121,7 +121,7 @@ This Workshop assumes you have:
 8. On **Properties File** tab, append location of the **Kafka Producer Configuration File** as ***`/u01/kafka/custom_kafka_producer.properties`***.
 
    The Kafka Handler provides functionality to resolve the topic name and the message key at runtime using a template configuration value. Templates allow you to configure static values and keywords. Keywords are used to dynamically resolve content at runtime and inject that resolved value into the resolved string.
-   
+
     ```
     <copy>
     /u01/kafka/custom_kafka_producer.properties
@@ -155,7 +155,7 @@ This Workshop assumes you have:
 
     ```
     <copy>
-    /u01/kafka/libs/* 
+    /u01/kafka/libs/*
 
     </copy>
     ```
@@ -201,25 +201,25 @@ This Workshop assumes you have:
     On the left side terminal, enter ***oraselect*** will display the row counts of all the tables of the Oracle(Source) Database.
 
 
-    ``` 
+    ```
     <copy>
     oraselect
     </copy>
     ```
 
 
-    On the right side terminal, enter ***listtopic*** will  list all the topics in an Apache Kafka (target) and  run the console consumer client to read the events,which are replicated from GoldenGate (MA) for Big Data. 
+    On the right side terminal, enter ***listtopic*** will  list all the topics in an Apache Kafka (target) and  run the console consumer client to read the events,which are replicated from GoldenGate (MA) for Big Data.
 
     ```
     <copy>
     listtopic
     </copy>
     ```
-    
+
      ![List table count and topic count after data load](./images/list-table-count-and-topic-count-after-data-load.png " ")   
-    
+
  4. Execute below command to consume messages from an Apache Kafka Topic.
-    
+
     ```
     <copy>
     consumetopic <topic_name>
@@ -242,7 +242,7 @@ This Workshop assumes you have:
 ## Summary
 To summarize, you loaded data in the Oracle database ***`‘SOE’`*** schema of Pluggable database ***`‘PDB’`*** .The GG extract process ***`‘EXTORA’`*** captured the changes from the Oracle database and wrote them to the local trail file ***`‘et’`***. The Distrubution Service ***`‘SRC2TGT’`*** will route the trail file  ***`‘et’`*** to target GoldenGate(MA) for Big Data Receiver Service as ***`‘rt’`*** . The replicat process ***`‘REPKAFKA’`*** read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab..
 
 ## Learn More
 
@@ -251,5 +251,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
-* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka 
+* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka
 * **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022

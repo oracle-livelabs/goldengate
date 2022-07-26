@@ -66,7 +66,7 @@ This lab assumes you have:
     </copy>
     ```
 	ex:
-	
+
 	 View statistics of  Replicat ***REPKAFKA***
 	```
     <copy>
@@ -88,12 +88,11 @@ This lab assumes you have:
 ## Summary
 To summarize, Admin Client is a command line utility (similar to the classic GGSCI utility). It uses the REST API published by the Microservices Servers to accomplish control and configuration tasks in an Oracle GoldenGate deployment.
 
-You may now [proceed to the Appendix](#next).
 ## Learn More
 
 * [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022
-* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka 
+* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka
 * **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022

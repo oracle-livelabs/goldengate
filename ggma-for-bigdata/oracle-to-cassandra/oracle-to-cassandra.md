@@ -15,7 +15,7 @@ In this lab, we will load data in the Oracle database ***`‘SOE’`*** schema o
 ### Objectives
 In this lab you will:
 -  How to reset the GoldenGate configuration.
--  How to create extract for source database and a path to distribute the trail to target deployment. 
+-  How to create extract for source database and a path to distribute the trail to target deployment.
 -  How to configure the GoldenGate for Cassandra as target.
 -  How to validate of the GoldenGate configuration for Cassandra as target.
 
@@ -54,22 +54,22 @@ This lab assumes you have:
 
     ```
     <copy>Gg.Rocks_99</copy>
-    ``` 
+    ```
 ![GGMA Login Page](./images/ggma-login-page.png " ")
 
 
 3. On welcome pages, a green tick with name ***EXTORA*** indicates extract is up and running on the  Administration Service console.
         ![GGMA Extract Status](./images/ggma-extract-status.png " ")
-4. Navigate to Distribution Service, to validate the path ***SRC2TGT***. 
+4. Navigate to Distribution Service, to validate the path ***SRC2TGT***.
         ![GGMA Path Status](./images/ggma-path-status.png " ")
 
     ***Source deployment completed!***
 
 ## Task 3: GoldenGate Configuration  for Cassandra as Target
-1. To create a replicat, logon to Administration Service of GoldenGate(MA) of Big Data from the below url with username as '***oggadmin***' and password as '***Gg.Rocks_99***'. 
+1. To create a replicat, logon to Administration Service of GoldenGate(MA) of Big Data from the below url with username as '***oggadmin***' and password as '***Gg.Rocks_99***'.
 
     Click here : [http://localhost:22001/?root=account](http://localhost:22001/?root=account)
-    
+
 
     ***username***
 
@@ -80,7 +80,7 @@ This lab assumes you have:
 
     ```
     <copy>Gg.Rocks_99</copy>
-    ``` 
+    ```
 
     ![GGBD Login Page](./images/ggbd-login-page.png " ")
 
@@ -104,7 +104,7 @@ This lab assumes you have:
 6.  Choose target as ***Cassandra*** from the top-down menu click **Next**.
 ![Choose target as Cassandra](./images/choose-target-as-cassandra.png " ")
 7. In the Parameter File text area, replace ***`MAP *.*, TARGET *.*; `*** with the following script:
-    
+
     ```
     <copy>
     MAP PDB.SOE.*, TARGET SOE.*;
@@ -126,7 +126,7 @@ This lab assumes you have:
 ## Task 4: Validation of the GoldenGate Configuration for Cassandra as Target
 
 1. Open a ***New Window*** on the terminal, and move the terminals side by side as shown below.
-    
+
 
     On the left side terminal, enter ***oraselect*** will display the row counts of all the tables of the Oracle(Source) Database.
     ```
@@ -167,7 +167,7 @@ This lab assumes you have:
 ## Summary
 In summary, you loaded data in the Oracle database ***`‘SOE’`*** schema of Pluggable database ***`‘PDB’`*** .The GG extract process ***`‘EXTORA’`*** captured the changes from the Oracle database and wrote them to the local trail file ***`‘et’`***. The Distrubution Service ***`‘SRC2TGT’`*** will route the trail file  ***`‘et’`*** to target GoldenGate(MA) for Big Data Receiver Service as ***`‘rt’`*** . The replicat process ***`‘REPCASS’`*** read the remote trail files, created the Cassandra tables and wrote the data to those tables.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab..
 
 ## Learn More
 
@@ -175,5 +175,5 @@ You may now [proceed to the next lab](#next).
 * [Using the Cassandra Handler ](https://docs.Oracle.com/en/middleware/goldengate/big-data/21.1/gadbd/using-cassandra-handler.html)
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
-* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka 
+* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka
 * **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022
