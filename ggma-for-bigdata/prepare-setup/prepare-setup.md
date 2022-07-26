@@ -15,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [gg4bd-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ru5jWEq0VvOHYY9_8aymLQIL3BEhh6J4rGUPtD_4Ir5_GW3bhLigYCgKe01qfhPi/n/natdsecurity/b/stack/o/gg4bd-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [ggmabd-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/u8HSg-H5DPgZ67itqzvf1jiM-xWw5-2Y55w63K-pmEspMVta-dk9NlCWOsbh3kQ5/n/natdsecurity/b/stack/o/ggmabd-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -27,8 +27,8 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
-| 8888           | Cloudera Hue                          |
-| 16000-16005    | GGSA Console (https)                  |
+| 80             | noVNC Remote Desktop (NGINX)          |
+| 6080           | noVNC Remote Desktop (Direct)         |
 
 
 1.  Go to *Networking >> Virtual Cloud Networks*
@@ -48,6 +48,6 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 
 ## Acknowledgements
 
-* **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Author** - Rene Fontcha, Oracle LiveLabs Platform Lead, NA Technology
+* **Contributors** - Kay Malcolm, Senior Director, Database Product Management
+* **Last Updated By/Date** - Rene Fontcha, Oracle LiveLabs Platform Lead, NA Technology, July 2022
