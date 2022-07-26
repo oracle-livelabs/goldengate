@@ -96,7 +96,7 @@ First, follow the steps below to register the source Oracle Autonomous Transacti
 
 9.  Enter the database's password in the Password field, and then click **Register**.
 
-    ![Source Database details](images/01-01-12-regSourceDB.png)
+    ![Source Database details](images/01-01-12-regsourcedb.png)
 
     The database registration becomes Active after a few minutes.
 
@@ -119,8 +119,6 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
     > **Note:** *If you're prompted to log in to Database Actions, use the source database admin credentials.*
 
 4.  Under **Administration**, click **Database Users**.
-
-    ![Database Actions](images/02-05.png " ")
 
 5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
@@ -168,7 +166,7 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
 7.  Enter the database's password in the Password field, and then click **Register**.
 
-    ![Target Database details](images/02-10-ggs-regDB-target.png)
+    ![Target Database details](images/02-10-ggs-regdb-target.png)
 
     The source and target databases appear in the list of Registered Databases. The database registration becomes Active after a few minutes.
 
