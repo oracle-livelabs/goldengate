@@ -9,7 +9,7 @@ In this lab,we will load data in the Oracle Database ***`‘SOE’`*** schema of
 *Estimated Time*:  30 minutes
 
 ### Objectives
-In this lab you will:
+In this lab you will learn:
 -  How to reset the GoldenGate configuration.
 -  How to create extract for source database and a path to distribute the trail to target deployment.
 -  How to configure the GoldenGate for MongoDB as target.

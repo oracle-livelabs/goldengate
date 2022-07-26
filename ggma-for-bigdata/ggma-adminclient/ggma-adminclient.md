@@ -10,7 +10,7 @@ This workshop will demonstrate how to connect to the Oracle GoldenGate Admin Cli
 ![Architecture](./images/architecture.jpg " ")
 
 ### Objectives
-In this lab you will:
+In this lab you will learn:
 -  How to connect to the Admin Client.
 -  How to run various commands.
 
