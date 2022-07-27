@@ -35,14 +35,14 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![Admin Client-cmd](./images/Admin Client-cmd.png " ")
+    ![Admin Client-cmd](./images/AdminClient-cmd.png " ")
 2.  Connect to the GoldenGate deployment of the target deployment:
     ```
     <copy>
     connect http://localhost:22001 deployment bigdata as oggadmin password Gg.Rocks_99!
     </copy>
     ```
-![Admin Client-login](./images/Admin Client-login.png " ")
+![Admin Client-login](./images/AdminClient-login.png " ")
 
 
 3. After connecting successfully, you can run any of the following commands:
@@ -95,5 +95,5 @@ To summarize, Admin Client is a command line utility (similar to the classic GGS
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022
-* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka 
+* **Contributors** - Madhu Kumar S, Brian Elliott, Deniz Sendil, Meghana Banka 
 * **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022

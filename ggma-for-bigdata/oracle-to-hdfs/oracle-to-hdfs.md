@@ -1,7 +1,7 @@
-#  Replicating data from Oracle Database to HDFS
+#  Replicate the data from Oracle Database to HDFS
 
 ## Introduction
-This lab will demonstrate how to  ***Replicate from Oracle Database to HDFS*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and Admin Client.
+This lab will demonstrate how to  ***Replicate the data from Oracle Database to HDFS*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and Admin Client.
 
 In this lab, we will load data in the Oracle Database schema ***SOE***  of Pluggable Database ***PDB***. GG extract process ***EXTORA*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, path ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate (MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPHDFS*** will read the remote trail files and replicates to target the Apache Hadoop file system ***/livelab***.
 

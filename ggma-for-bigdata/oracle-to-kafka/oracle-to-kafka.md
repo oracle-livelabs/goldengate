@@ -61,7 +61,7 @@ This Workshop assumes you have:
         ![GGMA Path Status](./images/ggma-path-status.png " ")
 
     ***Source deployment completed!***
-## Task 3: GoldenGate Configuration for Kafka as Target
+## Task 3: GoldenGate configuration for Kafka as target
 
 1. To create a replicat, sign into Administration service of GoldenGate (MA) of Big Data from the below URL with username as ***oggadmin*** and password as ***Gg.Rocks_99*** 
 
@@ -91,6 +91,7 @@ This Workshop assumes you have:
     ![Choose classic replicat](./images/choose-classic-replicat.png " ")
 
 4. On the Replicat Options wizard, enter the replicat process name as ***REPKAFKA***.
+
     Process Name ***REPKAFKA*** will be 8-character user-defined.
 
     ```
@@ -240,7 +241,7 @@ This Workshop assumes you have:
 
 
 ## Summary
-To summarize, you loaded data in the Oracle database ***SOE*** schema of Pluggable database ***PDB***. The GG extract process ***EXTORA*** captured the changes from the Oracle database and wrote them to the local trail file ***et***. From the Distribution Service, path ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate (MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPKAFKA*** will read the remote trail files***rt***, act as a producer, and write the messages to an auto-created topic for each table in the source database.
+To summarize, you loaded data in the Oracle database ***SOE*** schema of Pluggable database ***PDB***. The GG extract process ***EXTORA*** captured the changes from the Oracle database and wrote them to the local trail file ***et***. From the Distribution Service, path ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate (MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPKAFKA*** will read the remote trail files ***rt***, act as a producer, and write the messages to an auto-created topic for each table in the source database.
 
 You may now proceed to the next lab.
 

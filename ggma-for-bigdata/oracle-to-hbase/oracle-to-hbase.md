@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will demonstrate how to  ***Replicate from Oracle Database to Apache HBase*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
+This lab will demonstrate how to  ***Replicate the data from Oracle Database to Apache HBase*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
 
 In this lab, we will load data in the Oracle Database schema ***SOE***  of Pluggable Database ***PDB***. GG extract process ***EXTORA*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, path ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate (MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPHBASE*** will read the remote trail files and replicates to the target HBase database.
 
@@ -26,7 +26,7 @@ This lab assumes you have:
 - You have completed:
     - Lab: Initialize Environment
 
-## Task 1: GoldenGate Configuration Reset
+## Task 1: GoldenGate configuration reset
 
 1.  Open a terminal and type ***hbasereset*** to reset the lab.
 
@@ -36,7 +36,7 @@ This lab assumes you have:
     ![HBase reset](./images/hbasereset-1.png " ")
     ![HBase reset](./images/hbasereset-2.png " ")
 
-## Task 2: GoldenGate Configuration  for Oracle as Source
+## Task 2: GoldenGate configuration  for Oracle as source
 1.  Open  a terminal and type ***extract*** to create a extract ***EXTORA*** and a path ***SRC2TGT*** through cURL commands.
     ![Extract Path Creation](./images/extract.png " ")
     ![Extract Path Creation](./images/extract-path-creation.png " ")
@@ -65,7 +65,7 @@ This lab assumes you have:
 
     ***Source deployment completed!***
 
-## Task 3: GoldenGate Configuration  for HBase as Target
+## Task 3: GoldenGate configuration  for HBase as target
 
 1. To create a replicat, sign in to the Administration service of GoldenGate (MA) of Big Data from the below URL with username as ***oggadmin*** and password as ***Gg.Rocks_99*** 
 
@@ -116,7 +116,7 @@ This lab assumes you have:
     ```
 ![Add Mapping condition](./images/add-mapping-condition.png " ")
 
-8. On properties file tab, enter "**gg.handler.HBase.hBaseColumnFamilyName=**"  as ***cf***.
+8. On properties file tab, enter **gg.handler.HBase.hBaseColumnFamilyName=** as ***cf***.
 ![Specify HBaseColumnFamilyName](./images/specify-hbasecolumnfamilyname.png " ")
 
 9. Set the classpath to read the jar files of the HBase and click ***create and run*** to complete the replication creation wizard.
@@ -133,7 +133,7 @@ This lab assumes you have:
     ![Replicat REPHBASE status](./images/replicat-status.png " ")
 
     ***Target deployment completed!***
-## Task 4: Validation of the GoldenGate Configuration for HBase as Target
+## Task 4: Validation of the GoldenGate configuration for HBase as target
 
 1. Open a ***New Window*** on the terminal, and move the terminal side by side as shown below.
 

@@ -12,7 +12,7 @@ In this lab you will:
 
 ### Prerequisites
 This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- An Oracle Cloud account
 
 ## Task 1: Validate That Required Processes are Up and Running.
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
