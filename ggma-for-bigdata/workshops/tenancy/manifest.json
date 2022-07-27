@@ -18,11 +18,6 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
 		
-    {
-      "title": "Get Started with noVNC Remote Desktop",
-      "description": "Using noVNC Remote Desktop",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
-    },
        {
       "title": "Lab 1: Initialize Environment",
       "description": "GG Initial Setup",

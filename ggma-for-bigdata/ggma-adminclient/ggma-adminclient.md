@@ -1,4 +1,4 @@
-# GGMA Adminclient
+# GGMA Admin Client
 
 ## Introduction
 This workshop will demonstrate how to connect to the Oracle GoldenGate Admin Client and use it to view all running processes, Extract statistics, log messages, and purge unused files.
@@ -17,32 +17,32 @@ In this lab you will learn:
 
 ### Prerequisites
 This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- An Oracle Cloud account
 - You have completed:
     - Lab: Initialize Environment
     - Please execute any one of the lab (2-7)
 
-## Task 1: Login to Adminclient
+## Task 1: Login to Admin Client
 
 1. Open  a terminal, Change directories to ***/u01/gghome/bin/***, and then start the Admin Client:
-    Navigate to GGMA Adminclient folder:
+    Navigate to GGMA Admin Client folder:
 
     ```
     <copy>
    cd /u01/gghome/bin/
-    ./adminclient
+    ./Admin Client
 
     </copy>
     ```
 
-    ![adminclient-cmd](./images/adminclient-cmd.png " ")
+    ![Admin Client-cmd](./images/Admin Client-cmd.png " ")
 2.  Connect to the GoldenGate deployment of the target deployment:
     ```
     <copy>
     connect http://localhost:22001 deployment bigdata as oggadmin password Gg.Rocks_99!
     </copy>
     ```
-![adminclient-login](./images/adminclient-login.png " ")
+![Admin Client-login](./images/Admin Client-login.png " ")
 
 
 3. After connecting successfully, you can run any of the following commands:
