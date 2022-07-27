@@ -4,10 +4,10 @@
 
 This lab will demonstrate how to  ***Replicate from  Oracle to HBASE*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**.All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
 
-In this lab, we will load data in the Oracle Database schema ***‘SOE’*** schema of Pluggable database ***‘PDB’*** .The GG extract process ***‘EXTORA’*** captured the changes from the Oracle Database and wrote them to the local trail file ***‘et’***. The Distrubution Service ***‘SRC2TGT’*** will route the trail file  ***‘et’*** to target GoldenGate(MA) for Big Data Receiver Service as ***‘rt’*** . The replicat process ***‘REPHBASE’*** read the remote trail files, replicated to target hbase database .
+In this lab, we will load data in the Oracle Database schema ***SOE***  of Pluggable Database ***PDB***. GG extract process ***EXTORA*** will capture the changes from Oracle Database and write them to the local trail file ***et***. The Distribution Service ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate(MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPHBASE*** will read the remote trail files and replicates to the target HBase database.
 
 
-*Estimated Time*:  30 minutes
+Estimated Time: 30 minutes
 
 #### Lab Architecture
 
@@ -184,9 +184,9 @@ On right side terminal, enter ***hbaseselect*** will  display the row counts of 
 
 ## Summary
 
-To summarize, you loaded data in the Oracle Database schema ***‘SOE’*** schema of Pluggable database ***‘PDB’*** .The GG extract process ***‘EXTORA’*** captured the changes from the Oracle Database and wrote them to the local trail file ***‘et’***. The Distrubution Service ***‘SRC2TGT’*** will route the trail file  ***‘et’*** to target GoldenGate(MA) for Big Data Receiver Service as ***‘rt’*** . The replicat process ***‘REPHBASE’*** read the remote trail files, replicated to target hbase database.
+To summarize, you loaded data in the Oracle Database ***SOE*** schema of Pluggable Database ***PDB***. The GG extract process ***EXTORA*** captured the changes from the Oracle Database and wrote them to the local trail file ***et***. The Distribution Service ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate(MA) for Big Data Receiver Service as ***rt***. The replicat process ***‘REPHBASE’*** will read the remote trail files and replicates to target HBase database.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 
@@ -196,4 +196,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
 * **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka 
-* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022
+* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, August 2022

@@ -3,7 +3,7 @@
 ## Introduction
 This workshop will demonstrate how to connect to the Oracle GoldenGate Admin Client and use it to view all running processes, Extract statistics, log messages, and purge unused files.
 
-*Estimated Time*: 5 minutes
+Estimated Time: 5 minutes
 
 #### Lab Architecture
 
@@ -35,14 +35,14 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![Alt adminclient-cmd](./images/adminclient-cmd.png " ")
+    ![adminclient-cmd](./images/adminclient-cmd.png " ")
 2.  Connect to the GoldenGate deployment of the target deployment:
     ```
     <copy>
     connect http://localhost:22001 deployment bigdata as oggadmin password Gg.Rocks_99!
     </copy>
     ```
-![Alt adminclient-login](./images/adminclient-login.png " ")
+![adminclient-login](./images/adminclient-login.png " ")
 
 
 3. After connecting successfully, you can run any of the following commands:
@@ -88,7 +88,7 @@ This lab assumes you have:
 ## Summary
 To summarize, Admin Client is a command line utility (similar to the classic GGSCI utility). It uses the REST API published by the Microservices Servers to accomplish control and configuration tasks in an Oracle GoldenGate deployment.
 
-You may now [proceed to the Appendix](#next).
+
 ## Learn More
 
 * [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)

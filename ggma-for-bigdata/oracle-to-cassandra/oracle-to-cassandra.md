@@ -4,9 +4,9 @@
 
 This lab will demonstrate how to  ***Replicate from  Oracle to Cassandra*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**.All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
 
-In this lab, we will load data in the Oracle database ***`‘SOE’`*** schema of Pluggable database ***`‘PDB’`*** .The GG extract process ***`‘EXTORA’`*** captured the changes from the Oracle database and wrote them to the local trail file ***`‘et’`***. The Distrubution Service ***`‘SRC2TGT’`*** will route the trail file  ***`‘et’`*** to target GoldenGate(MA) for Big Data reciever Service as ***`‘rt’`*** . The replicat process ***`‘REPCASS’`*** read the remote trail files, created the Cassandra tables and wrote the data to those tables.
+In this lab, we will load data in the Oracle Database schema ***SOE***  of Pluggable Database ***PDB***. GG extract process ***EXTORA*** will capture the changes from Oracle Database and write them to the local trail file ***‘et’***. The Distribution Service ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate(MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPCASS*** read the remote trail files, created the Cassandra tables and wrote the data to those tables.
 
-*Estimated Time*:  30 minutes
+Estimated Time:  30 minutes
 
 #### Lab Architecture
 
@@ -146,7 +146,7 @@ This lab assumes you have:
     </copy>
     ```
     ![Load data to Oracle database](./images/load-data-to-oracle.png " ")
-![](./images/lab4_18.png " ")
+
 3. To validate the GoldenGate replication, execute the below commands.
 
     On the left side terminal, enter ***oraselect*** will display the row counts of all the tables of the Oracle(Source) Database.
@@ -165,9 +165,9 @@ This lab assumes you have:
 
 
 ## Summary
-In summary, you loaded data in the Oracle database ***`‘SOE’`*** schema of Pluggable database ***`‘PDB’`*** .The GG extract process ***`‘EXTORA’`*** captured the changes from the Oracle database and wrote them to the local trail file ***`‘et’`***. The Distrubution Service ***`‘SRC2TGT’`*** will route the trail file  ***`‘et’`*** to target GoldenGate(MA) for Big Data Receiver Service as ***`‘rt’`*** . The replicat process ***`‘REPCASS’`*** read the remote trail files, created the Cassandra tables and wrote the data to those tables.
+To summarize, you loaded data in the Oracle Database ***SOE*** schema of Pluggable Database ***PDB***. The GG extract process ***EXTORA*** captured the changes from the Oracle Database and wrote them to the local trail file ***et***. The Distribution Service ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate(MA) for Big Data Receiver Service as ***rt*** . The replicat process ***REPCASS*** will read the remote trail files, create the Cassandra tables, and write the data to Cassandra tables.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 
@@ -175,5 +175,5 @@ You may now [proceed to the next lab](#next).
 * [Using the Cassandra Handler ](https://docs.Oracle.com/en/middleware/goldengate/big-data/21.1/gadbd/using-cassandra-handler.html)
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
-* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka 
+* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka,Rene Fontcha  
 * **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022

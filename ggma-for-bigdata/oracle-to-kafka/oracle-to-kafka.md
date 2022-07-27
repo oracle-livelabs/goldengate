@@ -3,7 +3,7 @@
 ## Introduction
 This lab will demonstrate how to  ***Replicate from  Oracle to Kafka*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**.All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
 
-In this lab,we will load data in the Oracle Database schema ***‘SOE’*** schema of Pluggable database ***‘PDB’*** .The GG extract process ***‘EXTORA’*** captured the changes from the Oracle database and wrote them to the local trail file ***‘et’***. The Distrubution Service ***‘SRC2TGT’*** will route the trail file  ***‘et’*** to target GoldenGate(MA) for Big Data Receiver Service as ***‘rt’*** .The replicat process ***‘REPKAFKA’*** will read the remote trail files ***‘rt’***, act as a producer and write the messages to an auto- created topic for each table in the source database.
+In this lab, we will load data in the Oracle Database schema ***SOE***  of Pluggable Database ***PDB***. GG extract process ***EXTORA*** will capture the changes from Oracle Database and write them to the local trail file ***et***. The Distribution Service ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate(MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPKAFKA*** will read the remote trail files ***‘rt’***, act as a producer and write the messages to an auto-created topic for each table in the source database.
 
 *Estimated Time*: 30 minutes
 
@@ -161,7 +161,7 @@ This Workshop assumes you have:
     ```
     ![Add classpath](./images/add-classpath.png " ")
 12. The Replicat ***REPKAFKA*** creation is completed. Green check mark will show that Replicat ***REPKAFKA*** is up and running.
-    ![](./images/replicat-up-and-running.png " ")
+    ![Replication Completed](./images/replicat-up-and-running.png " ")
 
     ***Target deployment completed!***
 ## Task 4: Validation of the GoldenGate Configuration for Kafka as Target
@@ -240,9 +240,9 @@ This Workshop assumes you have:
 
 
 ## Summary
-To summarize, you loaded data in the Oracle database ***`‘SOE’`*** schema of Pluggable database ***`‘PDB’`*** .The GG extract process ***`‘EXTORA’`*** captured the changes from the Oracle database and wrote them to the local trail file ***`‘et’`***. The Distrubution Service ***`‘SRC2TGT’`*** will route the trail file  ***`‘et’`*** to target GoldenGate(MA) for Big Data Receiver Service as ***`‘rt’`*** . The replicat process ***`‘REPKAFKA’`*** read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
+To summarize, you loaded data in the Oracle database ***`‘SOE’`*** schema of Pluggable database ***`‘PDB’`*** .The GG extract process ***`‘EXTORA’`*** captured the changes from the Oracle database and wrote them to the local trail file ***`‘et’`***. The Distrubution Service ***`‘SRC2TGT’`*** will route the trail file  ***`‘et’`*** to target GoldenGate(MA) for Big Data Receiver Service as ***`‘rt’`*** . The replicat process ***`‘REPKAFKA’`*** will read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 
@@ -251,5 +251,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
-* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka 
-* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022
+* **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil,Meghana Banka,Rene Fontcha 
+* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, August 2022

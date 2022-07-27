@@ -1,20 +1,20 @@
 # Introduction
 
 ## About Oracle GoldenGate Microservices for Big Data
-Oracle GoldenGate Microservices for Big Data  offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments.  Oracle GoldenGate Microservices Architecture (MA) would    be configure and manage your data replication using an HTML user interface. The Oracle GoldenGate MA comprises the following components: Service Manager, Administration Server, Distribution Server, Receiver Server, Performance Metrics Server, and Admin Client. This workshop focuses on **GoldenGate Real Time Data Replication** demonstrating five scenarios that you can use (both on-premise and in the cloud) to capture real time data changes from your sources.
+Oracle GoldenGate Microservices for Big Data offers a high-performance, fault-tolerant, easy-to-use, and flexible real-time data streaming platform for big data environments. Oracle GoldenGate Microservices Architecture (MA) would configure and manage your data replication using an HTML user interface. The Oracle GoldenGate MA comprises the following components: Service Manager, Administration Server, Distribution Server, Receiver Server, Performance Metrics Server, and Admin Client.
 
-This hands-on lab is designed to demonstrate how  **Oracle GoldenGate Microservices Architecture** and  **Oracle GoldenGate (MA) for Big Data** can be used to setup a replication environment by a mix of web page, shell scripts and Rest API interfaces. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.The labs will walk the end-user through how to add all components of Oracle GoldenGate replication. 
+In this hands-on lab, we will load data in the Oracle Database schema ***SOE*** of Pluggable Database ***PDB***. GG extract process ***EXTORA*** will capture the changes from Oracle Database and write them to the local trail file ***et***. The Distribution Service ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate(MA) for Big Data Receiver Service as ***rt***. The replicat process read the remote trail files ***rt*** and replicates to desired target ***(Apache Kafka, Apache Hadoop, Apache HBase, Cassandra, and MongoDB)***.
 
-*Estimated Time*:  4 hours
+Estimated Workshop Time:  4 hours
 
 **Workshop  Microservices Architecture**
     ![Architecture](./images/architecture.png " ")
 
 ### Objectives
 In this workshop, you will learn:
-- How to  replicate from  Oracle to Kafka.
-- How to  replicate from  Oracle to Hadoop cluster.
-- How to  replicate from  Oracle to HBase.
+- How to  replicate from  Oracle to Apache Kafka.
+- How to  replicate from  Oracle to Apache Hadoop cluster.
+- How to  replicate from  Oracle to Apache HBase.
 - How to  replicate from  Oracle to Cassandra.
 - How to  replicate from  Oracle to MongoDB. 
 
@@ -23,9 +23,8 @@ In this workshop, you will learn:
 This lab assumes you have:
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 
-*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 
@@ -37,6 +36,6 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
 * **Contributors** - Madhu Kumar S, Brian Elliott,Deniz Sendil
-* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022
+* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, August 2022
 
 
