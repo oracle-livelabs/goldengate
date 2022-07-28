@@ -7,7 +7,7 @@
 
 ## Introduction
 
-This workshop is walks you through the steps to set up and run a replication process from an Autonomous Transaction Processing instance to OCI Streaming.
+This workshop is walks you through the steps to set up and run a replication process from an Autonomous Transaction Processing instance to Kafka.
 
 ## Workshop Details
 

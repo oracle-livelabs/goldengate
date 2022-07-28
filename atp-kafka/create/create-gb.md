@@ -8,7 +8,7 @@ Estimated time: 30 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate resources
 
-A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can create and manage processes such as Extracts and Replicats.
+A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. You can create different deployments types such as, Oracle Database, MySQL, or Big Data. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can create and manage processes such as Extracts and Replicats.
 
 Connections capture source and target credential information. A connection also enables networking between the Oracle Cloud Infrastructure (OCI) GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
 
@@ -32,17 +32,17 @@ On your VCN details page, create an Ingress rule for port 9092 (or another port 
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-    ![GoldenGate in Oracle Cloud navigation menu](images/database-goldengate.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
 2.  On the GoldenGate **Overview** page, click **Deployments**.
 
-    ![GoldenGate Overview page](images/01-02-ggs-overview.png " ")
+    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
 3.  You may need to select a compartment. Under List Scope, from the Comparment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
 
 4.  On the Deployments page, click **Create Deployment**.
 
-    ![Deployments page](images/01-04-create-deployment.png "")
+    ![Deployments page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-create-deployment.png "")
 
 5.  In the Create Deployment panel, enter **ATPDeployment** for Name.
 
@@ -56,7 +56,7 @@ On your VCN details page, create an Ingress rule for port 9092 (or another port 
 
 10. Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Completed Create GoldenGate Deployment fields](images/01-10-create-deployment-summary.png " ")
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-summary.png " ")
 
 11. Click **Next**.
 
@@ -70,7 +70,7 @@ On your VCN details page, create an Ingress rule for port 9092 (or another port 
 
 16. Click **Create**.
 
-    ![Completed GoldenGate details](images/01-16-create-deployment-summary.png " ")
+    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-summary.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
@@ -90,7 +90,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 7.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Completed Create GoldenGate Deployment fields](images/02-07-bigdata.png " ")
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-07-bigdata.png " ")
 
 8.  Click **Next**.
 
@@ -104,7 +104,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 13. Click **Create**.
 
-    ![Completed GoldenGate details](images/02-13-bigdata.png " ")
+    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-13-bigdata.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
@@ -114,15 +114,15 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the GoldenGate page.
 
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](images/03-01-breadcrumb.png " ")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-01-breadcrumb.png " ")
 
 2.  Click **Connections**.
 
-    ![Connections in GoldenGate menu](images/03-02-goldengatemenu.png " ")
+    ![Connections in GoldenGate menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-goldengatemenu.png " ")
 
 3.  Click **Create Connection**.
 
-    ![Connections page](images/03-03-connections.png " ")
+    ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-connections.png " ")
 
 4.  In the Create Connection panel, for Name, enter **SourceATP**.
 
@@ -134,7 +134,7 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
 8.  Enter a password for the `ggadmin` user in the Password field, and then click **Create**.
 
-    ![Source Database details](images/03-08-atpconnection.png)
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-08-atpconnection.png)
 
     The database registration becomes Active after a few minutes.
 
@@ -144,35 +144,35 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 1.  From the Oracle Cloud Console **Navigation Menu** (hamburger icon), click **Oracle Database**, and then select **Autonomous Transaction Processing**.
 
-	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
+	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/common/images/console/database-atp.png " ")
 
 2.  From the list of databases, select **SourceATP**.
 
-    ![Autonomous Transaction Processing page](images/02-02-sourceatp.png " ")
+    ![Autonomous Transaction Processing page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-02-sourceatp.png " ")
 
 3.  On the SourceATP Database Details page, click **Database Actions**.
 
-    ![SourceATP Database Details page](images/02-03-db-tools.png " ")
+    ![SourceATP Database Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-db-tools.png " ")
 
     > **Note:** *If you're prompted to log in to Database Actions, use the SourceATP admin credentials located in the Workshop Details.*
 
 4.  Under **Administration**, click **Database Users**.
 
-    ![Database Actions](images/sql-dbusers.png " ")
+    ![Database Actions](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/sql-dbusers.png " ")
 
 5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
-    ![Database users](images/02-06-locked.png)
+    ![Database users](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-locked.png)
 
 6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
 
-    ![Edit user](images/02-07-edit.png)
+    ![Edit user](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-07-edit.png)
 
     Note that the user icon changes from a padlock to a checkmark.
 
 7.  Open the navigation menu (hamburger icon), and then under **Development**, select **SQL**.
 
-    ![Open navigation menu](images/01-08-sql.png)
+    ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-08-sql.png)
 
 8.  Enter the following into the Worksheet, and then click **Run Statement**.
 
@@ -200,8 +200,6 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 8.  Click **Create**.
 
-    ![Target details](images/05-07-objstorageconnection.png)
-
     The Connection becomes Active after a few minutes.
 
 ## Task 6: Assign connections to deployments
@@ -214,19 +212,19 @@ After your deployments and connections become active, you can assign the connect
 
 3.  On the ATPDeployment details page, under Resources, click **Assigned connections**.
 
-    ![Deployment details page](images/06-03-assignedconnections.png " ")
+    ![Deployment details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-03-assignedconnections.png " ")
 
 4.  Under Assigned connections, click **Assign connection**.
 
-    ![Assigned connections](images/06-04-assignconnection.png " ")
+    ![Assigned connections](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-04-assignconnection.png " ")
 
 5.  In the Assign connection dialog, from the **Connection** dropdown, select **SourceATP**, and then click **Assign connection**.
 
-    ![Assign connection dialog](images/06-05-assignconnection.png " ")
+    ![Assign connection dialog](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-05-assignconnection.png " ")
 
 6.  Use the breadcrumb to return to the Deployments page.
 
-    ![Deployment details breadcrumb](images/06-06-breadcrumb.png " ")
+    ![Deployment details breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-06-breadcrumb.png " ")
 
 7.  Repeat steps 2 to 6 to assign the TargetKafka connection to the BDDeployment.
 
@@ -236,8 +234,10 @@ After your deployments and connections become active, you can assign the connect
 
 ## Learn More
 
-* [Managing Deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/deployments.html)
-* [Managing Connections](http://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service&id=ggs-create-connection)
+* [Create a deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/llyhq/index.html)
+* [Create a connection to Autonomous Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/tqrlh/index.html)
+* [Create a connection to Apache Kafka](https://docs.oracle.com/en/cloud/paas/goldengate-service/wkynw/index.html)
+* [Assign connections to a deployment](https://docs.oracle.com/en/cloud/paas/goldengate-service/qsqts/index.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
