@@ -248,7 +248,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
     ![Replicat Options](images/06-08-repoptions.png " ")
 
-9.  On the Parameter Files page, change `MAP *.*, TARGET *.*;` to `MAP employees.*, TARGET *.*;` and then click **Next**.
+9.  On the Parameter Files page, change `MAP *.*, TARGET *.*;` to `MAP SRC_OCIGGLL.*, TARGET *.*;` and then click **Next**.
 
 10. On the Properties File page, locate gg.eventhandler.oci.compartment, and then replace the placeholder with your compartment's OCID.
 
