@@ -37,7 +37,12 @@
             "filename": "../../extract/extract.md"
         },
         {
-            "title": "Lab 6: (Optional) Use the Admin Client view Extract statistics and log messages",
+            "title": "Lab 6: Monitor processes",
+            "description": "Verify all processes are running and sending data",
+            "filename": "../../monitor/monitor.md"
+        },
+        {
+            "title": "Lab 7: (Optional) Use the Admin Client view Extract statistics and log messages",
             "description": "Connect to the Marketplace Oracle GoldenGate Admin Client",
             "filename": "../../admin-client/admin-client.md"
         },
