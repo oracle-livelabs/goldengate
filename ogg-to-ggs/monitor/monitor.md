@@ -1,8 +1,8 @@
-# Monitor Extracts and Replicats
+# Monitor processes
 
 ## Introduction
 
-This lab walks you through the steps to monitor the Extract and Replicat processes created and run in the previous lab.
+This lab walks you through the steps to monitor the Extract and Replicat processes that were created and run in the previous lab.
 
 Estimated Lab Time: 2 minutes
 
@@ -20,13 +20,13 @@ In this lab, you will:
 
 In order to complete this lab, you should have completed the preceding lab and have both an Extract and Replicat running.
 
-## Task 1: Perform inserts to the source database
+## Task 1: Perform Inserts to the Source Database
 
-1.  Return to the Oracle Cloud console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
+1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
 
-2.  On the SourceATP Details page, click **Tools**, and then **Database Actions**.
+2.  On the Source ATP Details page, click **Tools**, and then **Database Actions**.
 
-3.  Use the SourceATP database credentials in the Workshop details to log in to Database Actions, and then click **SQL**.
+3.  Use the Source ATP database credentials in the Workshop details to log in to Database Actions, and then click **SQL**.
 
 4.  Enter the following inserts, and then click **Run Script**:
 
@@ -43,52 +43,51 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1009,'Washington D.C.',22,688002);</copy>
     ```
 
-5.  In the ATPDeployment deployment console, click the **Extract name (UAEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+5.  In the OCI GoldenGate Deployment Console, click the **Extract name (UAEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
-    ![Extract Process Information - Statistics](https://oracle-livelabs/goldengate/ggs-commong/monitor/images/04-17-ext-stats.png " ")
+    ![Extract Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/04-17-ext-stats.png " ")
 
-6.  On the BDDeployment Overview screen, click the **Replicat name (REP)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+6.  Go back to the Overview screen, click the **Replicat name (REP)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
-    ![Replicat Process Information - Statistics](https://oracle-livelabs/goldengate/ggs-commong/monitor/images/01-06-rep-statistics.png " ")
+    ![Replicat Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-06-rep-statistics.png " ")
+
+7.  In the Oracle GoldenGate Marketplace Distribution Server, verify the Distribution Path is running.
+
+    ![Distribution Server Overview page](images/04-00.png " ")
 
 ## Task 2: Using the Performance Metrics Server
 
 1.  In the GoldenGate deployment console, click **Performance Metrics Server**, and then click **EXT**.
 
-    ![Performance Metrics Service page - EXT highlighted](https://oracle-livelabs/goldengate/ggs-commong/monitor/images/05-01-perf-serv.png)
+    ![Performance Metrics Service page - EXT highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-01-perf-serv.png)
 
     > **Note:** *You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.*
 
 2.  Click **Database Statistics**.
 
-    ![Database Statistics page](https://oracle-livelabs/goldengate/ggs-commong/monitor/images/05-03-db-stats.png)
+    ![Database Statistics page](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-03-db-stats.png)
 
     Here, you can view the real time database statistics, such as Inserts, Updates, Deletes, and so on.
 
-4.  Repeat steps 1-3 in OBJDeployment to view a snapshot of the Replicat's (named **Rep** in our lab) Database Statistics.
+4.  Repeat steps 1-3 to view a snapshot of the Replicat's (named **Rep** in our lab) Database Statistics.
 
-## Task 3: Viewing GoldenGate metrics in the Oracle Cloud console
+## Task 3: Viewing GoldenGate Metrics in the Oracle Cloud Console
 
-1.  On the OCI GoldenGate Deployments page, select **ATPDeployment**.
+1.  On the OCI GoldenGate Deployments page, select **GGSDeployment**.
 
-2.  On the ATPDeployment details page, scroll down to the **Metrics** section.
+2.  On the GGSDeployment Details page, scroll down to the **Metrics** section.
 
-    ![Metrics on Deployment Details page](https://oracle-livelabs/goldengate/ggs-commong/monitor/images/05b-02-metrics.png)
+    ![Metrics on Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05b-02-metrics.png)
 
 3.  Review the **DeploymentInboundLag** and **DeploymentOutboundLag** charts.
 
 4.  Refresh your view after 5 minutes to see updated metrics.
 
-5.  You can repeat these steps for the OBJDeployment.
+In this lab, you learned to monitor performance in the OCI GoldenGate Deployment Console and in the OCI Console.
 
-In this lab, you learned to monitor performance in the OCI GoldenGate deployment console and in the Oracle Cloud console.
+## Learn More
 
-**Proceed to the next lab.**
-
-## Learn more
-
-* [Monitor performance in the Oracle Cloud console](https://docs.oracle.com/en/cloud/paas/goldengate-service/vddvk/index.html)
-* [Monitor performance in the deployment console](https://docs.oracle.com/en/cloud/paas/goldengate-service/alllr/index.html)
+* [Viewing Performance Metrics](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-A533E3ED-ADB9-42EE-A1FF-D3E6C5638DF3)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance

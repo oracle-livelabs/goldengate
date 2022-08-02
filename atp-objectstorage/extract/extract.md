@@ -36,17 +36,17 @@ On the Deployment Details page, you can:
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details page](images/01-03-deployment-details.png " ")
+    ![Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/01-03-deployment-details.png " ")
 
 ## Task 2: Launch the GoldenGate Deployment Console
 
 1. On the deployment details page, click **Launch Console**.
 
-    ![Launch Console](images/02-01-launchconsole.png " ")
+    ![Launch Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-01-launchconsole.png " ")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided in the previous lab (Task 1, Step 15), and then click **Sign In**.
 
-    ![GoldenGate Deployment Console](images/02-02-oggadmin.png " ")
+    ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin.png " ")
 
 After you log in, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
 
@@ -56,25 +56,25 @@ After you log in, you're brought to the GoldenGate deployment console home page.
 
 1.  Open the navigation menu and then click **Configuration**.
 
-    ![Administration Service navigation menu](images/03-01-nav-config.png " ")
+    ![Administration Service navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-01-nav-config.png " ")
 
 2.  Click **Connect to database SourceATP**.
 
-    ![Credentials list with Connect to database SourceATP highlighted](images/03-02-connect-source.png " ")
+    ![Credentials list with Connect to database SourceATP highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-02-connect-source.png " ")
 
 3.  Next to **TRANDATA Information** click **Add TRANDATA** (plus icon).
 
-    ![Add TRANDATA](images/03-03-trandata.png " ")
+    ![Add TRANDATA](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-03-trandata.png " ")
 
 4.  For **Schema Name**, enter `SRC_OCIGGLL`, and then click **Submit**.
 
-    ![Schema Name field populated with SRC_OCIGGLL](images/03-04-schema-name.png " ")
+    ![Schema Name field populated with SRC_OCIGGLL](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-04-schema-name.png " ")
 
 5.  To verify, click **Search TRANDATA**, and then enter `SRC_OCIGGLL` into the Search field and click **Search**.
 
-    ![Search icon highlighted](images/03-05-search.png " ")
+    ![Search icon highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-05-search.png " ")
 
-    ![SRC_OCIGGLL entered in search field and search results returned](images/03-05-trandata.png " ")
+    ![SRC_OCIGGLL entered in search field and search results returned](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-05-trandata.png " ")
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
@@ -82,27 +82,27 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 1.  On the GoldenGate Deployment Console Home page, click **Add Extract** (plus icon).
 
-    ![Click Add Extract](images/04-01-ggs-add-extract.png " ")
+    ![Click Add Extract](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-01-ggs-add-extract.png " ")
 
 2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
 
-    ![Add Extract page with Integrated Extract highlighted](images/04-02-int-extract.png " ")
+    ![Add Extract page with Integrated Extract highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-02-int-extract.png " ")
 
 3.  For **Process Name**, enter UAEXT.
 
 4.  For **Trail Name**, enter E1.
 
-    ![Add Extract - Basic Information](images/04-04-ggs-basic-info.png " ")
+    ![Add Extract - Basic Information](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-04-ggs-basic-info.png " ")
 
 5.  Under **Source Database Credential**, for **Credential Domain**, select **OracleGoldenGate**.
 
 6.  For **Credential Alias**, select the **SourceATP**.
 
-    ![Add Extract - Source Database Credential](images/04-06-ggs-src-db-credential.png " ")
+    ![Add Extract - Source Database Credential](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-06-ggs-src-db-credential.png " ")
 
 7.  Under Managed Options, enable **Critical to deployment health**.
 
-    ![Critical to deployment health highlighted](images/04-07-dephealth.png " ")
+    ![Critical to deployment health highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-07-dephealth.png " ")
 
 8.  Click **Next**.
 
@@ -112,17 +112,17 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
     <copy>table SRC_OCIGGLL.*;</copy>
     ```
 
-    ![Extract Parameter File](images/04-09-params.png " ")
+    ![Extract Parameter File](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-09-params.png " ")
 
 10. Click **Create**. You're returned to the OCI GoldenGate Deployment Console Home page.
 
 11. In the UAEXT **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
-    ![Start Extract](images/04-11-ggs-start-extract.png)
+    ![Start Extract](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-11-ggs-start-extract.png " ")
 
     The yellow exclamation point icon changes to a green checkmark.
 
-    ![Extract started](images/04-11-ggs-extract-started.png)
+    ![Extract started](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-11-ggs-extract-started.png " ")
 
 ## Task 5: Create a user on the target deployment
 
@@ -138,7 +138,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 5.  In the BDinstance deployment console, open the navigation menu, and then click **Administrator**.
 
-    ![BDinstance deployment console navigation menu](images/02-05-adminstrator.png " ")
+    ![BDinstance deployment console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-05-adminstrator.png " ")
 
 6.  On the Users page, click **Add New User** (plus icon).
 
@@ -150,7 +150,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 10. Click **Submit**.
 
-    ![Users page](images/02-10-newuser.png " ")
+    ![Users page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-10-newuser.png " ")
 
 ## Task 6: Create a credential on the source deployment for the dpuser
 
@@ -158,11 +158,11 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 1.  In the source ATPinstance deployment console, click **Administration Service**, open the navigation menu, and then select **Configuration**.  
 
-    ![Administration Service navigation menu](images/03-01-navmenu.png " ")
+    ![Administration Service navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-01-navmenu.png " ")
 
 2.  On the Credentials page, click Add Credential (plus icon).
 
-    ![Credentials page](images/03-02-addcredential.png " ")
+    ![Credentials page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-02-addcredential.png " ")
 
 3.  For Credential Domain, enter `ggs2objstore`.
 
@@ -174,7 +174,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 7.  Click **Submit**.
 
-    ![New credential](images/06-07-usercredentials.png " ")
+    ![New credential](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-07-usercredentials.png " ")
 
 ## Task 7: Add and run a Distribution Path in the source deployment console
 
@@ -184,7 +184,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 1.  In the source ATPinstance deployment console, click **Distribution Service**, and then click **Add Path** (plus icon).
 
-    ![Distribution Service Overview](images/03-01-addpath.png " ")
+    ![Distribution Service Overview](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-01-addpath.png " ")
 
 2.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, `GGStoObjStore`.
 
@@ -198,7 +198,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
     >**Note:** *You can copy the host from the browser address bar of target BDinstance deployment console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
 
-  ![Deployment details](images/04-07-depdetails.png " ")
+  ![Deployment details](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-07-depdetails.png " ")
 
 8.  For **Port Number**, enter 443.
 
@@ -208,9 +208,9 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 11. For **Target Alias**, enter the alias name you created in Oracle GoldenGate. For example, **ocinetwork**.
 
-    ![Distribution path options](images/04-11-distpath.png " ")
+    ![Distribution path options](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-11-distpath.png " ")
 
-12. Click **Create Create and Run**. The yellow exclamation mark icon becomes a green checkmark when the Distribution Path starts successfully.
+12. Click **Create and Run**. The yellow exclamation mark icon becomes a green checkmark when the Distribution Path starts successfully.
 
 ## Task 8: Verify Receiver Path creation
 
@@ -220,7 +220,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 1.  In the target BDinstance deployment console, click **Receiver Service**.
 
-    ![Target deployment console](images/05-01-bdinstance.png " ")
+    ![Target deployment console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/05-01-bdinstance.png " ")
 
 2.  On the Receiver Service Path page, verify that the graph shows the path you created in Task 4.
 
@@ -234,7 +234,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 3.  On the Add Replicat page, under Replicat Type, select **Classic Replicat**, and then click **Next**.
 
-    ![Add Replicat](images/06-03-replicattype.png " ")
+    ![Add Replicat](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-03-replicattype.png " ")
 
 4.  On the the Replicat Options page, enter a `REP` for Name.
 
@@ -248,7 +248,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
     ![Replicat Options](images/06-08-repoptions.png " ")
 
-9.  On the Parameter Files page, change `MAP *.*, TARGET *.*;` to `MAP employees.*, TARGET *.*;` and then click **Next**.
+9.  On the Parameter Files page, change `MAP *.*, TARGET *.*;` to `MAP SRC_OCIGGLL.*, TARGET *.*;` and then click **Next**.
 
 10. On the Properties File page, locate gg.eventhandler.oci.compartment, and then replace the placeholder with your compartment's OCID.
 
@@ -268,7 +268,14 @@ In this lab, you:
 
 **Proceed to the next lab**.
 
+## Learn More
+
+* [Explore the OCI GoldenGate deployment console](https://docs.oracle.com/en/cloud/paas/goldengate-service/jbkyg/index.html)
+* [Add an Extract for Oracle Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/index.html)
+* [Add a Distribution Path](https://docs.oracle.com/en/cloud/paas/goldengate-service/adpen/index.html)
+* [Add a Replicat for OCI Object Storage](https://docs.oracle.com/en/cloud/paas/goldengate-service/eepsp/index.html)
+
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Deniz Sendil, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, June 2022
+* **Last Updated By/Date** - Jenny Chan, July 2022
