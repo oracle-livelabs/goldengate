@@ -1,4 +1,4 @@
-# Create the Oracle Cloud Infrastructure GoldenGate Deployment
+# Create the Oracle Cloud Infrastructure GoldenGate resources
 
 ## Introduction
 
@@ -217,7 +217,7 @@ You can leave the source database SQL window open for use in a later lab.
 
 9.  Click **Create**.
 
-    ![Target details](images/05-07-objstorageconnection.png)
+    ![Target details](./images/05-07-objstorageconnection.png " ")
 
     The Connection becomes Active after a few minutes.
 

@@ -208,7 +208,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 9.  In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
 
-You can now proceed to the next lab.
+**Proceed to the next lab.**
 
 ## Acknowledgements
 

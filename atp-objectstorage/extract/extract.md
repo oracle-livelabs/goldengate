@@ -208,7 +208,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 11. For **Target Alias**, enter the alias name you created in Oracle GoldenGate. For example, **ocinetwork**.
 
-    ![Distribution path options](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-11-distpath.png " ")
+    ![Distribution path options](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-11-distpath.png " ")
 
 12. Click **Create and Run**. The yellow exclamation mark icon becomes a green checkmark when the Distribution Path starts successfully.
 
