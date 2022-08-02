@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure (OCI) and add it to the Oracle GoldenGate Service Manager.
+This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure (OCI) and add it to the Oracle GoldenGate Service Manager.  Adding the Oracle Cloud Infrastructure root certificate to Oracle GoldenGate creates a trusted TLS connection between OCI GoldenGate and Oracle GoldenGate.
 
 Estimated time: 10 minutes
 
@@ -33,31 +33,31 @@ The following instructions show you how to download the Root Certificate using a
 
 1.  Launch the OCI GoldenGate Deployment Console if you don't already have it open, and log in.
 
-2.  In your Chrome browser address bar, click the padlock icon, and then click **Connection is secure**.
+2.  In your Chrome browser address bar, click **View site information** (padlock icon), and then click **Connection is secure**.
 
-    ![](images/01-04-certificate.png " ")
+    ![Select Connection is secure from View site information menu in Chrome browser](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01-04-certificate.png " ")
 
 3.  Click **Certificate is valid**.
 
-    ![](images/01-03-certificate.png " ")
+    ![Select Certificate is valid from Connection is secure submenu in Chrome browser](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01-03-certificate.png " ")
 
 4.  In the Certificate window, click **Certification Path**, select **DigiCert Global Root G2**, and then click **View Certificate**.
 
-    ![](images/01-04-certificate-window.png " ")
+    ![Select DigiCert Global Root G2, then click View Certificate in Certification Path tab of Certificate dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01-04-certificate-window.png " ")
 
     Another Certificate window opens, displaying the details for the root DigiCert certificate.
 
-    ![](images/01-04-digicert.png " ")
+    ![Review Certificate Information in Certificate dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01-04-digicert.png " ")
 
 5.  Click **Details**, and then click **Copy to File**.
 
-    ![](images/01-05.png " ")
+    ![Click Copy to File in Details tab of Certificate dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01-05.png " ")
 
 6.  In the Certificate Export Wizard, click **Next**.
 
 7.  Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
 
-    ![](images/01-07.png " ")
+    ![Select Base 64 encoded X.509 and then click Next in Certificate Export Wizard](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01-07.png " ")
 
 8.  Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
 
@@ -71,63 +71,63 @@ The following instructions show you how to download the Root Certificate using a
 
 1.  Launch the OCI GoldenGate Deployment Console if you don't already have it open, and log in.
 
-2.  In your FireFox browser address bar, click the padlock icon, and then next to Connection Secure, click **Show connection details** (right arrow icon).
+2.  In your FireFox browser address bar, click **Verified by: DigiCert** (padlock icon), and then next to Connection Secure, click **Show connection details** (right arrow icon).
 
-    ![](images/01b-02.png " ")
+    ![Click Show connection details in Site information menu](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01b-02.png " ")
 
 3.  In the **Connection Security** dialog, click **More information**.
 
-    ![](images/01b-03.png " ")
+    ![Click More information in Connection Security menu](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01b-03.png " ")
 
 4.  In the **Page info** window, click **View Certificate**.
 
-    ![](images/01b-04.png " ")
+    ![Click View Certificate in Page Info dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01b-04.png " ")
 
 5.  On the **Certificate** page, click **DigiCert Global Root G2**.
 
 6.  Under the **Miscellaneous** section, for Download, click **PEM (cert)**, and save the PEM file to your local drive.
 
-    ![](images/01b-06.png " ")
+    ![Click PEM (cert) next to Download under the Miscellaneous section of the DigiCert Global Root G2 page](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01b-06.png " ")
 
 ## Task 2: Upload the certificate to the Oracle GoldenGate Marketplace Service Manager
 
 Here, you'll upload the certificate to the Marketplace or on-premises Oracle GoldenGate instance to create a trusted connection to OCI GoldenGate.
 
-1.  In the Oracle GoldenGate Marketplace Service Manager, open the navigation menu (hamburger icon), and then click **Certificate Management**.
+1.  In the Oracle GoldenGate Marketplace Service Manager, open the navigation menu, and then click **Certificate Management**.
 
-    ![](images/02-01-certmgmt.png " ")
+    ![Select Certificate Management from Oracle GoldenGate Service Manager navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/02-01-certmgmt.png " ")
 
 2.  On the Certificate Management page, click **Add CA Certificates** (plus icon).
 
-    ![](images/02-03-addcert.png)
+    ![Click Add CA Certificates on Certificate Management page](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/02-03-addcert.png)
 
 3.  In the Add CA Certificate dialog, enter a **Unique Name**.
 
-    ![](images/02-04-addcertdialog.png " ")
+    ![Enter a unique name in the Add CA Certificate dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/02-04-addcertdialog.png " ")
 
 4.  For **Certificate PEM**, if you downloaded the root certificate from Chrome, open it in a text editor, and then copy and paste the key into the **Enter** text area.
 
-    ![](images/02-05-entercert.png " ")
+    ![Example of entering a certificate into the Add CA Certificate dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/02-05-entercert.png " ")
 
 5.  If you downloaded the root certificate from FireFox, click **Upload**, and then click **Browse**. Locate and select the PEM file on your local machine, and then click **Upload**.
 
-    ![](images/02-06-uploadcert.png " ")
+    ![Example of uploading a certificate into the Add CA Certificate dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/02-06-uploadcert.png " ")
 
 6.  Click **Add**.  The certificate now appears in the Shared list.
 
-    ![](images/02-07-certlist.png " ")
+    ![New shared certificate added under CA Certificates](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/02-07-certlist.png " ")
 
 ## Task 3: Add a credential for Oracle GoldenGate to connect to OCI GoldenGate
 
-1.  In the OCI GoldenGate Deployment Console, use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
+1.  In the OCI GoldenGate Deployment Console, open the navigation menu and then click **Administrator**.
 
-    ![](images/03-01.png " ")
+    ![Click Administrator in the OCI Goldengate deployment console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/03-01.png " ")
 
 2.  Click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. For example, name the user **ggsnet** and assign the user the Operator role.
 
-    ![](images/03-02.png " ")
+    ![Click Add User](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/03-02.png " ")
 
-    ![](images/03-02b.png " ")
+    ![Add a ggsnet user with the Operator role](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/03-02b.png " ")
 
 3.  Switch to the Oracle GoldenGate Marketplace Administration Server, and use the Navigation menu to open the **Configuration** screen.
 
@@ -139,15 +139,15 @@ Here, you'll upload the certificate to the Marketplace or on-premises Oracle Gol
     * For **Password**, enter the password associated to the user entered for User ID.
     * For **Verify Password**, re-enter the password for verification purposes.
 
-    ![](images/03-04.png " ")
+    ![Add a Credential for ggsnet](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/03-04.png " ")
 
 5.  Click **Submit**. You should now have two credentials in the Marketplace Oracle GoldenGate instance, one to connect to OCI GoldenGate, and one for the source database.
 
-    ![](images/03-05.png " ")
+    ![The Credentials page displays the new credential](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/03-05.png " ")
 
-In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You may now **proceed to the next lab**.
+In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. **Proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, November 2021
+* **Last Updated By/Date** - Jenny Chan, July 2022
