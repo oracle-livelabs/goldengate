@@ -99,7 +99,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 7.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Completed Create GoldenGate Deployment fields](images/02-07-bigdata.png " ")
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-07-bigdata.png " ")
 
 8.  Click **Next**.
 
@@ -113,7 +113,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 13. Click **Create**.
 
-    ![Completed GoldenGate details](images/02-13-bigdata.png " ")
+    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-13-bigdata.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
@@ -217,7 +217,7 @@ You can leave the source database SQL window open for use in a later lab.
 
 9.  Click **Create**.
 
-    ![Target details](./images/05-07-objstorageconnection.png " ")
+  ![Target details](./images/05-07-objstorageconnection.png " ")
 
     The Connection becomes Active after a few minutes.
 
