@@ -145,7 +145,7 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-08-atpconnection.png)
 
-    The database registration becomes Active after a few minutes.
+    The connection becomes Active after a few minutes.
 
 ## Task 4: Unlock the GGADMIN user and enable supplemental logging for the source database
 
