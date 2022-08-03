@@ -188,7 +188,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 2.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, `GGStoObjStore`.
 
-3.  For **Description**, describe the purpose of this Path.
+3.  (Optional) For **Description**, describe the purpose of this Path.
 
 4.  Click **Source**, and then select the Extract created in STEP 1 above. For example, select **UAEXT**.
 
@@ -200,7 +200,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
   ![Deployment details](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-07-depdetails.png " ")
 
-8.  For **Port Number**, enter 443.
+8.  For **Port Number**, enter `443`.
 
 9.  For **Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.
 
