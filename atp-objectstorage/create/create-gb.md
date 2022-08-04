@@ -213,7 +213,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 9.  Click **Create**.
 
-  ![Target details](./images/05-07-objstorageconnection.png " ")
+    ![Target details](images/05-07-objstorageconnection.png " ")
 
     The Connection becomes Active after a few minutes.
 
