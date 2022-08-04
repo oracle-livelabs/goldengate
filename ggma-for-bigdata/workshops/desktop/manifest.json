@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Getting Started with Oracle GoldenGate (MA) for Big Data",
+  "workshoptitle": "Get Started with Oracle GoldenGate (MA) for Big Data",
   "help": "livelabs-help-license_us@oracle.com",
   "tutorials": [
     {
@@ -8,13 +8,13 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Get started",
+      "title": "Get Started with noVNC Remote Desktop",
       "description": "Using noVNC Remote Desktop",
       "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
       "title": "Lab 1: Initialize Environment",
-      "description": "GG Initial Setup",
+      "description": "This lab provides detailed guide to initialize the workshop environment",
       "filename": "../../initial-setup/initial-setup.md"
     },
     {
@@ -22,7 +22,7 @@
       "description": "GGBD Oracle-to-Kafka",
       "filename": "../../oracle-to-kafka/oracle-to-kafka.md"
     },
-        {
+    {
       "title": "Lab 3: Oracle to HDFS",
       "description": "GGBD Oracle-to-hdfs",
       "filename": "../../oracle-to-hdfs/oracle-to-hdfs.md"
@@ -31,7 +31,7 @@
       "title": "Lab 4: Oracle to HBase",
       "description": "GGBD Oracle-to-HBase",
       "filename": "../../oracle-to-hbase/oracle-to-hbase.md"
-    },  
+    },
     {
       "title": "Lab 5: Oracle to Cassandra",
       "description": "GGBD Oracle-to-Cassandra",
@@ -47,7 +47,6 @@
       "description": "GGMA Adminclient",
       "filename": "../../ggma-adminclient/ggma-adminclient.md"
     },
-    
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
