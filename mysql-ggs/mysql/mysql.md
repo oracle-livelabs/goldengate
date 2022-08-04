@@ -43,6 +43,8 @@ To successfully complete this lab, you need:
 
 5.  On the Credentials page, locate **SourceMySQL**, and then take note of its **Domain** and **Alias**.
 
+    ![Note the Domain and Alias of the SourceMySQL credential](images/01-05-credentials.png " ")
+
 6.  In the navigation menu, click **Overview**.
 
 7.  On the Overview page, click **Add Extract** (plus icon)
@@ -53,25 +55,23 @@ To successfully complete this lab, you need:
 
     ![Select Initial Load Extract for Extract type](images/01-08-extract-type.png " ")
 
-9.  On the Extract Options page, for **Process Name**, enter `ILEXT`.
+9.  On the Extract Options page, complete the fields as follows, and then click **Next**:
+    * For **Process Name**, enter `ILEXT`.
+    * For **Credential Domain**, select the domain from Step 5.
+    * For **Credential Alias**, select the alias from Step 5.
+    * For Trail Name, enter `I1`.
 
-10. For **Credential Domain**, select the domain from Step 5.
+    ![Inital Load Extract options](images/01-12-ilext.png " ")
 
-11. For **Credential Alias**, select the alias from Step 5.
-
-12. For Trail Name, enter `I1`.
-
-13. Click **Next**.
-
-14. On the Parameter File page, in the text area, add a new line and then add the following:
+13. On the Parameter File page, in the text area, replace `TABLE *.*` with the following:
 
     ```
     <copy>TABLE SRC_OCIGGLL.*;</copy>
     ```
 
-15. Click **Create and Run**.
+14. Click **Create and Run**. You return to the Administration Service Overview page where you can observe the ILEXT process starting. The ILEXT icon changes from a yellow question mark to a green checkmark if it starts successfully.
 
-You return to the Administration Service Overview page where you can observe the ILEXT process starting. The ILEXT icon changes from a yellow question mark to a green checkmark if it starts successfully.
+    ![Administration Service Overview page with Initial Load Extract](images/01-14-ext.png " ")
 
 ## Task 2: Create the Change Data Capture Extract
 

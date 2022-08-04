@@ -131,11 +131,13 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 5.  From the Type dropdown, select **OCI MySQL Database Service**.
 
+    ![Create a MySQL connection - General Information](images/03-05-mysql-conn.png " ")
+
 6.  Click **Next**.
 
 7.  Select the source MySQL Database system (SourceMySQL) from the Database system dropdown.
 
-8.  For Database name, enter `SRC_OCIGGLL`.
+8.  For Database name, enter `SourceMySQL`.
 
 9.  For Database username, enter `ggadmin`.
 
@@ -143,7 +145,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
     ![MySQL connection details](images/03-10-create-mysql-conn.png " ")
 
-The connection becomes Active after a few minutes.
+The connection becomes Active after a few minutes. Return to the Connections page.
 
 ## Task 4: Create a connection to the target Autonomous Data Warehouse
 
@@ -152,6 +154,8 @@ The connection becomes Active after a few minutes.
 2.  In the Create Connection panel, for **Name**, enter `TargetADW`.
 
 3.  From the **Type** dropdown, select **OCI Autonomous Database**.
+
+    ![Create ADW connection - General information](images/04-03-adw-conn.png " ")
 
 4.  Click **Next**.
 
@@ -169,7 +173,7 @@ The connection becomes Active after a few minutes.
 
 ## Task 5: Assign connections to deployments
 
-After your deployments and connections become active, you can assign the connections to the appropriate deployments.
+After your deployments and connections are active, you can assign the connections to the appropriate deployments.
 
 1.  In the GoldenGate menu, click **Deployments**.
 
@@ -181,15 +185,19 @@ After your deployments and connections become active, you can assign the connect
 
 4.  Under Assigned connections, click **Assign connection**.
 
-    ![Assigned connections](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-04-assignconnection.png " ")
+    ![Assigned connections](images/05-04-assignconnection.png " ")
 
 5.  In the Assign connection dialog, from the **Connection** dropdown, select **SourceMySQL**, and then click **Assign connection**.
 
-    ![Assign connection dialog](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-05-assignconnection.png " ")
+    ![Assign connection dialog](images/05-05-assign-connection.png " ")
+
+    The connection appears in the Assigned Connections list.
+
+    ![Assigned connections list](images/05-05-assigned-connections-b.png " ")
 
 6.  Use the breadcrumb to return to the Deployments page.
 
-    ![Deployment details breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-06-breadcrumb.png " ")
+    ![Deployment details breadcrumb](images/05-06-breadcrumb.png " ")
 
 7.  Repeat steps 2 to 6 to assign the **TargetADW** connection to the **ADWDeployment**.
 
