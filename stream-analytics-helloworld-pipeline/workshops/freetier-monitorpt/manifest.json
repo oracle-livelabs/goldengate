@@ -1,11 +1,11 @@
 {
-  "workshoptitle": "Monitor Public Transport using GoldenGate Stream Analytics",
+  "workshoptitle": "Monitor Public Transportation using GoldenGate Stream Analytics",
   "help": "livelabs-help-license_us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
       "description": "Introduction",
-      "filename": "../../introduction/introduction.md"
+      "filename": "../../intro-mt/intro-mt.md"
     },
     {
       "title": "Get Started",
@@ -31,9 +31,34 @@
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 4: Monitor Public Transport",
+      "title": "Lab 4: Create Artifacts for Your Stream Analytics Pipeline",
       "description": "How to create a basic pipeline using a File stream and add a Query Stage and a Filter to it,",
-      "filename": "../../ggsa-mt/ggsa-mt.md"
+      "filename": "../../ggsa-mt-create-arti/ggsa-mt-create-arti.md"
+    },
+    {
+      "title": "Lab 5: Build a Stream Analytics Pipeline",
+      "description": "How to create a basic pipeline using a File stream and add a Query Stage and a Filter to it,",
+      "filename": "../../ggsa-mt-build-pplne/ggsa-mt-build-pplne.md"
+    },
+    {
+      "title": "Lab 6: Add Business Rules to Your Stream Analytics Pipeline",
+      "description": "How to create a basic pipeline using a File stream and add a Query Stage and a Filter to it,",
+      "filename": "../../ggsa-mt-add-busrules/ggsa-mt-add-busrules.md"
+    },
+    {
+      "title": "Lab 7: Configure Graphical Views in your Stream Analytics Pipeline",
+      "description": "How to create a basic pipeline using a File stream and add a Query Stage and a Filter to it,",
+      "filename": "../../ggsa-mt-graphviews/ggsa-mt-graphviews.md"
+    },
+    {
+      "title": "Lab 8: Define a Target in your Stream Analytics Pipeline",
+      "description": "How to create a basic pipeline using a File stream and add a Query Stage and a Filter to it,",
+      "filename": "../../ggsa-mt-target/ggsa-mt-target.md"
+    },
+    {
+      "title": "Lab 8: Publish the Stream Analytics Pipeline",
+      "description": "How to create a basic pipeline using a File stream and add a Query Stage and a Filter to it,",
+      "filename": "../../ggsa-mt-pubpplne/ggsa-mt-pubpplne.md"
     },
     {
       "title": "Need Help?",
