@@ -11,7 +11,7 @@ Estimated time: 30 mins
 -  Provision a VCN and subnet
 -  Create a bastion
 -  Provision, connect, and load data into an OCI MySQL Database system
--  Provision, connect, load target schemas in to an Autonomous Data Warehouse (ADW) instance
+-  Provision, connect, load target schemas into an Autonomous Data Warehouse (ADW) instance
 
 ### Prerequisites
 
@@ -21,8 +21,6 @@ This lab assumes you have completed the following labs:
 > **Note:** *You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 
 In this section, you will provision a VCN and subnet, ATP and ADW instances, and load data to use with OCI GoldenGate.
-
-> **Note:** *This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
 
 ## Task 1: Create a VCN and subnet
 
@@ -66,7 +64,7 @@ You can click **View VCN Details** and see both a Public and Private subnet were
 
 6.  Select **Standalone**.
 
-7.  Under **Create Administrator credentials**, for Username, enter `admin`, and then enter a password for the ggadmin user. Take note of this password.
+7.  Under **Create Administrator credentials**, for Username, enter `admin`, and then enter a password for the admin user. Take note of this password.
 
 	![Example MySQL DB System options](images/02-07-create-dbsys-1.png " ")
 
@@ -159,7 +157,7 @@ You're returned to the DB Systems page where the MySQL DB System you created app
 
 4.  Close Cloud Shell.
 
-## Task 5: Create an ADW Instance
+## Task 5: Create an ADW instance
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 
@@ -169,7 +167,9 @@ You're returned to the DB Systems page where the MySQL DB System you created app
 
   ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-create-adb.png " ")
 
-3.  On the Create Autonomous Database page, select a **Compartment** from the dropdown. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**).
+3.  On the Create Autonomous Database page, select a **Compartment** from the dropdown.
+
+		>**Note:** *If running this workshop in a LiveLab sandbox environment, select the compartment associated to your username.*
 
 4.  Enter **TargetADW** for **Display Name** and **Database Name**.
 
@@ -185,9 +185,9 @@ You're returned to the DB Systems page where the MySQL DB System you created app
 
 9.  Click **Create Autonomous Database**.
 
-The Autonomous Data Warehouse instance appears in the list of databases. It becomes active in a few minutes.
+		The Autonomous Data Warehouse instance appears in the list of databases. It becomes active in a few minutes.
 
-## Task 6: Load the ADW schema
+## Task 6: Unlock the GGADMIN user and load the sample schema
 
 1.  After the instance becomes Active, select it to view its details and access tools.
 
@@ -195,33 +195,47 @@ The Autonomous Data Warehouse instance appears in the list of databases. It beco
 
 2.  Click **Database Actions**.
 
+	![Click Database Actions on autonomous database details page](images/05-11-dbactions.png " ")
+
 3.  If prompted, log in with the ADMIN user and password provided when you created the ADW instance.
 
-    ![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-login.png " ")
+  	![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-login.png " ")
 
-4.  From the Database Actions menu, under **Development**, select **SQL**.
+4.  On the Database Actions Launchpad, under **Administration**, click **Database Users**.
 
-    ![Database Actions page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-06-db-actions.png " ")
+	![Click Database Users](images/05-12-launchpad.png " ")
 
-5.  Download the sample database schema:
+5.  On the Database Users page, locate GGADMIN, and then select **Edit** from its ellipsis (three dots) menu.
+
+	![Select Edit from ggadmin's menu](images/05-13-ggadmin.png " ")
+
+6.  In the Edit User panel, deselect **Account is Locked**, enter the ggadmin password and confirm it, and then click **Apply Changes**.
+
+	![Unlock the ggadmin user in the Edit User panel](images/05-14-unlock.png " ")
+
+7.  From the Database Actions menu, under **Development**, select **SQL**.
+
+    ![Select SQL from Database Actions menu](images/06-07-sql.png " ")
+
+8.  Download the sample database schema:
 
 	[Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/Archive.zip)
 
-6.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
+9.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
 
     ![Paste script into SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
 
-7.  Click **Run Script**. The Script Output tab displays confirmation messages.
+10. Click **Run Script**. The Script Output tab displays confirmation messages.
 
-8.  Copy the SQL scripts from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
+11.  Copy the SQL scripts from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
 
     ![ADW schema scripts in SQL worksheet](./images/04-07-adw-schema.png " ")
 
-		>**Note:** *If you find that running the entire script does not create the tables, then try running each block of table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.*
+	>**Note:** *If you find that running the entire script does not create the tables, then try running each block of table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.*
 
-9.  Click **Run Script**. The Script Output tab displays confirmation messages.
+12.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
-10. In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
+13. In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
 
 **Proceed to the next lab.**
 

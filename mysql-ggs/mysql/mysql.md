@@ -25,7 +25,7 @@ To successfully complete this lab, you need:
 * The oggadmin password for the source MySQL OCI GoldenGate deployment (Lab 1, Task 1, Step 15)
 * The oggadmin password for the target ADW OCI GoldenGate deployment (Lab 1, Task 2, Step 11)
 
-## Task 1: Create the Initial Load Extract
+## Task 1: Create the Change Data Capture Extract
 
 1.  On the Deployments page, select the source MySQL deployment to view its details.
 
@@ -45,17 +45,57 @@ To successfully complete this lab, you need:
 
     ![Note the Domain and Alias of the SourceMySQL credential](images/01-05-credentials.png " ")
 
-6.  In the navigation menu, click **Overview**.
+6.  In the Action column for the SourceMySQL database, Click **Connect to database SourceMySQL** to test the connection.
+
+    ![Click Connect to database SourceMySQL](images/01-06-connect.png " ")
+
+    If the connection is successful, then Checkpoint and Heartbeat appear. If the connection is unsuccessful, return to the MySQL connection in the Oracle Cloud console to review the connection settings.
+
+    ![Checkpoint and Heartbeat options appear on the page](images/01-06-connection-success.png " ")
 
 7.  On the Overview page, click **Add Extract** (plus icon)
 
+8.  On the Add Extract page, for Extract type, select **Change Data Capture Extract**, and then click **Next**.
+
+    ![Select Initial Load Extract for Extract type](images/02-02-cdc.png " ")
+
+9.  On the Extract Options page, for **Process Name**, enter `CDCEXT`.
+
+10. For **Credential Domain**, select the domain from Task 1 Step 5.
+
+11. For **Credential Alias**, select the alias from Task 1 Step 5.
+
+12. For **Trail Name**, enter `C1`.
+
+13. Enable **Remote**.
+
+14. Click **Next**.
+
+15. On the Parameter File page, in the text area, confirm that `TRANLOGOPTIONS ALTLOGDEST REMOTE` appears in the parameter list, and then add the following:
+
+    ```
+    <copy>TABLE SRC_OCIGGLL.*;</copy>
+    ```
+
+    ![Verify Parameter File](images/02-09-remote-params.png " ")
+
+16. Click **Create and Run**. You return to the Administration Service Overview page where you can observe the CDCEXT process starting. The CDCEXT icon changes from a yellow question mark to a green checkmark if it starts successfully.
+
+![Administration Service Overview page with Initial Load Extract](images/01-14-ext.png " ")
+
+## Task 2: Create the Initial Load Extract
+
+1.  In the navigation menu, click **Overview**.
+
+2.  On the Overview page, click **Add Extract** (plus icon)
+
     ![Click Add Extract on Administration Service Overview page](images/01-07-add-extract.png " ")
 
-8.  On the Add Extract page, for Extract type, select **Initial Load Extract**, and then click **Next**.
+3.  On the Add Extract page, for Extract type, select **Initial Load Extract**, and then click **Next**.
 
     ![Select Initial Load Extract for Extract type](images/01-08-extract-type.png " ")
 
-9.  On the Extract Options page, complete the fields as follows, and then click **Next**:
+4.  On the Extract Options page, complete the fields as follows, and then click **Next**:
     * For **Process Name**, enter `ILEXT`.
     * For **Credential Domain**, select the domain from Step 5.
     * For **Credential Alias**, select the alias from Step 5.
@@ -63,47 +103,15 @@ To successfully complete this lab, you need:
 
     ![Inital Load Extract options](images/01-12-ilext.png " ")
 
-13. On the Parameter File page, in the text area, replace `TABLE *.*` with the following:
+5.  On the Parameter File page, in the text area, replace `TABLE *.*` with the following:
 
     ```
     <copy>TABLE SRC_OCIGGLL.*;</copy>
     ```
 
-14. Click **Create and Run**. You return to the Administration Service Overview page where you can observe the ILEXT process starting. The ILEXT icon changes from a yellow question mark to a green checkmark if it starts successfully.
+6.  Click **Create and Run**. You return to the Administration Service Overview page where you can observe the CDCEXT process starting. The ILEXT icon changes from a yellow question mark to a green checkmark if it starts successfully.
 
-    ![Administration Service Overview page with Initial Load Extract](images/01-14-ext.png " ")
-
-## Task 2: Create the Change Data Capture Extract
-
-1.  On the Overview page, click **Add Extract** (plus icon)
-
-2.  On the Add Extract page, for Extract type, select **Change Data Capture Extract**, and then click **Next**.
-
-    ![Select Initial Load Extract for Extract type](images/02-02-cdc.png " ")
-
-3.  On the Extract Options page, for **Process Name**, enter `CDCEXT`.
-
-4.  For **Credential Domain**, select the domain from Task 1 Step 5.
-
-5.  For **Credential Alias**, select the alias from Task 1 Step 5.
-
-6.  For **Trail Name**, enter `C1`.
-
-7.  Enable **Remote**.
-
-8.  Click **Next**.
-
-9.  On the Parameter File page, in the text area, confirm that `TRANLOGOPTIONS ALTLOGDEST REMOTE` appears in the parameter list, and then add the following:
-
-    ```
-    <copy>TABLE SRC_OCIGGLL.*;</copy>
-    ```
-
-10. Click **Create and Run**.
-
-You return to the Administration Service Overview page where you can observe the CDCEXT process starting. The CDCEXT icon changes from a yellow question mark to a green checkmark if it starts successfully.
-
-## Task 3: Create an OCI GoldenGate user
+## Task 3: Create an OCI GoldenGate user for the Distribution Paths
 In this task, you create a user in the target deployment for the Distribution Paths to use to send data.
 
 1.  In the Oracle Cloud console, on the **Deployments** page, select the target Autonomous Data Warehouse deployment to view its details.
@@ -124,7 +132,7 @@ In this task, you create a user in the target deployment for the Distribution Pa
 
 6.  Complete the fields as follows, and then click **Submit**:
     * For **Username**, enter `ggsnet`.
-    * For **Role**, select **Administartor**.
+    * For **Role**, select **Administrator**.
     * Enter a password for this user, and then enter it again for verification.
 
     ![Enter details for the ggsnet user](images/03-06-ggsnet.png " ")
@@ -133,7 +141,7 @@ In this task, you create a user in the target deployment for the Distribution Pa
 
 7.  In the source MySQL OCI GoldenGate deployment console, open the navigation menu and then click **Configuration**.
 
-8.  On the Credentials page, click **Add Credential**.
+8.  On the Credentials page, click **Add Credential** (plus icon).
 
 9.  Complete the fields as follows, and then click Submit:
     * For **Credential Domain**, enter `GGSNetwork`.
@@ -141,13 +149,25 @@ In this task, you create a user in the target deployment for the Distribution Pa
     * For **User ID**, enter `ggsnet`.
     * For **Password**, enter the password from Step 6.
 
+    ![Add new credential](images/03-09-credential.png " ")
+
     The credential appears in the Credentials list.
+
+10. Open Cloud Shell and run the following command to update the credential. Ensure that you replace the `<oci-username>`, `<password>`, `<source-deployment-console-url>`, and `<ggsnet-password>` variables accordingly:
+
+    ```
+    <copy>curl -u <oci-username>:<password> -H "Content-Type: application/json" -H "Accept: application/json" -X PUT https://<source-deployment-console-url>:443/services/v2/credentials/GGSNetwork/dpuser -d '{"userid":"ggsnet","password":"<ggsnet-password>"}'</copy>
+    ```
+
+    ![Run curl command in Cloud Shell](images/03-10-curl.png " ")
 
 ## Task 4: Create the Distribution Path for the Initial Load Extract
 
 1.  In the source MySQL OCI GoldenGate deployment console, click **Distribution Service**.
 
 2.  On the Distribution Service Overview page, click **Add Path** (plus icon).
+
+    ![Click Add Path on source deployment Distribution Service](images/04-01-add-path.png " ")
 
 3.  Complete the following fields, and then click **Create and Run**:
     * For **Path Name**, enter a name for this path. For example, `ILDP`.
@@ -156,20 +176,27 @@ In this task, you create a user in the target deployment for the Distribution Pa
     * For **Target Authentication Method**, select **UserID Alias**.
     * For **Target**, select **wss**.
     * For **Target Host**, enter the target ADW OCI GoldenGate deployment console URL, without the https:// or any trailing slashes. You can copy the console URL from the ADWDeployment details page.
+    ![Copy console URL from target deployment details page](images/04-03-console-url.png " ")
     * For **Port Number**, enter `443`.
     * For **Trail Name**, enter `I1`.
     * For **Domain**, enter the domain name from Task 3, Step 9. For example, `GGSNetwork`.
     * For **Alias**, enter the alias from Task 3, Step 9. For example, `dpuser`.
 
+    ![Initial Load distribution path options](images/04-03-path-opts.png " ")
+
     You return to the Distribution Service Overview page where you can review the path created.
 
-4.  In the target ADW OCI GoldenGate deployment console, click Receiver Service to review the Receiver Path created as a result of creating the `ILDP` Distribution Path.
+4.  In the target ADW OCI GoldenGate deployment console (**adw_instance**), click **Receiver Service** to review the Receiver Path created as a result of creating the `ILDP` Distribution Path.
+
+    ![Receiver path created on target ADW deployment](images/04-04-rcvr.png " ")
 
 ## Task 5: Create the Distribution Path for the Change Data Capture Extract
 
 1.  In the source MySQL OCI GoldenGate deployment console, click **Distribution Service**.
 
 2.  On the Distribution Service Overview page, click **Add Path** (plus icon).
+
+    ![Click Add Path in source deployment Distribution Service](images/05-02-add-path.png " ")
 
 3.  Complete the following fields, and then click **Create and Run**:
     * For **Path Name**, enter a name for this path. For example, `CDCDP`.
@@ -183,9 +210,15 @@ In this task, you create a user in the target deployment for the Distribution Pa
     * For **Domain**, enter the domain name from Task 3, Step 9. For example, `GGSNetwork`.
     * For **Alias**, enter the alias from Task 3, Step 9. For example, `dpuser`.
 
+    ![Change Data Capture distribution path options](images/05-0-path-opts.png " ")
+
     You return to the Distribution Service Overview page where you can review the path created.
 
+    ![Source MySQL deployment distribution paths](images/05-03-dist.png " ")
+
 4.  In the target ADW OCI GoldenGate deployment console, click Receiver Service to review the Receiver Path created as a result of creating the `CDCDP` Distribution Path.
+
+    ![Target ADW Receiver paths](images/05-04-rcvr.png " ")
 
 ## Learn more
 

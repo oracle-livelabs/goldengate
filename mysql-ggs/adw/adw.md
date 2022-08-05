@@ -23,25 +23,33 @@ This lab assumes you completed all preceding labs successfully.
 
 ## Task 1: Add a checkpoint table
 
-1.  In the target ADW OCI GoldenGate deployment console, click **Administration Server**.
+1.  In the target ADW OCI GoldenGate deployment console (**adw_instance**), click **Administration Server**.
 
 2.  Open the navigation menu, and then click **Configuration**.
 
-3.  For the TargetADW database, click **Connect to database**.
+    ![Click Configuration in Administration Service navigation menu](images/01-02-config.png " ")
 
-4.  For Checkpoints, click **Add Checkpoint** (plus icon).
+3.  For the TargetADW database, click **Connect to database TargetADW**.
 
-6.  For Checkpoint table, enter `SRCMIRROR_OCIGGLL.CHECKTABLE`, and then click **Submit**.
+    ![Connect to TargetADW](images/01-03-dbconnect.png " ")
 
-    >**NOTE:** *The screen will not refresh on submit. To verify the checkpoint table was added, enter the `SRCMIRROR_OCIGGLL.CHECKTABLE` into the search field and then click **Search**.*
+4.  For Checkpoint, click **Add Checkpoint** (plus icon).
+
+    ![Click Add Checkpoint](images/01-04-add-checkpoint.png " ")
+
+6.  For Checkpoint table, enter `SRCMIRROR_OCIGGLL.CHECKTABLE`, and then click **Submit**. The checkpoint table is added to the list.
 
 7.  In the navigation menu, click **Overview** to return to the Administration Service Overview page.
 
-## Task 1: Create a Replicat for Initial Load
+## Task 2: Create a Replicat for Initial Load
 
 1.  On the Administration Service Overview page, click **Add Replicat** (plus icon).
 
+    ![Click Add Replicat on Administration Service Overview page](images/02-01-add-replicat.png " ")
+
 2.  On the Add Replicat screen, for Replicat Type, select **Nonintegrated Replicat**, and then click **Next**.
+
+    ![Select Nonintegrated Replicat for Replicat type](images/02-02-replicat-type.png " ")
 
 3.  On the Replicat Options page, complete the fields as follows, and then click **Next**:
     * For **Process Name**, enter a name for this process. For example, `RIL`.
@@ -50,11 +58,15 @@ This lab assumes you completed all preceding labs successfully.
     * For **Trail Name**, enter the name of the trail from the previous lab, Task 4 (`I1`).
     * For **Checkpoint Table**, select the checkpoint table created in Task 1.
 
-4.  On the Parameter Files page, add the following mapping, and then click **Next**:
+    ![Replicat options](images/02-03-replicat-options.png " ")
+
+4.  On the Parameter Files page, replace `MAP *.*, TARGET *.*;` with the following mapping, and then click **Create and Run**:
 
     ```
     <copy>MAP SRC_OCIGGLL.*, TARGET SRCMIRROR_OCIGGLL.*;</copy>
     ```
+
+    ![Replicat Parameter File](images/02-04-params.png " ")
 
     You're returned to the Overview page where you can review the Replicat details.
 

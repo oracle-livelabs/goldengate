@@ -27,8 +27,6 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
 ## Task 1: Create a deployment for OCI MySQL Database
 
-In this task, you create an OCI GoldenGate deployments for OCI MySQL Database and Autonomous Data Warehouse.
-
 1.  Open the Oracle Cloud console navigation menu, click **Oracle Database**, and then click **GoldenGate**.
 
     ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
@@ -43,7 +41,7 @@ In this task, you create an OCI GoldenGate deployments for OCI MySQL Database an
 
 4.  On the Deployments page, click **Create Deployment**.
 
-    ![Deployments page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-create-deployment.png "")
+    ![Deployments page](images/01-04-create-deployment.png "")
 
 5.  In the Create Deployment panel, enter `MySQLDeployment` for **Name**.
 
@@ -137,7 +135,9 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 7.  Select the source MySQL Database system (SourceMySQL) from the Database system dropdown.
 
-8.  For Database name, enter `SourceMySQL`.
+8.  For Database name, enter `SRC_OCIGGLL`.
+
+    >**Note:** *If running this lab on your own tenancy using the sample scripts provided, this is the name of the database table created in the environment setup lab.*
 
 9.  For Database username, enter `ggadmin`.
 
