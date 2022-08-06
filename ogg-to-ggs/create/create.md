@@ -102,13 +102,13 @@ While the deployment is being created, you can register the source and target Au
 
 9.  Enter the database admin's password from the Workshop Details in the Password field, and then click **Register**.
 
-    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-01-12-regsourcedb.png)
+  ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-01-12-regsourcedb.png)
 
     The database registration becomes Active after a few minutes.
 
 10. Repeat steps 2 to 9 to register the TargetADW Autonomous Database.
 
-    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-10-ggs-regdb-target.png)
+  ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-10-ggs-regdb-target.png)
 
 ## Task 3: Unlock the GGADMIN user and add supplemental logging
 
