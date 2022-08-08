@@ -1,4 +1,4 @@
-#  Replicate the data from Oracle Database to HDFS
+#  Replicate data from Oracle Database to HDFS
 
 ## Introduction
 This lab will demonstrate how to  ***Replicate the data from Oracle Database to HDFS*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and Admin Client.

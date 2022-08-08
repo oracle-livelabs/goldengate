@@ -1,4 +1,4 @@
-# Replicate the data from Oracle Database to MongoDB
+# Replicate data from Oracle Database to MongoDB
 
 ## Introduction
 

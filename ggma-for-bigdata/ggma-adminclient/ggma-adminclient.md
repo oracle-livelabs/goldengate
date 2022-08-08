@@ -1,4 +1,4 @@
-# GGMA Admin Client
+# Admin Client
 
 ## Introduction
 This workshop will demonstrate how to connect to the Oracle GoldenGate Admin Client and use it to view all running processes, Extract statistics, log messages, and purge unused files.

@@ -1,4 +1,4 @@
-# Replicate the data from Oracle Database to Apache HBase
+# Replicate data from Oracle Database to Apache HBase
 
 ## Introduction
 
