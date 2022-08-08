@@ -3,22 +3,20 @@
 
 ## Introduction
 
-A pipeline includes a sequence of data processing stages such as, Query, Pattern, Rule, Query Group, Custom, and Scoring. You can apply business logic to an input data stream, within a pipeline.
+This lab walks you through steps to create supporting artifacts for your Stream Analytics pipeline that monitors public transportation in the Atlanta area.
 
-*Estimated Time*: 15 minutes
+ This is the first tutorial in the Monitoring Public Transportation Using Stream Analytics series. Read the tutorials sequentially.
+
+*Estimated Time*: 20 minutes
 
 ### About this Lab
 
-This lab provides steps to create a basic pipeline, add a query stage and a filter to it, and publish the pipeline; all this in less than 15 minutes!
+This lab provides steps to create the GGSA artifacts such as,
 
 ### Objectives
 In this Lab you will:
-- Create a CSV file which contains sample data to be processed
-- Create a File stream
-- Create a Pipeline
-- Add a Query Stage to the source stream
-- Add a Filter to the Query stage
-- Publish the Pipeline
+- Create a
+-
 
 ### Prerequisites
 This Lab assumes you have:
