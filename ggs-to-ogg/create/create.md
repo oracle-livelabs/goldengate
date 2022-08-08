@@ -96,7 +96,7 @@ Now, follow the steps below to register the source and target Autonomous Databas
 
 9.  Click **Register**.
 
-    ![](images/reg-sourceATP.png " ")
+    ![](images/reg-source-atp.png " ")
 
 10. On the Registered Databases page, under List Scope, ensure that you select your compartment from the dropdown to see your registered databases.
 
