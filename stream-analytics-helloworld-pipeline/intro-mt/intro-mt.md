@@ -1,10 +1,12 @@
 # Introduction
 
-This workshop walks you through steps to use a Stream Analytics pipeline for real-time traffic analysis, speed violation tracking, and congestion detection.
+## About this Workshop
+
+This workshop walks you through steps to use a Stream Analytics pipeline for real-time traffic analysis, speed violation tracking, and congestion detection, to monitor public transport.
 
 Key features of this traffic management solution:
-* Uses GPS fleet data
-* This data is low cost, accurate, and it is created in real time
+* It uses GPS fleet data.
+* This data is low cost, accurate, and it is created in real time.
 * This fleet data reduces congestion on roadways, and enhances the traveling experience, and is hence valuable for government sector customers.
 * The general features represented in this solution are real-time traffic analytics, speed violation tracking, and congestion detection. These features are combined with GPS streaming sensor feeds and historical trend data using map-based visualizations.
 * This solution uses enterprise-grade Spark Streaming, Kafka open-source messaging, a highly scalable, extensible platform built with Stream Analytics.
@@ -13,7 +15,7 @@ Some of the key benefits with this solution are low-cost rollout with zero-road,
 
 *Estimated Time*:  
 
-## About GoldenGate Stream Analytics (GGSA)
+### About GoldenGate Stream Analytics (GGSA)
 The Oracle GoldenGate Stream Analytics (GGSA) runtime component is a complete solution platform for building applications to filter, correlate, and process events in real-time. With flexible deployment options of stand-alone Spark or Hadoop-YARN, it proves to be a versatile, high-performance event processing engine. GGSA enables Fast Data and Internet of Things (IOT) – delivering actionable insight and maximizing value on large volumes of high velocity data from varied data sources in real-time. It enables distributed intelligence and low latency responsiveness by pushing business logic to the network edge
 
 ### Objectives
@@ -28,7 +30,7 @@ In this workshop you will:
 
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-
+* SSH Private Key to access the host via SSH
 
 ### Required Credentials for GoldenGate Stream Analytics
 Please refer to */home/opc/README.txt*

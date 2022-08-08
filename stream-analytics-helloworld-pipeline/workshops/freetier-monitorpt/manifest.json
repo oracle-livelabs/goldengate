@@ -56,7 +56,7 @@
       "filename": "../../ggsa-mt-target/ggsa-mt-target.md"
     },
     {
-      "title": "Lab 8: Publish the Stream Analytics Pipeline",
+      "title": "Lab 9: Publish the Stream Analytics Pipeline",
       "description": "How to create a basic pipeline using a File stream and add a Query Stage and a Filter to it,",
       "filename": "../../ggsa-mt-pubpplne/ggsa-mt-pubpplne.md"
     },

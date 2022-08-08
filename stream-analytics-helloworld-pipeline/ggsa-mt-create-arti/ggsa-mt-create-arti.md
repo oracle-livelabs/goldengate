@@ -3,25 +3,16 @@
 
 ## Introduction
 
-This lab walks you through steps to create supporting artifacts for your Stream Analytics pipeline that monitors public transportation in the Atlanta area.
+This lab walks you through steps to create supporting artifacts for your Stream Analytics pipeline to monitor the public transportation in the Atlanta area.
 
- This is the first tutorial in the Monitoring Public Transportation Using Stream Analytics series. Read the tutorials sequentially.
+ This is the first lab in the Monitoring Public Transportation Using Stream Analytics workshop. Follow the labs sequentially.
 
 *Estimated Time*: 20 minutes
-
-### About this Lab
-
-This lab provides steps to create the GGSA artifacts such as,
 
 ### Objectives
 In this Lab you will:
 - Create a
 -
-
-### Prerequisites
-This Lab assumes you have:
-- A Free Tier, Paid, or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 
 ## **Task 1:** Create a CSV file
 
