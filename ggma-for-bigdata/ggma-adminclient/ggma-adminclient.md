@@ -1,4 +1,4 @@
-# GGMA Admin Client
+# Admin Client
 
 ## Introduction
 This workshop will demonstrate how to connect to the Oracle GoldenGate Admin Client and use it to view all running processes, Extract statistics, log messages, and purge unused files.
@@ -66,7 +66,7 @@ This lab assumes you have:
     </copy>
     ```
 	ex:
-
+	
 	 View statistics of  Replicat ***REPKAFKA***
 	```
     <copy>
@@ -95,5 +95,5 @@ To summarize, Admin Client is a command line utility (similar to the classic GGS
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022
-* **Contributors** - Madhu Kumar S, Brian Elliott, Deniz Sendil, Meghana Banka
+* **Contributors** - Madhu Kumar S, Brian Elliott, Deniz Sendil, Meghana Banka 
 * **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, June 2022
