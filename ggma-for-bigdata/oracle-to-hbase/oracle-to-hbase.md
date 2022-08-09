@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will demonstrate how to  ***Replicate the data from Oracle Database to Apache HBase*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
+This lab will demonstrate how to  ***Replicate data from Oracle Database to Apache HBase*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
 
 In this lab, we will load data in the Oracle Database schema ***SOE***  of Pluggable Database ***PDB***. GG extract process ***EXTORA*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, path ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate (MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPHBASE*** will read the remote trail files and replicates to the target HBase database.
 
@@ -54,20 +54,20 @@ This lab assumes you have:
 
     ```
     <copy>Gg.Rocks_99</copy>
-    ``` 
+    ```
 ![GGMA Login Page](./images/ggma-login-page.png " ")
 
 
 3. On welcome pages, a green tick with the name ***EXTORA*** indicates extract is up and running on the  Administration Service console.
         ![GGMA Extract Status](./images/ggma-extract-status.png " ")
-4. Navigate to Distribution Service, to validate the path ***SRC2TGT*** 
+4. Navigate to Distribution Service, to validate the path ***SRC2TGT***.
         ![GGMA Path Status](./images/ggma-path-status.png " ")
 
     ***Source deployment completed!***
 
 ## Task 3: GoldenGate configuration  for HBase as target
 
-1. To create a replicat, sign in to the Administration service of GoldenGate (MA) of Big Data from the below URL with username as ***oggadmin*** and password as ***Gg.Rocks_99*** 
+1. To create a replicat, sign in to the Administration service of GoldenGate (MA) of Big Data from the below URL with username as ***oggadmin*** and password as ***Gg.Rocks_99***.
 
     Click here : [http://localhost:22001/?root=account](http://localhost:22001/?root=account)
 
@@ -127,7 +127,6 @@ This lab assumes you have:
     </copy>
     ```
 ![Add Classpath](./images/add-classpath.png " ")
-    
 10. Replicat ***REPHBASE*** created successfully
 
     ![Replicat REPHBASE status](./images/replicat-status.png " ")
@@ -169,8 +168,6 @@ On the right side terminal, enter ***hbaseselect*** will display the row counts 
     oraselect
     </copy>
     ```
-    
-
     On the right side terminal, enter ***hbaseselect*** will display the row counts of all the tables of the HBase(target) database.
 
     ```
@@ -195,5 +192,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
-* **Contributors** - Madhu Kumar S, Brian Elliott, Deniz Sendil, Meghana Banka 
+* **Contributors** - Madhu Kumar S, Brian Elliott, Deniz Sendil
 * **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, August 2022

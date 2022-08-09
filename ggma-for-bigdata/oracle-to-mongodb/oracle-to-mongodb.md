@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will demonstrate how to  ***Replicate the data from Oracle Database to MongoDB*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
+This lab will demonstrate how to  ***Replicate data from Oracle Database to MongoDB*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
 
 In this lab, we will load data in the Oracle Database schema ***SOE***  of Pluggable Database ***PDB***. GG extract process ***EXTORA*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, path ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate (MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPMONGO*** will read the remote trail files, creates the MongoDB tables, and write the data to MongoDB tables.
 
@@ -11,14 +11,12 @@ Estimated Time:  30 minutes
 ### Objectives
 In this lab you will learn:
 -  How to reset the GoldenGate configuration.
--  How to create an extract for the source database and a path to distribute the trail to target deployment. 
+-  How to create an extract for the source database and a path to distribute the trail to target deployment.
 -  How to configure the GoldenGate for MongoDB as a target.
 -  How to validate the GoldenGate configuration for MongoDB as a target.
 
-#### Lab Architecture
-    
+#### Lab Architecture   
 ![Architecture](./images/architecture.png " ")
-
 
 ### Prerequisites
 This lab assumes you have:
@@ -29,7 +27,7 @@ This lab assumes you have:
 ## Task 1: GoldenGate configuration reset
 
 1.  Open a terminal and type ***mongodbreset*** to reset the lab.
-   
+
     ```
     <copy>mongodbreset</copy>
     ```
@@ -57,7 +55,7 @@ This lab assumes you have:
 
     ```
     <copy>Gg.Rocks_99</copy>
-    ``` 
+    ```
 ![GGMA Login Page](./images/ggma-login-page.png " ")
 
 
@@ -71,7 +69,7 @@ This lab assumes you have:
 
 ## Task 3: GoldenGate configuration  for MongoDB as target
 
-1. To create a replicat, sign in to the Administration service of GoldenGate (MA) of Big Data from the below URL with username as ***oggadmin*** and password as ***Gg.Rocks_99***. 
+1. To create a replicat, sign in to the Administration service of GoldenGate (MA) of Big Data from the below URL with username as ***oggadmin*** and password as ***Gg.Rocks_99***.
 
     Click here : [http://localhost:22001/?root=account](http://localhost:22001/?root=account)
 
@@ -126,10 +124,10 @@ This lab assumes you have:
 ![MongoDB ClientURI](./images/mongodb-clienturi.png " ")
 9. Update the **Classpath** to read the **MongoDB** jars file location and click  ***Create and Run*** button to complete the replication creation wizard.
 
- ![Add Classpath](./images/add-classpath.png " ") 
+ ![Add Classpath](./images/add-classpath.png " ")
 
 10. Replicat ***REPMONGO*** has been created successfully.
- ![Replicat up and running](./images/replicat-up-and-running.png " ") 
+ ![Replicat up and running](./images/replicat-up-and-running.png " ")
 
     ***Target deployment completed!***
 ## Task 4: Validation of the GoldenGate Configuration for MongoDB as Target
