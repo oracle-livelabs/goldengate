@@ -174,4 +174,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
 * **Contributors** - Madhu Kumar S, Brian Elliott, Deniz Sendil, Meghana Banka, Rene Fontcha  
-* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, 9th  August 2022 
+* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, 9th August 2022 
