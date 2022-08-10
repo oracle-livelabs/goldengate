@@ -99,7 +99,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 7.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-bigdata.png " ")
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-07-bigdata.png " ")
 
 8.  Click **Next**.
 
@@ -113,7 +113,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 13. Click **Create**.
 
-    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-13-bigdata.png " ")
+    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-13-bigdata.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
@@ -145,7 +145,7 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-08-atpconnection.png)
 
-    The database registration becomes Active after a few minutes.
+    The connection becomes Active after a few minutes.
 
 ## Task 4: Unlock the GGADMIN user and enable supplemental logging for the source database
 
@@ -153,7 +153,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 1.  From the Oracle Cloud Console **Navigation Menu** (hamburger icon), click **Oracle Database**, and then select **Autonomous Transaction Processing**.
 
-	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/oracle/common/images/console/database-atp.png " ")
+	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/oracle/common/create/images/console/database-atp.png " ")
 
 2.  From the list of databases, select **SourceATP**.
 
