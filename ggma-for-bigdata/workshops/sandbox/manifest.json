@@ -7,6 +7,7 @@
       "description": "Introduction to GoldenGate Microservices",
       "filename": "../../introduction/introduction.md"
     },
+
     {
       "title": "Lab 1: Environment Setup",
       "description": "Verify Setup of compute instance",
@@ -38,12 +39,12 @@
       "filename": "../../oracle-to-cassandra/oracle-to-cassandra.md"
     },
     {
-      "title": "Lab 6: Oracle to MongoDB",
+      "title": "Lab 7: Oracle to MongoDB",
       "description": "GGBD Oracle to MongoDB",
       "filename": "../../oracle-to-mongodb/oracle-to-mongodb.md"
     },
     {
-      "title": "Lab 7: GGMA Adminclient",
+      "title": "Lab 8: GGMA Adminclient",
       "description": "GGMA Adminclient",
       "filename": "../../ggma-adminclient/ggma-adminclient.md"
     },

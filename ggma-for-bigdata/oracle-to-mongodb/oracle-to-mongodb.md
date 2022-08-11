@@ -1,8 +1,8 @@
-# Replicate the data from Oracle Database to MongoDB
+# Replicate data from Oracle Database to MongoDB
 
 ## Introduction
 
-This lab will demonstrate how to  ***Replicate the data from Oracle Database to MongoDB*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
+This lab will demonstrate how to  ***Replicate data from Oracle Database to MongoDB*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
 
 In this lab, we will load data in the Oracle Database schema ***SOE***  of Pluggable Database ***PDB***. GG extract process ***EXTORA*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, path ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate (MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPMONGO*** will read the remote trail files, creates the MongoDB tables, and write the data to MongoDB tables.
 
@@ -15,10 +15,8 @@ In this lab you will learn:
 -  How to configure the GoldenGate for MongoDB as a target.
 -  How to validate the GoldenGate configuration for MongoDB as a target.
 
-#### Lab Architecture
-
+#### Lab Architecture   
 ![Architecture](./images/architecture.png " ")
-
 
 ### Prerequisites
 This lab assumes you have:
@@ -63,7 +61,7 @@ This lab assumes you have:
 
 3. On welcome pages, a green tick with the name ***EXTORA*** indicates extract is up and running on the  Administration Service console.
         ![GGMA Extract Status](./images/ggma-extract-status.png " ")
-4. Navigate to Distribution Service, to validate the path ***SRC2TGT***.
+4. Navigate to Distribution Service, to validate the path ***SRC2TGT***. 
         ![GGMA Path Status](./images/ggma-path-status.png " ")
 
     ***Source deployment completed!***
@@ -84,7 +82,7 @@ This lab assumes you have:
 
     ```
     <copy>Gg.Rocks_99</copy>
-    ```
+    ``` 
 ![GGBD Login Page](./images/ggbd-login-page.png " ")
 
 2. On the welcome page, Click on the **Add Replicat** (***+*** plus icon) to get the replicat creation wizard.

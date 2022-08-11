@@ -1,7 +1,7 @@
-#  Replicate the data from Oracle Database to HDFS
+#  Replicate data from Oracle Database to HDFS
 
 ## Introduction
-This lab will demonstrate how to  ***Replicate the data from Oracle Database to HDFS*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and Admin Client.
+This lab will demonstrate how to  ***Replicate data from Oracle Database to HDFS*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and Admin Client.
 
 In this lab, we will load data in the Oracle Database schema ***SOE***  of Pluggable Database ***PDB***. GG extract process ***EXTORA*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, path ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate (MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPHDFS*** will read the remote trail files and replicates to target the Apache Hadoop file system ***/livelab***.
 
@@ -112,9 +112,9 @@ This lab assumes you have:
     ```
     ![Add map condition](./images/add-map-condition.png " ")
 
-8. Append **pathMappingTemplate** as ***/livelab***
+8. Append **pathMappingTemplate** as ***/livelab***.
 
-  **gg.eventhandler.name.pathMappingTemplate**, A string with resolvable keywords and constants used to dynamically generate the path in HDFS to write data files.
+   **gg.eventhandler.name.pathMappingTemplate**, A string with resolvable keywords and constants used to dynamically generate the path in HDFS to write data files.
     ```
     <copy>
     /livelab
@@ -133,7 +133,7 @@ This lab assumes you have:
 ![Add Filename Mapping Template](./images/add-filenamemappingtemplate.png " ")
 10. Update the **gg.classpath** as follows below and click ***create and run*** to complete the replication creation wizard.
 
- gg.classpath includes the HDFS client libraries.Ensure that the directory containing the HDFS core-site.xml file is in gg.classpath. This is so the core-site.xml file can be read at runtime and the connectivity information to HDFS can be resolved.
+ **gg.classpath** includes the HDFS client libraries.Ensure that the directory containing the HDFS core-site.xml file is in gg.classpath. This is so the core-site.xml file can be read at runtime and the connectivity information to HDFS can be resolved.
     ```
     <copy>
     /u01/hadoop/etc/hadoop:/u01/hadoop/share/hadoop/common/lib/*:/u01/hadoop/share/hadoop/common/*:/u01/hadoop/share/hadoop/hdfs/*:/u01/hadoop/share/hadoop/hdfs/lib/*
