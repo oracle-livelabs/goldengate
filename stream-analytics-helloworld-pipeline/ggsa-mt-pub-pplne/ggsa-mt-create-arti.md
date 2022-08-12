@@ -11,8 +11,9 @@ This lab walks you through steps to create supporting artifacts for your Stream 
 
 ### Objectives
 In this Lab you will:
-- Create a
--
+- Create a Kafka Connection
+- Create a Stream
+- Create a Geo Fence
 
 ## **Task 1:** Create a CSV file
 

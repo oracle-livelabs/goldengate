@@ -1,24 +1,17 @@
 
 # Build Your Stream Analytics Pipeline
 
-## Introduction
+This lab walks you through steps to create supporting artifacts for your Stream Analytics pipeline to monitor the public transportation in the Atlanta area.
 
-A pipeline includes a sequence of data processing stages such as, Query, Pattern, Rule, Query Group, Custom, and Scoring. You can apply business logic to an input data stream, within a pipeline.
+ This is the first lab in the Monitoring Public Transportation Using Stream Analytics workshop. Follow the labs sequentially.
 
-*Estimated Time*: 15 minutes
-
-### About this Lab
-
-This lab provides steps to create a basic pipeline, add a query stage and a filter to it, and publish the pipeline; all this in less than 15 minutes!
+*Estimated Time*: 20 minutes
 
 ### Objectives
 In this Lab you will:
-- Create a CSV file which contains sample data to be processed
-- Create a File stream
 - Create a Pipeline
-- Add a Query Stage to the source stream
-- Add a Filter to the Query stage
-- Publish the Pipeline
+- Create a Stage
+- Create a Query Stage
 
 ### Prerequisites
 This Lab assumes you have:
