@@ -1,5 +1,7 @@
 
-# Build Your Stream Analytics Pipeline
+# Create Artifacts for Your Stream Analytics Pipeline
+
+## Introduction
 
 This lab walks you through steps to create supporting artifacts for your Stream Analytics pipeline to monitor the public transportation in the Atlanta area.
 
@@ -9,17 +11,38 @@ This lab walks you through steps to create supporting artifacts for your Stream 
 
 ### Objectives
 In this Lab you will:
-- Create a Pipeline
-- Create a Stage to Identify Vehicles Only in Atlanta
-- Create a Query Stage to Ignore Stationary Vehicles
+- Create a Kafka Connection
+- Create a Stream
+- Create a Geo Fence
 
-### Prerequisites
-This Lab assumes you have:
--
+## **Task 1:** Log in to GoldenGate Stream Analytics
 
-## **Task 1:** Create a Pipeline
-## **Task 2:** Create a Stage to Identify Vehicles Only in Atlanta
-## **Task 3:** Create a Query Stage to Ignore Stationary Vehicles
+You should be already logged in after completing the lab *Initialize Environment*. If that's not the case, perform the following:
+
+1. Double click on the *Get Started with Your Workshop* icon on the upper left corner in your remote desktop to launch a fresh browser session.
+
+    ![Get Started with your Workshop](../initialize-environment/images/get-started-icon.png "")
+
+2. On the web browser window on the right preloaded with *GoldenGate Stream Analytics* login page, provide the credentials below to login:
+
+    - Username
+
+    ```
+    <copy>osaadmin</copy>
+    ```
+
+    - Password
+
+    ```
+    <copy>xY3q3svdHt8=</copy>
+    ```
+
+## **Task 2:** Create a Kafka Connection
+## **Task 3:** Create a Stream
+## **Task 4:** Create a GeoFence
+
+**Note:**
+
 
 ## Learn More
 
@@ -33,5 +56,5 @@ This Lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
-* **Contributors** - Prabhu Thukaram, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2022
+* **Contributors** -
+* **Last Updated By/Date** - Pratibha Manjunath, August 2022
