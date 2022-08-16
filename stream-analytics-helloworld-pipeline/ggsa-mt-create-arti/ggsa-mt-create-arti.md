@@ -38,6 +38,7 @@ You should be already logged in after completing the lab *Initialize Environment
     ```
 
 ## **Task 2:** Create a Kafka Connection
+
 ## **Task 3:** Create a Stream
 ## **Task 4:** Create a GeoFence
 
