@@ -1,4 +1,4 @@
-# Replicate the data from Oracle Database to Apache Kafka
+# Replicate data from Oracle Database to Apache Kafka
 
 ## Introduction
 This lab will demonstrate how to  ***Replicate from Oracle Database to Apache Kafka*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
@@ -63,7 +63,7 @@ This Workshop assumes you have:
     ***Source deployment completed!***
 ## Task 3: GoldenGate configuration for Kafka as target
 
-1. To create a replicat, sign into Administration service of GoldenGate (MA) of Big Data from the below URL with username as ***oggadmin*** and password as ***Gg.Rocks_99***
+1. To create a replicat, sign into Administration service of GoldenGate (MA) of Big Data from the below URL with username as ***oggadmin*** and password as ***Gg.Rocks_99***.
 
     Click here : [http://localhost:22001/?root=account](http://localhost:22001/?root=account)
 
@@ -133,9 +133,9 @@ This Workshop assumes you have:
 
     The Kafka Connect Handler provides functionality to resolve the topic name and the message key at runtime using a template configuration value. Templates allow you to configure static values and keywords. Keywords are used to dynamically replace the keyword with the context of the current processing. Templates are applicable to the following configuration parameters:
 
-    gg.handler.name.topicMappingTemplate
+    **gg.handler.name.topicMappingTemplate**
 
-    gg.handler.name.keyMappingTemplate
+    **gg.handler.name.keyMappingTemplate**
 
     ```
     <copy>
@@ -220,7 +220,7 @@ This Workshop assumes you have:
      ![List table count and topic count after data load](./images/list-table-count-and-topic-count-after-data-load.png " ")   
 
  4. Execute the below command to consume messages from an Apache Kafka Topic.
-
+    
     ```
     <copy>
     consumetopic <topic_name>
@@ -253,4 +253,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
 * **Contributors** - Madhu Kumar S, Brian Elliott, Deniz Sendil, Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, August 2022
+* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, 9th August 2022

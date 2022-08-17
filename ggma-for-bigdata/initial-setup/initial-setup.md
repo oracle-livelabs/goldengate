@@ -45,10 +45,7 @@ This lab assumes you have:
     ![GoldenGate status](./images/goldengate-command-status.png " ")
     ![GoldenGate status](./images/big-data-process-status.png " ")
     If the output show  ***active (running)*** indicates Oracle GoldenGate Services are up and running, press ***Ctrl+c*** to exit from the output.
-
-
-
-
+    
 You may now proceed to the next lab.
 
 ## Appendix 1: Managing Startup Services
@@ -104,121 +101,39 @@ You may now proceed to the next lab.
     ```
     <copy>sudo systemctl restart OracleGoldenGate</copy>
     ```
-3. Kafka Service.
-
-    - Start
-
-    ```
-    <copy>sudo systemctl start kafka</copy>
-    ```
-
-    - Stop
-
-    ```
-    <copy>sudo systemctl stop kafka</copy>
-    ```
-
-    - Status
-
-    ```
-    <copy>sudo systemctl status kafka</copy>
-    ```
 
     - Restart
-
-    ```
-    <copy>sudo systemctl restart kafka</copy>
-    ```
-4. Zookeeper Service.
-
-    - Start
-
-    ```
-    <copy>sudo systemctl start zookeeper</copy>
-    ```
-
-    - Stop
-
-    ```
-    <copy>sudo systemctl stop zookeeper</copy>
-    ```
-
-    - Status
-
-    ```
-    <copy>sudo systemctl status zookeeper</copy>
-    ```
-
-    - Restart
-
-    ```
-    <copy>sudo systemctl restart zookeeper</copy>
-    ```
-5. Hadoop Service.
-
-    - Start
-
-    ```
-    <copy>sudo systemctl start hadoop</copy>
-    ```
-
-    - Stop
-
-    ```
-    <copy>sudo systemctl stop hadoop</copy>
-    ```
-
-    - Status
-
-    ```
-    <copy>sudo systemctl status hadoop</copy>
-    ```
-
-    - Restart
-
     ```
     <copy>sudo systemctl restart hadoop</copy>
     ```
 6.HBase Service.
-
     - Start
-
     ```
     <copy>sudo systemctl start hbase</copy>
     ```
-
     - Stop
-
     ```
     <copy>sudo systemctl stop hbase</copy>
     ```
-
     - Status
-
     ```
     <copy>sudo systemctl status hbase</copy>
     ```
-
     - Restart
-
     ```
     <copy>sudo systemctl restart hbase</copy>
     ```
-
 ## Appendix 2: Command reference list
 
 Aliases have been created for this workshop, so that you can focus on GG functionality. These aliases will make it simple to look at files in HDFS, select data from MongoDB, HBase, Cassandra or consume a Kafka topic.
 
   ![GG command Reference](./images/gg-cmd.png " ")
-
-
+  
 ## Appendix 3: Workshop folder structure reference list
 
 Workshop folder structure reference will give board idea about the Oracle Database home, GoldenGate homes, Hadoop home, HBase home, Cassandra home, MongoDB home, and Kafka home
 
   ![Folder Structure](./images/folder-structure.png " ")
-
-
 ## Learn More
 
 * [Oracle GoldenGate (MA) for Big Data](https://docs.oracle.com/en/middleware/goldengate/big-data/21.1/gadbd/getting-started-oracle-goldengate-microservices-big-data.htm)
