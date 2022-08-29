@@ -94,7 +94,7 @@ Now, follow the steps below to register the source and target Autonomous Databas
 
 8.  Click **Register**.
 
-    ![](images/reg-sourceATP.png " ")
+    ![](images/reg-source-atp.png " ")
 
 9.  Repeat these steps for the Target Autonomous Database.
 

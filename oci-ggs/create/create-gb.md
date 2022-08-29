@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create an Oracle Cloud Infrastructure (OCI) GoldenGate deployment.
 
-Estimated time: 10 minutes
+Estimated time: 20 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate Deployments and Database Registrations
 
@@ -26,11 +26,11 @@ In this lab, you will:
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-    ![GoldenGate in Oracle Cloud navigation menu](images/database-goldengate.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
 2.  On the GoldenGate **Overview** page, click **Deployments**.
 
-    ![GoldenGate Overview page](images/01-02-ggs-overview.png " ")
+    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
 3.  You may need to select a compartment. Under List Scope, from the Comparment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, expand LiveLabs, and then select the compartment **LL1234-COMPARTMENT**.
 
@@ -38,7 +38,7 @@ In this lab, you will:
 
 4.  On the Deployments page, click **Create Deployment**.
 
-    ![Deployments page](images/01-02-01.png "")
+    ![Deployments page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-01.png "")
 
 5.  In the Create Deployment panel, enter **GGSDeployment** for Name.
 
@@ -52,7 +52,7 @@ In this lab, you will:
 
 10. Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Completed Create GoldenGate Deployment fields](images/01-09.png " ")
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-09.png " ")
 
 11. Click **Next**.
 
@@ -64,7 +64,7 @@ In this lab, you will:
 
 15. Click **Create**.
 
-    ![Completed GoldenGate details](images/02-13.png " ")
+    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-13.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use. While you're waiting, proceed to the next Tasks.
 
@@ -74,15 +74,15 @@ Follow the steps below to register the source Oracle Autonomous Transaction Proc
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the GoldenGate page.
 
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](images/01-01-breadcrumb.png " ")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-01-breadcrumb.png " ")
 
 2.  Click **Registered Databases**.
 
-    ![Registered Databases in GoldenGate menu](images/01-02-ggs-registerdb.png " ")
+    ![Registered Databases in GoldenGate menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-registerdb.png " ")
 
 3.  Click **Register database**.
 
-    ![Registered Databases page](images/01-03-ggs-registerdb.png " ")
+    ![Registered Databases page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-03-ggs-registerdb.png " ")
 
 4.  In the Register Database panel, for Name and Alias, enter **SourceATP**.
 
@@ -96,7 +96,7 @@ Follow the steps below to register the source Oracle Autonomous Transaction Proc
 
 9.  Enter the database admin's password from the Workshop Details in the Password field, and then click **Register**.
 
-    ![Source Database details](images/01-01-12-regSourceDB.png)
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-01-12-regsourcedb.png)
 
     The database registration becomes Active after a few minutes.
 
@@ -105,7 +105,7 @@ Follow the steps below to register the target Autonomous Data Warehouse \(ADW\) 
 
 1.  On the Registered databases page, click **Register Database**.
 
-    ![Registered Databases in GoldenGate menu](images/03-02.png)
+    ![Registered Databases in GoldenGate menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02.png)
 
 2.  In the Register Database panel, enter **TargetADW** for Name and Alias.
 
@@ -117,7 +117,7 @@ Follow the steps below to register the target Autonomous Data Warehouse \(ADW\) 
 
 6.  Enter the database admin's password from the Workshop Details section in the Password field, and then click **Register**.
 
-    ![Target Database details](images/02-10-ggs-regDB-target.png)
+    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-10-ggs-regdb-target.png)
 
     The source and target databases appear in the list of Registered Databases. The database registration becomes Active after a few minutes.
 
@@ -127,7 +127,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 1.  From the Oracle Cloud Console **Navigation Menu** (hamburger icon), click **Oracle Database**, and then select **Autonomous Transaction Processing**.
 
-	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
+	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/common/images/console/database-atp.png " ")
 
 2.  From the list of databases, select **SourceATP**.
 
@@ -135,7 +135,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 3.  On the SourceATP Database Details page, click **Database Actions**.
 
-    ![SourceATP Database Details page](images/02-03-db-tools.png " ")
+    ![SourceATP Database Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-db-tools.png " ")
 
     > **Note:** *If you're prompted to log in to Database Actions, use the SourceATP admin credentials located in the Workshop Details.*
 
@@ -145,17 +145,17 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
-    ![Database users](images/02-06-locked.png)
+    ![Database users](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-locked.png)
 
 6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above (Task 2, Step 9), and then click **Apply Changes**. Note that the user icon changes from a padlock to a checkmark.
 
-    ![Edit user](images/02-07-edit.png)
+    ![Edit user](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-07-edit.png)
 
 >**Note:** If you encounter errors when entering the password, please make sure your password contains only upper case letters, lower case letters, numbers, and underscores. If you are using the green button (run on LiveLabs tenancy), you can use your database admin password given to you on the reservation page. Just make sure this password matches the ggadmin user's password.
 
 7.  Open the navigation menu (hamburger icon), and then under **Development**, select **SQL**.
 
-    ![Open navigation menu](images/01-08-sql.png)
+    ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-08-sql.png)
 
 8.  Enter the following into the Worksheet, and then click **Run Statement**.
 
@@ -173,17 +173,17 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     The Script Output panel displays six tables whose Support_Mode is **FULL**.
 
-    ![Script Output](images/02-09b.png " ")
+    ![Script Output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-09b.png " ")
 
     You can leave the SQL window open and continue with the next Task.
 
 ## Task 5: Unlock the GGADMIN user for the target database
 
-1.  Back in the Oracle Cloud console, click Autonomous Database in the breadcrumb.
+1.  Back in the Oracle Cloud console, click **Autonomous Database** in the breadcrumb.
 
-2.  Select TargetADW from the list of Autonomous Databases to view its details.
+2.  Select **TargetADW** from the list of Autonomous Databases to view its details.
 
-2.  Repeat Task 4, steps 3 to 6, to unlock the GGADMIN user on the TargetADW database.
+2.  Repeat Task 4, steps 3 to 6, to unlock the `GGADMIN` user on the TargetADW database.
 
 ## Learn More
 
@@ -192,5 +192,5 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management; Arabella Yao, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, June 2022
+* **Contributors** -  Denis Gray, Database Product Management
+* **Last Updated By/Date** - Jenny Chan, July 2022
