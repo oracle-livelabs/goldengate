@@ -11,9 +11,15 @@ This lab walks you through steps to create supporting artifacts for your Stream 
 
 ### Objectives
 In this Lab you will:
+- Download a json file which contains the sample data to be used in this tutorial
 - Create a Kafka Connection
-- Create a Stream
+- Create a File Stream using the json file
 - Create a Geo Fence
+
+### Prerequisite
+- A json file with the sample data to be used in this tutorial:
+  [Click here to download file.](./files/BusStream.json?download=1)
+
 
 ## **Task 1:** Log in to GoldenGate Stream Analytics
 
@@ -51,6 +57,9 @@ You should be already logged in after completing the lab *Initialize Environment
 4.
 
 ## **Task 3:** Create a Stream
+
+
+
 ## **Task 4:** Create a GeoFence
 
 **Note:**
