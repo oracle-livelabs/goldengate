@@ -89,8 +89,7 @@ To add an extract process and Exttrail:
 
 The following is a sample Extract output:
 
-  ![Sample Extract](./images/extract-output.png " ")  
-
+  ![Sample Extract](./images/extract-output.png " ")
 
 You may now **proceed to the next lab**.
 
