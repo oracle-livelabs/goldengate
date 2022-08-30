@@ -46,18 +46,24 @@ You should be already logged in after completing the lab *Initialize Environment
 ## **Task 2:** Create a Kafka Connection
 
 1. On the **Catalog** page, click **Create New Item**, and select **Connection**.
-2. Select **Kafka** from the list, to display the **Create Connection** screen.
+2. Select **Kafka** from the submenu, to display the **Create Connection** screen.
 3. On the **Type Properties** screen, enter the following details:
-   - In the **Name** field, enter **Tutorial**.
-   - In the **Display Name**, enter a display name for the connection. If left blank, the **Name** field value is     copied.
-   - In the **Tags** field, enter **tutorial, transport**.
-   - In the **Connection Type** drop-down, the selected connection is displayed. **Kafka** in this example.
-   Connection details page - enter localhost in the zookeeper url if on MP
-
-4.
+    -  In the **Name** field, enter **Tutorial**.
+    -  In the **Display Name**, enter a display name for the connection. If left blank, the **Name** field value is     copied.
+    -  In the **Tags** field, enter **tutorial, transport**.
+    -  In the **Connection Type** drop-down, the selected connection is displayed. **Kafka** in this example.
+4. On the **Connection Details** page, enter **localhost** in the zookeeper url.
 
 ## **Task 3:** Create a Stream
 
+1. On the Catalog page, **Create New Item**, and select **Stream**.
+2. Select **File** from the submenu, to display the **Create Stream** screen.
+3. On the **Type Properties** screen, enter the following details:
+    -  In the **Name** field, enter **Tutorial**.
+    -  In the **Display Name**, enter a display name for the stream. If left blank, the **Name** field value is     copied.
+    -  In the **Tags** field, enter **tutorial, transport**.
+    -  In the **Stream Type** drop-down, the selected stream is displayed. **File** in this example.
+4. On the **Source Details** page, upload 
 
 
 ## **Task 4:** Create a GeoFence
