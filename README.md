@@ -8,7 +8,11 @@ LiveLabs is the place to explore Oracle's products and services using workshops 
 Visit [LiveLabs](https://developer.oracle.com/livelabs) now to get started.  Workshops are added weekly, please visit frequently for new content.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [![](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/livelabs-homepage-march.png)](https://developer.oracle.com/livelabs)
+=======
+[![](https://oracle-livelabs.github.io/common/images/livelabs-homepage-march.png)](https://developer.oracle.com/livelabs)
+>>>>>>> parent of 907d503 (Update README.md)
 =======
 [![](https://oracle-livelabs.github.io/common/images/livelabs-homepage-march.png)](https://developer.oracle.com/livelabs)
 >>>>>>> parent of 907d503 (Update README.md)
