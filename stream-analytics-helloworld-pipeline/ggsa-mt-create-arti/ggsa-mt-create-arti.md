@@ -59,11 +59,20 @@ You should be already logged in after completing the lab *Initialize Environment
 1. On the Catalog page, **Create New Item**, and select **Stream**.
 2. Select **File** from the submenu, to display the **Create Stream** screen.
 3. On the **Type Properties** screen, enter the following details:
-    -  In the **Name** field, enter **Tutorial**.
-    -  In the **Display Name**, enter a display name for the stream. If left blank, the **Name** field value is     copied.
-    -  In the **Tags** field, enter **tutorial, transport**.
-    -  In the **Stream Type** drop-down, the selected stream is displayed. **File** in this example.
-4. On the **Source Details** page, upload 
+    - In the **Name** field, enter **Tutorial**.
+    - In the **Display Name**, enter a display name for the stream. If left blank, the **Name** field value is     copied.
+    - In the **Tags** field, enter **tutorial, transport**.
+    - In the **Stream Type** drop-down, the selected stream is displayed. **File** in this example.
+4. On the **Source Details** page:
+    - Click **Upload** to upload the **BusStream.json** file that you downloaded earlier.
+    - Select **JSON** from the **Data Format** drop-down.
+5. Click **Next**.
+6. Go to the **Shape** page. Wait till the Shape is successfully inferred from the input stream, and click **Save**.
+
+
+
+
+
 
 
 ## **Task 4:** Create a GeoFence
