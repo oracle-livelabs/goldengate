@@ -46,36 +46,57 @@ You should be already logged in after completing the lab *Initialize Environment
 ## **Task 2:** Create a Kafka Connection
 
 1. On the **Catalog** page, click **Create New Item**, and select **Connection**.
+
 2. Select **Kafka** from the submenu, to display the **Create Connection** screen.
+
 3. On the **Type Properties** screen, enter the following details:
     -  In the **Name** field, enter **Tutorial**.
     -  In the **Display Name**, enter a display name for the connection. If left blank, the **Name** field value is     copied.
     -  In the **Tags** field, enter **tutorial, transport**.
     -  In the **Connection Type** drop-down, the selected connection is displayed. **Kafka** in this example.
-4. On the **Connection Details** page, enter **localhost** in the zookeeper url.
 
-## **Task 3:** Create a Stream
+    ![Creating a Kafka Connection](./images/CreateKafkaConn.png "")
+
+4. On the **Connection Details** page, enter **localhost** in the **Zookeepers** field.
+
+5. Click **Test Connection**, and wait till the status is successful. Click **Save**.
+
+    ![Testing a Kafka Connection](./images/TestKafkaConn.png "")
+
+
+## **Task 3:** Create a File Stream
 
 1. On the Catalog page, **Create New Item**, and select **Stream**.
+
 2. Select **File** from the submenu, to display the **Create Stream** screen.
+
 3. On the **Type Properties** screen, enter the following details:
     - In the **Name** field, enter **Tutorial**.
-    - In the **Display Name**, enter a display name for the stream. If left blank, the **Name** field value is     copied.
-    - In the **Tags** field, enter **tutorial, transport**.
+    - In the **Display Name** field, enter a display name for the stream. If left blank, the **Name** field value is   copied.
+    - In the **Tags** field, enter **tutorial, transportation**.
     - In the **Stream Type** drop-down, the selected stream is displayed. **File** in this example.
+
 4. On the **Source Details** page:
     - Click **Upload** to upload the **BusStream.json** file that you downloaded earlier.
     - Select **JSON** from the **Data Format** drop-down.
-5. Click **Next**.
-6. Go to the **Shape** page. Wait till the Shape is successfully inferred from the input stream, and click **Save**.
 
+    ![Uploading an input stream file](./images/UploadJsonfile.png "")
 
+5. On the **Shape** page:
+    -  Select the **Infer Shape** option and click **Infer**.
+    -  Wait till the Shape is successfully inferred from the input stream.
+    -  In the **Shape Name** field, enter **TutorialStream**.
 
+    ![Inferring a Shape](./images/InferShape.png "")
 
-
-
+6. Click **Save**.
 
 ## **Task 4:** Create a GeoFence
+
+1. On the Catalog page, **Create New Item**, and select **Geo Fence**.
+
+2. Select **File** from the submenu, to display the **Create Stream** screen.
+
 
 **Note:**
 
