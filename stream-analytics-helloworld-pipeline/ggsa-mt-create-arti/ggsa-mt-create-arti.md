@@ -95,7 +95,22 @@ You should be already logged in after completing the lab *Initialize Environment
 
 1. On the Catalog page, **Create New Item**, and select **Geo Fence**.
 
-2. Select **File** from the submenu, to display the **Create Stream** screen.
+2. Select **Geo Fence** from the submenu, to display the **Create Geo Fence** screen.
+
+3. On the **Type Properties** screen, enter the following details:
+    - In the **Name** field, enter **Tutorial**.
+    - In the **Display Name** field, enter a display name for the stream. If left blank, the **Name** field value is   copied.
+    - In the **Tags** field, enter **tutorial, transportation**.
+    - In the **Geo Fence Type** drop-down, select **Manually Created Geo Fence**.
+
+4. Click **Save**. A page with the world map is displayed. This is where you will mark the area around Atlanta.
+
+5. On top left of the page, click the **Polygon** tool on the toolbar and do the following:
+    - Start marking the area around Atlanta on the map. When you're done, click the **Polygon** tool again.
+    - In the Name field, enter **Atlanta**.
+    - In the **Description** field, enter Monitor public buses transport in Atlanta.
+    - On the left side, click the Save icon to save your changes. The Atlanta Geo Fence looks like this.
+
 
 
 **Note:**
