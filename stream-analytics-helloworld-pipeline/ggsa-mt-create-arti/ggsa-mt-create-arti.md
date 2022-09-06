@@ -55,13 +55,13 @@ You should be already logged in after completing the lab *Initialize Environment
     -  In the **Tags** field, enter **tutorial, transport**.
     -  In the **Connection Type** drop-down, the selected connection is displayed. **Kafka** in this example.
 
-    ![Creating a Kafka Connection](./images/CreateKafkaConn.png "")
+    ![Creating a Kafka Connection](./images/CreateKafkaConn.PNG "")
 
 4. On the **Connection Details** page, enter **localhost** in the **Zookeepers** field.
 
 5. Click **Test Connection**, and wait till the status is successful. Click **Save**.
 
-    ![Testing a Kafka Connection](./images/TestKafkaConn.png "")
+    ![Testing a Kafka Connection](./images/TestKafkaConn.PNG "")
 
 
 ## **Task 3:** Create a File Stream
@@ -80,14 +80,14 @@ You should be already logged in after completing the lab *Initialize Environment
     - Click **Upload** to upload the **BusStream.json** file that you downloaded earlier.
     - Select **JSON** from the **Data Format** drop-down.
 
-    ![Uploading an input stream file](./images/UploadJsonfile.png "")
+    ![Uploading an input stream file](./images/UploadJsonfile.PNG "")
 
 5. On the **Shape** page:
     -  Select the **Infer Shape** option and click **Infer**.
     -  Wait till the Shape is successfully inferred from the input stream.
     -  In the **Shape Name** field, enter **TutorialStream**.
 
-    ![Inferring a Shape](./images/InferShape.png "")
+    ![Inferring a Shape](./images/InferShape.PNG "")
 
 6. Click **Save**.
 
