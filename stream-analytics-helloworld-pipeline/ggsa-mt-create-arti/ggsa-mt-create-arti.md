@@ -109,7 +109,9 @@ You should be already logged in after completing the lab *Initialize Environment
     - Start marking the area around Atlanta on the map. When you're done, click the **Polygon** tool again.
     - In the Name field, enter **Atlanta**.
     - In the **Description** field, enter Monitor public buses transport in Atlanta.
-    - On the left side, click the Save icon to save your changes. The Atlanta Geo Fence looks like this.
+    - On the left side, click the Save icon to save your changes.
+
+6. 
 
 
 
