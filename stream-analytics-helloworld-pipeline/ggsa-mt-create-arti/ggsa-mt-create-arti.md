@@ -103,15 +103,18 @@ You should be already logged in after completing the lab *Initialize Environment
     - In the **Tags** field, enter **tutorial, transportation**.
     - In the **Geo Fence Type** drop-down, select **Manually Created Geo Fence**.
 
-4. Click **Save**. A page with the world map is displayed. This is where you will mark the area around Atlanta.
+4. Click **Save**. A page with the world map is displayed. This is where you will mark the area around Atlanta. You can use the **Marquee Zoom** to zoom in a specific area.
+
 
 5. On top left of the page, click the **Polygon** tool on the toolbar and do the following:
     - Start marking the area around Atlanta on the map. When you're done, click the **Polygon** tool again.
-    - In the Name field, enter **Atlanta**.
+    - In the **Name** field on the right side, enter **Atlanta**.
     - In the **Description** field, enter Monitor public buses transport in Atlanta.
     - On the left side, click the Save icon to save your changes.
 
-6. 
+  ![Creating a Manual Geofence](./images/CreateGeoFence.PNG "")  
+
+6.
 
 
 
