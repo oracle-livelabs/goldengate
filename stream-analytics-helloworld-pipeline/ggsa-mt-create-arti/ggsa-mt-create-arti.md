@@ -15,6 +15,8 @@ In this Lab you will:
 - Create a Kafka Connection
 - Create a File Stream using the json file
 - Create a Geo Fence
+- Create a Database Connection
+- Create a Database Reference
 
 ### Prerequisite
 - A json file with the sample data to be used in this tutorial:
@@ -103,24 +105,42 @@ You should be already logged in after completing the lab *Initialize Environment
     - In the **Tags** field, enter **tutorial, transportation**.
     - In the **Geo Fence Type** drop-down, select **Manually Created Geo Fence**.
 
-4. Click **Save**. A page with the world map is displayed. This is where you will mark the area around Atlanta. You can use the **Marquee Zoom** to zoom in a specific area.
+4. Click **Save**. A page with the world map is displayed. This is where you will mark the area around Atlanta. You can use the **Marquee Zoom** to zoom-in a specific area.
 
+![Creating a Manual Geofence](./images/CreateGeoFence.PNG "")
 
 5. On top left of the page, click the **Polygon** tool on the toolbar and do the following:
     - Start marking the area around Atlanta on the map. When you're done, click the **Polygon** tool again.
     - In the **Name** field on the right side, enter **Atlanta**.
-    - In the **Description** field, enter Monitor public buses transport in Atlanta.
-    - On the left side, click the Save icon to save your changes.
+    - In the **Description** field, enter **Monitor public buses transport in Atlanta**.
+    - On the left side, click the **Save** icon to save your changes.
 
-  ![Creating a Manual Geofence](./images/CreateGeoFence.PNG "")  
+6. Click **Return to Catalog**.
 
-6.
+## **Task 4:** Create a Database Connection
+
+1. On the Catalog page, **Create New Item**, and select **Generic Database**.
+
+2. Select **Generic Database** from the submenu, to display the **Create Connection** screen.
+
+3. On the **Type Properties** screen, enter the following details and click **Next**:
+    - In the **Name** field, enter **Tutorial DB**.
+    - In the **Display Name** field, enter a display name for the stream. If left blank, the **Name** field value is   copied.
+    - In the **Tags** field, enter **tutorial, transportation**.
+
+![Creating a Database Connection](./images/CreateDBConn.PNG "")
 
 
+4. 4. On the **Connection Details** page, enter the following details:
+    - In the **database** field, select **MySQL** from the dropdown.
+    - In the **jdbc url** field, enter **mysql://OSA_DEMO:Welcome123!@localhost:3306/OSA_DEMO**.
 
-**Note:**
+![Creating a Database Connection](./images/DBConnDetailsort612*
+  .PNG "")
 
+5. Click **Test Connection**, and wait till the status is successful. Click **Save**.
 
+## **Task 5:** Create a Database Reference
 ## Learn More
 
 * [Transform and Analyze Data Streams](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/creating-pipeline-transform-and-analyze-data-streams.html#GUID-9DB9B57A-1095-4557-ACB9-816A696EB121)
