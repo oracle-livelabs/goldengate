@@ -133,10 +133,9 @@ You should be already logged in after completing the lab *Initialize Environment
 
 4. 4. On the **Connection Details** page, enter the following details:
     - In the **database** field, select **MySQL** from the dropdown.
-    - In the **jdbc url** field, enter **mysql://OSA_DEMO:Welcome123!@localhost:3306/OSA_DEMO**.
+    - In the **jdbc url** field, enter **jdbc:mysql://OSA_DEMO:Welcome123!@localhost:3306/OSA_DEMO**.
 
-![Creating a Database Connection](./images/DBConnDetailsort612*
-  .PNG "")
+![Creating a Database Connection](./images/DBConnDetails.PNG "")
 
 5. Click **Test Connection**, and wait till the status is successful. Click **Save**.
 
