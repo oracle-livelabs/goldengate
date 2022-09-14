@@ -30,15 +30,29 @@ This Lab assumes you have:
   - In the **Tags** field, enter **transportation, tutorial**.
   - From the **Stream** drop-down, select the **Tutorial** File stream that you created in [Lab 4: Create Artifacts for Your Stream Analytics Pipeline.] (#prev)
 
-  
-
 4. Click **Save**.
 The Tutorial pipeline is created and displayed. Listening for events begins, and then streaming events start to flow.
 
 ## **Task 2:** Create a Stage to Identify Vehicles Only in Atlanta
 
+  - In the Pipeline Editor, right-click the pipeline, click **Add a Stage**, and then select **Pattern**.
+  - Select **Spatial** submenu, select **Geo Fence**.
+  - On the **Create Pattern Stage** screen:
+    - In the name field, enter **PatternGeoFenceInside**.
+    - In the **Description** field, enter **Spatial analytics in the city of Atlanta**.
+    - In the **Tags** field, enter **transportation, tutorial**.
 
 ## **Task 3:** Create a Query Stage to Ignore Stationary Vehicles
+  - From the Add a Stage menu, select Query.
+  - In the Create Query dialog box, enter the following and click Save:
+  - In the Name field, enter BusSpeed0Plus.
+  - In the Description field, enter Analytics only on moving vehicles.
+  - In the BusSpeed0Plus query stage page, do the following:
+    - On the Filters tab, click Add a Filter.
+    - In the first drop-down, select Bus_Speed, from second drop-down menu select greater than, and then accept default value 0.
+  - On the Sources tab, do the following:
+  - For PatternGeoFenceInside, click Timer in the second row below Sources.
+  - Enter a range of 10 seconds and evaluation frequency of 10 seconds. PatternGeoFenceInside 10s/10s is displayed.
 
 ## Learn More
 
