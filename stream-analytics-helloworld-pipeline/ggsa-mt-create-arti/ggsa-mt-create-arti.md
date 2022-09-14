@@ -124,7 +124,7 @@ You should be already logged in after completing the lab *Initialize Environment
 2. Select **Generic Database** from the submenu, to display the **Create Connection** screen.
 
 3. On the **Type Properties** screen, enter the following details and click **Next**:
-    - In the **Name** field, enter **Tutorial DB**.
+    - In the **Name** field, enter **TutorialDB**.
     - In the **Display Name** field, enter a display name for the stream. If left blank, the **Name** field value is   copied.
     - In the **Tags** field, enter **tutorial, transportation**.
 
@@ -140,6 +140,25 @@ You should be already logged in after completing the lab *Initialize Environment
 5. Click **Test Connection**, and wait till the status is successful. Click **Save**.
 
 ## **Task 5:** Create a Database Reference
+
+1. On the Catalog page, **Create New Item**, and select **Reference**.
+
+2. Select **Database Table** from the submenu, to display the **Create Reference** screen.
+
+3. On the **Type Properties** screen, enter the following details and click **Next**:
+    - In the **Name** field, enter **TutorialDBREf**.
+    - In the **Display Name** field, enter a display name for the stream. If left blank, the **Name** field value is   copied.
+    - In the **Tags** field, enter **tutorial, transportation**.
+
+4. On the **Source Details** page, select the **TutorialDBConn** connection that you created earlier, and click **Next**.
+
+![Selecting a Database Connection](./images/DBRefSourceDetails.PNG "")
+
+5. On the **Shape** page, select **driver_details** from the **Shape Name** drop-down. Click **Save**.
+
+![Selecting a Database Table](./images/DBRefShape.PNG "")
+
+
 ## Learn More
 
 * [Transform and Analyze Data Streams](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/creating-pipeline-transform-and-analyze-data-streams.html#GUID-9DB9B57A-1095-4557-ACB9-816A696EB121)
