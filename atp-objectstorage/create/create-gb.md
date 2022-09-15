@@ -25,13 +25,19 @@ In this lab, you will:
 ### Prerequisites
 In Task 5, you must upload a private key and enter the corresponding public key fingerprint. To add an API key:
 
-1.  Oracle Cloud console global navigation bar, click **Profile** (user icon).
+1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **User Settings**.
 
-2.  On the user details page, under **Resources**, click API **Keys**.
+    ![Oracle Cloud console User menu](images/00-01-profile.png " ")
+
+2.  On the user details page, under **Resources**, click **API Keys**.
 
 3.  Click **Add API Key**.
 
-4.  In the Add API Key dialog, click **Download Private Key**, and then click **Add**.
+    ![Resources on User details page](images/00-03-apikey.png " ")
+
+4.  In the Add API Key dialog, click **Download Private Key** to download the key, and then click **Add**.
+
+    ![Download Private key](images/00-04-privatekey.png " ")
 
 5.  In the Configuration File Preview dialog, copy the fingerprint to a text editor, and then click **Close**.
 
