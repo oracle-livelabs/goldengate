@@ -207,6 +207,8 @@ You can leave the source database SQL window open for use in a later lab.
 
 5.  Click **Next**.
 
+    ![Create Object Storage connection](images/05-05-obj-connection.png " ")
+
 6.  From the Region dropdown, select a region.
 
 7.  For Private key configuration, drag-and-drop the private key (.pem) or select it from your local machine.
@@ -217,7 +219,7 @@ You can leave the source database SQL window open for use in a later lab.
 
 9.  Click **Create**.
 
-  ![Target details](./images/05-07-objstorageconnection.png " ")
+  ![Create Object Storage connection](./images/05-08-obj-connection.png " ")
 
     The Connection becomes Active after a few minutes.
 
