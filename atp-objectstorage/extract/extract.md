@@ -226,7 +226,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 ## Task 9: Add and run a Replicat
 
->**Note**: *Complete the following steps in the **OBJDeployment** deployment console (BDinstance).
+>**Note**: *Complete the following steps in the **OBJDeployment** deployment console (BDinstance).*
 
 1.  Click **Administration Service**.
 
@@ -250,7 +250,9 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 9.  On the Parameter Files page, change `MAP *.*, TARGET *.*;` to `MAP SRC_OCIGGLL.*, TARGET *.*;` and then click **Next**.
 
-10. On the Properties File page, locate gg.eventhandler.oci.compartment, and then replace the placeholder with your compartment's OCID.
+10. On the Properties File page, locate `gg.eventhandler.oci.compartment`, and then replace the placeholder with your compartment's OCID.
+
+  >**NOTE:** *You can find your compartment name in your Workshop Details. Copy the compartment OCID from the Compartments page in the Oracle Cloud console. You can enter `Compartments` into the search bar, or locate **Compartments** in the Oracle Cloud console navigation menu under **Identity & Security**.*
 
 11. Locate `gg.eventhandler.oci.bucketMappingTemplate`, and then replace the placeholder with a name for your target bucket.
 
