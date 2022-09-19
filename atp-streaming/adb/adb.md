@@ -133,25 +133,15 @@ You can click View VCN Details and see both a Public and Private subnet were cre
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
 
-## Task 4: Create and download an Auth Token
-
-1.  In the Oracle Cloud console global header, click **Profile**, and then click **User Settings**.
-
-2.  Under **Resources**, click **Auth Tokens**.
-
-3.  Click **Generate Token**.
-
-4.  In the Generate Token dialog, enter a friendly description, and then click **Generate Token**.
-
-5.  Copy the auth token immediately to a secure location from where you can retrieve it later. You won't be able to retrieve it again from the Oracle Cloud console.
-
-6.  Close the dialog.
-
-## Task 5: Create an OCI Stream
+## Task 4: Create an OCI Stream
 
 1.  In the Oracle Cloud console, open the navigation menu and click **Analytics & AI**. Under **Messaging**, click **Streaming**.
 
+	![Select Streaming from Oracle Cloud console menu](images/05-01-streaming.png " ")
+
 2.  Click **Create Stream**.
+
+	![Click Create Stream](images/05-02-create-stream.png " ")
 
 3.  On the Create Stream page, enter a **Stream Name**.
 
@@ -161,11 +151,13 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 6.  Click **Create**.
 
+	![Create Stream details](images/05-06-create-stream-details.png " ")
+
 **Proceed to the next lab.**
 
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
 - **Contributor** - Deniz Sendil, Database Product Management
-- **Last Updated by** - Jenny Chan, July 2022
+- **Last Updated by** - Jenny Chan, September 2022
 - **PAR Expiration date** - February 2024
