@@ -31,7 +31,7 @@ In this lab, you will:
 
 2.  In the DB Connection panel, click **Download Wallet**.
 
-    ![Click Download wallet in DB Connection panel](https://oracle-livelabs.github.io/goldengate/ggs-common/images/02-02.png " ")
+    ![Click Download wallet in DB Connection panel](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-02.png " ")
 
 3.  In the Download Client Credentials (Wallet) dialog, enter the Source ATP Admin password twice, and then click **Download**.
 
@@ -53,11 +53,11 @@ In this lab, you will:
 
 4.  From the Cloud Shell drawer menu (hamburger icon), select **Upload**.
 
-    ![Click Upload in the Cloud Shell menu](https://oracle-livelabs.github.io/goldengate/ggs-common/images/oggmp-atp/02-04-cloud-shell-upload.png " ")
+    ![Click Upload in the Cloud Shell menu](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-04-cloud-shell-upload.png " ")
 
 5.  In the File Upload to your Home Directory dialog, drag and drop or select the SourceATP wallet zip file you downloaded in Task 1, and then click **Upload**.
 
-    ![Upload the wallet zip file to Cloud Shell's File Upload to your Home Directory dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/images/oggmp-atp/02-05-upload-wallet.png " ")
+    ![Upload the wallet zip file to Cloud Shell's File Upload to your Home Directory dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-05-upload-wallet.png " ")
 
 6.  Repeat step 5 to upload your SSH private key. Click **Hide** to close the File Transfers dialog.
 
@@ -67,7 +67,7 @@ In this lab, you will:
     <copy>chmod 600 <private-SSH-key></copy>
     ```
 
-    ![Enter chmod 600 followed by the name of your private key into Cloud Shell](https://oracle-livelabs.github.io/goldengate/ggs-common/images/oggmp-atp/02-07-chmod.png " ")
+    ![Enter chmod 600 followed by the name of your private key into Cloud Shell](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-07-chmod.png " ")
 
 8.  Copy the Public IP from the list of Compute Instances.
 
@@ -136,7 +136,7 @@ unzip <wallet_ATP-filname>.zip -d wallet_ATP</copy>
     <copy>cat ogg-credentials.json</copy>
     ```
 
-    ![Enter cat ogg-credentials.json to copy its contents](https://oracle-livelabs.github.io/goldengate/ggs-common/images/oggmp-atp/03-03-oggadmin.png " ")
+    ![Enter cat ogg-credentials.json to copy its contents](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-03-oggadmin.png " ")
 
 4.  Exit Cloud Shell.
 
@@ -195,7 +195,7 @@ First, copy the SourceATP connection string from the OCI GoldenGate Deployment C
 
 11. Next to TRANDATA Information, click **Add TRANDATA**.
 
-    ![Click Add Trandata](https://oracle-livelabs.github.io/goldengate/ggs-common/imagesoggmp-atp//04-15.png " ")
+    ![Click Add Trandata](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-15.png " ")
 
 12. For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**. *You only need to click Submit once. Click Search, and then enter SRC_OCIGGLL to verify.*
 
@@ -207,4 +207,4 @@ In this lab, you created a connection from the Oracle GoldenGate Marketplace ins
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, September 2022
