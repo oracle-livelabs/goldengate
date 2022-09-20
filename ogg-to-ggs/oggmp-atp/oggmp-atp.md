@@ -51,7 +51,7 @@ In this lab, you will:
 
     ![Click Cloud Shell in the Oracle Cloud console global header](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-03-cloud-shell.png " ")
 
-4.  From the Cloud Shell drawer menu (hamburger icon), select **Upload**.
+4.  From the Cloud Shell Settings menu (gear icon), select **Upload**.
 
     ![Click Upload in the Cloud Shell menu](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-04-cloud-shell-upload.png " ")
 
@@ -149,6 +149,8 @@ First, copy the SourceATP connection string from the OCI GoldenGate Deployment C
     ![Click Configuration in the OCI GoldenGate deployment console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-02.png " ")
 
 2.  Copy the SourceATP connection string in the User ID column, and then paste it into a text editor.
+
+  >**NOTE:** *If you don't see your Source and Target databases here, stop and restart your deployment in the Oracle Cloud console.*
 
     ![Copy the source database's connection string and paste it into a text editor](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-03.png " ")
 
