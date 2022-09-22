@@ -100,7 +100,9 @@ While the deployment is being created, you can register the source and target Au
 
 8.  For **Autonomous Database in &lt;compartment-name&gt;**, click **Change Compartment**, select the compartment you created your ATP instance, and then select **SourceATP** from the dropdown. Some fields are autopopulated based on your selection.
 
-9.  Enter the database admin's password from the Workshop Details in the Password field, and then click **Register**.
+9.  For Database user password, enter a password for the `ggadmin` user, and then click **Register**. Take note of this password.
+
+  >**NOTE:** *If you're completing this lab in a Sandbox Tenancy, then click **View Login Info** in your LiveLab instructions and copy database Admin password under Terraform Values and paste it into the Database user password field.*
 
   ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-01-12-regsourcedb.png)
 
@@ -126,7 +128,7 @@ Although the GGADMIN user is created during the database registration process, i
 
     ![SourceATP database details page with Database Actions highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-db-tools.png " ")
 
-4.  Sign in to Database Actions using the ADMIN user details from Lab 1: Set Up the Environment. If you're running this lab as a workshop, copy the ADMIN password provided with your workshop details.
+4.  Sign in to Database Actions using the ADMIN user details from Lab 1: Set Up the Environment. If you're running this lab on a Sandbox tenancy, copy the ADMIN password provided with your Login Info.
 
 5.  Under **Administration**, click **Database Users**.
 

@@ -17,7 +17,7 @@ Connections capture source and target credential information. A connection also 
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
 * Create an OCI GoldenGate deployment for the Autonomous Database
-* Create an OCI GoldenGate deployment for Oracle Object Storage
+* Create an OCI GoldenGate deployment for Apache Kafka
 * Create connections for the source Autonomous Databases and target Apache Kafka node.
 * Assign connections to deployments
 
@@ -72,7 +72,7 @@ This lab assumes that you completed the preceding lab, and your Autonomous Datab
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-## Task 2: Create a deployment for Oracle Object Storage
+## Task 2: Create a deployment for Apache Kafka
 
 1.  On the Deployments page, click **Create Deployment**.
 
@@ -184,7 +184,7 @@ select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
 
 You can leave the source database SQL window open for use in a later lab.
 
-## Task 5: Create a connection for Oracle Object Storage
+## Task 5: Create a connection for Apache Kafka
 
 1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate.
 
@@ -192,7 +192,7 @@ You can leave the source database SQL window open for use in a later lab.
 
 3.  In the Create Connection panel, enter **TargetKafka** for Name.
 
-4.  From the Type dropdown, select **Kafka**.
+4.  From the Type dropdown, select **Apache Kafka**.
 
 5.  Click **Next**.
 
@@ -245,4 +245,4 @@ After your deployments and connections become active, you can assign the connect
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, August 2022
