@@ -195,7 +195,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 9.  In the Object Details panel, copy the URL Path (URI) up the object name and paste it into a text editor.
 
-    ![Object URL Path](images/objectstorage-objectdetails.png)
+  ![Object URL Path](images/objectstorage-objectdetails.png)
 
     The bucket URI should match the following syntax:
 
