@@ -37,6 +37,8 @@ In this lab, you will:
 
     ![After enter the source database's admin password in the Download Client Credentials dialog window, click Download](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-03.png " ")
 
+4.  **Close** the Database connection panel.
+
 ## Task 2: Upload the Source ATP credentials to Oracle GoldenGate
 
 1.  From the Oracle Cloud Console navigation menu, click **Compute**, and then click **Instances**.
@@ -61,7 +63,7 @@ In this lab, you will:
 
 6.  Repeat step 5 to upload your SSH private key. Click **Hide** to close the File Transfers dialog.
 
-7.  To ensure the SSH key permissions are valid, enter the following command in Cloud Shell:
+7.  To ensure the SSH key permissions are valid, enter the following command in Cloud Shell, replacing `<private-SSH-key>` with the name of your private key:
 
     ```
     <copy>chmod 600 <private-SSH-key></copy>
@@ -158,7 +160,7 @@ First, copy the SourceATP connection string from the OCI GoldenGate Deployment C
 
     ![Replace the existing value for MY_WALLET_DIRECTORY with the path to the wallet files](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-04.png " ")
 
-4.  In a new browser tab or window, use the Public IP and port 443 (**https://&lt;Public-IP&gt;:443**) to open the Marketplace Oracle GoldenGate Service Manager.
+4.  In a new browser tab or window, use the Public IP and port 443 (**https://&lt;Public-IP&gt;:443**) to open the Marketplace Oracle GoldenGate Service Manager. Ignore the security warning and proceed with connecting to the IP.
 
 5.  Log in to the Service Manager using the credentials you copied in Task 3.
 
@@ -209,4 +211,4 @@ In this lab, you created a connection from the Oracle GoldenGate Marketplace ins
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2022
+* **Last Updated By/Date** - Jenny Chan, October 2022

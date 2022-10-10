@@ -25,7 +25,7 @@ In this lab, you will:
 ### Prerequisites
 In Task 5, you must upload a private key and enter the corresponding public key fingerprint. To add an API key:
 
-1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **User Settings**.
+1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **My Profile**.
 
     ![Oracle Cloud console User menu](images/00-01-profile.png " ")
 
@@ -109,7 +109,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 8.  Click **Next**.
 
-9.  From the Select a technology dropdown, select **Oracle Database**.
+9.  From the Select a technology dropdown, select **Big Data**.
 
 10. For GoldenGate Instance Name, enter **BDinstance**.
 
@@ -217,7 +217,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     >**Note**: *Refer to the Prerequisites section for instructions on how to obtain a private key.*
 
-8.  Enter the corresponding public key fingerprint you copied from the prerequisite steps. You can also go back to your User settings in the Oracle Cloud console global header to copy it again. 
+8.  Enter the corresponding public key fingerprint you copied from the prerequisite steps. You can also go back to your User settings in the Oracle Cloud console global header to copy it again.
 
 9.  Click **Create**.
 
