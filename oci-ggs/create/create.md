@@ -96,7 +96,7 @@ First, follow the steps below to register the source Oracle Autonomous Transacti
 
 9.  Enter the database's password in the Password field, and then click **Register**.
 
-    ![Source Database details](images/01-01-12-regSourceDB.png)
+    ![Source Database details](images/01-01-12-regsourcedb.png)
 
     The database registration becomes Active after a few minutes.
 
@@ -119,8 +119,6 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
     > **Note:** *If you're prompted to log in to Database Actions, use the source database admin credentials.*
 
 4.  Under **Administration**, click **Database Users**.
-
-    ![Database Actions](images/02-05.png " ")
 
 5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
@@ -154,25 +152,26 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
 1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate.
 
-1.  Click **Registered Databases** and then **Register Database**.
+2.  Click **Registered Databases** and then **Register Database**.
 
     ![Registered Databases page](images/03-02.png)
 
-2.  In the Register Database panel, enter **TargetADW** for Name and Alias.
+3.  In the Register Database panel, enter **TargetADW** for Name and Alias.
 
-3.  From the **Compartment** dropdown, select a compartment.
+4.  From the **Compartment** dropdown, select a compartment.
 
-4.  Click **Select Database**.
+5.  Click **Select Database**.
 
-5.  For **Autonomous Database in &lt;compartment-name&gt;**, click **Change Compartment**, select the compartment you created your ADW instance, and then select **TargetADW** from the dropdown. Some fields are autopopulated based on your selection.
+6.  For **Autonomous Database in &lt;compartment-name&gt;**, click **Change Compartment**, select the compartment you created your ADW instance, and then select **TargetADW** from the dropdown. Some fields are autopopulated based on your selection.
 
-6.  Enter the database's password in the Password field, and then click **Register**.
+7.  Enter the database's password in the Password field, and then click **Register**.
 
-    ![Target Database details](images/02-10-ggs-regDB-target.png)
+    ![Target Database details](images/02-10-ggs-regdb-target.png)
 
     The source and target databases appear in the list of Registered Databases. The database registration becomes Active after a few minutes.
 
-7.  Repeat the instructions under Task 2 to unlock the GGADMIN user on the TargetADW database.
+8.  Repeat Task 3 steps 1 to 6 to unlock the GGADMIN user on the TargetADW database.
+
 
 In this lab, you created an OCI GoldenGate deployment, and registered the source and target databases.
 
