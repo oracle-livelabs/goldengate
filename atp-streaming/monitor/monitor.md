@@ -51,6 +51,10 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
     ![Replicat Process Information - Statistics](images/01-06-rep-statistics.png " ")
 
+7.  In the Oracle Cloud console, open the navigation menu, click **Analytics & AI**, and then under **Messaging**, click **Streaming**.
+
+8.  Select your Stream to view its details. On the Stream details page, under **Recent Messages**, click **Load Messages**.
+
 ## Task 2: Using the Performance Metrics Server
 
 1.  In the GoldenGate deployment console, click **Performance Metrics Server**, and then click **EXT**.

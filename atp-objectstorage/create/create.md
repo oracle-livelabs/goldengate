@@ -207,17 +207,19 @@ You can leave the source database SQL window open for use in a later lab.
 
 5.  Click **Next**.
 
+    ![Create Object Storage connection](images/05-05-obj-connection.png " ")
+
 6.  From the Region dropdown, select a region.
 
 7.  For Private key configuration, drag-and-drop the private key (.pem) or select it from your local machine.
 
     >**Note**: *Refer to the Prerequisites section for instructions on how to obtain a private key.*
 
-8.  Enter the corresponding public key fingerprint.
+8.  Enter the corresponding public key fingerprint. You can also go back to your User settings in the Oracle Cloud console global header to copy it again. 
 
 9.  Click **Create**.
 
-  ![Target details](./images/05-07-objstorageconnection.png " ")
+  ![Create Object Storage connection](./images/05-08-obj-connection.png " ")
 
     The Connection becomes Active after a few minutes.
 

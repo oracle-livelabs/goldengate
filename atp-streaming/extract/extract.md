@@ -166,7 +166,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Credentials page](images/03-02-addcredential.png " ")
 
-3.  For Credential Domain, enter `ggs2kafka`.
+3.  For Credential Domain, enter `ggs2stream`.
 
 4.  For Credential Alias, enter `ocinetwork`.
 
@@ -188,7 +188,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
     ![Distribution Service Overview](images/03-01-addpath.png " ")
 
-2.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, `GGStoKafka`.
+2.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, `GGStoStream`.
 
 3.  For **Description**, describe the purpose of this Path.
 
@@ -206,7 +206,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 9.  For **Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.
 
-10. For **Target Domain**, enter the domain name you created in Oracle GoldenGate. For example, **ggs2kafka**.
+10. For **Target Domain**, enter the domain name you created in Oracle GoldenGate. For example, **ggs2stream**.
 
 11. For **Target Alias**, enter the alias name you created in Oracle GoldenGate. For example, **ocinetwork**.
 
@@ -252,7 +252,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 9.  On the Parameter Files page, replace `MAP *.*, TARGET *.*;`with `MAP SRC_OCIGGLL.*, TARGET *.*;`, and then click **Next**.
 
-10. On the Properties File page, locate `gg.handler.kafkahandler.topicMappingTemplate=<stream-name>`, replace `<stream-name>` with the name of your Stream.
+10. On the Properties File page, locate `gg.handler.kafkahandler.topicMappingTemplate=`, enter the name of your OCI Stream.
 
 11. Click **Create and Run**. The yellow exclamation mark changes to a green check when the Replicat process starts successfully.
 
@@ -269,4 +269,4 @@ In this lab, you:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Deniz Sendil, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, September 2022

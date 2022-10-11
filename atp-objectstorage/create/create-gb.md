@@ -25,13 +25,19 @@ In this lab, you will:
 ### Prerequisites
 In Task 5, you must upload a private key and enter the corresponding public key fingerprint. To add an API key:
 
-1.  Oracle Cloud console global navigation bar, click **Profile** (user icon).
+1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **My Profile**.
 
-2.  On the user details page, under **Resources**, click API **Keys**.
+    ![Oracle Cloud console User menu](images/00-01-profile.png " ")
+
+2.  On the user details page, under **Resources**, click **API Keys**.
 
 3.  Click **Add API Key**.
 
-4.  In the Add API Key dialog, click **Download Private Key**, and then click **Add**.
+    ![Resources on User details page](images/00-03-apikey.png " ")
+
+4.  In the Add API Key dialog, click **Download Private Key** to download the key, and then click **Add**.
+
+    ![Download Private key](images/00-04-privatekey.png " ")
 
 5.  In the Configuration File Preview dialog, copy the fingerprint to a text editor, and then click **Close**.
 
@@ -103,7 +109,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 8.  Click **Next**.
 
-9.  From the Select a technology dropdown, select **Oracle Database**.
+9.  From the Select a technology dropdown, select **Big Data**.
 
 10. For GoldenGate Instance Name, enter **BDinstance**.
 
@@ -153,7 +159,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 1.  From the Oracle Cloud Console **Navigation Menu** (hamburger icon), click **Oracle Database**, and then select **Autonomous Transaction Processing**.
 
-	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/oracle/common/create/images/console/database-atp.png " ")
+	 ![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/common/images/console/database-atp.pngatp.png " ")
 
 2.  From the list of databases, select **SourceATP**.
 
@@ -193,7 +199,9 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 ## Task 5: Create a connection for Oracle Object Storage
 
-1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate.
+1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate. Open the Oracle Cloud console navigation menu, click **Oracle Database**, and then **GoldenGate**.
+
+    ![GoldenGate in the Oracle Cloud console navigation menu](https://oracle-livelabs.github.io/common/images/console/database-goldengate.png " ")
 
 2.  Click **Connections** and then **Create Connection**.
 
@@ -203,13 +211,13 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 5.  Click **Next**.
 
-6.  From the Region dropdown, select a region.
+6.  From the Region dropdown, select your region.
 
 7.  For Private key configuration, drag-and-drop the private key (.pem) or select it from your local machine.
 
     >**Note**: *Refer to the Prerequisites section for instructions on how to obtain a private key.*
 
-8.  Enter the corresponding public key fingerprint.
+8.  Enter the corresponding public key fingerprint you copied from the prerequisite steps. You can also go back to your User settings in the Oracle Cloud console global header to copy it again.
 
 9.  Click **Create**.
 
