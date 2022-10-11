@@ -15,7 +15,7 @@
         {
 
             "title": "Lab 1: Set up the environment",
-            "description": "Provision the source MySQL and target Autonomous Database.",
+            "description": "Provision the source and target Autonomous Databases.",
             "filename": "../../adb/adb.md"
         },
         {
