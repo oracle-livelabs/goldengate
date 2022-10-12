@@ -5,6 +5,9 @@ This lab instructs you to use the OCI GoldenGate deployment console to add trans
 
 Estimated time: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Set up and run replication processes](videohub:1_d6g4fbsx)
+
 ### About Extracts, Distribution paths, and Replicats
 An Extract is a process that extracts, or captures, data from a source database. A Distribution Path is a source-to-destination configuration that uses the Distribution Server.
 
