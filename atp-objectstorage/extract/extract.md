@@ -252,7 +252,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 10. On the Properties File page, locate `gg.eventhandler.oci.compartment`, and then replace the placeholder with your compartment's OCID.
 
-  >**NOTE:** *You can find your compartment name in your Workshop Details. Copy the compartment OCID from the Compartments page in the Oracle Cloud console. You can enter `Compartments` into the search bar, or locate **Compartments** in the Oracle Cloud console navigation menu under **Identity & Security**.*
+  >**NOTE:** *If running this lab in a Sandbox environment, you can find your compartment OCID in the View Login Info panel. You can also copy the compartment OCID from the Compartments page in the Oracle Cloud console. Enter `Compartments` into the search bar, or locate **Compartments** in the Oracle Cloud console navigation menu under **Identity & Security**.*
 
 11. Locate `gg.eventhandler.oci.bucketMappingTemplate`, and then replace the placeholder with a name for your target bucket.
 
