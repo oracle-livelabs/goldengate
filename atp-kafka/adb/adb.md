@@ -62,6 +62,8 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 7.  Click **Add Ingress Rules**.
 
+	![Default Security List Ingress Rules](images/02-07-ingress.png " ")
+
 The Ingress Rule for port 9092 appears in the Ingress Rules list.
 
 ## Task 3: Create an ATP instance
