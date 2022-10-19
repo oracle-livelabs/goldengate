@@ -68,37 +68,35 @@ In this lab, you will:
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-## Task 2: Register the source database
+## Task 2: Create a connection to the source database
 
-First, follow the steps below to register the source Oracle Autonomous Transaction Processing \(ATP\) Database.
+First, follow the steps below to create a connection to the source Oracle Autonomous Transaction Processing \(ATP\) Database.
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the GoldenGate page.
 
-    ![GoldenGate in Oracle Cloud Console breadcrumb highlighted](images/01-01-breadcrumb.png " ")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-01-breadcrumb.png " ")
 
-2.  Click **Registered Databases**.
+2.  Click **Connections**.
 
-    ![Registered Databases in GoldenGate menu](images/01-02-ggs-registerdb.png " ")
+    ![Connections in GoldenGate menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-goldengatemenu.png " ")
 
-3.  Click **Register Database**.
+3.  Click **Create Connection**.
 
-    ![Registered Databases page](images/01-03-ggs-registerdb.png " ")
+    ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-connections.png " ")
 
-4.  In the Register Database panel, for Name and Alias, enter **SourceATP**.
+4.  In the Create Connection panel, for Name, enter **SourceATP**.
 
-5.  From the Compartment dropdown, select a compartment.
+5.  From the Type dropdown, select **OCI Autonomous Database**.
 
-6.  Click **Select Database**.
+6.  Click **Next**.
 
-7.  From the Database Type dropdown, select **Autonomous Database**.
+7.  For **Database in &lt;compartment-name&gt;**, click **Change Compartment**, select the compartment you created your ATP instance, and then select **SourceATP** from the dropdown. Some fields are autopopulated based on your selection.
 
-8.  For **Autonomous Database in &lt;compartment-name&gt;**, click **Change Compartment**, select the compartment you created your ATP instance, and then select **SourceATP** from the dropdown. Some fields are autopopulated based on your selection.
+8.  Enter a password for the `ggadmin` user in the Password field, and then click **Create**.
 
-9.  Enter the database's password in the Password field, and then click **Register**.
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-08-atpconnection.png)
 
-    ![Source Database details](images/01-01-12-regsourcedb.png)
-
-    The database registration becomes Active after a few minutes.
+    The connection becomes Active after a few minutes.
 
 ## Task 3: Unlock the GGADMIN user and check support mode for the source database
 
@@ -146,7 +144,7 @@ select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
 
 You can leave the source database SQL window open for use in a later lab.
 
-## Task 4: Register the target database and unlock the GGADMIN user
+## Task 4: Create a connection to the target database and unlock the GGADMIN user
 
 Now, follow the steps below to register the target Autonomous Data Warehouse \(ADW\) instance.
 
