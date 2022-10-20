@@ -44,7 +44,21 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
     ![Verify configuration details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-05.png " ")
 
-You can click **View VCN Details** and see both a Public and Private subnet were created.
+6.  Click **View VCN Details** and see both a Public and Private subnet were created.
+
+7.  Select the **Public** subnet, and then select the **Default Security List**.
+
+8.  Click **Add Ingress Rules**.
+
+9.  In the **Add Ingress Rules** panel, select **CIDR** for **Source Type**.
+
+10. Enter `0.0.0.0/0` for **Source CIDR**.
+
+11. For IP Protocol, select **TCP**.
+
+12. For Destination Port Range, enter `3306`.
+
+13. For Description, enter `For MySQL access`, and then click **Add Ingress Rules**.
 
 ## Task 2: Create an OCI MySQL Database System
 
