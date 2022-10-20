@@ -44,10 +44,10 @@ This lab assumes you completed all preceding labs.
 
 ## Learn more
 
-* [Managing Trail Files](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-051F5E35-89F6-41A9-9E82-D75F4C1DA6DD)
+* [Manage Trail Files](https://docs.oracle.com/en/cloud/paas/goldengate-service/ntzlj/index.html#articletitle)
 
 ## Acknowledgements
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management; Arabella Yao, Database Product Management
-* **Last Updated By/Date** - Arabella Yao, May 2022
+* **Contributors** -  Denis Gray, Database Product Management; Arabella Yao, Database Product Management; Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, October 2022
