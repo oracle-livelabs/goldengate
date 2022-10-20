@@ -21,17 +21,25 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 1.  In the OCI Console breadcrumb, click **Autonomous Database**, and then select **TargetADW** from the list of databases.
 
+    ![](images/01-01a.png " ")
+
+    ![](images/01-01b.png " ")
+
 2.  On the Target Autonomous Data Warehouse Details page, click **DB Connection**.
 
-    ![](images/02-01.png " ")
+    ![](images/01-02.png " ")
 
-2.  In the DB Connection panel, click **Download Wallet**.
+3.  In the DB Connection panel, click **Download Wallet**.
 
-    ![](images/02-02.png " ")
+    ![](images/01-03.png " ")
 
-3.  In the Download Client Credentials (Wallet) dialog, enter the Target Autonomous Data Warehouse Admin password twice, and then click **Download**.
+4.  In the Download Client Credentials (Wallet) dialog, enter the Target Autonomous Data Warehouse Admin password twice, and then click **Download**.
 
-4.  Close the DB Connection panel.
+    ![](images/01-04.png " ")
+
+5.  Close the DB Connection panel.
+
+    ![](images/01-05.png " ")
 
 ## Task 2: Upload the Target Autonomous Data Warehouse Credentials to Oracle GoldenGate
 
@@ -69,7 +77,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 8.  On the Instances in <compartment-name> page, copy the **Public IP Address**.
 
-    ![](images/02-04.png " ")
+    ![](images/02-08.png " ")
 
 9.  In Cloud Shell, enter the following to connect to the Marketplace Oracle GoldenGate compute instance:
 
@@ -89,6 +97,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 11. Enter `exit` to close the sftp connection.
 
+    ![](images/02-11.png " ")
 
 12. SSH to the compute instance.
 
@@ -113,6 +122,8 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
 
 16. Enter `pwd`, and then copy the full path to the wallet files to be used in a later Task.
 
+    ![](images/02-16.png " ")
+
 > **Note:** Leave Cloud Shell open.
 
 ## Task 3: Get the Marketplace Oracle GoldenGate oggadmin Credentials
@@ -130,8 +141,11 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
     ```
     <copy>cat ogg-credentials.json</copy>
     ```
+    ![](images/03-03.png " ")
 
 4.  Exit Cloud Shell.
+
+    ![](images/03-04.png " ")
 
 ## Task 4: Add the Target Autonomous Data Warehouse Credential in the Oracle GoldenGate Administration Server
 
@@ -139,11 +153,11 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
 
 2.  Open the navigation menu (hamburger icon) and then click **Configuration**.
 
-    ![](images/03-02.png " ")
+    ![](images/04-02.png " ")
 
 3.  Copy the TargetADW connection string in the User ID column, and then paste it into a text editor.
 
-    ![](images/03-03.png " ")
+    ![](images/04-03.png " ")
 
 4.  Edit the TargetADW connection string, replacing the value for **MY\_WALLET\_DIRECTORY** with the location where you unzipped the wallet_ADW.zip. For example, **/home/opc/wallet\_ADW**.
 
@@ -155,15 +169,15 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
 
 7.  In the Service Manager, under **Services**, click the port number associated with the Administration Server. The Administration Server opens in a new browser tab. If you're prompted to log in again, use the same oggadmin credentials.
 
-    ![](images/04-03.png " ")
+    ![](images/04-07.png " ")
 
 8.  In the Administration Server, open the navigation menu (hamburger icon), and then select **Configuration**.
 
-    ![](images/04-07.png " ")
+    ![](images/04-08.png " ")
 
 9.  Click **Add Credential**.
 
-    ![](images/03-09.png " ")
+    ![](images/04-09.png " ")
 
 10. Enter the following information, and then click **Submit**:
 
@@ -179,5 +193,5 @@ In this lab, you created a connection from the Oracle GoldenGate Marketplace ins
 ## Acknowledgements
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, February 2022
+* **Contributors** -  Julien Testut, Database Product Management & Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, October 2022

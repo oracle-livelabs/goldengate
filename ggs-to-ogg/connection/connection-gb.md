@@ -30,29 +30,29 @@ To successfully complete this lab, you must have:
 
 2.  In your Chrome browser address bar, click the padlock icon, and then click **Connection is secure**.
 
-    ![](images/01-04-certificate.png " ")
+    ![](images/01a-02-certificate.png " ")
 
 3.  Click **Certificate is valid**.
 
-    ![](images/01-03-certificate.png " ")
+    ![](images/01a-03-certificate.png " ")
 
 4.  In the Certificate window, click **Certification Path**, select **DigiCert Global Root G2**, and then click **View Certificate**.
 
-    ![](images/01-04-certificate-window.png " ")
+    ![](images/01a-04a-certificate-window.png " ")
 
     Another Certificate window opens, displaying the details for the root DigiCert certificate.
 
-    ![](images/01-04-digicert.png " ")
+    ![](images/01a-04b-digicert.png " ")
 
 5.  Click **Details**, and then click **Copy to File**.
 
-    ![](images/01-05.png " ")
+    ![](images/01a-05.png " ")
 
 6.  In the Certificate Export Wizard, click **Next**.
 
 7.  Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
 
-    ![](images/01-07.png " ")
+    ![](images/01a-07.png " ")
 
 8.  Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
 
@@ -80,6 +80,8 @@ The following instructions show you how to download the Root Certificate using a
 
 5.  On the **Certificate** page, click **DigiCert Global Root G2**.
 
+    ![](images/01b-05.png " ")
+
 6.  Under the **Miscellaneous** section, for Download, click **PEM (cert)**, and save the PEM file to your local drive.
 
     ![](images/01b-06.png " ")
@@ -92,23 +94,23 @@ The following instructions show you how to download the Root Certificate using a
 
 2.  On the Certificate Management page, click **Add CA Certificates** (plus icon).
 
-    ![](images/02-03-addcert.pn " ")
+    ![](images/02-02-addcert.png " ")
 
 3.  In the Add CA Certificate dialog, enter a **Unique Name**.
 
-    ![](images/02-04-addcertdialog.png " ")
+    ![](images/02-03-addcertdialog.png " ")
 
 4.  For **Certificate PEM**, if you downloaded the root certificate from Chrome, open it in a text editor, and then copy and paste the key into the **Enter** text area.
 
-    ![](images/02-05-entercert.png " ")
+    ![](images/02-04-entercert.png " ")
 
 5.  If you downloaded the root certificate from FireFox, click **Upload**, and then click **Browse**. Locate and select the PEM file on your local machine, and then click **Upload**.
 
-    ![](images/02-06-uploadcert.png " ")
+    ![](images/02-05-uploadcert.png " ")
 
 6.  Click **Add**.  The certificate now appears in the Shared list.
 
-    ![](images/02-07-certlist.png " ")
+    ![](images/02-06-certlist.png " ")
 
 ## Task 3: Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
 
@@ -118,7 +120,7 @@ The following instructions show you how to download the Root Certificate using a
 
 2.  Click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. For example, name the user **ggsnet** and assign the user the Operator role.
 
-    ![](images/03-02.png " ")
+    ![](images/03-02a.png " ")
 
     ![](images/03-02b.png " ")
 
@@ -142,5 +144,5 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, November 2021
+* **Contributors** -  Werner He and Julien Testut, Database Product Management & Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, October 2022

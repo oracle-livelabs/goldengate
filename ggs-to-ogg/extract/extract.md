@@ -24,19 +24,19 @@ This lab assumes that you completed all preceding labs. For the purposes of this
 
 1.  In the OCI GoldenGate Deployment console, select **Overview** from the navigation menu (hamburger icon), and then click **Configuration**.
 
-    ![](images/02-01-nav-config.png " ")
+    ![](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-01-nav-config.png " ")
 
 2.  Click **Connect to database SourceATP**.
 
-    ![](images/02-02-connect-source.png " ")
+    ![](images/01-02-connect-source.png " ")
 
 3.  Next to **TRANDATA Information** click **Add TRANDATA**.
 
-    ![](images/02-03-trandata.png " ")
+    ![](images/01-03-trandata.png " ")
 
 4.  For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**. *You only need to click Submit once. Click Search, and then enter SRC_OCIGGLL to verify.*
 
-    ![](images/01-05-trandata.png " ")
+    ![](images/01-04-trandata.png " ")
 
 ## Task 2: Add and Run an Extract in OCI GoldenGate
 
@@ -44,7 +44,7 @@ This Extract process captures data from the source database to send to Oracle Go
 
 1.  In the OCI GoldenGate Deployment console, select **Overview** from the navigation menu (hamburger icon), and then click **Add Extract** (plus icon).
 
-    ![](images/02-02-ggs-add-extract.png " ")
+    ![](images/02-01-ggs-add-extract.png " ")
 
 2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
 
@@ -76,11 +76,11 @@ This Extract process captures data from the source database to send to Oracle Go
 
 9.  In the UAEXT **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
-    ![](images/02-12-ggs-start-extract.png " ")
+    ![](images/02-09a-ggs-start-extract.png " ")
 
     The yellow exclamation point icon changes to a green checkmark.
 
-    ![](images/02-ggs-extract-started.png " ")
+    ![](images/02-09b-ggs-extract-started.png " ")
 
 ## Task 3: Add and Run a Receiver Path
 
@@ -88,11 +88,11 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 1.  In the Marketplace Oracle GoldenGate Administration Server console, click **Receiver Server**.
 
-    ![](images/02-01.png " ")
+    ![](images/03-01.png " ")
 
 2.  Click **Add Path** (plus icon).
 
-    ![](images/02-02-add-path.png " ")
+    ![](images/03-02-add-path.png " ")
 
 3.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, **GGStoOGG**.
 
@@ -106,9 +106,9 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
     *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
 
-    ![](images/03-05.png " ")
+    ![](images/03-05a.png " ")
 
-    ![](images/03-05-source-host.png " ")
+    ![](images/03-05b-source-host.png " ")
 
 6.  For **Port Number**, enter 443.
 
@@ -132,7 +132,7 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 11. For **Generated Target URI**, click **Edit** (pencil icon), and then replace the IP address with the Oracle GoldenGate Internal FQDN. *You can copy the Internal FQDN from the Oracle GoldenGate Marketplace Compute instance in the OCI Console.*    
 
-    ![](images/02-07-note.png " ")
+    ![](images/03-11a-note.png " ")
 
     ![](images/03-11b-target-uri.png " ")
 
@@ -142,7 +142,7 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 14. In the OCI GoldenGate Deployment Console, check the Receiver Server for the Receiver Path. It can take a few minutes before it appears.
 
-    ![](images/02-15-rcvr.png " ")
+    ![](images/03-14-rcvr.png " ")
 
 In this lab, you created and ran a Path on your on premises Oracle GoldenGate Receiver Server and sent a trail file from OCI GoldenGate to Oracle GoldenGate.
 
@@ -185,11 +185,11 @@ This Replicat process consumes the trail file sent from OCI GoldenGate.
 
 5.  For **Credential Alias**, select **adw&lt;user&gt;_low**.
 
-    ![](images/05-04-cred.png " ")
+    ![](images/05-05-cred.png " ")
 
 6.  For **Trail Name**, enter T1.
 
-    ![](images/05-05-trail.png " ")
+    ![](images/05-06-trail.png " ")
 
 7.  From the **Checkpoint Table** dropdown, select **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**.
 
@@ -205,13 +205,13 @@ This Replicat process consumes the trail file sent from OCI GoldenGate.
 
 11. In the Rep Replicat **Action** menu, select **Start**.
 
-    ![](images/03-10-ggs-start-replicat.png " ")
+    ![](images/05-11-ggs-start-replicat.png " ")
 
     The yellow exclamation point icon changes to a green checkmark.  
 
 12. Return to the OCI Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **Source ATP**.
 
-13. On the Source Autonomous Transaction Processing Details page, click **Tools**, and then **Database Actions**.
+13. On the Source Autonomous Transaction Processing Details page, click **Database Actions**.
 
 14. Use the Source Autonomous Transaction Processing database credentials in the Workshop details to log in to Database Actions, and then click **SQL**.
 
@@ -232,13 +232,13 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 16. In the OCI GoldenGate Deployment Console, select **Overview** from the navigation menu (hamburger icon), click the **Extract name (UAEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
-    ![](images/05-16.png " ")
+    ![](images/05-16a.png " ")
 
     ![](images/05-16b.png " ")
 
 17. Navigate to the Oracle GoldenGate Marketplace Receiver Server. From the **Action** menu, select **Details**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
-    ![](images/05-17.png " ")
+    ![](images/05-17a.png " ")
 
     ![](images/05-17b.png " ")
 
@@ -246,17 +246,17 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 1.  In the Oracle GoldenGate Marketplace Receiver Server, verify the Receiver Path is running.
 
-    ![](images/04-00.png " ")
+    ![](images/06-01.png " ")
 
 In this lab, you created an Extract, a Receiver Path, and a Replicat, and you verified that data is moving from OCI GoldenGate to Oracle GoldenGate. You may now **proceed to the next lab**.
 
 ## Learn More
 
-* [Quickstart - Sending Data from OCI GoldenGate to Oracle GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/qs-ggs-ogg-prem.html)
-* [Creating an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-3B004DB0-2F41-4FC2-BDD4-4DE809F52448)
-* [About Target-initiated Paths](https://docs.oracle.com/en/middleware/goldengate/core/21.1/ggmas/overview-target-initiated-paths.html)
+* [Quickstart - Sending Data from OCI GoldenGate to Oracle GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/swjeg/index.html#articletitle)
+* [Creating an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/index.html)
+* [Add a Receiver Path](https://docs.oracle.com/en/cloud/paas/goldengate-service/amlzc/index.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, November 2021
+* **Contributors** -  Werner He and Julien Testut, Database Product Management & Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, October 2022
