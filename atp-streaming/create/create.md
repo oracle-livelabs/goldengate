@@ -80,7 +80,7 @@ To complete this lab:
 
     ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
-3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
+3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select a compartment.
 
 4.  On the Deployments page, click **Create Deployment**.
 
@@ -242,7 +242,7 @@ You can leave the source database SQL window open for use in a later lab.
 
 6.  For Connection Details, select the Stream Pool. To select a Stream Pool in a different compartment, click **Change Compartment**.
 
-7.  For Username, enter a username for the Stream Pool.
+7.  For Username, enter a username for the Stream Pool, obtained in the Prerequisite task (Task 0) for this lab.
 
 8.  For Password, enter the Auth Token copied in the Prerequisite task (Task 0) for this lab.
 
@@ -275,8 +275,6 @@ After your deployments and connections become active, you can assign the connect
     ![Deployment details breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-06-breadcrumb.png " ")
 
 7.  Repeat steps 2 to 6 to assign the TargetStream connection to the BDDeployment.
-
-
 
 **Proceed to the next lab**.
 
