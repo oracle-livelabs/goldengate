@@ -73,7 +73,7 @@ This lab assumes that you completed all preceding labs.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for  you to use.
 
-## Task 2: Register the source database
+## Task 2: Register the source connection
 
 First, follow the steps below to connect the source Oracle Autonomous Transaction Processing \(ATP\) Database.
 
