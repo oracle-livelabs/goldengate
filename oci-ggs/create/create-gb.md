@@ -70,8 +70,6 @@ In this lab, you will:
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for  you to use.
 
-created. Its status will change from CREATING to ACTIVE when it is ready for  you to use.
-
 ## Task 2: Register the source connection
 
 First, follow the steps below to connect the source Oracle Autonomous Transaction Processing \(ATP\) Database.
@@ -249,5 +247,5 @@ After the deployment is created and active, you can perform the following action
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management & Katherine Wardhana, User Assistance Developer
+* **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
 * **Last Updated By/Date** - Katherine Wardhana, October 2022
