@@ -64,11 +64,11 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 1.  In the Oracle Cloud console navigation menu, click **Databases**, and then click **MySQL**.
 
- 	![Click MySQL under Databases in the Oracle Cloud console navigation menu](images/02-01-mysql.png)
+ 	![Click MySQL under Databases in the Oracle Cloud console navigation menu](./images/02-01-mysql.png)
 
 2.  On the MySQL DB Systems page, click **Create DB System**.
 
-	![Click Create DB System](images/02-02-create-dbsystem.png " ")
+	![Click Create DB System](./images/02-02-create-dbsystem.png " ")
 
 3.  On the Create DB system page, under **Provide DB System** information, select a compartment in which to create the MySQL DB system.
 
@@ -80,7 +80,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 7.  Under **Create Administrator credentials**, for Username, enter `admin`, and then enter a password for the admin user. Take note of this password.
 
-	![Example MySQL DB System options](images/02-07-create-dbsys-1.png " ")
+	![Example MySQL DB System options](./images/02-07-create-dbsys-1.png " ")
 
 8.  Under **Configure networking**, select the **VCN** and **Subnet** created in Task 1.
 
@@ -90,19 +90,21 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 11. On the DB System details page, copy the Private IP Address.
 
-	![Copy the Private IP](images/02-11-private-ip.png " ")
+	![Copy the Private IP](./images/02-11-private-ip.png " ")
 
 You're returned to the DB Systems page where the MySQL DB System you created appears. It will take a few minutes for the system to become Active.
 
-## Task 3: Create a bastion and session
+## Task 3A: Create a bastion and session
+
+Create a bastion and session if your OCI GoldenGate deployment and OCI MySQL Database system are not located in the same region.
 
 1.  In the Oracle Cloud console navigation menu, click **Identity & Security**, and then click **Bastion**.
 
-	![Click Bastion under Identity & Security in the Oracle Cloud console navigation menu](images/03-01-bastion.png " ")
+	![Click Bastion under Identity & Security in the Oracle Cloud console navigation menu](./images/03-01-bastion.png " ")
 
 2.  On the Bastions page, click **Create bastion**.
 
-	![Click Create bastion on Bastions page](images/03-02-create-bastion.png " ")
+	![Click Create bastion on Bastions page](./images/03-02-create-bastion.png " ")
 
 3.  In the Create bastion panel, for **Name**, leave the default or replace the default with the name of your choice.
 
@@ -110,7 +112,7 @@ You're returned to the DB Systems page where the MySQL DB System you created app
 
 5.  For **CIDR block allowlist**, enter `0.0.0.0/0` and then select **0.0.0.0/0 (New)** in the dropdown menu to add it.
 
-	![CIDR block allowlist](images/03-05-cidr.png " ")
+	![CIDR block allowlist](./images/03-05-cidr.png " ")
 
 6.  Click **Create bastion**. The bastion appears in the Bastion list and takes a few minutes to become Active.
 
@@ -118,11 +120,11 @@ You're returned to the DB Systems page where the MySQL DB System you created app
 
 8.  On the bastion details page, click **Create session**.
 
-	![Click Create session on the bastion details page](images/03-08-create-session.png " ")
+	![Click Create session on the bastion details page](./images/03-08-create-session.png " ")
 
 9.  In the Create session panel, for **Session type**, select **SSH port forwarding session**.
 
-	![Select SSH port forwarding session for Session type](images/03-09-session-type.png " ")
+	![Select SSH port forwarding session for Session type](./images/03-09-session-type.png " ")
 
 10. For IP address, paste the private IP address copied from the SourceMySQL database details page in Task 2 Step 11.
 
@@ -136,17 +138,31 @@ You're returned to the DB Systems page where the MySQL DB System you created app
 
 14. After the session is Active, select **Copy SSH command** from the session's Action (three dots) menu.
 
-	![Click the three dots and then select Copy SSH command](images/03-14-copy-ssh-cmd.png " ")
+	![Click the three dots and then select Copy SSH command](./images/03-14-copy-ssh-cmd.png " ")
+
+## Task 3B: Using CloudShell to connect to the private network
+
+If working within the same Home region for OCI GoldenGate and OCI MySQL Database, then you can use CloudShell to connect to the private network.
+
+1.  After your OCI MySQL DB system becomes active, open CloudShell from the Oracle Cloud console global header.
+
+2.  After CloudShell opens and initializes, click **Network: Public**, and then select **Private Network Setup**.
+
+		![CloudShell Network](./images/03b-02-cloudshell.png " ")
+
+3.  Select the VCN and Subnet your OCI MySQL DB system uses, and then click **Connect to this network**.
+
+4.  After CloudShell is connected to the private network, proceed to Task 4, Step 6 below.
 
 ## Task 4: Load data into the MySQL DB System
 
 1.  In the Oracle Cloud console global header, click **Cloud Shell**. Cloud Shell opens in a panel at the bottom of the console.
 
-	![Click Cloud Shell in the console global header](images/04-01-cloudshell.png " ")
+	![Click Cloud Shell in the console global header](./images/04-01-cloudshell.png " ")
 
 2.  Open the Cloud Shell menu (gear icon) and then select **Upload**.
 
-	![Select Upload from Cloud Shell menu](images/04-02-upload.png " ")
+	![Select Upload from Cloud Shell menu](./images/04-02-upload.png " ")
 
 3.  In the Upload dialog window, upload the private key associated with the SSH key used to create the bastion in Task 3 Step 12.
 
@@ -160,16 +176,18 @@ You're returned to the DB Systems page where the MySQL DB System you created app
 
 6.  Run `mysqlsh admin@localhost:3306 --sql` and then enter the MySQL database admin password from Task 2 Step 7.
 
-2.  Download and run the sample data script.
+7.  Download and run the sample data script.
 
 	 [seedSRCOCIGGL_MySQL.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/seedSRCOCIGGL_MySQL.sql)
 
-3.  Create the ggadmin user using the following script. Ensure that you replace `<ggadmin-password>` with a valid password.
+8.  Create the ggadmin user using the following script. Ensure that you replace `<ggadmin-password>` with a valid password.
 
+		```
 		<copy>CREATE USER 'ggadmin' IDENTIFIED BY '<ggadmin-password>';
 		GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT, CREATE,CREATE VIEW, EVENT, INSERT, UPDATE, DROP,EXECUTE, DELETE ON *.* TO 'ggadmin';</copy>
+		```
 
-4.  Close Cloud Shell.
+9.  Close CloudShell.
 
 ## Task 5: Create an ADW instance
 
@@ -191,7 +209,7 @@ You're returned to the DB Systems page where the MySQL DB System you created app
 
 6.  Under **Choose a deployment type**, select **Shared Infrastructure**.
 
-	![Example ADW instance creation](images/05-05-create-adw.png " ")
+	![Example ADW instance creation](./images/05-05-create-adw.png " ")
 
 7.  Under Create administrator credentials, enter a password and confirm the password. Note the password down in a notepad, you will need it later.
 
@@ -209,7 +227,7 @@ You're returned to the DB Systems page where the MySQL DB System you created app
 
 2.  Click **Database Actions**.
 
-	![Click Database Actions on autonomous database details page](images/05-11-dbactions.png " ")
+	![Click Database Actions on autonomous database details page](./images/05-11-dbactions.png " ")
 
 3.  If prompted, log in with the ADMIN user and password provided when you created the ADW instance.
 
@@ -217,35 +235,33 @@ You're returned to the DB Systems page where the MySQL DB System you created app
 
 4.  On the Database Actions Launchpad, under **Administration**, click **Database Users**.
 
-	![Click Database Users](images/05-12-launchpad.png " ")
+	![Click Database Users](./images/05-12-launchpad.png " ")
 
 5.  On the Database Users page, locate GGADMIN, and then select **Edit** from its ellipsis (three dots) menu.
 
-	![Select Edit from ggadmin's menu](images/05-13-ggadmin.png " ")
+	![Select Edit from ggadmin's menu](./images/05-13-ggadmin.png " ")
 
 6.  In the Edit User panel, deselect **Account is Locked**, enter the ggadmin password and confirm it, and then click **Apply Changes**.
 
-	![Unlock the ggadmin user in the Edit User panel](images/05-14-unlock.png " ")
+	![Unlock the ggadmin user in the Edit User panel](./images/05-14-unlock.png " ")
 
 7.  From the Database Actions menu, under **Development**, select **SQL**.
 
-    ![Select SQL from Database Actions menu](images/06-07-sql.png " ")
+    ![Select SQL from Database Actions menu](./images/06-07-sql.png " ")
 
 8.  Download the sample database schema:
 
 	[Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/Archive.zip)
 
-9.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
+9.  Copy the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
 
     ![Paste script into SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
 
 10. Click **Run Script**. The Script Output tab displays confirmation messages.
 
-11.  Copy the SQL scripts from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
+11.  Copy only the CREATE TABLE scripts (the first 123 lines) from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
 
     ![ADW schema scripts in SQL worksheet](./images/04-07-adw-schema.png " ")
-
-	>**Note:** *If you find that running the entire script does not create the tables, then try running each block of table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.*
 
 12.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
@@ -257,5 +273,5 @@ You're returned to the DB Systems page where the MySQL DB System you created app
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
 - **Contributor** - Julien Testut, Database Product Management
-- **Last Updated by** - Jenny Chan, July 2022
+- **Last Updated by** - Jenny Chan, October 2022
 - **PAR Expiration date** - February 2024
