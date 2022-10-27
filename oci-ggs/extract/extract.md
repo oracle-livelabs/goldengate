@@ -35,17 +35,17 @@ On the Deployment Details page, you can:
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details page](images/01-01-deployment-details.png " ")
+    ![Deployment Details page](./images/01-01-deployment-details.png " ")
 
 ## Task 2: Launch the GoldenGate Deployment Console
 
 1. When the deployment is active, click **Launch Console**.
 
-    ![](images/02-01-ggs-launchconsole.png " ")
+    ![Launch console](./images/02-01-ggs-launchconsole.png " ")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided above, and then click **Sign In**.
 
-    ![](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin.png " ")
+    ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin.png " ")
 
 After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Servers, as well as add Extracts and Replicats for your data replication tasks.
 
@@ -59,33 +59,33 @@ After you log in successfully, you're brought to the GoldenGate deployment conso
 
 2.  Click **Connect to database SourceATP**.
 
-    ![Credentials list with Connect to database SourceATP highlighted](images/03-02-connect-source.png " ")
+    ![Credentials list with Connect to database SourceATP highlighted](./images/03-02-connect-source.png " ")
 
 3.  Next to **TRANDATA Information** click **Add TRANDATA** (plus icon).
 
-    ![Add TRANDATA](images/03-03-trandata.png " ")
+    ![Add TRANDATA](./images/03-03-trandata.png " ")
 
 4.  For **Schema Name**, enter `SRC_OCIGGLL`, and then click **Submit**.
 
-    ![Schema Name field populated with SRC_OCIGGLL](images/03-04-schema-name.png " ")
+    ![Schema Name field populated with SRC_OCIGGLL](./images/03-04-schema-name.png " ")
 
 5.  To verify, click **Search TRANDATA**, and then enter `SRC_OCIGGLL` into the Search field and click **Search**.
 
-    ![Search icon highlighted](images/03-05-search.png " ")
+    ![Search icon highlighted](./images/03-05-search.png " ")
 
-    ![SRC_OCIGGLL entered in search field and search results returned](images/03-05-trandata.png " ")
+    ![SRC_OCIGGLL entered in search field and search results returned](./images/03-05-trandata.png " ")
 
 6.  Click **Connect to database TargetADW**.
 
-    ![Credentials list with Connect to database TargetADW highlighted](images/03-06.png " ")
+    ![Credentials list with Connect to database TargetADW highlighted](./images/03-06.png " ")
 
 7.  Next to Checkpoint, click **Add Checkpoint**.
 
-    ![Add Checkpoint highlighted](images/03-07-add-checkpoint.png " ")
+    ![Add Checkpoint highlighted](./images/03-07-add-checkpoint.png " ")
 
 8.  For **Checkpoint Table**, enter `"SRCMIRROR_OCIGGLL"."CHECKTABLE"`, and then click **Submit**.
 
-    ![Populated Checkpoint table field and submit button highlighted](images/03-08-checktable.png " ")
+    ![Populated Checkpoint table field and submit button highlighted](./images/03-08-checktable.png " ")
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
@@ -143,7 +143,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
     table SRC_OCIGGLL.*;</copy>
     ```
 
-    ![](images/04-09-params.png " ")
+    ![Copied and pasted script on the parameter file page](./images/04-09-params.png " ")
 
 10. Click **Create**. You're returned to the OCI GoldenGate Deployment Console Home page.
 
@@ -165,7 +165,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     If the query returns any rows, then you must locate the transaction's SCN and then either commit or rollback the transaction.
 
-    ![Run statement and no query results highlighted](images/05-01-sql.png " ")
+    ![Run statement and no query results highlighted](./images/05-01-sql.png " ")
 
 ## Task 6: Export data using Oracle Data Pump (ExpDP)
 
@@ -173,15 +173,15 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 1.  From the Oracle Cloud Console navigation menu (hamburger icon), click **Storage**, and then **Buckets**.
 
-    ![Object Storage bucket in Oracle Cloud navigation menu](images/06-01-storage-buckets.png " ")
+    ![Object Storage bucket in Oracle Cloud navigation menu](./images/06-01-storage-buckets.png " ")
 
 2.  On the **Buckets in &lt;compartment-name&gt;** page, click **Create Bucket**.
 
-    ![Buckets in compartment page](images/06-02-create-bucket.png " ")
+    ![Buckets in compartment page](./images/06-02-create-bucket.png " ")
 
 3.  In the **Create Bucket** panel, enter a name, and then click **Create**.
 
-    ![Create Bucket panel](images/06-03-bucket.png " ")
+    ![Create Bucket panel](./images/06-03-bucket.png " ")
 
 4.  From the list of buckets, click the bucket you created. You're brought to the bucket Details page.
 
@@ -195,7 +195,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 9.  In the Object Details panel, copy the URL Path (URI) up the object name and paste it into a text editor.
 
-  ![Object URL Path](images/objectstorage-objectdetails.png)
+  ![Object URL Path](./images/objectStorage-objectDetails.png)
 
     The bucket URI should match the following syntax:
 
@@ -205,21 +205,21 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 10. In the Oracle Cloud Console global header, click **Profile** (user icon), and then select your username.
 
-    ![Profile menu](images/06-10-profile.png " ")
+    ![Profile menu](./images/06-10-profile.png " ")
 
 11. On the User Details page, under **Resources**, click **Auth Tokens**, and then click **Generate Token**.
 
-    ![Resources on User Details page](images/06-11-auth-token.png " ")
+    ![Resources on User Details page](./images/06-11-auth-token.png " ")
 
 12. In the Generate Token dialog, enter a description, and then click **Generate Token**.
 
-    ![Generate Token dialog](images/06-12-generate-token.png " ")
+    ![Generate Token dialog](./images/06-12-generate-token.png " ")
 
 13. Click **Copy**, and then click **Close**.
 
     > **Note:** *Paste the token to a text editor for use in the next step.*
 
-    ![Copy highlighted](images/06-13-copy-token.png " ")
+    ![Copy highlighted](./images/06-13-copy-token.png " ")
 
 14. In the source database SQL window, enter the following script, replace the placeholders with your user name and token value, and then click **Run Statement**:
 
@@ -236,7 +236,7 @@ END;</copy>
     > **Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
 
 
-    ![SQL worksheet](images/06-14-create-credential.png " ")
+    ![SQL worksheet](./images/06-14-create-credential.png " ")
 
 15. Use the following script to create the Export Data job using Oracle Data Pump ExpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI** from step 5. `SRC_OCIGGLL.dmp` is a file that will be created when this script runs.
 
@@ -310,7 +310,7 @@ END;</copy>
 END;</copy>
     ```
 
-    ![SQL worksheet Run Script highlighted](images/06-15.png " ")
+    ![SQL worksheet Run Script highlighted](./images/06-15.png " ")
 
 ## Learn more
 
