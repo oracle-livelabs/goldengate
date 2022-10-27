@@ -25,11 +25,11 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 1.  Return to the Overview screen and click **Add Extract**.
     
-    ![Overview screen](images/01-01.png " ")
+    ![Overview screen](./images/01-01.png " ")
 
 2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
     
-    ![Extract page](images/01-02.png " ")
+    ![Extract page](./images/01-02.png " ")
 
 3.  On the Extract Options page, for Process Name, enter **EXTB**.
 
@@ -39,13 +39,13 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 6.  From the Credential Alias dropdown, select **TargetADW**.
 
-    ![Extract options page](images/01-06.png " ")
+    ![Extract options page](./images/01-06.png " ")
 
 7.  Under Managed Options, select **Critical to deployment health**.
 
 8.  Click **Next**.
 
-    ![Extract options page](images/01-08.png " ")
+    ![Extract options page](./images/01-08.png " ")
 
 9.  On the Parameter File page, in the text area, add a new line under EXTTRAIL E2, and then add the following:
 
@@ -61,18 +61,18 @@ tranlogoptions excludeuser ggadmin</copy>
 
     It may takes a few minutes for the extract to be created. The yellow exclamation point icon changes to a green checkmark. 
 
-    ![Parameter file page](images/01-10.png " ")
+    ![Parameter file page](./images/01-10.png " ")
 
 
 ## Task 2: Add and run the Replicat
 
 1.  Click **Add Replicat**.
 
-    ![Add replicat](images/02-01.png " ")
+    ![Add replicat](./images/02-01.png " ")
 
 2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
 
-    ![Replicat type page](images/02-02.png " ")
+    ![Replicat type page](./images/02-02.png " ")
 
 3.  For Process Name, enter **REPB**.
 
@@ -84,42 +84,42 @@ tranlogoptions excludeuser ggadmin</copy>
 
 7.  For Checkpoint Table, select **"SRC\_OCIGGLL"."ATP\_CHECKTABLE"**.
 
-    ![Replicat type page](images/02-07.png " ")
+    ![Replicat type page](./images/02-07.png " ")
 
 8.  Under Managed Options, select **Critical to deployment health**.
 
 9.  Click **Next**.
 
-    ![Replicat type page](images/02-09.png " ")
+    ![Replicat type page](./images/02-09.png " ")
 
 10. On the Parameter File page, in the text area, replace **MAP \*.\*, TARGET \*.\*;** with the following:
 
     ```
     <copy>MAP SRCMIRROR_OCIGGLL.*, TARGET SRC_OCIGGLL.*;</copy>
     ```
-    ![Replicat type page](images/02-10.png " ")
+    ![Replicat type page](./images/02-10.png " ")
 
 11. Click **Create and Run**. You're returned to the Overview page. The Replicat process is created.
 
     It may takes a few minutes for the extract to be created. The yellow exclamation point icon changes to a green checkmark. 
 
-    ![Extract completed](images/02-11.png)
+    ![Extract completed](./images/02-11.png)
 
 ## Task 3: Perform Inserts to the Source Database
 
 1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
 
-    ![Autonomous Transaction Processing in Oracle Cloud navigation menu](images/03-01a.png " ")
+    ![Autonomous Transaction Processing in Oracle Cloud navigation menu](./images/03-01a.png " ")
 
-    ![Autonomous Transaction Processing page](images/03-01b.png " ")
+    ![Autonomous Transaction Processing page](./images/03-01b.png " ")
 
 2.  On the Source ATP Details page, click **Database Actions**.
 
-    ![SourceATP Database Details page](images/03-02.png)
+    ![SourceATP Database Details page](./images/03-02.png)
 
 3.  Click **SQL**.
 
-    ![Click SQL](images/03-03.png)
+    ![Click SQL](./images/03-03.png)
 
 4.  Enter the following inserts, and then click **Run Script**:
 
@@ -135,15 +135,15 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (200
 Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (2008,'Boston',22,275581);
 Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (2009,'Washington D.C.',22,688002);</copy>
     ```
-    ![SQL return](images/03-04.png " ")
+    ![SQL return](./images/03-04.png " ")
 
 5.  In the OCI GoldenGate Deployment Console, click the **Extract name (EXTB)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
-    ![Extract Process Information - Statistics](images/04-17.png " ")
+    ![Extract Process Information - Statistics](./images/03-05.png " ")
 
 6.  Go back to the Overview screen, click the **Replicat name (REPB)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
-    ![Replicat Process Information - Statistics](images/01-06-rep-statistics.png " ")
+    ![Replicat Process Information - Statistics](./images/03-06.png " ")
 
 
 ## Learn more

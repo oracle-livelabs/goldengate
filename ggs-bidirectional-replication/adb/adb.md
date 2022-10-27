@@ -31,7 +31,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
 
-	![Virtual Cloud Networks page](images/01-02.png " ")
+	![Virtual Cloud Networks page](./images/01-02.png " ")
 
 3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
@@ -170,7 +170,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 12. Copy and paste the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** into the SQL worksheet, and then click **Run Script**.
 
-	![Pasted script in SQL worksheet](images/04-05-adw.png " ")
+	![Pasted script in SQL worksheet](./images/04-05-adw.png " ")
 
 13. Run the following statement to enable supplemental logging:
 
