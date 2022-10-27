@@ -25,13 +25,13 @@ This lab assumes you successfully completed all preceding labs.
 
 2.  From the navigation menu, under **Oracle Database**, select **GoldenGate**.
 
-    ![GoldenGate in Oracle Cloud navigation menu](images/01-02.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](./images/01-02.png " ")
 
 3.  From the list of OCI GoldenGate deployments, select the deployment you created for this LiveLab.
 
 4.  In the Deployment Details page, next to **Console URL** click **Copy**.
 
-    ![Deployment Details page](images/01-04.png " ")
+    ![Deployment Details page](./images/01-04.png " ")
 
 ## Task 2: Connect to the Admin Client
 
@@ -54,7 +54,7 @@ This lab assumes you successfully completed all preceding labs.
     ```
     > **Note:** *The exclamation point (!) is very important. Without it, the command fails and returns an error.*
 
-    ![Cloud Shell script](images/02-03.png " ")
+    ![Cloud Shell script](./images/02-03.png " ")
 
 4.  After connecting successfully, you can run any of the following commands:
 
@@ -63,13 +63,13 @@ This lab assumes you successfully completed all preceding labs.
     <copy>info all</copy>
     ```
 
-    ![Cloud Shell script](images/02-04a.png " ")
+    ![Cloud Shell script](./images/02-04a.png " ")
 
     View statistics of your Extract:
     ```
     <copy>stats <extract-name></copy>
     ```
-    ![Cloud Shell script](images/02-04b.png " ")
+    ![Cloud Shell script](./images/02-04b.png " ")
 
     View the content of a ggserror log file:
     ```
