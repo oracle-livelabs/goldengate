@@ -88,7 +88,7 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 1.  In the Marketplace Oracle GoldenGate Administration Server console, click **Receiver Server**.
 
-    ![Click Receiver Server on the Distribution Service Overview page](./images/03-01.png " ")
+    ![Click Receiver Server on the Distribution Service Overview page](./images/03-01-receiver-server.png " ")
 
 2.  Click **Add Path** (plus icon).
 
@@ -106,7 +106,7 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
     *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
 
-    ![Copy the browser address bar of your OCI GoldenGate Deployment Console window](./images/03-05a.png " ")
+    ![Copy the browser address bar of your OCI GoldenGate Deployment Console window](./images/03-05a-copy-browser.png " ")
 
     ![Add Source Host](./images/03-05b-source-host.png " ")
 
@@ -150,19 +150,19 @@ In this lab, you created and ran a Path on your on premises Oracle GoldenGate Re
 
 1.  In the Oracle GoldenGate Administration Server, click **Administration Server**, and then open the navigation menu to select **Configuration**.
 
-    ![Select Configration from the Administration Service navigation menu](./images/04-01.png " ")
+    ![Select Configration from the Administration Service navigation menu](./images/04-01-configuration.png " ")
 
 2.  For target Autonomous Data Warehouse database, click **Connect to Database**.
 
-    ![Connect to TargetADW on the Configuration page](./images/04-02.png " ")
+    ![Connect to TargetADW on the Configuration page](./images/04-02-connect-db.png " ")
 
 3.  Next to Checkpoint, click **Add Checkpoint**.
 
-    ![Add Checkpoint icon highlighted](./images/04-03.png " ")
+    ![Add Checkpoint icon highlighted](./images/04-03-add-checkpoint.png " ")
 
 4.  For **Checkpoint Table**, enter **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**, and then click **Submit**.
 
-    ![Add the designated checkpoint table](./images/04-04.png " ")
+    ![Add the designated checkpoint table](./images/04-04-submit-checkpoint.png " ")
 
 
 ## Task 5: Add and Run a Replicat
@@ -171,7 +171,7 @@ This Replicat process consumes the trail file sent from OCI GoldenGate.
 
 1.  Click **Overview**, and then click **Add Replicat** (plus icon).
 
-    ![Click Add Replicat on Administration Service Overview page](./images/05-01.png " ")
+    ![Click Add Replicat on Administration Service Overview page](./images/05-01-add-rep.png " ")
 
 2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
 
@@ -199,7 +199,7 @@ This Replicat process consumes the trail file sent from OCI GoldenGate.
 
 9.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
 
-    ![Modify parameters on the Parameter Files page](./images/05-09.png " ")
+    ![Modify parameters on the Parameter Files page](./images/05-09-param-file.png " ")
 
 10. Click **Create**.
 
@@ -232,21 +232,21 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 16. In the OCI GoldenGate Deployment Console, select **Overview** from the navigation menu (hamburger icon), click the **Extract name (UAEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
-    ![Administration Server on the OCI GoldenGate Deployment Console page](./images/05-16a.png " ")
+    ![Administration Server on the OCI GoldenGate Deployment Console page](./images/05-16a-uaext.png " ")
 
-    ![Statistics on the UAEXT extract](./images/05-16b.png " ")
+    ![Statistics on the UAEXT extract](./images/05-16b-uaext-stats.png " ")
 
 17. Navigate to the Oracle GoldenGate Marketplace Receiver Server. From the **Action** menu, select **Details**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
-    ![Select Details on the Oracle GoldenGate Marketplace Receiver Server](./images/05-17a.png " ")
+    ![Select Details on the Oracle GoldenGate Marketplace Receiver Server](./images/05-17a-receiver-server-details.png " ")
 
-    ![Select Statistics on the Path Information page](./images/05-17b.png " ")
+    ![Select Statistics on the Path Information page](./images/05-17b-path-info.png " ")
 
 ## Task 6: Confirm the Receiver Path is Running
 
 1.  In the Oracle GoldenGate Marketplace Receiver Server, verify the Receiver Path is running.
 
-    ![Active Receiver Path on the racle GoldenGate Marketplace Receiver Server](./images/06-01.png " ")
+    ![Active Receiver Path on the racle GoldenGate Marketplace Receiver Server](./images/06-01-receiver-server.png " ")
 
 In this lab, you created an Extract, a Receiver Path, and a Replicat, and you verified that data is moving from OCI GoldenGate to Oracle GoldenGate. You may now **proceed to the next lab**.
 
@@ -258,5 +258,5 @@ In this lab, you created an Extract, a Receiver Path, and a Replicat, and you ve
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Werner He and Julien Testut, Database Product Management & Katherine Wardhana, User Assistance Developer
+* **Contributors** -  Werner He and Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
 * **Last Updated By/Date** - Katherine Wardhana, October 2022

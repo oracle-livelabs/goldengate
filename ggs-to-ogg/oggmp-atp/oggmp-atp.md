@@ -21,25 +21,25 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 1.  In the OCI Console breadcrumb, click **Autonomous Database**, and then select **TargetADW** from the list of databases.
 
-    ![Autonomous Data Warehouse in Oracle Cloud navigation menu](./images/01-01a.png " ")
+    ![Autonomous Data Warehouse in Oracle Cloud navigation menu](./images/01-01a-auto-db.png " ")
 
-    ![Autonomous Database page](./images/01-01b.png " ")
+    ![Autonomous Database page](./images/01-01b-targetadw.png " ")
 
 2.  On the Target Autonomous Data Warehouse Details page, click **DB Connection**.
 
-    ![Target Autonomous Data Warehouse Details page](./images/01-02.png " ")
+    ![Target Autonomous Data Warehouse Details page](./images/01-02-db-connection.png " ")
 
 3.  In the DB Connection panel, click **Download Wallet**.
 
-    ![Database Connection page](./images/01-03.png " ")
+    ![Database Connection page](./images/01-03-download-wallet.png " ")
 
 4.  In the Download Client Credentials (Wallet) dialog, enter the Target Autonomous Data Warehouse Admin password twice, and then click **Download**.
 
-    ![Download Wallet page](./images/01-04.png " ")
+    ![Download Wallet page](./images/01-04-download-wallet.png " ")
 
 5.  Close the DB Connection panel.
 
-    ![Close Download Wallet page](./images/01-05.png " ")
+    ![Close Download Wallet page](./images/01-05-close-db-connection.png " ")
 
 ## Task 2: Upload the Target Autonomous Data Warehouse Credentials to Oracle GoldenGate
 
@@ -77,7 +77,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 8.  On the Instances in <compartment-name> page, copy the **Public IP Address**.
 
-    ![Public IP Address on the Instance Details](./images/02-08.png " ")
+    ![Public IP Address on the Instance Details](./images/02-08-public-ip.png " ")
 
 9.  In Cloud Shell, enter the following to connect to the Marketplace Oracle GoldenGate compute instance:
 
@@ -97,7 +97,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 11. Enter `exit` to close the sftp connection.
 
-    ![Cloud Shell script](./images/02-11.png " ")
+    ![Cloud Shell script](./images/02-11-cloud-shell.png " ")
 
 12. SSH to the compute instance.
 
@@ -122,7 +122,7 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
 
 16. Enter `pwd`, and then copy the full path to the wallet files to be used in a later Task.
 
-    ![Cloud Shell script](./images/02-16.png " ")
+    ![Cloud Shell script](./images/02-16-cloud-shell.png " ")
 
 > **Note:** Leave Cloud Shell open.
 
@@ -141,11 +141,11 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
     ```
     <copy>cat ogg-credentials.json</copy>
     ```
-    ![Cloud Shell script](./images/03-03.png " ")
+    ![Cloud Shell script](./images/03-03-cloud-shell.png " ")
 
 4.  Exit Cloud Shell.
 
-    ![Exit Cloud Shell](./images/03-04.png " ")
+    ![Exit Cloud Shell](./images/03-04-exit-cloud-shell.png " ")
 
 ## Task 4: Add the Target Autonomous Data Warehouse Credential in the Oracle GoldenGate Administration Server
 
@@ -153,15 +153,15 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
 
 2.  Open the navigation menu (hamburger icon) and then click **Configuration**.
 
-    ![Click Configuration in the OCI GoldenGate deployment console navigation menu](./images/04-02.png " ")
+    ![Click Configuration in the OCI GoldenGate deployment console navigation menu](./images/04-02-configuration.png " ")
 
 3.  Copy the TargetADW connection string in the User ID column, and then paste it into a text editor.
 
-    ![Copy the target database's connection string and paste it into a text editor](./images/04-03.png " ")
+    ![Copy the target database's connection string and paste it into a text editor](./images/04-03-configuration-targetadw.png " ")
 
 4.  Edit the TargetADW connection string, replacing the value for **MY\_WALLET\_DIRECTORY** with the location where you unzipped the wallet_ADW.zip. For example, **/home/opc/wallet\_ADW**.
 
-    ![Replace the existing value for MY_WALLET_DIRECTORY with the path to the wallet files](./images/04-04.png " ")
+    ![Replace the existing value for MY_WALLET_DIRECTORY with the path to the wallet files](./images/04-04-wallet-zip.png " ")
 
 5.  In a new browser tab or window, use the Public IP and port 443 (**https://&lt;public-ip&gt;:443**) to open the Service Manager.
 
@@ -169,15 +169,15 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
 
 7.  In the Service Manager, under **Services**, click the port number associated with the Administration Server. The Administration Server opens in a new browser tab. If you're prompted to log in again, use the same oggadmin credentials.
 
-    ![Services pages on the Service Manager](./images/04-07.png " ")
+    ![Services pages on the Service Manager](./images/04-07-services.png " ")
 
 8.  In the Administration Server, open the navigation menu (hamburger icon), and then select **Configuration**.
 
-    ![Click Configuration in the Administration Server's navigation menu](./images/04-08.png " ")
+    ![Click Configuration in the Administration Server's navigation menu](./images/04-08-configuration.png " ")
 
 9.  Click **Add Credential**.
 
-    ![Click Add Credential on the Credentials page](./images/04-09.png " ")
+    ![Click Add Credential on the Credentials page](./images/04-09-add-credential.png " ")
 
 10. Enter the following information, and then click **Submit**:
 
@@ -186,12 +186,12 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
     * For **User ID**, paste the Autonomous Data Warehouse connection string from step 4.
     * For **Password**, enter the ggadmin password created when you registered the Target Database.
 
-    ![Add a credential for atp_low](./images/04-10.png " ")
+    ![Add a credential for atp_low](./images/04-10-submit-credential.png " ")
 
 In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target Autonomous Data Warehouse database. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Julien Testut, Database Product Management & Katherine Wardhana, User Assistance Developer
+* **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
 * **Last Updated By/Date** - Katherine Wardhana, October 2022

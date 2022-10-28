@@ -33,7 +33,7 @@ This lab assumes you have completed the Getting Started lab.
 
 4.  Enter a name for the VCN, select a compartment, and then click **Next**.
 
-    ![Enter VCN details](./images/01-04.png " ")
+    ![Enter VCN details](./images/01-04-vcn-details.png " ")
 
 5.  Review the configuration, and then click **Create**.
 
