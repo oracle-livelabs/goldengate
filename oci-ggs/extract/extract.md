@@ -77,7 +77,7 @@ After you log in successfully, you're brought to the GoldenGate deployment conso
 
 6.  Click **Connect to database TargetADW**.
 
-    ![Credentials list with Connect to database TargetADW highlighted](./images/03-06.png " ")
+    ![Credentials list with Connect to database TargetADW highlighted](./images/03-06-connect-targetadw.png " ")
 
 7.  Next to Checkpoint, click **Add Checkpoint**.
 
@@ -310,7 +310,7 @@ END;</copy>
 END;</copy>
     ```
 
-    ![SQL worksheet Run Script highlighted](./images/06-15.png " ")
+    ![SQL worksheet Run Script highlighted](./images/06-15-sql-return.png " ")
 
 ## Learn more
 

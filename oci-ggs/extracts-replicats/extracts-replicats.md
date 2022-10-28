@@ -26,15 +26,15 @@ Before importing data to the target database, create a credential in the target 
 
 1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle Database**, and then click **Autonomous Data Warehouse**.
 
-    ![Autonomous Data Warehouse in Oracle Cloud navigation menu](./images/01-01.png " ")
+    ![Autonomous Data Warehouse in Oracle Cloud navigation menu](./images/01-01-auto-data-w.png " ")
 
 2. In the list of Autonomous Data Warehouses, click **TargetADW**.
 
-    ![Autonomous Data Warehouse page](./images/01-02.png " ")
+    ![Autonomous Data Warehouse page](./images/01-02-targetadw.png " ")
 
 3. On the **TargetADW Details** page, click **Database Actions**.
 
-    ![TargetADW Details page](./images/01-03.png " ")
+    ![TargetADW Details page](./images/01-03-db-actions.png " ")
 
 4. Log in to Database Actions as ADMIN, and then click **SQL**.
 
@@ -53,7 +53,7 @@ Before importing data to the target database, create a credential in the target 
 
     > **Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
 
-    ![Script in SQL Worksheet](./images/01-05.png " ")
+    ![Script in SQL Worksheet](./images/01-05-sql-script.png " ")
 
 6.  Enter the following script and then click **Run Statement** to import data using ImpDP:
 
@@ -141,7 +141,7 @@ Before importing data to the target database, create a credential in the target 
     END;</copy>
     ```
 
-    ![Run script highlighted](./images/01-06.png " ")
+    ![Run script highlighted](./images/01-06-sql-script.png " ")
 
 ## Task 2: Add and run the Replicat
 
@@ -151,7 +151,7 @@ Before importing data to the target database, create a credential in the target 
 
 2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
 
-    ![Add Replicat page](./images/02-02.png " ")
+    ![Add Replicat page](./images/02-02-rep-type.png " ")
 
 3.  On the Replicat Options page, for **Process Name**, enter **Rep**.
 
@@ -163,11 +163,11 @@ Before importing data to the target database, create a credential in the target 
 
 7.  For **Checkpoint Table**, select **"SRCMIRROR_OCIGGLL","CHECKTABLE"**.
 
-    ![Add Replicat - Basic Information](./images/02-07.png " ")
+    ![Add Replicat - Basic Information](./images/02-07-rep-options.png " ")
 
 8.  Under **Managed Options**, enable **Critical to deployment health**, and then click **Next**.
 
-    ![Critical to deployment health highlighted](./images/02-08.png " ")
+    ![Critical to deployment health highlighted](./images/02-08-dephealth.png " ")
 
 9.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with the following script:
 
@@ -202,7 +202,7 @@ Before importing data to the target database, create a credential in the target 
     MAP SRC_OCIGGLL.*, TARGET SRCMIRROR_OCIGGLL.*;</copy>
     ```
 
-    ![Add Replicat - Parameter File](./images/02-09.png " ")
+    ![Add Replicat - Parameter File](./images/02-09-param-file.png " ")
 
     > **Note:** *'DBOPTIONS ENABLE\_INSTATIATION\_FILTERING' enables CSN filtering on tables imported using Oracle Data Pump. For more information, see [DBOPTIONS Reference](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service/using&id=GWURF-GUID-BA8C0CED-D87F-4106-862E-4AD22D910160).*
 
