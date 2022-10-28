@@ -67,11 +67,9 @@ To successfully complete this lab, you need:
 
 12. For **Trail Name**, enter `C1`.
 
-13. Enable **Remote**.
+13. Click **Next**.
 
-14. Click **Next**.
-
-15. On the Parameter File page, in the text area, confirm that `TRANLOGOPTIONS ALTLOGDEST REMOTE` appears in the parameter list, and then add the following:
+14. On the Parameter File page, replace `TABLE *.*;` with the following:
 
     ```
     <copy>TABLE SRC_OCIGGLL.*;</copy>
@@ -79,7 +77,7 @@ To successfully complete this lab, you need:
 
     ![Verify Parameter File](images/02-09-remote-params.png " ")
 
-16. Click **Create and Run**. You return to the Administration Service Overview page where you can observe the CDCEXT process starting. The CDCEXT icon changes from a yellow question mark to a green checkmark if it starts successfully.
+15. Click **Create and Run**. You return to the Administration Service Overview page where you can observe the CDCEXT process starting. The CDCEXT icon changes from a yellow question mark to a green checkmark if it starts successfully.
 
 ![Administration Service Overview page with Initial Load Extract](images/01-14-ext.png " ")
 
@@ -109,7 +107,7 @@ To successfully complete this lab, you need:
     <copy>TABLE SRC_OCIGGLL.*;</copy>
     ```
 
-6.  Click **Create and Run**. You return to the Administration Service Overview page where you can observe the CDCEXT process starting. The ILEXT icon changes from a yellow question mark to a green checkmark if it starts successfully.
+6.  Click **Create and Run**. You return to the Administration Service Overview page where you can observe the ILEXT process starting. The ILEXT icon changes from a yellow question mark to a green checkmark if it starts successfully.
 
 ## Task 3: Create an OCI GoldenGate user for the Distribution Paths
 In this task, you create a user in the target deployment for the Distribution Paths to use to send data.
@@ -156,7 +154,7 @@ In this task, you create a user in the target deployment for the Distribution Pa
 10. Open Cloud Shell and run the following command to update the credential. Ensure that you replace the `<oci-username>`, `<password>`, `<source-deployment-console-url>`, and `<ggsnet-password>` variables accordingly:
 
     ```
-    <copy>curl -u <oci-username>:<password> -H "Content-Type: application/json" -H "Accept: application/json" -X PUT https://<source-deployment-console-url>:443/services/v2/credentials/GGSNetwork/dpuser -d '{"userid":"ggsnet","password":"<ggsnet-password>"}'</copy>
+    <copy>curl -u oggadmin:<password> -H "Content-Type: application/json" -H "Accept: application/json" -X PUT https://<source-deployment-console-url>:443/services/v2/credentials/GGSNetwork/dpuser -d '{"userid":"ggsnet","password":"<ggsnet-password>"}'</copy>
     ```
 
     ![Run curl command in Cloud Shell](images/03-10-curl.png " ")
@@ -171,18 +169,20 @@ In this task, you create a user in the target deployment for the Distribution Pa
 
 3.  Complete the following fields, and then click **Create and Run**:
     * For **Path Name**, enter a name for this path. For example, `ILDP`.
-    * For **Source Trail**, leave blank.
+    * For **Source**, leave blank.
     * For **Trail Name**, enter the Initial Load Extract Trail name (`I1`).
     * For **Target Authentication Method**, select **UserID Alias**.
     * For **Target**, select **wss**.
     * For **Target Host**, enter the target ADW OCI GoldenGate deployment console URL, without the https:// or any trailing slashes. You can copy the console URL from the ADWDeployment details page.
-    ![Copy console URL from target deployment details page](images/04-03-console-url.png " ")
+
+  ![Copy console URL from target deployment details page](images/04-03-console-url.png " ")
+
     * For **Port Number**, enter `443`.
     * For **Trail Name**, enter `I1`.
     * For **Domain**, enter the domain name from Task 3, Step 9. For example, `GGSNetwork`.
     * For **Alias**, enter the alias from Task 3, Step 9. For example, `dpuser`.
 
-    ![Initial Load distribution path options](images/04-03-path-opts.png " ")
+  ![Initial Load distribution path options](images/04-03-path-opts.png " ")
 
     You return to the Distribution Service Overview page where you can review the path created.
 
@@ -210,7 +210,7 @@ In this task, you create a user in the target deployment for the Distribution Pa
     * For **Domain**, enter the domain name from Task 3, Step 9. For example, `GGSNetwork`.
     * For **Alias**, enter the alias from Task 3, Step 9. For example, `dpuser`.
 
-    ![Change Data Capture distribution path options](images/05-0-path-opts.png " ")
+      ![Change Data Capture distribution path options](images/05-0-path-opts.png " ")
 
     You return to the Distribution Service Overview page where you can review the path created.
 
@@ -229,4 +229,4 @@ In this task, you create a user in the target deployment for the Distribution Pa
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, October 2022
