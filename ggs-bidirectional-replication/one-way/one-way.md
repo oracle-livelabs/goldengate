@@ -51,9 +51,9 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 6.  To verify, click **Search TRANDATA**, and then enter **SRC\_OCIGGLL** into the Search field and click **Search**. SRC_OCIGGLL is returned and 6 tables are prepared for instantiation.
 
-    ![Search icon highlighted](./images/01-06-search.png " ")
+    ![Search icon highlighted](./images/01-06a-search.png " ")
 
-    ![SRC_OCIGGLL entered in search field and search results returned](./images/01-06-trandata.png " ")
+    ![SRC_OCIGGLL entered in search field and search results returned](./images/01-06b-trandata.png " ")
 
 7.  Next to Checkpoint, click **Add Checkpoint**.
 
@@ -63,7 +63,7 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 9.  In the **Credentials** table, under **Action**, click **Connect to database TargetADW**. Checkpoint, TRANDATA Information, and Heartbeat options for TargetADW appear.
 
-    ![Credentials list with Connect to database TargetADW highlighted](./images/01-09.png " ")
+    ![Credentials list with Connect to database TargetADW highlighted](./images/01-09-credentials-targetadw.png " ")
 
 10. Next to **TRANDATA Information**, click **Add TRANDATA**.
 
@@ -91,7 +91,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
 
-    ![Add Extract page with Integrated Extract highlighted](./images/02-02.png " ")
+    ![Add Extract page with Integrated Extract highlighted](./images/02-02-integrated-extract.png " ")
 
 3.  For **Process Name**, enter UAEXT.
 
@@ -107,7 +107,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 7.  Under Managed Options, enable **Critical to deployment health**.
 
-    ![Critical to deployment health highlighted](./images/02-07.png " ")
+    ![Critical to deployment health highlighted](./images/02-07-crit-deploy-health.png " ")
 
 8.  Click **Next**.
 
@@ -141,6 +141,8 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
     ```
 
     ![Copy and paste the text onto Parameter File](./images/02-09-params.png " ")
+
+    > **Note:** *'tranlogoptions excludeuser ggadmin' avoids recapturing transactions applied by 'ggadmin' in bidirectional replication scenarios.*
 
 10. Click **Create and Run**. You're returned to the OCI GoldenGate Deployment Console Home page.
 
@@ -293,7 +295,7 @@ END;</copy>
 END;</copy>
     ```
 
-    ![SQL worksheet Run Script highlighted](./images/04-11.png " ")
+    ![SQL worksheet Run Script highlighted](./images/04-11-run-script.png " ")
 
 ## Task 5: Import data using Oracle Data Pump (ImpDP)
 
@@ -301,15 +303,15 @@ Before importing data to the target database, create a credential in the target 
 
 1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle Database**, and then click **Autonomous Data Warehouse**.
 
-    ![Autonomous Data Warehouse in Oracle Cloud navigation menu](./images/05-01.png " ")
+    ![Autonomous Data Warehouse in Oracle Cloud navigation menu](./images/05-01-auto-data-w.png " ")
 
 2. In the list of Autonomous Data Warehouses, click **TargetADW**.
 
-    ![Autonomous Data Warehouse page](./images/05-02.png " ")
+    ![Autonomous Data Warehouse page](./images/05-02-targetadw.png " ")
 
 3. On the **TargetADW Details** page, click **Tools**, and then click **Open Database Actions**.
 
-    ![TargetADW Details page](./images/05-03.png " ")
+    ![TargetADW Details page](./images/05-03-db-actions.png " ")
 
 4. Log in to Database Actions as ADMIN, and then click **SQL**.
 
@@ -328,7 +330,7 @@ Before importing data to the target database, create a credential in the target 
 
     > **Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
 
-    ![Script in SQL Worksheet](./images/05-05.png " ")
+    ![Script in SQL Worksheet](./images/05-05-sql-script-return.png " ")
 
 6.  Enter the following script and then click **Run Statement** to import data using ImpDP:
 
@@ -416,7 +418,7 @@ Before importing data to the target database, create a credential in the target 
     END;</copy>
     ```
 
-    ![Run script highlighted](./images/05-06.png " ")
+    ![Run script highlighted](./images/05-06-sql-script-return.png " ")
 
 ## Task 6: Add and run the Replicat
 
@@ -426,7 +428,7 @@ Before importing data to the target database, create a credential in the target 
 
 2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
 
-    ![Add Replicat page](./images/06-02.png " ")
+    ![Add Replicat page](./images/06-02-nonintegrated-rep.png " ")
 
 3.  On the Replicat Options page, for **Process Name**, enter **Rep**.
 
@@ -438,11 +440,11 @@ Before importing data to the target database, create a credential in the target 
 
 7.  For **Checkpoint Table**, select **"SRCMIRROR_OCIGGLL","CHECKTABLE"**.
 
-    ![Add Replicat - Basic Information](./images/06-07.png " ")
+    ![Add Replicat - Basic Information](./images/06-07-add-replicat.png " ")
 
 8.  Under **Managed Options**, enable **Critical to deployment health**, and then click **Next**.
 
-    ![Critical to deployment health highlighted](./images/06-08.png " ")
+    ![Critical to deployment health highlighted](./images/06-08-crit-deploy-health.png " ")
 
 9.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with the following script:
 
@@ -477,7 +479,7 @@ Before importing data to the target database, create a credential in the target 
     MAP SRC_OCIGGLL.*, TARGET SRCMIRROR_OCIGGLL.*;</copy>
     ```
 
-    ![Add Replicat - Parameter File](./images/06-09.png " ")
+    ![Add Replicat - Parameter File](./images/06-09-param-file.png " ")
 
     > **Note:** *'DBOPTIONS ENABLE\_INSTATIATION\_FILTERING' enables CSN filtering on tables imported using Oracle Data Pump. For more information, see [DBOPTIONS Reference](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service/using&id=GWURF-GUID-BA8C0CED-D87F-4106-862E-4AD22D910160).*
 
@@ -485,21 +487,21 @@ Before importing data to the target database, create a credential in the target 
 
      It may takes a few minutes for the replicat to be created. The yellow exclamation point icon changes to a green checkmark.
 
-    ![Checkmark next to the replicat](./images/06-10.png " ")
+    ![Checkmark next to the replicat](./images/06-10-rep-checkmark.png " ")
 
 ## Task 7: Perform Inserts to the Source Database
 
 1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
 
-    ![Autonomous Transaction Processing in Oracle Cloud navigation menu](./images/07-01a.png " ")
+    ![Autonomous Transaction Processing in Oracle Cloud navigation menu](./images/07-01a-auto-trans-process.png " ")
 
-    ![Autonomous Transaction Processing page](./images/07-01b.png " ")
+    ![Autonomous Transaction Processing page](./images/07-01b-sourceatp.png " ")
 
 2.  On the Source ATP Details page, click **Database Actions**.
-    ![SourceATP Database Details page](./images/07-02.png " ")
+    ![SourceATP Database Details page](./images/07-02-db-actions.png " ")
 
 3.  Click **SQL**.
-    ![Click SQL](./images/07-03.png " ")
+    ![Click SQL](./images/07-03-sql.png " ")
 
 4.  Enter the following inserts, and then click **Run Script**:
 
@@ -516,11 +518,11 @@ Before importing data to the target database, create a credential in the target 
     Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1009,'Washington D.C.',22,688002);</copy>
     ```
 
-    ![SQL Return](./images/07-04.png " ")
+    ![SQL Return](./images/07-04-sql-script-return.png " ")
 
 5.  In the OCI GoldenGate Deployment Console, click the **Extract name (UAEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
-    ![Extract Process Information - Statistics](./images/07-05.png " ")
+    ![Extract Process Information - Statistics](./images/07-05-ext-statistics.png " ")
 
 6.  Go back to the Overview screen, click the **Replicat name (REP)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
@@ -534,5 +536,5 @@ Before importing data to the target database, create a credential in the target 
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Julien Testut, Database Product Management & Katherine Wardhana, User Assistance Developer
+* **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
 * **Last Updated By/Date** - Katherine Wardhana, October 2022

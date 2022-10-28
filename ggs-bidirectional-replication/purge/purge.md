@@ -48,5 +48,5 @@ This lab assumes you completed all preceding labs.
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Julien Testut, Database Product Management & Katherine Wardhana, User Assistance Developer
+* **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
 * **Last Updated By/Date** - Katherine Wardhana, October 2022
