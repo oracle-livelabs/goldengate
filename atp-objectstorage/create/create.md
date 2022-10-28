@@ -103,7 +103,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 8.  Click **Next**.
 
-9.  From the Select a technology dropdown, select **Oracle Database**.
+9.  From the Select a technology dropdown, select **Big Data**.
 
 10. For GoldenGate Instance Name, enter **BDinstance**.
 
@@ -215,7 +215,7 @@ You can leave the source database SQL window open for use in a later lab.
 
     >**Note**: *Refer to the Prerequisites section for instructions on how to obtain a private key.*
 
-8.  Enter the corresponding public key fingerprint. You can also go back to your User settings in the Oracle Cloud console global header to copy it again. 
+8.  Enter the corresponding public key fingerprint. You can also go back to your User settings in the Oracle Cloud console global header to copy it again.
 
 9.  Click **Create**.
 
