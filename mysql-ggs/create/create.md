@@ -201,6 +201,36 @@ After your deployments and connections are active, you can assign the connection
 
 7.  Repeat steps 2 to 6 to assign the **TargetADW** connection to the **ADWDeployment**.
 
+## Task 6: (Optional) Create a GoldenGate connection
+
+Create a GoldenGate connection if your ADW deployment doesn't have a public endpoint, then assign it to the source MySQL deployment.
+
+1.  On the Connections page, click **Create Connection**.
+
+2.  In the Create connection panel, enter a **Name** and **Description**.
+
+3.  For **Compartment**, select the compartment in which to create this connection.
+
+4.  For **Type**, select **GoldenGate**.
+
+5.  Click **Next**.
+
+6.  For Connection details, select **ADWDeployment**.
+
+7.  Under Network connectivity, select **Network connectivity via private endpoint**.
+
+8.  For **Subnet**, select the subnet to which a private endpoint is created from the OCI GoldenGate service tenancy.
+
+9.  For **Private IP address**, enter the private IP for the ADWDeployment.
+
+10. Click **Create**.
+
+11. After the connection is active, on its details page, under **Resources**, click **Assigned deployments**.
+
+12. Click **Assign deployment**.
+
+13. In the Assign deployment dialog, select the source **MySQLDeployment**, and then click **Assign deployment**.
+
 **Proceed to the next lab**.
 
 ## Learn more

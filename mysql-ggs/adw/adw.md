@@ -76,7 +76,7 @@ This lab assumes you completed all preceding labs successfully.
     * If the number of Inserts doesn't change, then all the records from the Initial Load have been loaded and you can stop the Replicat (RIL)
     * If the number of Inserts continues to increase, then keep refreshing the page until the Initial Load records are all loaded before continuing.
 
-Click Administration Service to return to the Overview page.
+Click **Administration Service** to return to the Overview page.
 
 ## Task 2: Create a Replicat for Change Data Capture
 
