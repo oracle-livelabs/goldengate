@@ -41,7 +41,7 @@ This lab assumes that you completed all preceding labs.
 
 4.  On the Deployments page, click **Create Deployment**.
 
-    ![Deployments page](./images/01-04-create-deployment.png "")
+    ![Deployments page](./images/01-04-create-deployment-tenancy.png "")
 
 5.  In the Create Deployment panel, enter **GGSDeployment** for Name.
 
@@ -51,11 +51,11 @@ This lab assumes that you completed all preceding labs.
 
 8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
-9.  For License type, select **Bring You Own License (BYOL)**.
+9.  For License type, select **License included**.
 
 10. Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-10-create-deployment-general-info.png " ")
+    ![Completed Create GoldenGate Deployment fields](./images/01-10-create-deployment-general-info-tenancy.png " ")
 
 11. Click **Next**.
 
@@ -69,25 +69,25 @@ This lab assumes that you completed all preceding labs.
 
 16. Click **Create**.
 
-    ![Completed GoldenGate details](./images/01-16-create-deployment-gg-details.png " ")
+    ![Completed GoldenGate details](./images/01-16-create-deployment-gg-details-tenancy.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-## Task 2: Register the source connection
+## Task 2: Create the source connection
 
 While OCI GoldenGate creates your deployment, you can register the source Oracle Autonomous Transaction Processing \(ATP\) Database.
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the GoldenGate page.
 
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/02-01-breadcrumb.png " ")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/02-01-breadcrumb-tenancy.png " ")
 
 2.  Click **Connections**.
 
-    ![Connections in GoldenGate menu](./images/02-02-connections.png " ")
+    ![Connections in GoldenGate menu](./images/02-02-connections-tenancy.png " ")
 
 3.  Click **Create connection**.
 
-    ![Connections page](./images/02-03-create-connection.png " ")
+    ![Connections page](./images/02-03-create-connection-tenancy.png " ")
 
 4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **SourceATP** and optionally, a description.
 
@@ -95,7 +95,7 @@ While OCI GoldenGate creates your deployment, you can register the source Oracle
 
 6.  From the a Type dropdown, select **OCI Autonomous Database**.
 
-    ![Source Database details](./images/02-06-create-connection-general-info.png)
+    ![Source Database details](./images/02-06-create-connection-general-info-tenancy.png)
 
 7.  Click **Next**.
 
@@ -105,7 +105,7 @@ While OCI GoldenGate creates your deployment, you can register the source Oracle
 
 10.  Enter the database's password in the Password field, and then click **Create**.
 
-    ![Source Database details](./images/02-10-create-connection-gg-details.png)
+    ![Source Database details](./images/02-10-create-connection-gg-details-tenancy.png)
 
     The database registration becomes Active after a few minutes.
 
@@ -119,7 +119,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 2.  From the list of databases, select **SourceATP**.
 
-    ![Autonomous Databases page](./images/03-02-auto-db.png " ")
+    ![Autonomous Databases page](./images/03-02-auto-db-tenancy.png " ")
 
 3.  On the SourceATP Database Details page, click **Database Actions**.
 
@@ -159,7 +159,7 @@ select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
 
 You can leave the source database SQL window open for use in a later lab.
 
-## Task 4: Register the target database
+## Task 4: Create the target connection
 
 Now, follow the steps below to register the target Autonomous Data Warehouse \(ADW\) instance.
 
@@ -167,7 +167,7 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
 2.  Click **Connections** and then **Create connection**.
 
-    ![Create Connection in GoldenGate menu](./images/04-02-connections.png)
+    ![Create Connection in GoldenGate menu](./images/04-02-connections-tenancy.png)
 
 3.  The Create connection panel consists of two pages. On the General information page, for Name, enter **TargetADW** and optionally, a description.
 
@@ -175,7 +175,7 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
 5.  From the a Type dropdown, select **OCI Autonomous Database**.
 
-    ![Source Database details](./images/04-05-create-connec-general-info.png)
+    ![Source Database details](./images/04-05-create-connec-general-info-tenancy.png)
 
 6.  Click **Next**.
 
@@ -185,7 +185,7 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
 9. Enter the database's password in the Password field, and then click **Create**.
 
-    ![Target Database details](./images/04-09-create-connec-details.png)
+    ![Target Database details](./images/04-09-create-connec-details-tenancy.png)
 
     The source and target databases appear in the list of Connections. The database registration becomes Active after a few minutes.
 
@@ -215,31 +215,31 @@ After the deployment is created and active, you can perform the following action
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details page](./images/05-deployment-details.png " ")
+    ![Deployment Details page](./images/05-deployment-details-tenancy.png " ")
 
 ## Task 6: Assign connections to the deployment
 
 1. Click **Assigned connections**.
 
-    ![Launch Console](./images/06-01-assigned-connections.png " ")
+    ![Launch Console](./images/06-01-assigned-connections-tenancy.png " ")
 
 2. Click **Assign connection**.
 
-    ![Assigned connections under Resources](./images/06-02-assign-connection.png " ")
+    ![Assigned connections under Resources](./images/06-02-assign-connection-tenancy.png " ")
 
 3. In the Assign connection panel, from the Connection in &lt;compartment-number&gt;-COMPARTMENT dropdown, select **SourceATP**. Click **Assign connection**.
 
-    ![Assigned connection to SourceATP](./images/06-03-sourceatp-assign-connec.png " ")
+    ![Assigned connection to SourceATP](./images/06-03-sourceatp-assign-connec-tenancy.png " ")
 
 4.  Repeat Task 6, steps 1-3, to assign connection on the TargetADW database.
 
-    ![Assigned connections to SourceATP and TargetADW](./images/06-04-targetadw-assign-connec.png " ") 
+    ![Assigned connections to SourceATP and TargetADW](./images/06-04-targetadw-assign-connec-tenancy.png " ") 
 
 ## Task 7: Launch the GoldenGate Deployment Console
 
 1. When the deployment is active, click **Launch Console**.
 
-    ![Launch Console](./images/07-01-launch-console.png " ")
+    ![Launch Console](./images/07-01-launch-console-tenancy.png " ")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided above, and then click **Sign In**.
 
