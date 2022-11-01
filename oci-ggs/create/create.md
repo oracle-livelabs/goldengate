@@ -68,9 +68,9 @@ In this lab, you will:
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-## Task 2: Register the source connection
+## Task 2: Create a connection to the source database
 
-First, follow the steps below to register the source Oracle Autonomous Transaction Processing \(ATP\) Database.
+First, follow the steps below to create a connection to the source Oracle Autonomous Transaction Processing \(ATP\) Database.
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the GoldenGate page.
 
@@ -86,7 +86,7 @@ First, follow the steps below to register the source Oracle Autonomous Transacti
 
 4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **SourceATP** and optionally, a description.
 
-5.  From the Compartment dropdown, select a compartment.
+5.  From the Type dropdown, select **OCI Autonomous Database**.
 
 6.  From the a Type dropdown, select **OCI Autonomous Database**.
 
@@ -162,7 +162,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     You can leave the SQL window open and continue with the next Task.
 
-## Task 4: Register the target database and unlock the GGADMIN user
+## Task 4: Create a connection to the target database and unlock the GGADMIN user
 
 Now, follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) instance.
 

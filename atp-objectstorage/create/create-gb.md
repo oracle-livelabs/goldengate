@@ -6,6 +6,9 @@ This lab walks you through the steps to create Oracle Cloud Infrastructure (OCI)
 
 Estimated time: 30 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Create the OCI GoldenGate resources](videohub:1_qpzb8mfm)
+
 ### About Oracle Cloud Infrastructure GoldenGate resources
 
 A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. You can create different deployments types such as, Oracle Database, MySQL, or Big Data. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
@@ -25,7 +28,7 @@ In this lab, you will:
 ### Prerequisites
 In Task 5, you must upload a private key and enter the corresponding public key fingerprint. To add an API key:
 
-1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **My Profile**.
+1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **User settings**.
 
     ![Oracle Cloud console User menu](images/00-01-profile.png " ")
 
@@ -215,7 +218,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 7.  For Private key configuration, drag-and-drop the private key (.pem) or select it from your local machine.
 
-    >**Note**: *Refer to the Prerequisites section for instructions on how to obtain a private key.*
+    >**Note**: *Refer to the [Prerequisites](#prerequisites) section for instructions on how to obtain a private key.*
 
 8.  Enter the corresponding public key fingerprint you copied from the prerequisite steps. You can also go back to your User settings in the Oracle Cloud console global header to copy it again.
 
@@ -265,4 +268,4 @@ After your deployments and connections become active, you can assign the connect
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Deniz Sendil, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, October 2022
