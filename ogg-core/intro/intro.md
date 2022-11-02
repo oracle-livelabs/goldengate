@@ -14,8 +14,8 @@ This diagram illustrates the main components of the Microservices Architecture a
 
   ![MA Components and Replication Process](./images/replicationprocess-ma.png " ")
 
-Watch this short video about the Oracle GoldenGate product family:
-    [Oracle GoldenGate product family](youtube:kdMUxSf9j0k)
+Watch this short video about setting up a secure deployment using OGGCA:
+    [secure deployment using OGGCA](youtube:lTgOqUxy0Po)
 
 ### Objectives
 
