@@ -39,4 +39,4 @@ You may now **proceed to the next lab**.
 
 - **Created By/Date** - Kay Malcolm, Database Product Management, March 2020
 - **Contributors** - Rene Fontcha, Kamryn Vinson, Anoosha Pilli, Arabella Yao, Preeti Shukla
-- **Last Updated By/Date** -  Principal UA Developer, Oracle GoldenGate User Assistance, November 2022
+- **Last Updated By/Date** -  Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance, November 2022
