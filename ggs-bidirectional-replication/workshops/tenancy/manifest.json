@@ -23,11 +23,11 @@
             "filename": "../../create/create.md"
         },
         {
-            "title": "Lab 3: Create and run the Extract and Replicat",
+            "title": "Lab 3: Replicate data from source to target",
             "filename": "../../one-way/one-way.md"
         },
         {
-            "title": "Lab 4: Create and run the Extract and Replicat",
+            "title": "Lab 4: Replicate data from target to source",
             "filename": "../../two-way/two-way.md"
         },
         {
