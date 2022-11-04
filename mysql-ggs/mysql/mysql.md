@@ -210,7 +210,7 @@ In this task, you create a user in the target deployment for the Distribution Pa
     * For **Domain**, enter the domain name from Task 3, Step 9. For example, `GGSNetwork`.
     * For **Alias**, enter the alias from Task 3, Step 9. For example, `dpuser`.
 
-      ![Change Data Capture distribution path options](images/05-0-path-opts.png " ")
+    ![Change Data Capture distribution path options](images/05-03-path-opts.png " ")
 
     You return to the Distribution Service Overview page where you can review the path created.
 
