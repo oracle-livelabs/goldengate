@@ -63,7 +63,7 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
 12. From the Select a technology dropdown, select **MySQL**.
 
-13. For GoldenGate Instance Name, enter `mysql_instance`.
+13. For GoldenGate Instance Name, enter `MySQL-Instance`.
 
 14. For Administrator Username, enter `oggadmin`.
 
@@ -99,9 +99,9 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 9.  From the Select a technology dropdown, select **Oracle Database**.
 
-10. For GoldenGate Instance Name, enter **ADWinstance**.
+10. For GoldenGate Instance Name, enter `ADWinstance`.
 
-11. For Administrator Username, enter **oggadmin**.
+11. For Administrator Username, enter `oggadmin`.
 
 12. For Administrator Password, enter a password. Take note of this password.
 
