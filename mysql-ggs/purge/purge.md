@@ -22,23 +22,23 @@ This lab assumes you completed all preceding labs.
 
 1.  In the OCI GoldenGate Deployment Console, open the navigation menu (hamburger icon), and then click **Configuration**.
 
-    ![OCI GoldenGate Deployment Console navigation menu](images/01-01-navmenu.png " ")
+    ![OCI GoldenGate Deployment Console navigation menu](./images/01-01-navmenu.png " ")
 
 2.  On the **Configuration** screen, click **Tasks**, and then click **Add Purge Trail Task** (plus icon). The **Create a new Purge Trials task** form appears.
 
-    ![Create a new Purge Trails task on Tasks page](images/01-02-addtask.png " ")
+    ![Create a new Purge Trails task on Tasks page](./images/01-02-addtask.png " ")
 
 3.  For **Operation Name**, enter a name.
 
 4.  For **Trail**, enter the name of a Trail file, and then click **Add** (plus icon). For example, in this workshop, our Extract Trail file is called `E1`.
 
-    ![Trail field highlighted](images/01-04-addtrail.png " ")
+    ![Trail field highlighted](./images/01-04-addtrail.png " ")
 
 5.  For **Keep Rule**, select **Number of Files**, and then enter `1`. This indicates that one Trail file will be kept, while all others are purged.
 
 6.  For **Purge Frequency**, select **Hours**, and then enter `1`. This indicates that this Purge task will run every hour.
 
-    ![Keep Rule and Purge Frequency fields highlighted](images/01-06-rules.png " ")
+    ![Keep Rule and Purge Frequency fields highlighted](./images/01-06-rules.png " ")
 
 7.  Click **Submit**.
 

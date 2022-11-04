@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create the resources required to complete this workshop. We'll show you how to create a VCN and subnet, a bastion, provision OCI MySQL Database and autonomous database instances, and load data into the databases.
+This lab walks you through the steps to create the resources required to complete this workshop. You'll learn to create a VCN and subnet, a bastion, provision OCI MySQL Database and autonomous database instances, and load data into the databases.
 
 Estimated time: 30 mins
 
@@ -15,8 +15,7 @@ Estimated time: 30 mins
 
 ### Prerequisites
 
-This lab assumes you have completed the following labs:
-* Sign Up for Free Tier/Login to Oracle Cloud
+This lab assumes you have completed the Get started lab.
 
 > **Note:** *You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 
@@ -30,7 +29,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
 
-	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02.png " ")
+	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-start-vcn-wizard.png " ")
 
 3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
@@ -59,6 +58,8 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 12. For Destination Port Range, enter `3306`.
 
 13. For Description, enter `For MySQL access`, and then click **Add Ingress Rules**.
+
+		![Add Ingress Rules](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-13-add-ingress-rules.png " ")
 
 ## Task 2: Create an OCI MySQL Database System
 
@@ -96,7 +97,7 @@ You're returned to the DB Systems page where the MySQL DB System you created app
 
 ## Task 3A: Create a bastion and session
 
-Create a bastion and session if your OCI GoldenGate deployment and OCI MySQL Database system are not located in the same region.
+Create a bastion and session only if your OCI GoldenGate deployment and OCI MySQL Database system are **not** located in the same region. If they're in the same Home region, skip to Task 3B.
 
 1.  In the Oracle Cloud console navigation menu, click **Identity & Security**, and then click **Bastion**.
 
@@ -140,11 +141,15 @@ Create a bastion and session if your OCI GoldenGate deployment and OCI MySQL Dat
 
 	![Click the three dots and then select Copy SSH command](./images/03-14-copy-ssh-cmd.png " ")
 
+**Proceed to Task 4.**
+
 ## Task 3B: Using CloudShell to connect to the private network
 
 If working within the same Home region for OCI GoldenGate and OCI MySQL Database, then you can use CloudShell to connect to the private network.
 
 1.  After your OCI MySQL DB system becomes active, open CloudShell from the Oracle Cloud console global header.
+
+		![Open CloudShell](./images/03b-01-open-cloudshell.png " ")
 
 2.  After CloudShell opens and initializes, click **Network: Public**, and then select **Private Network Setup**.
 
@@ -201,7 +206,7 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 3.  On the Create Autonomous Database page, select a **Compartment** from the dropdown.
 
-		>**Note:** *If running this workshop in a LiveLab sandbox environment, select the compartment associated to your username.*
+ >**Note:** *If running this workshop in a LiveLab sandbox environment, select the compartment associated to your username.*
 
 4.  Enter **TargetADW** for **Display Name** and **Database Name**.
 
@@ -217,7 +222,7 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 9.  Click **Create Autonomous Database**.
 
-		The Autonomous Data Warehouse instance appears in the list of databases. It becomes active in a few minutes.
+	The Autonomous Data Warehouse instance appears in the list of databases. It becomes active in a few minutes.
 
 ## Task 6: Unlock the GGADMIN user and load the sample schema
 
@@ -273,5 +278,5 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
 - **Contributor** - Julien Testut, Database Product Management
-- **Last Updated by** - Jenny Chan, October 2022
+- **Last Updated by** - Jenny Chan, November 2022
 - **PAR Expiration date** - February 2024
