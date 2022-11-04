@@ -147,7 +147,7 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 
 * [Manage Trail files](https://docs.oracle.com/en/cloud/paas/goldengate-service/ntzlj/index.html)
 * [Monitor performance in the Oracle Cloud console](https://docs.oracle.com/en/cloud/paas/goldengate-service/vddvk/index.html)
-* [Monitor performance in the deploymenet console](https://docs.oracle.com/en/cloud/paas/goldengate-service/alllr/index.html)
+* [Monitor performance in the deployment console](https://docs.oracle.com/en/cloud/paas/goldengate-service/alllr/index.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
