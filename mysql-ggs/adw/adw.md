@@ -1,4 +1,4 @@
-# Create the Autonomous Data Warehouse Replicats
+# Create Autonomous Data Warehouse Replicats
 
 ## Introduction
 
