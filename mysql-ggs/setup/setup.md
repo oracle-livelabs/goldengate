@@ -206,7 +206,7 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 3.  On the Create Autonomous Database page, select a **Compartment** from the dropdown.
 
-	>**Note:** *If running this workshop in a LiveLab sandbox environment, select the compartment associated to your username.*
+ >**Note:** *If running this workshop in a LiveLab sandbox environment, select the compartment associated to your username.*
 
 4.  Enter **TargetADW** for **Display Name** and **Database Name**.
 
