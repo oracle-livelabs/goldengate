@@ -59,7 +59,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 13. For Description, enter `For MySQL access`, and then click **Add Ingress Rules**.
 
-		![Add Ingress Rules](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-13-add-ingress-rules.png " ")
+	![Add Ingress Rules](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-13-add-ingress-rules.png " ")
 
 ## Task 2: Create an OCI MySQL Database System
 
@@ -149,11 +149,11 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 1.  After your OCI MySQL DB system becomes active, open CloudShell from the Oracle Cloud console global header.
 
-		![Open CloudShell](./images/03b-01-open-cloudshell.png " ")
+	![Open CloudShell](./images/03b-01-open-cloudshell.png " ")
 
 2.  After CloudShell opens and initializes, click **Network: Public**, and then select **Private Network Setup**.
 
-		![CloudShell Network](./images/03b-02-cloudshell.png " ")
+	![CloudShell Network](./images/03b-02-cloudshell.png " ")
 
 3.  Select the VCN and Subnet your OCI MySQL DB system uses, and then click **Connect to this network**.
 
@@ -187,10 +187,8 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 8.  Create the ggadmin user using the following script. Ensure that you replace `<ggadmin-password>` with a valid password.
 
-		```
 		<copy>CREATE USER 'ggadmin' IDENTIFIED BY '<ggadmin-password>';
 		GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT, CREATE,CREATE VIEW, EVENT, INSERT, UPDATE, DROP,EXECUTE, DELETE ON *.* TO 'ggadmin';</copy>
-		```
 
 9.  Close CloudShell.
 

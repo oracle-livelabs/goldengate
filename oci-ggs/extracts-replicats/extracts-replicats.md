@@ -1,4 +1,4 @@
-# Create and run the Extract and Replicat
+# Import data using Oracle Data Pump and create the Replicat
 
 ## Introduction
 
@@ -204,7 +204,7 @@ Before importing data to the target database, create a credential in the target 
 
     ![Add Replicat - Parameter File](./images/02-09-param-file.png " ")
 
-    > **Note:** *'DBOPTIONS ENABLE\_INSTATIATION\_FILTERING' enables CSN filtering on tables imported using Oracle Data Pump. For more information, see [DBOPTIONS Reference](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service/using&id=GWURF-GUID-BA8C0CED-D87F-4106-862E-4AD22D910160).*
+    > **Note:** *`DBOPTIONS ENABLE_INSTATIATION_FILTERING` enables CSN filtering on tables imported using Oracle Data Pump. For more information, see [DBOPTIONS Reference](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service/using&id=GWURF-GUID-BA8C0CED-D87F-4106-862E-4AD22D910160).*
 
 10.  Click **Create**.
 
@@ -219,4 +219,4 @@ Before importing data to the target database, create a credential in the target 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Arabella Yao, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, October 2022
+* **Last Updated By/Date** - Jenny Chan, November 2022

@@ -13,7 +13,6 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-
             "title": "Lab 1: Set up the environment",
             "description": "Provision Autonomous Databases to use as the source and target.",
             "filename": "../../setup/setup.md"

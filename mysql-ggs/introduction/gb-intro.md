@@ -21,7 +21,7 @@ Oracle Cloud Infrastructure GoldenGate is a fully-managed service that uses Orac
 
 ## Learn more
 
-* [Overview of Oracle Cloud Infrastructure GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/overview-goldengate.html#GUID-0AF49219-46DC-4BF2-BBFA-64E4D3F557F2)
+* [Overview of Oracle Cloud Infrastructure GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/druyg/index.html)
 * [Take an interactive tour of OCI GoldenGate](https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:29986)
 
 ## Acknowledgements

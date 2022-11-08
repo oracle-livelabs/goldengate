@@ -99,7 +99,7 @@ To successfully complete this lab, you need:
     * For **Credential Alias**, select the alias from Step 5.
     * For Trail Name, enter `I1`.
 
-    ![Inital Load Extract options](./images/01-12-ilext.png " ")
+    ![Initial Load Extract options](./images/01-12-ilext.png " ")
 
 5.  On the Parameter File page, in the text area, replace `TABLE *.*` with the following:
 
