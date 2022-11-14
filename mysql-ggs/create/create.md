@@ -123,7 +123,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 3.  Click **Create Connection**.
 
-    ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/./images/03-03-connections.png " ")
+    ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-connections.png " ")
 
 4.  In the Create Connection panel, for Name, enter `SourceMySQL`.
 
