@@ -128,7 +128,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 ## Task 5: Create a user on the target Big Data deployment
 
->**Note**: *Complete the following steps in the target **OBJDeployment**'s deployment console (BDinstance).*
+>**Note**: *Complete the following steps in the target **BDDeployment**'s deployment console (BDinstance).*
 
 1.  In the Oracle Cloud console, click **Deployments** in the breadcrumb.
 
@@ -162,11 +162,11 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Administration Service navigation menu](images/03-01-navmenu.png " ")
 
-2.  On the Credentials page, click Add Credential (plus icon).
+2.  On the Credentials page, click **Add Credential** (plus icon).
 
     ![Credentials page](images/03-02-addcredential.png " ")
 
-3.  For Credential Domain, enter `ggs2kafka`.
+3.  For Credential Domain, enter `ggs2stream`.
 
 4.  For Credential Alias, enter `ocinetwork`.
 
@@ -188,7 +188,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
     ![Distribution Service Overview](images/03-01-addpath.png " ")
 
-2.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, `GGStoKafka`.
+2.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, `GGStoStream`.
 
 3.  For **Description**, describe the purpose of this Path.
 
@@ -206,7 +206,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 9.  For **Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.
 
-10. For **Target Domain**, enter the domain name you created in Oracle GoldenGate. For example, **ggs2kafka**.
+10. For **Target Domain**, enter the domain name you created in Oracle GoldenGate. For example, **ggs2stream**.
 
 11. For **Target Alias**, enter the alias name you created in Oracle GoldenGate. For example, **ocinetwork**.
 
@@ -252,7 +252,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 9.  On the Parameter Files page, replace `MAP *.*, TARGET *.*;`with `MAP SRC_OCIGGLL.*, TARGET *.*;`, and then click **Next**.
 
-10. On the Properties File page, locate `gg.handler.kafkahandler.topicMappingTemplate=<stream-name>`, replace `<stream-name>` with the name of your Stream.
+10. On the Properties File page, locate `gg.handler.kafkahandler.topicMappingTemplate=`, enter the name of your OCI Stream.
 
 11. Click **Create and Run**. The yellow exclamation mark changes to a green check when the Replicat process starts successfully.
 
@@ -266,7 +266,12 @@ In this lab, you:
 
 **Proceed to the next lab**.
 
+## Learn More
+* [Add an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/index.html)
+* [Add a Distribution Path](https://docs.oracle.com/en/cloud/paas/goldengate-service/adpen/index.html)
+* [Add a Replicat for OCI Streaming](https://docs.oracle.com/en/cloud/paas/goldengate-service/uxxfx/index.html)
+
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Deniz Sendil, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, September 2022

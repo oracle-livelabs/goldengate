@@ -51,9 +51,13 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
     ![Replicat Process Information - Statistics](images/01-06-rep-statistics.png " ")
 
+7.  In the Oracle Cloud console, open the navigation menu, click **Analytics & AI**, and then under **Messaging**, click **Streaming**.
+
+8.  Select your Stream to view its details. On the Stream details page, under **Recent Messages**, click **Load Messages**.
+
 ## Task 2: Using the Performance Metrics Server
 
-1.  In the GoldenGate deployment console, click **Performance Metrics Server**, and then click **EXT**.
+1.  In the GoldenGate deployment console, click **Performance Metrics Server**, and then click **UAEXT**.
 
     ![Performance Metrics Service page - EXT highlighted](images/05-01-perf-serv.png)
 
@@ -65,7 +69,7 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
     Here, you can view the real time database statistics, such as Inserts, Updates, Deletes, and so on.
 
-4.  Repeat steps 1-3 in OBJDeployment to view a snapshot of the Replicat's (named **Rep** in our lab) Database Statistics.
+4.  Repeat steps 1-3 in BDDeployment to view a snapshot of the Replicat's (named **Rep** in our lab) Database Statistics.
 
 ## Task 3: Viewing GoldenGate metrics in the Oracle Cloud console
 
@@ -79,7 +83,7 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 4.  Refresh your view after 5 minutes to see updated metrics.
 
-5.  You can repeat these steps for the OBJDeployment.
+5.  You can repeat these steps for the BDDeployment.
 
 In this lab, you learned to monitor performance in the OCI GoldenGate deployment console and in the Oracle Cloud console.
 
@@ -87,9 +91,10 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 
 ## Learn more
 
-* [Viewing Performance Metrics](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-A533E3ED-ADB9-42EE-A1FF-D3E6C5638DF3)
+* [Monitor performance in the Oracle Cloud console](https://docs.oracle.com/en/cloud/paas/goldengate-service/vddvk/index.html)
+* [Monitor performance in the deployment console](https://docs.oracle.com/en/cloud/paas/goldengate-service/alllr/index.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, October 2022

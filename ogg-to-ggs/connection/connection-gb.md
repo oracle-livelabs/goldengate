@@ -41,29 +41,16 @@ The following instructions show you how to download the Root Certificate using a
 
     ![Select Certificate is valid from Connection is secure submenu in Chrome browser](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01-03-certificate.png " ")
 
-4.  In the Certificate window, click **Certification Path**, select **DigiCert Global Root G2**, and then click **View Certificate**.
+4.  In the Certificate Viewer, click **Details**.
 
     ![Select DigiCert Global Root G2, then click View Certificate in Certification Path tab of Certificate dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01-04-certificate-window.png " ")
 
-    Another Certificate window opens, displaying the details for the root DigiCert certificate.
+5.   Select **DigiCert Global Root G2** in the Certificate Hierarchy, and then click **Export selected certificate...**.
 
     ![Review Certificate Information in Certificate dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01-04-digicert.png " ")
 
-5.  Click **Details**, and then click **Copy to File**.
+6.  In the Save As dialog, select a location on your local machine to save the root certificate, enter a file name such as **DigiCert-Root.pem**, and ensure the Save as type is Base64-encoded ASCII, single certificate (\*.pem; \*.crt), and then click **Save**.
 
-    ![Click Copy to File in Details tab of Certificate dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01-05.png " ")
-
-6.  In the Certificate Export Wizard, click **Next**.
-
-7.  Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
-
-    ![Select Base 64 encoded X.509 and then click Next in Certificate Export Wizard](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01-07.png " ")
-
-8.  Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
-
-9.  Click **Next**, and then click **Finish**.
-
-A Certificate Export Wizard dialog displays **The export was successful**. You can close the Certificate windows.
 
 ## Task 1B: Using FireFox to download the root certificate
 
@@ -150,4 +137,4 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, October 2022

@@ -103,7 +103,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 8.  Click **Next**.
 
-9.  From the Select a technology dropdown, select **Oracle Database**.
+9.  From the Select a technology dropdown, select **Big Data**.
 
 10. For GoldenGate Instance Name, enter **BDinstance**.
 
@@ -207,17 +207,19 @@ You can leave the source database SQL window open for use in a later lab.
 
 5.  Click **Next**.
 
+    ![Create Object Storage connection](images/05-05-obj-connection.png " ")
+
 6.  From the Region dropdown, select a region.
 
 7.  For Private key configuration, drag-and-drop the private key (.pem) or select it from your local machine.
 
     >**Note**: *Refer to the Prerequisites section for instructions on how to obtain a private key.*
 
-8.  Enter the corresponding public key fingerprint.
+8.  Enter the corresponding public key fingerprint. You can also go back to your User settings in the Oracle Cloud console global header to copy it again.
 
 9.  Click **Create**.
 
-  ![Target details](./images/05-07-objstorageconnection.png " ")
+  ![Create Object Storage connection](./images/05-08-obj-connection.png " ")
 
     The Connection becomes Active after a few minutes.
 
@@ -249,6 +251,36 @@ After your deployments and connections become active, you can assign the connect
 
     ![OBJDeployment details](images/06-07-bdconnection.png " ")
 
+## Task 6: (Optional) Create a GoldenGate connection
+
+Create a GoldenGate connection if your Big Data deployment doesn't have a public endpoint, and then assign it to the source ATP deployment.
+
+1.  On the Connections page, click **Create Connection**.
+
+2.  In the Create connection panel, enter a **Name** and **Description**.
+
+3.  For **Compartment**, select the compartment in which to create this connection.
+
+4.  For **Type**, select **GoldenGate**.
+
+5.  Click **Next**.
+
+6.  For Connection details, select **OBJDeployment**.
+
+7.  Under Network connectivity, select **Network connectivity via private endpoint**.
+
+8.  For **Subnet**, select the subnet to which a private endpoint is created from the OCI GoldenGate service tenancy.
+
+9.  For **Private IP address**, enter the private IP for the OBJDeployment.
+
+10. Click **Create**.
+
+11. After the connection is active, on its details page, under **Resources**, click **Assigned deployments**.
+
+12. Click **Assign deployment**.
+
+13. In the Assign deployment dialog, select the source **ATPDeployment**, and then click **Assign deployment**.
+
 **Proceed to the next lab**.
 
 ## Learn More
@@ -261,4 +293,4 @@ After your deployments and connections become active, you can assign the connect
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, October 2022
