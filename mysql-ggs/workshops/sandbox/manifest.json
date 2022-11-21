@@ -14,7 +14,7 @@
         },
         {
             "title": "Lab 1: Create the OCI GoldenGate resources",
-            "filename": "../../create/create-gb.md"
+            "filename": "../../create/create.md"
         },
         {
             "title": "Lab 2: Create MySQL Extracts",
