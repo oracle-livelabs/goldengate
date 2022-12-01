@@ -14,19 +14,19 @@
         },
         {
             "title": "Lab 1: Create the OCI GoldenGate resources",
-            "filename": "../../create/create-gb.md"
+            "filename": "../../create/create.md"
         },
         {
-            "title": "Lab 2: Set up and run replication processes",
+            "title": "Lab 2: Create MySQL Extracts",
             "filename": "../../mysql/mysql.md"
         },
         {
-            "title": "Lab 3: Monitor Extracts and Replicats",
+            "title": "Lab 3: Create Autonomous Data Warehouse Replicats",
             "filename": "../../adw/adw.md"
         },
         {
-            "title": "Lab 4: Purge unused Trail files",
-            "filename": "../../purge/purge.md"
+            "title": "Lab 4: Run and monitor replication processes",
+            "filename": "../../monitor/monitor.md"
         },
         {
             "title": "Need Help?",

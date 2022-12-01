@@ -45,23 +45,23 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 5.  In the OCI GoldenGate Deployment Console, click the **Extract name (UAEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
-    ![Extract Process Information - Statistics](images/04-17.png " ")
+    ![Extract Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/04-17-ext-stats.png " ")
 
 6.  Go back to the Overview screen, click the **Replicat name (REP)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
-    ![Replicat Process Information - Statistics](images/01-06-rep-statistics.png " ")
+    ![Replicat Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-06-rep-statistics.png " ")
 
 ## Task 2: Using the Performance Metrics Server
 
 1.  In the GoldenGate deployment console, click **Performance Metrics Server**, and then click **EXT**.
 
-    ![Performance Metrics Service page - EXT highlighted](images/05-01-perf-serv.png)
+    ![Performance Metrics Service page - EXT highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-01-perf-serv.png)
 
     > **Note:** *You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.*
 
 2.  Click **Database Statistics**.
 
-    ![Database Statistics page](images/05-03-db-stats.png)
+    ![Database Statistics page](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-03-db-stats.png)
 
     Here, you can view the real time database statistics, such as Inserts, Updates, Deletes, and so on.
 
@@ -73,7 +73,7 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 2.  On the GGSDeployment Details page, scroll down to the **Metrics** section.
 
-    ![Metrics on Deployment Details page](images/05b-02-metrics.png)
+    ![Metrics on Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05b-02-metrics.png)
 
 3.  Review the **DeploymentInboundLag** and **DeploymentOutboundLag** charts.
 
@@ -83,9 +83,9 @@ In this lab, you learned to monitor performance in the OCI GoldenGate Deployment
 
 ## Learn More
 
-* [Viewing Performance Metrics](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-A533E3ED-ADB9-42EE-A1FF-D3E6C5638DF3)
+* [Monitor performance using the Oracle Cloud console](https://docs.oracle.com/en/cloud/paas/goldengate-service/vddvk/index.html#articletitle)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, February 2022
+* **Contributors** -  Denis Gray, Database Product Management & Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, October 2022

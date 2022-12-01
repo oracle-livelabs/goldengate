@@ -1,4 +1,4 @@
-# Create the Autonomous Data Warehouse Replicats
+# Create Autonomous Data Warehouse Replicats
 
 ## Introduction
 
@@ -27,15 +27,15 @@ This lab assumes you completed all preceding labs successfully.
 
 2.  Open the navigation menu, and then click **Configuration**.
 
-    ![Click Configuration in Administration Service navigation menu](images/01-02-config.png " ")
+    ![Click Configuration in Administration Service navigation menu](./images/01-02-config.png " ")
 
 3.  For the TargetADW database, click **Connect to database TargetADW**.
 
-    ![Connect to TargetADW](images/01-03-dbconnect.png " ")
+    ![Connect to TargetADW](./images/01-03-dbconnect.png " ")
 
 4.  For Checkpoint, click **Add Checkpoint** (plus icon).
 
-    ![Click Add Checkpoint](images/01-04-add-checkpoint.png " ")
+    ![Click Add Checkpoint](./images/01-04-add-checkpoint.png " ")
 
 6.  For Checkpoint table, enter `SRCMIRROR_OCIGGLL.CHECKTABLE`, and then click **Submit**. The checkpoint table is added to the list.
 
@@ -45,11 +45,11 @@ This lab assumes you completed all preceding labs successfully.
 
 1.  On the Administration Service Overview page, click **Add Replicat** (plus icon).
 
-    ![Click Add Replicat on Administration Service Overview page](images/02-01-add-replicat.png " ")
+    ![Click Add Replicat on Administration Service Overview page](./images/02-01-add-replicat.png " ")
 
 2.  On the Add Replicat screen, for Replicat Type, select **Nonintegrated Replicat**, and then click **Next**.
 
-    ![Select Nonintegrated Replicat for Replicat type](images/02-02-replicat-type.png " ")
+    ![Select Nonintegrated Replicat for Replicat type](./images/02-02-replicat-type.png " ")
 
 3.  On the Replicat Options page, complete the fields as follows, and then click **Next**:
     * For **Process Name**, enter a name for this process. For example, `RIL`.
@@ -58,7 +58,7 @@ This lab assumes you completed all preceding labs successfully.
     * For **Trail Name**, enter the name of the trail from the previous lab, Task 4 (`I1`).
     * For **Checkpoint Table**, select the checkpoint table created in Task 1.
 
-    ![Replicat options](images/02-03-replicat-options.png " ")
+    ![Replicat options](./images/02-03-replicat-options.png " ")
 
 4.  On the Parameter Files page, replace `MAP *.*, TARGET *.*;` with the following mapping, and then click **Create and Run**:
 
@@ -66,7 +66,7 @@ This lab assumes you completed all preceding labs successfully.
     <copy>MAP SRC_OCIGGLL.*, TARGET SRCMIRROR_OCIGGLL.*;</copy>
     ```
 
-    ![Replicat Parameter File](images/02-04-params.png " ")
+    ![Replicat Parameter File](./images/02-04-params.png " ")
 
     You're returned to the Overview page where you can review the Replicat details.
 

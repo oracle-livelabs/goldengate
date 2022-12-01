@@ -43,7 +43,7 @@ On the Deployment Details page, you can:
 
 ## Task 2: Launch the GoldenGate Deployment Console
 
-1. On the deployment details page, click **Launch Console**.
+1. On the **ATPDeployment** details page, click **Launch Console**.
 
     ![Launch Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-01-launchconsole.png " ")
 
@@ -243,7 +243,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 5.  For Trail Name, enter `T1`.
 
-6.  For Target, select **Oracle Object Storage**.
+6.  For Target, select **OCI Object Storage**.
 
 7.  For Available Aliases, select **TargetObjStore**.
 
