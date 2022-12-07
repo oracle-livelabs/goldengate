@@ -162,7 +162,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 1.  From the Oracle Cloud Console **Navigation Menu** (hamburger icon), click **Oracle Database**, and then select **Autonomous Transaction Processing**.
 
-	 ![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/common/images/console/database-atp.pngatp.png " ")
+	 ![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/10-01-database-atp.png " ")
 
 2.  From the list of databases, select **SourceATP**.
 
@@ -176,7 +176,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 4.  Under **Administration**, click **Database Users**.
 
-    ![Database Actions](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/sql-dbusers.png " ")
+    ![Database Actions](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/10-04-db-users.png " ")
 
 5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
@@ -213,6 +213,8 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 4.  From the Type dropdown, select **OCI Object Storage**.
 
 5.  Click **Next**.
+
+    ![Create connection details](images/05-01-create-connection.png " ")
 
 6.  From the Region dropdown, select your region.
 
