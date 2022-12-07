@@ -276,6 +276,37 @@ After your deployments and connections become active, you can assign the connect
 
 7.  Repeat steps 2 to 6 to assign the TargetStream connection to the BDDeployment.
 
+## Task 7: (Optional) Create a GoldenGate connection
+
+Create a GoldenGate connection if your Big Data deployment doesn't have a public endpoint, and then assign it to the source ATP deployment.
+
+1.  On the Connections page, click **Create Connection**.
+
+2.  In the Create connection panel, enter a **Name** and **Description**.
+
+3.  For **Compartment**, select the compartment in which to create this connection.
+
+4.  For **Type**, select **GoldenGate**.
+
+5.  Click **Next**.
+
+6.  For Connection details, select **BDDeployment**.
+
+7.  Under Network connectivity, select **Network connectivity via private endpoint**.
+
+8.  For **Subnet**, select the subnet to which a private endpoint is created from the OCI GoldenGate service tenancy.
+
+9.  For **Private IP address**, enter the private IP for the BDDeployment.
+
+10. Click **Create**.
+
+11. After the connection is active, on its details page, under **Resources**, click **Assigned deployments**.
+
+12. Click **Assign deployment**.
+
+13. In the Assign deployment dialog, select the source **ATPDeployment**, and then click **Assign deployment**.
+
+
 **Proceed to the next lab**.
 
 ## Learn More
@@ -288,4 +319,4 @@ After your deployments and connections become active, you can assign the connect
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Deniz Sendil, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2022
+* **Last Updated By/Date** - Jenny Chan, October 2022
