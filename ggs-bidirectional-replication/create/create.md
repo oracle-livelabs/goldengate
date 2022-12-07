@@ -75,7 +75,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 ## Task 2: Create the source connection
 
-While OCI GoldenGate creates your deployment, you can register the source Oracle Autonomous Transaction Processing \(ATP\) Database.
+While OCI GoldenGate creates your deployment, you can create the source Oracle Autonomous Transaction Processing \(ATP\) Database.
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the GoldenGate page.
 
@@ -103,7 +103,7 @@ While OCI GoldenGate creates your deployment, you can register the source Oracle
 
 9.  For **Database in &lt;compartment-name&gt;**, select **SourceATP &lt;numbers&gt;** from the dropdown. 
 
-10.  Enter the database's password in the Password field, and then click **Create**.
+10.  Enter the GGADMIN password in the Password field, and then click  **Create**. You will use the same password in Task 3.
 
     ![Source Database details](./images/02-10-create-connection-gg-details-tenancy.png)
 
@@ -161,7 +161,7 @@ You can leave the source database SQL window open for use in a later lab.
 
 ## Task 4: Create the target connection
 
-Now, follow the steps below to register the target Autonomous Data Warehouse \(ADW\) instance.
+Now, follow the steps below to create the target Autonomous Data Warehouse \(ADW\) instance.
 
 1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate.
 
@@ -189,7 +189,7 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
     The source and target databases appear in the list of Connections. The database registration becomes Active after a few minutes.
 
-10.  Repeat Task 2, steps 1-8, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
+10.  Repeat Task 3, steps 1-8, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
 
 11.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
 
