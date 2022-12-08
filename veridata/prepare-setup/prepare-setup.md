@@ -17,15 +17,9 @@ This lab assumes you have:
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 
-<if type="default">
-    
-- [ggvd-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Vo75y6-hxT4jgMS5yzQdZs28frxcpv8Fg9BjCg3kJSJEsMRCtzWml25zJGwXcsfK/n/natdsecurity/b/stack/o/ggvd-mkplc-freetier.zip)
-</if>
-<if type="advanced">
-    
-- [ggvd-mkplc-advanced.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JHclbM43HVmaX_i7ZAo3m5qQGet_fIKOLQlMyoQW-SRIhrx141BzEQ_Z5I9yOwxz/n/natdsecurity/b/stack/o/ggvd-mkplc-advanced.zip)
-</if>
+    [ggvd-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Vo75y6-hxT4jgMS5yzQdZs28frxcpv8Fg9BjCg3kJSJEsMRCtzWml25zJGwXcsfK/n/natdsecurity/b/stack/o/ggvd-mkplc-freetier.zip)
 
+    For the [Master Oracle GoldenGate Veridata Advanced Features Workshop] (https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=913&p210_wec=&session=13937829095548), download [ggvd-mkplc-advanced.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JHclbM43HVmaX_i7ZAo3m5qQGet_fIKOLQlMyoQW-SRIhrx141BzEQ_Z5I9yOwxz/n/natdsecurity/b/stack/o/ggvd-mkplc-advanced.zip)
 2.  Save in your downloads folder.
 
 We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Step 3* to follow our recommendations. If you would rather use an exiting VCN then proceed to the next step as indicated below to update your existing VCN with the required Egress rules.
