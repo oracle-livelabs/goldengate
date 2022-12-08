@@ -17,11 +17,14 @@ This lab assumes you have:
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 
-<if type="default">
+<if type="basics">
     - [ggvd-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Vo75y6-hxT4jgMS5yzQdZs28frxcpv8Fg9BjCg3kJSJEsMRCtzWml25zJGwXcsfK/n/natdsecurity/b/stack/o/ggvd-mkplc-freetier.zip)
 </if>
 <if type="advanced">
     - [ggvd-mkplc-advanced.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JHclbM43HVmaX_i7ZAo3m5qQGet_fIKOLQlMyoQW-SRIhrx141BzEQ_Z5I9yOwxz/n/natdsecurity/b/stack/o/ggvd-mkplc-advanced.zip)
+</if>
+<if type="tools">
+    - [ggvd-mkplc-tools.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/7O8zfAtWGMzgNhexQzwYjORcEToN91EVj6rGE48TwL_6c_XlKhV0chEf4Y5f96qj/n/natdsecurity/b/stack/o/ggvd-mkplc-tools.zip)
 </if>
 
 2.  Save in your downloads folder.
@@ -55,6 +58,6 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
 ## Acknowledgements
-* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
 * **Contributors** -  Nisharahmed Soneji, Sukin Varghese, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2022
