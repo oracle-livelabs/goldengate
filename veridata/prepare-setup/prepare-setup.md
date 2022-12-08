@@ -57,6 +57,6 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
 ## Acknowledgements
-* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Author** -  Rene Fontcha, LiveLabs Platform Lead, NA Technology
 * **Contributors** -  Nisharahmed Soneji, Sukin Varghese, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021
