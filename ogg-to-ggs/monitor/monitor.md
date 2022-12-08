@@ -22,9 +22,9 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 ## Task 1: Perform Inserts to the Source Database
 
-1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
+1.  Return to the Oracle Cloud Console and use the navigation menu to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
 
-2.  On the Source ATP Details page, click **Tools**, and then **Database Actions**.
+2.  On the Source ATP Details page, **Database Actions**.
 
 3.  Use the Source ATP database credentials in the Workshop details to log in to Database Actions, and then click **SQL**.
 
@@ -57,7 +57,7 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 ## Task 2: Using the Performance Metrics Server
 
-1.  In the GoldenGate deployment console, click **Performance Metrics Server**, and then click **EXT**.
+1.  In the GoldenGate deployment console, click **Performance Metrics Server**, and then click **UAEXT**.
 
     ![Performance Metrics Service page - EXT highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-01-perf-serv.png)
 
@@ -92,4 +92,4 @@ In this lab, you learned to monitor performance in the OCI GoldenGate Deployment
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, October 2022

@@ -6,6 +6,9 @@ This lab walks you through the steps to create Oracle Cloud Infrastructure (OCI)
 
 Estimated time: 30 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Create the OCI GoldenGate resources](videohub:1_qpzb8mfm)
+
 ### About Oracle Cloud Infrastructure GoldenGate resources
 
 A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. You can create different deployments types such as, Oracle Database, MySQL, or Big Data. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
@@ -25,13 +28,19 @@ In this lab, you will:
 ### Prerequisites
 In Task 5, you must upload a private key and enter the corresponding public key fingerprint. To add an API key:
 
-1.  Oracle Cloud console global navigation bar, click **Profile** (user icon).
+1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **User settings**.
 
-2.  On the user details page, under **Resources**, click API **Keys**.
+    ![Oracle Cloud console User menu](images/00-01-profile.png " ")
+
+2.  On the user details page, under **Resources**, click **API Keys**.
 
 3.  Click **Add API Key**.
 
-4.  In the Add API Key dialog, click **Download Private Key**, and then click **Add**.
+    ![Resources on User details page](images/00-03-apikey.png " ")
+
+4.  In the Add API Key dialog, click **Download Private Key** to download the key, and then click **Add**.
+
+    ![Download Private key](images/00-04-privatekey.png " ")
 
 5.  In the Configuration File Preview dialog, copy the fingerprint to a text editor, and then click **Close**.
 
@@ -99,11 +108,11 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 7.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-bigdata.png " ")
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-07-bigdata.png " ")
 
 8.  Click **Next**.
 
-9.  From the Select a technology dropdown, select **Oracle Database**.
+9.  From the Select a technology dropdown, select **Big Data**.
 
 10. For GoldenGate Instance Name, enter **BDinstance**.
 
@@ -113,7 +122,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 13. Click **Create**.
 
-    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-13-bigdata.png " ")
+    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-13-bigdata.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
@@ -141,11 +150,11 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
 7.  For **Database in &lt;compartment-name&gt;**, click **Change Compartment**, select the compartment you created your ATP instance, and then select **SourceATP** from the dropdown. Some fields are autopopulated based on your selection.
 
-8.  Enter a password for the `ggadmin` user in the Password field, and then click **Create**.
+8.  Enter a password for the `ggadmin` user in the Password field, and then click **Create**. (Use this password for `ggadmin` in Task 4, Step 6.)
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-08-atpconnection.png)
 
-    The database registration becomes Active after a few minutes.
+    The connection becomes Active after a few minutes.
 
 ## Task 4: Unlock the GGADMIN user and enable supplemental logging for the source database
 
@@ -153,7 +162,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 1.  From the Oracle Cloud Console **Navigation Menu** (hamburger icon), click **Oracle Database**, and then select **Autonomous Transaction Processing**.
 
-	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/oracle/common/images/console/database-atp.png " ")
+	 ![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/10-01-database-atp.png " ")
 
 2.  From the list of databases, select **SourceATP**.
 
@@ -167,13 +176,13 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 4.  Under **Administration**, click **Database Users**.
 
-    ![Database Actions](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/sql-dbusers.png " ")
+    ![Database Actions](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/10-04-db-users.png " ")
 
 5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
     ![Database users](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-locked.png " ")
 
-6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
+6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the connection Task 3, Step 8, and then click **Apply Changes**.
 
     ![Edit user](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-07-edit.png " ")
 
@@ -193,7 +202,9 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 ## Task 5: Create a connection for Oracle Object Storage
 
-1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate.
+1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate. Open the Oracle Cloud console navigation menu, click **Oracle Database**, and then **GoldenGate**.
+
+    ![GoldenGate in the Oracle Cloud console navigation menu](https://oracle-livelabs.github.io/common/images/console/database-goldengate.png " ")
 
 2.  Click **Connections** and then **Create Connection**.
 
@@ -203,17 +214,19 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 5.  Click **Next**.
 
-6.  From the Region dropdown, select a region.
+    ![Create connection details](images/05-01-create-connection.png " ")
+
+6.  From the Region dropdown, select your region.
 
 7.  For Private key configuration, drag-and-drop the private key (.pem) or select it from your local machine.
 
-    >**Note**: *Refer to the Prerequisites section for instructions on how to obtain a private key.*
+    >**Note**: *Refer to the [Prerequisites](#prerequisites) section for instructions on how to obtain a private key.*
 
-8.  Enter the corresponding public key fingerprint.
+8.  Enter the corresponding public key fingerprint you copied from the prerequisite steps. You can also go back to your User settings in the Oracle Cloud console global header to copy it again.
 
 9.  Click **Create**.
 
-    ![Target details](images/05-07-objstorageconnection.png " ")
+    ![Target details](./images/05-07-objstorageconnection.png " ")
 
     The Connection becomes Active after a few minutes.
 
@@ -257,4 +270,4 @@ After your deployments and connections become active, you can assign the connect
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Deniz Sendil, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, October 2022

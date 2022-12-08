@@ -1,8 +1,8 @@
-#  Replicate the data from Oracle Database to Apache Cassandra
+#  Replicate data from Oracle Database to Apache Cassandra
 
 ## Introduction
 
-This lab will demonstrate how to  ***Replicate the data from Oracle Database to Apache Cassandra*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
+This lab will demonstrate how to  ***Replicate data from Oracle Database to Apache Cassandra*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
 
 In this lab, we will load data in the Oracle Database schema ***SOE***  of Pluggable Database ***PDB***. GG extract process ***EXTORA*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, path ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate (MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPCASS*** read the remote trail files, created the Cassandra tables, and wrote the data to those tables.
 
@@ -70,7 +70,6 @@ This lab assumes you have:
 
     Click here : [http://localhost:22001/?root=account](http://localhost:22001/?root=account)
 
-
     ***username***
 
     ```
@@ -127,7 +126,6 @@ This lab assumes you have:
 
 1. Open a ***New Window*** on the terminal, and move the terminal side by side as shown below.
 
-
     On the left side terminal, enter ***oraselect*** will display the row counts of all the tables of the Oracle(Source) Database.
     ```
     <copy>oraselect</copy>
@@ -176,4 +174,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
 * **Contributors** - Madhu Kumar S, Brian Elliott, Deniz Sendil, Meghana Banka, Rene Fontcha  
-* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, August 2022
+* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, 9th August 2022

@@ -83,11 +83,11 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
 6.  For **Generated Source URI**, click **Edit Source URI**, and then replace localhost (or the IP address) with the Internal FQDN of the on-premises or Marketplace Oracle GoldenGate instance.
 
-    ![](images/02-07.png " ")
+    ![Replace localhost with Internal FQDN of compute image](images/02-07.png " ")
 
     >**Note:** *You can copy the Internal FQDN from the Oracle GoldenGate Marketplace Compute instance in the OCI Console.*
 
-    ![](images/02-07-note.png " ")
+    ![Example of how to copy Internal FQDN from compute instance details page](images/02-07-note.png " ")
 
 7.  For **Target Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 

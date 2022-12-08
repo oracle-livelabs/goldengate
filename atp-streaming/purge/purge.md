@@ -44,7 +44,7 @@ This lab assumes you completed all preceding labs.
 
 ## Learn more
 
-* [Managing Trail Files](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-051F5E35-89F6-41A9-9E82-D75F4C1DA6DD)
+* [Managing Trail Files](https://docs.oracle.com/en/cloud/paas/goldengate-service/ntzlj/index.html)
 
 ## Acknowledgements
 

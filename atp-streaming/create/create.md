@@ -22,9 +22,53 @@ In this lab, you will:
 * Assign connections to deployments
 
 ### Prerequisites
-This lab assumes that you completed the preceding lab, and your Autonomous Database is in the Active state.
+
+To complete this lab:
+* Ensure that you successfully completed the preceding lab.
+* Your Autonomous Database is in the Active state.
+* Create and download an Auth Token (see Task 0 for instructions).
 
 > **Note:** *Compartment names in the screenshots may differ from values that appear in your environment.*
+
+## Task 0: Obtain the Stream Pool username and create an Auth Token
+
+1.  Open the Oracle Cloud console navigation menu, click **Analytics & AI**, and under **Messaging**, click **Streaming**.
+
+	![OCI Streaming in the Oracle Cloud console](images/00-01-analytics-streaming.png " ")
+
+2.  On the **Streams** page, under **Analytics**, click **Stream Pools**.
+
+	![Select Stream Pools](images/00-02-streampools.png " ")
+
+3.  On the **Stream Pools** page, select **DefaultPool**.
+
+	![Select DefaultPool](images/00-03-defaultpool.png " ")
+
+4.  On the **DefaultPool** details page, under **Resources**, click **Kafka Connection Settings**.
+
+	![Click Kafka Connection Settings](images/00-04-kafka-settings.png " ")
+
+5.  In the SASL Connection Settings field, look for `username` and then copy its string value for later use. It's in the format of `<tenancy>/<username>/<streampool-ocid>`.
+
+	![Copy SASL Connection Settings username](images/00-05-username.png " ")
+
+6.  In the Oracle Cloud console global header, click **Profile**, and then click **User Settings**.
+
+	![Open user menu and then select User settings](images/04-01-profile.png " ")
+
+7.  Under **Resources**, click **Auth Tokens**.
+
+	![Under Resources, click Auth Tokens](images/04-02-authtokens.png " ")
+
+8.  Click **Generate Token**.
+
+4.  In the Generate Token dialog, enter a friendly description, and then click **Generate Token**.
+
+	![Enter a description in the Generate Token dialog](images/04-04-authtoken.png " ")
+
+5.  **Copy** the auth token immediately to a secure location from where you can retrieve it later. You won't be able to retrieve it again from the Oracle Cloud console.
+
+6.  Close the dialog.
 
 ## Task 1: Create a deployment
 
@@ -36,7 +80,7 @@ This lab assumes that you completed the preceding lab, and your Autonomous Datab
 
     ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
-3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
+3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select a compartment.
 
 4.  On the Deployments page, click **Create Deployment**.
 
@@ -196,11 +240,11 @@ You can leave the source database SQL window open for use in a later lab.
 
 5.  Click **Next**.
 
-6.  For Connection Details, select the Stream created in Task 5.
+6.  For Connection Details, select the Stream Pool. To select a Stream Pool in a different compartment, click **Change Compartment**.
 
-7.  For Username, enter a username for the Stream. For example, `ggadmin`.
+7.  For Username, enter a username for the Stream Pool, obtained in the Prerequisite task (Task 0) for this lab.
 
-8.  For Password, enter a password for the Stream user.
+8.  For Password, enter the Auth Token copied in the Prerequisite task (Task 0) for this lab.
 
 9.  Click **Create**.
 
@@ -232,6 +276,35 @@ After your deployments and connections become active, you can assign the connect
 
 7.  Repeat steps 2 to 6 to assign the TargetStream connection to the BDDeployment.
 
+## Task 7: (Optional) Create a GoldenGate connection
+
+Create a GoldenGate connection if your Big Data deployment doesn't have a public endpoint, and then assign it to the source ATP deployment.
+
+1.  On the Connections page, click **Create Connection**.
+
+2.  In the Create connection panel, enter a **Name** and **Description**.
+
+3.  For **Compartment**, select the compartment in which to create this connection.
+
+4.  For **Type**, select **GoldenGate**.
+
+5.  Click **Next**.
+
+6.  For Connection details, select **BDDeployment**.
+
+7.  Under Network connectivity, select **Network connectivity via private endpoint**.
+
+8.  For **Subnet**, select the subnet to which a private endpoint is created from the OCI GoldenGate service tenancy.
+
+9.  For **Private IP address**, enter the private IP for the BDDeployment.
+
+10. Click **Create**.
+
+11. After the connection is active, on its details page, under **Resources**, click **Assigned deployments**.
+
+12. Click **Assign deployment**.
+
+13. In the Assign deployment dialog, select the source **ATPDeployment**, and then click **Assign deployment**.
 
 
 **Proceed to the next lab**.
@@ -245,5 +318,5 @@ After your deployments and connections become active, you can assign the connect
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Contributors** -  Deniz Sendil, Database Product Management
+* **Last Updated By/Date** - Jenny Chan, October 2022

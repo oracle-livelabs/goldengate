@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create an Oracle Cloud Infrastructure (OCI) GoldenGate Deployment and register databases.
+This lab walks you through the steps to create an Oracle Cloud Infrastructure (OCI) GoldenGate Deployment and register connections.
 
 Estimated Time: 20 minutes
 
@@ -32,15 +32,15 @@ This lab assumes that you completed all preceding labs.
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-    ![](images/database-goldengate.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](./images/01-01a-database-goldengate.png " ")
 
     You're brought to the **Overview** page.
 
-    ![](images/01-01-02a.png " ")
+    ![GoldenGate Overview page](./images/01-01b-create-deployment.png " ")
 
 2.  Click **Create Deployment**.
 
-    ![](images/01-02-create-dep.png " ")
+    ![Deployments page](./images/01-02-create-dep.png " ")
 
 3.  In the Create Deployment panel, enter **GGSDeployment** for Name.
 
@@ -54,7 +54,7 @@ This lab assumes that you completed all preceding labs.
 
 8.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![](images/01-02-create-deployment-panel.png " ")
+    ![Completed Create GoldenGate Deployment fields](./images/01-08-create-deployment-panel.png " ")
 
 9. Click **Next**.
 
@@ -66,43 +66,49 @@ This lab assumes that you completed all preceding labs.
 
 13. Click **Create**.
 
+    ![Completed GoldenGate details](./images/01-13-deployment-details.png " ")
+    
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-## Task 2: Register the Source and Target Database
+## Task 2: Register the Source and Target Connections
 
 Now, follow the steps below to register the source and target Autonomous Database instances.
 
 *For the purposes of this workshop, registering the target Autonomous Database is purely used for its connection string to help you create the credential in the Oracle GoldenGate Marketplace instance.*
 
-1.  In the Oracle Cloud Console breadcrumb, click **GoldenGate**, and then **Registered Databases**.
+1.  In the Oracle Cloud Console breadcrumb, click **GoldenGate**, and then **Connections**.
 
-    ![](images/04-01-breadcrumb.png " ")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/02-01-breadcrumb.png " ")
 
-2.  On the Registered Databases page, click **Register Database**.
+2.  On the Registered Databases page, click **Create connection**.
 
-    ![](images/04-02-register-db.png " ")
+    ![Connections in GoldenGate menu](./images/02-02-create-connection.png " ")
 
-3.  In the Register Database panel, enter **SourceATP** for Name and Alias.
+3.  The Create connection panel consists of two pages. On the General information page, for Name, enter **SourceATP** and optionally, a description.
 
-4.  For Compartment, select your compartment from the dropdown.
+4.  From the Compartment dropdown, select a compartment.
 
-5.  Click **Select Database**.
+5.  From the a Type dropdown, select **OCI Autonomous Database**.
 
-6.  For **Database Type**, select **Autonomous Database**.
+    ![Source Database details](./images/02-05-create-connection-general-info.png " ")
 
-7.  For **Database in &lt;compartment-name&gt;**, select **SourceATP**. You may need to click **Change Compartment** to locate your database.
+6. Click **Next**.
 
-8.  For **Database User Password**, enter a password, and take note of this password for use later in this workshop. If running this workshop from Oracle LiveLabs, you can use the database passwords provided in the Workshop Details.
+7.  On the Connection details page, under Database details, select **Select database**.
 
-9.  Click **Register**.
+8.  For **Database in &lt;compartment-name&gt;**, select **SourceATP &lt;numbers&gt;** from the dropdown. 
 
-    ![](images/reg-source-atp.png " ")
+9. Enter the database's password in the Password field, and then click **Create**.
 
-10. On the Registered Databases page, under List Scope, ensure that you select your compartment from the dropdown to see your registered databases.
+    ![Source Database details](./images/02-09-create-connection-gg-details.png " ")
 
-11. Repeat these steps for the Target Autonomous Database.
+    The connection becomes Active after a few minutes.
 
-The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
+10.  Repeat these steps for the Target Autonomous Database. Name the connection **TargetADW**.
+
+    The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
+
+    ![List of connections](./images/02-10-connections-list.png " ")
 
 ## Task 3: Unlock the GGADMIN User and add supplemental logging
 
@@ -110,33 +116,48 @@ Although the GGADMIN user is created during the database registration process, i
 
 1.  Open the **Navigation Menu** (hamburger icon), navigate to **Oracle Database**, and then click **Autonomous Database**.
 
-    ![](images/05-01.png " ")
+    ![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](./images/03-01-auto-database.png " ")
 
 2.  From the list of databases, select **SourceATP**.
 
-    ![](images/05-02.png " ")
+    ![Autonomous Transaction Processing page](./images/03-02-sourceatp.png " ")
 
 3.  On the SourceATP Database Details page, click **Database Actions**.
 
-    ![](images/05-04.png " ")
+    ![SourceATP Database Details page](./images/03-03-db-actions.png " ")
 
 4.  Sign in to Database Actions using the ADMIN user details you created in Lab 1: Set Up the Environment.
 
 5.  Under **Administration**, click **Database Users**.
 
+    ![Database Actions](./images/03-05-db-users.png " ")
+
 6.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
-    ![](images/02-06-locked.png " ")
+    ![Edit user](./images/03-06-locked.png " ")
 
 7.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
 
-    ![](images/02-07-edit.png " ")
+    ![Edit user](./images/03-07a-edit.png " ")
 
-    Note that the user icon changes from a blue padlock to a green checkmark.
+    The user icon changes from a an orange padlock to a green checkmark.
 
-8.  Log out of Database Actions.
+    ![Edit user](./images/03-07b-user-altered.png " ")
 
-9.  Repeat steps 1 to 7 to enable the ggadmin user for **TargetADW**. Log out of Database Actions when you're done.
+8.  Open the Database Actions navigation menu (hamburger icon), and then select **SQL**.
+
+    ![Open navigation menu](./images/03-08-sql.png " ")
+
+9.  Enter the following into the worksheet, and then click **Run Script**.
+
+    ```
+    <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
+    ```
+    ![Script Output](./images/03-09-sql-script-return.png " ")
+
+10. Log out of Database Actions.
+
+11. Repeat steps 1 to 7 to enable the ggadmin user for **TargetADW**. Log out of Database Actions when you're done.
 
 ## Task 4: Review the Deployment Details
 
@@ -150,17 +171,34 @@ On the Deployment Details page, you can:
 * Review the deployment resource information
 * Add tags
 
-  ![](images/01-03-gg-deployment-details.png " ")
+  ![Deployment details](./images/04-gg-deployment-details.png " ")
 
-## Task 5: Launch the GoldenGate Deployment Console
+## Task 5: Assign connections to the deployment
+1. Click **Assigned connections**.
+
+    ![Assigned connections under Resources](./images/05-01-assigned-connections.png " ")
+
+2. Click **Assign connection**.
+
+    ![Assigned connections under Resources](./images/05-02-assign-connection.png " ")
+
+3. In the Assign connection panel, from the Connection in &lt;compartment-number&gt;-COMPARTMENT dropdown, select **SourceATP**. Click **Assign connection**.
+
+    ![Assigned connection to SourceATP](./images/05-03-assign-connection.png " ")
+
+4.  Repeat Task 6, steps 1-3, to assign connection on the TargetADW database.
+
+    ![Assigned connections to SourceATP and TargetADW](./images/05-04-sourceadw-targetadw-assign-connec.png " ") 
+
+## Task 6: Launch the GoldenGate Deployment Console
 
 1. When the deployment is active, click **Launch Console**.
 
-    ![](images/04-01-ggs-launchconsole.png " ")
+    ![Launch Console](./images/06-01-ggs-launchconsole.png " ")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you created in Task 1 of this lab, and then click **Sign In**.
 
-    ![](images/04-02-ggs-deploymentconsole-signin.png " ")
+    ![GoldenGate Deployment Console](./images/06-02-ggs-deploymentconsole-signin.png " ")
 
 After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Servers, as well as add Extracts and Replicats for your data replication tasks.
 
@@ -168,10 +206,10 @@ In this lab, you created the OCI GoldenGate deployment and registered the source
 
 ## Learn More
 
-* [Managing Deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/deployments.html)
-* [Managing Database Registrations](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/database-registrations.html)
+* [Managing Deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/ebbpf/index.html#articletitle)
+* [Managing connections](https://docs.oracle.com/en/cloud/paas/goldengate-service/mcjzr/index.html#articletitle)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, February 2022
+* **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, October 2022

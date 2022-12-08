@@ -12,11 +12,11 @@ Estimated Workshop Time: 4 hours
 
 ### Objectives
 In this workshop, you will learn:
-- How to  replicate from  Oracle to Apache Kafka.
-- How to  replicate from  Oracle to Apache Hadoop cluster.
-- How to  replicate from  Oracle to Apache HBase.
-- How to  replicate from  Oracle to Apache Cassandra.
-- How to  replicate from  Oracle to MongoDB.
+- How to replicate from Oracle to Apache Kafka.
+- How to replicate from Oracle to Apache Hadoop cluster.
+- How to replicate from Oracle to Apache HBase.
+- How to replicate from Oracle to Apache Cassandra.
+- How to replicate from Oracle to MongoDB.
 
 
 ### Prerequisites

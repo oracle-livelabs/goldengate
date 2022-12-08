@@ -31,19 +31,19 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
 
-	![Virtual Cloud Networks page](images/01-02.png " ")
+	![Virtual Cloud Networks page](./images/01-02-start-vcn-wizard.png " ")
 
 3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
-    ![Start VCN Wizard dialog](./images/00-03-vcn-wizard.png " ")
+    ![Start VCN Wizard dialog](./images/01-03-vcn-wizard.png " ")
 
 4.  Enter a name for the VCN, select a compartment, and then click **Next**.
 
-    ![Enter VCN details](./images/00-04.png " ")
+    ![Enter VCN details](./images/01-04-select-compartment.png " ")
 
 5.  Verify the configuration, and then click **Create**.
 
-    ![Verify configuration details](./images/00-05.png " ")
+    ![Verify configuration details](./images/01-05-create-vcn.png " ")
 
 You can click View VCN Details and see both a Public and Private subnet were created.
 
@@ -170,7 +170,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 12. Copy and paste the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** into the SQL worksheet, and then click **Run Script**.
 
-	![Pasted script in SQL worksheet](images/04-05-adw.png " ")
+	![Pasted script in SQL worksheet](./images/04-05-adw.png " ")
 
 13. Run the following statement to enable supplemental logging:
 
@@ -183,5 +183,6 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated** - May 2022
+- **Contributors** -  Katherine Wardhana, User Assistance Developer
+- **Last Updated** - Katherine Wardhana, October 2022
 - **PAR Expiration date** - March 31, 2024

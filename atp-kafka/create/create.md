@@ -17,7 +17,7 @@ Connections capture source and target credential information. A connection also 
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
 * Create an OCI GoldenGate deployment for the Autonomous Database
-* Create an OCI GoldenGate deployment for Oracle Object Storage
+* Create an OCI GoldenGate deployment for Apache Kafka
 * Create connections for the source Autonomous Databases and target Apache Kafka node.
 * Assign connections to deployments
 
@@ -72,7 +72,7 @@ This lab assumes that you completed the preceding lab, and your Autonomous Datab
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-## Task 2: Create a deployment for Oracle Object Storage
+## Task 2: Create a deployment for Apache Kafka
 
 1.  On the Deployments page, click **Create Deployment**.
 
@@ -184,7 +184,7 @@ select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
 
 You can leave the source database SQL window open for use in a later lab.
 
-## Task 5: Create a connection for Oracle Object Storage
+## Task 5: Create a connection for Apache Kafka
 
 1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate.
 
@@ -192,7 +192,7 @@ You can leave the source database SQL window open for use in a later lab.
 
 3.  In the Create Connection panel, enter **TargetKafka** for Name.
 
-4.  From the Type dropdown, select **Kafka**.
+4.  From the Type dropdown, select **Apache Kafka**.
 
 5.  Click **Next**.
 
@@ -232,6 +232,36 @@ After your deployments and connections become active, you can assign the connect
 
     ![OBJDeployment details](images/06-07-bdconnection.png " ")
 
+## Task 7: (Optional) Create a GoldenGate connection
+
+Create a GoldenGate connection if your Big Data deployment doesn't have a public endpoint, and then assign it to the source ATP deployment.
+
+1.  On the Connections page, click **Create Connection**.
+
+2.  In the Create connection panel, enter a **Name** and **Description**.
+
+3.  For **Compartment**, select the compartment in which to create this connection.
+
+4.  For **Type**, select **GoldenGate**.
+
+5.  Click **Next**.
+
+6.  For Connection details, select **BDDeployment**.
+
+7.  Under Network connectivity, select **Network connectivity via private endpoint**.
+
+8.  For **Subnet**, select the subnet to which a private endpoint is created from the OCI GoldenGate service tenancy.
+
+9.  For **Private IP address**, enter the private IP for the BDDeployment.
+
+10. Click **Create**.
+
+11. After the connection is active, on its details page, under **Resources**, click **Assigned deployments**.
+
+12. Click **Assign deployment**.
+
+13. In the Assign deployment dialog, select the source **ATPDeployment**, and then click **Assign deployment**.
+
 **Proceed to the next lab**.
 
 
@@ -245,4 +275,4 @@ After your deployments and connections become active, you can assign the connect
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, October 2022
