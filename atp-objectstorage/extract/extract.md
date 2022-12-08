@@ -43,9 +43,9 @@ On the Deployment Details page, you can:
 
 ## Task 2: Launch the GoldenGate Deployment Console
 
-1. On the deployment details page, click **Launch Console**.
+1. On the **ATPDeployment** details page, click **Launch Console**.
 
-    ![Launch Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-01-launchconsole.png " ")
+    ![ATPDeployment Launch Console](images/02-01.png " ")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided in the previous lab (Task 1, Step 15), and then click **Sign In**.
 
@@ -235,6 +235,8 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 2.  In the Replicats section, click **Add Replicat** (plus icon).
 
+    ![BDinstance Administration Service](images/09-02-add-replicat.png " ")
+
 3.  On the Add Replicat page, under Replicat Type, select **Classic Replicat**, and then click **Next**.
 
     ![Add Replicat](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-03-replicattype.png " ")
@@ -243,15 +245,17 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 5.  For Trail Name, enter `T1`.
 
-6.  For Target, select **Oracle Object Storage**.
+6.  For Target, select **OCI Object Storage**.
 
 7.  For Available Aliases, select **TargetObjStore**.
 
 8.  Click **Next**.
 
-    ![Replicat Options](images/06-08-repoptions.png " ")
+    ![Replicat Options](images/09-08-repoptions.png " ")
 
 9.  On the Parameter Files page, change `MAP *.*, TARGET *.*;` to `MAP SRC_OCIGGLL.*, TARGET *.*;` and then click **Next**.
+
+    ![Replicat Options](images/09-09-param-file.png " ")
 
 10. On the Properties File page, locate `gg.eventhandler.oci.compartment`, and then replace the placeholder with your compartment's OCID.
 

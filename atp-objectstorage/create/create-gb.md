@@ -150,7 +150,7 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
 7.  For **Database in &lt;compartment-name&gt;**, click **Change Compartment**, select the compartment you created your ATP instance, and then select **SourceATP** from the dropdown. Some fields are autopopulated based on your selection.
 
-8.  Enter a password for the `ggadmin` user in the Password field, and then click **Create**.
+8.  Enter a password for the `ggadmin` user in the Password field, and then click **Create**. (Use this password for `ggadmin` in Task 4, Step 6.)
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-08-atpconnection.png)
 
@@ -162,7 +162,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 1.  From the Oracle Cloud Console **Navigation Menu** (hamburger icon), click **Oracle Database**, and then select **Autonomous Transaction Processing**.
 
-	 ![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/common/images/console/database-atp.pngatp.png " ")
+	 ![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/10-01-database-atp.png " ")
 
 2.  From the list of databases, select **SourceATP**.
 
@@ -176,13 +176,13 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 4.  Under **Administration**, click **Database Users**.
 
-    ![Database Actions](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/sql-dbusers.png " ")
+    ![Database Actions](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/10-04-db-users.png " ")
 
 5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
     ![Database users](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-locked.png " ")
 
-6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
+6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the connection Task 3, Step 8, and then click **Apply Changes**.
 
     ![Edit user](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-07-edit.png " ")
 
@@ -214,6 +214,8 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 5.  Click **Next**.
 
+    ![Create connection details](images/05-01-create-connection.png " ")
+
 6.  From the Region dropdown, select your region.
 
 7.  For Private key configuration, drag-and-drop the private key (.pem) or select it from your local machine.
@@ -224,7 +226,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 9.  Click **Create**.
 
-    ![Target details](images/05-07-objstorageconnection.png " ")
+    ![Target details](./images/05-07-objstorageconnection.png " ")
 
     The Connection becomes Active after a few minutes.
 
