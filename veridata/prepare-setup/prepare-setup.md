@@ -19,7 +19,7 @@ This lab assumes you have:
 
     [ggvd-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Vo75y6-hxT4jgMS5yzQdZs28frxcpv8Fg9BjCg3kJSJEsMRCtzWml25zJGwXcsfK/n/natdsecurity/b/stack/o/ggvd-mkplc-freetier.zip)
 
-    For any of the other Veridata Workshops including the [Master Oracle GoldenGate Veridata Advanced Features Workshop] (https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=913&p210_wec=&session=13937829095548), download [ggvd-mkplc-advanced.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JHclbM43HVmaX_i7ZAo3m5qQGet_fIKOLQlMyoQW-SRIhrx141BzEQ_Z5I9yOwxz/n/natdsecurity/b/stack/o/ggvd-mkplc-advanced.zip). 
+
 2.  Save in your downloads folder.
 
 We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Step 3* to follow our recommendations. If you would rather use an exiting VCN then proceed to the next step as indicated below to update your existing VCN with the required Egress rules.
@@ -51,6 +51,6 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
 ## Acknowledgements
-* **Author** -  Rene Fontcha, LiveLabs Platform Lead, NA Technology
+* **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
 * **Contributors** -  Nisharahmed Soneji, Sukin Varghese, Rene Fontcha
-* **Last Updated By/Date** - Anuradha Chepuri, December 2022
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2022
