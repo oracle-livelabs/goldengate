@@ -220,7 +220,7 @@ This Workshop assumes you have:
      ![List table count and topic count after data load](./images/list-table-count-and-topic-count-after-data-load.png " ")   
 
  4. Execute the below command to consume messages from an Apache Kafka Topic.
-    
+
     ```
     <copy>
     consumetopic <topic_name>
@@ -253,4 +253,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
 * **Contributors** - Madhu Kumar S, Brian Elliott, Deniz Sendil, Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, 9th August 2022
+* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, August 2022

@@ -133,7 +133,7 @@ This lab assumes you have:
 ![Add Filename Mapping Template](./images/add-filenamemappingtemplate.png " ")
 10. Update the **gg.classpath** as follows below and click ***create and run*** to complete the replication creation wizard.
 
- **gg.classpath** includes the HDFS client libraries.Ensure that the directory containing the HDFS core-site.xml file is in gg.classpath. This is so the core-site.xml file can be read at runtime and the connectivity information to HDFS can be resolved.
+ **gg.classpath** includes the HDFS client libraries. Ensure that the directory containing the HDFS core-site.xml file is in gg.classpath. This is so the core-site.xml file can be read at runtime and the connectivity information to HDFS can be resolved.
     ```
     <copy>
     /u01/hadoop/etc/hadoop:/u01/hadoop/share/hadoop/common/lib/*:/u01/hadoop/share/hadoop/common/*:/u01/hadoop/share/hadoop/hdfs/*:/u01/hadoop/share/hadoop/hdfs/lib/*

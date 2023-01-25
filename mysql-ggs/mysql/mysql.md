@@ -151,13 +151,6 @@ In this task, you create a user in the target deployment for the Distribution Pa
 
     The credential appears in the Credentials list.
 
-10. Open Cloud Shell and run the following command to update the credential. Ensure that you replace the `<oci-username>`, `<password>`, `<source-deployment-console-url>`, and `<ggsnet-password>` variables accordingly:
-
-    ```
-    <copy>curl -u oggadmin:<password> -H "Content-Type: application/json" -H "Accept: application/json" -X PUT https://<source-deployment-console-url>:443/services/v2/credentials/GGSNetwork/dpuser -d '{"userid":"ggsnet","password":"<ggsnet-password>"}'</copy>
-    ```
-
-    ![Run curl command in Cloud Shell](./images/03-10-curl.png " ")
 
 ## Task 4: Create the Distribution Path for the Initial Load Extract
 

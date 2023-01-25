@@ -15,7 +15,8 @@ In this lab you will learn:
 -  How to configure the GoldenGate for MongoDB as a target.
 -  How to validate the GoldenGate configuration for MongoDB as a target.
 
-#### Lab Architecture   
+#### Lab Architecture
+
 ![Architecture](./images/architecture.png " ")
 
 ### Prerequisites
@@ -61,7 +62,7 @@ This lab assumes you have:
 
 3. On welcome pages, a green tick with the name ***EXTORA*** indicates extract is up and running on the  Administration Service console.
         ![GGMA Extract Status](./images/ggma-extract-status.png " ")
-4. Navigate to Distribution Service, to validate the path ***SRC2TGT***. 
+4. Navigate to Distribution Service, to validate the path ***SRC2TGT***.
         ![GGMA Path Status](./images/ggma-path-status.png " ")
 
     ***Source deployment completed!***
@@ -82,7 +83,7 @@ This lab assumes you have:
 
     ```
     <copy>Gg.Rocks_99</copy>
-    ``` 
+    ```
 ![GGBD Login Page](./images/ggbd-login-page.png " ")
 
 2. On the welcome page, Click on the **Add Replicat** (***+*** plus icon) to get the replicat creation wizard.
