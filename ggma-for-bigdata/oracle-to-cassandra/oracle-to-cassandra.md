@@ -69,7 +69,7 @@ This lab assumes you have:
 1. To create a replicat, sign in to Administration Service of GoldenGate(MA) of Big Data from the below URL with username as ***oggadmin*** and password as ***Gg.Rocks_99***.
 
     Click here : [http://localhost:22001/?root=account](http://localhost:22001/?root=account)
-    
+
     ***username***
 
     ```
@@ -125,7 +125,7 @@ This lab assumes you have:
 ## Task 4: Validation of the GoldenGate configuration for Cassandra as target
 
 1. Open a ***New Window*** on the terminal, and move the terminal side by side as shown below.
-    
+
     On the left side terminal, enter ***oraselect*** will display the row counts of all the tables of the Oracle(Source) Database.
     ```
     <copy>oraselect</copy>
@@ -174,4 +174,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
 * **Contributors** - Madhu Kumar S, Brian Elliott, Deniz Sendil, Meghana Banka, Rene Fontcha  
-* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, 9th August 2022 
+* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, 9th August 2022
