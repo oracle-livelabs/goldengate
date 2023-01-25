@@ -27,7 +27,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
+	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/images/console/networking-vcn.png " ")
 
 2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
 
@@ -94,7 +94,9 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-03-atp.png " ")
 
-4.  Click **Open DB Actions**.
+4.  On the Autonomous Database details page, click **Database actions**.
+
+    ![ATP details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-04-dbdetails.png)
 
 5.  If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
 
@@ -140,7 +142,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 2.  Click **Create Autonomous Database**.
 
-    ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-create-adb.png " ")
+    ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-02-create-adw.png " ")
 
 3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **ADWTarget** for **Display Name** and **Database Name**.
 
@@ -166,7 +168,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 9.  Click **Create Autonomous Database**. After it finishes provisioning, you can click on the instance name to see details of it.
 
-10. On the Details page, click **Database Actions**.
+10. On the Autonomous Database details page, click **Database Actions**.
 
 11. Log in using the ADMIN username and password set in step 7.
 
@@ -179,5 +181,5 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated by** - Jenny Chan, July 2022
+- **Last Updated by** - Jenny Chan, February 2023
 - **PAR Expiration date** - February 2024
