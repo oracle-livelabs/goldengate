@@ -61,7 +61,7 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
     ![Add checkpoint to source](./images/01-08-src-checkpoint.png " ")
 
-9.  In the **Credentials** table, under **Action**, click **Connect to database TargetADW**. Checkpoint, TRANDATA Information, and Heartbeat options for TargetADW appear.
+9.  In the **Credentials** table, under **Action**, click **Connect to database TargetADW**. Checkpoint, TRANDATA Information, and Heartbeat options for TargetADW appear. It may takes a few minutes to connect to the database.
 
     ![Credentials list with Connect to database TargetADW highlighted](./images/01-09-credentials-targetadw.png " ")
 

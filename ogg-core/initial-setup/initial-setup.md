@@ -3,7 +3,7 @@
 ## Introduction
 In this lab we will setup the required database and Oracle GoldenGate replication users.
 
-Estimated Times:  10 minutes
+*Estimated Time*:  10 minutes
 
 ### Lab Architecture
 ![GoldenGate MA Architecture](./images/ggmicroservicesarchitecture.png " ")
@@ -34,14 +34,14 @@ This lab assumes you have completed:
     </copy>
     ```
 
-2. On the web browser window on the right preloaded with *Oracle GoldenGate ServiceManager*, click on the *Username* field and provide the credentials below to login.
+2. On the web browser window on the right preloaded with *Oracle GoldenGate ServiceManager*, click on the *Username* field and select the saved credentials for *ggma* user or provide from below to login.
 
     ```
-    Username: <copy>oggadmin</copy>
+    Username: <copy>ggma</copy>
     ```
 
     ```
-    Password: <copy>Welcome1</copy>
+    Password: <copy>ggma4LL@OCI</copy>
     ```
 
   3. Confirm successful login. Please note that it may take up to 5 minutes after instance provisioning for all processes to fully start.
@@ -120,4 +120,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration, November 2020
 * **Contributors** - Preeti Shukla, Volker Kuhr
-- **Last Updated By/Date** - Anuradha Chepuri, June 2022
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2023

@@ -73,7 +73,7 @@ This lab assumes that you completed all preceding labs.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for  you to use.
 
-## Task 2: Register the source connection
+## Task 2: Create the source connection
 
 First, follow the steps below to connect the source Oracle Autonomous Transaction Processing \(ATP\) Database.
 
@@ -103,7 +103,7 @@ First, follow the steps below to connect the source Oracle Autonomous Transactio
 
 9.  For **Database in &lt;compartment-name&gt;**, select **SourceATP &lt;numbers&gt;** from the dropdown. 
 
-10.  Enter the database's password in the Password field, and then click **Create**.
+10.  Enter the GGADMIN password in the Password field, and then click  **Create**. You will use the same password in Task 3.
 
     ![Source Database details](./images/02-10-create-connection-gg-details.png)
 
@@ -167,7 +167,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     You can leave the SQL window open and continue with the next Task.
 
-## Task 4: Register the target database and unlock the GGADMIN user
+## Task 4: Create the target connection and unlock the GGADMIN user
 
 Now, follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) instance.
 
@@ -197,7 +197,7 @@ Now, follow the steps below to connect the target Autonomous Data Warehouse \(AD
 
     The source and target databases appear in the list of Connections. The database registration becomes Active after a few minutes.
 
-10.  Repeat Task 2, steps 1-8, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
+10.  Repeat Task 3, steps 1-8, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
 
 11.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
 
