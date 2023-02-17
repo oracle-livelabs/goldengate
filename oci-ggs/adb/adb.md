@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create the required resources you'll use for Oracle Cloud Infrastructure (OCI) GoldenGate. We'll show you how to create a VCN and subnet, provision autonomous database instances, and load data into the databases.
+In this lab, you learn to create the required resources you'll use for Oracle Cloud Infrastructure (OCI) GoldenGate. We'll show you how to create a VCN and subnet, provision autonomous database instances, and load data into the databases.
 
 Estimated time: 20 minutes
 
@@ -17,17 +17,16 @@ Estimated time: 20 minutes
 This lab assumes you have completed the following labs:
 * Sign Up for Free Tier/Login to Oracle Cloud
 
-> **Note:** *You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
+> **Notes:** 
 
-In this section, you will provision a VCN and subnet, ATP and ADW instances, and load data to use with OCI GoldenGate.
-
-> **Note:** *This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
+> * You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.
+> * This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.
 
 ## Task 1: Create a VCN and subnet
 
 1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/images/console/networking-vcn.png " ")
+	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/networking-vcn.png " ")
 
 2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
 
@@ -51,7 +50,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
-	![Autonomous Transaction Processing in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/database-atp.png " ")
+	![Autonomous Transaction Processing in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/database-atp.png " ")
 
 2.  On the **Autonomous Database &lt;compartment-name&gt;** page, click **Create Autonomous Database**.
 
@@ -84,13 +83,13 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 ## Task 3: Load the ATP schema
 
-1.  Click the following link to download the database schema.
+1.  Download the database schema:
 
     [Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/Archive.zip)
 
 2.  Save `Archive.zip` to a download directory, and then unzip the file.
 
-3.  Back in the OCI Console, select your ATP instance from the Autonomous Databases page to view its details and access tools.
+3.  Back in the Oracle Cloud console, select your ATP instance from the Autonomous Databases page to view its details and access tools.
 
     ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-03-atp.png " ")
 
@@ -106,7 +105,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Database Actions page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-06-db-actions.png " ")
 
-7.  (Optional) Click **X** to close the Help dialog.
+7.  (Optional) Close the Help dialog.
 
 8.  Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** into the SQL Worksheet.
 
@@ -122,7 +121,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 	>**Note:** *If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.*
 
-12. Close the SQL window and then open DB Actions from the database details page again.
+12. Close the SQL window and then reopen it from Database Actions again.
 
 13. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
 
@@ -176,7 +175,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 	![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adbimages/04-05-adw.png " ")
 
-13. Log out of DB Actions.
+13. Log out of Database Actions.
 
 ## Acknowledgements
 
