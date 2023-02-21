@@ -20,7 +20,7 @@ In this lab, you learn to:
 
 1. When the deployment is active, click **Launch Console**.
 
-    ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-01-ggs-launchconsole.png " ")
+    ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-01-launchconsole.png " ")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password you provided in the previous Lab, and then click **Sign In**.
 
@@ -174,7 +174,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 9.  In the Object Details panel, copy the URL Path (URI) up the object name and paste it into a text editor.
 
-  ![Object URL Path](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/objectStorage-objectDetails.png)
+  ![Object URL Path](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/objectstorage-objectdetails.png)
 
     The bucket URI should match the following syntax:
 
