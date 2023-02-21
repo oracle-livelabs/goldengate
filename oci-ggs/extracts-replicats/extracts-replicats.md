@@ -32,7 +32,7 @@ Before importing data to the target database, create a credential in the target 
 
     ![Autonomous Data Warehouse page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-02-targetadw.png " ")
 
-3. On the **TargetADW Details** page, click **Database Actions**.
+3. On the **TargetADW Details** page, click **Database actions**.
 
     ![TargetADW Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
 

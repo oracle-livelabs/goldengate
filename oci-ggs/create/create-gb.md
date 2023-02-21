@@ -250,3 +250,4 @@ After the deployment is created and active, you can perform the following action
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
 * **Last Updated By/Date** - Jenny Chan, February 2023
+
