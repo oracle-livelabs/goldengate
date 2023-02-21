@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through how to create Purge Tasks in the Oracle Cloud Infrastructure (OCI) GoldenGate Deployment Console.
+In this lab, you learn to create Purge Tasks in the Oracle Cloud Infrastructure (OCI) GoldenGate Deployment Console.
 
 Estimated time: 5 minutes
 
@@ -49,5 +49,5 @@ This lab assumes you completed all preceding labs.
 ## Acknowledgements
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management; Arabella Yao, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, October 2022
+* **Contributors** -  Denis Gray, Database Product Management, Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Jenny Chan, February 2023
