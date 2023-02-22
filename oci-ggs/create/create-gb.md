@@ -26,11 +26,11 @@ In this lab, you will:
 
 1.  In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
 
-    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-01-database-goldengate.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
 2.  On the GoldenGate **Overview** page, click **Deployments**.
 
-    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-gg-overview.png " ")
+    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
 3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, expand LiveLabs, and then select the compartment **LL1234-COMPARTMENT**.
 
@@ -221,7 +221,7 @@ After the deployment is created and active, you can perform the following action
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-deployment-details.png " ")
+    ![Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-01-deployment-details.png " ")
 
 ## Task 6: Assign connections to the deployment
 
@@ -249,4 +249,5 @@ After the deployment is created and active, you can perform the following action
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, February 17, 2023
+* **Last Updated By/Date** - Jenny Chan, February 2023
+

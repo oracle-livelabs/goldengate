@@ -173,7 +173,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 12. Copy and paste the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** into the SQL worksheet, and then click **Run Script**.
 
-	![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adbimages/04-05-adw.png " ")
+	![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
 
 13. Log out of Database Actions.
 
