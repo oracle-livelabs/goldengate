@@ -22,7 +22,7 @@ In this lab, you will:
 
 ## Task 1: Create a deployment
 
-> **Note:** *Compartment names in the screenshots may differ from values that appear in your environment.*
+> **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
 1.  In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
 
@@ -34,7 +34,7 @@ In this lab, you will:
 
 3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, expand LiveLabs, and then select the compartment **LL1234-COMPARTMENT**.
 
-    > **Tip:** *You can find your User name in the Workshop Details section.*
+    > **Tip:** You can find your User name in the Workshop Details section.
 
 4.  On the Deployments page, click **Create deployment**.
 
@@ -122,7 +122,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![SourceATP Database Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-db-actions.png " ")
 
-    > **Note:** *If you're prompted to log in to Database Actions, use the SourceATP admin credentials located in the Workshop Details.*
+    > **Note:** If you're prompted to log in to Database Actions, use the SourceATP admin credentials located in the Workshop Details.
 
 4.  Under **Administration**, click **Database Users**.
 

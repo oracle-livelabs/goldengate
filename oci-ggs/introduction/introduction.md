@@ -4,7 +4,7 @@
 
 Oracle GoldenGate, the industry-leading data replication and integration software, is now available as a fully-managed, cloud native service on Oracle Cloud Infrastructure. This workshop guides you through how to instantiate a target database using Oracle Data Pump and replicate data using Oracle Cloud Infrastructure GoldenGate.
 
-Estimated Workshop Time: 2 hours
+Estimated workshop time: 2 hours
 
 ### About Oracle Cloud Infrastructure GoldenGate
 
