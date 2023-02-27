@@ -22,7 +22,7 @@ In this lab, you will:
 
 ## Task 1: Create a deployment
 
-> **Note:** *Compartment names in the screenshots may differ from values that appear in your environment.*
+> **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
 1.  In the Oracle Cloud console, open the navigation menu, navigate to **Oracle Database**, and select **GoldenGate**.
 
@@ -30,7 +30,7 @@ In this lab, you will:
 
 2.  On the GoldenGate **Overview** page, click **Deployments**.
 
-    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-gg-overview.png " ")
+    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
 3.  On the Deployments page, click **Create Deployment**.
 
@@ -82,7 +82,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 4.  In the Create connection panel, for Name, enter **SourceATP** and optionally, a description.
 
-5.  From the Type dropdown, select **OCI Autonomous Database**.
+5.  From the Type dropdown, select **Oracle Autonomous Database**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
 
@@ -166,7 +166,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 4.  From the **Compartment** dropdown, select a compartment.
 
-5.  From the a Type dropdown, select **OCI Autonomous Database**.
+5.  From the a Type dropdown, select **Oracle Autonomous Database**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-05-create-connec-general-info.png)
 
@@ -209,7 +209,7 @@ After the deployment is created and active, you can perform the following action
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-deployment-details.png " ")
+    ![Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-01-deployment-details.png " ")
 
 ## Task 6: Assign connections to the deployment
 
