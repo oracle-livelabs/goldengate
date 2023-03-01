@@ -32,7 +32,7 @@ In this lab, you will:
 
     ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
-3.  On the Deployments page, click **Create Deployment**.
+3.  On the Deployments page, click **Create deployment**.
 
     ![Deployments page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-create-deployment.png " ")
 
@@ -44,9 +44,9 @@ In this lab, you will:
 
 7.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
-8.  For License type, select **Bring You Own License (BYOL)**.
+8.  For License type, select **Bring Your Own License (BYOL)**.
 
-9.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+9.  Click **Show advanced options**, and then select **Create public endpoint**.
 
     ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
@@ -62,9 +62,9 @@ In this lab, you will:
 
 15. Click **Create**.
 
-    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
-
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
+
+![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
 
 ## Task 2: Create a connection to the source database
 
@@ -84,9 +84,9 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 5.  From the Type dropdown, select **Oracle Autonomous Database**.
 
-    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
-
 6.  Click **Next**.
+
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
 
 7. On the Connection details page, under Database details, select **Select database**.
 
@@ -225,11 +225,13 @@ After the deployment is created and active, you can perform the following action
 
     ![Assigned connection to SourceATP](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-03-sourceatp-assign-connec.png " ")
 
-4.  Repeat Task 6, steps 1-3, to assign connection on the TargetADW database.
+4.  Repeat Task 6, steps 1-3, to assign the TargetADW connection to the deployment.
 
     ![Assigned connections to SourceATP and TargetADW](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-04-targetadw-assign-connec.png " ") 
 
-In this lab, you created an OCI GoldenGate deployment, and registered the source and target databases.
+In this lab, you created an OCI GoldenGate deployment, and created connections to the source and target databases.
+
+**Proceed to the next lab.**
 
 ## Learn more
 

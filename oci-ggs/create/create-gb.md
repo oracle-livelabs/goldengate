@@ -48,9 +48,9 @@ In this lab, you will:
 
 8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
-9.  For License type, select **Bring You Own License (BYOL)**.
+9.  For License type, select **Bring Your Own License (BYOL)**.
 
-10. Click **Show advanced options**, and then select **Create Public Endpoint**.
+10. Click **Show advanced options**, and then select **Create public endpoint**.
 
     ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
@@ -237,9 +237,11 @@ After the deployment is created and active, you can perform the following action
 
     ![Assigned connection to SourceATP](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-03-sourceatp-assign-connec.png " ")
 
-4.  Repeat Task 6, steps 1-3, to assign connection on the TargetADW database.
+4.  Repeat Task 6, steps 1-3, to assign the TargetADW connection to the deployment.
 
     ![Assigned connections to SourceATP and TargetADW](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-04-targetadw-assign-connec.png " ") 
+
+**Proceed to the next lab.**
 
 ## Learn more
 

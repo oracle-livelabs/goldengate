@@ -212,6 +212,8 @@ Before importing data to the target database, create a credential in the target 
 
     The yellow exclamation point icon changes to a green checkmark.
 
+**Proceed to the next lab.**
+
 ## Learn more
 
 * [Add a Replicat for Oracle Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/cress/index.html)
