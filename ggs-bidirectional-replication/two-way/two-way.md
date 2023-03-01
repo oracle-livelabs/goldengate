@@ -51,10 +51,10 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
     ```
     <copy>-- Table list for capture
-table SRCMIRROR_OCIGGLL.*;
+    table SRCMIRROR_OCIGGLL.*;
 
--- Exclude changes made by GGADMIN
-tranlogoptions excludeuser ggadmin</copy>
+    -- Exclude changes made by GGADMIN
+    tranlogoptions excludeuser ggadmin</copy>
     ```
 
 10. Click **Create and Run**. You're returned to the Overview page. The EXTB Extract process is created.
@@ -154,4 +154,4 @@ Insert into SRCMIRROR_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) value
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, October 2022
+* **Last Updated By/Date** - Katherine Wardhana, March 2023
