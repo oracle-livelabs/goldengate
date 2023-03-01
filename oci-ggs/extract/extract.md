@@ -196,7 +196,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 13. Click **Copy**, and then click **Close**.
 
-    > **Note:** *Paste the token to a text editor for use in the next step.*
+    > **Note:** Paste the token to a text editor for use in the next step.
 
     ![Copy highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-13-copy-token.png " ")
 
@@ -290,6 +290,8 @@ END;</copy>
     ```
 
     ![SQL worksheet Run Script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-15-sql-return.png " ")
+
+**Proceed to the next lab.**
 
 ## Learn more
 
