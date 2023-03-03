@@ -191,7 +191,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 5.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
 
-    ![](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
+    ![Copy target schema script into SQL tool](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
 
 6.  Click **Run Script**. The Script Output tab displays confirmation messages.
 

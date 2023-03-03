@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure (OCI) and add it to the Oracle GoldenGate Service Manager.  Adding the Oracle Cloud Infrastructure root certificate to Oracle GoldenGate creates a trusted TLS connection between OCI GoldenGate and Oracle GoldenGate.
+In this lab, you learn to download the root certificate from Oracle Cloud Infrastructure (OCI) and add it to the Oracle GoldenGate Service Manager.  Adding the Oracle Cloud Infrastructure root certificate to Oracle GoldenGate creates a trusted TLS connection between OCI GoldenGate and Oracle GoldenGate.
 
 Estimated time: 10 minutes
 
@@ -14,7 +14,7 @@ Watch the video below for a walk through of the lab.
 In this lab, you will:
 
 * Download the root certificate for Oracle Cloud Infrastructure from your web browser to your local machine
-* Add the certificate to your Oracle GoldenGate wallet
+* Add the certificate to Oracle GoldenGate's Administration Server
 * Create a credential on Oracle GoldenGate to connect to OCI GoldenGate
 
 ### Prerequisites
@@ -29,7 +29,7 @@ To successfully complete this lab, you must have:
 
 The following instructions show you how to download the Root Certificate using a Chrome web browser in Windows.
 
-> **Note:** *Mac users should follow Task 1B and use FireFox to download the root certificate.*
+> **Note:** Mac users should follow Task 1B and use **FireFox** to download the root certificate.
 
 1.  Launch the OCI GoldenGate Deployment Console if you don't already have it open, and log in.
 
@@ -41,7 +41,7 @@ The following instructions show you how to download the Root Certificate using a
 
     ![Select Certificate is valid from Connection is secure submenu in Chrome browser](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01-03-certificate.png " ")
 
-4.  In the Certificate Viewer, click **Details**.
+4.  In the Certificate window, click **Certification Path**, select **DigiCert Global Root G2**, and then click **View Certificate**.
 
     ![Select DigiCert Global Root G2, then click View Certificate in Certification Path tab of Certificate dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/01-04-certificate-window.png " ")
 
@@ -137,4 +137,4 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, October 2022
+* **Last Updated By/Date** - Jenny Chan, March 2023

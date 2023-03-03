@@ -31,7 +31,6 @@ This lab assumes that you completed all preceding labs.
 
 > **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
-
 1.  In the Oracle Cloud console, open the navigation menu, navigate to **Oracle Database**, and select **GoldenGate**.
 
     ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
@@ -40,7 +39,7 @@ This lab assumes that you completed all preceding labs.
 
     ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
-3.  On the Deployments page, click **Create Deployment**.
+3.  On the Deployments page, click **Create deployment**.
 
     ![Deployments page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-create-deployment.png " ")
 
@@ -116,7 +115,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 2.  From the list of databases, select **SourceATP**.
 
-    ![Autonomous Databases page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-auto-db.png " ")
+    ![Autonomous Databases page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-sourceatp.png " ")
 
 3.  On the SourceATP database details page, click **Database actions**.
 
@@ -215,9 +214,11 @@ In this lab, you created the OCI GoldenGate deployment and registered the source
 
 ## Learn more
 
-* [Managing Deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/deployments.html)
+* [Create deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/llyhq/index.html)
+* [Create an Oracle Autonomous Database connection](https://docs.oracle.com/en/cloud/paas/goldengate-service/tqrlh/index.html)
+* [Assign connections to a deployment](https://docs.oracle.com/en/cloud/paas/goldengate-service/qsqts/index.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, October 2022
+* **Last Updated By/Date** - Jenny Chan, March 2023
