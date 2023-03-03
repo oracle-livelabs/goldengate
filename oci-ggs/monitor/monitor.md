@@ -4,7 +4,7 @@
 
 In this lab, you learn to monitor the Extract and Replicat processes that were created and run in the previous lab.
 
-Estimated Lab Time: 2 minutes
+Estimated time: 2 minutes
 
 ### About Performance Monitoring
 
@@ -57,7 +57,7 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
     ![Performance Metrics Service page - EXT highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-01-perf-serv.png)
 
-    > **Note:** *You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.*
+    > **Note:** You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.
 
 2.  Click **Database Statistics**.
 

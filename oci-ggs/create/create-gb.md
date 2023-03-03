@@ -22,19 +22,19 @@ In this lab, you will:
 
 ## Task 1: Create a deployment
 
-> **Note:** *Compartment names in the screenshots may differ from values that appear in your environment.*
+> **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
 1.  In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
 
-    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-01-database-goldengate.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
 2.  On the GoldenGate **Overview** page, click **Deployments**.
 
-    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-gg-overview.png " ")
+    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
 3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, expand LiveLabs, and then select the compartment **LL1234-COMPARTMENT**.
 
-    > **Tip:** *You can find your User name in the Workshop Details section.*
+    > **Tip:** You can find your User name in the Workshop Details section.
 
 4.  On the Deployments page, click **Create deployment**.
 
@@ -48,9 +48,9 @@ In this lab, you will:
 
 8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
-9.  For License type, select **Bring You Own License (BYOL)**.
+9.  For License type, select **Bring Your Own License (BYOL)**.
 
-10. Click **Show advanced options**, and then select **Create Public Endpoint**.
+10. Click **Show advanced options**, and then select **Create public endpoint**.
 
     ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
@@ -122,7 +122,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![SourceATP Database Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-db-actions.png " ")
 
-    > **Note:** *If you're prompted to log in to Database Actions, use the SourceATP admin credentials located in the Workshop Details.*
+    > **Note:** If you're prompted to log in to Database Actions, use the SourceATP admin credentials located in the Workshop Details.
 
 4.  Under **Administration**, click **Database Users**.
 
@@ -221,7 +221,7 @@ After the deployment is created and active, you can perform the following action
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-deployment-details.png " ")
+    ![Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-01-deployment-details.png " ")
 
 ## Task 6: Assign connections to the deployment
 
@@ -237,9 +237,11 @@ After the deployment is created and active, you can perform the following action
 
     ![Assigned connection to SourceATP](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-03-sourceatp-assign-connec.png " ")
 
-4.  Repeat Task 6, steps 1-3, to assign connection on the TargetADW database.
+4.  Repeat Task 6, steps 1-3, to assign the TargetADW connection to the deployment.
 
     ![Assigned connections to SourceATP and TargetADW](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-04-targetadw-assign-connec.png " ") 
+
+**Proceed to the next lab.**
 
 ## Learn more
 
@@ -249,4 +251,5 @@ After the deployment is created and active, you can perform the following action
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, February 17, 2023
+* **Last Updated By/Date** - Jenny Chan, February 2023
+

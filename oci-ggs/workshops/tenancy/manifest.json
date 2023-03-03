@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Replicating Data Using Oracle Cloud Infrastructure GoldenGate",
+    "workshoptitle": "Replicate data using Oracle Cloud Infrastructure GoldenGate",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
@@ -14,7 +14,7 @@
         },
         {
 
-            "title": "Lab 1: Set Up the Environment",
+            "title": "Lab 1: Set up the environment",
             "description": "Provision Autonomous Databases to use as the source and target.",
             "filename": "../../adb/adb.md"
         },

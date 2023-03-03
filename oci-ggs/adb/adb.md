@@ -15,7 +15,7 @@ Estimated time: 20 minutes
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Sign Up for Free Tier/Login to Oracle Cloud
+* Get started - Cloud login
 
 > **Notes:** 
 
@@ -119,7 +119,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 11. Click **Run Script**. The Script Output tab displays confirmation messages.
 
-	>**Note:** *If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.*
+	> **Note:** If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.
 
 12. Close the SQL window and then reopen it from Database Actions again.
 
@@ -173,9 +173,11 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 12. Copy and paste the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** into the SQL worksheet, and then click **Run Script**.
 
-	![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adbimages/04-05-adw.png " ")
+	![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
 
 13. Log out of Database Actions.
+
+** Proceed to the next lab.**
 
 ## Acknowledgements
 

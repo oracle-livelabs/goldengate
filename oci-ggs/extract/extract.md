@@ -20,7 +20,7 @@ In this lab, you learn to:
 
 1. When the deployment is active, click **Launch Console**.
 
-    ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-01-ggs-launchconsole.png " ")
+    ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-01-launchconsole.png " ")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password you provided in the previous Lab, and then click **Sign In**.
 
@@ -30,7 +30,7 @@ After you log in successfully, you're brought to the GoldenGate deployment conso
 
 ## Task 2: Add Transaction Data and a Checkpoint Table
 
-> **Note:** *Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.*
+> **Note:** Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.
 
 1.  Open the navigation menu and then click **Configuration**.
 
@@ -174,7 +174,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 9.  In the Object Details panel, copy the URL Path (URI) up the object name and paste it into a text editor.
 
-  ![Object URL Path](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/objectStorage-objectDetails.png)
+  ![Object URL Path](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/objectstorage-objectdetails.png)
 
     The bucket URI should match the following syntax:
 
@@ -196,7 +196,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 13. Click **Copy**, and then click **Close**.
 
-    > **Note:** *Paste the token to a text editor for use in the next step.*
+    > **Note:** Paste the token to a text editor for use in the next step.
 
     ![Copy highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-13-copy-token.png " ")
 
@@ -290,6 +290,8 @@ END;</copy>
     ```
 
     ![SQL worksheet Run Script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-15-sql-return.png " ")
+
+**Proceed to the next lab.**
 
 ## Learn more
 
