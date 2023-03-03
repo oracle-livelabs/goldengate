@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to capture and send data to Oracle Cloud Infrastructure (OCI) GoldenGate using an on-premises or Marketplace Oracle GoldenGate instance. You'll create an Extract to capture data from the source database, a Distribution Path to initiate sending the data to the target, and a Replicat to consume the data received.
+In this lab, you learn to capture and send data to Oracle Cloud Infrastructure (OCI) GoldenGate using an on-premises or Marketplace Oracle GoldenGate instance. You'll create an Extract to capture data from the source database, a Distribution Path to initiate sending the data to the target, and a Replicat to consume the data received.
 
 Estimated time: 15 minutes
 
@@ -85,13 +85,13 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
     ![Replace localhost with Internal FQDN of compute image](images/02-07.png " ")
 
-    >**Note:** *You can copy the Internal FQDN from the Oracle GoldenGate Marketplace Compute instance in the OCI Console.*
+    >**Note:** You can copy the Internal FQDN from the Oracle GoldenGate Marketplace Compute instance in the OCI Console.
 
     ![Example of how to copy Internal FQDN from compute instance details page](images/02-07-note.png " ")
 
 7.  For **Target Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
-    >**Note:** *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
+    >**Note:** You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).
 
   ![Copy Internal FQDN from Marketplace Oracle GoldenGate instance details page](images/02-08-note.png " ")
 
@@ -184,11 +184,11 @@ In this lab, you created an Extract, a Distribution Path, and a Replicat, and yo
 
 ## Learn more
 
-* [Quickstart - Send Data from Oracle GoldenGate to OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/qs-ogg-premise-cloud.html)
-* [Creating an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-3B004DB0-2F41-4FC2-BDD4-4DE809F52448)
-* [Create a Distribution Path](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-19B3B506-ADF1-465E-87B5-91121FE44503)
+* [Quickstart - Send data from Oracle GoldenGate to OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/hotto/index.html)
+* [Add an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/index.html)
+* [Add a Distribution Path](https://docs.oracle.com/en/cloud/paas/goldengate-service/adpen/index.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, March 2023
