@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure (OCI) and add it to the Oracle GoldenGate Service Manager. Adding the Oracle Cloud Infrastructure root certificate to Oracle GoldenGate creates a trusted TLS connection between OCI GoldenGate and Oracle GoldenGate.
+In this lab, you learn to download the root certificate from Oracle Cloud Infrastructure (OCI) and add it to the Oracle GoldenGate Service Manager. Adding the Oracle Cloud Infrastructure root certificate to Oracle GoldenGate creates a trusted TLS connection between OCI GoldenGate and Oracle GoldenGate.
 
 Estimated time: 10 minutes
 
@@ -29,7 +29,7 @@ To successfully complete this lab, you must have:
 
 The following instructions show you how to download the Root Certificate using a Chrome web browser in Windows.
 
-> **Note:** *Mac users should follow Task 1B and use **FireFox** to download the root certificate.*
+> **Note:** Mac users should follow Task 1B and use **FireFox** to download the root certificate.
 
 1.  Launch the OCI GoldenGate Deployment Console if you don't already have it open, and log in.
 

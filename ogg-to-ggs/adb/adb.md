@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create the required resources you'll use for Oracle Cloud Infrastructure (OCI) GoldenGate. We'll show you how to create a VCN and subnet, provision autonomous database instances, and load data into the databases.
+In this lab, you learn to create the required resources you'll use for Oracle Cloud Infrastructure (OCI) GoldenGate. You create a VCN and subnet, provision autonomous database instances, and load data into the databases.
 
 Estimated time: 20 minutes
 
@@ -14,14 +14,11 @@ Estimated time: 20 minutes
 
 ### Prerequisites
 
-This lab assumes you have completed the following labs:
-* Sign Up for Free Tier/Login to Oracle Cloud
+This lab assumes you completed the Get started lab.
 
-> **Note:** *You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
-
-In this section, you will provision a VCN and subnet, ATP and ADW instances, and load data to use with OCI GoldenGate.
-
-> **Note:** *This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
+> **Note:** 
+* You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.
+* This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.
 
 ## Task 1: Create a VCN and subnet
 
@@ -94,7 +91,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-03-atp.png " ")
 
-4.  Click **Database Actions**.
+4.  Click **Database actions**.
 
 5.  If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
 
@@ -118,15 +115,15 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 11. Click **Run Script**. The Script Output tab displays confirmation messages.
 
-	>**Note:** *If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.*
+	>**Note:** If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.
 
-12. Close the SQL window and then open DB Actions from the database details page again.
+12. Close the SQL window and then reopen it from Database Actions.
 
 13. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
 
     ![Displays the SRC\_OCIGGLL tables](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-11-verify.png " ")
 
-14. To enable supplemental logging, run the following command:
+14. To enable supplemental logging, run the following command in SQL:
 
     ```
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
@@ -172,7 +169,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 12. Copy and paste the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** into the SQL worksheet, and then click **Run Script**.
 
-	![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adbimages/04-05-adw.png " ")
+	![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
 
 13. Log out of Database Actions.
 
@@ -180,7 +177,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 1.  Select your ADW instance from the Autonomous Databases list to view its details and access tools.
 
-    ![List of Autonomous Databases](./images/04-01-adw.png " ")
+    ![List of Autonomous Databases](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-01-adw.png " ")
 
 2.  Click **Database Actions**.
 
@@ -194,15 +191,13 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 5.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
 
-    ![](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
+    ![Copy target schema script into SQL tool](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
 
 6.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
-	>**Note:** *If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.*
+	>**Note:** If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.
 
 7.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
-
-    ![ADW schema scripts in SQL worksheet](./images/04-07-adw-schema.png " ")
 
 8.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
@@ -213,5 +208,5 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Jenny Chan, July 2022
+- **Last Updated By/Date** - Jenny Chan, March 2023
 - **PAR Expiration date** - February 2024

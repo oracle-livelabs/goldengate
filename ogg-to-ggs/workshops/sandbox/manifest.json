@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Send Data from Oracle GoldenGate to Oracle Cloud Infrastructure GoldenGate",
+    "workshoptitle": "Send changed data from Oracle GoldenGate to Oracle Cloud Infrastructure GoldenGate",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
@@ -7,8 +7,12 @@
             "filename": "../../introduction/introduction-gb.md"
         },
         {
+            "title": "Get started",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {
             "title": "Lab 1: Create OCI GoldenGate resources",
-            "description": "Create your OCI GoldenGate deployment and database registration",
+            "description": "Create your OCI GoldenGate deployment and connections",
             "filename": "../../create/create.md"
         },
         {
