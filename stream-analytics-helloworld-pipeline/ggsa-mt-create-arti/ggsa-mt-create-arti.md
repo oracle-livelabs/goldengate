@@ -53,8 +53,9 @@ You should be already logged in after completing the lab *Initialize Environment
 
 3. On the **Type Properties** screen, enter the following details:
     -  In the **Name** field, enter **LocalKafka**.
-    -  In the **Display Name**, enter a display name for the connection. If left blank, the **Name** field value is     copied.
-    -  In the **Tags** field, enter **tutorial, transport**.
+    -  In the **Display Name**, enter a display name for the connection. If left blank, the **Name** field value is copied.
+    -  In the **Description**, enter a meaningful description. **Connection to Kafka running locally** in this example.
+    -  In the **Tags** field, enter **tutorial-sample, transport**.
     -  In the **Connection Type** drop-down, the selected connection is displayed. **Kafka** in this example.
 
     ![Creating a Kafka Connection](./images/CreateKafkaConn.PNG "")
@@ -131,7 +132,7 @@ You should be already logged in after completing the lab *Initialize Environment
 ![Creating a Database Connection](./images/CreateDBConn.PNG "")
 
 
-4. 4. On the **Connection Details** page, enter the following details:
+4. On the **Connection Details** page, enter the following details:
     - In the **database** field, select **MySQL** from the dropdown.
     - In the **jdbc url** field, enter **jdbc:mysql://OSA_DEMO:Welcome123!@localhost:3306/OSA_DEMO**.
 

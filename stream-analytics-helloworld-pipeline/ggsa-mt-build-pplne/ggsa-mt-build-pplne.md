@@ -43,17 +43,18 @@ The Tutorial pipeline is created and displayed. Listening for events begins, and
     - In the **Tags** field, enter **transportation, tutorial**.
 
 ## **Task 3:** Create a Query Stage to Ignore Stationary Vehicles
-  - From the Add a Stage menu, select Query.
-  - In the Create Query dialog box, enter the following and click Save:
-  - In the Name field, enter BusSpeed0Plus.
-  - In the Description field, enter Analytics only on moving vehicles.
-  - In the BusSpeed0Plus query stage page, do the following:
-    - On the Filters tab, click Add a Filter.
-    - In the first drop-down, select Bus_Speed, from second drop-down menu select greater than, and then accept default value 0.
-  - On the Sources tab, do the following:
-  - For PatternGeoFenceInside, click Timer in the second row below Sources.
-  - Enter a range of 10 seconds and evaluation frequency of 10 seconds. PatternGeoFenceInside 10s/10s is displayed.
-
+  - Right-click the pattern stage and from the **Add a Stage** menu, select **Query**.
+  - In the **Create Query** dialog box, enter the following and click **Save**:
+  - In the **Name** field, enter **BusSpeed0Plus**.
+  - In the **Description** field, enter **Analytics only on moving vehicles**.
+  - In the **BusSpeed0Plus** query stage page:
+    - On the **Filters** tab, click **Add a Filter**.
+    - In the first drop-down, select **Bus_Speed**, from second drop-down menu select **greater than**, and then accept default value 0.
+  - On the **Sources** tab:
+  - For **PatternGeoFenceInside**, click the Timer icon in the second row below **Sources**.
+  - Enter a **range** of 10 seconds and **evaluation frequency** of 10 seconds. PatternGeoFenceInside 10s/10s is displayed.
+  
+![Adding a Range and Frequency to the Pattern](./images/busspeedrangefreq.PNG "")
 ## Learn More
 
 * [Transform and Analyze Data Streams](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/creating-pipeline-transform-and-analyze-data-streams.html#GUID-9DB9B57A-1095-4557-ACB9-816A696EB121)

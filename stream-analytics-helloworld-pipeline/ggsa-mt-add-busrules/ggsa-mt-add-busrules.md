@@ -19,12 +19,20 @@ In this Lab you will:
 - Add a Rule to Identify Drivers Driving with Major Violations
 - Add a Rule to Identify Drivers Driving with Minor Violations
 
+
 ### Prerequisites
 This Lab assumes you have:
 - A Free Tier, Paid, or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 
 ## **Task 1:** Create a Rule Stage
+
+1. On the Catalog page, **Create New Item**, and select **Pipeline**.
+
+2. Select **Pipeline** from the submenu, to display the **Create Pipeline** screen
+
+3. On the Create Pipeline screen:
+
 ## **Task 2:** Add a Rule for Highways to Have a Name Value
 ## **Task 3:** Add a Rule to Identify Bus Drivers Driving Recklessly
 ## **Task 4:** Add a Rule to Identify Drivers Driving with Major Violations
