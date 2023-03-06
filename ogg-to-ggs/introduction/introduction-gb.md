@@ -6,9 +6,9 @@ Oracle GoldenGate, the industry-leading data replication and integration softwar
 
 ![Diagram](images/onprem2oci.png)
 
-You will be working in the Oracle GoldenGate Marketplace Web UI and the OCI GoldenGate Deployment Console throughout this workshop.
+In this workshop, you work in both the Oracle GoldenGate Marketplace Web UI and the OCI GoldenGate deployment console.
 
-Estimated Time: 120 minutes
+Estimated time: 120 minutes
 
 If you would like to watch us do the workshop, click [here](https://youtu.be/6KsirCdeUXw).
 
@@ -25,11 +25,11 @@ In this workshop, you will:
 
 ## Learn More
 
-* [Overview of Oracle Cloud Infrastructure GoldenGate](https://docs.oracle.com/cloud/paas/goldengate-service/using/overview-goldengate.html)
+* [Overview of Oracle Cloud Infrastructure GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/druyg/index.html)
 * [Oracle Cloud Infrastructure GoldenGate Service Overview video](https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:29278)
 * [Take an interactive tour of OCI GoldenGate](https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:29986)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, October 2022
+* **Last Updated By/Date** - Jenny Chan, March 2023
