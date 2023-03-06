@@ -58,9 +58,9 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 7.  In the Oracle Cloud console, navigate to the OCI Object Storage bucket and then download the JSON file OCI GoldenGate created.
 
-    ![Buckets in Oracle Cloud navigation menu](images/01-07a.png " ")
+    ![Buckets in Oracle Cloud navigation menu](./images/01-07a-buckets.png " ")
 
-    ![Buckets](images/01-07b.png " ")
+    ![Buckets](./images/01-07b-buckets.png " ")
 
 ## Task 2: Using the Performance Metrics Server
 

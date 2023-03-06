@@ -39,13 +39,13 @@ On the Deployment Details page, you can:
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/01-03-deployment-details.png " ")
+    ![Deployment Details page](./images/01-03-atp-deployment-details.png " ")
 
 ## Task 2: Launch the GoldenGate Deployment Console
 
 1. On the **ATPDeployment** details page, click **Launch Console**.
 
-    ![ATPDeployment Launch Console](images/02-01.png " ")
+    ![ATPDeployment Launch Console](images/02-01-launch-console.png " ")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided in the previous lab (Task 1, Step 15), and then click **Sign In**.
 
@@ -137,6 +137,8 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 3.  Click **Launch Console**.
 
+    ![OBJDeployment Launch Console](images/05-03-launch-console.png " ")
+
 4.  Sign in to the deployment console using the **oggadmin** credentials you created in the previous lab Task 2, Step 12.
 
 5.  In the BDinstance deployment console, open the navigation menu, and then click **Administrator**.
@@ -201,7 +203,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
     >**Note:** *You can copy the host from the browser address bar of target BDinstance deployment console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
 
-  ![Deployment details](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-07-depdetails.png " ")
+  ![Deployment details](./images/07-06-deployment-details.png " ")
 
 8.  For **Port Number**, enter `443`.
 
