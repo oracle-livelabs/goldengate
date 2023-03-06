@@ -1,9 +1,18 @@
 # Introduction
 
 ## About this Workshop                             
-The labs in this workshop walk you through use cases to add users and database credentials, enable Trandata, add Heartbeat and Checkpoint tables, and create Extract and Replicat processes.
+The labs in this workshop walk you through the process of setting up a unidirectional data replication configuration in Oracle GoldenGate for Oracle database multitenant databases. 
 
-Estimated Workshop Time: 4 hours
+You’ll learn to perform the following tasks using this lab:
+
+•	Configure and test database connections from Oracle GoldenGate using a credential store
+•	Enable trandata
+•	Add heartbeat and checkpoint tables
+•	Create Extract and Replicat processes
+•	Test data replication between databases
+
+Estimated Workshop Time: 2 hour
+
 
 ### About Oracle GoldenGate Admin Client
 Oracle GoldenGate is a comprehensive software package for real-time data integration and replication.
@@ -28,10 +37,9 @@ In this workshop, you will:
   * Add a Replicat process
 
 ### Prerequisites
-* The following are required to complete this lab:
-    * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
-    * Prior knowledge of Database basic concepts
-* Ensure that you have a multitenant database set up.
+The following are required to complete this lab:
+    * Prior knowledge of using Linux command-line options 
+    * Prior knowledge of basic database concepts
 
 
 Watch this short video on adding Database Credentials, Extract, and Replicat Processes in Oracle GoldenGate Microservices on MySQL database:
