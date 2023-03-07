@@ -304,5 +304,5 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, October 2022
+* **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, March 2023

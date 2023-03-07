@@ -273,5 +273,5 @@ After your deployments and connections become active, you can assign the connect
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Deniz Sendil, Database Product Management
+* **Contributors** -  Deniz Sendil, Database Product Management; Katherine Wardhana, User Assistance Developer
 * **Last Updated By/Date** - Katherine Wardhana, March 2023
