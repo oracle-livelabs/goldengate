@@ -27,14 +27,26 @@ This Lab assumes you have:
 
 ## **Task 1:** Create a Rule Stage
 
-1. On the Catalog page, **Create New Item**, and select **Pipeline**.
-
-2. Select **Pipeline** from the submenu, to display the **Create Pipeline** screen
-
-3. On the Create Pipeline screen:
+In the Pipeline Editor, right-click the Query Stage, click **Add a Stage**, and then select **Rule**.
+  - On the **Create Rule Stage** screen:
+  - In the name field, enter **SpeedViolation**.
+  - In the **Description** field, enter **Determine violation speeds for the vehicles**.
+  - In the **Tags** field, enter **transportation, tutorial**.
+  - Click **Save**.
+The SpeedViolation Business Rules page is displayed. The values you provide on this page are used for visual analytics.
 
 ## **Task 2:** Add a Rule for Highways to Have a Name Value
+ - On the **Rules** tab of the **SpeedViolation** Business Rules page:
+ - In the Rule Name field, enter **Dlt-Hwy**
+ - In the **Description** field, enter **Ensure all highways have a name value**.
+ - Click **Done**.
+
 ## **Task 3:** Add a Rule to Identify Bus Drivers Driving Recklessly
+- On the **Rules** tab of the **SpeedViolation** Business Rules page:
+ - In the Rule Name field, enter **Reckless**
+ - In the **Description** field, enter **Bus drivers who are driving recklessly**.
+ - Click **Done**.
+
 ## **Task 4:** Add a Rule to Identify Drivers Driving with Major Violations
 ## **Task 5:** Add a Rule to Identify Drivers Driving with Minor Violations
 

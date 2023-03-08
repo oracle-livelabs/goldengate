@@ -55,6 +55,7 @@ The Tutorial pipeline is created and displayed. Listening for events begins, and
   - Enter a **range** of 10 seconds and **evaluation frequency** of 10 seconds. PatternGeoFenceInside 10s/10s is displayed.
   
 ![Adding a Range and Frequency to the Pattern](./images/busspeedrangefreq.PNG "")
+
 ## Learn More
 
 * [Transform and Analyze Data Streams](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/creating-pipeline-transform-and-analyze-data-streams.html#GUID-9DB9B57A-1095-4557-ACB9-816A696EB121)
@@ -68,4 +69,4 @@ The Tutorial pipeline is created and displayed. Listening for events begins, and
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
 * **Contributors** - Prabhu Thukaram, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2022
+* **Last Updated By/Date** - 
