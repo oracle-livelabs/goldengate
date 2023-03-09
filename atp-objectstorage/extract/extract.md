@@ -221,7 +221,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 The Distribution path on the source ATPinstance creates a Receiver path on the target BDinstance.
 
->**Note**: *Complete the following steps in the **OBJDeployment** deployment console (BDinstance).
+>**Note**: *Complete the following steps in the **OBJDeployment** deployment console (BDinstance).*
 
 1.  In the target BDinstance deployment console, click **Receiver Service**.
 
@@ -288,5 +288,5 @@ In this lab, you:
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Deniz Sendil, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Contributors** -  Deniz Sendil, Database Product Management; Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, March 2023
