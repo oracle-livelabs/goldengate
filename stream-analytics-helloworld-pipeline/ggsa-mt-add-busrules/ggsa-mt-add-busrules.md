@@ -27,7 +27,7 @@ This Lab assumes you have:
 
 ## **Task 1:** Create a Rule Stage
 
-In the Pipeline Editor, right-click the Query Stage, click **Add a Stage**, and then select **Rule**.
+1. In the Pipeline Editor, right-click the Query Stage, click **Add a Stage**, and then select **Rule**.
   - On the **Create Rule Stage** screen:
   - In the name field, enter **SpeedViolation**.
   - In the **Description** field, enter **Determine violation speeds for the vehicles**.
@@ -36,26 +36,24 @@ In the Pipeline Editor, right-click the Query Stage, click **Add a Stage**, and 
 The SpeedViolation Business Rules page is displayed. The values you provide on this page are used for visual analytics.
 
 ## **Task 2:** Add a Rule for Highways to Have a Name Value
- - On the **Rules** tab of the **SpeedViolation** Business Rules page:
+ 1. On the **Rules** tab of the **SpeedViolation** page, enter the following details:
  - In the Rule Name field, enter **DLT-HWY**
  - In the **Description** field, enter **Ensure all highways have a name value**.
  - Click **Done**.
  - For the IF clause, select **BUS_Hwy** from the **Select a field** drop-down list, and **equals (case sensitive)** from the **Select an operator** drop-down list, leave the **Enter a value** blank.
  - For the THEN clause, select **BUS_Hwy** from the **SET** drop-down list, enter **UNKNOWN** in the **TO** field.
  
-
 ## **Task 3:** Add a Rule to Identify Bus Drivers Driving Recklessly
-- On the **Rules** tab of the **SpeedViolation** Business Rules page:
+- On the **Rules** tab of the **SpeedViolation** page, enter the following details:
  - In the Rule Name field, enter **RECKLESS**
  - In the **Description** field, enter **Bus drivers who are driving recklessly**.
  - Click **Done**.
  - For the IF clause, select **AvgSpeed** from the **Select a field** drop-down list, and **greater than** from the **Select an operator** drop-down list, and **60** in the **Enter a value** text field.
  - For the THEN clause, select **Violation** from the **SET** drop-down list, enter **RECKLESS** in the **TO** field.
  
-
 ## **Task 4:** Add a Rule to Identify Drivers Driving with Major Violations
-On the **Rules** tab of the **SpeedViolation** Business Rules page:
- - In the Rule Name field, enter **MAJOR**
+1. On the **Rules** tab of the **SpeedViolation** page, enter the following details:
+ - In the **Rule Name** field, enter **MAJOR**
  - In the **Description** field, enter **Bus drivers with major speed violations**.
  - Click **Done**.
  - For the IF clause, select **AvgSpeed** from the **Select a field** drop-down list, and **greater than** from the **Select an operator** drop-down list, and **45** in the **Enter a value** text field.
@@ -63,14 +61,13 @@ On the **Rules** tab of the **SpeedViolation** Business Rules page:
  - For the THEN clause, select **Violation** from the **SET** drop-down list, enter **MAJOR** in the **TO** field.
 
 ## **Task 5:** Add a Rule to Identify Drivers Driving with Minor Violations
-On the **Rules** tab of the **SpeedViolation** Business Rules page:
- - In the Rule Name field, enter **MAJORMINOR**
+1. On the **Rules** tab of the **SpeedViolation** page, enter the following details:
+ - In the Rule Name field, enter **MINOR**
  - In the **Description** field, enter **Bus drivers with minor speed violations**.
  - Click **Done**.
  - For the IF clause, select **AvgSpeed** from the **Select a field** drop-down list, and **greater than** from the **Select an operator** drop-down list, and **35** in the **Enter a value** text field.
  - Click the **Add a Condition** link and select **AvgSpeed** from the **Select a field** drop-down list, and **lower than or Equals** from the **Select an operator** drop-down list, enter **45** in the **Enter a value** field.
  - For the THEN clause, select **Violation** from the **SET** drop-down list, enter **MINOR** in the **TO** field.
-
 
 ## Learn More
 

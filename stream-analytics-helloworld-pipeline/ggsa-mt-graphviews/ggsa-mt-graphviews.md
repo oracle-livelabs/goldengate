@@ -21,8 +21,36 @@ This Lab assumes you have:
 - A Free Tier, Paid, or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 
-## **Task 1:** Configure a Geo Spatial Visualization
-## **Task 2:** Configure a Bar Chart Visualization
+## **Task 1:** Configure a Geo Spatial Visualization for Spatial Analytics of Vehicles in a marked geographical area
+1. Click **Visualizations** tab of the **SpeedViolation** Business Rules page:
+2. From the **Add a Visualization** drop-down list, select **Geo Spatial**.
+3. On the **Create Geo Spatial Visualization** page, on the **Properties** tab:
+ - In the **Name** field, enter **Driver Monitor**.
+ - In the **Description** field, enter **Spatial Analytics for Vehicles in the marked region in Atlanta**.
+ - From the **Lat** drop-down list, select **BUSlat**.
+ - From the **Long** drop-down list, select **BUSlong**.
+ - From the **Key** drop-down list, select **BUStripId**.
+4. On the **Customizations** tab, click **+** and specify the following values:
+ - Select **Violation**, from the **Field** drop-down list.
+ - Leave the **Operator** field blank.
+ - Enter **Reckless**, **Major**, or **Minor** in the **Value** field, for different violation types.
+ - Assign a marker color from the **Style** tab, to represent each violation type.
+5. Click **Create**.
+The map is updated instantly as the new data arrives. It shows various driving behaviors.
+
+
+## **Task 2:** Configure a Bar Chart Visualization to view Highway Activity 
+1. Click **Visualizations** tab of the **SpeedViolation** Business Rules page:
+2. From the **Add a Visualization** drop-down list, select **Bar**.
+3. On the **Create Bar Visualization** page, on the **Properties** tab:
+ - In the **Name** field, enter **CongestionPoints**.
+ - In the **Description** field, enter **Provide a HWY view of activity**.
+ - From the **Y Axis Field Selection** drop-down list, select **AvgSpeed**.
+ - In the **Axis Label** field, enter **Speed KMH**.
+ - From the **X Axis Field Selection** drop-down list, select **Bus_Hwy**.
+ - In the **Axis Label** field, enter **HWY**.
+ 4. Click **Create**.
+ The Bar chart displays the highways with the lower-than-average speeds that are currently experiencing traffic congestion.
 
 ## Learn More
 
