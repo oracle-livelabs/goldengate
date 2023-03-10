@@ -160,7 +160,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
     ![Script Output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-09-sql-script-return.png " ")
 
 
-11. Repeat steps 1 to 7 to unlock the GGADMIN user for **Autonomous Data Warehouse** with the password from Task 2 Step 10. Log out of Database Actions when you're done.
+11. Repeat steps 1 to 6 to unlock the GGADMIN user for **Autonomous Data Warehouse** with the password from Task 2 Step 10. Log out of Database Actions when you're done.
 
 ## Task 4: Review the deployment details
 
