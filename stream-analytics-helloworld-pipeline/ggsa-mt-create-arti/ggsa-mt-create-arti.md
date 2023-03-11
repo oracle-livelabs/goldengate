@@ -53,7 +53,7 @@ You should be already logged in after completing the lab *Initialize Environment
     -  In the **Name** field, enter **LocalKafka**.
     -  In the **Display Name**, enter a display name for the connection. If left blank, the **Name** field value is copied.
     -  In the **Description**, enter a meaningful description. **Connection to Kafka running locally** in this example.
-    -  In the **Tags** field, enter **tutorial-sample, transport**.
+    -  In the **Tags** field, enter **transportation, tutorial**.
     -  In the **Connection Type** drop-down, the selected connection is displayed. **Kafka** in this example.
 
     ![Creating a Kafka Connection](./images/CreateKafkaConn.PNG "")
@@ -72,9 +72,9 @@ You should be already logged in after completing the lab *Initialize Environment
 2. Select **File** from the submenu, to display the **Create Stream** screen.
 
 3. On the **Type Properties** screen, enter the following details:
-    - In the **Name** field, enter **Tutorial**.
+    - In the **Name** field, enter **BusStream**.
     - In the **Display Name** field, enter a display name for the stream. If left blank, the **Name** field value is   copied.
-    - In the **Tags** field, enter **tutorial, transportation**.
+    - In the **Tags** field, enter **transportation, tutorial**.
     - In the **Stream Type** drop-down, the selected stream is displayed. **File** in this example.
 
 4. On the **Source Details** page:
@@ -86,7 +86,7 @@ You should be already logged in after completing the lab *Initialize Environment
 5. On the **Shape** page:
     -  Select the **Infer Shape** option and click **Infer**.
     -  Wait till the Shape is successfully inferred from the input stream.
-    -  In the **Shape Name** field, enter **TutorialStream**.
+    -  In the **Shape Name** field, enter **BusStream**.
 
     ![Inferring a Shape](./images/InferShape.PNG "")
 
@@ -99,19 +99,20 @@ You should be already logged in after completing the lab *Initialize Environment
 2. Select **Geo Fence** from the submenu, to display the **Create Geo Fence** screen.
 
 3. On the **Type Properties** screen, enter the following details:
-    - In the **Name** field, enter **Tutorial**.
-    - In the **Display Name** field, enter a display name for the stream. If left blank, the **Name** field value is   copied.
-    - In the **Tags** field, enter **tutorial, transportation**.
+    - In the **Name** field, enter **AtlantaRegion**.
+    - In the **Display Name** field, enter a display name for the geo fence. If left blank, the **Name** field value is copied.
+    - In the **Description** field, enter **Geofence around Atlanta**.
+    - In the **Tags** field, enter **transportation, tutorial**.
     - In the **Geo Fence Type** drop-down, select **Manually Created Geo Fence**.
 
-4. Click **Save**. A page with the world map is displayed. This is where you will mark the area around Atlanta. You can use the **Marquee Zoom** to zoom-in a specific area.
+4. Click **Save**. A page with the world map is displayed. Mark a geo fence around Atlanta. Use the **Marquee Zoom** to zoom-in a specific area.
 
 ![Creating a Manual Geofence](./images/CreateGeoFence.PNG "")
 
 5. On top left of the page, click the **Polygon** tool on the toolbar and do the following:
-    - Start marking the area around Atlanta on the map. When you're done, click the **Polygon** tool again.
+    - Start marking the geofence on the map. When you are done, click the **Polygon** tool again.
     - In the **Name** field on the right side, enter **Atlanta**.
-    - In the **Description** field, enter **Monitor public buses transport in Atlanta**.
+    - In the **Description** field, enter **Monitor public transport buses around Atlanta**.
     - On the left side, click the **Save** icon to save your changes.
 
 6. Click **Return to Catalog**.
@@ -123,8 +124,8 @@ You should be already logged in after completing the lab *Initialize Environment
 2. Select **Generic Database** from the submenu, to display the **Create Connection** screen.
 
 3. On the **Type Properties** screen, enter the following details and click **Next**:
-    - In the **Name** field, enter **TutorialDB**.
-    - In the **Display Name** field, enter a display name for the stream. If left blank, the **Name** field value is   copied.
+    - In the **Name** field, enter **LocalMySQLDB**.
+    - In the **Display Name** field, enter a display name for the Connection. If left blank, the **Name** field value is copied.
     - In the **Tags** field, enter **tutorial, transportation**.
 
 ![Creating a Database Connection](./images/CreateDBConn.PNG "")
@@ -132,7 +133,7 @@ You should be already logged in after completing the lab *Initialize Environment
 
 4. On the **Connection Details** page, enter the following details:
     - In the **database** field, select **MySQL** from the dropdown.
-    - In the **jdbc url** field, enter **jdbc:mysql://OSA_DEMO:Welcome123!@localhost:3306/OSA_DEMO**.
+    - In the **jdbc url** field, enter **jdbc:mysql://OSA _ DEMO:Welcome123!@localhost:3306/OSA _ DEMO**.
 
 ![Creating a Database Connection](./images/DBConnDetails.PNG "")
 
@@ -145,11 +146,12 @@ You should be already logged in after completing the lab *Initialize Environment
 2. Select **Database Table** from the submenu, to display the **Create Reference** screen.
 
 3. On the **Type Properties** screen, enter the following details and click **Next**:
-    - In the **Name** field, enter **TutorialDBREf**.
-    - In the **Display Name** field, enter a display name for the stream. If left blank, the **Name** field value is   copied.
+    - In the **Name** field, enter **DriverDetails**.
+    - In the **Display Name** field, enter a display name for the Reference. If left blank, the **Name** field value is copied.
+    - In the **Description**, enter **Database Reference to fetch Driver Details**.
     - In the **Tags** field, enter **tutorial, transportation**.
 
-4. On the **Source Details** page, select the **TutorialDBConn** connection that you created earlier, and click **Next**.
+4. On the **Source Details** page, select the **LocalMySQLDB** connection that you created earlier, and click **Next**.
 
 ![Selecting a Database Connection](./images/DBRefSourceDetails.PNG "")
 
