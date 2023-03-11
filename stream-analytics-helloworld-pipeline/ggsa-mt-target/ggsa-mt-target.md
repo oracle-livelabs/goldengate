@@ -22,6 +22,18 @@ This Lab assumes you have:
 - SSH Private Key to access the host via SSH
 
 ## **Task 1:** Create a Target
+
+1. On the **Catalog** page, click **Create New Item**, and select **Target**.
+
+2. Select **Kafka** from the submenu, to display the **Create Target** screen.
+
+3. On the **Type Properties** screen, enter the following details:
+    -  In the **Name** field, enter **ReportViolations**.
+    -  In the **Display Name**, enter a display name for the connection. If left blank, the **Name** field value is copied.
+    -  In the **Description**, enter a meaningful description. **Connection to Kafka running locally** in this example.
+    -  In the **Tags** field, enter **tutorial-sample, transport**.
+    -  In the **Target Type** drop-down, the selected target is displayed. **Kafka** in this example.
+
 ## **Task 2:** Use the Target in Your Pipeline
 
 ## Learn More

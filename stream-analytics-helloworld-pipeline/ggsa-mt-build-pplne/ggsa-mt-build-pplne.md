@@ -1,9 +1,11 @@
 
 # Build Your Stream Analytics Pipeline
 
-This lab walks you through steps to create supporting artifacts for your Stream Analytics pipeline to monitor the public transportation in the Atlanta area.
+## Introduction
 
- This is the first lab in the Monitoring Public Transportation Using Stream Analytics workshop. Follow the labs sequentially.
+This lab walks you through steps to create a Stream Analytics pipeline to monitor the public transportation in the Atlanta area.
+
+This is the second lab in the Monitoring Public Transportation Using Stream Analytics workshop. Follow the labs sequentially.
 
 *Estimated Time*: 20 minutes
 

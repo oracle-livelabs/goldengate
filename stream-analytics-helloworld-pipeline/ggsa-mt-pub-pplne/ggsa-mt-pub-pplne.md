@@ -3,7 +3,7 @@
 
 ## Introduction
 
-A pipeline includes a sequence of data processing stages such as, Query, Pattern, Rule, Query Group, Custom, and Scoring. You can apply business logic to an input data stream, within a pipeline.
+This lab walks you through steps to publish a Stream Analytics pipeline that is built to monitor the public transportation in the Atlanta area
 
 *Estimated Time*: 15 minutes
 
