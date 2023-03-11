@@ -5,7 +5,7 @@
 
 This lab walks you through steps to configure Graphical Views in a Stream Analytics pipeline.
 
-This is the first lab in the Monitoring Public Transportation Using Stream Analytics workshop. Follow the labs sequentially.
+
 *Estimated Time*: 15 minutes
 
 ### About this Lab

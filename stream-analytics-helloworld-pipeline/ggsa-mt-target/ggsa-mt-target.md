@@ -36,6 +36,8 @@ This Lab assumes you have:
 
 ## **Task 2:** Use the Target in Your Pipeline
 
+
+
 ## Learn More
 
 * [Transform and Analyze Data Streams](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/creating-pipeline-transform-and-analyze-data-streams.html#GUID-9DB9B57A-1095-4557-ACB9-816A696EB121)
