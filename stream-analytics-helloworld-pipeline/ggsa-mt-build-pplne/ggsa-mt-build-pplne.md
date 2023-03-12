@@ -27,8 +27,8 @@ This Lab assumes you have:
 
 3. On the Create Pipeline screen:
 
-  - In the **Name** field, enter **Tutorial**.
-  - In the **Description** field, enter **Monitor**.
+  - In the **Name** field, enter **MonitorPublicTransport**.
+  - In the **Description** field, enter **Pipeline to monitor public transport**.
   - In the **Tags** field, enter **transportation, tutorial**.
   - From the **Stream** drop-down, select the **Tutorial** File stream that you created in [Lab 4: Create Artifacts for Your Stream Analytics Pipeline.] (#prev)
 

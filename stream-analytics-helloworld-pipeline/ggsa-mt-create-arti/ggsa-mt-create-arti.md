@@ -56,13 +56,13 @@ You should be already logged in after completing the lab *Initialize Environment
     -  In the **Tags** field, enter **transportation, tutorial**.
     -  In the **Connection Type** drop-down, the selected connection is displayed. **Kafka** in this example.
 
-    ![Creating a Kafka Connection](./images/CreateKafkaConn.PNG "")
+    ![Creating a Kafka Connection](./images/KafkaConn1.PNG "")
 
 4. On the **Connection Details** page, enter **localhost** in the **Zookeepers** field.
 
 5. Click **Test Connection**, and wait till the status is successful. Click **Save**.
 
-    ![Testing a Kafka Connection](./images/TestKafkaConn.PNG "")
+    ![Testing a Kafka Connection](./images/KafkaConn2.PNG "")
 
 
 ## **Task 3:** Create a File Stream
@@ -88,7 +88,7 @@ You should be already logged in after completing the lab *Initialize Environment
     -  Wait till the Shape is successfully inferred from the input stream.
     -  In the **Shape Name** field, enter **BusStream**.
 
-    ![Inferring a Shape](./images/InferShape.PNG "")
+    ![Inferring a Shape](./images/FileStream3.PNG "")
 
 6. Click **Save**.
 
@@ -128,14 +128,14 @@ You should be already logged in after completing the lab *Initialize Environment
     - In the **Display Name** field, enter a display name for the Connection. If left blank, the **Name** field value is copied.
     - In the **Tags** field, enter **tutorial, transportation**.
 
-![Creating a Database Connection](./images/CreateDBConn.PNG "")
+![Creating a Database Connection](./images/DBConn1.PNG "")
 
 
 4. On the **Connection Details** page, enter the following details:
     - In the **database** field, select **MySQL** from the dropdown.
     - In the **jdbc url** field, enter **jdbc:mysql://OSA _ DEMO:Welcome123!@localhost:3306/OSA _ DEMO**.
 
-![Creating a Database Connection](./images/DBConnDetails.PNG "")
+![Creating a Database Connection](./images/DBConn2.PNG "")
 
 5. Click **Test Connection**, and wait till the status is successful. Click **Save**.
 
@@ -153,11 +153,11 @@ You should be already logged in after completing the lab *Initialize Environment
 
 4. On the **Source Details** page, select the **LocalMySQLDB** connection that you created earlier, and click **Next**.
 
-![Selecting a Database Connection](./images/DBRefSourceDetails.PNG "")
+![Selecting a Database Connection](./images/Ref2.PNG "")
 
 5. On the **Shape** page, select **driver_details** from the **Shape Name** drop-down. Click **Save**.
 
-![Selecting a Database Table](./images/DBRefShape.PNG "")
+![Selecting a Database Table](./images/Ref3.PNG "")
 
 
 ## Learn More
