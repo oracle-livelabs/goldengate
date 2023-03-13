@@ -73,7 +73,7 @@ In this lab, you will:
 
 8.  Copy the Public IP from the list of Compute Instances.
 
-    ![Copy the Public IP of your compute instance from the list of compute instances, or from the compute instance's details page](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-08-publicip.png " ")
+    ![Copy the Public IP of your compute instance from the list of compute instances, or from the compute instance's details page](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-08-publicIP.png " ")
 
 9.  In Cloud Shell, enter the following connect to the Marketplace Oracle GoldenGate compute instance:
 
