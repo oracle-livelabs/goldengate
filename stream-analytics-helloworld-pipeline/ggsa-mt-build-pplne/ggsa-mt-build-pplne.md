@@ -25,7 +25,7 @@ This Lab assumes you have:
 
 2. Select **Pipeline** from the submenu, to display the **Create Pipeline** screen
 
-3. On the Create Pipeline screen:
+3. On the **Create Pipeline** screen:
 
   - In the **Name** field, enter **MonitorPublicTransport**.
   - In the **Description** field, enter **Pipeline to monitor public transport**.
@@ -33,30 +33,41 @@ This Lab assumes you have:
   - From the **Stream** drop-down, select the **Tutorial** File stream that you created in [Lab 4: Create Artifacts for Your Stream Analytics Pipeline.] (#prev)
 
 4. Click **Save**.
-The Tutorial pipeline is created and displayed. Listening for events begins, and then streaming events start to flow.
+The pipeline is created and displayed. Listening for events begins, and then streaming events start to flow.
 
 ## **Task 2:** Create a Stage to Identify Vehicles Only in Atlanta
 
-  - In the Pipeline Editor, right-click the pipeline, click **Add a Stage**, and then select **Pattern**.
-  - Select **Spatial** submenu, select **Geo Fence**.
-  - On the **Create Pattern Stage** screen:
-    - In the name field, enter **PatternGeoFenceInside**.
+  1. In the Pipeline Editor, right-click the pipeline, click **Add a Stage**, and then select **Pattern**.
+  2. Select **Spatial** submenu, select **Geo Filter**.
+  3. On the **Create Pattern Stage** screen:
+    - In the name field, enter **IdentifyVehiclesOnlyInAtlanta**.
     - In the **Description** field, enter **Spatial analytics in the city of Atlanta**.
     - In the **Tags** field, enter **transportation, tutorial**.
+  4. In the **IdentifyVehiclesOnlyInAtlanta** page, on the **Parameters** tab:
+    - For **Geo Fence** select **AtlantaRegions**.
+    - For **Latitude** select **BUSlat**.
+    - For **Longitude** select **BUSlong**.
+    - For **Object Key** select **BUStripid**.
+    - For **Coordination System** accept the default value **8307**.
+
+    ![Adding Parameters to the Geo Filter](./images/GeoFilter.PNG "")
+
 
 ## **Task 3:** Create a Query Stage to Ignore Stationary Vehicles
-  - Right-click the pattern stage and from the **Add a Stage** menu, select **Query**.
-  - In the **Create Query** dialog box, enter the following and click **Save**:
-  - In the **Name** field, enter **BusSpeed0Plus**.
-  - In the **Description** field, enter **Analytics only on moving vehicles**.
-  - In the **BusSpeed0Plus** query stage page:
+  1. Right-click the pattern stage and from the **Add a Stage** menu, select **Query**.
+  2. In the **Create Query** dialog box, enter the following and click **Save**:
+  3. In the **Name** field, enter **IgnoreStationaryVehicles**.
+  4. In the **Description** field, enter **Analytics only on moving vehicles**.
+  5. In the **IgnoreStationaryVehicles** query stage page:
+  
     - On the **Filters** tab, click **Add a Filter**.
     - In the first drop-down, select **Bus_Speed**, from second drop-down menu select **greater than**, and then accept default value 0.
-  - On the **Sources** tab:
-  - For **PatternGeoFenceInside**, click the Timer icon in the second row below **Sources**.
-  - Enter a **range** of 10 seconds and **evaluation frequency** of 10 seconds. PatternGeoFenceInside 10s/10s is displayed.
+    - On the **Sources** tab:
+    - For **IgnoreStationaryVehicle**, click the Timer icon in the second row below **Sources**.
+    - Enter a **range** of 10 seconds and **evaluation frequency** of 10 seconds. PatternGeoFenceInside 10s/10s is displayed.
   
-![Adding a Range and Frequency to the Pattern](./images/busspeedrangefreq.PNG "")
+![Adding a Range and Frequency to the Pattern](./images/RanFreq.PNG "")
+
 
 ## Learn More
 
@@ -70,5 +81,5 @@ The Tutorial pipeline is created and displayed. Listening for events begins, and
 
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
-* **Contributors** - Prabhu Thukaram, Rene Fontcha
-* **Last Updated By/Date** - 
+* **Contributors** - Sumathi Nelapati
+* **Last Updated By/Date** - Pratibha Manjunath, March 2023

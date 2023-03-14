@@ -65,5 +65,5 @@ The map is updated instantly as the new data arrives. It shows various driving b
 
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
-* **Contributors** - Prabhu Thukaram, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2022
+* **Contributors** - Sumathi Nelapati
+* **Last Updated By/Date** - Pratibha Manjunath, March 2023

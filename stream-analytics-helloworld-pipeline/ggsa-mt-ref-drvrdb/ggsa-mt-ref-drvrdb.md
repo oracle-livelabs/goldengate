@@ -1,26 +1,29 @@
 
-# Publish the Stream Analytics Pipeline
+# Add a Reference to the Driver Details Table in the Local Database
 
 ## Introduction
 
-This lab walks you through steps to publish a Stream Analytics pipeline that is built to monitor the public transportation in the Atlanta area
+This lab walks you through steps to add a reference in the Stream Analytics pipeline to fetch the driver details from the local database table.
 
-*Estimated Time*: 15 minutes
-
-### About this Lab
-
-This lab provides steps to create a basic pipeline, add a query stage and a filter to it, and publish the pipeline; all this in less than 15 minutes!
 
 ### Objectives
 In this Lab you will:
-- Publish Your Stream Analytics Pipeline to Monitor Public Transport System
+- Add the Driver Details Reference in the Pipeline
 
 ### Prerequisites
 This Lab assumes you have:
 - A Free Tier, Paid, or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 
-## **Task 1:** Publish Your Stream Analytics Pipeline
+## **Task 1:** Add a Database Reference to fetch Driver Details
+
+1. On the **IgnoreStationaryVehicles** page, click **Sources**.
+2. Select **Driver Details** from the drop-down list.
+3. Add a correlation condition:
+  - Select **driver _ id** from the first drop-down, **equals** from the operator drop-down, and **Bus_DriveNo** from the drop-down.
+
+![Adding a Database Reference](./images/AddRef.PNG "")
+
 
 ## Learn More
 
@@ -35,4 +38,4 @@ This Lab assumes you have:
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
 * **Contributors** - Sumathi Nelapati
-* **Last Updated By/Date** - Pratibha Manjunath, March 2023
+* **Last Updated By/Date** -Pratibha Manjunath, March 2023
