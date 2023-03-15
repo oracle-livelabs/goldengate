@@ -17,7 +17,7 @@ Estimated time: 30 mins
 
 This lab assumes you have completed the Get started lab.
 
-> **Note:** *You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
+> **Note:** You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.
 
 In this section, you will provision a VCN and subnet, ATP and ADW instances, and load data to use with OCI GoldenGate.
 
@@ -29,7 +29,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
 
-	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-start-vcn-wizard.png " ")
+	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-startwizard.png " ")
 
 3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
@@ -37,11 +37,11 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 4.  Enter a name for the VCN, select a compartment, and then click **Next**.
 
-    ![Enter VCN details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-04.png " ")
+    ![Enter VCN details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-04-config.png " ")
 
 5.  Verify the configuration, and then click **Create**.
 
-    ![Verify configuration details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-05.png " ")
+    ![Verify configuration details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-05-verify.png " ")
 
 6.  Click **View VCN Details** and see both a Public and Private subnet were created.
 
@@ -79,9 +79,9 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 6.  Select **Standalone**.
 
-7.  Under **Create Administrator credentials**, for Username, enter `admin`, and then enter a password for the admin user. Take note of this password.
-
 	![Example MySQL DB System options](./images/02-07-create-dbsys-1.png " ")
+
+7.  Under **Create Administrator credentials**, for Username, enter `admin`, and then enter a password for the admin user. Take note of this password.
 
 8.  Under **Configure networking**, select the **VCN** and **Subnet** created in Task 1.
 
@@ -89,15 +89,16 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 10. Click **Create**.
 
-11. On the DB System details page, copy the Private IP Address.
+	You're returned to the DB Systems page where the MySQL DB System you created appears. It will take a few minutes for the system to become Active.
+
+11. On the DB System details page, in the **Endpoint** section of the **DB System information**, copy the **Private IP Address**.
 
 	![Copy the Private IP](./images/02-11-private-ip.png " ")
 
-You're returned to the DB Systems page where the MySQL DB System you created appears. It will take a few minutes for the system to become Active.
 
 ## Task 3A: Create a bastion and session
 
-Create a bastion and session only if your OCI GoldenGate deployment and OCI MySQL Database system are **not** located in the same region. If they're in the same Home region, skip to Task 3B.
+> **Note:** Create a bastion and session only if your OCI GoldenGate deployment and OCI MySQL Database system are **not** located in the same region. If they're in the same Home region, skip to Task 3B.
 
 1.  In the Oracle Cloud console navigation menu, click **Identity & Security**, and then click **Bastion**.
 
@@ -133,7 +134,7 @@ Create a bastion and session only if your OCI GoldenGate deployment and OCI MySQ
 
 12. Under Add SSH Key, you can upload an existing key or generate a new SSH key pair.
 
-	>**Note:** *If you select **Generate SSH key pair**, ensure that you download and save the private key.*
+	>**Note:** If you select **Generate SSH key pair**, ensure that you download and save the private key.
 
 13. Click **Create session**. The session takes a few minutes to become Active.
 
@@ -147,23 +148,23 @@ Create a bastion and session only if your OCI GoldenGate deployment and OCI MySQ
 
 If working within the same Home region for OCI GoldenGate and OCI MySQL Database, then you can use CloudShell to connect to the private network.
 
-1.  After your OCI MySQL DB system becomes active, open CloudShell from the Oracle Cloud console global header.
+1.  After your OCI MySQL DB system becomes active, click **Developer tools** in the Oracle Cloud console global header, and then select **Cloud Shell**.
 
 	![Open CloudShell](./images/03b-01-open-cloudshell.png " ")
 
-2.  After CloudShell opens and initializes, click **Network: Public**, and then select **Private Network Setup**.
+2.  After CloudShell opens and initializes, click **Network: Public**, and then select **Ephemeral Private Network Setup**.
 
 	![CloudShell Network](./images/03b-02-cloudshell.png " ")
 
-3.  Select the VCN and Subnet your OCI MySQL DB system uses, and then click **Connect to this network**.
+3.  Select the VCN and Subnet your OCI MySQL DB system uses, and then click **Use as active network**.
 
 4.  After CloudShell is connected to the private network, proceed to Task 4, Step 6 below.
 
 ## Task 4: Load data into the MySQL DB System
 
-1.  In the Oracle Cloud console global header, click **Cloud Shell**. Cloud Shell opens in a panel at the bottom of the console.
+1.  In the Oracle Cloud console global header, click **Developer tools**, and then select **Cloud Shell**. Cloud Shell opens in a panel at the bottom of the console.
 
-	![Click Cloud Shell in the console global header](./images/04-01-cloudshell.png " ")
+	![Click Cloud Shell in the console global header](./images/03b-01-open-cloudshell.png " ")
 
 2.  Open the Cloud Shell menu (gear icon) and then select **Upload**.
 
@@ -171,13 +172,13 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 3.  In the Upload dialog window, upload the private key associated with the SSH key used to create the bastion in Task 3 Step 12.
 
-	>**Note:** *You can Hide the upload window after the upload completes.*
+	>**Note:** You can Hide the upload window after the upload completes.
 
 4.  Paste the SSH command copied from the bastion session in Task 3 Step 14. Replace `<privateKey>` with the name if the private you uploaded to Cloud Shell and `<localPort>` with any valid port number.
 
 5.  Run the command.
 
-	>**Note:** *If you're warned that your private key is too open, run `chmod 600 <privateKey>` and then try again. After the host is added to the list of known hosts, you can add an ampersand (&) to the end of the command to have it run in the background.*
+	>**Note:** If you're warned that your private key is too open, run `chmod 600 <privateKey>` and then try again. After the host is added to the list of known hosts, you can add an ampersand (&) to the end of the command to have it run in the background.
 
 6.  Run `mysqlsh admin@localhost:3306 --sql` and then enter the MySQL database admin password from Task 2 Step 7.
 
@@ -190,7 +191,7 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 		<copy>CREATE USER 'ggadmin' IDENTIFIED BY '<ggadmin-password>';
 		GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT, CREATE,CREATE VIEW, EVENT, INSERT, UPDATE, DROP,EXECUTE, DELETE ON *.* TO 'ggadmin';</copy>
 
-9.  Close CloudShell.
+9.  Close Cloud Shell.
 
 ## Task 5: Create an ADW instance
 
@@ -203,8 +204,6 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
   ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-create-adb.png " ")
 
 3.  On the Create Autonomous Database page, select a **Compartment** from the dropdown.
-
- >**Note:** *If running this workshop in a LiveLab sandbox environment, select the compartment associated to your username.*
 
 4.  Enter **TargetADW** for **Display Name** and **Database Name**.
 

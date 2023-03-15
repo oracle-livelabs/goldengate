@@ -1,4 +1,4 @@
-# Send data from Oracle GoldenGate to Oracle Cloud Infrastructure GoldenGate
+# Stream changed data from Oracle GoldenGate to Oracle Cloud Infrastructure GoldenGate
 
 
 ## How to prepare for this workshop
