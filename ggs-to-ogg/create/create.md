@@ -17,7 +17,16 @@ A **connection** captures source or target database credential information and s
 In this lab, you will:
 
 * Create an OCI GoldenGate deployment
-* Create the source and target connections## Task 1: Create a deployment
+* Create the source and target connections
+* Enable the GGADMIN user and supplemental logging
+* Review the OCI GoldenGate deployment details
+* Access the OCI GoldenGate deployment console
+
+### Prerequisites
+
+This lab assumes that you completed all preceding labs.
+
+## Task 1: Create a deployment
 
 > **Note:** *Compartment names in the screenshots may differ from values that appear in your environment.*
 
@@ -257,4 +266,4 @@ In this lab, you created the OCI GoldenGate deployment and registered the source
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, October 2022
+* **Last Updated By/Date** - Katherine Wardhana, March 2023

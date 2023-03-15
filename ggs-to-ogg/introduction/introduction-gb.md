@@ -29,5 +29,5 @@ Everything you need to complete this workshop is provided to you in the Workshop
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, November 2021
+* **Contributors** -  Werner He and Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, March 2023
