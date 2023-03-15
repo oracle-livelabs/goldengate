@@ -25,7 +25,7 @@ This lab assumes you successfully completed all preceding labs.
 
 2.  From the navigation menu, under **Oracle Database**, select **GoldenGate**.
 
-    ![GoldenGate in Oracle Cloud navigation menu](./images/01-02-oracledb-gg.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
 3.  From the list of OCI GoldenGate deployments, select the deployment you created for this LiveLab.
 
@@ -87,4 +87,4 @@ This lab assumes you successfully completed all preceding labs.
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, October 2022
+* **Last Updated By/Date** - Katherine Wardhana, March 2023

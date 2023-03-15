@@ -259,4 +259,4 @@ In this lab, you created an Extract, a Receiver Path, and a Replicat, and you ve
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, October 2022
+* **Last Updated By/Date** - Katherine Wardhana, March 2023
