@@ -207,11 +207,11 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 4.  Enter **TargetADW** for **Display Name** and **Database Name**.
 
+	![TargetADW database name](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/05-04-compartment.png " ")
+
 5.  Under **Choose a workload type**, select **Data Warehouse**.
 
 6.  Under **Choose a deployment type**, select **Shared Infrastructure**.
-
-	![Example ADW instance creation](./images/05-05-create-adw.png " ")
 
 7.  Under Create administrator credentials, enter a password and confirm the password. Note the password down in a notepad, you will need it later.
 
@@ -225,11 +225,11 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 1.  After the instance becomes Active, select it to view its details and access tools.
 
-    ![List of Autonomous Databases](./images/04-01-adw.png " ")
+    ![List of Autonomous Databases](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/06-01-targetadw.png " ")
 
 2.  Click **Database Actions**.
 
-	![Click Database Actions on autonomous database details page](./images/05-11-dbactions.png " ")
+	![Click Database Actions on autonomous database details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/06-02-db-actions.png " ")
 
 3.  If prompted, log in with the ADMIN user and password provided when you created the ADW instance.
 
@@ -237,19 +237,19 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 4.  On the Database Actions Launchpad, under **Administration**, click **Database Users**.
 
-	![Click Database Users](./images/05-12-launchpad.png " ")
+	![Click Database Users](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/05-12-launchpad.png " ")
 
 5.  On the Database Users page, locate GGADMIN, and then select **Edit** from its ellipsis (three dots) menu.
 
-	![Select Edit from ggadmin's menu](./images/05-13-ggadmin.png " ")
+	![Select Edit from ggadmin's menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/06-05-ggadmin.png " ")
 
 6.  In the Edit User panel, deselect **Account is Locked**, enter the ggadmin password and confirm it, and then click **Apply Changes**.
 
-	![Unlock the ggadmin user in the Edit User panel](./images/05-14-unlock.png " ")
+	![Unlock the ggadmin user in the Edit User panel](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/06-06-unlock-ggadmin.png " ")
 
 7.  From the Database Actions menu, under **Development**, select **SQL**.
 
-    ![Select SQL from Database Actions menu](./images/06-07-sql.png " ")
+    ![Select SQL from Database Actions menu](./images/03-07-sql.png " ")
 
 8.  Download the sample database schema:
 
@@ -275,5 +275,5 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
 - **Contributor** - Julien Testut, Database Product Management
-- **Last Updated by** - Jenny Chan, November 2022
+- **Last Updated by** - Jenny Chan, March 2023
 - **PAR Expiration date** - February 2024
