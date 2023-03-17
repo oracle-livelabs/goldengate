@@ -11,7 +11,7 @@ Key features of this traffic management solution:
 
 Some of the key benefits with this solution are low-cost rollout with zero-road, network disruption, real-time operational intelligence, which is essential for meaningful congestion reduction, and an enhanced traveler experience, with a leading streaming big data technology.
 
-*Estimated Time*:  
+*Estimated Time*:  2 hours
 
 ### About GoldenGate Stream Analytics (GGSA)
 The GoldenGate Stream Analytics (GGSA) runtime component is a complete solution platform, with an intuitive web interface for building applications to filter, correlate, and process events in real-time. With flexible deployment options of stand-alone Spark or Hadoop-YARN, it proves to be a versatile, high-performance event processing engine. GGSA enables Fast Data and Internet of Things (IOT) – delivering actionable insight and maximizing value on large volumes of high velocity data from varied data sources in real-time. It enables distributed intelligence and low latency responsiveness by pushing business logic to the network edge.
