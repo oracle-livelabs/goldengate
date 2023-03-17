@@ -5,6 +5,7 @@
 
 This lab walks you through steps to add a reference in the Stream Analytics pipeline to fetch the driver details from the local database table.
 
+*Estimated Time*: 10 minutes
 
 ### Objectives
 In this Lab you will:

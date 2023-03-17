@@ -3,23 +3,18 @@
 
 ## Introduction
 
-This lab walks you through steps to add business rules to a Stream Analytics pipeline, to monitor the public transportation in the Atlanta area.
+This lab walks you through steps to add business rules to a Stream Analytics pipeline, to monitor the public transportation in a marked geographical location.
 
-This is the third lab in the Monitoring Public Transportation Using Stream Analytics workshop. Follow the labs sequentially.
 
-*Estimated Time*: 
-
-### About this Lab
-
-This lab provides steps to create a basic pipeline, add a query stage and a filter to it, and publish the pipeline; all this in less than 15 minutes!
+*Estimated Time*: 20 minutes
 
 ### Objectives
 In this Lab you will:
 - Create a Rule Stage
 - Add a Rule for Highways to Have a Name Value
-- Add a Rule to Identify Bus Drivers Driving Recklessly
-- Add a Rule to Identify Drivers Driving with Major Violations
-- Add a Rule to Identify Drivers Driving with Minor Violations
+- Add a Rule to identify Reckless Driving
+- Add a Rule to identify Major Speed Violations
+- Add a Rule to identify Minor Speed Violations
 
 
 ### Prerequisites
@@ -48,15 +43,17 @@ The SpeedViolation Business Rules page is displayed. The values you provide on t
  ![Adding a rule for highway name](./images/DFLT_HWY.PNG "")
 
  
-## **Task 3:** Add a Rule to Identify Bus Drivers Driving Recklessly
+## **Task 3:** Add a Rule to identify Reckless Driving
 - On the **Rules** tab of the **SpeedViolation** page, enter the following details:
  - In the Rule Name field, enter **RECKLESS**
  - In the **Description** field, enter **Bus drivers who are driving recklessly**.
  - Click **Done**.
  - For the IF clause, select **Bus_Speed** from the **Select a field** drop-down list, and **greater than** from the **Select an operator** drop-down list, and **60** in the **Enter a value** text field.
  - For the THEN clause, select **status** from the **SET** drop-down list, enter **RECKLESS** in the **TO** field.
+
+ ![Business Rule to identify Reckless driving](./images/Reckless.PNG "")
  
-## **Task 4:** Add a Rule to Identify Drivers Driving with Major Violations
+## **Task 4:** Add a Rule to identify Major Speed Violations
 1. On the **Rules** tab of the **SpeedViolation** page, enter the following details:
  - In the **Rule Name** field, enter **MAJOR**
  - In the **Description** field, enter **Bus drivers with major speed violations**.
@@ -65,7 +62,9 @@ The SpeedViolation Business Rules page is displayed. The values you provide on t
  - Click the **Add a Condition** link and select **Bus_Speed** from the **Select a field** drop-down list, and **lower than or Equals** from the **Select an operator** drop-down list, enter **60** in the **Enter a value** field.
  - For the THEN clause, select **status** from the **SET** drop-down list, enter **MAJOR** in the **TO** field.
 
-## **Task 5:** Add a Rule to Identify Drivers Driving with Minor Violations
+  ![Business Rule to identify Major Speed Violation](./images/Major.PNG "")
+
+## **Task 5:** Add a Rule to identify Minor Speed Violations
 1. On the **Rules** tab of the **SpeedViolation** page, enter the following details:
  - In the Rule Name field, enter **MINOR**
  - In the **Description** field, enter **Bus drivers with minor speed violations**.
@@ -74,6 +73,7 @@ The SpeedViolation Business Rules page is displayed. The values you provide on t
  - Click the **Add a Condition** link and select **Bus_speed** from the **Select a field** drop-down list, and **lower than or Equals** from the **Select an operator** drop-down list, enter **45** in the **Enter a value** field.
  - For the THEN clause, select **status** from the **SET** drop-down list, enter **MINOR** in the **TO** field.
 
+  ![Business Rule to identify Minor Speed Violation](./images/Minor.PNG "")
 ## Learn More
 
 * [Transform and Analyze Data Streams](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/creating-pipeline-transform-and-analyze-data-streams.html#GUID-9DB9B57A-1095-4557-ACB9-816A696EB121)

@@ -3,13 +3,9 @@
 
 ## Introduction
 
-This lab walks you through steps to publish a Stream Analytics pipeline that is built to monitor the public transportation in the Atlanta area
+This lab walks you through steps to publish a Stream Analytics pipeline that is built to monitor the public transportation in a marked geographical location.
 
 *Estimated Time*: 15 minutes
-
-### About this Lab
-
-This lab provides steps to create a basic pipeline, add a query stage and a filter to it, and publish the pipeline; all this in less than 15 minutes!
 
 ### Objectives
 In this Lab you will:
@@ -20,7 +16,27 @@ This Lab assumes you have:
 - A Free Tier, Paid, or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 
-## **Task 1:** Publish Your Stream Analytics Pipeline
+## **Task 1:** Publish the MonitorPublicTransport Pipeline
+
+1. On the **Catalog** page, click the draft **MonitorPublicTransport** pipeline.
+2. In the Pipeline Editor, click **Publish**.
+
+![Publish Pipeline from the Pipeline Editor](./images/PubPPlneEditor.PNG "")
+
+3. You can also publish a pipeline from the **Catalog** page using the **Publish** option in the Actions menu.
+
+![Publish Pipeline from the Catalog Page](./images/PubPPlneCat.PNG "")
+
+4. In both the publish methods, the **Pipeline Settings** dialog box opens, retain the default settings. 
+5. Click **Publish**.
+
+![Publish Pipeline from the Pipeline Editor](./images/PubPPlneSettings.PNG "")
+
+A confirmation message appears when the pipeline is published. The pipeline status changes from **Draft** to **Running**.
+
+![Publish Pipeline from the Pipeline Editor](./images/PublishedPPlne.PNG "")
+
+
 
 ## Learn More
 

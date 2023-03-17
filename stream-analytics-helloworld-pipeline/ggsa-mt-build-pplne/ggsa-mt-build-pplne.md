@@ -3,9 +3,7 @@
 
 ## Introduction
 
-This lab walks you through steps to create a Stream Analytics pipeline to monitor the public transportation in the Atlanta area.
-
-This is the second lab in the Monitoring Public Transportation Using Stream Analytics workshop. Follow the labs sequentially.
+This lab walks you through steps to create a Stream Analytics pipeline to monitor the public transportation in a marked geographical location.
 
 *Estimated Time*: 20 minutes
 
@@ -17,7 +15,9 @@ In this Lab you will:
 
 ### Prerequisites
 This Lab assumes you have:
--
+- A Free Tier, Paid, or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- Completed [Lab 4: Create Artifacts for Your Stream Analytics Pipeline.] (#prev)
 
 ## **Task 1:** Create a Pipeline
 
@@ -30,7 +30,7 @@ This Lab assumes you have:
   - In the **Name** field, enter **MonitorPublicTransport**.
   - In the **Description** field, enter **Pipeline to monitor public transport**.
   - In the **Tags** field, enter **transportation, tutorial**.
-  - From the **Stream** drop-down, select the **Tutorial** File stream that you created in [Lab 4: Create Artifacts for Your Stream Analytics Pipeline.] (#prev)
+  - From the **Stream** drop-down, select the **BusStream** File stream that you created in [Lab 4: Create Artifacts for Your Stream Analytics Pipeline.] (#prev)
 
 4. Click **Save**.
 The pipeline is created and displayed. Listening for events begins, and then streaming events start to flow.

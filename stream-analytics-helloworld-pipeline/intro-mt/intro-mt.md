@@ -22,6 +22,7 @@ In this workshop you will:
 * Create Artifacts for your Stream Analytics Pipeline
 * Build a Stream Analytics Pipeline
 * Add Business Rules to your Stream Analytics Pipeline
+* Add a Database Reference to your Stream Analytics Pipeline
 * Configure Graphical Views in your Stream Analytics pipeline
 * Define a Target in your Stream Analytics pipeline
 * Publish the Stream Analytics Pipeline

@@ -3,13 +3,10 @@
 
 ## Introduction
 
-A pipeline includes a sequence of data processing stages such as, Query, Pattern, Rule, Query Group, Custom, and Scoring. You can apply business logic to an input data stream, within a pipeline.
+This lab walks you through steps to create a Kafka target to and use it in a pipeline, to report traffic violations to a downstream application.
+
 
 *Estimated Time*: 15 minutes
-
-### About this Lab
-
-This lab provides steps to create a basic pipeline, add a query stage and a filter to it, and publish the pipeline; all this in less than 15 minutes!
 
 ### Objectives
 In this Lab you will:
@@ -31,11 +28,47 @@ This Lab assumes you have:
     -  In the **Name** field, enter **ReportViolations**.
     -  In the **Display Name**, enter a display name for the connection. If left blank, the **Name** field value is copied.
     -  In the **Description**, enter a meaningful description. **Connection to Kafka running locally** in this example.
-    -  In the **Tags** field, enter **tutorial-sample, transport**.
-    -  In the **Target Type** drop-down, the selected target is displayed. **Kafka** in this example.
+    -  In the **Tags** field, enter **transportation,tutorial**.
+    -  In the **Target Type** drop-down, the selected target is displayed. **Kafka** in this example. Click **Next**.
+
+![Creating a Kafka Target](./images/CreateTarget.PNG "")
+
+4. On the **Target Details** screen, enter the following details:
+    - From the **Connection** drop-down list, select the **LocalKafka** connection that you had earlier created.
+    - In the **Topic name** field, enter **LocalKafka****.
+    - From the **Data Format** drop-down, select **JSON**. Click **Next**.
+
+![Adding Target Details](./images/TargetDet.PNG "")
+
+5. On the **Data Format** page, check the **Create nested json object** option. Click **Next**.
+
+6. On the **Shape** page: 
+    - Check the **Select Existing Shape** option.
+    - From the **Select Existing Shape** drop-down list, select **driver_details**. All the fields in the selected shape are displayed. Select the fields to include in the target.
+
+![Assigning Target Shape](./images/TarShape.PNG "")
 
 ## **Task 2:** Use the Target in Your Pipeline
 
+1. From the Catalog page, open the **MonitorPublicTransport** pipeline by clicking it.
+
+2. Right-click the **SpeedViolations** stage, click **Add a Stage**.
+
+3. Select **Target** .
+
+4. On the **Create Target Stage** page:
+
+    - In the name field, enter **ReportViolations**.
+    - In the **Description** field, enter **Report Violations to a downstream application**.
+    - Click **Save**.
+
+5. On the **Target Mapping** page, select the **ReportViolations** target that you created in **Task 1**.
+
+![Target Mapping in Pipeline Editor](./images/TarMap.PNG "")
+
+The Live Output table for the selected Target:
+
+![Report Violations Traget Live Output](./images/TargetLivOP.PNG "")
 
 
 ## Learn More

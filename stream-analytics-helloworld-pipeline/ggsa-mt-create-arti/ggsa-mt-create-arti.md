@@ -3,9 +3,9 @@
 
 ## Introduction
 
-This lab walks you through steps to create supporting artifacts for your Stream Analytics pipeline to monitor the public transportation in the Atlanta area.
+This lab walks you through steps to create supporting artifacts for your Stream Analytics pipeline to monitor the public transportation in a marked geographical location.
 
-*Estimated Time*: 20 minutes
+*Estimated Time*: 30 minutes
 
 ### Objectives
 In this Lab you will:
