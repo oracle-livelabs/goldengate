@@ -54,7 +54,7 @@ This lab assumes that you completed all preceding labs.
 
 9.  For License type, select **Bring You Own License (BYOL)**.
 
-10. Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+10. Click **Show Advanced Options**, and then select ****Enable GoldenGate console public access**.
 
     ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
