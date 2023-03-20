@@ -53,7 +53,7 @@ This lab assumes that you completed all preceding labs.
 
 9.  For License type, select **Bring You Own License (BYOL)**.
 
-10. Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+10. Click **Show Advanced Options**, and then select **Enable GoldenGate console public access**.
 
     ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
@@ -181,7 +181,7 @@ Now, follow the steps below to connect the target Autonomous Data Warehouse \(AD
 
 4.  From the **Compartment** dropdown, select a compartment.
 
-5.  From the a Type dropdown, select **OCI Autonomous Database**.
+5.  From the a Type dropdown, select **Oracle Autonomous Database**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-05-create-connec-general-info.png)
 
