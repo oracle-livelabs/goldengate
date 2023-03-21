@@ -53,7 +53,7 @@ This lab assumes that you completed all preceding labs.
 
 8.  For License type, select **Bring Your Own License (BYOL)**.
 
-9.  Click **Show advanced options**, and then select **Create public endpoint**.
+9.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
     ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
@@ -69,13 +69,15 @@ This lab assumes that you completed all preceding labs.
 
 15. Click **Create**.
 
+    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-summary.png " ")
+
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
 ## Task 2: Create the source and target connections
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the GoldenGate page.
 
-    ![GoldenGate in Oracle Cloud Console breadcrumb highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-01-breadcrumb.png " ")
+    ![GoldenGate in Oracle Cloud Console breadcrumb highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-01-deployment-details.png " ")
 
 2.  Click **Connections**.
 
