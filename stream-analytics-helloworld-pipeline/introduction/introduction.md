@@ -27,6 +27,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-* **Author** - Pratibha Manjunath, Senior User Assistance Developer
+* **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
 * **Contributors** - Sumathi Nelapati
-* **Last Updated By/Date** - Pratibha Manjunath, GoldenGate Stream Analytics, December 2021
+* **Last Updated By/Date** - Pratibha Manjunath, March 2023
