@@ -48,11 +48,10 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
   -  Create Stack:  *Compute + Networking*
   -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Task 2* above
 
-
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 * **Author** - Pratibha Manjunath, Rene Fontcha
 * **Contributors** - Sumathi Nelapati, Principal Member Technical Staff
-* **Last Updated By/Date** - Pratibha Manjunath , December 2021
+* **Last Updated By/Date** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics March 2023
