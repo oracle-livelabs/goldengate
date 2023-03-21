@@ -25,13 +25,13 @@ This lab assumes you successfully completed all preceding labs.
 
 2.  From the navigation menu, under **Oracle Database**, select **GoldenGate**.
 
-    ![Select GoldenGate under Oracle Database Oracle Cloud console navigation menu](images/01-01.png " ")
+    ![Select GoldenGate under Oracle Database Oracle Cloud console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
 3.  From the list of OCI GoldenGate deployments, select the deployment you created for this LiveLab.
 
 4.  In the Deployment Details page, next to **Console URL** click **Copy**.
 
-    ![Copy the console URL from the deployment details page](images/01-04.png " ")
+    ![Copy the console URL from the deployment details page](images/01-04-consoleurl.png " ")
 
 ## Task 2: Connect to the Admin Client
 
@@ -41,7 +41,7 @@ This lab assumes you successfully completed all preceding labs.
     <copy>ssh -i <private-SSH-key> opc@<ip-address></copy>
     ```
 
-    ![SSH command in Cloud Shell](images/02-01.png " ")
+    ![SSH command in Cloud Shell](images/02-01-sshkey.png " ")
 
 2.  Change directories to **/u01/app/ogg/bin**, and then start the Admin Client:
 
@@ -49,7 +49,7 @@ This lab assumes you successfully completed all preceding labs.
     <copy>adminclient</copy>
     ```
 
-    ![Enter command to run Admin Client](images/02-02.png " ")
+    ![Enter command to run Admin Client](images/02-02-adminclient.png " ")
 
 3.  Connect to the OCI GoldenGate deployment using the user name and password you entered in Lab: Create OCI GoldenGate resources, Task 1, steps 12 and 13.
 
@@ -58,7 +58,7 @@ This lab assumes you successfully completed all preceding labs.
     ```
     > **Note:** *The exclamation point (!) is required. Without it, the command fails and returns an error.*
 
-    ![Enter connect command into Cloud Shell as described in Step 3.](images/02-03.png " ")
+    ![Enter connect command into Cloud Shell as described in Step 3.](images/02-03-connect.png " ")
 
 4.  After connecting successfully, you can run any of the following commands:
 
@@ -67,21 +67,21 @@ This lab assumes you successfully completed all preceding labs.
       <copy>info all</copy>
     ```
 
-    ![info all command displays status for OCI GoldenGate processes](images/02-04a.png " ")
+    ![info all command displays status for OCI GoldenGate processes](images/02-04a-infoall.png " ")
 
     View statistics of your Replicat:
     ```
     <copy>stats <replicat-name></copy>
     ```
 
-    ![stats command displays statistics of process](images/02-04b.png " ")
+    ![stats command displays statistics of process](images/02-04b-stats.png " ")
 
     View the content of a ggserror log file:
     ```
     <copy>view messages</copy>
     ```
 
-    ![view message command displays ggserror log file](images/02-04c.png " ")
+    ![view message command displays ggserror log file](images/02-04c-view.png " ")
 
     If your deployment had running Extract processes, then you can also purge old unused trail files using:
     ```
