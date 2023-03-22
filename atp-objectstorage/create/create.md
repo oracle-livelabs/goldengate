@@ -69,7 +69,7 @@ In Task 5, you must upload a private key and enter the corresponding public key 
 
 9.  For License type, select **Bring Your Own License (BYOL)**.
 
-10. Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+10. Click **Show Advanced Options**, and then select **Enable GoldenGate console public access**.
 
     ![Completed Create GoldenGate Deployment fields](images/01-10-create-atp-deployment-summary.png " ")
 
@@ -103,7 +103,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 6.  For License type, select **Bring You Own License (BYOL)**.
 
-7.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+7.  Click **Show Advanced Options**, and then select **Enable GoldenGate console public access**.
 
     ![Completed Create GoldenGate Deployment fields](images/02-07-bigdata.png " ")
 

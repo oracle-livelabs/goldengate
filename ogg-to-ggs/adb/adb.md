@@ -28,19 +28,19 @@ This lab assumes you completed the Get started lab.
 
 2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
 
-	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02.png " ")
+	![Virtual Cloud Networks page](./images/01-02-start-vcn.png " ")
 
 3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
-    ![Start VCN Wizard dialog](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-03-vcn-wizard.png " ")
+    ![Start VCN Wizard dialog](./images/01-03-vcn-wizard.png " ")
 
 4.  Enter a name for the VCN, select a compartment, and then click **Next**.
 
-    ![Enter VCN details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-04.png " ")
+    ![Enter VCN details](./images/01-04-vcn-details.png " ")
 
 5.  Verify the configuration, and then click **Create**.
 
-    ![Verify configuration details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-05.png " ")
+    ![Verify configuration details](./images/01-05-create-vcn.png " ")
 
 You can click View VCN Details and see both a Public and Private subnet were created.
 
@@ -52,29 +52,29 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 2.  On the **Autonomous Database &lt;compartment-name&gt;** page, click **Create Autonomous Database**.
 
-    ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-create-adb.png " ")
+    ![Autonomous Database page](./images/02-02-create-adb.png " ")
 
 3. For **Compartment** select a compartment from the dropdown. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **ATPSource** for **Display Name** and **Database Name**.
 
-    ![Create Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-03-compartment.png " ")
+    ![Create Autonomous Database page](./images/02-03-compartment.png " ")
 
 4.  Under **Choose a workload type**, select **Transaction Processing**.
 
-    ![Workload type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-04-workload.png " ")
+    ![Workload type options](./images/02-04-workload.png " ")
 
 5.  Under **Choose a deployment type**, select **Shared Infrastructure**.
 
-    ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-05-deployment.png " ")
+    ![Deployment type options](./images/02-05-deployment.png " ")
 
 6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
 
 7.  Add a password. Take note of the password, you will need it later in this lab.
 
-    ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-07-pw.png " ")
+    ![Password field](./images/02-07-pw.png " ")
 
 8.  Under **Choose a license type**, select **License Included**.
 
-    ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-08-license.png " ")
+    ![License type options](./images/02-08-license.png " ")
 
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
@@ -89,9 +89,11 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 3.  Back in the OCI Console, select your ATP instance from the Autonomous Databases page to view its details and access tools.
 
-    ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-03-atp.png " ")
+    ![Select your Autonomous Database instance](./images/03-03-atp.png " ")
 
 4.  Click **Database actions**.
+
+    ![Select Database actions](./images/03-04-db.png " ")
 
 5.  If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
 
@@ -99,7 +101,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 6.  From the Database Actions menu, under **Development**, select **SQL**.
 
-    ![Database Actions page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-06-db-actions.png " ")
+    ![Database Actions page](./images/03-06-sql.png " ")
 
 7.  (Optional) Click **X** to close the Help dialog.
 
@@ -137,7 +139,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 2.  Click **Create Autonomous Database**.
 
-    ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-create-adb.png " ")
+    ![Autonomous Database page](./images/02-02-create-adb.png " ")
 
 3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **ADWTarget** for **Display Name** and **Database Name**.
 
@@ -177,7 +179,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 1.  Select your ADW instance from the Autonomous Databases list to view its details and access tools.
 
-    ![List of Autonomous Databases](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-01-adw.png " ")
+    ![List of Autonomous Databases](./images/03-03-atp.png " ")
 
 2.  Click **Database Actions**.
 
