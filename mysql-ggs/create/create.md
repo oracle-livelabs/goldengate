@@ -33,15 +33,15 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
 2.  On the GoldenGate **Overview** page, click **Deployments**.
 
-    ![GoldenGate Overview page](./images/01-02-ggs-overview.png " ")
+    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
 3.  You may need to select a compartment.
 
-    > **Note:** *If you're running this workshop in a LiveLabs sandbox, then under List Scope, from the Compartment dropdown, expand the root compartment, and select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.*
+    > **Note:** If you're running this workshop in a LiveLabs sandbox, then under List Scope, from the Compartment dropdown, expand the root compartment, and select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
 
 4.  On the Deployments page, click **Create Deployment**.
 
-    ![Deployments page](./images/01-04-create-deployment.png "")
+    ![Deployments page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-create-deployment.png "")
 
 5.  In the Create Deployment panel, enter `MySQLDeployment` for **Name**.
 
@@ -51,11 +51,11 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
 8.  For **Subnet**, select a subnet.
 
-    > **Note:** *If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.*
+    > **Note:** If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
 9.  For **License type**, select **Bring Your Own License (BYOL)**.
 
-10. Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+10. Click **Show Advanced Options**, and then select **Enable GoldenGate console public access**.
 
 11. Click **Next**.
 
@@ -87,11 +87,11 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 5.  For Subnet, select a subnet.
 
-    >**Note:** *If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.*
+    >**Note:** If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
 6.  For License type, select **Bring You Own License (BYOL)**.
 
-7.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+7.  Click **Show Advanced Options**, and then select **Enable GoldenGate console public access**.
 
 8.  Click **Next**.
 
@@ -123,7 +123,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 3.  Click **Create Connection**.
 
-    ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-connections.png " ")
+    ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
 
 4.  In the Create Connection panel, for Name, enter `SourceMySQL`.
 
@@ -153,7 +153,7 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
 2.  In the Create Connection panel, for **Name**, enter `TargetADW`.
 
-3.  From the **Type** dropdown, select **OCI Autonomous Database**.
+3.  From the **Type** dropdown, select **Oracle Autonomous Database**.
 
     ![Create ADW connection - General information](./images/04-03-adw-conn.png " ")
 
@@ -192,8 +192,6 @@ After your deployments and connections are active, you can assign the connection
     ![Assign connection dialog](./images/05-05-assign-connection.png " ")
 
     The connection appears in the Assigned Connections list.
-
-    ![Assigned connections list](./images/05-05-assigned-connections-b.png " ")
 
 6.  Use the breadcrumb to return to the Deployments page.
 
