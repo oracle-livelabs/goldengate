@@ -88,4 +88,4 @@ In this lab, you learned to monitor performance in the OCI GoldenGate Deployment
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management & Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, February 2023
+* **Last Updated By/Date** - Katherine Wardhana, March 2023

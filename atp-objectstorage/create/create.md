@@ -137,7 +137,7 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
 3.  Click **Create Connection**.
 
-    ![Connections page](images/03-03-connections.png " ")
+    ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
 
 4.  In the Create Connection panel, for Name, enter **SourceATP**.
 
