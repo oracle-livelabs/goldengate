@@ -26,11 +26,11 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-	![Virtual Cloud Networks in Oracle Cloud navigation menu](./images/networking-vcn.png " ")
+	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
 
 2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
 
-	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-start-vcn-wizard.png " ")
+	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-startwizard.png " ")
 
 3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
@@ -54,7 +54,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 2.  On the **Autonomous Database &lt;compartment-name&gt;** page, click **Create Autonomous Database**.
 
-    ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-create-adb.png " ")
+    ![Autonomous Database page](./images/02-02-create-adb.png " ")
 
 3. For **Compartment** select a compartment from the dropdown. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **SourceATP** for **Display Name** and **Database Name**.
 
