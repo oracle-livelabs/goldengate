@@ -29,7 +29,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
 
-	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-startwizard.png " ")
+	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-start-vcn-wizard.png " ")
 
 3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
@@ -233,7 +233,7 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 3.  If prompted, log in with the ADMIN user and password provided when you created the ADW instance.
 
-  	![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-login.png " ")
+  	![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
 
 4.  On the Database Actions Launchpad, under **Administration**, click **Database Users**.
 
