@@ -2,6 +2,10 @@
 
 ## Introduction
 
+To configure credentials, trandata, and various processes for an Oracle GoldenGate deployment, you need to connect to the deployment using the CONNECT command. In this lab, you will connect to the deployment `depl_01`'. The configuration of the processes happens from the Administration Service. 
+
+The credentialstore in Oracle GoldenGate contains the database credentials used to connect to source and target databases. To configure database connections from Oracle GoldenGate, the credentialstore needs to be altered using the ALTER CREDENTIALSTORE command, to add database user credentials. After setting up the credentials in the credentialstore, you will be able to use the DBLOGIN command to connect to the source and target databases from the Admin Client. 
+
 With the ADD TRANDATA command, Oracle GoldenGate acquires the transaction information that it needs from the transaction records. For a seamless data replication in Oracle GoldenGate, you need to first enable TRANDATA for the database tables.
 
 The use of checkpoint table causes checkpoints to be part of the Replicat transaction. Use the `ADD CHECKPOINTTABLE` command to create a checkpoint table in the target database. Replicat uses the table to maintain a record of its read position in the trail for recovery purposes.
@@ -20,7 +24,58 @@ In this lab, you will:
 
 ### Prerequisites
 This lab assumes that you have:
-* Established a database connection by following the steps in **Lab: Add Database Credentials**.
+* Set the environment variables for the container database
+* Test the connection to the database from sqlplus
+
+## Task 1: Connect to the  Administration Service for the Deployment
+1. Run: `adminclient` to open the Admin Client.
+
+2. Execute the following command to connect to the Administration Service for the deployment depl_01:
+
+    ```
+    <copy>
+    CONNECT http://phoenix98251.dev3sub1phx.databasede3phx.oraclevcn.com:9010 DEPLOYMENT NORTH as oggadmin PASSWORD oggadmin
+    </copy>
+    ```
+
+
+## Task 2: Add Database Credentials
+
+You need to establish 2 database connections (`pdbeast` and `pdbwest`) through the Admin Client in preparation to issue other Oracle GoldenGate commands that affect the database.
+
+To create database credentials in the Administration Client:
+
+1. Run the following command to add a user `ggeast`:
+
+    ```
+    <copy>
+    ALTER CREDENTIALSTORE ADD USER ggadmin@orclpdbeast ALIAS ggeast  DOMAIN OracleGoldenGate PASSWORD Welcome1
+    </copy>
+    ```
+
+2.  To test the database connection, run the following command:
+    ```
+    <copy>
+    DBLOGIN USERIDALIAS ggeast
+    </copy>
+    ```
+
+3. Run the following command to add a user `ggwest`:
+
+    ```
+    <copy>
+    ALTER CREDENTIALSTORE ADD USER ggadmin@orclpdbwest ALIAS ggwest  DOMAIN OracleGoldenGate PASSWORD Welcome1
+    </copy>
+    ```
+4.  To test the database connection, run the following command:
+
+    ```
+    <copy>
+    DBLOGIN USERIDALIAS ggwest
+    </copy>
+    ```
+    You have now successfully created database credentials for the source (`ggeast`) and target (`ggwest`) databases.
+
 
 ## Task 1: Enable TRANDATA
 
