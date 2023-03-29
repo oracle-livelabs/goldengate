@@ -29,14 +29,16 @@ Privileges for database common user for CDB1 (c##ggadmin), and local users for P
 
 In this lab, the database users (c##ggadmin and ggadmin) have been granted DBA privileges for simplifying access requirements. 
 
+> **Note:** Granting DBA role is not mandatory for every user. Privileges should be granted depending on the actions that the user needs to perform on the database. For example, to grant DML operation privileges to insert, update, and delete transactions to ggadmin, you can use the GRANT ANY INSERT/UPDATE/DELETE privileges and to further allow users to work with tables and indexes as part of DML operations, use the GRANT CREATE/DROP/ALTER ANY TABLE/INDEX privileges. 
 
+If you want to learn to configure the prerequisites for an Oracle database user in a multitenant database, see the [Appendix 1: Check Parameters Required to Enable GoldenGate on the Database](#appendix-1-check-parameters-required-to-enable-goldengate-on-the-database)
 
 ### Prerequisites
 This lab assumes you have completed:
   - Lab: Prepare setup
   - Lab: Environment setup
 
-## 
+
 ## Task 1: Set the Environment Variables
 
 The script available with this lab will set up the environment variables for the required database. Follow these steps to set the environment variables for CDB1:
@@ -56,6 +58,21 @@ The script available with this lab will set up the environment variables for the
     At the top of the terminal, you will see the list of environment variables that have been set up for CDB1.
 
 ## Task 2: Connect to CDB1, PDWEST, and PDBEAST
+1. Connect to CDB1 common user c##ggadmin.
+     ```
+    <copy>sqlplus c##ggadmin/ggadmin@cdb1</copy>
+
+     ```
+2. Connect to PDBWEST to verify that you are able to connect to the PDB:
+    ```
+    <copy>connect ggadmin/Welcome2OGG@pdbwest</copy>
+
+    ```
+3. Similarly, connect to PDBEAST to verify that you are able to connect to the PDB:
+    ```
+    <copy>connect ggadmin/Welcome2OGG@pdbeast</copy>
+
+    ```
 
 ## Appendix 1: Check Parameters Required to Enable GoldenGate on the Database
 In this lab, Oracle GoldenGate replication is enabled on the database side. However, if you want to check if Oracle GoldenGate is enabled on a database, you can use the following steps:
@@ -67,9 +84,7 @@ In this lab, Oracle GoldenGate replication is enabled on the database side. Howe
     <copy>sqlplus c##ggadmin/ggadmin@cdb1</copy>
 
     ```
-
-    
-
+  
 2. Run the command to check if Oracle GoldenGate is enabled:
 
     ```
@@ -98,4 +113,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Preeti Shukla
 * **Contributors** - Preeti Shukla, Volker Kuhr
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2023
+* **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, April 2023
