@@ -1,123 +1,101 @@
 # Initialize environment
 
 ## Introduction
-In this lab we will setup the required database and Oracle GoldenGate replication users.
+In this lab you will learn to setup the required database and Oracle GoldenGate replication users.
 
 *Estimated Time*:  10 minutes
 
-### Lab Architecture
-![GoldenGate MA Architecture](./images/ggmicroservicesarchitecture.png " ")
-
 ### Objectives
-Understanding how to prepare and set up an Oracle Database for replication and define users for replication. Users are created using scripts that populate the multitenant environment with required Oracle Users while applying aliases to be used by GoldenGate. The Databases used in this lab are identified using the SOE schema in source and targets.
+Understanding how to prepare and set up an Oracle multitenant database for replication and create users for replication. Users are created using scripts that populate the multitenant environment with required Oracle Users while applying aliases to be used by GoldenGate.
+
+### Lab Configuration
+![GoldenGate MA Architecture](./images/data_replication_hub_based.png " ")
+
+This lab environment consists of two container database instances: CDB1 and CDB2. The following table provides a snapshot of the available environment:
+
+|  Name   | Description |
+ ---------| ------------
+| CDB1      | Container Database instance |
+| CDB2      | Container Database instance |
+| PDBWEST   | Pluggable database on container    database CDB1 |
+| PDBEAST   | Pluggable database on container database CDB2|
+| c##ggadmin | Common user on Container Database CDB1 <br><br>Password: Welcome2OGG|
+|ggadmin     | Local user on Pluggable Database PDBWEST of Container Database CDB1 <br><br>Password: Welcome2OGG|
+|ggadmin     | Local user on Pluggable Database PDBWEST of Container Database CDB2 <br><br>Password: Welcome2OGG|
+
+To set up unidirectional replication, CDB1 is the source database with pluggable database PDBWEST. The target database is CDB2 with pluggable database PDBEAST. 
+
+Privileges for database common user for CDB1 (c##ggadmin), and local users for PDBWEST and PDBEAST (ggadmin) have been pre-granted for this lab. 
+
+In this lab, the database users (c##ggadmin and ggadmin) have been granted DBA privileges for simplifying access requirements. 
+
+
 
 ### Prerequisites
 This lab assumes you have completed:
   - Lab: Prepare setup
   - Lab: Environment setup
 
-## Task 1: Validate That Required Processes are Up and Running.
-1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
+## 
+## Task 1: Set the Environment Variables
 
-    - Database Listener
-        - LISTENER
-    - Database Server instance
-        - ORCL
-    - Oracle GoldenGate ServiceManager
+The script available with this lab will set up the environment variables for the required database. Follow these steps to set the environment variables for CDB1:
 
-    Open the terminal on the remote desktop and run the following for a clean start.
+1. Run the following script on the terminal to set the environment variables:
+
+   ```
+   source /usr/local/bin/.set-env-db.sh
+   ```
+
+    ![Setting Environment Variables](./images/setenv_script.png " ")
+
+2. Select 1 to set the database environment for CDB1 when the system prompts you to select the container database option that you want to use.
+
+    ![Select 1 to set environment variables for CDB1](./images/select1.png " ")
+
+    At the top of the terminal, you will see the list of environment variables that have been set up for CDB1.
+
+## Task 2: Connect to CDB1, PDWEST, and PDBEAST
+
+## Appendix 1: Check Parameters Required to Enable GoldenGate on the Database
+In this lab, Oracle GoldenGate replication is enabled on the database side. However, if you want to check if Oracle GoldenGate is enabled on a database, you can use the following steps:
+
+1. Connect to the common CDB user.
+
+    
+    ```
+    <copy>sqlplus c##ggadmin/ggadmin@cdb1</copy>
 
     ```
-    <copy>
-    sudo systemctl restart oracle-database OracleGoldenGate
-    sudo systemctl status oracle-database OracleGoldenGate
-    </copy>
-    ```
 
-2. On the web browser window on the right preloaded with *Oracle GoldenGate ServiceManager*, click on the *Username* field and select the saved credentials for *ggma* user or provide from below to login.
+    
+
+2. Run the command to check if Oracle GoldenGate is enabled:
 
     ```
-    Username: <copy>ggma</copy>
+    <copy>show parameter enable_goldengate_replication</copy>
     ```
 
-    ```
-    Password: <copy>ggma4LL@OCI</copy>
-    ```
+    The return value must be TRUE.
 
-  3. Confirm successful login. Please note that it may take up to 5 minutes after instance provisioning for all processes to fully start.
-
-    ![GoldenGate Login page](./images/goldengate-login.png" ")
-
-    If successful, the page above is displayed and as a result your environment is now ready.  
-
-    In the interest of time and for ease of execution, all prerequisite tasks to prepare the database for GoldenGate replication have already been performed on your VM instance. This includes:
-      - Enabling Archive Log Mode
-      - Enabling Supplemental Logging
-      - Setting DB parameter `enable_goldengate_replication` to  true
-      - Creating GoldenGate users in the database
-
-
-
-## Appendix 1: Managing Startup Services
-
-1. Database Service (Database and Listener).
-
-    - Start
+ 3. From the sql prompt, connect to CDB2 using the command:  
 
     ```
-    <copy>sudo systemctl start oracle-database</copy>
+    <copy>connect c##ggadmin/ggadmin@cdb2</copy>
     ```
+4. After connecting to CDB2, run the following command:
+   ```
+   <copy>show parameter enable_goldengate_replication</copy>
+   ```
+The return value must be TRUE.
 
-    - Stop
-
-    ```
-    <copy>sudo systemctl stop oracle-database</copy>
-    ```
-
-    - Status
-
-    ```
-    <copy>sudo systemctl status oracle-database</copy>
-    ```
-
-    - Restart
-
-    ```
-    <copy>sudo systemctl restart oracle-database</copy>
-    ```
-
-2. Oracle GoldenGate ServiceManager
-
-    - Start
-
-    ```
-    <copy>sudo systemctl start OracleGoldenGate</copy>
-    ```
-
-    - Stop
-
-    ```
-    <copy>sudo systemctl stop OracleGoldenGate</copy>
-    ```
-
-    - Status
-
-    ```
-    <copy>sudo systemctl status OracleGoldenGate</copy>
-    ```
-
-    - Restart
-
-    ```
-    <copy>sudo systemctl restart OracleGoldenGate</copy>
-    ```
 You may now **proceed to the next lab**.
 
 ## Learn More
 
-* [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/understanding/getting-started-oracle-goldengate.html#GUID-F317FD3B-5078-47BA-A4EC-8A138C36BD59)
+* [GoldenGate Quickstarts](https://docs.oracle.com/en/middleware/goldengate/core/21.3/coredoc/quickstart-your-data-replication-oracle-goldengate-microservices-architecture.html)
 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration, November 2020
+* **Author** - Preeti Shukla
 * **Contributors** - Preeti Shukla, Volker Kuhr
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2023
