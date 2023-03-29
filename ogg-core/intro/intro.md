@@ -52,8 +52,8 @@ You may now **proceed to the next lab**.
 
 Use these links to get more information about Oracle GoldenGate:
 
-* [Using Oracle GoldenGate with Oracle Database](https://docs.oracle.com/en/middleware/goldengate/core/21.3/oracle-db/configuring-oracle-goldengate-multitenant-container-database-1.html#GUID[…]DE05)
-* [Step by Step Data Replication Using Oracle GoldenGate Microservices Architecture](https://docs.oracle.com/en/middleware/goldengate/core/21.3/ggmas/quickstarts.html)
+* [Oracle GoldenGate Microservices Documentation](https://docs.oracle.com/en/middleware/goldengate/core/21.3/coredoc/index.html)
+
 * [Command Line Interface Reference for Oracle GoldenGate](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-credentials.html#GUID-6D80E0AC-9497-46C6-92D9-2F817D04BD99)
 
 ## Acknowledgements
