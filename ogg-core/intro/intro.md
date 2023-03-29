@@ -5,9 +5,9 @@ The labs in this workshop walk you through the process of setting up a unidirect
 
 You’ll learn to perform the following tasks using this lab:
 
-•	Configure and test database connections from Oracle GoldenGate using a credential store
-•	Enable trandata
-•	Add heartbeat and checkpoint tables
+•	Add supplemental logging at the source database
+•	Add checkpoint table to the target database
+•	Add heartbeat table to source and target databases
 •	Create Extract and Replicat processes
 •	Test data replication between databases
 
@@ -15,9 +15,9 @@ Estimated Workshop Time: 2 hour
 
 
 ### About Oracle GoldenGate Admin Client
-Oracle GoldenGate is a comprehensive software package for real-time data integration and replication.
+Oracle GoldenGate is a change data capture software that provides real-time data integration and replication.
 
-The Admin Client is a command line utility. You can use it to issue the complete range of commands that configure, control, and monitor Oracle GoldenGate.
+The Admin Client is a command line utility available with Microservices Architecture. You can use it to issue the complete range of commands that configure, control, and monitor Oracle GoldenGate.
 
 This diagram illustrates the main components of the Microservices Architecture and how replication processes operate within a REST API environment.
 
@@ -29,8 +29,8 @@ Watch this short video about the Oracle GoldenGate product family:
 ### Objectives
 
 In this workshop, you will:
+  * Add supplemental logging at source database
   * Add database credentials
-  * Enable Trandata
   * Add Heartbeat table
   * Add Checkpoint table
   * Add an Extract process
@@ -39,7 +39,7 @@ In this workshop, you will:
 ### Prerequisites
 The following are required to complete this lab:
     * Prior knowledge of using Linux command-line options 
-    * Prior knowledge of basic database concepts
+    * Prior knowledge of basic database commands
 
 
 Watch this short video on adding Database Credentials, Extract, and Replicat Processes in Oracle GoldenGate Microservices on MySQL database:
@@ -59,4 +59,4 @@ Use these links to get more information about Oracle GoldenGate:
 ## Acknowledgements
 * **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Volker Kuhr
-* **Last Updated By/Date** - Anuradha Chepuri, June 2022
+* **Last Updated By/Date** - Preeti Shukla, April 2023
