@@ -1,20 +1,22 @@
-# Enable trandata, add Heartbeat and Checkpoint Tables
+# Configure Database Credentials, Trandata, Heartbeat, and Checkpoint Tables
 
 ## Introduction
 
 With the ADD TRANDATA command, Oracle GoldenGate acquires the transaction information that it needs from the transaction records. For a seamless data replication in Oracle GoldenGate, you need to first enable TRANDATA for the database tables.
 
-The Heartbeat functionality helps in monitoring replication lags. Add a heartbeat table to each of your databases by using the `ADD HEARTBEATTABLE` command.
-
 The use of checkpoint table causes checkpoints to be part of the Replicat transaction. Use the `ADD CHECKPOINTTABLE` command to create a checkpoint table in the target database. Replicat uses the table to maintain a record of its read position in the trail for recovery purposes.
+
+The Heartbeat functionality helps in monitoring replication lags. Add a heartbeat table to each of your databases by using the `ADD HEARTBEATTABLE` command.
 
 Estimated Time: 30 minutes
 
 ### Objectives
 In this lab, you will:
-* Enable Trandata.
-* Add Heartbeat table.
-* Add Checkpoint table.
+* Connect to the deployment using Admin Client
+* Add and test the database connections from Oracle GoldenGate
+* Enable Trandata on source database
+* Add Heartbeat table for the source and target databases
+* Add Checkpoint table for the target database
 
 ### Prerequisites
 This lab assumes that you have:
