@@ -53,7 +53,7 @@ This lab assumes that you completed all preceding labs.
 
 8.  For License type, select **Bring Your Own License (BYOL)**.
 
-9.  Click **Show advanced options**, and then select **Create public endpoint**.
+9.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
     ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
@@ -69,13 +69,15 @@ This lab assumes that you completed all preceding labs.
 
 15. Click **Create**.
 
+    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-summary.png " ")
+
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
 ## Task 2: Create the source and target connections
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the GoldenGate page.
 
-    ![GoldenGate in Oracle Cloud Console breadcrumb highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-01-breadcrumb.png " ")
+    ![GoldenGate in Oracle Cloud Console breadcrumb highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-01-deployment-details.png " ")
 
 2.  Click **Connections**.
 
@@ -160,7 +162,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
     ![Script Output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-09-sql-script-return.png " ")
 
 
-11. Repeat steps 1 to 7 to unlock the GGADMIN user for **Autonomous Data Warehouse** with the password from Task 2 Step 10. Log out of Database Actions when you're done.
+11. Repeat steps 1 to 6 to unlock the GGADMIN user for **Autonomous Data Warehouse** with the password from Task 2 Step 10. Log out of Database Actions when you're done.
 
 ## Task 4: Review the deployment details
 
@@ -202,11 +204,11 @@ In this lab, you created an OCI GoldenGate deployment, and created connections t
 
 1. After the two connections are assigned, click **Launch Console**.
 
-    ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-01-launchconsole.png " ")
+    ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/07-01-launchconsole.png " ")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password you provided in the previous Lab, and then click **Sign In**.
 
-    ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin.png " ")
+    ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/07-02-ggs-deploymentconsole-signin.png " ")
 
 After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver services, as well as add Extracts and Replicats for your data replication tasks.
 

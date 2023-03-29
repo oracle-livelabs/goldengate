@@ -2,7 +2,7 @@
 
 ## About this workshop
 
-Oracle GoldenGate, the industry-leading data replication and integration software, is available as a fully-managed, cloud native service on Oracle Cloud Infrastructure. This workshop guides you on how to replicate data from OCI MySQL Database to Autonomous Data Warehouse using OCI GoldenGate.
+Oracle GoldenGate, the industry-leading data replication and integration software, is available as a fully-managed, cloud native service on Oracle Cloud Infrastructure. In this workshop, you learn how to replicate data from OCI MySQL Database to Autonomous Data Warehouse using OCI GoldenGate.
 
 Estimated time: 2 hours
 
@@ -28,4 +28,4 @@ Oracle Cloud Infrastructure GoldenGate is a fully-managed service that uses Orac
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, November 2022
+* **Last Updated By/Date** - Jenny Chan, March 2023

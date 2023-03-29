@@ -187,7 +187,10 @@ If for any reason you want to login from a location that is external to your rem
     ![GGSA Login](images/login-ggsa-external-2.png " ")
     ![GGSA Landing](images/login-ggsa-external-3.png " ")
 
+
+You may now [proceed to the next lab](#next)
+
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
 * **Contributors** - Ashish Kumar, Sumathi Nelapati, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2022
+* **Last Updated By/Date** - Pratibha Manjunath, March 2023
