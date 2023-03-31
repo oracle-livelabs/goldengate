@@ -89,7 +89,7 @@ To create database credentials using the Admin Client:
     ALTER CREDENTIALSTORE ADD USER ggadmin@pdbwest ALIAS ggwest DOMAIN OracleGoldenGate PASSWORD Welcome1
     </copy>
     ```
-4.  To test the database connection, run the following command:
+4.  Test the database connection using the DBLOGIN command:
 
     ```
     <copy>
@@ -99,8 +99,32 @@ To create database credentials using the Admin Client:
     The output would display as follows for a successful connection:
     [Connected to the pluggable database pdbwest](./images/pdbwest_connectd.png)
 
+  5. Add the credentials for the target PDB, <b>pdbeast</b> to the credentialstore:
+     ```
+    <copy>
+    ALTER CREDENTIALSTORE ADD USER ggadmin@pdbeast ALIAS ggeast DOMAIN OracleGoldenGate PASSWORD Welcome1
+    </copy>
+    ```
 
-## Task 1: Enable TRANDATA
+   *Note: For <b>pdbeast</b>, only the pluggable database credentials are required because this would be the target database. 
+
+   6. Test the connection to <b>pdbeast</b> with DBLOGIN:
+      
+      ```
+      <copy>
+      DBLOGIN USERIDALIAS ggwest
+      </copy>
+      ```
+   After the connection is successful, you can begin setting up other requirements for data replication, discussed in the next tasks.  
+
+## Task 3: Enable TRANDATA on source database
+
+By enabling trandata, supplemental logging is enabled for the source database at the schema, table, or procedure level. 
+
+In this lab, you will enable trandata at the schema level for the source database CDB1. Using the ADD SCHEMATRANDATA command, Oracle GoldenGate acquires the transaction information required from the transaction records for the HR schema available with this lab. 
+
+To enable trandata, run the following commands:
+
 
 To enable TRANDATA:
 
