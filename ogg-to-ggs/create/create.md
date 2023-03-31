@@ -204,11 +204,11 @@ In this lab, you created an OCI GoldenGate deployment, and created connections t
 
 1. After the two connections are assigned, click **Launch Console**.
 
-    ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-01-launchconsole.png " ")
+    ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/07-01-launchconsole.png " ")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password you provided in the previous Lab, and then click **Sign In**.
 
-    ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin.png " ")
+    ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/07-02-ggs-deploymentconsole-signin.png " ")
 
 After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver services, as well as add Extracts and Replicats for your data replication tasks.
 

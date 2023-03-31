@@ -27,6 +27,8 @@ This lab assumes you have completed the Getting Started lab.
 
 2.  Click **Start VCN Wizard**.
 
+    ![Virtual Cloud Networks page](./images/01-02-start-vcn.png " ")
+
 3.  Select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
     ![Virtual Cloud Networks page](./images/01-03-vcn-wizard.png " ")
@@ -36,6 +38,8 @@ This lab assumes you have completed the Getting Started lab.
     ![Enter VCN details](./images/01-04-vcn-details.png " ")
 
 5.  Review the configuration, and then click **Create**.
+
+    ![Verify configuration details](./images/01-05-create-vcn.png " ")
 
 You can click **View VCN Details** and to verify both a Public and Private subnet were created.
 
@@ -49,7 +53,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
     ![Autonomous Database page](./images/02-02-create-adb.png " ")
 
-3. Select **Compartment** by clicking on the drop-down list. Note that yours will be different - do not select **ManagedCompartmentforPaaS**. Enter **SourceATP** for **Display Name** and **Database Name**.)
+3. Select **Compartment** by clicking on the drop-down list. Note that yours will be different - do not select **ManagedCompartmentforPaaS**. Enter **SourceATP** for **Display Name** and **Database Name**.
 
     ![Create Autonomous Database page](./images/02-03-compartment.png " ")
 
@@ -94,7 +98,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
 6.  From the Database Actions menu, under **Development**, select **SQL**.
 
-    ![Open navigation menu](./images/05-04-db-actions.png " ")
+    ![Open navigation menu](./images/03-06-sql.png " ")
 
 7.  (Optional) Click **X** to close the Help dialog.
 
