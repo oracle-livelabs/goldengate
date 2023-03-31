@@ -42,9 +42,9 @@ This lab assumes that you have:
 * Test the connection to the database from sqlplus prompt
 
 ## Task 1: Connect to the  Administration Service for the Deployment
-1. Run: `adminclient` to open the Admin Client.
+1. Run `adminclient` to open the Admin Client.
 
-2. Execute the following command to connect to the Administration Service for the deployment depl_01:
+2. Execute the following command to connect to the Administration Service for the deployment <b>depl_01</b>:
 
     ```
     <copy>
@@ -63,7 +63,7 @@ On CDB2, you only need to set up database credentials for the <b>ggadmin</b> use
 
 To create database credentials using the Admin Client:
 
-1. Run the following command to add a user `ggeast`:
+1. Run the following command to add the common user for CDB1 with credentials alias as `cggwest`:
 
     ```
     <copy>
@@ -72,18 +72,21 @@ To create database credentials using the Admin Client:
     ```
     The USERIDALIAS for connecting to CDB1 is <b>cggwest</b>.
 
-2.  To test the database connection, run the following command:
+2.  Test the database connection:
     ```
     <copy>
-    DBLOGIN USERIDALIAS ggeast
+    DBLOGIN USERIDALIAS cggwest
     </copy>
     ```
+   The output would display as follows for a successful connection:
 
-3. Run the following command to add a user `ggwest`:
+   [Connected to Common user](./images/cggwest_connected.png)
+
+3. Run the following command to add the PDB database user `ggadmin` for the pluggable database <b>pdbwest</b>. The USERIDALIAS is `ggwest`.
 
     ```
     <copy>
-    ALTER CREDENTIALSTORE ADD USER ggadmin@orclpdbwest ALIAS ggwest  DOMAIN OracleGoldenGate PASSWORD Welcome1
+    ALTER CREDENTIALSTORE ADD USER ggadmin@pdbwest ALIAS ggwest DOMAIN OracleGoldenGate PASSWORD Welcome1
     </copy>
     ```
 4.  To test the database connection, run the following command:
@@ -93,7 +96,8 @@ To create database credentials using the Admin Client:
     DBLOGIN USERIDALIAS ggwest
     </copy>
     ```
-    You have now successfully created database credentials for the source (`ggeast`) and target (`ggwest`) databases.
+    The output would display as follows for a successful connection:
+    [Connected to the pluggable database pdbwest](./images/pdbwest_connectd.png)
 
 
 ## Task 1: Enable TRANDATA
