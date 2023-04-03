@@ -3,87 +3,104 @@
 ## Introduction
 Use `ADD EXTRACT` to create an Extract group/process.
 
-This lab describes how to add an Extract group (`exte`), which then captures data from the source database and writes to a trail file (`ea`).
+This lab describes how to add an Extract (`exte`), which then captures data from the source database **pdbwest** and writes to a trail file (`ea`).
 
 Estimated Time: 10 minutes
 
 ### Objectives
 In this lab, you will:
 * Create an Extract process.
-* Edit the parameter file.
 * Register the Extract process.
 * Add the Extract trail.
+* Edit the parameter file.
 * Start the Extract process.
 
 ### Prerequisites
 This lab assumes that you have:
 - The appropriate database privileges to be able to execute the commands in the Admin Client.
-- Completed the tasks in **Lab - Enable Trandata, Add Heartbeat and Checkpoint Tables**.
+- Completed the tasks in **Lab - Configure Database Credentials, Trandata, Heartbeat, and Checkpoint Tables**.
 
 ## Task 1: Add an Extract Process
 
-To add an extract process and Exttrail:
+Extract is created for the root container **CDB1**. Follow the given steps to add Extract **extw**:
 
 1. Test the database connection by running the following command:
     ```
     <copy>
-    DBLOGIN USERIDALIAS ggeast
+    DBLOGIN USERIDALIAS cggwest
     </copy>
     ```
+
+    The output shows:
+
+    ![DBLOGIN cggwest](./images/dblogin_extw.png " ")
 
 2. Add an Extract:
     ```
     <copy>
-    ADD EXTRACT exte, TRANLOG, BEGIN NOW
+    ADD EXTRACT extw, INTEGRATED TRANLOG, BEGIN NOW
     </copy>
     ```
 
-    **exte** is the name of the Extract that is being created. However, the Extract is yet to start.
-3. Configure the Extract parameters in the Extract parameter file (`exte.prm`):
+   The output shows:
+
+   ![Add extract output](./images/add_extract.png " ")
+
+    **extw** is the name of the Extract that is being created. However, the Extract is yet to start.
+
+3. Register the Extract:
+    
     ```
     <copy>
-    EDIT PARAMS exte
+    REGISTER EXTRACT extw Database Container (pdbwest)
+    </copy>
+    ```
+   The output shows:
+
+   ![Register Extract](./images/register_extract.png " ")
+
+4. Edit the Extract parameters in the Extract parameter file (`exte.prm`):
+    ```
+    <copy>
+    EDIT PARAMS extw
     </copy>
     ```
     The Extract parameter file is as follows:
     ```
     <copy>
-    EXTRACT exte
-    USERIDALIAS cggnorth DOMAIN OracleGoldenGate
-    EXTTRAIL east/ea
-    SOURCECATALOG pdbeast
-    DDL INCLUDE MAPPED
+    EXTRACT extw
+    USERIDALIAS cggwest domain OracleGoldenGate
+    EXTTRAIL west/ea
+    SOURCECATALOG pdbwest
+    DDL INCLUDE ALL
     TABLE hr.*;
     </copy>
     ```
 
-4. Register the Extract:
+5.  Save the Extract parameter file and exit the editor.
+
+6. Add the trail file for the Extract:
     ```
     <copy>
-    REGISTER EXTRACT exte
+    ADD EXTTRAIL west/ea EXTRACT extw
     </copy>
     ```
-
-5.  Add the Extract trail file:
-    ```
-    <copy>
-    ADD EXTTRAIL east/ea
-    </copy>
-    ```
-
+  
 6. Start the Extract:
     ```
     <copy>
-    START EXTRACT exte
+    START EXTRACT extw
     </copy>
     ```
-  The Extract group **exte** starts.
+  The Extract **extw** starts, as shown in the following image:
+
+  ![Start Extract extw](./images/start_extract.png " ")
 
 7. To confirm the Extract has started, run the following command:
 
     ```
     <copy>
-    INFO EXTRACT exte
+    INFO EXTRACT extw
     </copy>
     ```
 
@@ -95,11 +112,11 @@ The following is a sample Extract output:
 You may now **proceed to the next lab**.
 
 ## Learn More
-* [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)
+* [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.3/coredoc/administer-microservices-command-line-interface.html#GUID-0403FAF0-B2F7-48A0-838F-AB4421E5C5E2)
 * [ADD EXTRACT](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-extract.html#GUID-D9611110-A8D6-4118-837E-BF1900262666)
 * [SOURCEISCATALOG](https://docs.oracle.com/en/middleware/goldengate/core/21.3/reference/sourcecatalog.html#GUID-C2D88643-6839-432D-A7E4-63B874859566)
 
 ## Acknowledgements
-* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Preeti Shukla, Volker Kuhr, Madhusudhan Rao, Kevin Lazarz
-* **Last Updated By/Date** - Anuradha Chepuri, June 2022
+* **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Volker Kuhr
+* **Last Updated By/Date** - Preeti Shukla, April 2023
