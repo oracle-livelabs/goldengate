@@ -69,9 +69,9 @@ This lab assumes that you have:
         </copy>
         ```
 
-   The following image displays the query on the sql prompt:
+       The following image displays the query on the sql prompt:
 
-   ![Update records in pdbwest](./images/updatesqlquery.png " ")
+        ![Update records in pdbwest](./images/updatesqlquery.png " ")
     
 ## Task 2: Verify that the updated records are captured by Extract
 
@@ -108,9 +108,9 @@ This lab assumes that you have:
        STATS EXTRACT extw
       </copy>
       ```
-  The output displays as follows
+      The output displays as follows
 
-  ![Extract statistics](./images/stats_extw.png " ")
+      ![Extract statistics](./images/stats_extw.png " ")
 
   Notice that there are 3 update records captured by Extract.
 
@@ -132,9 +132,9 @@ This lab assumes that you have:
        STATS REPLICAT repe
       </copy>
       ```
-  The output displays 3 update records:
+     The output displays 3 update records:
 
-   ![STATS Replicat](./images/stats_repe.png " ")
+      ![STATS Replicat](./images/stats_repe.png " ")
 
    3. Exit from admin client:
 
@@ -151,7 +151,7 @@ This lab assumes that you have:
        </copy>
       ```
     
-   ![Connect to pdbeast](./images/connect_pdbeast.png " ")
+       ![Connect to pdbeast](./images/connect_pdbeast.png " ")
 
    5. Check the updated records in the database by running the following SQL query on target database **pdbeast**:
  
@@ -165,11 +165,11 @@ This lab assumes that you have:
       </copy>
       ```
 
-The output should displays as follows:
+      The output should displays as follows:
 
-   ![Output for updated records in pdbeast](./images/pdbeast_output.png)
+      ![Output for updated records in pdbeast](./images/pdbeast_output.png)
 
-Notice the updated phone numbers for each of the records.
+      Notice the updated phone numbers for each of the records.
 
 
 ## Learn More
