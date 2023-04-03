@@ -80,10 +80,10 @@ This lab assumes that you have:
    1. Start the Admin Client:
    
        ```
-      <copy>
-      adminclient
-      </copy>
-      ```
+         <copy>
+            adminclient
+         </copy>
+       ```
   
    2. Connect to the deployment:
 
@@ -108,11 +108,11 @@ This lab assumes that you have:
        STATS EXTRACT extw
       </copy>
       ```
-      The output displays as follows
+      The output displays the following:
 
       ![Extract statistics](./images/stats_extw.png " ")
 
-  Notice that there are 3 update records captured by Extract.
+      Notice that there are 3 update records captured by Extract.
 
 ## Task 3: Verify that the Replicat applied the updates to the target database
 
