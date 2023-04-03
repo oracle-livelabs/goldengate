@@ -19,17 +19,20 @@ This lab assumes that you have:
 - Completed the tasks in **Lab - Add Extract**.
 - Completed the tasks in **Lab - Add Replicat**.
 
+
 ## Task 1: Update records in source database **pdbwest**
 
    To test the data replication, let’s update some columns in the hr.employees table on the source database, The result should show the replicated result on the target database. 
 
    In this case, update the phone number columns for 3 employees from the hr.employees table:
 
+   
    |  FIRST_NAME       |      LAST_NAME  |
    --------------------|------------------
    |  Peter            |      Vargas     |
    |  Alana            |      Walsh      |
    |  Jennifer         |      Whalen     |
+
 
    To update records in the source database **pdbwest**:
 
@@ -40,7 +43,7 @@ This lab assumes that you have:
       source /usr/local/bin/.set-env-db.sh
       </copy>
       ```
-   2. Start the sql prompt and connect to **pdbwest:
+   2. Start the sql prompt and connect to **pdbwest**:
 
        ```
        <copy>
@@ -57,19 +60,20 @@ This lab assumes that you have:
        ```
         
    4. Run the following command to update the phone numbers for the specified employees and then commit the transaction:
-        ```
-         <copy>
-          UPDATE hr.employees set PHONE_NUMBER='501-901-000-345' where LAST_NAME='Vargas' and FIRST_NAME='Peter';
+          
+         ```
+           <copy>
+            UPDATE hr.employees set PHONE_NUMBER='501-901-000-345' where LAST_NAME='Vargas' and FIRST_NAME='Peter';
 
-          UPDATE hr.employees set PHONE_NUMBER='305.234.656' where LAST_NAME='Walsh' and FIRST_NAME='Alana';
+            UPDATE hr.employees set PHONE_NUMBER='305.234.656' where LAST_NAME='Walsh' and FIRST_NAME='Alana';
 
-          UPDATE hr.employees set PHONE='656.424.971' where LAST_NAME='Whalen' and FIRST_NAME='Jennifer';
+            UPDATE hr.employees set PHONE='656.424.971' where LAST_NAME='Whalen' and FIRST_NAME='Jennifer';
 
-          COMMIT;
-        </copy>
-        ```
-
-       The following image displays the query on the sql prompt:
+            COMMIT;
+          </copy>
+         ```   
+         
+         The following image displays the query on the sql prompt:
 
         ![Update records in pdbwest](./images/updatesqlquery.png " ")
     
