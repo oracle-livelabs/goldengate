@@ -150,19 +150,20 @@ To enable trandata, run the following commands:
 
      This ensures that all tables added or updated within the HR schema, are logged. If you want to enable supplemental logging for a particular table, for example, EMPLOYEES table in HR schema, then you can also run the command:
 
-     ```
-     <copy>
-     ADD TRANDATA hr.employees
-     </copy>
-     ```
+
+       ```
+        <copy>
+         ADD TRANDATA hr.employees
+        </copy>
+       ```
 
   3. Run the following command to verify that supplemental logging is enabled at the schema level :
 
-     ```
-     <copy>
-     INFO SCHEMATRANDATA hr
-     </copy>
-     ```
+       ```
+       <copy>
+        INFO SCHEMATRANDATA hr
+       </copy>
+       ```
 
      The output for the **hr** schema is as follows:
 
@@ -170,11 +171,11 @@ To enable trandata, run the following commands:
 
   4. Run the following command to verify that supplemental logging is enabled at the table level.
 
-     ```
-     <copy>
-     INFO TRANDATA hr.employees
-     </copy>
-     ```
+      ```
+       <copy>
+        INFO TRANDATA hr.employees
+       </copy>
+       ```
 
 
      The output for **employees** table of the **hr** schema is as follows:
