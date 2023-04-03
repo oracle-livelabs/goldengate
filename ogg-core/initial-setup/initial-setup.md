@@ -43,66 +43,85 @@ This lab assumes you have completed:
 
 The script available with this lab will set up the environment variables for the required database. Follow these steps to set the environment variables for CDB1:
 
-1. Run the following script on the terminal to set the environment variables:
+  1. Run the following script on the terminal to set the environment variables:
 
-   ```
-   source /usr/local/bin/.set-env-db.sh
-   ```
+       ```
+        <copy>
+         source /usr/local/bin/.set-env-db.sh
+        </copy>
+       ```
+    
 
-    ![Setting Environment Variables](./images/setenv_script.png " ")
+      The following image shows the execution of the .set-env-db.sh script:
+      
+      
+      ![Setting Environment Variables](./images/setenv_script.png " ")
 
-2. Select 1 to set the database environment for CDB1 when the system prompts you to select the container database option that you want to use.
+  2. Select 1 to set the database environment for CDB1 when the system prompts you to select the container database option that you want to use.
 
-    ![Select 1 to set environment variables for CDB1](./images/select1.png " ")
+  
+       ![Select 1 to set environment variables for CDB1](./images/select1.png " ")
 
-    At the top of the terminal, you will see the list of environment variables that have been set up for CDB1.
+     At the top of the terminal, you will see the list of environment variables that have been set up for CDB1.
 
 ## Task 2: Connect to CDB1, PDWEST, and PDBEAST
-1. Connect to CDB1 common user c##ggadmin.
-     ```
-    <copy>sqlplus c##ggadmin/ggadmin@cdb1</copy>
 
-     ```
-2. Connect to PDBWEST to verify that you are able to connect to the PDB:
-    ```
-    <copy>connect ggadmin/Welcome2OGG@pdbwest</copy>
+   1. Connect to CDB1 common user c##ggadmin.
+    
+       ```
+       <copy>
+       sqlplus c##ggadmin/ggadmin@cdb1
+       </copy>
 
-    ```
-3. Similarly, connect to PDBEAST to verify that you are able to connect to the PDB:
-    ```
-    <copy>connect ggadmin/Welcome2OGG@pdbeast</copy>
+       ```
+   2. Connect to PDBWEST to verify that you are able to connect to the PDB:
+      
+      ```
+       <copy>
+         connect ggadmin/Welcome2OGG@pdbwest
+       </copy>
 
-    ```
+      ```
+   3. Similarly, connect to PDBEAST to verify that you are able to connect to the PDB:
+     
+      ```
+       <copy>
+         connect ggadmin/Welcome2OGG@pdbeast
+       </copy>
+      ```
 
 ## Appendix 1: Check Parameters Required to Enable GoldenGate on the Database
-In this lab, Oracle GoldenGate replication is enabled on the database side. However, if you want to check if Oracle GoldenGate is enabled on a database, you can use the following steps:
+   
+   In this lab, Oracle GoldenGate replication is enabled on the database side. However, if you want to check if Oracle GoldenGate is enabled on a database, you can use the following steps:
 
-1. Connect to the common CDB user.
+   1. Connect to the common CDB user.
 
-    
-    ```
-    <copy>sqlplus c##ggadmin/ggadmin@cdb1</copy>
+      ```
+       <copy>sqlplus c##ggadmin/ggadmin@cdb1</copy>
 
-    ```
+      ```
   
-2. Run the command to check if Oracle GoldenGate is enabled:
+   2. Run the command to check if Oracle GoldenGate is enabled:
 
-    ```
-    <copy>show parameter enable_goldengate_replication</copy>
-    ```
+        ```
+         <copy>show parameter enable_goldengate_replication</copy>
+        ```
 
-    The return value must be TRUE.
+        The return value must be TRUE.
 
- 3. From the sql prompt, connect to CDB2 using the command:  
+   3. From the sql prompt, connect to CDB2 using the command:  
 
-    ```
-    <copy>connect c##ggadmin/ggadmin@cdb2</copy>
-    ```
-4. After connecting to CDB2, run the following command:
-   ```
-   <copy>show parameter enable_goldengate_replication</copy>
-   ```
-The return value must be TRUE.
+      ```
+      <copy>connect c##ggadmin/ggadmin@cdb2</copy>
+      
+      ```
+   4. After connecting to CDB2, run the following command:
+      
+       ```
+        <copy>show parameter enable_goldengate_replication</copy>
+       ```
+     
+       The return value must be TRUE.
 
 You may now **proceed to the next lab**.
 
