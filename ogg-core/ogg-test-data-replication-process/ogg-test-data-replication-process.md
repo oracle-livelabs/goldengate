@@ -67,7 +67,7 @@ This lab assumes that you have:
 
             UPDATE hr.employees set PHONE_NUMBER='305.234.656' where LAST_NAME='Walsh' and FIRST_NAME='Alana';
 
-            UPDATE hr.employees set PHONE='656.424.971' where LAST_NAME='Whalen' and FIRST_NAME='Jennifer';
+            UPDATE hr.employees set PHONE_NUMBER='656.424.971' where LAST_NAME='Whalen' and FIRST_NAME='Jennifer';
 
             COMMIT;
           </copy>
