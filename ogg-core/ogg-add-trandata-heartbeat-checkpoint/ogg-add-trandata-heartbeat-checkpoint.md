@@ -80,7 +80,7 @@ To create database credentials using the Admin Client:
     ```
    The output would display as follows for a successful connection:
 
-   [Connected to Common user](./images/cggwest_connected.png)
+   ![Connected to Common user](./images/cggwest_connected.png " ")
 
 3. Run the following command to add the PDB database user `ggadmin` for the pluggable database <b>pdbwest</b>. The USERIDALIAS is `ggwest`.
 
@@ -97,7 +97,8 @@ To create database credentials using the Admin Client:
     </copy>
     ```
     The output would display as follows for a successful connection:
-    [Connected to the pluggable database pdbwest](./images/pdbwest_connectd.png)
+
+    ![Connected to the pluggable database pdbwest](./images/pdbwest_connectd.png " ")
 
   5. Add the credentials for the target PDB, <b>pdbeast</b> to the credentialstore:
      ```
@@ -125,68 +126,76 @@ In this lab, you will enable trandata at the schema level for the source databas
 
 To enable trandata, run the following commands:
 
+1. Connect to <b>pdbwest</b> using the <b>ggwest</b> credential alias:
 
-To enable TRANDATA:
-
-1. Execute the following command:
-    ```
+   ```
     <copy>
-    ADD TRANDATA pdbeast.hr.employees
+    DBLOGIN USERIDALIAS ggwest
     </copy>
-    ```
+    ``` 
 
-2. Run the following command to verify the output:
 
-    ```
+2. Run the ADD SCHEMATRANDATA command to enable supplemental logging at the schema level.
+
+   ```
     <copy>
-    INFO TRANDATA pdbeast.hr.employees
+    ADD SCHEMATRANDATA hr
     </copy>
-    ```
 
-The Trandata output for **hr.employees** is as follows:
-  ```
-Logging of supplemental transaction log data is disabled for table PDBEAST.HR.COUNTRIES.
-Logging of supplemental transaction log data is disabled for table PDBEAST.HR.DEPARTMENTS.
-Logging of supplemental transaction log data is enabled for table PDBEAST.HR.EMPLOYEES.
+   ```
+   
+   ![Add schematrandata](./images/add_schematrandata.png " ")
 
-All columns supplementally logged for table `PDBEAST.HR.EMPLOYEES`.
-  ```
-
-## Task 2: Add Heartbeat Tables
-Add the heartbeat tables for both source and target endpoints by connecting to **ggeast** and **ggwest** database credential aliases.
-
-To add the Heartbeat tables:
-
-1. Execute the following command:
-    ```
-    <copy>
-    ADD HEARTBEATTABLE
-    </copy>
-    ```
-
-2. Repeat step 1 on the target database.
-
-3. Run the following command to verify the output:
+   This ensures that all tables added or updated within the HR schema, are logged. If you want to enable supplemental logging for a particular table, for example, EMPLOYEES table in HR schema, then you can also run the command:
 
     ```
     <copy>
-    INFO HEARTBEATTABLE
+    ADD TRANDATA hr.employees
     </copy>
     ```
 
-The HEARTBEAT table gets added and the output is as follows:
-  ```
-2022-04-19T12:59:16Z  INFO    OGG-14101  Successfully added heartbeat table.
-  ```
+3. Run the following command to verify that supplemental logging is enabled at the schema level :
 
-## Task 3: Add Checkpoint table
+    ```
+    <copy>
+    INFO SCHEMATRANDATA hr
+    </copy>
+    ```
+
+The output for the **hr** schema is as follows:
+
+![Output for INFO SChEMATRANDATA](./images/info_schematran.png " ")
+
+4. Run the following command to verify that supplemental logging is enabled at the table level.
+
+    ```
+    <copy>
+    INFO TRANDATA hr.employees
+    </copy>
+    ```
+
+
+The output for **employees** table of the **hr** schema is as follows:
+
+![Output for INFO TRANDATA](./images/info_trandata.png " ")
+
+
+## Task 4: Add checkpoint table for target
 
 To add the Checkpoint table:
 
+1. Connect to **pdbeast** using the credential alias **ggeast**
+
+    ```
+    <copy>
+    DBLOGIN USERIDALIAS ggeast
+    </copy>
+    ```
+
 1. Execute the following command:
     ```
     <copy>
-    ADD CHECKPOINTTABLE ggadmin.ggs_checkpointtable
+    ADD CHECKPOINTTABLE ggadmin.ggs_checkpoint
     </copy>
     ```
 
@@ -197,25 +206,101 @@ To add the Checkpoint table:
     INFO CHECKPOINTTABLE ggadmin.ggs_checkpointtable
     </copy>
     ```
+3. Run the **INFO** command to verify that the checkpoint table is added.
+
+    ```
+    <copy>
+    INFO CHECKPOINTTABLE ggadmin.ggs_checkpoint
+    </copy>
+    ```
 
 The Checkpoint table gets added as follows:
-  ```
-22022-04-19T06:24:55Z  INFO    OGG-15189  Default catalog name PDBEAST will be used for table specification ggadmin.*.
-2022-04-19T06:24:55Z  INFO    OGG-08100  Checkpoint table PDBEAST.GGADMIN.GGS_CHKPT has been created on 2022-04-19 06:22:56.
-2022-04-19T06:24:55Z  INFO    OGG-08100  Checkpoint table PDBEAST.GGADMIN.GGS_CHECKPOINTTABLE has been created on 2022-04-19 06:15:55.
-  ```
+
+    ![Add checkpointtable for target](./images/add_checkpointtable.png " ")
+
+
+## Task 5: Add Heartbeattable for source and target
+
+Add the heartbeat tables for both source and target endpoints by connecting to **ggeast** and **ggwest** database credential aliases.
+
+For **ggwest**
+
+1. Connect to the database (pdbwest) using DBLOGIN:
+
+    ```
+    <copy>
+    DBLOGIN USERIDALIAS ggwest
+    </copy>
+    ```
+
+2. Run the following command:
+
+    ```
+    <copy>
+    ADD HEARTBEATTABLE
+    </copy>
+    
+    ```
+  The output displays as shown here:
+
+  ![Add heartbeattable](./images/add_heartbeattable.png " ")
+
+3. Run the **INFO** command to verify that the heartbeattable is added for **ggwest**
+
+    ```
+    <copy>
+    INFO HEARTBEATTABLE
+    </copy>
+    
+    ```
+  
+  The output list the heartbeat tables that are added for the source database (**pdbwest**) with alias **ggwest**.
+
+  ![INFO HEARTBEATTABLE command output](./images/info_heartbeattable.png " ")
+
+For **ggeast**
+
+4. Connect to the target database **pdbeast** using the alias **ggeast**
+
+    ```
+    <copy>
+    DBLOGIN USERIDALIAS ggeast
+    </copy>
+    
+    ```
+
+5. Add the heartbeat table:
+
+    ```
+    <copy>
+    ADD HEARTBEATTABLE
+    </copy>
+    
+    ```
+
+6. Run the INFO HEARTBEATTABLE command to view details of the heartbeat tables added for **pdbeast**
+
+    ```
+    <copy>
+    INFO HEARTBEATTABLE
+    </copy>
+    
+    ```
+The output should display as follows:
+
+![INFO HEARTBEATTABLE for ggeast](./images/info_heartbeattable_ggeast.png " ")
 
 You may now **proceed to the next lab**.
 
 
 ## Learn More
-* [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)
+* [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.3/coredoc/administer-microservices-command-line-interface.html#GUID-0403FAF0-B2F7-48A0-838F-AB4421E5C5E2)
 * [ADD TRANDATA](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-trandata.html#GUID-D3FD004B-81E4-4185-92D3-812834A5DEFC)
 * [ADD HEARTBEATTABLE](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-heartbeattable.html#GUID-126E30A2-DC7A-4C93-93EC-0EB8BA7C13CB)
 * [ADD CHECKPOINTTABLE](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-checkpointtable.html#GUID-870D65C1-A18E-4B2D-8257-F58E9A808197)
 * [Command Line Interface Reference for Oracle GoldenGate](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-checkpointtable.html#GUID-870D65C1-A18E-4B2D-8257-F58E9A808197)
 
 ## Acknowledgements
-* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Preeti Shukla, Volker Kuhr, Madhusudhan Rao
-* **Last Updated By/Date** - Anuradha Chepuri, June 2022
+* **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Volker Kuhr
+* **Last Updated By/Date** - Preeti Shukla, April 2023
