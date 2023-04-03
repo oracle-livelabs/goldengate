@@ -8,7 +8,7 @@ The Administration Service is used to configure database login credentials, tran
 
 The credentialstore in Oracle GoldenGate contains the database credentials used to connect to source and target databases. To configure database connections from Oracle GoldenGate, the credentialstore needs to be altered using the ALTER CREDENTIALSTORE command, to add database user credentials. After setting up the credentials in the credentialstore, you will be able to use the DBLOGIN command to connect to the source and target databases from the Admin Client. 
 
-With the ADD TRANDATA command, Oracle GoldenGate acquires the transaction information that it needs from the transaction records. For a seamless data replication in Oracle GoldenGate, you need to first enable TRANDATA for the database tables.
+With the ADD SCHEMATRANDATA and ADD TRANDATA commands, Oracle GoldenGate acquires the transaction information that it needs from the transaction records. For a seamless data replication in Oracle GoldenGate, you need to first add TRANDATA for the database tables.
 
 The use of checkpoint table causes checkpoints to be part of the Replicat transaction. Use the `ADD CHECKPOINTTABLE` command to create a checkpoint table in the target database. Replicat uses the table to maintain a record of its read position in the trail for recovery purposes.
 
@@ -55,70 +55,72 @@ This lab assumes that you have:
 
 ## Task 2: Add Database Credentials
 
-In this lab, you will establish database connections from Oracle GoldenGate to the Oracle database instances on the source (CDB1) and target (CDB2) databases. 
+   In this lab, you will establish database connections from Oracle GoldenGate to the Oracle database instances on the source (CDB1) and target (CDB2) databases. 
 
-On CDB1, establish database credentials for users: <b>c##ggadmin</b> and <b>ggadmin</b>
+   On CDB1, establish database credentials for users: <b>c##ggadmin</b> and <b>ggadmin</b>
 
-On CDB2, you only need to set up database credentials for the <b>ggadmin</b> user because this is the target pluggable database where the updates will be applied.
+   On CDB2, you only need to set up database credentials for the <b>ggadmin</b> user because this is the target pluggable database where the updates will be applied.
 
-To create database credentials using the Admin Client:
+   To create database credentials using the Admin Client:
 
-1. Run the following command to add the common user for CDB1 with credentials alias as `cggwest`:
+   1. Run the following command to add the common user for CDB1 with credentials alias as `cggwest`:
 
     ```
     <copy>
     ALTER CREDENTIALSTORE ADD USER c##ggadmin@cdb1 ALIAS cggwest DOMAIN OracleGoldenGate PASSWORD ggadmin
     </copy>
     ```
-    The USERIDALIAS for connecting to CDB1 is <b>cggwest</b>.
+    The USERIDALIAS for connecting to CDB1 is **cggwest**.
 
-2.  Test the database connection:
-    ```
-    <copy>
-    DBLOGIN USERIDALIAS cggwest
-    </copy>
-    ```
-   The output would display as follows for a successful connection:
+   2.  Test the database connection:
+        ```
+        <copy>
+        DBLOGIN USERIDALIAS cggwest
+        </copy>
+        ```
+       The output would display as follows for a successful connection:
 
-   ![Connected to Common user](./images/cggwest_connected.png " ")
+       ![Connected to Common user](./images/cggwest_connected.png " ")
 
-3. Run the following command to add the PDB database user `ggadmin` for the pluggable database <b>pdbwest</b>. The USERIDALIAS is `ggwest`.
+   3. Run the following command to add the PDB database user `ggadmin` for the pluggable database **pdbwest**. The USERIDALIAS is `ggwest`.
 
-    ```
-    <copy>
-    ALTER CREDENTIALSTORE ADD USER ggadmin@pdbwest ALIAS ggwest DOMAIN OracleGoldenGate PASSWORD Welcome1
-    </copy>
-    ```
-4.  Test the database connection using the DBLOGIN command:
+      ```
+      <copy>
+      ALTER CREDENTIALSTORE ADD USER ggadmin@pdbwest ALIAS ggwest DOMAIN OracleGoldenGate PASSWORD Welcome1
+      </copy>
+      ```
+   4. Test the database connection using the DBLOGIN command:
 
-    ```
-    <copy>
-    DBLOGIN USERIDALIAS ggwest
-    </copy>
-    ```
-    The output would display as follows for a successful connection:
+       ```
+       <copy>
+       DBLOGIN USERIDALIAS ggwest
+       </copy>
+       ```
+      The output would display as follows for a successful connection:
 
-    ![Connected to the pluggable database pdbwest](./images/pdbwest_connectd.png " ")
+      ![Connected to the pluggable database pdbwest](./images/pdbwest_connectd.png " ")
 
-  5. Add the credentials for the target PDB, <b>pdbeast</b> to the credentialstore:
-     ```
-    <copy>
-    ALTER CREDENTIALSTORE ADD USER ggadmin@pdbeast ALIAS ggeast DOMAIN OracleGoldenGate PASSWORD Welcome1
-    </copy>
-    ```
+   5. Add the credentials for the target PDB, **pdbeast** to the credentialstore:
+        ```
+         <copy>
+         ALTER CREDENTIALSTORE ADD USER ggadmin@pdbeast ALIAS ggeast DOMAIN OracleGoldenGate PASSWORD Welcome1
+         </copy>
+        ```
 
-   *Note: For <b>pdbeast</b>, only the pluggable database credentials are required because this would be the target database. 
+   
+   **Note**: For **pdbeast**, only the pluggable database credentials are required because this would be the target database. 
 
-   6. Test the connection to <b>pdbeast</b> with DBLOGIN:
+   6. Test the connection to **pdbeast** with DBLOGIN:
       
       ```
       <copy>
       DBLOGIN USERIDALIAS ggwest
       </copy>
       ```
+
    After the connection is successful, you can begin setting up other requirements for data replication, discussed in the next tasks.  
 
-## Task 3: Enable TRANDATA on source database
+## Task 3: Enable supplemental logging on source database
 
 By enabling trandata, supplemental logging is enabled for the source database at the schema, table, or procedure level. 
 
@@ -126,169 +128,172 @@ In this lab, you will enable trandata at the schema level for the source databas
 
 To enable trandata, run the following commands:
 
-1. Connect to <b>pdbwest</b> using the <b>ggwest</b> credential alias:
+  1. Connect to **pdbwest** using the **ggwest** credential alias:
 
-   ```
-    <copy>
-    DBLOGIN USERIDALIAS ggwest
-    </copy>
-    ``` 
+     ```
+     <copy>
+     DBLOGIN USERIDALIAS ggwest
+     </copy>
+     ``` 
 
 
-2. Run the ADD SCHEMATRANDATA command to enable supplemental logging at the schema level.
+  2. Run the ADD SCHEMATRANDATA command to enable supplemental logging at the schema level.
 
-   ```
-    <copy>
-    ADD SCHEMATRANDATA hr
-    </copy>
-
-   ```
+     ```
+     <copy>
+     ADD SCHEMATRANDATA hr
+     </copy>
+ 
+     ```
    
    ![Add schematrandata](./images/add_schematrandata.png " ")
 
-   This ensures that all tables added or updated within the HR schema, are logged. If you want to enable supplemental logging for a particular table, for example, EMPLOYEES table in HR schema, then you can also run the command:
+     This ensures that all tables added or updated within the HR schema, are logged. If you want to enable supplemental logging for a particular table, for example, EMPLOYEES table in HR schema, then you can also run the command:
 
-    ```
-    <copy>
-    ADD TRANDATA hr.employees
-    </copy>
-    ```
+     ```
+     <copy>
+     ADD TRANDATA hr.employees
+     </copy>
+     ```
 
-3. Run the following command to verify that supplemental logging is enabled at the schema level :
+  3. Run the following command to verify that supplemental logging is enabled at the schema level :
 
-    ```
-    <copy>
-    INFO SCHEMATRANDATA hr
-    </copy>
-    ```
+     ```
+     <copy>
+     INFO SCHEMATRANDATA hr
+     </copy>
+     ```
 
-The output for the **hr** schema is as follows:
+     The output for the **hr** schema is as follows:
 
-![Output for INFO SChEMATRANDATA](./images/info_schematran.png " ")
+     ![Output for INFO SCHEMATRANDATA](./images/info_schematran.png " ")
 
-4. Run the following command to verify that supplemental logging is enabled at the table level.
+  4. Run the following command to verify that supplemental logging is enabled at the table level.
 
-    ```
-    <copy>
-    INFO TRANDATA hr.employees
-    </copy>
-    ```
+     ```
+     <copy>
+     INFO TRANDATA hr.employees
+     </copy>
+     ```
 
 
-The output for **employees** table of the **hr** schema is as follows:
+     The output for **employees** table of the **hr** schema is as follows:
 
-![Output for INFO TRANDATA](./images/info_trandata.png " ")
+     ![Output for INFO TRANDATA](./images/info_trandata.png " ")
 
 
 ## Task 4: Add checkpoint table for target
 
-To add the Checkpoint table:
+   To add the Checkpoint table:
 
-1. Connect to **pdbeast** using the credential alias **ggeast**
+   1. Connect to **pdbeast** using the credential alias **ggeast**
 
-    ```
-    <copy>
-    DBLOGIN USERIDALIAS ggeast
-    </copy>
-    ```
+      ```
+      <copy>
+      DBLOGIN USERIDALIAS ggeast
+      </copy>
+      ```
 
-1. Execute the following command:
-    ```
-    <copy>
-    ADD CHECKPOINTTABLE ggadmin.ggs_checkpoint
-    </copy>
-    ```
+   2. Execute the following command:
+      
+      ```
+      <copy>
+      ADD CHECKPOINTTABLE ggadmin.ggs_checkpoint
+      </copy>
+      ```
 
-2. Run the following command to verify the output:
+   3. Run the following command to verify the output:
 
-    ```
-    <copy>
-    INFO CHECKPOINTTABLE ggadmin.ggs_checkpointtable
-    </copy>
-    ```
-3. Run the **INFO** command to verify that the checkpoint table is added.
+      ```
+      <copy>
+      INFO CHECKPOINTTABLE ggadmin.ggs_checkpointtable
+      </copy>
+      ```
+   4. Run the **INFO** command to verify that the checkpoint table is added.
 
-    ```
-    <copy>
-    INFO CHECKPOINTTABLE ggadmin.ggs_checkpoint
-    </copy>
-    ```
+      ```
+      <copy>
+      INFO CHECKPOINTTABLE ggadmin.ggs_checkpoint
+      </copy>
+      ```
 
-The Checkpoint table gets added as follows:
+   The Checkpoint table gets added as follows:
 
-    ![Add checkpointtable for target](./images/add_checkpointtable.png " ")
+   ![Add checkpointtable for target](./images/add_checkpointtable.png " ")
 
 
-## Task 5: Add Heartbeattable for source and target
+## Task 5: Add heartbeattable for source and target
 
-Add the heartbeat tables for both source and target endpoints by connecting to **ggeast** and **ggwest** database credential aliases.
+   Add the heartbeat tables for both source and target endpoints by connecting to **ggeast** and **ggwest** database credential aliases.
 
-For **ggwest**
+   For **ggwest**
 
-1. Connect to the database (pdbwest) using DBLOGIN:
+   1. Connect to the database (pdbwest) using DBLOGIN:
 
-    ```
-    <copy>
-    DBLOGIN USERIDALIAS ggwest
-    </copy>
-    ```
+      ```
+      <copy>
+      DBLOGIN USERIDALIAS ggwest
+      </copy>
+      ```
 
-2. Run the following command:
+   2. Run the following command:
 
-    ```
-    <copy>
-    ADD HEARTBEATTABLE
-    </copy>
-    
-    ```
-  The output displays as shown here:
+      ```
+      <copy>
+      ADD HEARTBEATTABLE
+      </copy>
+      
+      ```
+     
+   The output displays as shown here:
 
-  ![Add heartbeattable](./images/add_heartbeattable.png " ")
+   ![Add heartbeattable](./images/add_heartbeattable.png " ")
 
-3. Run the **INFO** command to verify that the heartbeattable is added for **ggwest**
+   3. Run the **INFO** command to verify that the heartbeattable is added for **ggwest**
 
-    ```
-    <copy>
-    INFO HEARTBEATTABLE
-    </copy>
-    
-    ```
+      ```
+      <copy>
+      INFO HEARTBEATTABLE
+      </copy>
+     
+      ```
   
+ 
   The output list the heartbeat tables that are added for the source database (**pdbwest**) with alias **ggwest**.
 
-  ![INFO HEARTBEATTABLE command output](./images/info_heartbeattable.png " ")
+ ![INFO HEARTBEATTABLE command output](./images/info_heartbeattable.png " ")
 
-For **ggeast**
+   For **ggeast**
 
-4. Connect to the target database **pdbeast** using the alias **ggeast**
-
-    ```
-    <copy>
-    DBLOGIN USERIDALIAS ggeast
-    </copy>
+   4. Connect to the target database **pdbeast** using the alias **ggeast**
+      
+      ```
+      <copy>
+      DBLOGIN USERIDALIAS ggeast
+      </copy>
     
-    ```
+      ```
 
-5. Add the heartbeat table:
+  5. Add the heartbeat table:
 
-    ```
-    <copy>
-    ADD HEARTBEATTABLE
-    </copy>
+      ```
+      <copy>
+      ADD HEARTBEATTABLE
+      </copy>
     
-    ```
+      ```
 
-6. Run the INFO HEARTBEATTABLE command to view details of the heartbeat tables added for **pdbeast**
+  6. Run the INFO HEARTBEATTABLE command to view details of the heartbeat tables added for **pdbeast**
 
-    ```
-    <copy>
-    INFO HEARTBEATTABLE
-    </copy>
+      ```
+        <copy>
+        INFO HEARTBEATTABLE
+        </copy>
     
-    ```
+      ```
 The output should display as follows:
 
-![INFO HEARTBEATTABLE for ggeast](./images/info_heartbeattable_ggeast.png " ")
+ ![INFO HEARTBEATTABLE for ggeast](./images/info_heartbeattable_ggeast.png " ")
 
 You may now **proceed to the next lab**.
 
