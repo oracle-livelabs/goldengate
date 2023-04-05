@@ -153,7 +153,7 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
 2.  In the Create Connection panel, for **Name**, enter `TargetADW`.
 
-3.  From the **Type** dropdown, select **OCI Autonomous Database**.
+3.  From the **Type** dropdown, select **Oracle Autonomous Database**.
 
     ![Create ADW connection - General information](./images/04-03-adw-conn.png " ")
 
@@ -192,8 +192,6 @@ After your deployments and connections are active, you can assign the connection
     ![Assign connection dialog](./images/05-05-assign-connection.png " ")
 
     The connection appears in the Assigned Connections list.
-
-    ![Assigned connections list](./images/05-05-assigned-connections-b.png " ")
 
 6.  Use the breadcrumb to return to the Deployments page.
 

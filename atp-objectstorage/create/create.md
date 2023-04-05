@@ -69,7 +69,7 @@ In Task 5, you must upload a private key and enter the corresponding public key 
 
 9.  For License type, select **Bring Your Own License (BYOL)**.
 
-10. Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+10. Click **Show Advanced Options**, and then select **Enable GoldenGate console public access**.
 
     ![Completed Create GoldenGate Deployment fields](images/01-10-create-atp-deployment-summary.png " ")
 
@@ -103,7 +103,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 6.  For License type, select **Bring You Own License (BYOL)**.
 
-7.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+7.  Click **Show Advanced Options**, and then select **Enable GoldenGate console public access**.
 
     ![Completed Create GoldenGate Deployment fields](images/02-07-bigdata.png " ")
 
@@ -137,7 +137,7 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
 3.  Click **Create Connection**.
 
-    ![Connections page](images/03-03-connections.png " ")
+    ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
 
 4.  In the Create Connection panel, for Name, enter **SourceATP**.
 

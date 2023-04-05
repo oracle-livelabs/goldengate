@@ -66,7 +66,7 @@ In this lab, you will:
 
 16. Click **Create**.
 
-    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
+    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-summary.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for  you to use.
 
@@ -76,7 +76,7 @@ First, follow the steps below to connect the source Oracle Autonomous Transactio
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
 
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-01-breadcrumb.png " ")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-01-deployment-details.png " ")
 
 2.  Click **Connections**.
 
@@ -116,7 +116,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 2.  From the list of databases, select **SourceATP**.
 
-    ![Autonomous Transaction Processing page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-auto-db.png " ")
+    ![Autonomous Transaction Processing page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-sourceatp.png " ")
 
 3.  On the SourceATP Database Details page, click **Database actions**.
 
