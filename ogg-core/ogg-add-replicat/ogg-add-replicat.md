@@ -17,7 +17,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes that you have:
 - The appropriate database privileges to be able to execute the commands in the Admin Client.
-- Completed the tasks in **Lab - Enable Trandata, Add Heartbeat and Checkpoint Tables**.
+- Completed the tasks in **Lab - Configure Database Credentials, Trandata, Heartbeat, and Checkpoint Tables**.
 - Completed the tasks in **Lab - Add Extract**.
 
 ## Task 1: Add a Replicat
@@ -27,17 +27,21 @@ To add a Replicat:
 1. Test the database connection by running the following command:
     ```
     <copy>
-    DBLOGIN USERIDALIAS ggwest
+    DBLOGIN USERIDALIAS ggeast
     </copy>
     ```
 
 2. Add a Replicat:
     ```
     <copy>
-    ADD REPLICAT repe, INTEGRATED, PARALLEL, EXTTRAIL east/ea CHECKPOINTTABLE ggadmin.ggs_checkpointtable
+    ADD REPLICAT repe, PARALLEL, EXTTRAIL west/ea CHECKPOINTTABLE ggadmin.ggs_checkpoint
     </copy>
     ```
     `repe` is the name of the Replicat that is being created.
+
+    ![Add replicat repe](./images/add_replicat.png " ")
+    
+    **Note**: Replicat **repe** is processing the trails from the **pdbwest** pluggable database, so the Replicat looks into the **/west** directory. 
 
 3. Edit the parameter file:
     ```
@@ -49,14 +53,17 @@ To add a Replicat:
     ```
     <copy>
     REPLICAT repe
-    USERIDALIAS ggwest DOMAIN OracleGoldenGate
-    DDL INCLUDE ALL
-    SOURCECATALOG pdbeast
+    USERIDALIAS ggeast DOMAIN OracleGoldenGate
+    SOURCECATALOG pdbwest
     MAP hr.*, TARGET hr.*;
     </copy>
     ```
 
-4. Start the REPLICAT:
+4. Save the Replicat parameter file and exit the editor. 
+
+   ![Save Replicat parameter file](./images/save_repe-prm.png " ")
+
+5. Start the REPLICAT:
     ```
     <copy>
     START REPLICAT repe
@@ -64,23 +71,23 @@ To add a Replicat:
     ```
   The REPLICAT process **repe** starts.
 
-5. To confirm the REPLICAT has started, run the following command:
+5. To confirm the REPLICAT has started successfully, run the following command:
     ```
     <copy>
     INFO REPLICAT repe
     </copy>
     ```
-The following is a sample Replicat output:
+The following output should be displayed:
 
-    ![Replicat Output](./images/replicat-output.png " ")
+![Replicat Output](./images/replicat-output.png " ")
 
 You may now **proceed to the next lab**.
 
 ## Learn More
-* [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)
+* [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.3/coredoc/administer-microservices-command-line-interface.html#GUID-0403FAF0-B2F7-48A0-838F-AB4421E5C5E2)
 * [ADD REPLICAT](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-replicat.html#GUID-540A171A-71C2-49C3-964E-5D57B27257D4)
 
 ## Acknowledgements
-* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Preeti Shukla, Volker Kuhr, Madhusudhan Rao
-* **Last Updated By/Date** - Anuradha Chepuri, June 2022
+* **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Volker Kuhr
+* **Last Updated By/Date** - Preeti Shukla, April 2023
