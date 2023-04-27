@@ -55,7 +55,7 @@ Before importing data to the target database, create a credential in the target 
 
     ![Script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-05-sql-script.png " ")
 
-6.  Enter the following script and then click **Run Statement** to import data using ImpDP:
+6.  Enter the following script and then click **Run Statement** to import data using ImpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI**: 
 
     ```
     <copy>DECLARE
