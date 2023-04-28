@@ -102,7 +102,7 @@ First, follow the steps below to connect the source Oracle Autonomous Transactio
 
 10.  Enter the database's password in the Password field, and then click **Create**.
 
-    ![Source Database details](./images/02-10-create-connection-gg-details.png)
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-10-create-connection-gg-details.png)
 
     The connection becomes Active after a few minutes.
 
@@ -142,7 +142,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png " ")
 
-    > **Note:**  Feel free to skip the help tutorial. 
+    > **Note:**  (Optional) Close the SQL Help dialog. 
 
 8.  Enter the following into the Worksheet, and then click **Run Statement**.
 

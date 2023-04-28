@@ -132,7 +132,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png)
 
-    > **Note:**  Feel free to skip the help tutorial. 
+    > **Note:**  (Optional) Close the SQL Help dialog. 
 
 8.  Enter the following into the Worksheet, and then click **Run Statement**.
 
@@ -176,7 +176,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 7. On the Connection details page, under Database details, select **Select database**.
 
-8. For **Database in &lt;compartment-name&gt;**, select **TargetADW** from the dropdown. 
+8. For **Database in &lt;compartment-name&gt;**, select **TargetADW &lt;numbers&gt;** from the dropdown. 
 
 9. Enter the database's password in the Password field, and then click **Create**.
 
