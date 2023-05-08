@@ -107,7 +107,7 @@ The script available with this lab will set up the environment variables for the
          <copy>show parameter enable_goldengate_replication</copy>
         ```
 
-        The return value must be TRUE.
+       The return value must be TRUE.
 
    3. From the sql prompt, connect to CDB2 using the command:  
 
