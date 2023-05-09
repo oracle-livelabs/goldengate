@@ -177,10 +177,10 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 13. Log out of Database Actions.
 
-** Proceed to the next lab.**
+**Proceed to the next lab.**
 
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated by** - Katherine Wardhana, March 2023
+- **Last Updated by** - Katherine Wardhana, May 2023
 - **PAR Expiration date** - February 2024
