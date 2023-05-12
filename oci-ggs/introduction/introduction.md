@@ -27,5 +27,5 @@ Oracle Cloud Infrastructure GoldenGate is a fully-managed service that uses Orac
 ## Acknowledgements
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, February 2023
+* **Contributors** -  Denis Gray, Database Product Management & Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, May 2023

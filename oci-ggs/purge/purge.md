@@ -24,7 +24,7 @@ This lab assumes you completed all preceding labs.
 
     ![OCI GoldenGate Deployment Console navigation menu](./images/01-01-configuration.png " ")
 
-2.  On the **Configuration** screen, click **Tasks**, and then click **Add Purge Trail Task** (plus icon). The **Create a new Purge Trials task** form appears.
+2.  On the **Configuration** screen, click **Tasks**, and then click **Add Purge Trail Task** (plus icon). The **Create a new Purge Trails task** form appears.
 
     ![Create a new Purge Trails task on Tasks page](./images/01-02-add-purge-trails.png " ")
 
@@ -49,5 +49,5 @@ This lab assumes you completed all preceding labs.
 ## Acknowledgements
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management, Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, February 2023
+* **Contributors** -  Denis Gray, Database Product Management, & Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, May 2023

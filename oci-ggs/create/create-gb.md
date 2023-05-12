@@ -50,7 +50,7 @@ In this lab, you will:
 
 9.  For License type, select **Bring Your Own License (BYOL)**.
 
-10. Click **Show advanced options**, and then select **Create public endpoint**.
+10. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
     ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
@@ -66,7 +66,7 @@ In this lab, you will:
 
 16. Click **Create**.
 
-    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
+    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-summary.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for  you to use.
 
@@ -76,7 +76,7 @@ First, follow the steps below to connect the source Oracle Autonomous Transactio
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
 
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-01-breadcrumb.png " ")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-01-deployment-details.png " ")
 
 2.  Click **Connections**.
 
@@ -90,7 +90,7 @@ First, follow the steps below to connect the source Oracle Autonomous Transactio
 
 5.  From the Compartment dropdown, select a compartment.
 
-6.  From the a Type dropdown, select **OCI Autonomous Database**.
+6.  From the a Type dropdown, select **Oracle Autonomous Database**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
 
@@ -102,7 +102,7 @@ First, follow the steps below to connect the source Oracle Autonomous Transactio
 
 10.  Enter the database's password in the Password field, and then click **Create**.
 
-    ![Source Database details](./images/02-10-create-connection-gg-details.png)
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-10-create-connection-gg-details.png)
 
     The connection becomes Active after a few minutes.
 
@@ -116,7 +116,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 2.  From the list of databases, select **SourceATP**.
 
-    ![Autonomous Transaction Processing page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-auto-db.png " ")
+    ![Autonomous Transaction Processing page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-sourceatp.png " ")
 
 3.  On the SourceATP Database Details page, click **Database actions**.
 
@@ -141,6 +141,8 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 7.  Open the Database actions navigation menu, and then under **Development**, select **SQL**.
 
     ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png " ")
+
+    > **Note:**  (Optional) Close the SQL Help dialog. 
 
 8.  Enter the following into the Worksheet, and then click **Run Statement**.
 
@@ -178,7 +180,7 @@ Now, follow the steps below to connect the target Autonomous Data Warehouse \(AD
 
 4.  From the **Compartment** dropdown, select a compartment.
 
-5.  From the a Type dropdown, select **OCI Autonomous Database**.
+5.  From the a Type dropdown, select **Oracle Autonomous Database**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-05-create-connec-general-info.png " ")
 
@@ -186,7 +188,7 @@ Now, follow the steps below to connect the target Autonomous Data Warehouse \(AD
 
 7. On the Connection details page, under Database details, select **Select database**.
 
-8. For **Database in &lt;compartment-name&gt;**, select **TargetATP &lt;numbers&gt;** from the dropdown. 
+8. For **Database in &lt;compartment-name&gt;**, select **TargetADW &lt;numbers&gt;** from the dropdown. 
 
 9. Enter the database's password in the Password field, and then click **Create**.
 
@@ -194,7 +196,7 @@ Now, follow the steps below to connect the target Autonomous Data Warehouse \(AD
 
     The source and target databases appear in the list of Connections. The connection becomes Active after a few minutes.
 
-10.  Repeat Task 3, steps 1-8, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
+10.  Repeat Task 3, steps 1-6, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
 
 11.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
 
@@ -251,5 +253,5 @@ After the deployment is created and active, you can perform the following action
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, February 2023
+* **Last Updated By/Date** - Katherine Wardhana, May 2023
 

@@ -53,7 +53,7 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 ## Task 2: Using the Performance Metrics Service
 
-1.  In the GoldenGate deployment console, click **Performance Metrics Service**, and then click **EXT**.
+1.  In the GoldenGate deployment console, click **Performance Metrics Service**, and then click **UAEXT**.
 
     ![Performance Metrics Service page - EXT highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-01-perf-serv.png)
 
@@ -88,4 +88,4 @@ In this lab, you learned to monitor performance in the OCI GoldenGate Deployment
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management & Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, February 2023
+* **Last Updated By/Date** - Katherine Wardhana, May 2023

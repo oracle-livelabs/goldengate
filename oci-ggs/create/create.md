@@ -46,7 +46,7 @@ In this lab, you will:
 
 8.  For License type, select **Bring Your Own License (BYOL)**.
 
-9.  Click **Show advanced options**, and then select **Create public endpoint**.
+9.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
     ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
@@ -64,13 +64,13 @@ In this lab, you will:
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
+![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-summary.png " ")
 
 ## Task 2: Create a connection to the source database
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the GoldenGate page.
 
-    ![GoldenGate in Oracle Cloud Console breadcrumb highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-01-breadcrumb.png " ")
+    ![GoldenGate in Oracle Cloud Console breadcrumb highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-01-deployment-details.png " ")
 
 2.  Click **Connections**.
 
@@ -108,7 +108,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 2.  From the list of databases, select **SourceATP**.
 
-    ![Autonomous Databases page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-auto-db.png " ")
+    ![Autonomous Databases page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-sourceatp.png " ")
 
 3.  On the SourceATP database details page, click **Database actions**.
 
@@ -131,6 +131,8 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 7.  Open the navigation menu (hamburger icon), and then under **Development**, select **SQL**.
 
     ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png)
+
+    > **Note:**  (Optional) Close the SQL Help dialog. 
 
 8.  Enter the following into the Worksheet, and then click **Run Statement**.
 
@@ -174,7 +176,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 7. On the Connection details page, under Database details, select **Select database**.
 
-8. For **Database in &lt;compartment-name&gt;**, select **TargetATP** from the dropdown. 
+8. For **Database in &lt;compartment-name&gt;**, select **TargetADW &lt;numbers&gt;** from the dropdown. 
 
 9. Enter the database's password in the Password field, and then click **Create**.
 
@@ -182,7 +184,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     The connection becomes Active after a few minutes.
 
-10.  Repeat Task 3, steps 1-8, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
+10.  Repeat Task 3, steps 1-6, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
 
 11.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
 
@@ -241,4 +243,4 @@ In this lab, you created an OCI GoldenGate deployment, and created connections t
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, February 2023
+* **Last Updated By/Date** - Katherine Wardhana, May 2023

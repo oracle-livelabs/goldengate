@@ -29,19 +29,19 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
 
-	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-startwizard.png " ")
+	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-start-vcn-wizard.png " ")
 
 3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
-    ![Start VCN Wizard dialog](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-03-vcn-wizard.png " ")
+    ![Start VCN Wizard dialog](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-03-vcn-wizard.png " ")
 
 4.  Enter a name for the VCN, select a compartment, and then click **Next**.
 
-    ![Enter VCN details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-04-config.png " ")
+    ![Enter VCN details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-04-vcn-details.png " ")
 
 5.  Verify the configuration, and then click **Create**.
 
-    ![Verify configuration details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-05-verify.png " ")
+    ![Verify configuration details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-05-create-vcn.png " ")
 
 6.  Click **View VCN Details** and see both a Public and Private subnet were created.
 
@@ -124,9 +124,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 	![Click Create session on the bastion details page](./images/03-08-create-session.png " ")
 
-9.  In the Create session panel, for **Session type**, select **SSH port forwarding session**.
-
-	![Select SSH port forwarding session for Session type](./images/03-09-session-type.png " ")
+9.  In the Create session panel, for **Session type**, select **SSH port forwarding session**
 
 10. For IP address, paste the private IP address copied from the SourceMySQL database details page in Task 2 Step 11.
 
@@ -137,6 +135,8 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 	>**Note:** If you select **Generate SSH key pair**, ensure that you download and save the private key.
 
 13. Click **Create session**. The session takes a few minutes to become Active.
+
+	![Enter the details and click Create session](./images/03-09-session-type.png " ")
 
 14. After the session is Active, select **Copy SSH command** from the session's Action (three dots) menu.
 
@@ -225,15 +225,15 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 1.  After the instance becomes Active, select it to view its details and access tools.
 
-    ![List of Autonomous Databases](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/06-01-targetadw.png " ")
+    ![List of Autonomous Databases](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-03-atp.png " ")
 
 2.  Click **Database Actions**.
 
-	![Click Database Actions on autonomous database details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/06-02-db-actions.png " ")
+	![Click Database Actions on autonomous database details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-dbdetails.png " ")
 
 3.  If prompted, log in with the ADMIN user and password provided when you created the ADW instance.
 
-  	![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-login.png " ")
+  	![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
 
 4.  On the Database Actions Launchpad, under **Administration**, click **Database Users**.
 
@@ -249,7 +249,7 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 7.  From the Database Actions menu, under **Development**, select **SQL**.
 
-    ![Select SQL from Database Actions menu](./images/03-07-sql.png " ")
+    ![Select SQL from Database Actions menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-06-db-actions.png " ")
 
 8.  Download the sample database schema:
 

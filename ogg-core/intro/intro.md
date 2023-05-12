@@ -1,14 +1,23 @@
 # Introduction
 
 ## About this Workshop                             
-The labs in this workshop walk you through use cases to add users and database credentials, enable Trandata, add Heartbeat and Checkpoint tables, and create Extract and Replicat processes.
+The labs in this workshop walk you through the process of setting up a unidirectional data replication configuration in Oracle GoldenGate for Oracle database multitenant databases. 
 
-Estimated Workshop Time: 4 hours
+You’ll learn to perform the following tasks using this lab:
+
+•	Add supplemental logging at the source database
+•	Add checkpoint table to the target database
+•	Add heartbeat table to source and target databases
+•	Create Extract and Replicat processes
+•	Test data replication between databases
+
+Estimated Workshop Time: 2 hour
+
 
 ### About Oracle GoldenGate Admin Client
-Oracle GoldenGate is a comprehensive software package for real-time data integration and replication.
+Oracle GoldenGate is a change data capture software that provides real-time data integration and replication.
 
-The Admin Client is a command line utility. You can use it to issue the complete range of commands that configure, control, and monitor Oracle GoldenGate.
+The Admin Client is a command line utility available with Microservices Architecture. You can use it to issue the complete range of commands that configure, control, and monitor Oracle GoldenGate.
 
 This diagram illustrates the main components of the Microservices Architecture and how replication processes operate within a REST API environment.
 
@@ -20,18 +29,17 @@ Watch this short video about the Oracle GoldenGate product family:
 ### Objectives
 
 In this workshop, you will:
+  * Add supplemental logging at source database
   * Add database credentials
-  * Enable Trandata
   * Add Heartbeat table
   * Add Checkpoint table
   * Add an Extract process
   * Add a Replicat process
 
 ### Prerequisites
-* The following are required to complete this lab:
-    * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
-    * Prior knowledge of Database basic concepts
-* Ensure that you have a multitenant database set up.
+The following are required to complete this lab:
+    * Prior knowledge of using Linux command-line options 
+    * Prior knowledge of basic database commands
 
 
 Watch this short video on adding Database Credentials, Extract, and Replicat Processes in Oracle GoldenGate Microservices on MySQL database:
@@ -44,11 +52,11 @@ You may now **proceed to the next lab**.
 
 Use these links to get more information about Oracle GoldenGate:
 
-* [Using Oracle GoldenGate with Oracle Database](https://docs.oracle.com/en/middleware/goldengate/core/21.3/oracle-db/configuring-oracle-goldengate-multitenant-container-database-1.html#GUID[…]DE05)
-* [Step by Step Data Replication Using Oracle GoldenGate Microservices Architecture](https://docs.oracle.com/en/middleware/goldengate/core/21.3/ggmas/quickstarts.html)
+* [Oracle GoldenGate Microservices Documentation](https://docs.oracle.com/en/middleware/goldengate/core/21.3/coredoc/index.html)
+
 * [Command Line Interface Reference for Oracle GoldenGate](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-credentials.html#GUID-6D80E0AC-9497-46C6-92D9-2F817D04BD99)
 
 ## Acknowledgements
-* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Preeti Shukla, Volker Kuhr
-* **Last Updated By/Date** - Anuradha Chepuri, June 2022
+* **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Volker Kuhr
+* **Last Updated By/Date** - Preeti Shukla, April 2023

@@ -20,7 +20,7 @@ In this lab, you learn to:
 
 1. When the deployment is active, click **Launch Console**.
 
-    ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-01-launchconsole.png " ")
+    ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/07-01-launchconsole.png " ")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password you provided in the previous Lab, and then click **Sign In**.
 
@@ -158,7 +158,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
     ![Buckets in compartment page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-02-create-bucket.png " ")
 
-3.  In the **Create Bucket** panel, enter a name, and then click **Create**.
+3.  In the **Create Bucket** panel, enter a unique name, such as `Bucket-<user>,` and then click **Create**.
 
     ![Create Bucket panel](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-03-bucket.png " ")
 
@@ -172,9 +172,11 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 8.  In the Objects list, click the three dots icon for your object, and then select **View Object Details**.
 
+  ![View Object Details](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-08-view-details.png)
+
 9.  In the Object Details panel, copy the URL Path (URI) up the object name and paste it into a text editor.
 
-  ![Object URL Path](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/objectstorage-objectdetails.png)
+  ![Object URL Path](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-09-url-path.png)
 
     The bucket URI should match the following syntax:
 
@@ -217,7 +219,7 @@ END;</copy>
 
     ![SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-14-create-credential.png " ")
 
-15. Use the following script to create the Export Data job using Oracle Data Pump ExpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI** from step 5. `SRC_OCIGGLL.dmp` is a file that will be created when this script runs.
+15. Run the following script to create the Export Data job using Oracle Data Pump ExpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI** from step 5. `SRC_OCIGGLL.dmp` is a file that will be created when this script runs. 
 
     ```
     <copy>DECLARE
@@ -291,6 +293,8 @@ END;</copy>
 
     ![SQL worksheet Run Script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-15-sql-return.png " ")
 
+    > **Note:** Review the DBMS Output tab and ignore the error if the Job successfully completed.
+
 **Proceed to the next lab.**
 
 ## Learn more
@@ -300,4 +304,4 @@ END;</copy>
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, February 2023
+* **Last Updated By/Date** - Katherine Wardhana, May 2023
