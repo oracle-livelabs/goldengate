@@ -233,7 +233,7 @@ After the deployment is created and active, you can perform the following action
 
 In this lab, you created an OCI GoldenGate deployment, and created connections to the source and target databases.
 
-**Proceed to the next lab.**
+You may now **proceed to the next lab.**
 
 ## Learn more
 
