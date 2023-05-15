@@ -1,4 +1,4 @@
-# Create the Extract process and export data using Oracle Data Pump
+# Create the Extract process and use Oracle Data Pump to export data
 
 ## Introduction
 This lab instructs you to use the OCI GoldenGate deployment console to add transaction information to the source database, add a checkpoint table to the target database, add and run an Extract, and instantiate the target database using Oracle Data Pump.
