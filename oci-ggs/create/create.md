@@ -38,11 +38,11 @@ In this lab, you will:
 
 4.  In the Create Deployment panel, enter **GGSDeployment** for Name.
 
-5.  From the Compartment dropdown, select a compartment.
+5.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
 6.  For OCPU Count, enter **1**.
 
-7.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
+7.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
 
 8.  For License type, select **Bring Your Own License (BYOL)**.
 
@@ -90,7 +90,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 7. On the Connection details page, under Database details, select **Select database**.
 
-8.  For **Database in &lt;compartment-name&gt;**, select **SourceATP &lt;numbers&gt;** from the dropdown. 
+8.  For **Database in &lt;compartment-name&gt;**, select **SourceATP-&lt;numbers&gt;** from the dropdown. 
 
 9.  Enter the database's password in the Password field, and then click **Create**.
 
@@ -166,7 +166,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 3.  The Create connection panel consists of two pages. On the General information page, for Name, enter **TargetADW** and optionally, a description.
 
-4.  From the **Compartment** dropdown, select a compartment.
+4.  From the **Compartment** dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
 5.  From the a Type dropdown, select **Oracle Autonomous Database**.
 
@@ -176,27 +176,13 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 7. On the Connection details page, under Database details, select **Select database**.
 
-8. For **Database in &lt;compartment-name&gt;**, select **TargetADW &lt;numbers&gt;** from the dropdown. 
+8. For **Database in &lt;compartment-name&gt;**, select **TargetADW-&lt;numbers&gt;** from the dropdown. 
 
 9. Enter the database's password in the Password field, and then click **Create**.
 
     ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-09-create-connec-details.png)
 
     The connection becomes Active after a few minutes.
-
-10.  Repeat Task 3, steps 1-6, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
-
-11.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
-
-    ```
-    <copy>
-    select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRCMIRROR_OCIGGLL';
-    </copy>
-    ```
-
-    The Script Output panel displays six tables whose Support_Mode is **FULL**.
-
-    ![Script Output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-11-sql-script-return.png " ")
 
 
 ## Task 5: Review the deployment details
