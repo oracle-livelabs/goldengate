@@ -177,7 +177,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 13. Log out of Database Actions.
 
-**Proceed to the next lab.**
+You may now **proceed to the next lab.**
 
 ## Acknowledgements
 

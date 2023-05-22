@@ -1,4 +1,4 @@
-# Import data using Oracle Data Pump and create the Replicat
+# Use Oracle Data Pump to import data and create the Replicat
 
 ## Introduction
 
@@ -212,7 +212,7 @@ Before importing data to the target database, create a credential in the target 
 
     The yellow exclamation point icon changes to a green checkmark.
 
-**Proceed to the next lab.**
+You may now **proceed to the next lab.**
 
 ## Learn more
 
