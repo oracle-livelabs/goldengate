@@ -1,20 +1,18 @@
-# Create the Extract process and export data using Oracle Data Pump
+# Create and configure the pipeline
 
 ## Introduction
-This lab instructs you to use the OCI GoldenGate deployment console to add transaction information to the source database, add a checkpoint table to the target database, add and run an Extract, and instantiate the target database using Oracle Data Pump.
+This lab instructs you to create a pipeline. 
 
 Estimated time: 25 minutes
 
-### About the Extract process
-An Extract is a process that extracts, or captures, data from a source database.
+### About pipelines
+A pipeline is an instance of a recipe. It enables you to select your source connection, the type of replication action(s) to apply, and the target connection. After creating the pipeline, you can configure which schemas and tables to replicate to the target. After the pipeline starts, you can observe the replication process in real time. 
 
 ### Objectives
 In this lab, you learn to:
-* Log in to the OCI GoldenGate deployment console
-* Connect to the source database to add transaction information
-* Connect to the target database to add a checkpoint table
-* Add and run an Extract
-* Export data from the source database using Oracle Data Pump
+* Create a pipeline
+* Configure a pipeline
+* Start a pipeline
 
 ## Task 1: Create the pipeline
 
@@ -314,9 +312,9 @@ END;</copy>
 
 ## Learn more
 
-* [Add an Extract for Oracle Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/index.html)
+* [Create pipelines](https://docs-uat.us.oracle.com/en/middleware/goldengate/free/21/uggfe/create-pipelines.html#GUID-F8027670-E92C-4187-B312-D9532729CC8F)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2023
+* **Last Updated By/Date** - Katherine Wardhana, May 2023

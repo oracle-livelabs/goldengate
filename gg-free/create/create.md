@@ -6,17 +6,13 @@ In this lab, you learn to create Oracle GoldenGate Free database connections.
 
 Estimated time: 15 minutes
 
-### About Oracle Cloud Infrastructure GoldenGate deployments and connections
+### About Oracle GoldenGate Free connections
 
-A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
-
-Connections store the source and target credential information for OCI GoldenGate. A connection also enables networking between the Oracle Cloud Infrastructure (OCI) GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
+An Oracle GoldenGate Free connection contains the network connectivity information for Oracle Database sources and targets.
 
 ### Objectives
 
 In this lab, you will:
-* Locate Oracle Cloud Infrastructure GoldenGate in the Console
-* Create a OCI GoldenGate deployment
 * Create the source and target connections
 
 
@@ -154,8 +150,8 @@ In this lab, you will:
 
 ## Learn more
 
-* [Managing deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/ebbpf/index.html)
-* [Managing connections](https://docs.oracle.com/en/cloud/paas/goldengate-service/mcjzr/index.html)
+* [Create an Oracle Database connection](https://docs-uat.us.oracle.com/en/middleware/goldengate/free/21/uggfe/create-database-connections.html#GUID-F752AD5C-20E4-4397-A5C2-8066CB80A2E6)
+* [About the configuration script](https://docs-uat.us.oracle.com/en/middleware/goldengate/free/21/uggfe/create-database-connections.html#GUID-3C6691FA-2C40-445D-8A1A-A7B708085DD9)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
