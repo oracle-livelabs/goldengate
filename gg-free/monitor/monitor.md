@@ -1,4 +1,4 @@
-# Monitor Extracts and Replicats
+# Monitor pipeline performance
 
 ## Introduction
 
@@ -81,8 +81,6 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 In this lab, you learned to monitor performance in the OCI GoldenGate Deployment Console and in the OCI Console.
 
-(Optional) You may now **proceed to the next lab.**
-
 ## Learn more
 
 * [Monitor performance using the Oracle Cloud console](https://docs.oracle.com/en/cloud/paas/goldengate-service/vddvk/index.html#articletitle)
@@ -90,4 +88,4 @@ In this lab, you learned to monitor performance in the OCI GoldenGate Deployment
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management & Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2023
+* **Last Updated By/Date** - Katherine Wardhana, March 2023

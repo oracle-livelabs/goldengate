@@ -1,11 +1,11 @@
 {
-    "workshoptitle": "Build faster replication processes with OCI GoldenGate",
+    "workshoptitle": "Replicate data using Oracle GoldenGate Free 23c",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
             "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
-            "filename": "../../introduction/gb-intro.md"
+            "filename": "../../introduction/introduction.md"
         },
         {
             "title": "Get Started",
@@ -13,24 +13,16 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
-            "title": "Lab 1: Create the OCI GoldenGate resources",
-            "filename": "../../create/create-gb.md"
+            "title": "Lab 1: Create the database connections",
+            "filename": "../../create/create.md"
         },
         {
-            "title": "Lab 2: Create the Extract process and use Oracle Data Pump to export data",
-            "filename": "../../extract/extract.md"
+            "title": "Lab 2: Create and configure the pipeline",
+            "filename": "../../pipeline/pipeline.md"
         },
         {
-            "title": "Lab 3: Use Oracle Data Pump to import data and create the Replicat",
-            "filename": "../../extracts-replicats/extracts-replicats.md"
-        },
-        {
-            "title": "Lab 4: Monitor Extracts and Replicats",
+            "title": "Lab 3: Monitor pipeline performance",
             "filename": "../../monitor/monitor.md"
-        },
-        {
-            "title": "Lab 5: Purge unused Trail files",
-            "filename": "../../purge/purge.md"
         },
         {
             "title": "Need Help?",
