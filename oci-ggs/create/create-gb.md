@@ -196,6 +196,8 @@ Now, follow the steps below to connect the target Autonomous Data Warehouse \(AD
 
     The source and target databases appear in the list of Connections. The connection becomes Active after a few minutes.
 
+10. Repeat Task 3, steps 1-6, to unlock the GGADMIN user for the TargetADW database.
+
 ## Task 5: Review the deployment details
 
 After the deployment is created and active, you can perform the following actions on the deployment details page:
