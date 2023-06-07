@@ -16,6 +16,11 @@ In this lab, you learn to:
 * Add and run an Extract
 * Export data from the source database using Oracle Data Pump
 
+### Prerequisites
+
+* This lab assumes that you completed all preceding labs
+* Your deployment is in the Active state.
+
 ## Task 1: Launch the GoldenGate Deployment Console
 
 1. When the deployment is active, click **Launch Console**.
@@ -295,7 +300,7 @@ END;</copy>
 
     > **Note:** Review the DBMS Output tab and ignore the error if the Job successfully completed.
 
-**Proceed to the next lab.**
+You may now **proceed to the next lab.**
 
 ## Learn more
 

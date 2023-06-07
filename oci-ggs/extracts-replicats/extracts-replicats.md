@@ -18,7 +18,8 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes that you completed all preceding labs, and your deployment is in the Active state.
+* This lab assumes that you completed all preceding labs
+* Your deployment is in the Active state.
 
 ## Task 1: Import data using Oracle Data Pump (ImpDP)
 
