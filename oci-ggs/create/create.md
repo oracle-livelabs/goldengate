@@ -184,6 +184,8 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     The connection becomes Active after a few minutes.
 
+10. Repeat Task 3, steps 1-6, to unlock the GGADMIN user for the TargetADW database.
+
 
 ## Task 5: Review the deployment details
 
