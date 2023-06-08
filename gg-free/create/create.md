@@ -44,7 +44,7 @@ In this lab, you will:
 
 8. For Database type, select **Pluggable database in container database**.
 
-9.  For Container database dervice name (CDB), enter .
+9.  For Container database dervice name (CDB), enter **ORCL**.
 
 10.  Select **SYSDBA privileges available**.
 
@@ -100,7 +100,7 @@ In this lab, you will:
 
 5.  For the Connection type dropdown, select **Basic**.
 
-6.  For Hostname, enter .
+6.  For Hostname, enter **ORCL**.
 
 7.  For Port, enter **1621**.
 
@@ -118,7 +118,7 @@ In this lab, you will:
 
 12. Click **Next**.
 
-    ![Connection details page](./images/02-12-connection-details.png " ")
+    ![Connection details page](./images/03-12-connection-details.png " ")
 
 13. On the GoldenGate admin user page, enter your username, password, and tick the **Add GoldenGate admin database user**. 
 
@@ -144,7 +144,7 @@ In this lab, you will:
 
 20. On the Confirmation page, review the details, and then click **Create**.
 
-    ![Confirmation details](./images/02-20-confirmation-details.png " ")
+    ![Confirmation details](./images/03-20-confirmation-details.png " ")
 
 **Proceed to the next lab.**
 
@@ -155,6 +155,6 @@ In this lab, you will:
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
+* **Contributors** -  Alex Lima, Database Product Management; Katherine Wardhana, User Assistance Developer
 * **Last Updated By/Date** - Katherine Wardhana, 
 
