@@ -298,7 +298,7 @@ END;</copy>
 
     ![SQL worksheet Run Script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-15-sql-return.png " ")
 
-    > **Note:** Review the DBMS Output tab and ignore the error if the Job successfully completed.
+    > **Note:** Review the **DBMS Output** tab and ignore the error in Script Output if the Job successfully completed.
 
 You may now **proceed to the next lab.**
 
