@@ -180,7 +180,9 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 	>**Note:** If you're warned that your private key is too open, run `chmod 600 <privateKey>` and then try again. After the host is added to the list of known hosts, you can add an ampersand (&) to the end of the command to have it run in the background.
 
-6.  Run `mysqlsh admin@localhost:3306 --sql` and then enter the MySQL database admin password from Task 2 Step 7.
+6.  Run the following command and then enter the MySQL database admin password from Task 2 Step 7.
+
+		<copy>mysqlsh admin@localhost:3306 --sql</copy>
 
 7.  Download and run the sample data script.
 
