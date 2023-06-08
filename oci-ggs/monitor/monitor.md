@@ -18,7 +18,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-In order to complete this lab, you should have completed the preceding lab and have both an Extract and Replicat running.
+In order to complete this lab:
+* You should have completed the preceding lab
+* Have both an Extract and Replicat running
 
 ## Task 1: Perform Inserts to the source database
 
