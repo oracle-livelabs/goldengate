@@ -34,7 +34,7 @@ In order to complete this lab, you should have completed the preceding labs.
 
 6.  Under **Sessions**, click **Create session**.
 
-    >**NOTE:** *If you already have a session running for your SourceMySQL DB system, you can skip to step ..*
+    >**NOTE:** If you already have a session running for your SourceMySQL DB system, you can skip to step 14.
 
 7.  In the Create session panel, select **SSH port forwarding session** from the session type dropdown.
 
@@ -52,9 +52,11 @@ In order to complete this lab, you should have completed the preceding labs.
 
 14. After the cloud shell session is active, paste the SSH command from your bastion session. Ensure that you replace the `<privateKey` and `<localPort>` values.
 
-    >**NOTE:** *If you generated a new SSH key pair in step 10, you must first upload your private key to Cloud Shell using the Cloud Shell Settings menu, and change the permission on the key (`chmod 600 <privateKey>`)*
+    >**NOTE:** If you generated a new SSH key pair in step 10, you must first upload your private key to Cloud Shell using the Cloud Shell Settings menu, and change the permission on the key (`chmod 600 <privateKey>`).
 
 15. Enter the following command to start MySQL Shell.
+
+    >**NOTE:** If using a Bastion session, replace localhost with the private IP of the MySQL database.
 
     ```
     <copy>mysqlsh admin@localhost:3306 --sql</copy>
@@ -85,13 +87,23 @@ commit;</copy>
 
     ![Replicat Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-06-rep-statistics.png " ")
 
+7.  In the Oracle Cloud console, open Database actions from the TargetADW Database details page. 
+
+8.  On the Database actions page, select **SQL**.
+
+9.  In the Navigator panel, from the Schema dropdown, select **SRCMIRROR_OCIGGLL**.
+
+10. In the list of tables, right-click **SRC_CITY** and then select **Open**.
+
+11. In the SRCMIRROR_OCIGGLL.SRC_CITY view, click **Data**, and then verify that the 10 new entries inserted in Step 4 appear.
+
 ## Task 2: Using the Performance Metrics Server
 
 1.  In the MySQLDeployment console, click **Performance Metrics Server**, and then click **CDCEXT**.
 
     ![Performance Metrics Service page - EXT highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-01-perf-serv.png)
 
-    > **Note:** *You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.*
+    > **Note:** You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.
 
 2.  Click **Database Statistics**.
 
@@ -152,4 +164,4 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, October 2022
+* **Last Updated By/Date** - Jenny Chan, June 2023
