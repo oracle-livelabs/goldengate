@@ -87,7 +87,7 @@ To successfully complete this lab, you need:
 
 2.  On the Overview page, click **Add Extract** (plus icon)
 
-    ![Click Add Extract on Administration Service Overview page](./images/01-07-add-extract.png " ")
+    ![Click Add Extract on Administration Service Overview page](./images/02-02-add-extract.png " ")
 
 3.  On the Add Extract page, for Extract type, select **Initial Load Extract**, and then click **Next**.
 
@@ -130,7 +130,7 @@ In this task, you create a user in the target deployment for the Distribution Pa
 
 6.  Complete the fields as follows, and then click **Submit**:
     * For **Username**, enter `ggsnet`.
-    * For **Role**, select **Administrator**.
+    * For **Role**, select **Operator**.
     * Enter a password for this user, and then enter it again for verification.
 
     ![Enter details for the ggsnet user](./images/03-06-ggsnet.png " ")
@@ -222,4 +222,4 @@ In this task, you create a user in the target deployment for the Distribution Pa
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, October 2022
+* **Last Updated By/Date** - Jenny Chan, June 2023

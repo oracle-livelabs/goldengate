@@ -144,6 +144,8 @@ Before importing data to the target database, create a credential in the target 
 
     ![Run script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-06-sql-script.png " ")
 
+    > **Note:** Review the **DBMS Output** tab and ignore the error in Script Output if the Job successfully completed.
+
 ## Task 2: Add and run the Replicat
 
 1.  On the OCI GoldenGate Deployment Console Home page, click **Add Replicat** (plus icon).

@@ -142,7 +142,6 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 	![Click the three dots and then select Copy SSH command](./images/03-14-copy-ssh-cmd.png " ")
 
-**Proceed to Task 4.**
 
 ## Task 3B: Using CloudShell to connect to the private network
 
@@ -158,7 +157,13 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 3.  Select the VCN and Subnet your OCI MySQL DB system uses, and then click **Use as active network**.
 
-4.  After CloudShell is connected to the private network, proceed to Task 4, Step 6 below.
+4.  After CloudShell is connected to the private network, enter the following command to connect to the MySQL database:
+
+	> **Note:** Ensure that you replace `<mysql-db-privateIP>` with the private IP of your MySQL database.
+
+		<copy>mysqlsh admin@<mysql-db-privateIP>:3306 --sql</copy>
+
+5.  Proceed to Task 4, Step 7.
 
 ## Task 4: Load data into the MySQL DB System
 
@@ -227,11 +232,11 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 1.  After the instance becomes Active, select it to view its details and access tools.
 
-    ![List of Autonomous Databases](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-03-atp.png " ")
+    ![List of Autonomous Databases](https://oracle-livelabs.github.io/goldengate/ggs-common/setup/images/06-01-adw.png " ")
 
 2.  Click **Database Actions**.
 
-	![Click Database Actions on autonomous database details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-dbdetails.png " ")
+	![Click Database Actions on autonomous database details page](https://oracle-livelabs.github.io/goldengate/ggs-common/setup/images/06-02-dbdetails.png " ")
 
 3.  If prompted, log in with the ADMIN user and password provided when you created the ADW instance.
 
@@ -277,5 +282,5 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
 - **Contributor** - Julien Testut, Database Product Management
-- **Last Updated by** - Jenny Chan, March 2023
+- **Last Updated by** - Jenny Chan, June 2023
 - **PAR Expiration date** - February 2024
