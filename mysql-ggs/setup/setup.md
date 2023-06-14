@@ -218,7 +218,7 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 5.  Under **Choose a workload type**, select **Data Warehouse**.
 
-6.  Under **Choose a deployment type**, select **Shared Infrastructure**.
+6.  Under **Choose a deployment type**, select **Serverless**.
 
 7.  Under Create administrator credentials, enter a password and confirm the password. Note the password down in a notepad, you will need it later.
 

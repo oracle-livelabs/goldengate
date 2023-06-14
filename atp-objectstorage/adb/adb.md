@@ -64,7 +64,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Workload type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-04-workload.png " ")
 
-5.  Under **Choose a deployment type**, select **Shared Infrastructure**.
+5.  Under **Choose a deployment type**, select **Serverless**.
 
     ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-deployment.png " ")
 
