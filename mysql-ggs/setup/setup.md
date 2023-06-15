@@ -220,6 +220,8 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 6.  Under **Choose a deployment type**, select **Serverless**.
 
+    ![Workload and deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-deployment-dw.png " ")
+
 7.  Under Create administrator credentials, enter a password and confirm the password. Note the password down in a notepad, you will need it later.
 
 8.  Under **Choose a license type**, select **License Included**.
