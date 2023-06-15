@@ -1,12 +1,17 @@
 {
-    "workshoptitle": "GoldenGate Stream Analytics Labs",
+    "workshoptitle": "Real-time data integration in the cloud with OCI GoldenGate Stream Analytics",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
 
       {
-          "title": "Introduction to GoldenGate Stream Analytics",
+          "title": "Introduction",
           "filename": "../../Introduction/introduction.md"
       },
+      {
+        "title": "Get Started",
+        "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+        "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
 
         {
             "title": "Lab 1: Review GoldenGate Replication",
@@ -21,6 +26,11 @@
         {
             "title": "Lab 3: Setup Stream Analytics Pipeline",
             "filename": "../../setup-pipeline/setup-pipeline.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
         }
 
     ]
