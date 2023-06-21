@@ -59,9 +59,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
 4.  Under **Choose a workload type**, select **Transaction Processing**.
 
-    ![Workload type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-04-workload.png " ")
-
-5.  Under **Choose a deployment type**, select **Shared Infrastructure**.
+5.  Under **Choose a deployment type**, select **Serverless**.
 
     ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-deployment.png " ")
 
@@ -142,11 +140,9 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
 4.  Under **Choose a workload type**, select **Data Warehouse**.
 
-    ![Workload type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-04-workload.png " ")
+5.  Under **Choose a deployment type**, select **Serverless**.
 
-5.  Under **Choose a deployment type**, select **Shared Infrastructure**.
-
-    ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-deployment.png " ")
+    ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-deployment-dw.png " ")
 
 6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
 

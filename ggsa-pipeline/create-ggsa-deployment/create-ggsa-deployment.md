@@ -1,10 +1,16 @@
 
 # Create a GoldenGate Stream Analytics Deployment
 
+## Introduction
+
+Estimated Time: XXX minutes
+
 This lab focuses on establishing connections between your GoldenGate Stream Analytics deployment, Kafka instance, and autonomous database.
 
-## **Lab Prerequisites**
+### Objectives
+* XXXX
 
+### Prerequisites
 * Completion of Lab 1: Review GoldenGate Replication
 
 ## Task 1: Create a connection between Kafka and GoldenGate
@@ -58,6 +64,8 @@ This lab focuses on establishing connections between your GoldenGate Stream Anal
    ![Enter login](./images/ggsa-login.png "")
 
    ![Login landing page](./images/ggsa-login-2.png "")
+
+3. You may proceed to the next lab.
 
 ## Learn More
 

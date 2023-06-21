@@ -1,9 +1,15 @@
 # Setup a Stream Analytics Pipeline
 
+## Introduction
+
+Estimated Time: XXX minutes
+
 This lab focuses on creating a pipeline and establishing stages, filters, and visualizations.
 
-## **Lab Prerequisites**
+### Objectives
+* XXXX
 
+### Prerequisites
 * Completion of Lab 2: Create GoldenGate Stream Analytics Deployment
 
 ## Task 1: Review Connections
