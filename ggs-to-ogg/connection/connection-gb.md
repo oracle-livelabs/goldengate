@@ -118,7 +118,11 @@ The following instructions show you how to download the Root Certificate using a
 
     ![Click Administrator in the OCI Goldengate deployment console navigation menu](./images/03-01-administrator.png " ")
 
-2.  Click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. For example, name the user **ggsnet** and assign the user the Operator role.
+2.  Click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. Enter the following values:
+
+    * For Name, enter **ggsnet**.
+    * For Role, select **Operator**.
+    * For Password and Verify Password, enter a password.
 
     ![Click Add User](./images/03-02a-users.png " ")
 
@@ -131,7 +135,7 @@ The following instructions show you how to download the Root Certificate using a
     * For **Credential Domain**, enter a name to distinguish this connection, such as **GGSNetwork**.
     * For **Credential Alias**,  enter a name, such as **ggs2ogg**.
     * For **User ID**, enter the user name of the user you created in step 2 (ggsnet).
-    * For **Password**, enter the password associated to the user entered for User ID.
+    * For **Password**, enter the password from step 2.
     * For **Verify Password**, re-enter the password for verification purposes.
 
     ![Add a Credential for ggsnet](./images/03-04-add-credentials.png " ")
@@ -145,4 +149,4 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2023
+* **Last Updated By/Date** - Jenny Chan, June 2023

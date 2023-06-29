@@ -64,7 +64,7 @@ This Extract process captures data from the source database to send to Oracle Go
 
 6.  Click **Next**.
 
-7.  In the Extract Parameters screen, add the following to the text area:
+7.  In the Extract Parameters screen, add a new line, and then paste the following to the text area:
 
     ```
     <copy>Table SRC_OCIGGLL.*;</copy>
@@ -104,7 +104,7 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 5.  For **Source Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
-    *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
+    >**NOTE:** You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).
 
     ![Copy the browser address bar of your OCI GoldenGate Deployment Console window](./images/03-05a-copy-browser.png " ")
 
