@@ -78,7 +78,7 @@ The following instructions show you how to download the Root Certificate using a
 
     ![Click View Certificate in Page Info dialog window](./images/01b-04-security-certificate.png " ")
 
-5.  On the **Certificate** page, click **DigiCert Global Root G2**.
+5.  On the **Certificate** page, click **DigiCert Global Root CA**.
 
     ![Click DigiCert Global Root G2](./images/01b-05-certificate.png " ")
 
