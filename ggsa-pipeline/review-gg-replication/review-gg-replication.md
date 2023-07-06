@@ -1,9 +1,15 @@
 # Review GoldenGate Replication
 
+## Introduction
+
+Estimated Time: XXX minutes
+
 This lab reviews the GoldenGate essentials - connections, deployments, and extracts. You will also start a generator script for continuous transactions to your autonomous database table.
 
-## **Lab Prerequisites**
+### Objectives
+* XXXX
 
+### Prerequisites
 * Experience with Oracle Database
 * Familiarity with Oracle GoldenGate is helpful, but not required
 * Familiarity with Oracle Cloud Infrastructure is helpful, but not required
@@ -71,6 +77,9 @@ This lab reviews the GoldenGate essentials - connections, deployments, and extra
     ```
 
     Inserts to the Autonomous Database are now being created.
+
+
+4. You may proceed to the next lab.
 
 ## Learn More
 
