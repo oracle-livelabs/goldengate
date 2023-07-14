@@ -156,5 +156,5 @@ In this lab, you will:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Alex Lima, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, 
+* **Last Updated By/Date** - Katherine Wardhana, July 2023
 

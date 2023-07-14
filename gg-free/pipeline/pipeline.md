@@ -43,28 +43,18 @@ In this lab, you learn to:
 
 ## Task 2: Configure the pipeline
 
-1.  x
+1. On the Configuration page, for Mapping select the Source Schemas to replicate to the target. Click **Save**.
 
-2.  x
+    ![Configuration page](./images/02-01-configuration-save.png " ")
 
-3.  x
+2.  On the Overview page, in the Initialization view, click **Start**. It takes a few minutes for the pipeline initialization to run. The status of each of the steps will change from PENDING to IN PROGRESS to COMPLETED when it is ready for you to use.
 
+    ![Overview Initialization page](./images/02-02-overview-start.png " ")
 
-## Task 3: Start the pipeline
+3.  In the Runtime view, you can view the real time database statistics, such as Operations Extract and Operations Replicat.
 
-1.  x
+    ![Overview Runtime page](./images/02-03-overview-runtime.png " ")
 
-2.  x
-
-3.  x
-
-## Task 4: x
-
-1.  x
-
-2.  x
-
-3.  x
 
 **Proceed to the next lab.**
 
@@ -75,4 +65,4 @@ In this lab, you learn to:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Alex Lima, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2023
+* **Last Updated By/Date** - Katherine Wardhana, July 2023
