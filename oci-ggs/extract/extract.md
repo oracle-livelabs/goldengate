@@ -5,6 +5,9 @@ This lab instructs you to use the OCI GoldenGate deployment console to add trans
 
 Estimated time: 25 minutes
 
+Watch the video below for a quick walk through of the lab.
+[Watch the video](videohub:1_j398evq1)
+
 ### About the Extract process
 An Extract is a process that extracts, or captures, data from a source database.
 
