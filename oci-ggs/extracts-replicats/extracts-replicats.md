@@ -6,6 +6,9 @@ This lab walks you through the steps to instantiate the target database using Or
 
 Estimated time: 15 minutes
 
+Watch the video below for a quick walk through of the lab.
+[Watch the video](videohub:1_253sko6i)
+
 ### About Replicats
 
 A Replicat is a process that delivers data to a target database.
