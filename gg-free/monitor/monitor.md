@@ -20,29 +20,25 @@ In this lab, you will:
 
 In order to complete this lab, you should have completed the preceding lab and have both an Extract and Replicat running.
 
-## Task 1: x
+## Task 1: Monitor the pipeline
 
-1.  x
+For advanced monitoring you can open the GoldenGate microservices console.
 
-2.  x
+1.  Open the Extract menu (ellipses) and then click **GoldenGate Console**. 
 
-3.  x
+    ![Click GoldenGate Console for Extract](./images/03-01-extract-gg-console.png " ")
 
-## Task 2: x
+2.  To log in to the GoldenGate console, enter oggadmin for user name and a password, and then click Sign In.
 
-1.  x
+    ![GoldenGate console sign in](./images/03-02-gg-console-signin.png " ")
 
-2.  x
+3. In the GoldenGate deployment console, click **Performance Metrics Service**, and then click the Extract process (in this example, E5).
 
-3.  x
+    ![Performance Metrics Service](./images/03-04-performance-metrics-service.png " ")
 
-## Task 3: x
+4. Under Performance Metrics Service, monitor the performance of the extract.
 
-1.  x
-
-2.  x
-
-3.  x
+    ![Process Performace](./images/03-05-process-performance.png " ")
 
 ## Learn more
 
@@ -51,4 +47,4 @@ In order to complete this lab, you should have completed the preceding lab and h
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Alex Lima, Database Product Management & Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, June 2023
+* **Last Updated By/Date** - Katherine Wardhana, July 2023
