@@ -1,4 +1,4 @@
-# Create the Oracle Cloud Infrastructure GoldenGate Resources
+# Create the Oracle Cloud Infrastructure GoldenGate resources
 
 ## Introduction
 
@@ -190,7 +190,7 @@ Now, follow the steps below to connect the target Autonomous Data Warehouse \(AD
 
 8. For **Database in &lt;compartment-name&gt;**, select **TargetATP &lt;livelab-numbers&gt;** from the dropdown. 
 
-9. Enter a password in the Password field, and then click **Create**. Take note of this password to use in Step 10.
+9. Enter a password for the ggadmin user in the Password field, and then click **Create**. Take note of this password to use in Step 10.
 
     ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-09-create-connec-details.png)
 
@@ -265,8 +265,8 @@ In this lab, you created the OCI GoldenGate deployment and registered the source
 
 ## Learn More
 
-* [Manage deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/ebbpf/index.html#articletitle)
-* [Manage connections](https://docs.oracle.com/en/cloud/paas/goldengate-service/mcjzr/index.html#articletitle)
+* [Manage deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/ebbpf/index.html)
+* [Manage connections](https://docs.oracle.com/en/cloud/paas/goldengate-service/mcjzr/index.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance

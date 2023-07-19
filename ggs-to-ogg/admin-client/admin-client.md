@@ -1,4 +1,4 @@
-# Use the Admin Client to View Extract Statistics and Log messages
+# Use Admin Client to view Extract statistics and Log messages
 
 ## Introduction
 
