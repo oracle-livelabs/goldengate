@@ -1,4 +1,4 @@
-# Set Up Your Environment
+# Set up your environment
 
 ## Introduction
 
@@ -16,11 +16,12 @@ Estimated time: 20 minutes
 
 ### Prerequisites
 
-This lab assumes you have completed the Getting Started lab.
+This lab assumes you have completed the Get started lab.
 
 > **Note:** *You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 
 ## Task 1: Create a VCN and Subnet
+
 1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
 	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
@@ -43,7 +44,7 @@ This lab assumes you have completed the Getting Started lab.
 
 You can click **View VCN Details** and to verify both a Public and Private subnet were created.
 
-## Task 2: Create an Autonomous Transaction Processing Instance
+## Task 2: Create an Autonomous Transaction Processing instance
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
@@ -76,7 +77,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 
-## Task 3: Load the Autonomous Transaction Processing Schema
+## Task 3: Load the Autonomous Transaction Processing schema
 
 1.  Click the following link to download the database schema.
 
@@ -124,7 +125,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
 
-## Task 4: Create an Autonomous Data Warehouse Instance
+## Task 4: Create an Autonomous Data Warehouse instance
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 
@@ -156,7 +157,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
-## Task 5: Load the Autonomous Data Warehouse Schema
+## Task 5: Load the Autonomous Data Warehouse schema
 
 1.  Select your Autonomous Data Warehouse instance from the Autonomous Databases list to view its details and access tools.
 
@@ -193,5 +194,5 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Katherine Wardhana, March 2023
+- **Last Updated By/Date** - Jenny Chan, July 2023
 - **PAR Expiration date** - March 31, 2022
