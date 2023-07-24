@@ -5,6 +5,9 @@ This lab instructs you to use the OCI GoldenGate deployment console to add trans
 
 Estimated time: 25 minutes
 
+Watch the video below for a quick walk through of the lab.
+[Watch the video](videohub:1_j398evq1)
+
 ### About the Extract process
 An Extract is a process that extracts, or captures, data from a source database.
 
@@ -15,6 +18,11 @@ In this lab, you learn to:
 * Connect to the target database to add a checkpoint table
 * Add and run an Extract
 * Export data from the source database using Oracle Data Pump
+
+### Prerequisites
+
+* This lab assumes that you completed all preceding labs
+* Your deployment is in the Active state.
 
 ## Task 1: Launch the GoldenGate Deployment Console
 
@@ -293,9 +301,9 @@ END;</copy>
 
     ![SQL worksheet Run Script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-15-sql-return.png " ")
 
-    > **Note:** Review the DBMS Output tab and ignore the error if the Job successfully completed.
+    > **Note:** Review the **DBMS Output** tab and ignore the error in Script Output if the Job successfully completed.
 
-**Proceed to the next lab.**
+You may now **proceed to the next lab.**
 
 ## Learn more
 

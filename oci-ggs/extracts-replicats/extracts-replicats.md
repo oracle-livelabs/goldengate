@@ -6,6 +6,9 @@ This lab walks you through the steps to instantiate the target database using Or
 
 Estimated time: 15 minutes
 
+Watch the video below for a quick walk through of the lab.
+[Watch the video](videohub:1_253sko6i)
+
 ### About Replicats
 
 A Replicat is a process that delivers data to a target database.
@@ -18,7 +21,8 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes that you completed all preceding labs, and your deployment is in the Active state.
+* This lab assumes that you completed all preceding labs
+* Your deployment is in the Active state.
 
 ## Task 1: Import data using Oracle Data Pump (ImpDP)
 
@@ -142,6 +146,8 @@ Before importing data to the target database, create a credential in the target 
     ```
 
     ![Run script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-06-sql-script.png " ")
+
+    > **Note:** Review the **DBMS Output** tab and ignore the error in Script Output if the Job successfully completed.
 
 ## Task 2: Add and run the Replicat
 

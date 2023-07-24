@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Send Data from Oracle Cloud Infrastructure GoldenGate to Oracle GoldenGate",
+    "workshoptitle": "Send data from Oracle Cloud Infrastructure GoldenGate to Oracle GoldenGate",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
@@ -7,12 +7,12 @@
             "filename": "../../introduction/introduction-gb.md"
         },
         {
-            "title": "Get Started",
+            "title": "Get started",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Create OCI GoldenGate Resources",
-            "description": "Create your OCI GoldenGate deployment and database registration",
+            "title": "Lab 1: Create OCI GoldenGate resources",
+            "description": "Create your OCI GoldenGate deployment and connections",
             "filename": "../../create/create-gb.md"
         },
         {
@@ -22,17 +22,17 @@
             "filename": "../../oggmp-atp/oggmp-atp.md"
         },
         {
-            "title": "Lab 3: Create a Trusted Connection Between Oracle GoldenGate and OCI GoldenGate",
+            "title": "Lab 3: Create a trusted connection between Oracle GoldenGate and OCI GoldenGate",
             "description": "Use a self-signed certificate to create a trusted connection",
-            "filename": "../../connection/connection-gb.md"
+            "filename": "../../connection/connection.md"
         },
         {
-            "title": "Lab 4: Send the OCI GoldenGate Trail File to Oracle GoldenGate",
+            "title": "Lab 4: Send the OCI GoldenGate Trail file to Oracle GoldenGate",
             "description": "Create an Extract, Receiver Path, and Replicat",
             "filename": "../../extract/extract.md"
         },
         {
-            "title": "Lab 5: (Optional) Use the Admin Client to View Extract Statistics and Log Messages",
+            "title": "Lab 5: (Optional) Use Admin Client to view Extract statistics and Log messages",
             "description": "Connect to the Marketplace Oracle GoldenGate Admin Client",
             "filename": "../../admin-client/admin-client.md"
         },

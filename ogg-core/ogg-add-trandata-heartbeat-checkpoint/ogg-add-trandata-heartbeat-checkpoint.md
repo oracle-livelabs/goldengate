@@ -86,7 +86,7 @@ This lab assumes that you have:
 
       ```
       <copy>
-      ALTER CREDENTIALSTORE ADD USER ggadmin@pdbwest ALIAS ggwest DOMAIN OracleGoldenGate PASSWORD Welcome1
+      ALTER CREDENTIALSTORE ADD USER ggadmin@pdbwest ALIAS ggwest DOMAIN OracleGoldenGate PASSWORD Welcome2OGG
       </copy>
       ```
    4. Test the database connection using the DBLOGIN command:
@@ -103,7 +103,7 @@ This lab assumes that you have:
    5. Add the credentials for the target PDB, **pdbeast** to the credentialstore:
         ```
          <copy>
-         ALTER CREDENTIALSTORE ADD USER ggadmin@pdbeast ALIAS ggeast DOMAIN OracleGoldenGate PASSWORD Welcome1
+         ALTER CREDENTIALSTORE ADD USER ggadmin@pdbeast ALIAS ggeast DOMAIN OracleGoldenGate PASSWORD Welcome2OGG
          </copy>
         ```
 
