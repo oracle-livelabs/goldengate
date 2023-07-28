@@ -64,7 +64,7 @@ This Extract process captures data from the source database to send to Oracle Go
 
 6.  Click **Next**.
 
-7.  In the Extract Parameters screen, add the following to the text area:
+7.  In the Extract Parameters screen, add a new line, and then paste the following to the text area:
 
     ```
     <copy>Table SRC_OCIGGLL.*;</copy>
@@ -104,7 +104,7 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 5.  For **Source Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
-    *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
+    >**NOTE:** You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).
 
     ![Copy the browser address bar of your OCI GoldenGate Deployment Console window](./images/03-05a-copy-browser.png " ")
 
@@ -130,7 +130,7 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
     ![Add Target Trail Name](./images/03-10-target-trail.png " ")
 
-11. For **Generated Target URI**, click **Edit** (pencil icon), and then replace the IP address with the Oracle GoldenGate Internal FQDN. *You can copy the Internal FQDN from the Oracle GoldenGate Marketplace Compute instance in the OCI Console.*    
+11. For **Generated Target URI**, click **Edit** (pencil icon), and then replace the IP address with the Oracle GoldenGate Internal FQDN. You can copy the Internal FQDN from the Oracle GoldenGate Marketplace Compute instance in the OCI Console.
 
     ![The Generated Target URI from the Instance Details page](./images/03-11a-note.png " ")
 
@@ -140,15 +140,13 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 13. Return to the Receiver Server Overview page, and then select **Start** from the Path's **Action** menu.
 
-14. In the OCI GoldenGate Deployment Console, check the Receiver Server for the Receiver Path. It can take a few minutes before it appears.
-
-    ![Activated Receiver Path](./images/03-14-rcvr.png " ")
+14. In the OCI GoldenGate Deployment Console, check the Distribution Service for the Distribution Path. It can take a few minutes before it appears.
 
 In this lab, you created and ran a Path on your on premises Oracle GoldenGate Receiver Server and sent a trail file from OCI GoldenGate to Oracle GoldenGate.
 
 ## Task 4: Add a Checkpoint Table
 
-1.  In the Oracle GoldenGate Administration Server, click **Administration Server**, and then open the navigation menu to select **Configuration**.
+1.  In the Oracle GoldenGate Marketplace Administration Server, click **Administration Server**, and then open the navigation menu to select **Configuration**.
 
     ![Select Configration from the Administration Service navigation menu](./images/04-01-configuration.png " ")
 
@@ -183,7 +181,7 @@ This Replicat process consumes the trail file sent from OCI GoldenGate.
 
 4.  For **Credential Domain**, select **OracleGoldenGate**.
 
-5.  For **Credential Alias**, select **adw&lt;user&gt;_low**.
+5.  For **Credential Alias**, select **TargetADW**.
 
     ![Select adw<user>_low on the Credential Alias dropdown](./images/05-05-cred.png " ")
 
@@ -209,7 +207,7 @@ This Replicat process consumes the trail file sent from OCI GoldenGate.
 
     The yellow exclamation point icon changes to a green checkmark.  
 
-12. Return to the OCI Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **Source ATP**.
+12. Return to the OCI Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
 
 13. On the Source Autonomous Transaction Processing Details page, click **Database Actions**.
 
