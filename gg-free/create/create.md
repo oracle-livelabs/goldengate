@@ -18,9 +18,17 @@ In this lab, you will:
 
 ## Task 1: Log in to GoldenGate Free
 
-1.  In the GoldenGate Free welcome page, enter your username and password, and then click **Log in**.
+1. In your lab instructions, click **View Login Info**.
 
-    ![Login screen](./images/01-01-login.png " ")
+    ![View login info ](./images/01-01-login-info.png " ")
+
+2. On the Reservation Information page, under Terraform Values, copy the **OGG Public IP** and paste the IP in a new window.
+
+    ![Terraform values](./images/01-02-terraform.png " ")
+
+3. In the GoldenGate Free welcome page, enter `oggadmin` for your username. For password, copy the **Global Password** from the Reservation Information. Click **Log in**. 
+
+    ![Login screen](./images/01-03-login.png " ")
 
 ## Task 2: Create the source connection
 
@@ -38,13 +46,13 @@ In this lab, you will:
 
 5.  For the Connection type dropdown, select **Basic**.
 
-6.  For Hostname, enter .
+6.  For Hostname, enter the **DB Free E Private IP** found in the Reservation Information.
 
 7.  For Port, enter **1521**.
 
 8. For Database type, select **Pluggable database in container database**.
 
-9.  For Container database dervice name (CDB), enter **ORCL**.
+9.  For Container database dervice name (CDB), enter **FREE**.
 
 10.  Select **SYSDBA privileges available**.
 
@@ -100,15 +108,15 @@ In this lab, you will:
 
 5.  For the Connection type dropdown, select **Basic**.
 
-6.  For Hostname, enter **ORCL**.
+6.  For Hostname, enter the **DB Free W Private IP** found in the Reservation Information.
 
-7.  For Port, enter **1621**.
+7.  For Port, enter **1521**.
 
 8. For Database type, select **Pluggable database in container database**.
 
-9.  For Container database dervice name (CDB), enter .
+9.  For Container database dervice name (CDB), enter **FREE**.
 
-10.  Tick the SYSDBA priviledges available 
+10.  Select **SYSDBA privileges available**.
 
     ![SYSDBA priviledges](./images/03-10-sysdba-priv.png " ")
 
@@ -120,7 +128,7 @@ In this lab, you will:
 
     ![Connection details page](./images/03-12-connection-details.png " ")
 
-13. On the GoldenGate admin user page, enter your username, password, and tick the **Add GoldenGate admin database user**. 
+13. On the GoldenGate admin user page, enter your username, password, and select the **Add GoldenGate admin database user**. 
 
 14. Click **Next**.
 
@@ -130,7 +138,7 @@ In this lab, you will:
 
     ![Click run analysis](./images/02-15-run-analysis.png " ")
 
-16. Review the script by scrolling through and reviewing it completely. Tick **I have reviewed the SQL script and am aware of the changes it will apply to my database**.
+16. Review the script by scrolling through and reviewing it completely. Select **I have reviewed the SQL script and am aware of the changes it will apply to my database**.
 
 17. Click **Run SQL**.
 
