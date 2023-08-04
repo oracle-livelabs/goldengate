@@ -110,7 +110,7 @@ First, follow the steps below to connect the Kafka event hub.
 
 10. Click **Create**.
 
-    ![Kafka details 2](./images/kafka_connect_2.png)
+    ![Kafka details page 2](./images/kafka_connect_2.png)
 
     The connection becomes Active after a few minutes. You can continue with the next task.
 
@@ -148,7 +148,7 @@ First, follow the steps below to connect the GoldenGate deployment to be used by
 
 12. Click **Create**.
 
-    ![GoldenGate details2](./images/gg_connect_2.png)
+    ![GoldenGate details page 2](./images/gg_connect_2.png)
 
 13.  Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
 
@@ -179,7 +179,7 @@ OCI GoldenGate connections need to be assigned to a deployment before they can b
 
     ![Assigned connections under Resources](./images/assign_connection.png " ")
 
-6. In the Assign connection dialog, from the Connection in &lt;compartment-number&gt;-COMPARTMENT dropdown, select **ADB_Connection**. Click **Assign connection**.
+6. In the Assign connection dialog, from the Connection in &lt;compartment-number&gt;-COMPARTMENT dropdown, select **ADB\_Connection**. Click **Assign connection**.
 
     ![Assigned connection to SourceATP](./images/assign_connection_dlg.png " ")
 

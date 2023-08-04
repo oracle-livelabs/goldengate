@@ -42,10 +42,10 @@ OCI GoldenGate Stream Analytics embeds a GoldenGate Big Data environment to rece
 ![GGSA system settings](./images/ggsa_system_settings.png "")
 
 2. In System Settings, open the **Manage Clusters** tab and expand the **GGBD Cluster** area
-![GGSA system settings](./images/manage_ggbd.png "")
+![GGSA system settings manage clusters](./images/manage_ggbd.png "")
 
 3. Press the **Start Cluster** button and wait until the status of the cluster is in Cluster Status: Running. Close the System Settings dialog.
-![GGSA system settings](./images/start_ggbd.png "")
+![GGSA system settings start cluster](./images/start_ggbd.png "")
 
 ## Task 3: Change credentials in GoldenGate connection
 
@@ -67,7 +67,7 @@ The GoldenGate connection is available in Stream Analytics console trough the co
 
 6. Press **Save** to close the dialog.
 
-![Edit GoldenGate connection](./images/edit_gg_conn_2.png "")
+![Edit GoldenGate connection page 2](./images/edit_gg_conn_2.png "")
 
 
 ## Task 4: Create GoldenGate Change Data
@@ -84,13 +84,13 @@ GoldenGate Change Data creates an internal GoldenGate replicat process that conn
 
 4. Press **Next**.
 
-   ![Create GoldenGate Change Data 1](./images/changedata_1.png "")
+   ![Create GoldenGate Change Data page 1](./images/changedata_1.png "")
 
 5. On the second page of the Create dialog, for Connection, select **GoldenGate**.
 
 6. Press **Next**.
 
-   ![Create GoldenGate Change Data 2](./images/changedata_2.png "")
+   ![Create GoldenGate Change Data page 2](./images/changedata_2.png "")
 
 7. On the third page of the Create dialog, for GG Extract, select **EDEMO**.
 
@@ -102,7 +102,7 @@ GoldenGate Change Data creates an internal GoldenGate replicat process that conn
 
 11. Press **Save**.
 
-   ![Create GoldenGate Change Data 3](./images/changedata_3.png "")
+   ![Create GoldenGate Change Data page 3](./images/changedata_3.png "")
 
  12. On the catalog page, click on the Start icon on the far right of the ChangeData object in the list. Press **OK** on the confirmation dialog. Wait for the status to change to **Running**.
 
@@ -114,7 +114,7 @@ Database connections are created with default user ggadmin. We will change this 
 
 1. Switch back to the browser tab with GGSA console on catalog page. 
 
-2. Click on **ADB_Connection** object in the catalog list.
+2. Click on **ADB\_Connection** object in the catalog list.
 
    ![Open ADB Connection](./images/catalog_adb_connection.png "")
 
@@ -140,19 +140,19 @@ Create database references for two lookup tables for customers and movies to enr
 
 3. Press **Next**.
 
-   ![Create Referemce Customer 1](./images/ref_customer_1.png "")
+   ![Create Referemce Customer page 1](./images/ref_customer_1.png "")
 
-4. On the second page of the Create Reference dialog, for Connection, select **ADB_Connection**.
+4. On the second page of the Create Reference dialog, for Connection, select **ADB\_Connection**.
 
 5. Press **Next**.
 
-   ![Create Referemce Customer 2](./images/ref_customer_2.png "")
+   ![Create Referemce Customer page 2](./images/ref_customer_2.png "")
 
 6. On the last page of the Create dialog, for shape, select the table **CUSTOMER**.
 
 7. Press **Save**.
 
-  ![Create Referemce Customer 3](./images/ref_customer_4.png "")
+  ![Create Referemce Customer page 3](./images/ref_customer_4.png "")
 
 8. Repeat the same for table Movie: On the catalog page, click on **Create New Item** and select **Reference** and in submenu **Database Table**.
 
@@ -162,19 +162,19 @@ Create database references for two lookup tables for customers and movies to enr
 
 10. Press **Next**.
 
-   ![Create Referemce Customer 1](./images/ref_movie_1.png "")
+   ![Create Referemce Customer page 1](./images/ref_movie_1.png "")
 
-11. On the second page of the Create Reference dialog, for Connection, select **ADB_Connection**.
+11. On the second page of the Create Reference dialog, for Connection, select **ADB\_Connection**.
 
 12. Press **Next**.
 
-   ![Create Referemce Customer 2](./images/ref_customer_2.png "")
+   ![Create Referemce Customer page 2](./images/ref_customer_2.png "")
 
 13. On the last page of the Create dialog, for shape, select the table **MOVIE**.
 
 14. Press **Save**.
 
-  ![Create Referemce Customer 3](./images/ref_movie_4.png "")
+  ![Create Referemce Customer page 3](./images/ref_movie_4.png "")
 
 ## Task 7: Create Geofence
 
@@ -190,22 +190,22 @@ We are creating a GeoFence to select customers for two regions in the United Sta
 
 3. Press **Save**.
 
- ![Create Referemce Customer](./images/geofence_dlg.png "")
+ ![Create Geo Fence page 1](./images/geofence_dlg.png "")
 
  4. The Geo Fence editor opens. If any dialog for the browser asking your location opens, deny it. Press on the list icon to minimize it.
 
-   ![Create Referemce Customer](./images/geofence1.png "")
+   ![Create Geo Fence page 2](./images/geofence1.png "")
 
 5. Double-click on the center of the United States to zoom in and center on it.
 
-   ![Create Referemce Customer](./images/geofence2.png "")
+   ![Create Geo Fence page 3](./images/geofence2.png "")
 
 6. Click on the **Polygon Tool** icon and then click on points to draw a polygon over the West Coast of the US. Make sure the polygon is closed. It doesn't have to be exact, but should include a reasonably big area of multiple states.
 
-   ![Create Referemce Customer](./images/geofence3.png "")
+   ![Geo Fence polygon tool](./images/geofence3.png "")
 
 7. Rename the region to **West Coast** in the text box on right-hand side and press Enter.
-    ![Create Referemce Customer](./images/geofence4.png "")
+    ![Geo Fence west coast area](./images/geofence4.png "")
 
 8. If necessary, drag the map with the mouse to get the East Coast fully visible.
 
@@ -213,7 +213,7 @@ We are creating a GeoFence to select customers for two regions in the United Sta
 
 10. Press **Return To Catalog**.
 
-   ![Create Referemce Customer](./images/geofence5.png "")
+   ![Geo Fence final](./images/geofence5.png "")
 
 
 
@@ -225,9 +225,9 @@ For this tutorial we are using an event generator that continuously inserts rows
 1. Go to the OCI console on a separate browser tab, leave the GGSA console open. 
 
 2. In the OCI console, press the Developer Tools icon on top and select **Cloud Shell**
-   ![Create Stream](./images/open_cloudshell.png "")
+   ![Cloud Shell menu](./images/open_cloudshell.png "")
 
-3. The Cloud Shell opens on the bottom of the screen. Enter the command ```ssh opc@IP_ADDRESS```, replacing the IP_ADDRESS with **Kafka IP** from the Terraform output.
+3. The Cloud Shell opens on the bottom of the screen. Enter the command ```ssh opc@IP\_ADDRESS```, replacing the IP\_ADDRESS with **Kafka IP** from the Terraform output.
 
 4. When asked 
 
@@ -241,7 +241,7 @@ For this tutorial we are using an event generator that continuously inserts rows
 
 6. Enter the command ```sh eventgen.sh```. A continous output of insert statements will be shown. Keep the cloud shell window open for the duration of the tutorial. The command can later be stopped and restarted as necessary.
 
-   ![Create Stream](./images/cloudshell.png "")
+   ![Cloud shell commands](./images/cloudshell.png "")
 
 
 ## Task 9: Create Kafka Stream
@@ -256,13 +256,13 @@ Create a stream to feed a pipeline with events from the Kafka topic that GoldenG
 
 3. Press **Next**.
 
-   ![Create Referemce Customer 1](./images/stream1.png "")
+   ![Create Kafka Stream page 1](./images/stream1.png "")
 
 4. On the second page of the Create Stream dialog, for Connection, select **Kafka**.
 
 5. Press **Next**.
 
-   ![Create Referemce Customer 2](./images/stream2.png "")
+   ![Create Kafka Stream page 2](./images/stream2.png "")
 
 6.  On the third page of the Create Stream dialog, press **Next** without changes.
 
@@ -270,7 +270,7 @@ Create a stream to feed a pipeline with events from the Kafka topic that GoldenG
 
 8. Press **Save**.
 
-  ![Create Referemce Customer 3](./images/stream4.png "")
+  ![Create Kafka Stream page 3](./images/stream4.png "")
 
 
 
