@@ -13,20 +13,20 @@
         "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
 
+        
         {
-            "title": "Lab 1: Review GoldenGate Replication",
-            "filename": "../../review-gg-replication/review-gg-replication.md"
-        },
-
-        {
-            "title": "Lab 2: Create GoldenGate Stream Analytics Deployment",
+            "title": "Lab 1: Create GoldenGate Stream Analytics Deployment",
             "filename": "../../create-ggsa-deployment/create-ggsa-deployment.md"
         },
-
+        {
+            "title": "Lab 2: Prepare Objects for Stream Analytics Pipeline",
+            "filename": "../../prepare-pipeline/prepare-pipeline.md"
+        },
         {
             "title": "Lab 3: Setup Stream Analytics Pipeline",
             "filename": "../../setup-pipeline/setup-pipeline.md"
         },
+
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
