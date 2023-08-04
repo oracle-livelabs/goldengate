@@ -59,7 +59,6 @@ In this lab, you will:
 11. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
     ![Completed Create GoldenGate Deployment fields](./images/create_deployment_1.png "" ) 
-    <img src="./images/create_deployment_1.png" width="200">
 
 12. Click **Next**.
 
