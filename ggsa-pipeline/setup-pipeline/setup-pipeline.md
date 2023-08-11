@@ -85,7 +85,7 @@ In this task we will add a Query Stage, which, much like a SQL Select statement,
 14. On the Columns dialog, first press the **<<** button to unselect all columns. They are moved to the left side. 
 
 15. Select the following columns and press **>** to move them to the right side. You can do multi-select with Ctrl button or move one-by-one. 
-   after\_GENRE\_ID, CITY, CUST\_ID, LAST\_NAME, FIRST\_NAME, LOC\_LAT, LOC\_LONG, AGE, INCOME, INSUFF\_FUNDS\_INCIDENTS, NUM\_CARS, TITLE
+   after\_GENRE\_ID, CUST\_ID, LAST\_NAME, FIRST\_NAME, CITY, LOC\_LAT, LOC\_LONG, AGE, INCOME, INSUFF\_FUNDS\_INCIDENTS, NUM\_CARS, TITLE
    ![Select columns](./images/column_dlg.png "")
 
 16. Press Save to close the dialog.
@@ -188,7 +188,7 @@ We want to write all score results to a data warehouse for later analysis. We ad
 
 ## Task 6: Filter Customers based on ML Score
 
-In this task we will add a Query Stage to filter events by the ML score. Only events with a score above 0.06 should proceed.
+In this task we will add a Query Stage to filter events by the ML score. Only events with a score above 0.04 should proceed.
 
 1. Right-click the Score stage and select in the menu **Add a Stage** and in the submenu **Query**.
    ![Create Query](./images/query2_create.png "")
