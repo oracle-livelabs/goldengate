@@ -1,0 +1,45 @@
+{
+    "workshoptitle": "Send data from Oracle Cloud Infrastructure GoldenGate to Oracle GoldenGate",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction-gb.md"
+        },
+        {
+            "title": "Get started",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Create OCI GoldenGate resources",
+            "description": "Create your OCI GoldenGate deployment and connections",
+            "filename": "../../create/create-gb.md"
+        },
+        {
+            "title": "Lab 2: Connect Oracle GoldenGate to Autonomous Data Warehouse ",
+            "description": "Connect Oracle GoldenGate to its target database",
+            "type": "livelabs",
+            "filename": "../../oggmp-atp/oggmp-atp.md"
+        },
+        {
+            "title": "Lab 3: Create a trusted connection between Oracle GoldenGate and OCI GoldenGate",
+            "description": "Use a self-signed certificate to create a trusted connection",
+            "filename": "../../connection/connection.md"
+        },
+        {
+            "title": "Lab 4: Send the OCI GoldenGate Trail file to Oracle GoldenGate",
+            "description": "Create an Extract, Receiver Path, and Replicat",
+            "filename": "../../extract/extract.md"
+        },
+        {
+            "title": "Lab 5: (Optional) Use Admin Client to view Extract statistics and Log messages",
+            "description": "Connect to the Marketplace Oracle GoldenGate Admin Client",
+            "filename": "../../admin-client/admin-client.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

@@ -27,28 +27,23 @@
      "description": "Initialize Environment",
      "filename": "../../initial-setup/initial-setup.md"
    },
-    {
-      "title": "Lab 4: Add database credentials",
-      "description": " Add Database Credentials",
-      "filename": "../../ogg-add-credentials/ogg-add-credentials.md"
-    },
-    {
-      "title": "Lab 5: Enable trandata, add Heartbeat and Checkpoint Tables",
-      "description": "Enable Trandata, Add Heartbeat and Checkpoint Tables",
+   {
+      "title": "Lab 4: Configure Database Credentials, Trandata, Heartbeat, and Checkpoint Tables",
+      "description": "Configure Database Credentials, Trandata, Heartbeat, and Checkpoint Tables",
       "filename": "../../ogg-add-trandata-heartbeat-checkpoint/ogg-add-trandata-heartbeat-checkpoint.md"
     },
     {
-      "title": "Lab 6: Add Extract",
+      "title": "Lab 5: Add Extract",
       "description": "Add Extract",
       "filename": "../../ogg-add-extract/ogg-add-extract.md"
     },
     {
-      "title": "Lab 7: Add Replicat",
+      "title": "Lab 6: Add Replicat",
       "description": "Add Replicat",
       "filename": "../../ogg-add-replicat/ogg-add-replicat.md"
     },
     {
-      "title": "Lab 8: Test the data replication process",
+      "title": "Lab 7: Test the data replication process",
       "description": "Test Data Replication",
       "filename": "../../ogg-test-data-replication-process/ogg-test-data-replication-process.md"
     },

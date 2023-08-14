@@ -5,6 +5,9 @@ This lab instructs you to use the OCI GoldenGate deployment console to add trans
 
 Estimated time: 15 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Set up and run replication processes](videohub:1_d6g4fbsx)
+
 ### About Extracts, Distribution paths, and Replicats
 An Extract is a process that extracts, or captures, data from a source database. A Distribution Path is a source-to-destination configuration that uses the Distribution Server.
 
@@ -36,13 +39,13 @@ On the Deployment Details page, you can:
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/01-03-deployment-details.png " ")
+    ![Deployment Details page](./images/01-03-atp-deployment-details.png " ")
 
 ## Task 2: Launch the GoldenGate Deployment Console
 
-1. On the deployment details page, click **Launch Console**.
+1. On the **ATPDeployment** details page, click **Launch Console**.
 
-    ![Launch Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-01-launchconsole.png " ")
+    ![ATPDeployment Launch Console](images/02-01-launch-console.png " ")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided in the previous lab (Task 1, Step 15), and then click **Sign In**.
 
@@ -134,6 +137,8 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 3.  Click **Launch Console**.
 
+    ![OBJDeployment Launch Console](images/05-03-launch-console.png " ")
+
 4.  Sign in to the deployment console using the **oggadmin** credentials you created in the previous lab Task 2, Step 12.
 
 5.  In the BDinstance deployment console, open the navigation menu, and then click **Administrator**.
@@ -198,7 +203,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
     >**Note:** *You can copy the host from the browser address bar of target BDinstance deployment console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
 
-  ![Deployment details](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-07-depdetails.png " ")
+  ![Deployment details](./images/07-06-deployment-details.png " ")
 
 8.  For **Port Number**, enter `443`.
 
@@ -216,7 +221,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 The Distribution path on the source ATPinstance creates a Receiver path on the target BDinstance.
 
->**Note**: *Complete the following steps in the **OBJDeployment** deployment console (BDinstance).
+>**Note**: *Complete the following steps in the **OBJDeployment** deployment console (BDinstance).*
 
 1.  In the target BDinstance deployment console, click **Receiver Service**.
 
@@ -232,6 +237,8 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 2.  In the Replicats section, click **Add Replicat** (plus icon).
 
+    ![BDinstance Administration Service](images/09-02-add-replicat.png " ")
+
 3.  On the Add Replicat page, under Replicat Type, select **Classic Replicat**, and then click **Next**.
 
     ![Add Replicat](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-03-replicattype.png " ")
@@ -240,19 +247,21 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 5.  For Trail Name, enter `T1`.
 
-6.  For Target, select **Oracle Object Storage**.
+6.  For Target, select **OCI Object Storage**.
 
 7.  For Available Aliases, select **TargetObjStore**.
 
 8.  Click **Next**.
 
-    ![Replicat Options](images/06-08-repoptions.png " ")
+    ![Replicat Options](images/09-08-repoptions.png " ")
 
 9.  On the Parameter Files page, change `MAP *.*, TARGET *.*;` to `MAP SRC_OCIGGLL.*, TARGET *.*;` and then click **Next**.
 
+    ![Replicat Options](images/09-09-param-file.png " ")
+
 10. On the Properties File page, locate `gg.eventhandler.oci.compartment`, and then replace the placeholder with your compartment's OCID.
 
-  >**NOTE:** *You can find your compartment name in your Workshop Details. Copy the compartment OCID from the Compartments page in the Oracle Cloud console. You can enter `Compartments` into the search bar, or locate **Compartments** in the Oracle Cloud console navigation menu under **Identity & Security**.*
+  >**NOTE:** *If running this lab in a Sandbox environment, you can find your compartment OCID in the View Login Info panel. You can also copy the compartment OCID from the Compartments page in the Oracle Cloud console. Enter `Compartments` into the search bar, or locate **Compartments** in the Oracle Cloud console navigation menu under **Identity & Security**.*
 
 11. Locate `gg.eventhandler.oci.bucketMappingTemplate`, and then replace the placeholder with a name for your target bucket.
 
@@ -279,5 +288,5 @@ In this lab, you:
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Deniz Sendil, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Contributors** -  Deniz Sendil, Database Product Management; Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, March 2023

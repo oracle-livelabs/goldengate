@@ -6,11 +6,11 @@ Oracle GoldenGate, the industry-leading data replication and integration softwar
 
 > ***Note:** This workshop uses Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
 
-![Diagram](images/onprem2oci.png)
+![Diagram](./images/onprem2oci.png)
 
-Estimated Time: 120 minutes
+Estimated time: 120 minutes
 
-If you would like to watch us do the workshop, click [here](https://youtu.be/6KsirCdeUXw).
+[Watch us complete this workshop](https://youtu.be/6KsirCdeUXw).
 
 ### About Oracle Cloud Infrastructure GoldenGate
 
@@ -28,19 +28,16 @@ In this workshop, you will:
 To complete this LiveLab, you must have:
 
 * An on-premises or [Marketplace Oracle GoldenGate installation](https://docs.oracle.com/en/middleware/goldengate/core/21.1/oggmp/oracle-goldengate-microservices-oracle-cloud-marketplace.html)
-* An Oracle Cloud Infrastructure account with [access to Networking and OCI GoldenGate services](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/getting-started-goldengate.html#GUID-F85CADD5-48A0-4B38-B8CB-C45C6D4F4361)
-* Supported source and target databases provisioned and configured for [Oracle GoldenGate](https://www.oracle.com/technetwork/middleware/ogg-21-1-0-0-0-cert-matrix-7503910.xls) (source) and [OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/database-registrations.html#GUID-384772C7-B327-420C-B6AA-B6CEA727322F) (target)
-
-> ***Note:** If you have a **Free Trial** account, your Free Trial automatically converts to an **Always Free** account when your Free Trial expires. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. See [Free Tier FAQs](https://www.oracle.com/cloud/free/faq.html).*
-
+* An Oracle Cloud Infrastructure account with [access to Networking and OCI GoldenGate services](https://docs.oracle.com/en/cloud/paas/goldengate-service/oootq/index.html)
+* Supported source and target databases provisioned and configured for [Oracle GoldenGate](https://www.oracle.com/integration/goldengate/certifications/) (source) and [OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/wxntz/index.html) (target)
 
 ## Learn more
 
-* [Overview of Oracle Cloud Infrastructure GoldenGate](https://docs.oracle.com/cloud/paas/goldengate-service/using/overview-goldengate.html)
+* [Overview of Oracle Cloud Infrastructure GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/druyg/index.html)
 * [Oracle Cloud Infrastructure GoldenGate Service Overview video](https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:29278)
 * [Take an interactive tour of OCI GoldenGate](https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:29986)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2022
+* **Last Updated By/Date** - Jenny Chan, March 2023

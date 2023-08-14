@@ -2,7 +2,7 @@
 
 ## Introduction
 
-For the purposes of this workshop, Oracle Autonomous Transaction Processing (ATP) serves as the source database for your Oracle GoldenGate Marketplace deployment. This lab walks you through the steps to connect your Oracle GoldenGate Marketplace deployment to ATP.
+For the purposes of this workshop, Oracle Autonomous Transaction Processing (ATP) serves as the source database for your Oracle GoldenGate Marketplace deployment. In this lab, you learn how to connect your Oracle GoldenGate Marketplace deployment to ATP.
 
 Estimated time: 10 minutes
 
@@ -25,17 +25,19 @@ In this lab, you will:
 
 ## Task 1: Download the Source ATP client credentials
 
-1.  Navigate back to the Source ATP Autonomous Database Details page, and then click **DB Connection**.
+1.  Navigate back to the Source ATP Autonomous Database Details page, and then click **Database connection**.
 
-    ![Click DB Connection on the source ATP database details page](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-01.png " ")
+    ![Click Database Connection on the source ATP database details page](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-01.png " ")
 
-2.  In the DB Connection panel, click **Download Wallet**.
+2.  In the DB Connection panel, click **Download wallet**.
 
     ![Click Download wallet in DB Connection panel](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-02.png " ")
 
 3.  In the Download Client Credentials (Wallet) dialog, enter the Source ATP Admin password twice, and then click **Download**.
 
     ![After enter the source database's admin password in the Download Client Credentials dialog window, click Download](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-03.png " ")
+
+4.  **Close** the Database connection panel.
 
 ## Task 2: Upload the Source ATP credentials to Oracle GoldenGate
 
@@ -45,11 +47,11 @@ In this lab, you will:
 
 2.  Under **List Scope**, ensure that you select the correct **Compartment** for this workshop. You should then see **Oracle GoldenGate 21.1.0.0.1 Microservices Edition for Oracle** in the list of Instances.
 
-    > **Note:** *For Green Button workshop users, you can find your compartment information in the Workshop Details of this LiveLab.*
+    > **Note:** For Sandbox workshop users, you can find your compartment information in the Workshop Details of this LiveLab.
 
-3.  In the Oracle Cloud Console global header, click **Cloud Shell**. The Cloud Shell drawer opens at the bottom of your screen.
+3.  In the Oracle Cloud Console global header, click **Developer tools**, and then click **Cloud Shell**. The Cloud Shell drawer opens at the bottom of your screen.
 
-    ![Click Cloud Shell in the Oracle Cloud console global header](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-03-cloud-shell.png " ")
+    ![Click Developer tools in the Oracle Cloud console global header](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-03-cloud-shell.png " ")
 
 4.  From the Cloud Shell Settings menu (gear icon), select **Upload**.
 
@@ -61,7 +63,7 @@ In this lab, you will:
 
 6.  Repeat step 5 to upload your SSH private key. Click **Hide** to close the File Transfers dialog.
 
-7.  To ensure the SSH key permissions are valid, enter the following command in Cloud Shell:
+7.  To ensure the SSH key permissions are valid, enter the following command in Cloud Shell, replacing `<private-SSH-key>` with the name of your private key:
 
     ```
     <copy>chmod 600 <private-SSH-key></copy>
@@ -88,7 +90,7 @@ In this lab, you will:
     ```
 
     ![Enter the put command to upload the wallet zip file to the home directory](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-10-put.png " ")
-
+    
 11. Enter `exit` to close the sftp connection.
 
 12. SSH to the compute instance.
@@ -118,7 +120,7 @@ unzip <wallet_ATP-filname>.zip -d wallet_ATP</copy>
 
     ![Enter the pwd command to copy the full path to the wallet files](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-15-pwd.png " ")
 
-> **Note:** *Leave Cloud Shell open.*
+> **Note:** Leave Cloud Shell open.
 
 ## Task 3: Get the Marketplace Oracle GoldenGate oggadmin credentials
 
@@ -150,7 +152,7 @@ First, copy the SourceATP connection string from the OCI GoldenGate Deployment C
 
 2.  Copy the SourceATP connection string in the User ID column, and then paste it into a text editor.
 
-    >**NOTE:** *If you don't see your Source and Target databases here, stop and restart your deployment in the Oracle Cloud console.*
+    >**NOTE:** If you don't see your Source and Target databases here, stop and restart your deployment in the Oracle Cloud console.
 
     ![Copy the source database's connection string and paste it into a text editor](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-03.png " ")
 
@@ -158,11 +160,11 @@ First, copy the SourceATP connection string from the OCI GoldenGate Deployment C
 
     ![Replace the existing value for MY_WALLET_DIRECTORY with the path to the wallet files](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-04.png " ")
 
-4.  In a new browser tab or window, use the Public IP and port 443 (**https://&lt;Public-IP&gt;:443**) to open the Marketplace Oracle GoldenGate Service Manager.
+4.  In a new browser tab or window, use the Public IP and port 443 (**https://&lt;Public-IP&gt;:443**) to open the Marketplace Oracle GoldenGate Service Manager. Ignore the security warning and proceed with connecting to the IP.
 
 5.  Log in to the Service Manager using the credentials you copied in Task 3.
 
-    > **Note:** *The Username is `oggadmin` and the password is the credential string.*
+    > **Note:** The Username is `oggadmin` and the password is the credential string.
 
     ![Sign in to Service Manager](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-05-oggcredentials.png " ")
 
@@ -187,7 +189,7 @@ First, copy the SourceATP connection string from the OCI GoldenGate Deployment C
 
     ![Add a credential for atp_low](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-10.png " ")
 
-    > **Note:** *You can use Cloud Shell to view the contents of tnsnames.ora.*
+    > **Note:** You can use Cloud Shell to view the contents of tnsnames.ora.
 
     ![Example of contents of tnsnames.ora](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-09-atplow.png " ")
 
@@ -203,10 +205,12 @@ First, copy the SourceATP connection string from the OCI GoldenGate Deployment C
 
     ![Enter schema name as directory in step 12 instructions](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/01-05-trandata.png " ")
 
-In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the source ATP database. **Proceed to the next lab**.
+In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the source ATP database. 
+
+**Proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2022
+* **Last Updated By/Date** - Jenny Chan, April 2023

@@ -1,4 +1,4 @@
-# Use the Admin Client to View Extract Statistics and Log messages
+# Use Admin Client to view Extract statistics and Log messages
 
 ## Introduction
 
@@ -25,13 +25,13 @@ This lab assumes you successfully completed all preceding labs.
 
 2.  From the navigation menu, under **Oracle Database**, select **GoldenGate**.
 
-    ![](images/01-01.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
 3.  From the list of OCI GoldenGate deployments, select the deployment you created for this LiveLab.
 
 4.  In the Deployment Details page, next to **Console URL** click **Copy**.
 
-    ![](images/01-04.png " ")
+    ![Deployment Details page](./images/01-04-console-url.png " ")
 
 ## Task 2: Connect to the Admin Client
 
@@ -44,15 +44,17 @@ This lab assumes you successfully completed all preceding labs.
 2.  Change directories to **/u01/app/ogg/bin**, and then start the Admin Client:
 
     ```
-    <copy>./adminclient</copy>
+    <copy>adminclient</copy>
     ```
 
 3.  Connect to the OCI GoldenGate deployment:
 
     ```
-    <copy>connect <OCI-GoldenGate-deployment-url> as <OCI-GoldenGate-user> password <OCI-GoldenGate-password> !</copy>
+    <copy>connect <OCI-GoldenGate-deployment-url> as oggadmin password <oggadmin-password> !</copy>
     ```
     > **Note:** *The exclamation point (!) is very important. Without it, the command fails and returns an error.*
+
+    ![Cloud Shell script](./images/02-03-cloud-shell.png " ")
 
 4.  After connecting successfully, you can run any of the following commands:
 
@@ -61,10 +63,13 @@ This lab assumes you successfully completed all preceding labs.
     <copy>info all</copy>
     ```
 
+    ![Cloud Shell script](./images/02-04a-cloud-shell.png " ")
+
     View statistics of your Extract:
     ```
     <copy>stats <extract-name></copy>
     ```
+    ![Cloud Shell script](./images/02-04b-cloud-shell.png " ")
 
     View the content of a ggserror log file:
     ```
@@ -77,9 +82,9 @@ This lab assumes you successfully completed all preceding labs.
     ```
 
 ## Learn More
-* [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)
+* [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.3/admin/getting-started-oracle-goldengate-process-interfaces.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2021
+* **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, March 2023

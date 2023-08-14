@@ -128,7 +128,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 ## Task 5: Create a user on the target Big Data deployment
 
->**Note**: *Complete the following steps in the target **OBJDeployment**'s deployment console (BDinstance).*
+>**Note**: *Complete the following steps in the target **BDDeployment**'s deployment console (BDinstance).*
 
 1.  In the Oracle Cloud console, click **Deployments** in the breadcrumb.
 
@@ -162,7 +162,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Administration Service navigation menu](images/03-01-navmenu.png " ")
 
-2.  On the Credentials page, click Add Credential (plus icon).
+2.  On the Credentials page, click **Add Credential** (plus icon).
 
     ![Credentials page](images/03-02-addcredential.png " ")
 
@@ -265,6 +265,11 @@ In this lab, you:
 * Added a Replicat process to replicate data from the Autonomous Transaction Processing instance to an OCI Object Storage bucket
 
 **Proceed to the next lab**.
+
+## Learn More
+* [Add an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/index.html)
+* [Add a Distribution Path](https://docs.oracle.com/en/cloud/paas/goldengate-service/adpen/index.html)
+* [Add a Replicat for OCI Streaming](https://docs.oracle.com/en/cloud/paas/goldengate-service/uxxfx/index.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance

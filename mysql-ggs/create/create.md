@@ -29,19 +29,19 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
 1.  Open the Oracle Cloud console navigation menu, click **Oracle Database**, and then click **GoldenGate**.
 
-    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/./images/database-goldengate.png " ")
 
 2.  On the GoldenGate **Overview** page, click **Deployments**.
 
-    ![GoldenGate Overview page](images/01-02-ggs-overview.png " ")
+    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
 3.  You may need to select a compartment.
 
-    > **Note:** *If you're running this workshop in a LiveLabs sandbox, then under List Scope, from the Compartment dropdown, expand the root compartment, and select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.*
+    > **Note:** If you're running this workshop in a LiveLabs sandbox, then under List Scope, from the Compartment dropdown, expand the root compartment, and select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
 
 4.  On the Deployments page, click **Create Deployment**.
 
-    ![Deployments page](images/01-04-create-deployment.png "")
+    ![Deployments page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-create-deployment.png "")
 
 5.  In the Create Deployment panel, enter `MySQLDeployment` for **Name**.
 
@@ -51,19 +51,19 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
 8.  For **Subnet**, select a subnet.
 
-    > **Note:** *If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.*
+    > **Note:** If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
 9.  For **License type**, select **Bring Your Own License (BYOL)**.
 
-10. Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+10. Click **Show Advanced Options**, and then select **Enable GoldenGate console public access**.
 
 11. Click **Next**.
 
-  ![Example create deployment options](images/01-11-create-deployment.png " ")
+  ![Example create deployment options](./images/01-11-create-deployment.png " ")
 
 12. From the Select a technology dropdown, select **MySQL**.
 
-13. For GoldenGate Instance Name, enter `mysql_instance`.
+13. For GoldenGate Instance Name, enter `MySQL-Instance`.
 
 14. For Administrator Username, enter `oggadmin`.
 
@@ -71,7 +71,7 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
 16. Click **Create**.
 
-  ![MySQL deployment details](images/01-16-mysql-deployment.png " ")
+  ![MySQL deployment details](./images/01-16-mysql-deployment.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
@@ -87,27 +87,27 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 5.  For Subnet, select a subnet.
 
-    >**Note:** *If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.*
+    >**Note:** If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
 6.  For License type, select **Bring You Own License (BYOL)**.
 
-7.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+7.  Click **Show Advanced Options**, and then select **Enable GoldenGate console public access**.
 
 8.  Click **Next**.
 
-  ![Example create ADW deployment options](images/02-08-adw-deployment.png " ")
+  ![Example create ADW deployment options](./images/02-08-adw-deployment.png " ")
 
 9.  From the Select a technology dropdown, select **Oracle Database**.
 
-10. For GoldenGate Instance Name, enter **ADWinstance**.
+10. For GoldenGate Instance Name, enter `ADWinstance`.
 
-11. For Administrator Username, enter **oggadmin**.
+11. For Administrator Username, enter `oggadmin`.
 
 12. For Administrator Password, enter a password. Take note of this password.
 
 13. Click **Create**.
 
-  ![ADW deployment details](images/02-13-adw-deployment.png " ")
+  ![ADW deployment details](./images/02-13-adw-deployment.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
@@ -115,21 +115,21 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
 
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](images/03-01-breadcrumb.png " ")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/03-01-breadcrumb.png " ")
 
 2.  In the GoldenGate menu, click **Connections**.
 
-    ![Connections in GoldenGate menu](images/03-02-connections.png " ")
+    ![Connections in GoldenGate menu](./images/03-02-connections.png " ")
 
 3.  Click **Create Connection**.
 
-    ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-connections.png " ")
+    ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
 
 4.  In the Create Connection panel, for Name, enter `SourceMySQL`.
 
 5.  From the Type dropdown, select **OCI MySQL Database Service**.
 
-    ![Create a MySQL connection - General Information](images/03-05-mysql-conn.png " ")
+    ![Create a MySQL connection - General Information](./images/03-05-mysql-conn.png " ")
 
 6.  Click **Next**.
 
@@ -143,7 +143,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 10. For Database user password, enter the password for the `ggadmin` user in the Password field, and then click **Create**.
 
-    ![MySQL connection details](images/03-10-create-mysql-conn.png " ")
+    ![MySQL connection details](./images/03-10-create-mysql-conn.png " ")
 
 The connection becomes Active after a few minutes. Return to the Connections page.
 
@@ -153,9 +153,9 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
 2.  In the Create Connection panel, for **Name**, enter `TargetADW`.
 
-3.  From the **Type** dropdown, select **OCI Autonomous Database**.
+3.  From the **Type** dropdown, select **Oracle Autonomous Database**.
 
-    ![Create ADW connection - General information](images/04-03-adw-conn.png " ")
+    ![Create ADW connection - General information](./images/04-03-adw-conn.png " ")
 
 4.  Click **Next**.
 
@@ -165,7 +165,7 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
 7.  For **Password**, enter the password for the `ggadmin` user.
 
-    ![ADW connection details](images/04-07-create-adw-conn.png " ")
+    ![ADW connection details](./images/04-07-create-adw-conn.png " ")
 
 8.  Click **Create**.
 
@@ -181,25 +181,53 @@ After your deployments and connections are active, you can assign the connection
 
 3.  On the MySQLDeployment details page, under Resources, click **Assigned connections**.
 
-    ![Deployment details page](images/05-03-assigned-connections.png " ")
+    ![Deployment details page](./images/05-03-assigned-connections.png " ")
 
 4.  Under Assigned connections, click **Assign connection**.
 
-    ![Assigned connections](images/05-04-assignconnection.png " ")
+    ![Assigned connections](./images/05-04-assignconnection.png " ")
 
 5.  In the Assign connection dialog, from the **Connection** dropdown, select **SourceMySQL**, and then click **Assign connection**.
 
-    ![Assign connection dialog](images/05-05-assign-connection.png " ")
+    ![Assign connection dialog](./images/05-05-assign-connection.png " ")
 
     The connection appears in the Assigned Connections list.
 
-    ![Assigned connections list](images/05-05-assigned-connections-b.png " ")
-
 6.  Use the breadcrumb to return to the Deployments page.
 
-    ![Deployment details breadcrumb](images/05-06-breadcrumb.png " ")
+    ![Deployment details breadcrumb](./images/05-06-breadcrumb.png " ")
 
 7.  Repeat steps 2 to 6 to assign the **TargetADW** connection to the **ADWDeployment**.
+
+## Task 6: (Optional) Create a GoldenGate connection
+
+Create a GoldenGate connection if your ADW deployment doesn't have a public endpoint, then assign it to the source MySQL deployment.
+
+1.  On the Connections page, click **Create Connection**.
+
+2.  In the Create connection panel, enter a **Name** and **Description**.
+
+3.  For **Compartment**, select the compartment in which to create this connection.
+
+4.  For **Type**, select **GoldenGate**.
+
+5.  Click **Next**.
+
+6.  For Connection details, select **ADWDeployment**.
+
+7.  Under Network connectivity, select **Network connectivity via private endpoint**.
+
+8.  For **Subnet**, select the subnet to which a private endpoint is created from the OCI GoldenGate service tenancy.
+
+9.  For **Private IP address**, enter the private IP for the ADWDeployment.
+
+10. Click **Create**.
+
+11. After the connection is active, on its details page, under **Resources**, click **Assigned deployments**.
+
+12. Click **Assign deployment**.
+
+13. In the Assign deployment dialog, select the source **MySQLDeployment**, and then click **Assign deployment**.
 
 **Proceed to the next lab**.
 
@@ -213,5 +241,5 @@ After your deployments and connections are active, you can assign the connection
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, October 2022
 * **PAR Expiration** - February 2024

@@ -1,9 +1,12 @@
-# Create the Extract process and export data using Oracle Data Pump
+# Create the Extract process and use Oracle Data Pump to export data
 
 ## Introduction
 This lab instructs you to use the OCI GoldenGate deployment console to add transaction information to the source database, add a checkpoint table to the target database, add and run an Extract, and instantiate the target database using Oracle Data Pump.
 
 Estimated time: 25 minutes
+
+Watch the video below for a quick walk through of the lab.
+[Watch the video](videohub:1_j398evq1)
 
 ### About the Extract process
 An Extract is a process that extracts, or captures, data from a source database.
@@ -16,104 +19,88 @@ In this lab, you learn to:
 * Add and run an Extract
 * Export data from the source database using Oracle Data Pump
 
-## Task 1: Review the Deployment details
-Return to the OCI GoldenGate deployment you created in the previous lab.
+### Prerequisites
 
-1. In the Oracle Cloud console, open the navigation menu, click **Oracle Database**, and then click **GoldenGate**.
+* This lab assumes that you completed all preceding labs
+* Your deployment is in the Active state.
 
-2. Click **Deployments**.
+## Task 1: Launch the GoldenGate Deployment Console
 
-3. On the Deployments page, select the deployment you created to view its details.
+1. When the deployment is active, click **Launch Console**.
 
-On the Deployment Details page, you can:
+    ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/07-01-launchconsole.png " ")
 
-* Review the deployment's status
-* Launch the GoldenGate service deployment console
-* Edit the deployment's name or description
-* Stop and start the deployment
-* Move the deployment to a different compartment
-* Review the deployment resource information
-* Add tags
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password you provided in the previous Lab, and then click **Sign In**.
 
-    ![Deployment Details page](images/02-01-deployment-details.png " ")
+    ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin.png " ")
 
-## Task 2: Launch the GoldenGate Deployment Console
+After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
 
-1. On the deployment details page, click **Launch Console**.
+## Task 2: Add Transaction Data and a Checkpoint Table
 
-    ![Launch Console](images/03-01.png " ")
-
-2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided in Lab 1 (Task 1, Step 14), and then click **Sign In**.
-
-    ![GoldenGate Deployment Console](images/02-02.png " ")
-
-After you log in, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
-
-## Task 3: Add Transaction Data and a Checkpoint Table
-
-> **Note:** *Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.*
+> **Note:** Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.
 
 1.  Open the navigation menu and then click **Configuration**.
 
-    ![Administration Service navigation menu](images/02-01-nav-config.png " ")
+    ![Administration Service navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-01-nav-config.png " ")
 
 2.  Click **Connect to database SourceATP**.
 
-    ![Credentials list with Connect to database SourceATP highlighted](images/02-02-connect-source.png " ")
+    ![Credentials list with Connect to database SourceATP highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-02-connect-source.png " ")
 
 3.  Next to **TRANDATA Information** click **Add TRANDATA** (plus icon).
 
-    ![Add TRANDATA](images/02-03-trandata.png " ")
+    ![Add TRANDATA](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-03-trandata.png " ")
 
 4.  For **Schema Name**, enter `SRC_OCIGGLL`, and then click **Submit**.
 
-    ![Schema Name field populated with SRC_OCIGGLL](images/02-04-schema-name.png " ")
+    ![Schema Name field populated with SRC_OCIGGLL](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-04-schema-name.png " ")
 
 5.  To verify, click **Search TRANDATA**, and then enter `SRC_OCIGGLL` into the Search field and click **Search**.
 
-    ![Search icon highlighted](images/02-05-search.png " ")
+    ![Search icon highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-05-search.png " ")
 
-    ![SRC_OCIGGLL entered in search field and search results returned](images/01-05-trandata.png " ")
+    ![SRC_OCIGGLL entered in search field and search results returned](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-05-trandata.png " ")
 
 6.  Click **Connect to database TargetADW**.
 
-    ![Credentials list with Connect to database TargetADW highlighted](images/02-06.png " ")
+    ![Credentials list with Connect to database TargetADW highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-06-connect-targetadw.png " ")
 
 7.  Next to Checkpoint, click **Add Checkpoint**.
 
-    ![Add Checkpoint highlighted](images/02-06-add-checkpoint.png " ")
+    ![Add Checkpoint highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-07-add-checkpoint.png " ")
 
 8.  For **Checkpoint Table**, enter `"SRCMIRROR_OCIGGLL"."CHECKTABLE"`, and then click **Submit**.
 
-    ![Populated Checkpoint table field and submit button highlighted](images/02-07-checktable.png " ")
+    ![Populated Checkpoint table field and submit button highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-08-checktable.png " ")
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
-## Task 4: Add and Run an Extract
+## Task 3: Add and Run an Extract
 
-1.  On the GoldenGate Deployment Console Home page, click **Add Extract** (plus icon).
+1.  On the OCI GoldenGate Deployment Console Home page, click **Add Extract** (plus icon).
 
-    ![Click Add Extract](images/02-02-ggs-add-extract.png " ")
+    ![Click Add Extract](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-01-ggs-add-extract.png " ")
 
 2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
 
-    ![Add Extract page with Integrated Extract highlighted](images/03-02.png " ")
+    ![Add Extract page with Integrated Extract highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-02-int-extract.png " ")
 
 3.  For **Process Name**, enter UAEXT.
 
 4.  For **Trail Name**, enter E1.
 
-    ![Add Extract - Basic Information](images/02-04-ggs-basic-info.png " ")
+    ![Add Extract - Basic Information](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-04-ggs-basic-info.png " ")
 
 5.  Under **Source Database Credential**, for **Credential Domain**, select **OracleGoldenGate**.
 
 6.  For **Credential Alias**, select the **SourceATP**.
 
-    ![Add Extract - Source Database Credential](images/02-04-ggs-src-db-credential.png " ")
+    ![Add Extract - Source Database Credential](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-06-ggs-src-db-credential.png " ")
 
 7.  Under Managed Options, enable **Critical to deployment health**.
 
-    ![Critical to deployment health highlighted](images/03-07.png " ")
+    ![Critical to deployment health highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-07-dephealth.png " ")
 
 8.  Click **Next**.
 
@@ -143,19 +130,19 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
     table SRC_OCIGGLL.*;</copy>
     ```
 
-    ![](images/03-09-params.png " ")
+    ![Copied and pasted script on the parameter file page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-09-params.png " ")
 
-10. Click **Create**. You're returned to the OCI GoldenGate Deployment Console Home page.
+10. Click **Create**. You return to the OCI GoldenGate Deployment Console Home page.
 
 11. In the UAEXT **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
-    ![Start Extract](images/02-12-ggs-start-extract.png)
+    ![Start Extract](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-11-ggs-start-extract.png " ")
 
     The yellow exclamation point icon changes to a green checkmark.
 
-    ![Extract started](images/02-ggs-extract-started.png)
+    ![Extract started](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-11-ggs-extract-started.png " ")
 
-## Task 5: Check for long running transactions
+## Task 4: Check for long running transactions
 
 1.  In the source database SQL window, enter the following script, and then click **Run Statement**:
 
@@ -165,23 +152,23 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     If the query returns any rows, then you must locate the transaction's SCN and then either commit or rollback the transaction.
 
-    ![Run statement and no query results highlighted](images/04-02-sql.png " ")
+    ![Run statement and no query results highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/05-01-sql.png " ")
 
-## Task 6: Export data using Oracle Data Pump (ExpDP)
+## Task 5: Export data using Oracle Data Pump (ExpDP)
 
 Before using Oracle Data Pump to export data from the source database, first create an Oracle Object Store bucket, then create yourself a Credential Token, and then use these resources to create a credential in ATP.
 
 1.  From the Oracle Cloud Console navigation menu (hamburger icon), click **Storage**, and then **Buckets**.
 
-    ![Object Storage bucket in Oracle Cloud navigation menu](images/05-01-storage-buckets.png " ")
+    ![Object Storage bucket in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-01-storage-buckets.png " ")
 
 2.  On the **Buckets in &lt;compartment-name&gt;** page, click **Create Bucket**.
 
-    ![Buckets in compartment page](images/05-02-create-bucket.png " ")
+    ![Buckets in compartment page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-02-create-bucket.png " ")
 
-3.  In the **Create Bucket** panel, enter a name, and then click **Create**.
+3.  In the **Create Bucket** panel, enter a unique name, such as `Bucket-<user>,` and then click **Create**.
 
-    ![Create Bucket panel](images/05-03-bucket.png " ")
+    ![Create Bucket panel](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-03-bucket.png " ")
 
 4.  From the list of buckets, click the bucket you created. You're brought to the bucket Details page.
 
@@ -193,9 +180,11 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 8.  In the Objects list, click the three dots icon for your object, and then select **View Object Details**.
 
+  ![View Object Details](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-08-view-details.png)
+
 9.  In the Object Details panel, copy the URL Path (URI) up the object name and paste it into a text editor.
 
-  ![Object URL Path](images/objectstorage-objectdetails.png)
+  ![Object URL Path](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-09-url-path.png)
 
     The bucket URI should match the following syntax:
 
@@ -205,21 +194,21 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 10. In the Oracle Cloud Console global header, click **Profile** (user icon), and then select your username.
 
-    ![Profile menu](images/05-06-profile.png " ")
+    ![Profile menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-10-profile.png " ")
 
 11. On the User Details page, under **Resources**, click **Auth Tokens**, and then click **Generate Token**.
 
-    ![Resources on User Details page](images/05-07-auth-token.png " ")
+    ![Resources on User Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-11-auth-token.png " ")
 
 12. In the Generate Token dialog, enter a description, and then click **Generate Token**.
 
-    ![Generate Token dialog](images/05-08-generate-token.png " ")
+    ![Generate Token dialog](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-12-generate-token.png " ")
 
 13. Click **Copy**, and then click **Close**.
 
-    > **Note:** *Paste the token to a text editor for use in the next step.*
+    > **Note:** Paste the token to a text editor for use in the next step.
 
-    ![Copy highlighted](images/05-09-copy-token.png " ")
+    ![Copy highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-13-copy-token.png " ")
 
 14. In the source database SQL window, enter the following script, replace the placeholders with your user name and token value, and then click **Run Statement**:
 
@@ -236,9 +225,9 @@ END;</copy>
     > **Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
 
 
-    ![SQL worksheet](images/05-10-create-credential.png " ")
+    ![SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-14-create-credential.png " ")
 
-15. Use the following script to create the Export Data job using Oracle Data Pump ExpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI** from step 5. `SRC_OCIGGLL.dmp` is a file that will be created when this script runs.
+15. Run the following script to create the Export Data job using Oracle Data Pump ExpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI** from step 5. `SRC_OCIGGLL.dmp` is a file that will be created when this script runs. 
 
     ```
     <copy>DECLARE
@@ -310,13 +299,17 @@ END;</copy>
 END;</copy>
     ```
 
-    ![SQL worksheet Run Script highlighted](images/05-11.png " ")
+    ![SQL worksheet Run Script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-15-sql-return.png " ")
+
+    > **Note:** Review the **DBMS Output** tab and ignore the error in Script Output if the Job successfully completed.
+
+You may now **proceed to the next lab.**
 
 ## Learn more
 
-* [Creating an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-3B004DB0-2F41-4FC2-BDD4-4DE809F52448)
+* [Add an Extract for Oracle Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/index.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management; Arabella Yao, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, June 2022
+* **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, May 2023

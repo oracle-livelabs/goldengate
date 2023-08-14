@@ -10,7 +10,7 @@ Estimated Workshop Time: 2 hours
 
 Oracle Cloud Infrastructure GoldenGate is a fully-managed service that uses Oracle GoldenGate Microservices to help you replicate data in real time, at scale, in the cloud. It processes data as it moves from one or more data management systems to target databases in Oracle Cloud Infrastructure.
 
-   [OCI GoldenGate service overview video](youtube:m4oloCyQJGM)
+   [OCI GoldenGate service overview video](youtube:1egO7eZbomY)
 
 ### Prerequisites
 
@@ -18,8 +18,6 @@ Oracle Cloud Infrastructure GoldenGate is a fully-managed service that uses Orac
 * Familiarity with Oracle GoldenGate is helpful, but not required
 * Familiarity with Oracle Cloud Infrastructure is helpful, but not required
 * An Oracle Cloud Account - Please view this workshop's landing page to see which environments are supported
-
-> **Note:** *If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. See [Free Tier FAQs.](https://www.oracle.com/cloud/free/faq.html)*
 
 ## Learn more
 
@@ -30,4 +28,4 @@ Oracle Cloud Infrastructure GoldenGate is a fully-managed service that uses Orac
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, March 2022
+* **Last Updated By/Date** - Katherine Wardhana, March 2023

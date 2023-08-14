@@ -6,6 +6,9 @@ This lab walks you through the steps to monitor the Extract and Replicat process
 
 Estimated Lab Time: 2 minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Monitor Extracts and Replicats](videohub:1_x48jlq8y)
+
 ### About Performance Monitoring
 
 Monitoring the performance of your GoldenGate instance ensures that your data replication processes are running smoothly and efficiently. You can monitor performance in both the Oracle Cloud Infrastructure (OCI) GoldenGate Deployment Console as well as in the Oracle Cloud Console on the Deployment Details page.
@@ -45,13 +48,19 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 5.  In the ATPDeployment deployment console, click the **Extract name (UAEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
+    ![UAEXT](images/01-04a.png " ")
+
     ![Extract Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/04-17-ext-stats.png " ")
 
 6.  Go back to the Overview screen, click the **Replicat name (REP)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Replicat Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-06-rep-statistics.png " ")
 
-7.  In the Oracle Cloud console, navigate to the OCI Object Storage bucket and check its contents.
+7.  In the Oracle Cloud console, navigate to the OCI Object Storage bucket and then download the JSON file OCI GoldenGate created.
+
+    ![Buckets in Oracle Cloud navigation menu](./images/01-07a-buckets.png " ")
+
+    ![Buckets](./images/01-07b-buckets.png " ")
 
 ## Task 2: Using the Performance Metrics Server
 
@@ -94,5 +103,5 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, March 2023
