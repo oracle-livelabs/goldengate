@@ -104,9 +104,13 @@ First, follow the steps below to connect the Kafka event hub.
 
 7.  Click **Next**.
 
-8.  On the Connection details page, under Bootstrap servers, for Host enter: **Kafka IP** from the Terraform output.
+8.  On the Connection details page, under Bootstrap servers, check the **Network connectivity via private endpoint** checkbox.
 
-9.  For Port, enter: **9092**.
+9.  For Host enter: **Kafka Private FQDN** from the Terraform output.
+
+10. For Port, enter: **9092**.
+
+11. For Private IP address, eenter **Kafka Private IP** from the Terraform output.
 
 10. Click **Create**.
 

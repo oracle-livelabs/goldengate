@@ -104,7 +104,7 @@ GoldenGate Change Data creates an internal GoldenGate replicat process that conn
 
    ![Create GoldenGate Change Data page 3](./images/changedata_3.png "")
 
- 12. On the catalog page, click on the Start icon on the far right of the ChangeData object in the list. Press **OK** on the confirmation dialog. Wait for the status to change to **Running**.
+ 12. On the catalog page, click on the Start icon on the far right of the ChangeData object in the list. The icons appear on hover over the row. Press **OK** on the confirmation dialog. Wait for the status to change to **Running**.
 
   ![Start ChangeData](./images/start_changedata.png "")
 
@@ -227,7 +227,7 @@ For this tutorial we are using an event generator that continuously inserts rows
 2. In the OCI console, press the Developer Tools icon on top and select **Cloud Shell**
    ![Cloud Shell menu](./images/open_cloudshell.png "")
 
-3. The Cloud Shell opens on the bottom of the screen. Enter the command ```ssh opc@IP\_ADDRESS```, replacing the IP\_ADDRESS with **Kafka IP** from the Terraform output.
+3. The Cloud Shell opens on the bottom of the screen. Enter the command ```ssh opc@IP_ADDRESS```, replacing the IP\_ADDRESS with **Kafka IP** from the Terraform output.
 
 4. When asked 
 
@@ -259,6 +259,8 @@ Create a stream to feed a pipeline with events from the Kafka topic that GoldenG
    ![Create Kafka Stream page 1](./images/stream1.png "")
 
 4. On the second page of the Create Stream dialog, for Connection, select **Kafka**.
+
+5. For Topic name, select **gg_MOVIESTREAM.ACTIVITY**.
 
 5. Press **Next**.
 
