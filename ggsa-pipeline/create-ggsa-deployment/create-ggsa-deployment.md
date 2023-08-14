@@ -64,15 +64,13 @@ In this lab, you will:
 
 13. For Choose a deployment type, select **Stream Analytics**.
 
-14. For Select a technology dropdown, select **Stream Analytics**.
+14. For GoldenGate Instance Name, enter **ggsa**.
 
-15. For GoldenGate Instance Name, enter **ggsa**.
+15. For Administrator Username, enter **oggadmin**.
 
-16. For Administrator Username, enter **oggadmin**.
+16. For Administrator Password, select **Admin Password** from Terraform output.
 
-17. For Administrator Password, select **Admin Password** from Terraform output.
-
-18. Click **Create**.
+17. Click **Create**.
 
     ![Completed GoldenGate details](./images/create_deployment_2.png " ")
 

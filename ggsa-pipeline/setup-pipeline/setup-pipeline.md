@@ -193,7 +193,7 @@ In this task we will add a Query Stage to filter events by the ML score. Only ev
 1. Right-click the Score stage and select in the menu **Add a Stage** and in the submenu **Query**.
    ![Create Query](./images/query2_create.png "")
 
-2. In the Create Query Stage dialog, for Name enter **EnrichActivity**.
+2. In the Create Query Stage dialog, for Name enter **FilterScore**.
 
 3. Press **Save**.
   ![Name Query](./images/query2_name.png "")
