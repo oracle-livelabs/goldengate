@@ -24,7 +24,7 @@ In this lab, you learn to:
 
     ![Click create pipeline](./images/01-02-create-pipeline.png " ")
 
-3. The Create pipeline configuration panel consists of three pages. On the Recipe page, select the **One-way Database Replication** recipe. Click **Next**.
+3. The Create pipeline configuration panel consists of three pages. On the Recipe page, select the **Active-Active Database Replication** recipe. Click **Next**.
 
     ![Select recipe](./images/01-03-select-recipe.png " ")
 
@@ -43,7 +43,7 @@ In this lab, you learn to:
 
 ## Task 2: Configure the pipeline
 
-1. On the Configuration page, for Mapping select the Source Schemas to replicate to the target. Click **Save**.
+1. On the Configuration page, for Mapping, deselect **PDBADMIN** and **"OPS$ORACLE"** so that **HR** is the only Source Schema selected. Click **Save**.
 
     ![Configuration page](./images/02-01-configuration-save.png " ")
 
