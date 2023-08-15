@@ -23,6 +23,8 @@ In this lab, you will:
 * Create connections to Kafka and GoldenGate Replication
 * Assign connections to the Stream Analytics deployment
 
+### Prerequisites
+* Completion of Get started - LiveLabs login
 
 ## Task 1: Create a Stream Analytics deployment
 
