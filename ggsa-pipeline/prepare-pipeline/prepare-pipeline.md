@@ -221,8 +221,7 @@ We are creating a GeoFence to select customers for two regions in the United Sta
    ![Geo Fence final](./images/geofence5.png "")
 
 
-
-## Task 9: Create Kafka Stream
+## Task 8: Create Kafka Stream
 
 Create a stream to feed a pipeline with events from the Kafka topic that GoldenGate feeds into. 
 

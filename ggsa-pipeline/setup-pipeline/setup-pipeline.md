@@ -85,7 +85,9 @@ In this task we will add a Query Stage, which, much like a SQL Select statement,
 14. On the Columns dialog, first press the **<<** button to unselect all columns. They are moved to the left side. 
 
 15. Select the following columns and press **>** to move them to the right side. You can do multi-select with Ctrl button or move one-by-one. 
+
    after\_GENRE\_ID, LOC\_LAT, LOC\_LONG, AGE, INCOME, INSUFF\_FUNDS\_INCIDENTS, NUM\_CARS, CITY, FIRST\_NAME, CUST\_ID, LAST\_NAME, TITLE
+
    ![Select columns](./images/column_dlg.png "")
 
 16. Press Save to close the dialog.

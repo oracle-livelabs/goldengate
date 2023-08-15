@@ -102,6 +102,7 @@ First, follow the steps below to connect the GoldenGate deployment to be used by
 
 8.  For Host, enter **GG Deployment Host** from the Terraform output.
 
+
 9.  Enter for Port: **443**.
 
 10.  For Username, enter **oggadmin**.
