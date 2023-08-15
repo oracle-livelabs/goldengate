@@ -137,14 +137,14 @@ We can now score customer events based on the likelihood to respond to a promoti
 5. In the field **Tenant** enter **Tenant OCID** from the Terraform output
 6. In the field **OML Services Name** enter **ADB Name** from the Terraform output
 7. In the field **Username** enter **omluser**
-7. In the field **Password** enter **Admin Password** from the Terraform output
-7. In the field **OML\_Model** enter **score\_promo**
-8. In **Input Fields** select **CITY**, **GENRE\_ID**, **INCOME**, **INSUFF\_FUNDS\_INCIDENTS**, and **NUM\_CARS**.
-9. Click somewhere outside the condition box to apply the changes.
+8. In the field **Password** enter **Admin Password** from the Terraform output
+9. In the field **OML\_Model** enter **score\_promo**
+10. In **Input Fields** select **CITY**, **GENRE\_ID**, **INCOME**, **INSUFF\_FUNDS\_INCIDENTS**, and **NUM\_CARS**.
+11. Click somewhere outside the condition box to apply the changes.
 
   ![OML Stage finished](./images/oml_fields.png "")
 
-10. Wait for changes to apply and events to appear in the Live Event Output. The rightmost column in output is **SCORING** and has typically values up to 0.1. We will use scores above 0.04 later to determine candidates for promotion.
+12. Wait for changes to apply and events to appear in the Live Event Output. The rightmost column in output is **SCORING** and has typically values up to 0.1. We will use scores above 0.04 later to determine candidates for promotion.
 
    ![OML stage with data](./images/oml_scores.png "")
 
