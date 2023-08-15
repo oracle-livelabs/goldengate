@@ -62,7 +62,7 @@ In this lab, you will:
 
 12. Click **Next**.
 
-13. For Choose a deployment type, select **Stream Analytics**.
+13. For Choose a deployment type, select **Stream analytics**.
 
 14. For GoldenGate Instance Name, enter **ggsa**.
 
@@ -76,47 +76,7 @@ In this lab, you will:
 
 You're brought to the Deployment Details page. Please continue the next steps as it takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for  you to use.
 
-## Task 2: Create the Kafka connection
-
-First, follow the steps below to connect the Kafka event hub.
-
-1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
-
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/deployment_breadcrumb.png " ")
-
-2.  Click **Connections**.
-
-    ![Connections in GoldenGate menu](./images/connections_from_deployments.png " ")
-
-3.  Click **Create connection**.
-
-    ![Connections page](./images/create_connection.png " ")
-
-4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **Kafka** and optionally, a description.
-
-5.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
-
-6.  From the a Type dropdown, select **Apache Kafka** from the section **Big Data**.
-
-    ![Kafka details](./images/kafka_connect_1.png)
-
-7.  Click **Next**.
-
-8.  On the Connection details page, under Bootstrap servers, check the **Network connectivity via private endpoint** checkbox.
-
-9.  For Host enter: **Kafka Private FQDN** from the Terraform output.
-
-10. For Port, enter: **9092**.
-
-11. For Private IP address, eenter **Kafka Private IP** from the Terraform output.
-
-10. Click **Create**.
-
-    ![Kafka details page 2](./images/kafka_connect_2.png)
-
-    The connection becomes Active after a few minutes. You can continue with the next task.
-
-## Task 3: Create the GoldenGate connection
+## Task 2: Create the GoldenGate connection
 
 First, follow the steps below to connect the GoldenGate deployment to be used by GGSA.
 
@@ -152,10 +112,55 @@ First, follow the steps below to connect the GoldenGate deployment to be used by
 
     ![GoldenGate details page 2](./images/gg_connect_2.png)
 
-13.  Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
+    The connection becomes Active after a few minutes. You can continue with the next task.
+
+
+
+## Task 3: Create the Kafka connection
+
+First, follow the steps below to connect the Kafka event hub.
+
+1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
+
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/deployment_breadcrumb.png " ")
+
+2.  Click **Connections**.
+
+    ![Connections in GoldenGate menu](./images/connections_from_deployments.png " ")
+
+3.  Click **Create connection**.
+
+    ![Connections page](./images/create_connection.png " ")
+
+4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **Kafka** and optionally, a description.
+
+5.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
+
+6.  From the a Type dropdown, select **Apache Kafka** from the section **Big Data**.
+
+    ![Kafka details](./images/kafka_connect_1.png)
+
+7.  Click **Next**.
+
+8.  On the Connection details page, under Bootstrap servers, check the **Customer-assigned subnet** checkbox.
+
+9.  For Host enter: **Kafka Private FQDN** from the Terraform output.
+
+10. For Port, enter: **9092**.
+
+11. For Private IP address, eenter **Kafka Private IP** from the Terraform output.
+
+10. Click **Create**.
+
+    ![Kafka details page 2](./images/kafka_connect_2.png)
+
+11.  Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
 
     ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/conn_breadcrumb_from_ggconn.png " ")
     The connection becomes Active after a few minutes. Please wait for both new connections to become Active before proceeding.
+
+    
+
 
 ## Task 4: Create connection assignments
 

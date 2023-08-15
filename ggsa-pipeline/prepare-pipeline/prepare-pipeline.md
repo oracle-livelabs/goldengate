@@ -42,9 +42,11 @@ OCI GoldenGate Stream Analytics embeds a GoldenGate Big Data environment to rece
 ![GGSA system settings](./images/ggsa_system_settings.png "")
 
 2. In System Settings, open the **Manage Clusters** tab and expand the **GGBD Cluster** area
+
+3. Change CPU Limit field to **500** Millicpu.
 ![GGSA system settings manage clusters](./images/manage_ggbd.png "")
 
-3. Press the **Start Cluster** button and wait until the status of the cluster is in Cluster Status: Running. Close the System Settings dialog.
+4. Press the **Start Cluster** button and wait until the status of the cluster is in Cluster Status: Running. Close the System Settings dialog.
 ![GGSA system settings start cluster](./images/start_ggbd.png "")
 
 ## Task 3: Start Event Generator

@@ -85,7 +85,7 @@ In this task we will add a Query Stage, which, much like a SQL Select statement,
 14. On the Columns dialog, first press the **<<** button to unselect all columns. They are moved to the left side. 
 
 15. Select the following columns and press **>** to move them to the right side. You can do multi-select with Ctrl button or move one-by-one. 
-   after\_GENRE\_ID, CUST\_ID, LAST\_NAME, FIRST\_NAME, CITY, LOC\_LAT, LOC\_LONG, AGE, INCOME, INSUFF\_FUNDS\_INCIDENTS, NUM\_CARS, TITLE
+   after\_GENRE\_ID, LOC\_LAT, LOC\_LONG, AGE, INCOME, INSUFF\_FUNDS\_INCIDENTS, NUM\_CARS, CITY, FIRST\_NAME, CUST\_ID, LAST\_NAME, TITLE
    ![Select columns](./images/column_dlg.png "")
 
 16. Press Save to close the dialog.
@@ -131,7 +131,7 @@ We can now score customer events based on the likelihood to respond to a promoti
 3. In the Create Pattern Stage dialog, for Name, enter **Score** and press **Save**.
    ![Configure OML stage](./images/oml_dlg.png "")
 
-4. In the field **OML server url** enter **ADB URL** from the Terraform output
+4. In the field **OML server url** enter **ADB URL** from the Terraform output. When copying the URL, make sure no / character is added to the end of the URL. 
 5. In the field **Tenant** enter **Tenant OCID** from the Terraform output
 6. In the field **OML Services Name** enter **ADB Name** from the Terraform output
 7. In the field **Username** enter **omluser**
@@ -142,7 +142,7 @@ We can now score customer events based on the likelihood to respond to a promoti
 
   ![OML Stage finished](./images/oml_fields.png "")
 
-10. Wait for changes to apply and events to appear in the Live Event Output. The rightmost column in output is **SCORING** and has typically values up to 0.1. We will use scores above 0.06 later to determine candidates for promotion.
+10. Wait for changes to apply and events to appear in the Live Event Output. The rightmost column in output is **SCORING** and has typically values up to 0.1. We will use scores above 0.04 later to determine candidates for promotion.
 
    ![OML stage with data](./images/oml_scores.png "")
 
@@ -203,7 +203,7 @@ In this task we will add a Query Stage to filter events by the ML score. Only ev
 5. Press the **Add Filter** button.
    ![Add Filter](./images/query2_filter.png "")
 
-6. In the three condition fields select **Score > SCORING**, **greater than**, and type in **0.06**
+6. In the three condition fields select **Score > SCORING**, **greater than or equals**, and type in **0.04**
    ![Set condition for filter](./images/query2_condition.png "")
 
 7. Click somewhere outside the condition box to apply the changes.
@@ -251,7 +251,7 @@ In the final task we create a Kafka target to send out offer messages that will 
 
 12. Wait for the changes to apply and new events to be displayed in the Live Event Output. The pipeline is now finished and produces offers to customers.
 
-  ![Create Target page 3](./images/pipeline_finished.png "")
+  ![Pipeline finished](./images/pipeline_final.png "")
 
 
 ## Task 8: Publish Pipeline
