@@ -4,7 +4,10 @@
 
 Estimated Time: 15 minutes
 
-This lab focuses on creating supporting object used in a streaming pipeline
+This lab focuses on creating supporting objects used in a streaming pipeline.
+
+Watch the video below for a quick walk through of the lab.
+[Watch the video](videohub:1_5g86ol4o)
 
 ### Objectives
 * Understand connections forwarded from OCI GoldenGate
