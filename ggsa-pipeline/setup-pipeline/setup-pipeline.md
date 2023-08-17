@@ -6,6 +6,9 @@ Estimated Time: 20 minutes
 
 This lab focuses on creating a pipeline and establishing stages, filters, and visualizations.
 
+Watch the video below for a quick walk through of the lab.
+[Watch the video](videohub:1_d9leh5at)
+
 ### Objectives
 * Learn how to create pipelines
 * Understand different stage types such as stream, query, pattern, target
