@@ -26,7 +26,9 @@ In this lab, you will:
 
     ![Terraform values](./images/01-02-terraform.png " ")
 
-3. In the GoldenGate Free welcome page, enter `oggadmin` for your username. For password, copy the **Global Password** from the Reservation Information. Click **Log in**. 
+    > **Note:** Add `https://` before the IP address if you are having trouble connecting. 
+
+3. In the GoldenGate Free welcome page, enter `oggadmin` for your Username. For password, paste the **Global Password** from the Reservation Information. Click **Log in**. 
 
     ![Login screen](./images/01-03-login.png " ")
 
@@ -36,7 +38,7 @@ In this lab, you will:
 
     ![GoldenGate Free Home page](./images/02-01-create-connection.png " ")
 
-2.  The Create database connection configuration panel consists of six pages. On the General information page, for Name, enter **SourceDB** and optionally, a description.
+2.  The Create database connection configuration panel consists of six pages. On the General information page, for Name, enter **sourceDB** and optionally, a description.
 
 3.  Click **Next**.
 
@@ -58,7 +60,7 @@ In this lab, you will:
 
     ![SYSDBA priviledges](./images/02-10-sysdba-priv.png " ")
 
-11. Under the Administrator Credentials pop up, insert your admin privilege username and password. Click **OK**.
+11. In the Administrator Credentials dialog, for User with admin privilege, enter  `sys`. For password, paste the **Global Password** from the Reservation Information. Click **OK**.
 
     ![Administrator credentials page](./images/02-11-admin-credentials.png " ")
 
@@ -66,13 +68,13 @@ In this lab, you will:
 
     ![Connection details page](./images/02-12-connection-details.png " ")
 
-13. On the GoldenGate admin user page, enter your username, password, and select the **Add GoldenGate admin database user**. 
+13. On the GoldenGate admin user page, enter your username, password, and select the **Add GoldenGate admin database user**. For password, paste the **Global Password** from the Reservation Information.
 
 14. Click **Next**.
 
     ![GoldenGate admin user page](./images/02-14-gg-admin-user.png " ")
 
-15. On the Configuration page, click **Run Analysis**.
+15. On the Configuration page, click **Run analysis**.
 
     ![Click run analysis](./images/02-15-run-analysis.png " ")
 
@@ -98,7 +100,7 @@ In this lab, you will:
 
 	![Create database connection](./images/03-01-create-connection.png " ")
 
-2.  The Create database connection configuration panel consists of six pages. On the General information page, for Name, enter **TargetDB** and optionally, a description.
+2.  The Create database connection configuration panel consists of six pages. On the General information page, for Name, enter **targetDB** and optionally, a description.
 
 3.  Click **Next**.
 
@@ -120,7 +122,7 @@ In this lab, you will:
 
     ![SYSDBA priviledges](./images/03-10-sysdba-priv.png " ")
 
-11. Under the Administrator Credentials pop up, insert your admin privilege username and password. Click **OK**.
+11. Under the Administrator Credentials pop up, for User with admin privilege, enter `sys`. For password, paste the **Global Password** from the Reservation Information. Click **OK**.
 
     ![Administrator credentials page](./images/02-11-admin-credentials.png " ")
 
@@ -128,13 +130,13 @@ In this lab, you will:
 
     ![Connection details page](./images/03-12-connection-details.png " ")
 
-13. On the GoldenGate admin user page, enter your username, password, and select the **Add GoldenGate admin database user**. 
+13. On the GoldenGate admin user page, enter your username, password, and select the **Add GoldenGate admin database user**. For password, paste the **Global Password** from the Reservation Information.
 
 14. Click **Next**.
 
     ![GoldenGate admin user page](./images/02-14-gg-admin-user.png " ")
 
-15. On the Configuration page, click **Run Analysis**.
+15. On the Configuration page, click **Run analysis**.
 
     ![Click run analysis](./images/02-15-run-analysis.png " ")
 

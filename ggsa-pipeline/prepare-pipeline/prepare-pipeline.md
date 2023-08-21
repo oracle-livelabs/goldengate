@@ -4,7 +4,10 @@
 
 Estimated Time: 15 minutes
 
-This lab focuses on creating supporting object used in a streaming pipeline
+This lab focuses on creating supporting objects used in a streaming pipeline.
+
+Watch the video below for a quick walk through of the lab.
+[Watch the video](videohub:1_5g86ol4o)
 
 ### Objectives
 * Understand connections forwarded from OCI GoldenGate
@@ -42,32 +45,37 @@ OCI GoldenGate Stream Analytics embeds a GoldenGate Big Data environment to rece
 ![GGSA system settings](./images/ggsa_system_settings.png "")
 
 2. In System Settings, open the **Manage Clusters** tab and expand the **GGBD Cluster** area
+
+3. Change CPU Limit field to **500** Millicpu.
 ![GGSA system settings manage clusters](./images/manage_ggbd.png "")
 
-3. Press the **Start Cluster** button and wait until the status of the cluster is in Cluster Status: Running. Close the System Settings dialog.
+4. Press the **Start Cluster** button and wait until the status of the cluster is in Cluster Status: Running. Close the System Settings dialog.
 ![GGSA system settings start cluster](./images/start_ggbd.png "")
 
-## Task 3: Change credentials in GoldenGate connection
+## Task 3: Start Event Generator
 
-The GoldenGate connection is available in Stream Analytics console trough the connection assignment. However, the credentials are not transfered and need to be updated. 
+For this tutorial we are using an event generator that continuously inserts rows into the source database to simulate movie selections by customers. 
 
-1. In the catalog page, click on the GoldenGate connection object.
+1. Go to the OCI console on a separate browser tab, leave the GGSA console open. 
 
-![Open GoldenGate connection](./images/catalog_gg_conn.png "")
+2. In the OCI console, press the Developer Tools icon on top and select **Cloud Shell**
+   ![Cloud Shell menu](./images/open_cloudshell.png "")
 
-2. On the first page of the Edit Connection dialog, press **Next**.
+3. The Cloud Shell opens on the bottom of the screen. Enter the command ```ssh opc@IP_ADDRESS```, replacing the IP\_ADDRESS with **Kafka IP** from the Terraform output.
 
-![Edit GoldenGate connection](./images/edit_gg_conn_1.png "")
+4. When asked 
 
-3. On the second page of the Edit Connection dialog, for GG User Name, enter **oggadmin**.
+   The authenticity of host ... can't be established.
+   ...
+   Are you sure you want to continue connecting (yes/no)?
 
-4. Press the link **Change Password** and then for GG Password, enter **Admin Password** from the Terraform output.
+   Enter the word **yes**.
 
-5. Press **Test connection** to make sure the connection is working. The text **Successful** will appear.
+5. When asked for a password, use the **Admin Password** from the Terraform output.
 
-6. Press **Save** to close the dialog.
+6. Enter the command ```sh eventgen.sh```. A continous output of insert statements will be shown. Keep the cloud shell window open for the duration of the tutorial. The command can later be stopped and restarted as necessary.
 
-![Edit GoldenGate connection page 2](./images/edit_gg_conn_2.png "")
+   ![Cloud shell commands](./images/cloudshell.png "")
 
 
 ## Task 4: Create GoldenGate Change Data
@@ -104,7 +112,7 @@ GoldenGate Change Data creates an internal GoldenGate replicat process that conn
 
    ![Create GoldenGate Change Data page 3](./images/changedata_3.png "")
 
- 12. On the catalog page, click on the Start icon on the far right of the ChangeData object in the list. Press **OK** on the confirmation dialog. Wait for the status to change to **Running**.
+ 12. On the catalog page, click on the Start icon on the far right of the ChangeData object in the list. The icons appear on hover over the row. Press **OK** on the confirmation dialog. Wait for the status to change to **Running**.
 
   ![Start ChangeData](./images/start_changedata.png "")
 
@@ -216,35 +224,7 @@ We are creating a GeoFence to select customers for two regions in the United Sta
    ![Geo Fence final](./images/geofence5.png "")
 
 
-
-
-## Task 8: Start Event Generator
-
-For this tutorial we are using an event generator that continuously inserts rows into the source database to simulate movie selections by customers. 
-
-1. Go to the OCI console on a separate browser tab, leave the GGSA console open. 
-
-2. In the OCI console, press the Developer Tools icon on top and select **Cloud Shell**
-   ![Cloud Shell menu](./images/open_cloudshell.png "")
-
-3. The Cloud Shell opens on the bottom of the screen. Enter the command ```ssh opc@IP\_ADDRESS```, replacing the IP\_ADDRESS with **Kafka IP** from the Terraform output.
-
-4. When asked 
-
-   The authenticity of host ... can't be established.
-   ...
-   Are you sure you want to continue connecting (yes/no)?
-
-   Enter the word **yes**.
-
-5. When asked for a password, use the **Admin Password** from the Terraform output.
-
-6. Enter the command ```sh eventgen.sh```. A continous output of insert statements will be shown. Keep the cloud shell window open for the duration of the tutorial. The command can later be stopped and restarted as necessary.
-
-   ![Cloud shell commands](./images/cloudshell.png "")
-
-
-## Task 9: Create Kafka Stream
+## Task 8: Create Kafka Stream
 
 Create a stream to feed a pipeline with events from the Kafka topic that GoldenGate feeds into. 
 
@@ -259,6 +239,8 @@ Create a stream to feed a pipeline with events from the Kafka topic that GoldenG
    ![Create Kafka Stream page 1](./images/stream1.png "")
 
 4. On the second page of the Create Stream dialog, for Connection, select **Kafka**.
+
+5. For Topic name, select **gg_MOVIESTREAM.ACTIVITY**.
 
 5. Press **Next**.
 
