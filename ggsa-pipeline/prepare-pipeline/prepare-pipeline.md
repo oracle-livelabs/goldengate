@@ -25,11 +25,11 @@ Now that we have created deployment and connections, we can open the Stream Anal
 
 ![GGSA deployment](./images/deployment_ggsa.png "")
 
-2. Open the Stream Analytics console by pressing the **Launch console** button.
+2.  Press **Launch console** to open the Stream Analytics console.
 
 ![GGSA console](./images/ggsa_console_open.png "")
 
-3. The GGSA console will open in a new browser tab. For User Name, enter **oggadmin**, and for Password enter **Admin Password** from the Terraform output. Then press **Sign In**
+3. The GGSA console will open in a new browser tab. For User Name, enter **oggadmin**. For Password enter **Admin Password** from the Terraform Values section. Then press **Sign In**.
 
 ![GGSA login](./images/ggsa_login.png "")
 
@@ -41,10 +41,10 @@ Now that we have created deployment and connections, we can open the Stream Anal
 
 OCI GoldenGate Stream Analytics embeds a GoldenGate Big Data environment to receive a change stream from GoldenGate extracts. 
 
-1. Open System Settings in the upper right user menu
+1. Open System Settings in the upper right user menu.
 ![GGSA system settings](./images/ggsa_system_settings.png "")
 
-2. In System Settings, open the **Manage Clusters** tab and expand the **GGBD Cluster** area
+2. In System Settings, open the **Manage Clusters** tab and expand the **GGBD Cluster** area.
 
 3. Change CPU Limit field to **500** Millicpu.
 ![GGSA system settings manage clusters](./images/manage_ggbd.png "")
@@ -58,10 +58,10 @@ For this tutorial we are using an event generator that continuously inserts rows
 
 1. Go to the OCI console on a separate browser tab, leave the GGSA console open. 
 
-2. In the OCI console, press the Developer Tools icon on top and select **Cloud Shell**
+2. In the OCI console, press the Developer Tools icon on top and select **Cloud Shell**.
    ![Cloud Shell menu](./images/open_cloudshell.png "")
 
-3. The Cloud Shell opens on the bottom of the screen. Enter the command ```ssh opc@IP_ADDRESS```, replacing the IP\_ADDRESS with **Kafka IP** from the Terraform output.
+3. The Cloud Shell opens on the bottom of the screen. Enter the command ```ssh opc@IP_ADDRESS```, replacing the IP\_ADDRESS with **Kafka Public IP** from the Terraform Values section.
 
 4. When asked 
 
@@ -71,7 +71,7 @@ For this tutorial we are using an event generator that continuously inserts rows
 
    Enter the word **yes**.
 
-5. When asked for a password, use the **Admin Password** from the Terraform output.
+5. When asked for a password, use the **Admin Password** from the Terraform Values section.
 
 6. Enter the command ```sh eventgen.sh```. A continous output of insert statements will be shown. Keep the cloud shell window open for the duration of the tutorial. The command can later be stopped and restarted as necessary.
 
@@ -128,7 +128,7 @@ Database connections are created with default user ggadmin. We will change this 
 
 3. On Edit Connection dialog first page, press **Next**
 
-4. On Edit Connection dialog second page, for Username, enter **moviestream**. Password does not need to be changed, it is the same (Admin Password from Terraform output).
+4. On Edit Connection dialog second page, for Username, enter **moviestream**. Password does not need to be changed, it is the same (Admin Password from Terraform Values section).
 
 5. Press **Test Connection** to check that connection works. The word "Successful" should appear.
 
