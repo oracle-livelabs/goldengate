@@ -84,25 +84,25 @@ First, follow the steps below to connect the GoldenGate deployment to be used by
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate to the Deployments page. 
 
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/deployment_breadcrumb.png " ")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/connections_breadcrumb.png " ")
 
-2.  Click **Connections**.
-
-    ![Connections in GoldenGate menu](./images/connections_from_deployments.png " ")
-
-3.  Click **Create connection**. Please note that the list already contains an existing GoldenGate connection "ADB_Connection", which is pre-created for this lab.
+2.  Click **Create connection**.
 
     ![Connections page](./images/create_connection.png " ")
 
+3.  Click **Create connection**. Please note that the list already contains an existing GoldenGate connection "ADB_Connection", which is pre-created for this lab.
+
+4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
+
 4.  On the General information page, for Name, enter **GoldenGate** and optionally, a description.
 
-5.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
+    ![GoldenGate details](./images/gg_connect_1.png)
 
 6.  From the a Type dropdown, select **GoldenGate** from the section **Generic**.
 
     ![GoldenGate details](./images/gg_connect_1.png)
 
-7.  Click **Next**.
+8.  For Host, enter **GG Deployment Host** from the Terraform output.
 
 8.  On the Connection details page, under GoldenGate deployment, select **Enter GoldenGate information**
 
@@ -127,13 +127,13 @@ First, follow the steps below to connect the GoldenGate deployment to be used by
 
 First, follow the steps below to connect the Kafka event hub.
 
-1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
+## Task 3: Create the Kafka connection
 
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/connections_breadcrumb.png " ")
+First, follow the steps below to connect the Kafka event hub.
 
 3.  Click **Create connection**.
 
-    ![Connections page](./images/create_connection.png " ")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/deployment_breadcrumb.png " ")
 
 4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **Kafka** and optionally, a description.
 
