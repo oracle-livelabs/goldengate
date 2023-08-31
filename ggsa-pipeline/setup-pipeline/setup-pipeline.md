@@ -30,7 +30,7 @@ Now that we have created deployment and connections, we can open the Stream Anal
 
 3. On the Create Pipeline dialog, for Name, enter **MoviePromotion**.
 
-4. For Stream, select **ActivityStream**
+4. For Stream, select **ActivityStream**.
 
 5. Press **Save**.
 
@@ -64,17 +64,17 @@ In this task we will add a Query Stage, which, much like a SQL Select statement,
 
    ![Query add movie source](./images/query1_add_movie.png "")
 
-8. Press **Add Condition**
+8. Press **Add Condition**.
 
    ![Query add condition](./images/query1_add_condition.png "")
 
-9. In the three condition fields select **Movie > MOVIE\_ID**, **equals**, and **after\_MOVIE\_ID**
+9. In the three condition fields select **Movie > MOVIE\_ID**, **equals**, and **after\_MOVIE\_ID**.
 
   ![Query add condition for movie](./images/query1_movie_condition.png "")
 
-10. Press **Add Condition** again
+10. Press **Add Condition** again.
 
-9. In the three condition fields select **Customer > CUST\_ID**, **equals**, and **after\_CUST\_ID**
+11. In the three condition fields select **Customer > CUST\_ID**, **equals**, and **after\_CUST\_ID**.
 
   ![Query add condition for custid](./images/query1_customer_condition.png "")
 
@@ -110,10 +110,10 @@ In this task we will add a Query Stage, which, much like a SQL Select statement,
 3. In the Create Pattern Stage dialog, for Name, enter **FilterRegion** and press **Save**.
    ![Setup Geo Fence](./images/geofence_dlg.png "")
 
-4. In the field **Geo Fence** select **Regions**
-5. In the field **Latitude** select **LOC\_LAT**
-6. In the field **Longitude** select **LOC\_LONG**
-7. In the field **Object Key** select **CUST\_ID**
+4. In the field **Geo Fence** select **Regions**.
+5. In the field **Latitude** select **LOC\_LAT**.
+6. In the field **Longitude** select **LOC\_LONG**.
+7. In the field **Object Key** select **CUST\_ID**.
 8. In **Tracking Events** deselect **Near**, **Exit**, and **Stay**, so that only **Enter** remains checked.
 9. Click somewhere outside the condition box to apply the changes.
 
@@ -136,12 +136,12 @@ We can now score customer events based on the likelihood to respond to a promoti
 3. In the Create Pattern Stage dialog, for Name, enter **Score** and press **Save**.
    ![Configure OML stage](./images/oml_dlg.png "")
 
-4. In the field **OML server url** enter **ADB URL** from the Terraform output. When copying the URL, make sure no / character is added to the end of the URL. 
-5. In the field **Tenant** enter **Tenant OCID** from the Terraform output
-6. In the field **OML Services Name** enter **ADB Name** from the Terraform output
-7. In the field **Username** enter **omluser**
-8. In the field **Password** enter **Admin Password** from the Terraform output
-9. In the field **OML\_Model** enter **score\_promo**
+4. In the field **OML server url** enter **ADB URL** from the Terraform Values section. When copying the URL, make sure no / character is added to the end of the URL. 
+5. In the field **Tenant** enter **Tenant OCID** from the Terraform Values section.
+6. In the field **OML Services Name** enter **ADB Name** from the Terraform Values section.
+7. In the field **Username** enter **omluser**.
+8. In the field **Password** enter **Admin Password** from the Terraform Values section.
+9. In the field **OML\_Model** enter **score\_promo**.
 10. In **Input Fields** select **CITY**, **GENRE\_ID**, **INCOME**, **INSUFF\_FUNDS\_INCIDENTS**, and **NUM\_CARS**.
 11. Click somewhere outside the condition box to apply the changes.
 
@@ -203,12 +203,12 @@ In this task we will add a Query Stage to filter events by the ML score. Only ev
 3. Press **Save**.
   ![Name Query](./images/query2_name.png "")
 
-4. Select the Filter tab on the right-hand side
+4. Select the Filter tab on the right-hand side.
 
 5. Press the **Add Filter** button.
    ![Add Filter](./images/query2_filter.png "")
 
-6. In the three condition fields select **Score > SCORING**, **greater than or equals**, and type in **0.04**
+6. In the three condition fields select **Score > SCORING**, **greater than or equals**, and type in **0.04**.
    ![Set condition for filter](./images/query2_condition.png "")
 
 7. Click somewhere outside the condition box to apply the changes.

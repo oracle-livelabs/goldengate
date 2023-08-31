@@ -42,7 +42,7 @@ In this lab, you will:
 
     > **Tip:** You can find your User name in the Workshop Details section.
 
-4.  On the Deployments page, click **Create deployment**.
+4.  On the Deployments page, click **Create deployment**. Please note that the list already contains an existing GoldenGate deployment "Replication", which is pre-created for this lab.
 
     ![Deployments page](./images/01-04-create-deployment.png " ")
 
@@ -52,7 +52,7 @@ In this lab, you will:
 
 7.  For OCPU Count, enter **1**.
 
-8.  Check the Auto scaling checkbox
+8.  Check the **Auto scaling** checkbox.
 
 9.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
 
@@ -70,7 +70,7 @@ In this lab, you will:
 
 15. For Administrator Username, enter **oggadmin**.
 
-16. For Administrator Password, select **Admin Password** from Terraform output.
+16. For Administrator Password, select **Admin Password** from Terraform Values section.
 
 17. Click **Create**.
 
@@ -82,7 +82,7 @@ You're brought to the Deployment Details page. Please continue the next steps as
 
 First, follow the steps below to connect the GoldenGate deployment to be used by GGSA.
 
-1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
+1.  Use the Oracle Cloud Console breadcrumb to navigate to the Deployments page. 
 
     ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/connections_breadcrumb.png " ")
 
@@ -90,28 +90,32 @@ First, follow the steps below to connect the GoldenGate deployment to be used by
 
     ![Connections page](./images/create_connection.png " ")
 
-3.  On the General information page, for Name, enter **GoldenGate** and optionally, a description.
+3.  Click **Create connection**. Please note that the list already contains an existing GoldenGate connection "ADB_Connection", which is pre-created for this lab.
 
 4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
-5.  From the a Type dropdown, select **GoldenGate** from the section **Generic**.
+4.  On the General information page, for Name, enter **GoldenGate** and optionally, a description.
 
     ![GoldenGate details](./images/gg_connect_1.png)
 
-6.  Click **Next**.
+6.  From the a Type dropdown, select **GoldenGate** from the section **Generic**.
 
-7.  On the Connection details page, under GoldenGate deployment, select **Enter GoldenGate information**
+    ![GoldenGate details](./images/gg_connect_1.png)
 
 8.  For Host, enter **GG Deployment Host** from the Terraform output.
 
+8.  On the Connection details page, under GoldenGate deployment, select **Enter GoldenGate information**
 
-9.  Enter for Port: **443**.
+9.  For Host, enter **GG Deployment Host** from the Terraform Values section.
 
-10.  For Username, enter **oggadmin**.
 
-11. For Password, enter **Admin password** from the Terraform output.
+10.  For Port, enter: **443**.
 
-12. Click **Create**.
+11.  For Username, enter **oggadmin**.
+
+12. For Password, enter **Admin password** from the Terraform Values section.
+
+13. Click **Create**.
 
     ![GoldenGate details page 2](./images/gg_connect_2.png)
 
@@ -123,17 +127,13 @@ First, follow the steps below to connect the GoldenGate deployment to be used by
 
 First, follow the steps below to connect the Kafka event hub.
 
-1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
+## Task 3: Create the Kafka connection
 
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/deployment_breadcrumb.png " ")
-
-2.  Click **Connections**.
-
-    ![Connections in GoldenGate menu](./images/connections_from_deployments.png " ")
+First, follow the steps below to connect the Kafka event hub.
 
 3.  Click **Create connection**.
 
-    ![Connections page](./images/create_connection.png " ")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/deployment_breadcrumb.png " ")
 
 4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **Kafka** and optionally, a description.
 
@@ -147,11 +147,11 @@ First, follow the steps below to connect the Kafka event hub.
 
 8.  On the Connection details page, under Bootstrap servers, check the **Customer-assigned subnet** checkbox.
 
-9.  For Host enter: **Kafka Private FQDN** from the Terraform output.
+9.  For Host enter: **Kafka Private FQDN** from the Terraform Values section.
 
 10. For Port, enter: **9092**.
 
-11. For Private IP address, eenter **Kafka Private IP** from the Terraform output.
+11. For Private IP address, enter **Kafka Private IP** from the Terraform Values section.
 
 10. Click **Create**.
 
