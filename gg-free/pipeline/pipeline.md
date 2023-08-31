@@ -32,18 +32,22 @@ In this lab, you learn to:
 
     ![Insert pipeline name](./images/01-04-name-pipeline.png " ")
 
-5. On the Connections page, for Source database, select your target database connection from the dropdown.
+5. On the Connections page, for Source database, select your source database connection from the dropdown.
 
-6. For target database, select your target database connection from the dropdown.
+6. For Target database, select your target database connection from the dropdown.
 
 7. Click **Save & configure**.
 
     ![Connections page](./images/01-07-select-connections.png " ")
 
+9. A warning pop-up will appear. Click **OK**.
+
+    ![Warning page](./images/01-08-warning.png " ")
+
 
 ## Task 2: Configure the pipeline
 
-1. On the Configuration page, for Mapping, deselect **PDBADMIN** and **"OPS$ORACLE"** so that **HR** is the only Source Schema selected. Click **Save**.
+1. On the Configuration page, for Mapping, deselect **PDBADMIN** so that **HR** is the only Source Schema selected. Click **Save**.
 
     ![Configuration page](./images/02-01-configuration-save.png " ")
 
@@ -51,9 +55,34 @@ In this lab, you learn to:
 
     ![Overview Initialization page](./images/02-02-overview-start.png " ")
 
-3.  In the Runtime view, you can view the real time database statistics, such as Operations Extract and Operations Replicat.
+3.  In the Runtime view, you can view the real time database statistics, such as Operations Extract and Operations Replicat. 
 
     ![Overview Runtime page](./images/02-03-overview-runtime.png " ")
+
+4. Select the Configuration tab, and on the **Mapping** screen, you can review and select the source database schemas and tables to replicate.
+
+    ![Mapping page](./images/02-04-mapping.png " ")
+
+5. On the **Mapping Rules** screen, you can review, add, delete, and reorder rules.
+
+    ![Mapping Rules page](./images/02-05-mapping-rules.png " ")
+
+6. On the **Options** screen, you can configure a limited set of GoldenGate parameters. Under **Advanced Options**, you can set the **Initial Load (Data Pump)** options. You can configure the Data Pump Options and Handling Open Transactions. 
+
+
+    ![Advanced Options - Initial Load page](./images/02-06-initial-load.png " ")
+
+7. On the **Extract** screen, you can configure the Source database timezone, list any Additional Extract Parameters, and enable Extract Auto Restart Options.
+
+    ![Advanced Options - Extract page](./images/02-07-extract.png " ")
+
+8. On the **Replicat** screen, you can configure Replicat Errors Handling, list any Additional Extract Paramters, and enable Extract Auto Restart Options.
+
+    ![Advanced Options - Replicat page](./images/02-08-replicat.png " ")
+
+9. Select **Cancel** after you are done exploring the Configuration screen. 
+
+    ![Cancel to exit Configuration](./images/02-09-cancel.png " ")
 
 
 **Proceed to the next lab.**
