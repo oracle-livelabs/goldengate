@@ -7,7 +7,7 @@ In this lab, you learn to create an Oracle Cloud Infrastructure (OCI) GoldenGate
 Estimated time: 30 minutes
 
 Watch the video below for a quick walk through of the lab.
-[Watch the video](videohub:1_hz7gsiin)
+[Watch the video](videohub:1_ae299i9n)
 
 ### About Oracle Cloud Infrastructure GoldenGate Stream Analytics deployments and connections
 
@@ -23,6 +23,8 @@ In this lab, you will:
 * Create connections to Kafka and GoldenGate Replication
 * Assign connections to the Stream Analytics deployment
 
+### Prerequisites
+* Completion of Get started - LiveLabs login
 
 ## Task 1: Create a Stream Analytics deployment
 
@@ -62,63 +64,21 @@ In this lab, you will:
 
 12. Click **Next**.
 
-13. For Choose a deployment type, select **Stream Analytics**.
+13. For Choose a deployment type, select **Stream analytics**.
 
-14. For Select a technology dropdown, select **Stream Analytics**.
+14. For GoldenGate Instance Name, enter **ggsa**.
 
-15. For GoldenGate Instance Name, enter **ggsa**.
+15. For Administrator Username, enter **oggadmin**.
 
-16. For Administrator Username, enter **oggadmin**.
+16. For Administrator Password, select **Admin Password** from Terraform output.
 
-17. For Administrator Password, select **Admin Password** from Terraform output.
-
-18. Click **Create**.
+17. Click **Create**.
 
     ![Completed GoldenGate details](./images/create_deployment_2.png " ")
 
 You're brought to the Deployment Details page. Please continue the next steps as it takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for  you to use.
 
-## Task 2: Create the Kafka connection
-
-First, follow the steps below to connect the Kafka event hub.
-
-1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
-
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/deployment_breadcrumb.png " ")
-
-2.  Click **Connections**.
-
-    ![Connections in GoldenGate menu](./images/connections_from_deployments.png " ")
-
-3.  Click **Create connection**.
-
-    ![Connections page](./images/create_connection.png " ")
-
-4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **Kafka** and optionally, a description.
-
-5.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
-
-6.  From the a Type dropdown, select **Apache Kafka** from the section **Big Data**.
-
-    ![Kafka details](./images/kafka_connect_1.png)
-
-7.  Click **Next**.
-
-8.  On the Connection details page, under Bootstrap servers, check the **Network connectivity via private endpoint** checkbox.
-
-9.  For Host enter: **Kafka Private FQDN** from the Terraform output.
-
-10. For Port, enter: **9092**.
-
-11. For Private IP address, eenter **Kafka Private IP** from the Terraform output.
-
-10. Click **Create**.
-
-    ![Kafka details page 2](./images/kafka_connect_2.png)
-
-    The connection becomes Active after a few minutes. You can continue with the next task.
-
-## Task 3: Create the GoldenGate connection
+## Task 2: Create the GoldenGate connection
 
 First, follow the steps below to connect the GoldenGate deployment to be used by GGSA.
 
@@ -144,6 +104,7 @@ First, follow the steps below to connect the GoldenGate deployment to be used by
 
 8.  For Host, enter **GG Deployment Host** from the Terraform output.
 
+
 9.  Enter for Port: **443**.
 
 10.  For Username, enter **oggadmin**.
@@ -154,10 +115,55 @@ First, follow the steps below to connect the GoldenGate deployment to be used by
 
     ![GoldenGate details page 2](./images/gg_connect_2.png)
 
-13.  Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
+    The connection becomes Active after a few minutes. You can continue with the next task.
+
+
+
+## Task 3: Create the Kafka connection
+
+First, follow the steps below to connect the Kafka event hub.
+
+1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
+
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/deployment_breadcrumb.png " ")
+
+2.  Click **Connections**.
+
+    ![Connections in GoldenGate menu](./images/connections_from_deployments.png " ")
+
+3.  Click **Create connection**.
+
+    ![Connections page](./images/create_connection.png " ")
+
+4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **Kafka** and optionally, a description.
+
+5.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
+
+6.  From the a Type dropdown, select **Apache Kafka** from the section **Big Data**.
+
+    ![Kafka details](./images/kafka_connect_1.png)
+
+7.  Click **Next**.
+
+8.  On the Connection details page, under Bootstrap servers, check the **Customer-assigned subnet** checkbox.
+
+9.  For Host enter: **Kafka Private FQDN** from the Terraform output.
+
+10. For Port, enter: **9092**.
+
+11. For Private IP address, eenter **Kafka Private IP** from the Terraform output.
+
+10. Click **Create**.
+
+    ![Kafka details page 2](./images/kafka_connect_2.png)
+
+11.  Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
 
     ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/conn_breadcrumb_from_ggconn.png " ")
     The connection becomes Active after a few minutes. Please wait for both new connections to become Active before proceeding.
+
+    
+
 
 ## Task 4: Create connection assignments
 
