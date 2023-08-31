@@ -8,6 +8,9 @@ Estimated time: 25 minutes
 ### About pipelines
 A pipeline is an instance of a recipe. It enables you to select your source connection, the type of replication action(s) to apply, and the target connection. After creating the pipeline, you can configure which schemas and tables to replicate to the target. After the pipeline starts, you can observe the replication process in real time. 
 
+### About recipe
+A recipe is template for common replication scenarios that you can use to accelerate your data replication journey.
+
 ### Objectives
 In this lab, you learn to:
 * Create a pipeline
@@ -40,7 +43,7 @@ In this lab, you learn to:
 
     ![Connections page](./images/01-07-select-connections.png " ")
 
-9. A warning pop-up will appear. Click **OK**.
+9. A warning pop-up appears. Click **OK**.
 
     ![Warning page](./images/01-08-warning.png " ")
 
@@ -72,15 +75,15 @@ In this lab, you learn to:
 
     ![Advanced Options - Initial Load page](./images/02-06-initial-load.png " ")
 
-7. On the **Extract** screen, you can configure the Source database timezone, list any Additional Extract Parameters, and enable Extract Auto Restart Options.
+7. On the **Extract** screen, you can configure the Source database timezone, list Additional Extract Parameters, and enable Extract Auto Restart Options.
 
     ![Advanced Options - Extract page](./images/02-07-extract.png " ")
 
-8. On the **Replicat** screen, you can configure Replicat Errors Handling, list any Additional Extract Paramters, and enable Extract Auto Restart Options.
+8. On the **Replicat** screen, you can configure Replicat Errors Handling, list Additional Extract Paramters, and enable Extract Auto Restart Options.
 
     ![Advanced Options - Replicat page](./images/02-08-replicat.png " ")
 
-9. Select **Cancel** after you are done exploring the Configuration screen. 
+9. Select **Cancel** after you're done exploring the Configuration screen. 
 
     ![Cancel to exit Configuration](./images/02-09-cancel.png " ")
 
@@ -92,6 +95,6 @@ In this lab, you learn to:
 * [Create pipelines](https://docs-uat.us.oracle.com/en/middleware/goldengate/free/21/uggfe/create-pipelines.html#GUID-F8027670-E92C-4187-B312-D9532729CC8F)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Alex Lima, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, July 2023
+* **Author** - Katherine Wardhana, User Assistance Developer
+* **Contributors** -  Alex Lima, Database Product Management & Jenny Chan, Consulting User Assistance Developer, Database User Assistance
+* **Last Updated By/Date** - Katherine Wardhana, September 2023

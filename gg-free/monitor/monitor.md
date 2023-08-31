@@ -13,6 +13,7 @@ Monitoring the performance of your GoldenGate instance ensures that your data re
 ### Objectives
 
 In this lab, you will:
+* Review the Oracle GoldenGate Microservices, such as, Administration Service, Distribution Service, Performance Metrics Service, and Receiver Service. 
 * View charts and statistics using the Performance Metrics Server in the GoldenGate deployment console
 * Use Metrics on the Deployment Details page in the Oracle Cloud Console to determine overall instance health and utilization.
 
@@ -34,7 +35,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
     ![GoldenGate console sign in](./images/01-03-gg-console-signin.png " ")
 
-4. You are directed to the **Administration Service** page. You can view and manage Extract and Replicat process details, reports, and statistics.
+4. You're directed to the **Administration Service** page. You can view and manage Extract and Replicat process details, reports, and statistics.
 
     ![GoldenGate console overview](./images/01-04-gg-console-overview.png " ")
 
@@ -52,11 +53,9 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 ## Task 2: Review connections
 
-1. On the **Administration Service** screen, click **DB Connections**.
+1. On the **Administration Service** screen, click **DB Connections**. Connections listed in **DB Connections** were created in Lab 1 in the GoldenGate Free console.
 
     ![Adminstrative Service page](./images/02-01-db-connections.png " ")
-
-> **Note:** Connections listed in DB Connections were created in Lab 1 in the GoldenGate Free console.
 
 2. Click **Connect to database: sc2**. To verify a successful connection, checkpoint and trandata options become available.
 
@@ -72,7 +71,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 ## Task 3: Review Extract details
 
-1. On the **Extracts** screen, click the Extract Action menu (in this case, E6), and select **Details** from the dropdown.
+1. Click Extracts, then click the Extract Action menu (in this case, E6), and select **Details** from the dropdown. Extracts listed here were created in Lab 1 in the GoldenGate Free console.
 
     ![Extracts page](./images/03-01-extract.png " ")
 
@@ -84,7 +83,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
     ![Checkpoint page](./images/03-03-checkpoint.png " ")
 
-4.  On the **Statistics** screen, view the Data Definition Language (DDL) and Table Statistics. You can organize the statistics based on total, daily, or hourly. 
+4.  On the **Statistics** screen, view the Data Definition Language (DDL) and Table Statistics. You can organize the statistics based on total, daily, or hourly.  change to extract instead of replicat
 
     ![Statistics page](./images/03-04-statistics.png " ")
 
@@ -106,7 +105,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 ## Task 4: Review Replicats details
 
-1. On the Replicats page, click the Replicat Action menu (in this case, R11)., and select **Details** from the dropdown.
+1. Click Replicats, then click the Replicat Action menu (in this case, R11), and select **Details** from the dropdown. Replicats listed here were created in Lab 1 in the GoldenGate Free console.
 
     ![Launch console](./images/04-01-replicat-details.png " ")
 
@@ -148,9 +147,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 ## Task 5: Monitor the pipeline
 
-For advanced monitoring you can open the GoldenGate microservices console.
-
-1. In the GoldenGate deployment console, click **Performance Metrics Service**, and then click the Extract process (in this example, E6).
+1. Click **Performance Metrics Service**, and then click the Extract process (in this example, E6).
 
     ![Performance Metrics Service](./images/05-01-performance-metrics-service.png " ")
 
@@ -197,6 +194,6 @@ For advanced monitoring you can open the GoldenGate microservices console.
 * [Monitor performance using the Oracle Cloud console](https://docs.oracle.com/en/cloud/paas/goldengate-service/vddvk/index.html#articletitle)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Alex Lima, Database Product Management & Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, July 2023
+* **Author** - Katherine Wardhana, User Assistance Developer 
+* **Contributors** -  Alex Lima, Database Product Management & Jenny Chan, Consulting User Assistance Developer, Database User Assistance
+* **Last Updated By/Date** - Katherine Wardhana, September 2023

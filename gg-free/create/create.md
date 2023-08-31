@@ -13,6 +13,7 @@ An Oracle GoldenGate Free connection contains the network connectivity informati
 ### Objectives
 
 In this lab, you will:
+* Login to the Oracle GoldenGate Free console 
 * Create the source and target connections
 
 
@@ -26,7 +27,7 @@ In this lab, you will:
 
     ![Terraform values](./images/01-02-terraform.png " ")
 
-    > **Note:** Add `https://` before the IP address if you are having trouble connecting. 
+    > **Note:** Add `https://` before the IP address if you're having trouble connecting. 
 
 3. In the GoldenGate Free welcome page, enter **oggadmin** for your Username. For password, paste the **Global Password** from the Reservation Information. Click **Log in**. 
 
@@ -44,7 +45,7 @@ In this lab, you will:
 
     ![General information page](./images/02-03-general-info.png " ")
 
-4.  On the Connection details page, under Connection details select **Source**.
+4.  On the Connection details page, for Connection role select **Source**.
 
 5.  For the Connection type dropdown, select **Basic**.
 
@@ -64,11 +65,11 @@ In this lab, you will:
 
     ![Administrator credentials page](./images/02-11-admin-credentials.png " ")
 
-12. You are brought back to the Connection details page. Click **Next**.
+12. You're brought back to the Connection details page. Click **Next**.
 
     ![Connection details page](./images/02-12-connection-details.png " ")
 
-13. On the GoldenGate admin user page, enter your username, **ggadmin**, password, and select the **Add GoldenGate admin database user**. For password, paste the **Global Password** from the Reservation Information.
+13. On the GoldenGate admin user page, enter your username, **ggadmin**, password, and select **Add GoldenGate admin database user**. For password, paste the **Global Password** from the Reservation Information.
 
 14. Click **Next**.
 
@@ -106,7 +107,7 @@ In this lab, you will:
 
     ![General information page](./images/03-03-general-info.png " ")
 
-4.  On the Connection details page, under Connection details select **Target**.
+4.  On the Connection details page, for Connection role select **Target**.
 
 5.  For the Connection type dropdown, select **Basic**.
 
@@ -130,7 +131,7 @@ In this lab, you will:
 
     ![Connection details page](./images/03-12-connection-details.png " ")
 
-13. On the GoldenGate admin user page, enter your username, **ggadmin**, password, and select the **Add GoldenGate admin database user**. For password, paste the **Global Password** from the Reservation Information.
+13. On the GoldenGate admin user page, enter your username, **ggadmin**, password, and select **Add GoldenGate admin database user**. For password, paste the **Global Password** from the Reservation Information.
 
 14. Click **Next**.
 
@@ -164,7 +165,7 @@ In this lab, you will:
 * [About the configuration script](https://docs-uat.us.oracle.com/en/middleware/goldengate/free/21/uggfe/create-database-connections.html#GUID-3C6691FA-2C40-445D-8A1A-A7B708085DD9)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Alex Lima, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, July 2023
+* **Author** - Katherine Wardhana, User Assistance Developer
+* **Contributors** -  Alex Lima, Database Product Management & Jenny Chan, Consulting User Assistance Developer, Database User Assistance 
+* **Last Updated By/Date** - Katherine Wardhana, September 2023
 
