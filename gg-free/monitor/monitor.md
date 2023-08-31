@@ -52,17 +52,23 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 ## Task 2: Review connections
 
-1. Select **DB Connections** and click **Connect to database: sc2**. To verify a successful connection, checkpoint and trandata options become available.
+1. On the **Administration Service** screen, click **DB Connections**.
 
     ![Adminstrative Service page](./images/02-01-db-connections.png " ")
 
-2.  Redirected to the Checkpoint page.
+> **Note:** Connections listed in DB Connections were created in Lab 1 in the GoldenGate Free console.
 
-    ![Checkpoint page](./images/02-02-connect-db.png " ")
+2. Click **Connect to database: sc2**. To verify a successful connection, checkpoint and trandata options become available.
 
-3.  Select **Trandata** and on the **TRANDATA Information** search schema, search **HR**. Verify that **HR** is listed with inserts.
+    ![Adminstrative Service page](./images/02-02-db-connections.png " ")
 
-    ![TRANDATA page](./images/02-03-trandata.png " ")
+3.  Redirected to the **Checkpoint** screen.
+
+    ![Checkpoint page](./images/02-03-connect-db.png " ")
+
+4.  Select **Trandata** and on the **TRANDATA Information** search schema, search **HR**. Verify that **HR** is listed with inserts.
+
+    ![TRANDATA page](./images/02-04-trandata.png " ")
 
 ## Task 3: Review Extract details
 
