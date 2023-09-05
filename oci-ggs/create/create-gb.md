@@ -55,7 +55,7 @@ In this lab, you will:
 
 10. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
-    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
+    ![Completed Create GoldenGate Deployment fields](./images/01-10-create-deployment-general-info.png " ")
 
 11. Click **Next**.
 
@@ -71,7 +71,7 @@ In this lab, you will:
 
 17. Click **Create**.
 
-![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-summary.png " ")
+    ![Completed GoldenGate details](images/01-16-create-deployment-gg-details.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, and 4 while you wait for the deployment creation to complete.
 
@@ -129,7 +129,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 4.  Log in to Database actions as **admin**, using the ATP admin password from **View Login Info** in your Workshop instructions.
 
-    ![ATP Database actions log in](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-04-login.png " ")
+    ![ATP Database actions log in](./images/03-04-login.png " ")
 
 5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 

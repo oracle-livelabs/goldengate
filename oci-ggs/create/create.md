@@ -64,7 +64,7 @@ In this lab, you will:
 
 17. Click **Create**.
 
-![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-summary.png " ")
+    ![Completed GoldenGate details](images/01-16-create-deployment-gg-details.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, and 4 while you wait for the deployment creation to complete.
 
