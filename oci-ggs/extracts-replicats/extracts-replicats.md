@@ -28,11 +28,9 @@ In this lab, you will:
 
 Before importing data to the target database, create a credential in the target database to access the exported data file in Oracle Object Store.
 
-1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle Database**, and then click **Autonomous Data Warehouse**.
+1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle Database**, and then click **Autonomous Databases**.
 
-    ![Autonomous Data Warehouse in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/database-adw.png " ")
-
-2. In the list of Autonomous Data Warehouses, click **TargetADW**.
+2. In the list of Autonomous Databases, click **TargetADW**.
 
     ![Autonomous Data Warehouse page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-02-targetadw.png " ")
 
@@ -147,7 +145,7 @@ Before importing data to the target database, create a credential in the target 
 
     ![Run script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-06-sql-script.png " ")
 
-    > **Note:** Review the **DBMS Output** tab and ignore the error in Script Output if the Job successfully completed.
+    > **Note:** The Script Output displays what looks like an error, but it reports "Job has completed successfully." You can also review the **DBMS Output** tab to see the same message displayed.
 
 ## Task 2: Add and run the Replicat
 
@@ -167,7 +165,7 @@ Before importing data to the target database, create a credential in the target 
 
 6.  For **Trail Name**, enter E1.
 
-7.  For **Checkpoint Table**, select **"SRCMIRROR_OCIGGLL","CHECKTABLE"**.
+7.  For **Checkpoint Table**, select **"SRCMIRROR\_OCIGGLL","CHECKTABLE"**.
 
     ![Add Replicat - Basic Information](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-07-rep-options.png " ")
 
@@ -227,4 +225,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2023
+* **Last Updated By/Date** - Jenny Chan, September 2023
