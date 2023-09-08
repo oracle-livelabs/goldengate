@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-Oracle GoldenGate Free is a starter version of Oracle's best in class replication software. With GoldenGate Free, application database administrators (DBAs) can learn basic concepts while creating simple data replication processes in a simplified user interface.
+Oracle GoldenGate Free is a starter version of Oracle's best in class replication software. With GoldenGate Free, you can learn the basic concepts while creating simple data replication processes in a simplified user interface.
 
 This workshop guides you through how to create database source and target connections, create and configure a pipeline, and monitor pipeline performance.
 
@@ -25,6 +25,6 @@ Oracle GoldenGate Free provides all features of the licensed GoldenGate product 
 
 ## Acknowledgements
 
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Alex Lima, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, June 2023
+* **Author** - Katherine Wardhana, User Assistance Developer
+* **Contributors** -  Alex Lima, Database Product Management & Jenny Chan, Consulting User Assistance Developer, Database User Assistance 
+* **Last Updated By/Date** - Katherine Wardhana, September 2023

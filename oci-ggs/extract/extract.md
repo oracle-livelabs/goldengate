@@ -210,7 +210,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
     ![Copy highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-13-copy-token.png " ")
 
-14. In the source database SQL window, enter the following script, replace the placeholders with your user name and token value, and then click **Run Statement**:
+14. In the source database SQL window, enter the following script, replace the placeholders with your user name (UPPERCASE) and token value, and then click **Run Statement**:
 
     ```
     <copy>BEGIN
@@ -301,7 +301,7 @@ END;</copy>
 
     ![SQL worksheet Run Script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-15-sql-return.png " ")
 
-    > **Note:** Review the **DBMS Output** tab and ignore the error in Script Output if the Job successfully completed.
+> **Note:** The Script Output displays what looks like an error, but it reports "Job has completed successfully." You can also review the **DBMS Output** tab to see the same message displayed.
 
 You may now **proceed to the next lab.**
 
@@ -312,4 +312,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2023
+* **Last Updated By/Date** - Jenny Chan, September 2023
