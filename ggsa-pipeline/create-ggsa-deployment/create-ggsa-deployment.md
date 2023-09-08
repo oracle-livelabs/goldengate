@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you learn to create an Oracle Cloud Infrastructure (OCI) GoldenGate Stream Analytics deployment.
+In this lab, you learn to create an Oracle Cloud Infrastructure (OCI) GoldenGate Stream Analytics deployment and connections.
 
 Estimated time: 30 minutes
 
@@ -20,13 +20,29 @@ Connections store the source and target credential information for OCI GoldenGat
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
 * Create an OCI GoldenGate Stream Analytics deployment
-* Create connections to Kafka and GoldenGate Replication
+* Create connections to Kafka and GoldenGate replication
 * Assign connections to the Stream Analytics deployment
 
 ### Prerequisites
 * Completion of Get started - LiveLabs login
 
-## Task 1: Create a Stream Analytics deployment
+## Task 1: Log in to the Oracle Cloud console
+
+1. In your lab instructions, click **View Login Info**.
+
+    ![View Login Info](./images/00-view-login-info.png " ")
+
+2. In the Reservation Information panel, click **Launch OCI**.
+
+    ![Reservation Information](./images/00-res-info.png " ")
+
+3. The User Name should be auto filled. If not, copy and paste it from the Reservation Information panel.
+
+4. For Password, copy and paste the **Password** from the Reservation Information panel. 
+
+5. Click **Sign In**. 
+
+## Task 2: Create a Stream Analytics deployment
 
 > **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
@@ -40,9 +56,9 @@ In this lab, you will:
 
 3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, expand LiveLabs, and then select the compartment **LL1234-COMPARTMENT**.
 
-    > **Tip:** You can find your User name in the Workshop Details section.
+    > **Tip:** You can find your Username in the **View Login Info - Reservation Information** panel.
 
-4.  On the Deployments page, click **Create deployment**. Please note that the list already contains an existing GoldenGate deployment "Replication", which is pre-created for this lab.
+4.  On the Deployments page, a pre-created **Replication** deployment appears in Deployments list for this lab. Click **Create deployment**.
 
     ![Deployments page](./images/01-04-create-deployment.png " ")
 
@@ -50,21 +66,21 @@ In this lab, you will:
 
 6.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
-7.  For OCPU Count, enter **1**.
+7.  Select **Development or testing**. Your **OCPU count** updates to the preset governed by your selection.
 
-8.  Check the **Auto scaling** checkbox.
+8.  Select **Auto scaling**.
 
 9.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
 
 10.  For License type, select **Bring Your Own License (BYOL)**.
 
-11. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
+11. Click **Show advanced options**, and then select **Enable GoldenGate console public access**. 
 
     ![Completed Create GoldenGate Deployment fields](./images/create_deployment_1.png "" ) 
 
 12. Click **Next**.
 
-13. For Choose a deployment type, select **Stream analytics**.
+13. On the GoldenGate details screen, for Choose a deployment type, select **Stream analytics**.
 
 14. For GoldenGate Instance Name, enter **ggsa**.
 
@@ -76,114 +92,109 @@ In this lab, you will:
 
     ![Completed GoldenGate details](./images/create_deployment_2.png " ")
 
-You're brought to the Deployment Details page. Please continue the next steps as it takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for  you to use.
+You're brought to the Deployment Details page. Continue with the following tasks while the deployment creates. Its status changes from CREATING to ACTIVE when it's ready for  you to use.
 
-## Task 2: Create the GoldenGate connection
+## Task 3: Create the GoldenGate connection
 
-First, follow the steps below to connect the GoldenGate deployment to be used by GGSA.
+Follow these steps to connect the GoldenGate Replication deployment to the GGSA deployment.
 
-1.  Use the Oracle Cloud Console breadcrumb to navigate to the Deployments page. 
+1.  Use the Oracle Cloud Console breadcrumb to navigate to the **Deployments** page. 
 
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/connections_breadcrumb.png " ")
+    ![Deployments highlighted in Oracle Cloud Console breadcrumb](./images/03-01-deployments-breadcrumb.png " ")
 
-2.  Click **Create connection**.
+2.  In the GoldenGate menu, click **Connections**.
+
+    ![Connections in GoldenGate menu](./images/03-02-connections.png " ")
+
+3.  On the Connections page, a precreated ADB_Connection connection appears in the Connections list for this lab. Click **Create connection**. 
 
     ![Connections page](./images/create_connection.png " ")
 
-3.  Click **Create connection**. Please note that the list already contains an existing GoldenGate connection "ADB_Connection", which is pre-created for this lab.
+4.  The Create connection wizard consists of 2 pages. On the General information page, for Name, enter **GoldenGate** and optionally, a description.
 
-4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
-
-4.  On the General information page, for Name, enter **GoldenGate** and optionally, a description.
-
-    ![GoldenGate details](./images/gg_connect_1.png)
+5.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
 6.  From the a Type dropdown, select **GoldenGate** from the section **Generic**.
 
+7.  Click **Next**.
+
     ![GoldenGate details](./images/gg_connect_1.png)
 
-8.  For Host, enter **GG Deployment Host** from the Terraform output.
+8.  From the View Login Info - Reservation Information panel of your workshop instructions, click **Copy value** for **GG Deployment Host**. 
 
-8.  On the Connection details page, under GoldenGate deployment, select **Enter GoldenGate information**
+    ![GG Deployment Host from Reservation Information](./images/03-08-gg-dep-host.png " ")
 
-9.  For Host, enter **GG Deployment Host** from the Terraform Values section.
+9.  On the Connection details page, under GoldenGate deployment, select **Enter GoldenGate information**
 
+10.  For Host, paste the **GG Deployment Host** value copied from the workshop's Reservation Information panel (Step 8).
 
-10.  For Port, enter: **443**.
+11.  For Port, enter **443**.
 
-11.  For Username, enter **oggadmin**.
+12.  For Username, enter **oggadmin**.
 
-12. For Password, enter **Admin password** from the Terraform Values section.
+13. For Password, enter **Admin password** from the Terraform Values section.
 
-13. Click **Create**.
+14. Click **Create**.
 
     ![GoldenGate details page 2](./images/gg_connect_2.png)
 
     The connection becomes Active after a few minutes. You can continue with the next task.
 
+## Task 4: Create the Kafka connection
 
+Follow these steps to connect the Kafka event hub.
 
-## Task 3: Create the Kafka connection
+1.  Use the breadcrumb to return to the Connections page.
 
-First, follow the steps below to connect the Kafka event hub.
+2.  Click **Create connection**.
 
-## Task 3: Create the Kafka connection
+3.  The Create connection panel consists of two pages. On the General information page, for Name, enter **Kafka** and optionally, a description.
 
-First, follow the steps below to connect the Kafka event hub.
+4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
-3.  Click **Create connection**.
-
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/deployment_breadcrumb.png " ")
-
-4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **Kafka** and optionally, a description.
-
-5.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
-
-6.  From the a Type dropdown, select **Apache Kafka** from the section **Big Data**.
+5.  From the a Type dropdown, select **Apache Kafka**.
 
     ![Kafka details](./images/kafka_connect_1.png)
 
-7.  Click **Next**.
+6.  Click **Next**.
 
-8.  On the Connection details page, under Bootstrap servers, check the **Customer-assigned subnet** checkbox.
+7.  On the Connection details page, under Bootstrap servers, select **Customer-assigned subnet**.
 
-9.  For Host enter: **Kafka Private FQDN** from the Terraform Values section.
+8.  For Host, copy and paste the **Kafka Private FQDN** from the workshop's Reservation Information panel.
 
-10. For Port, enter: **9092**.
+9.  For Port, enter **9092**.
 
-11. For Private IP address, enter **Kafka Private IP** from the Terraform Values section.
+10. For Private IP address, copy and paste the **Kafka Private IP** from the workshop's Reservation Information panel.
 
-10. Click **Create**.
+11. Click **Create**.
 
     ![Kafka details page 2](./images/kafka_connect_2.png)
 
-11.  Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
+12.  Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
 
     ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/conn_breadcrumb_from_ggconn.png " ")
-    The connection becomes Active after a few minutes. Please wait for both new connections to become Active before proceeding.
 
-    
+The connection becomes Active after a few minutes. Please wait for both new connections to become Active before proceeding.    
 
+## Task 5: Create connection assignments
 
-## Task 4: Create connection assignments
+You must assign connections need to a deployment before they can be used. 
 
-OCI GoldenGate connections need to be assigned to a deployment before they can be used. The following steps assign the just created connections to the GGSA deployment.
-
-1.  Click **Deployments** in the left-hand menu.
+1.  Click **Deployments** in the GoldenGate menu.
 
     ![Deployments in GoldenGate menu](./images/deployments_from_connections.png " ")
 
-2.  Open the deployment GGSA from the list.
+2.  Select the GGSA deployment from the list. 
 
     ![GGSA in Deployment List](./images/deployment_ggsa.png " ")
 
-3.  Wait for the deployment GGSA to become Active. This might take a few minutes.
+3.  Ensure the deployment is in the ACTIVE state before you continue.
 
     ![GGSA Active](./images/ggsa_active.png " ")
 
-4.  Go to Assigned Connections on the left-hand menu of the Deployment page.
+4.  On the deployment details page, from the Resources menu, click **Assigned Connections**.
 
-![Assigned Connections](./images/assigned_connections.png " ")
+    ![Assigned Connections](./images/assigned_connections.png " ")
 
 5. Click **Assign connection**.
 
@@ -193,7 +204,7 @@ OCI GoldenGate connections need to be assigned to a deployment before they can b
 
     ![Assigned connection to SourceATP](./images/assign_connection_dlg.png " ")
 
-7.  Repeat Task 4, steps 5-6, to also assign connections **Kafka** and **GoldenGate** to the deployment. Wait for all assignments to become active.
+7.  Repeat the previous step to assign the **Kafka** and **GoldenGate** connections to the deployment. Wait for all assignments to become active.
 
     ![Assigned connections to GGSA](./images/list_assignments.png " ") 
 
@@ -207,5 +218,5 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Alex Kotopoulis, June 2023
+* **Last Updated By/Date** - Jenny Chan, September 2023
 
