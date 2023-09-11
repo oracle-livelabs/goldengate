@@ -26,13 +26,17 @@ Now that we have created deployment and connections, we can launch the Stream An
 
    ![GGSA console](./images/ggsa_console_open.png "")
 
-2. The GGSA console will open in a new browser tab. Enter **oggadmin** for User Name. Copy and paste the **Admin Password** from the workshop's Reservation Information panel. Click **Sign In**.
+2. The GGSA console will open in a new browser tab. Enter **osaadmin** for User Name. Copy and paste the **Admin Password** from the workshop's Reservation Information panel. Click **Sign In**.
 
    ![GGSA login](./images/ggsa_login.png "")
 
 3. You're brought to the GoldenGate Stream Analytics Home page. Click **Catalog**.  
 
    ![GGSA catalog](./images/ggsa_catalog_page.png "")
+
+   Observe the three connections, ADB_Connection, GoldenGate, and Kafka in the list of Resources.
+
+   ![Catalog connections](./images/catalog-connections.png " ")
 
 ## Task 2: Start the GoldenGate Big Data cluster
 
@@ -48,7 +52,7 @@ OCI GoldenGate Stream Analytics embeds a GoldenGate Big Data environment to rece
 
    ![GGSA system settings manage clusters](./images/manage_ggbd.png "")
 
-4. Click **Start Cluster** and wait until the status of the cluster is in Cluster Status: Running. Close the System Settings dialog.
+4. Click **Start Cluster** and wait until the status of the cluster is **Cluster Status: Running**. Close the System Settings dialog.
 
    ![GGSA system settings start cluster](./images/start_ggbd.png "")
 
@@ -76,6 +80,8 @@ For this workshop, an event generator continuously inserts rows into the source 
 
 7. When asked for a password, paste the **Admin Password** copied from the workshop's Reservation Information panel.
 
+      > **Note:** The password won't be visible in Cloud Shell when you paste it in.
+
 8. At the command prompt, run `sh eventgen.sh`. A continuous output of insert statements will be shown. Keep the cloud shell window open for the duration of the workshop. The command can be stopped and restarted as necessary.
 
    ![Cloud shell commands](./images/cloudshell.png "")
@@ -89,35 +95,35 @@ GoldenGate Change Data creates an internal GoldenGate Replicat process that conn
 
    ![Create GoldenGate Change Data](./images/create_changedata.png "")
 
-2. Create GG Change Data consists of three pages. On the first page, enter **ChangeData**.
+2. Create GG Change Data consists of three pages. On the Type Properties page, for Name, enter **ChangeData**.
 
-3. For GG Type, select **Change Data**
-
-4. Click **Next**.
+3. For GG Type, select **Change Data**, and then click **Next**.
 
    ![Create GoldenGate Change Data page 1](./images/changedata_1.png "")
 
-5. On the second page of the Create dialog, for Connection, select **GoldenGate**.
-
-6. Click **Next**.
+4. On the GG Deployment Details page, for Connection, select **GoldenGate**, and then click **Next**.
 
    ![Create GoldenGate Change Data page 2](./images/changedata_2.png "")
 
-7. On the third page of the Create dialog, for GG Extract, select **EDEMO**.
+5. On the GG Change Data Data Details page, for GG Extracts, select **EDEMO**.
 
-8. For Target Trail, enter `TT`.
+6. For Target Trail, enter `TT`.
 
-9. For Kafka Connection, select **Kafka**.
+7. For Kafka Connection, select **Kafka**.
 
-10. For GG Change Data name, enter **GG**.
+8. For GG Change Data name, enter **GG**.
 
-11. Click **Save**.
+9. Click **Save**.
 
    ![Create GoldenGate Change Data page 3](./images/changedata_3.png "")
 
- 12. On the Catalog page, place your mouse over ChangeData, and then click **Start GG Change Data**. Click **OK** in the warning dialog. Wait for the status to change to **Running**.
+10. On the Catalog page, place your mouse over ChangeData, and then click **Start GG Change Data**. 
 
-  ![Start ChangeData](./images/start_changedata.png "")
+   ![Start ChangeData](./images/start_changedata.png "")
+
+11. Click **OK** in the warning dialog. Wait for the status to change to **Running**.
+
+   ![Change Data Running](./images/changedata-running.png "")
 
 ## Task 5: Change User Name in ADB Connection
 
@@ -165,17 +171,17 @@ Create database references for two lookup tables for customers and movies to enr
 
 Create a GeoFence to select customers for two regions in the United States. Only customers located in these regions will be selected in the pipeline.
 
-1. On the Catalog page, click **Create New Item** and then select **Geo Fence**.
+1. On the Catalog page, click **Create New Item**, and then select **Geo Fence**.
 
    ![Create Reference Customer](./images/create_geofence.png "")
 
 2. The Create Geo Fence dialog consists of three pages. On the Type Properties page, for Name, enter **Regions**.
 
-3. For Geo Fence Type, enter **Manually Created Geo Fence**, and then click **Save**.
+3. For Geo Fence Type, select **Manually Created Geo Fence**, and then click **Save**.
 
    ![Create Geo Fence page 1](./images/geofence_dlg.png "")
 
- 4. The Geo Fence editor opens. If a dialog asking your location opens, click **Block**. Click **Saved Geo-Fences** to minimize the Regions list.
+ 4. The Geo Fence editor opens. If a dialog asking for your location opens, select **Remember this decision,** and then click **Block**. Click **Saved Geo-Fences** to minimize the Regions list.
 
    ![Create Geo Fence page 2](./images/geofence1.png "")
 
@@ -183,7 +189,7 @@ Create a GeoFence to select customers for two regions in the United States. Only
 
    ![Create Geo Fence page 3](./images/geofence2.png "")
 
-6. Click on the **Polygon Tool** icon and then click on points to draw a polygon over the West Coast of the US. Make sure the polygon is closed. It doesn't have to be exact, but should include a reasonably big area of multiple states.
+6. Click the **Polygon Tool** icon and then click on points to draw a polygon over the West Coast of the US. Make sure the polygon is closed. It doesn't have to be exact, but should include a reasonably big area of multiple states.
 
    ![Geo Fence polygon tool](./images/geofence3.png "")
 
@@ -192,7 +198,7 @@ Create a GeoFence to select customers for two regions in the United States. Only
 
 8. If necessary, use your mouse to click and drag the map so the East Coast is fully visible.
 
-9. Press the **Polygon Tool** icon again and draw another polygon over the East Coast of the US.  Rename the region to **East Coast** in the Polygon dialog and press Enter.
+9. Use the **Polygon Tool** to draw another polygon over the East Coast of the US.  Rename the region to **East Coast** in the Polygon dialog and press Enter.
 
 10. Click **Return To Catalog**.
 
@@ -203,7 +209,7 @@ Create a GeoFence to select customers for two regions in the United States. Only
 
 Create a stream to feed a pipeline with events from the Kafka topic into which GoldenGate feeds.
 
-1. On the Catalog page, click on **Create New Item**, then **Stream** and then **Kafka**.
+1. On the Catalog page, click **Create New Item**, then **Stream** and then **Kafka**.
 
    ![Create Kafka Stream](./images/create_stream.png "")
 
@@ -219,9 +225,9 @@ Create a stream to feed a pipeline with events from the Kafka topic into which G
 
 5. On the Data Format page, click **Next**.
 
-   ![Create Kafka Stream page 3](./images/stream3.png "")
-
 6. On the Shape page, confirm that Infer is **Successful**.
+
+   ![Create Kafka Stream page 3](./images/stream3.png "")
 
 7. Click **Save**.
 

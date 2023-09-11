@@ -38,7 +38,7 @@ Now that we have created deployment and connections, we can open the Stream Anal
 
 ## Task 2: Enrich Events with Database References and Select Columns
 
-In this task you add a Query Stage, which, much like a SQL Select statement, can join, filter, and aggregate events and select and transform columns.
+In this task, you add a Query Stage, which can join, filter, and aggregate events and select and transform columns, similar to a SQL Select statement.
 
 1. Right-click the ActivityStream stage, select **Add a Stage**, and then **Query**.
 
@@ -48,7 +48,7 @@ In this task you add a Query Stage, which, much like a SQL Select statement, can
 
    ![Name Query](./images/name_query1.png "")
 
-3. Click **Add Source** in the pipeline panel, and then select **Customer**.
+3. In the EnrichActivity panel, click **Add a Source**, and then select **Customer**.
 
    ![Query add source](./images/query1_add_source.png "")
 
@@ -106,7 +106,7 @@ In this task you add a Query Stage, which, much like a SQL Select statement, can
 
 ## Task 3: Filter Customers with Geo Fence
 
-In this task you add a Query Stage, which, much like a SQL Select statement, can join, filter, and aggregate events and select and transform columns.
+In this task you add a Query Stage, which can join, filter, and aggregate events and select and transform columns similar to a SQL statement.
 
 1. Right-click the EnrichActivity stage, then select **Add a Stage**, and then **Pattern**.
 
@@ -166,13 +166,13 @@ You can now score customer events based on the likelihood to respond to a promot
 
 9. For **OML\_Model** enter **score\_promo**.
 
-10. In **Input Fields** select **CITY**, **GENRE\_ID**, **INCOME**, **INSUFF\_FUNDS\_INCIDENTS**, and **NUM\_CARS**.
+10. For **Input Fields** select **CITY**, **GENRE\_ID**, **INCOME**, **INSUFF\_FUNDS\_INCIDENTS**, and **NUM\_CARS**.
 
 11. Click somewhere outside the condition box to apply the changes.
 
   ![OML Stage finished](./images/oml_fields.png "")
 
-12. Wait for changes to apply and events to appear in the Live Event Output. A **SCORING** appears and has values up to 0.1. Later, you will use scores above 0.04 to determine candidates for promotion.
+12. Wait for changes to apply and events to appear in the Live Event Output. A **SCORING** column appears and has values up to 0.1. Later, you will use scores above 0.04 to determine candidates for promotion.
 
    ![OML stage with data](./images/oml_scores.png "")
 
@@ -188,7 +188,7 @@ Write all score results to a data warehouse for later analysis. Add a target her
 
    ![Config target stasge](./images/dwhtarget_dlg.png "")
 
-2. In the Target Mapping panel, click **Create**.
+2. In the WriteToADW panel, for Target, click **Create**.
 
    ![Map target](./images/create_target.png "")
 
@@ -248,7 +248,7 @@ In the final task you create a Kafka target to send out offer messages that will
 
    ![Create target stage](./images/kafkatarget_dlg.png "")
 
-2. On the SendOffer Target Mapping panel, click **Create**.
+2. In the SendOffer Target Mapping panel, click **Create**.
 
    ![Create target](./images/create_kafkatarget.png "")
 
@@ -290,7 +290,7 @@ The pipeline currently runs in draft mode for developers, meaning that it will s
   ![Publish Done](./images/publish_done.png "")
 
 
-You have now successfully completed Introduction to GoldenGate Stream Analytics!
+You have now successfully completed your introduction to GoldenGate Stream Analytics!
 
 ## Learn More
 

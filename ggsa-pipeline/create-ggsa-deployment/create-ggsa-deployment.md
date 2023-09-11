@@ -42,6 +42,8 @@ In this lab, you will:
 
 5. Click **Sign In**. 
 
+    > **Note:** If this is your first time logging in, you must reset the default password.
+
 ## Task 2: Create a Stream Analytics deployment
 
 > **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
@@ -58,7 +60,7 @@ In this lab, you will:
 
     > **Tip:** You can find your Username in the **View Login Info - Reservation Information** panel.
 
-4.  On the Deployments page, a pre-created **Replication** deployment appears in Deployments list for this lab. Click **Create deployment**.
+4.  On the Deployments page, a precreated **Replication** deployment appears in Deployments list for this lab. Click **Create deployment**.
 
     ![Deployments page](./images/01-04-create-deployment.png " ")
 
@@ -76,23 +78,23 @@ In this lab, you will:
 
 11. Click **Show advanced options**, and then select **Enable GoldenGate console public access**. 
 
-    ![Completed Create GoldenGate Deployment fields](./images/create_deployment_1.png "" ) 
-
 12. Click **Next**.
+
+    ![Completed Create GoldenGate Deployment fields](./images/create_deployment_1.png "" ) 
 
 13. On the GoldenGate details screen, for Choose a deployment type, select **Stream analytics**.
 
 14. For GoldenGate Instance Name, enter **ggsa**.
 
-15. For Administrator Username, enter **oggadmin**.
+15. For Administrator Username, enter **osaadmin**.
 
-16. For Administrator Password, select **Admin Password** from Terraform Values section.
+16. For Administrator Password, select **Admin Password** from Terraform Values section of your Reservation Information panel.
 
 17. Click **Create**.
 
     ![Completed GoldenGate details](./images/create_deployment_2.png " ")
 
-You're brought to the Deployment Details page. Continue with the following tasks while the deployment creates. Its status changes from CREATING to ACTIVE when it's ready for  you to use.
+You're brought to the Deployment details page. Continue with the following tasks while the deployment creates. Its status changes from CREATING to ACTIVE when it's ready for you to use.
 
 ## Task 3: Create the GoldenGate connection
 
@@ -114,7 +116,7 @@ Follow these steps to connect the GoldenGate Replication deployment to the GGSA 
 
 5.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
-6.  From the a Type dropdown, select **GoldenGate** from the section **Generic**.
+6.  From the a Type dropdown, select **GoldenGate** from the **Generic** section.
 
 7.  Click **Next**.
 
@@ -132,7 +134,7 @@ Follow these steps to connect the GoldenGate Replication deployment to the GGSA 
 
 12.  For Username, enter **oggadmin**.
 
-13. For Password, enter **Admin password** from the Terraform Values section.
+13. For Password, enter **Admin password** from the Terraform Values section of your Reservation Information panel.
 
 14. Click **Create**.
 
@@ -148,11 +150,11 @@ Follow these steps to connect the Kafka event hub.
 
 2.  Click **Create connection**.
 
-3.  The Create connection panel consists of two pages. On the General information page, for Name, enter **Kafka** and optionally, a description.
+3.  In the Create connection panel, on the General information page, for Name, enter **Kafka** and optionally, a description.
 
 4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
-5.  From the a Type dropdown, select **Apache Kafka**.
+5.  From the a Type dropdown, select **Apache Kafka** from the Big Data section.
 
     ![Kafka details](./images/kafka_connect_1.png)
 
@@ -160,11 +162,11 @@ Follow these steps to connect the Kafka event hub.
 
 7.  On the Connection details page, under Bootstrap servers, select **Customer-assigned subnet**.
 
-8.  For Host, copy and paste the **Kafka Private FQDN** from the workshop's Reservation Information panel.
+8.  For Host, copy and paste the **Kafka Private FQDN** from the Terraform values section of the workshop's Reservation Information panel.
 
 9.  For Port, enter **9092**.
 
-10. For Private IP address, copy and paste the **Kafka Private IP** from the workshop's Reservation Information panel.
+10. For Private IP address, copy and paste the **Kafka Private IP** from the Reservation Information panel.
 
 11. Click **Create**.
 
