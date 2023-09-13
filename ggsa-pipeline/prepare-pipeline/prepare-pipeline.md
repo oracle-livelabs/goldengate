@@ -26,7 +26,7 @@ Now that we have created deployment and connections, we can launch the Stream An
 
    ![GGSA console](./images/ggsa_console_open.png "")
 
-2. The GGSA console will open in a new browser tab. Enter **osaadmin** for User Name. Copy and paste the **Admin Password** from the workshop's Reservation Information panel. Click **Sign In**.
+2. The GGSA console will open in a new browser tab. Enter **osaadmin** for User Name. Copy and paste the **Admin Password** from the Reservation Information panel. Click **Sign In**.
 
    ![GGSA login](./images/ggsa_login.png "")
 
@@ -70,7 +70,7 @@ For this workshop, an event generator continuously inserts rows into the source 
 
 4. After Cloud Shell connects, enter `N` to skip the tutorial. 
 
-5. At the command prompt, run the following command. Replace `<kafka-public-ip>` with the **Kafka Public IP** value copied from the workshop's Reservation Information panel.
+5. At the command prompt, run the following command. Replace `<kafka-public-ip>` with the **Kafka Public IP** value copied from the Reservation Information panel.
 
       ```
       <copy>ssh opc@<kafka-public-ip></copy>
@@ -78,7 +78,7 @@ For this workshop, an event generator continuously inserts rows into the source 
 
 6. Enter `yes`, when asked **Are you sure you want to continue?**
 
-7. When asked for a password, paste the **Admin Password** copied from the workshop's Reservation Information panel.
+7. When asked for a password, paste the **Admin Password** copied from the Reservation Information panel.
 
       > **Note:** The password won't be visible in Cloud Shell when you paste it in.
 

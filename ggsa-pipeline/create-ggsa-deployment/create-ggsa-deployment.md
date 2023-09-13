@@ -28,7 +28,7 @@ In this lab, you will:
 
 ## Task 1: Log in to the Oracle Cloud console
 
-1. In your lab instructions, click **View Login Info**.
+1. In your lab instructions, click **View Login Info**. The Reservation Information panel opens.
 
     ![View Login Info](./images/00-view-login-info.png " ")
 
@@ -58,7 +58,7 @@ In this lab, you will:
 
 3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, expand LiveLabs, and then select the compartment **LL1234-COMPARTMENT**.
 
-    > **Tip:** You can find your Username in the **View Login Info - Reservation Information** panel.
+    > **Tip:** You can find your Username in the **Reservation Information** panel.
 
 4.  On the Deployments page, a precreated **Replication** deployment appears in Deployments list for this lab. Click **Create deployment**.
 
@@ -88,7 +88,9 @@ In this lab, you will:
 
 15. For Administrator Username, enter **osaadmin**.
 
-16. For Administrator Password, select **Admin Password** from Terraform Values section of your Reservation Information panel.
+16. For Administrator Password, click **Copy value** for **Admin Password** in Terraform Values section of your Reservation Information panel.
+
+    ![Terraform values](./images/02-16-terraformvalues.png " ")
 
 17. Click **Create**.
 
@@ -108,7 +110,7 @@ Follow these steps to connect the GoldenGate Replication deployment to the GGSA 
 
     ![Connections in GoldenGate menu](./images/03-02-connections.png " ")
 
-3.  On the Connections page, a precreated ADB_Connection connection appears in the Connections list for this lab. Click **Create connection**. 
+3.  On the Connections page, a precreated **ADB_Connection** connection appears in the Connections list for this lab. Click **Create connection**. 
 
     ![Connections page](./images/create_connection.png " ")
 
@@ -122,19 +124,19 @@ Follow these steps to connect the GoldenGate Replication deployment to the GGSA 
 
     ![GoldenGate details](./images/gg_connect_1.png)
 
-8.  From the View Login Info - Reservation Information panel of your workshop instructions, click **Copy value** for **GG Deployment Host**. 
+8.  Open the Reservation Information panel, and then click **Copy value** for **GG Deployment Host**. 
 
     ![GG Deployment Host from Reservation Information](./images/03-08-gg-dep-host.png " ")
 
 9.  On the Connection details page, under GoldenGate deployment, select **Enter GoldenGate information**
 
-10.  For Host, paste the **GG Deployment Host** value copied from the workshop's Reservation Information panel (Step 8).
+10.  For Host, paste the **GG Deployment Host** value copied from the Reservation Information panel (Step 8).
 
 11.  For Port, enter **443**.
 
 12.  For Username, enter **oggadmin**.
 
-13. For Password, enter **Admin password** from the Terraform Values section of your Reservation Information panel.
+13. For Password, enter **Admin password** from the Reservation Information panel.
 
 14. Click **Create**.
 
@@ -162,7 +164,7 @@ Follow these steps to connect the Kafka event hub.
 
 7.  On the Connection details page, under Bootstrap servers, select **Customer-assigned subnet**.
 
-8.  For Host, copy and paste the **Kafka Private FQDN** from the Terraform values section of the workshop's Reservation Information panel.
+8.  For Host, copy and paste the **Kafka Private FQDN** from the Reservation Information panel.
 
 9.  For Port, enter **9092**.
 

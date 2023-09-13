@@ -1,4 +1,4 @@
-# Setup a Stream Analytics Pipeline
+# Create and publish the Stream Analytics pipeline
 
 ## Introduction
 
@@ -154,15 +154,15 @@ You can now score customer events based on the likelihood to respond to a promot
 
    ![Configure OML stage](./images/oml_dlg.png "")
 
-4. In the Score panel, for OML server url, copy and paste the **ADB URL** from the workshop's Reservation Information panel. Ensure that no trailing slashes (/) are added to the end of the url.
+4. In the Score panel, for OML server url, copy and paste the **ADB URL** from the Reservation Information panel. Ensure that no trailing slashes (/) are added to the end of the url.
 
-5. For **Tenant**, copy and paste the **Tenancy OCID** from the workshop's Reservation Information panel.
+5. For **Tenant**, copy and paste the **Tenancy OCID** from the Reservation Information panel.
 
-6. For **OML Services Name**, enter **ADB Name** from the workshop's Reservation Information panel.
+6. For **OML Services Name**, enter **ADB Name** from the Reservation Information panel.
 
 7. For **Username**, enter **omluser**.
 
-8. For **Password**, click **Change password** and then copy and paste the **Admin Password** from the workshop's Reservation Information panel.
+8. For **Password**, click **Change password** and then copy and paste the **Admin Password** from the Reservation Information panel.
 
 9. For **OML\_Model** enter **score\_promo**.
 
