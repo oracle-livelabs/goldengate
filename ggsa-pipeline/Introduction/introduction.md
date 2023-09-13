@@ -1,6 +1,6 @@
 # Introduction
 
-This workshop includes quick hands-on labs to transform and analyze real-time data streams, using Oracle GoldenGate Stream Analytics.
+This workshop uses Oracle Cloud Infrastructure (OCI) GoldenGate Stream Analytics to transform and analyze real-time data streams.
 
 ### Workshop Objectives
 
@@ -15,11 +15,11 @@ This workshop includes quick hands-on labs to transform and analyze real-time da
 * Familiarity with Oracle Cloud Infrastructure is helpful, but not required
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## What is GoldenGate Stream Analytics
+## What is OCI GoldenGate Stream Analytics
 
-Golden Gate Stream Analytics is an environment that originally began as a Complex Event Processing engine and evolved to run on top of runtime frameworks with Apache Spark and Apache Kafka.  The tool is designed to ingest a stream of data from any source such as a database, GoldenGate, Kafka, JMS, REST, or even a file system file. After the data is in GGSA you can run analytics on live data.
+GoldenGate Stream Analytics (GGSA) is an environment that began as a Complex Event Processing engine and then evolved to run on top of runtime frameworks with Apache Spark and Apache Kafka. GGSA can ingest a stream of data from any source such as a database, GoldenGate, Kafka, JMS, REST, or even a file system file. After the data is in GGSA you can run analytics on live data.
 
-A pipeline includes a sequence of data processing stages such as, Query, Pattern, Rule, Query Group, Custom, and Scoring. You can apply business logic to an input data stream, within a pipeline.
+A pipeline is a sequence of data processing stages such as, Query, Pattern, Rule, Query Group, Custom, and Scoring. You can apply business logic to an input data stream, within a pipeline.
 
 ## Learn More
 
@@ -30,6 +30,6 @@ A pipeline includes a sequence of data processing stages such as, Query, Pattern
 
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Hope Fisher, June 2023
+* **Last Updated By/Date** - Jenny Chan, September 2023
 
 
