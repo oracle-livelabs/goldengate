@@ -39,7 +39,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
     ![GoldenGate console overview](./images/01-04-gg-console-overview.png " ")
 
-5. Select **Distribution Service**. You can view and manage Distribution Paths and Target-Initiated Paths details, and filter Log Information.
+5. Select **Distribution Service**. You can view and manage Distribution Paths and Target-Initiated Paths details.
 
     ![GoldenGate console overview](./images/01-05-dist-services.png " ")
 
@@ -187,7 +187,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
     ![Bounded Recovery](./images/05-10-bounded-recovery.png " ")
 
-3. Repeat Task 4, steps 1-10, to monitor the performance of the Replicat process (in this case, R11).
+3. Repeat Task 5, steps 1-10, to monitor the performance of the Replicat process (in this case, R11).
 
 ## Learn more
 

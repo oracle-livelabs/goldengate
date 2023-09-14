@@ -91,34 +91,10 @@ In this lab, you learn to:
 
     ![Advanced Options - Replicat page](./images/02-10-replicat.png " ")
 
-9. Select **Cancel** after you're done exploring the Configuration screen. 
+11. Select **Cancel** after you're done exploring the Configuration screen. 
 
     ![Cancel to exit Configuration](./images/02-11-cancel.png " ")
 
-4. Select the Configuration tab, and on the **Mapping** screen, you can review and select the source database schemas and tables to replicate.
-
-    ![Mapping page](./images/02-04-mapping.png " ")
-
-5. On the **Mapping Rules** screen, you can review, add, delete, and reorder rules.
-
-    ![Mapping Rules page](./images/02-05-mapping-rules.png " ")
-
-6. On the **Options** screen, you can configure a limited set of GoldenGate parameters. Under **Advanced Options**, you can set the **Initial Load (Data Pump)** options. You can configure the Data Pump Options and Handling Open Transactions. 
-
-
-    ![Advanced Options - Initial Load page](./images/02-06-initial-load.png " ")
-
-7. On the **Extract** screen, you can configure the Source database timezone, list Additional Extract Parameters, and enable Extract Auto Restart Options.
-
-    ![Advanced Options - Extract page](./images/02-07-extract.png " ")
-
-8. On the **Replicat** screen, you can configure Replicat Errors Handling, list Additional Extract Paramters, and enable Extract Auto Restart Options.
-
-    ![Advanced Options - Replicat page](./images/02-08-replicat.png " ")
-
-9. Select **Cancel** after you're done exploring the Configuration screen. 
-
-    ![Cancel to exit Configuration](./images/02-09-cancel.png " ")
 
 
 **Proceed to the next lab.**
