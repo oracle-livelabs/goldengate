@@ -50,42 +50,50 @@ In this lab, you learn to:
 
 ## Task 2: Configure the pipeline
 
-1. On the Configuration page, for Mapping, deselect **PDBADMIN** so that **HR** is the only Source Schema selected. Click **Save**.
+1. On the Configuration page, for Mapping, deselect **PDBADMIN** so that **HR** is the only Source Schema selected. 
+
+2. Expand **HR** Source Schema and click **Edit**. 
 
     ![Configuration page](./images/02-01-configuration-save.png " ")
 
-2.  On the Overview page, in the Initialization view, click **Start**. It takes a few minutes for the pipeline initialization to run. The status of each of the steps will change from PENDING to IN PROGRESS to COMPLETED when it is ready for you to use.
+    > **NOTE:** The Edit table mapping dialog appears. You're able to set up Automatic Conflict Detection and Resolution by selecting the Latest or Earliest for Timestamp, and enabling Delta Resolution. Click **Cancel**.
 
-    ![Overview Initialization page](./images/02-02-overview-start.png " ")
+    ![Edit table mapping](./images/02-02-edit-table-mapping.png " ")
 
-3.  In the Runtime view, you can view the real time database statistics, such as Operations Extract and Operations Replicat. 
+3. You're brought back to the Configuration page. Click **Save**.
 
-    ![Overview Runtime page](./images/02-03-overview-runtime.png " ")
+4.  On the Overview page, in the Initialization view, click **Start**. It takes a few minutes for the pipeline initialization to run. The status of each of the steps will change from PENDING to IN PROGRESS to COMPLETED when it is ready for you to use.
 
-4. Select the Configuration tab, and on the **Mapping** screen, you can review and select the source database schemas and tables to replicate.
+    ![Overview Initialization page](./images/02-04-overview-start.png " ")
 
-    ![Mapping page](./images/02-04-mapping.png " ")
+5.  In the Runtime view, you can view the real time database statistics, such as Operations Extract and Operations Replicat. 
 
-5. On the **Mapping Rules** screen, you can review, add, delete, and reorder rules.
+    ![Overview Runtime page](./images/02-05-overview-runtime.png " ")
 
-    ![Mapping Rules page](./images/02-05-mapping-rules.png " ")
+6. Select the Configuration tab, and on the **Mapping** screen, you can review and select the source database schemas and tables to replicate.
 
-6. On the **Options** screen, you can configure a limited set of GoldenGate parameters. Under **Advanced Options**, you can set the **Initial Load (Data Pump)** options. You can configure the Data Pump Options and Handling Open Transactions. 
+    ![Mapping page](./images/02-06-mapping.png " ")
+
+7. On the **Mapping Rules** screen, you can review, add, delete, and reorder rules.
+
+    ![Mapping Rules page](./images/02-07-mapping-rules.png " ")
+
+8. On the **Options** screen, you can configure a limited set of GoldenGate parameters. Under **Advanced Options**, you can set the **Initial Load (Data Pump)** options. You can configure the Data Pump Options and Handling Open Transactions. 
 
 
-    ![Advanced Options - Initial Load page](./images/02-06-initial-load.png " ")
+    ![Advanced Options - Initial Load page](./images/02-08-initial-load.png " ")
 
-7. On the **Extract** screen, you can configure the Source database timezone, list Additional Extract Parameters, and enable Extract Auto Restart Options.
+9. On the **Extract** screen, you can configure the Source database timezone, list Additional Extract Parameters, and enable Extract Auto Restart Options.
 
-    ![Advanced Options - Extract page](./images/02-07-extract.png " ")
+    ![Advanced Options - Extract page](./images/02-09-extract.png " ")
 
-8. On the **Replicat** screen, you can configure Replicat Errors Handling, list Additional Extract Paramters, and enable Extract Auto Restart Options.
+10. On the **Replicat** screen, you can configure Replicat Errors Handling, list Additional Extract Paramters, and enable Extract Auto Restart Options.
 
-    ![Advanced Options - Replicat page](./images/02-08-replicat.png " ")
+    ![Advanced Options - Replicat page](./images/02-10-replicat.png " ")
 
 9. Select **Cancel** after you're done exploring the Configuration screen. 
 
-    ![Cancel to exit Configuration](./images/02-09-cancel.png " ")
+    ![Cancel to exit Configuration](./images/02-11-cancel.png " ")
 
 
 **Proceed to the next lab.**
