@@ -12,15 +12,15 @@
         "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
       },   
         {
-            "title": "Lab 1: Create GoldenGate Stream Analytics Deployment",
+            "title": "Lab 1: Create OCI GoldenGate resources",
             "filename": "../../create-ggsa-deployment/create-ggsa-deployment.md"
         },
         {
-            "title": "Lab 2: Prepare Objects for Stream Analytics Pipeline",
+            "title": "Lab 2: Prepare objects for Stream Analytics pipeline",
             "filename": "../../prepare-pipeline/prepare-pipeline.md"
         },
         {
-            "title": "Lab 3: Setup Stream Analytics Pipeline",
+            "title": "Lab 3: Create and publish the Stream Analytics pipeline",
             "filename": "../../setup-pipeline/setup-pipeline.md"
         },
 

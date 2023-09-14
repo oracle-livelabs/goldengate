@@ -192,7 +192,7 @@ Now, follow the steps below to connect the target Autonomous Data Warehouse \(AD
 
     The source and target databases appear in the list of Connections. The connection becomes Active after a few minutes.
 
-10.  Repeat Task 3, steps 1-7, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
+10.  Repeat Task 3, steps 1-8, to unlock the GGADMIN user on the TargetADW database.
 
 11.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
 
@@ -267,4 +267,4 @@ In this lab, you created the OCI GoldenGate deployment and registered the source
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, June 2023
+* **Last Updated By/Date** - Jenny Chan, September 2023

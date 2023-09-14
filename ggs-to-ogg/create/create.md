@@ -119,7 +119,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![Autonomous Transaction Processing page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-sourceatp.png " ")
 
-3.  On the SourceATP Database Details page, click **Database actions**, and select **Database Users** from the dropdown.
+3.  On the SourceATP Database Details page, click **Database actions**, and then select **Database Users** from the dropdown.
 
     ![SourceATP Database Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-db-actions.png " ")
 
@@ -191,7 +191,7 @@ Now, follow the steps below to connect the target Autonomous Data Warehouse \(AD
 
     The source and target databases appear in the list of Connections. The connection becomes Active after a few minutes.
 
-10.  Repeat Task 3, steps 1-7, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
+10.  Repeat Task 3, steps 1-8, to unlock the GGADMIN user on the TargetADW database.
 
 11.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
 
@@ -266,4 +266,4 @@ In this lab, you created the OCI GoldenGate deployment and registered the source
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, July 2023
+* **Last Updated By/Date** - Jenny Chan, September 2023
