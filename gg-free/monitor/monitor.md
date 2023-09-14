@@ -23,7 +23,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 ## Task 1: Review GoldenGate Console
 
-1.  From the list of databases, select **demo-pipeline**. 
+1.  From the list of pipelines, select **demo-pipeline**. 
 
     ![List of pipelines](./images/01-01-pipelines-list.png " ")
 
@@ -155,7 +155,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
     ![Process Performace](./images/05-02-process-performance.png " ")
 
-3. Under **Thead Performance**, monitor different threads, such as Extract, Service Threads, and Monitoring.
+3. Under **Thread Performance**, monitor different threads, such as Extract, Service Threads, and Monitoring.
 
     ![Thread Performace](./images/05-03-thread-performance.png " ")
 
@@ -187,7 +187,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
     ![Bounded Recovery](./images/05-10-bounded-recovery.png " ")
 
-3. Repeat Task 4, steps 1-10, to monitor the performance of the Replicat process (in this case, R11).
+3. Repeat Task 5, steps 1-10, to monitor the performance of the Replicat process (in this case, R11).
 
 ## Learn more
 
