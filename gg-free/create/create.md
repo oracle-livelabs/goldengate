@@ -23,15 +23,17 @@ In this lab, you will:
 
     ![View login info ](./images/01-01-login-info.png " ")
 
-2. On the Reservation Information page, under Terraform Values, copy the **OGG Public IP** and paste the IP in a new window.
+2. On the Reservation Information page, under Terraform Values, copy the **OGG Public IP**.
 
     ![Terraform values](./images/01-02-terraform.png " ")
 
-    > **Note:** Add `https://` before the IP address if you're having trouble connecting. 
+3. In a new browser window, enter `http://<OGG-PUBLIC-IP>` in the address bar. 
 
-3. In the GoldenGate Free welcome page, enter **oggadmin** for your Username. For password, paste the **Global Password** from the Reservation Information. Click **Log in**. 
+    > **Note:** Oracle GoldenGate uses self-signed certificates. If you encounter a warning, ensure that you use `http://` or simply proceed past the warning message for this workshop.
 
-    ![Login screen](./images/01-03-login.png " ")
+4. In the GoldenGate Free welcome page, enter **oggadmin** for your Username. For password, paste the **Global Password** from the Reservation Information. Click **Log in**. 
+
+    ![Login screen](./images/01-04-login.png " ")
 
 ## Task 2: Create the source connection
 
@@ -39,7 +41,7 @@ In this lab, you will:
 
     ![GoldenGate Free Home page](./images/02-01-create-connection.png " ")
 
-2.  The Create database connection configuration panel consists of six pages. On the General information page, for Name, enter **sourceDB** and optionally, a description.
+2.  The Create database connection configuration panel consists of six pages. On the General information page, for Database Connection Name, enter **sourceDB** and optionally, a description.
 
 3.  Click **Next**.
 
@@ -55,7 +57,7 @@ In this lab, you will:
 
 8. For Database type, select **Pluggable database (PDB) in Oracle Database 21c or above**.
 
-9.  For Pluggable database service name (PDB), enter **Freepdb1**.
+9.  For Pluggable database service name (PDB), enter **Freepdb1**. 
 
 10.  Select **SYSDBA privileges available**.
 
@@ -101,7 +103,7 @@ In this lab, you will:
 
 	![Create database connection](./images/03-01-create-connection.png " ")
 
-2.  The Create database connection configuration panel consists of six pages. On the General information page, for Name, enter **targetDB** and optionally, a description.
+2.  The Create database connection configuration panel consists of six pages. On the General information page, for Database Connection Name, enter **targetDB** and optionally, a description.
 
 3.  Click **Next**.
 
