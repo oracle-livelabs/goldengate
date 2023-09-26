@@ -1,138 +1,145 @@
-# Prepare a Stream Analytics Pipeline
+# Prepare a objects for Stream Analytics pipeline
 
 ## Introduction
 
 Estimated Time: 15 minutes
 
-This lab focuses on creating supporting objects used in a streaming pipeline.
+In this lab, you create the supporting objects to use in a streaming pipeline.
 
 Watch the video below for a quick walk through of the lab.
 [Watch the video](videohub:1_5g86ol4o)
 
 ### Objectives
-* Understand connections forwarded from OCI GoldenGate
+* Start the GoldenGate Big Data cluster
 * Set up GoldenGate Change Data through local GoldenGate Big Data cluster
+* Configure the connections from OCI GoldenGate
 * Set up Streams, References, and Geo Fences
 
 ### Prerequisites
-* Completion of Lab 1: Create GoldenGate Stream Analytics Deployment
+In order to complete this lab, you should have completed the preceding lab.
 
-## Task 1: Open GoldenGate Stream Analytics console
+## Task 1: Launch the GoldenGate Stream Analytics console
 
-Now that we have created deployment and connections, we can open the Stream Analytics console and start creating supporting objects for a pipeline.
+Now that we have created deployment and connections, we can launch the Stream Analytics console and start creating supporting objects for a pipeline.
 
-1. Navigate to the list of OCI GoldenGate deployments and open the GGSA deployment.
+1. From the GGSA deployment details page, click **Launch console**.
 
-![GGSA deployment](./images/deployment_ggsa.png "")
+   ![GGSA console](./images/ggsa_console_open.png "")
 
-2.  Press **Launch console** to open the Stream Analytics console.
+2. The GGSA console will open in a new browser tab. Enter **osaadmin** for User Name. Copy and paste the **Admin Password** from the Reservation Information panel. Click **Sign In**.
 
-![GGSA console](./images/ggsa_console_open.png "")
+   ![GGSA login](./images/ggsa_login.png "")
 
-3. The GGSA console will open in a new browser tab. For User Name, enter **oggadmin**. For Password enter **Admin Password** from the Terraform Values section. Then press **Sign In**.
+3. You're brought to the GoldenGate Stream Analytics Home page. Click **Catalog**.  
 
-![GGSA login](./images/ggsa_login.png "")
+   ![GGSA catalog](./images/ggsa_catalog_page.png "")
 
-4. The GGSA console opens with the homepage. Switch to the catalog page by pressing **Catalog**.  
+   Observe the three connections, ADB_Connection, GoldenGate, and Kafka in the list of Resources.
 
-![GGSA catalog](./images/ggsa_catalog_page.png "")
+   ![Catalog connections](./images/catalog-connections.png " ")
 
-## Task 2: Start GoldenGate Big Data cluster
+## Task 2: Start the GoldenGate Big Data cluster
 
 OCI GoldenGate Stream Analytics embeds a GoldenGate Big Data environment to receive a change stream from GoldenGate extracts. 
 
-1. Open System Settings in the upper right user menu.
-![GGSA system settings](./images/ggsa_system_settings.png "")
+1. Click the osaadmin menu, and then select **System Settings**.
 
-2. In System Settings, open the **Manage Clusters** tab and expand the **GGBD Cluster** area.
+   ![GGSA system settings](./images/ggsa_system_settings.png "")
 
-3. Change CPU Limit field to **500** Millicpu.
-![GGSA system settings manage clusters](./images/manage_ggbd.png "")
+2. In the System Settings dialog, click **Manage Clusters** and then expand **GGBD Cluster**.
 
-4. Press the **Start Cluster** button and wait until the status of the cluster is in Cluster Status: Running. Close the System Settings dialog.
-![GGSA system settings start cluster](./images/start_ggbd.png "")
+3. Change CPU Limit to `500` Millicpu.
+
+   ![GGSA system settings manage clusters](./images/manage_ggbd.png "")
+
+4. Click **Start Cluster** and wait until the status of the cluster is **Cluster Status: Running**. Close the System Settings dialog.
+
+   ![GGSA system settings start cluster](./images/start_ggbd.png "")
 
 ## Task 3: Start Event Generator
 
-For this tutorial we are using an event generator that continuously inserts rows into the source database to simulate movie selections by customers. 
+For this workshop, an event generator continuously inserts rows into the source database to simulate movie selections by customers. 
 
-1. Go to the OCI console on a separate browser tab, leave the GGSA console open. 
+1. Return to the Oracle Cloud console, which should still be open in a separate browser tab. Leave the GGSA console open. 
 
-2. In the OCI console, press the Developer Tools icon on top and select **Cloud Shell**.
+2. In the Oracle Cloud console, click **Developer Tools** and then select **Cloud Shell**.
+
    ![Cloud Shell menu](./images/open_cloudshell.png "")
 
-3. The Cloud Shell opens on the bottom of the screen. Enter the command ```ssh opc@IP_ADDRESS```, replacing the IP\_ADDRESS with **Kafka Public IP** from the Terraform Values section.
+3. The Cloud Shell opens as a panel at the bottom of your window. It takes a few minutes to connect.
 
-4. When asked 
+4. After Cloud Shell connects, enter `N` to skip the tutorial. 
 
-   The authenticity of host ... can't be established.
-   ...
-   Are you sure you want to continue connecting (yes/no)?
+5. At the command prompt, run the following command. Replace `<kafka-public-ip>` with the **Kafka Public IP** value copied from the Reservation Information panel.
 
-   Enter the word **yes**.
+      ```
+      <copy>ssh opc@<kafka-public-ip></copy>
+      ```
 
-5. When asked for a password, use the **Admin Password** from the Terraform Values section.
+6. Enter `yes`, when asked **Are you sure you want to continue?**
 
-6. Enter the command ```sh eventgen.sh```. A continous output of insert statements will be shown. Keep the cloud shell window open for the duration of the tutorial. The command can later be stopped and restarted as necessary.
+7. When asked for a password, paste the **Admin Password** copied from the Reservation Information panel.
+
+      > **Note:** The password won't be visible in Cloud Shell when you paste it in.
+
+8. At the command prompt, run `sh eventgen.sh`. A continuous output of insert statements will be shown. Keep the cloud shell window open for the duration of the workshop. The command can be stopped and restarted as necessary.
 
    ![Cloud shell commands](./images/cloudshell.png "")
 
 
 ## Task 4: Create GoldenGate Change Data
 
-GoldenGate Change Data creates an internal GoldenGate replicat process that connects to an external extract process to consume captured transactions. 
+GoldenGate Change Data creates an internal GoldenGate Replicat process that connects to an external extract process to consume captured transactions. 
 
-1. On the catalog page, click on **Create New Item** and select **GG Change Data**.
+1. Return to the Stream Analytics console. On the Catalog page, click **Create New Item** and then select **GG Change Data**.
 
    ![Create GoldenGate Change Data](./images/create_changedata.png "")
 
-2. On the first page of the Create dialog, for Name, enter **ChangeData**.
+2. Create GG Change Data consists of three pages. On the Type Properties page, for Name, enter **ChangeData**.
 
-3. For GG Type, select **Change Data**
-
-4. Press **Next**.
+3. For GG Type, select **Change Data**, and then click **Next**.
 
    ![Create GoldenGate Change Data page 1](./images/changedata_1.png "")
 
-5. On the second page of the Create dialog, for Connection, select **GoldenGate**.
-
-6. Press **Next**.
+4. On the GG Deployment Details page, for Connection, select **GoldenGate**, and then click **Next**.
 
    ![Create GoldenGate Change Data page 2](./images/changedata_2.png "")
 
-7. On the third page of the Create dialog, for GG Extract, select **EDEMO**.
+5. On the GG Change Data Data Details page, for GG Extracts, select **EDEMO**.
 
-8. For Target Trail, enter **TT**.
+6. For Target Trail, enter `TT`.
 
-9. For Kafka Connection, select **Kafka**.
+7. For Kafka Connection, select **Kafka**.
 
-10. For GG Change Data name, enter **GG**.
+8. For GG Change Data name, enter **GG**.
 
-11. Press **Save**.
+9. Click **Save**.
 
    ![Create GoldenGate Change Data page 3](./images/changedata_3.png "")
 
- 12. On the catalog page, click on the Start icon on the far right of the ChangeData object in the list. The icons appear on hover over the row. Press **OK** on the confirmation dialog. Wait for the status to change to **Running**.
+10. On the Catalog page, place your mouse over ChangeData, and then click **Start GG Change Data**. 
 
-  ![Start ChangeData](./images/start_changedata.png "")
+   ![Start ChangeData](./images/start_changedata.png "")
+
+11. Click **OK** in the warning dialog. Wait for the status to change to **Running**.
+
+   ![Change Data Running](./images/changedata-running.png "")
 
 ## Task 5: Change User Name in ADB Connection
 
-Database connections are created with default user ggadmin. We will change this to a different user moviestream.
+Database connections are created with default user ggadmin. The following steps guide you to change this user to moviestream.
 
-1. Switch back to the browser tab with GGSA console on catalog page. 
-
-2. Click on **ADB\_Connection** object in the catalog list.
+1. On the Catalog page, click **ADB\_Connection**. The Edit Connection dialog opens.
 
    ![Open ADB Connection](./images/catalog_adb_connection.png "")
 
-3. On Edit Connection dialog first page, press **Next**
+2. In Edit Connection dialog, on the Type Properties page, click **Next**.
 
-4. On Edit Connection dialog second page, for Username, enter **moviestream**. Password does not need to be changed, it is the same (Admin Password from Terraform Values section).
+3. On Connection Details page, for Username, enter **moviestream**. Leave the password as is.
 
-5. Press **Test Connection** to check that connection works. The word "Successful" should appear.
+4. Click **Test Connection** to check that connection works. The word "Successful" should appear.
 
-6. Press **Save** to close the Dialog.
+5. Click **Save** to close the Dialog.
 
    ![Edit ADB Connection](./images/edit_adb_conn.png "")
 
@@ -140,119 +147,91 @@ Database connections are created with default user ggadmin. We will change this 
 
 Create database references for two lookup tables for customers and movies to enrich events in the streaming pipeline.
 
-1. On the catalog page, click on **Create New Item** and select **Reference** and in submenu **Database Table**.
+1. On the Catalog page, click **Create New Item**, then **Reference**, and then **Database Table**.
 
-   ![Create Referemce Customer](./images/create_ref_customer.png "")
+   ![Create Reference Customer](./images/create_ref_customer.png "")
 
-2. On the first page of the Create Reference dialog, for Name, enter **Customer**.
+2. The Create Reference dialog consists of four pages. On the Type Properties page, for Name, enter **Customer**, and then click **Next**.
 
-3. Press **Next**.
+   ![Create Reference Customer page 1](./images/ref_customer_1.png "")
 
-   ![Create Referemce Customer page 1](./images/ref_customer_1.png "")
+4. On the Source Details page, for Connection, select **ADB\_Connection**, and then click **Next**.
 
-4. On the second page of the Create Reference dialog, for Connection, select **ADB\_Connection**.
+   ![Create Reference Customer page 2](./images/ref_customer_2.png "")
 
-5. Press **Next**.
+5. On the Shape page, from Shape Name dropdown, select **CUSTOMER**, and then click **Save**.
 
-   ![Create Referemce Customer page 2](./images/ref_customer_2.png "")
+  ![Create Reference Customer page 3](./images/ref_customer_4.png "")
 
-6. On the last page of the Create dialog, for shape, select the table **CUSTOMER**.
+7. Repeat Steps 1 to 5 for **Movie**.
 
-7. Press **Save**.
+   ![Movie and Customer Database References in catalog](./images/movie-customer-db-ref.png " ")
 
-  ![Create Referemce Customer page 3](./images/ref_customer_4.png "")
+## Task 7: Create a Geofence
 
-8. Repeat the same for table Movie: On the catalog page, click on **Create New Item** and select **Reference** and in submenu **Database Table**.
+Create a GeoFence to select customers for two regions in the United States. Only customers located in these regions will be selected in the pipeline.
 
-   ![Create Referemce Customer](./images/create_ref_customer.png "")
+1. On the Catalog page, click **Create New Item**, and then select **Geo Fence**.
 
-9. On the first page of the Create Reference dialog, for Name, enter **Movie**.
+   ![Create Reference Customer](./images/create_geofence.png "")
 
-10. Press **Next**.
+2. The Create Geo Fence dialog consists of three pages. On the Type Properties page, for Name, enter **Regions**.
 
-   ![Create Referemce Customer page 1](./images/ref_movie_1.png "")
+3. For Geo Fence Type, select **Manually Created Geo Fence**, and then click **Save**.
 
-11. On the second page of the Create Reference dialog, for Connection, select **ADB\_Connection**.
+   ![Create Geo Fence page 1](./images/geofence_dlg.png "")
 
-12. Press **Next**.
-
-   ![Create Referemce Customer page 2](./images/ref_customer_2.png "")
-
-13. On the last page of the Create dialog, for shape, select the table **MOVIE**.
-
-14. Press **Save**.
-
-  ![Create Referemce Customer page 3](./images/ref_movie_4.png "")
-
-## Task 7: Create Geofence
-
-We are creating a GeoFence to select customers for two regions in the United States. Only customers located in these regions will be selected in the pipline.
-
-1. On the catalog page, click on **Create New Item** and select **Geo Fence**.
-
-   ![Create Referemce Customer](./images/create_geofence.png "")
-
-2. On the first page of the Create Geo Fence dialog, for Name, enter **Regions**.
-
-3. For Geo Fence Type, enter **Manually Created Geo Fence**.
-
-3. Press **Save**.
-
- ![Create Geo Fence page 1](./images/geofence_dlg.png "")
-
- 4. The Geo Fence editor opens. If any dialog for the browser asking your location opens, deny it. Press on the list icon to minimize it.
+ 4. The Geo Fence editor opens. If a dialog asking for your location opens, select **Remember this decision,** and then click **Block**. Click **Saved Geo-Fences** to minimize the Regions list.
 
    ![Create Geo Fence page 2](./images/geofence1.png "")
 
-5. Double-click on the center of the United States to zoom in and center on it.
+5. Double-click the center of the United States to zoom in and center on it.
 
    ![Create Geo Fence page 3](./images/geofence2.png "")
 
-6. Click on the **Polygon Tool** icon and then click on points to draw a polygon over the West Coast of the US. Make sure the polygon is closed. It doesn't have to be exact, but should include a reasonably big area of multiple states.
+6. Click the **Polygon Tool** icon and then click on points to draw a polygon over the West Coast of the US. Make sure the polygon is closed. It doesn't have to be exact, but should include a reasonably big area of multiple states.
 
    ![Geo Fence polygon tool](./images/geofence3.png "")
 
-7. Rename the region to **West Coast** in the text box on right-hand side and press Enter.
+7. Rename the region **West Coast** in the Polygon dialog and press Enter.
     ![Geo Fence west coast area](./images/geofence4.png "")
 
-8. If necessary, drag the map with the mouse to get the East Coast fully visible.
+8. If necessary, use your mouse to click and drag the map so the East Coast is fully visible.
 
-9. Press the **Polygon Tool** icon again and draw another polygon over the East Coast of the US.  Rename the region to **East Coast** in the text box on right-hand side and press Enter.
+9. Use the **Polygon Tool** to draw another polygon over the East Coast of the US.  Rename the region to **East Coast** in the Polygon dialog and press Enter.
 
-10. Press **Return To Catalog**.
+10. Click **Return To Catalog**.
 
    ![Geo Fence final](./images/geofence5.png "")
 
 
-## Task 8: Create Kafka Stream
+## Task 8: Create a Kafka Stream
 
-Create a stream to feed a pipeline with events from the Kafka topic that GoldenGate feeds into. 
+Create a stream to feed a pipeline with events from the Kafka topic into which GoldenGate feeds.
 
-1. On the catalog page, click on **Create New Item** and select **Stream** and in submenu **Kafka**.
+1. On the Catalog page, click **Create New Item**, then **Stream** and then **Kafka**.
 
    ![Create Kafka Stream](./images/create_stream.png "")
 
-2. On the first page of the Create Stream dialog, for Name, enter **ActivityStream**.
-
-3. Press **Next**.
+2. The Create Stream dialog consists of four pages. On the Type Properties page, for Name, enter **ActivityStream**, and then click **Next**.
 
    ![Create Kafka Stream page 1](./images/stream1.png "")
 
-4. On the second page of the Create Stream dialog, for Connection, select **Kafka**.
+3. On the Source Details page, for Connection, select **Kafka**.
 
-5. For Topic name, select **gg_MOVIESTREAM.ACTIVITY**.
-
-5. Press **Next**.
+4. For Topic name, select **gg_MOVIESTREAM.ACTIVITY**, and then click **Next**.
 
    ![Create Kafka Stream page 2](./images/stream2.png "")
 
-6.  On the third page of the Create Stream dialog, press **Next** without changes.
+5. On the Data Format page, click **Next**.
 
-7. On the last page of the Create dialog, for shape, review that Infer shows as Successful.
+6. On the Shape page, confirm that Infer is **Successful**.
 
-8. Press **Save**.
+   ![Create Kafka Stream page 3](./images/stream3.png "")
 
-  ![Create Kafka Stream page 3](./images/stream4.png "")
+7. Click **Save**.
+
+  ![Create Kafka Stream page 4](./images/stream4.png "")
 
 
 
@@ -266,4 +245,4 @@ You may now **proceed to the next lab.**
 
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Hope Fisher, June 2023
+* **Last Updated By/Date** - Jenny Chan, September 2023
