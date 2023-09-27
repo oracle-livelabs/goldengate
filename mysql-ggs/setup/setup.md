@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create the resources required to complete this workshop. You'll learn to create a VCN and subnet, a bastion, provision OCI MySQL Database and autonomous database instances, and load data into the databases.
+This lab walks you through the steps to create the resources required to complete this workshop. You'll learn to create a VCN and subnet, a bastion, provision MySQL Heatwave and autonomous database instances, and load data into the databases.
 
 Estimated time: 30 mins
 
@@ -10,7 +10,7 @@ Estimated time: 30 mins
 
 -  Provision a VCN and subnet
 -  Create a bastion
--  Provision, connect, and load data into an OCI MySQL Database system
+-  Provision, connect, and load data into an MySQL Heatwave system
 -  Provision, connect, load target schemas into an Autonomous Data Warehouse (ADW) instance
 
 ### Prerequisites
@@ -61,7 +61,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 	![Add Ingress Rules](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-13-add-ingress-rules.png " ")
 
-## Task 2: Create an OCI MySQL Database System
+## Task 2: Create an MySQL Heatwave System
 
 1.  In the Oracle Cloud console navigation menu, click **Databases**, and then click **MySQL**.
 
@@ -98,7 +98,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 ## Task 3A: Create a bastion and session
 
-> **Note:** Create a bastion and session only if your OCI GoldenGate deployment and OCI MySQL Database system are **not** located in the same region. If they're in the same Home region, skip to Task 3B.
+> **Note:** Create a bastion and session only if your OCI GoldenGate deployment and MySQL Heatwave system are **not** located in the same region. If they're in the same Home region, skip to Task 3B.
 
 1.  In the Oracle Cloud console navigation menu, click **Identity & Security**, and then click **Bastion**.
 
@@ -145,7 +145,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 ## Task 3B: Using CloudShell to connect to the private network
 
-If working within the same Home region for OCI GoldenGate and OCI MySQL Database, then you can use CloudShell to connect to the private network.
+If working within the same Home region for OCI GoldenGate and MySQL Heatwave, then you can use CloudShell to connect to the private network.
 
 1.  After your OCI MySQL DB system becomes active, click **Developer tools** in the Oracle Cloud console global header, and then select **Cloud Shell**.
 
@@ -252,7 +252,7 @@ If working within the same Home region for OCI GoldenGate and OCI MySQL Database
 
 	![Select Edit from ggadmin's menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/06-05-ggadmin.png " ")
 
-6.  In the Edit User panel, deselect **Account is Locked**, enter the ggadmin password and confirm it, and then click **Apply Changes**.
+6.  In the Edit User panel, deselect **Account is Locked**, enter a password for `ggadmin` and confirm it, and then click **Apply Changes**.
 
 	![Unlock the ggadmin user in the Edit User panel](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/06-06-unlock-ggadmin.png " ")
 

@@ -116,4 +116,4 @@ Click **Administration Service** to return to the Overview page.
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Jenny Chan, September 2023

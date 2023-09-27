@@ -125,7 +125,7 @@ commit;</copy>
 
 4.  Refresh your view after 5 minutes to see updated metrics.
 
-5.  You can repeat these steps for the MySQLDeployment.
+5.  You can repeat these steps for the MySQL Deployment.
 
 In this lab, you learned to monitor performance in the OCI GoldenGate deployment console and in the Oracle Cloud console.
 
@@ -164,4 +164,4 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, June 2023
+* **Last Updated By/Date** - Jenny Chan, September 2023
