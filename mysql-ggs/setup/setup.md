@@ -10,7 +10,7 @@ Estimated time: 30 mins
 
 -  Provision a VCN and subnet
 -  Create a bastion
--  Provision, connect, and load data into an MySQL Heatwave system
+-  Provision, connect, and load data into a MySQL Heatwave system
 -  Provision, connect, load target schemas into an Autonomous Data Warehouse (ADW) instance
 
 ### Prerequisites
@@ -59,9 +59,9 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 13. For Description, enter `For MySQL access`, and then click **Add Ingress Rules**.
 
-	![Add Ingress Rules](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-13-add-ingress-rules.png " ")
+	![Add Ingress Rules](./images/01-13-add-ingress-rules.png " ")
 
-## Task 2: Create an MySQL Heatwave System
+## Task 2: Create a MySQL Heatwave System
 
 1.  In the Oracle Cloud console navigation menu, click **Databases**, and then click **MySQL**.
 
@@ -236,17 +236,13 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
     ![List of Autonomous Databases](https://oracle-livelabs.github.io/goldengate/ggs-common/setup/images/06-01-adw.png " ")
 
-2.  Click **Database Actions**.
+2.  Click **Database Actions**, then select **Database Users**.
 
-	![Click Database Actions on autonomous database details page](https://oracle-livelabs.github.io/goldengate/ggs-common/setup/images/06-02-dbdetails.png " ")
+	![Click Database Users](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/06-02-dbactions-dbusers.png " ")
 
-3.  If prompted, log in with the ADMIN user and password provided when you created the ADW instance.
+3.  If you're prompted to log in, enter the Autonomous Data Warehouse admin username and password from Task 5, Step 7.
 
-  	![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
-
-4.  On the Database Actions Launchpad, under **Administration**, click **Database Users**.
-
-	![Click Database Users](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/05-12-launchpad.png " ")
+	![ADW log in](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-login.png " ")
 
 5.  On the Database Users page, locate GGADMIN, and then select **Edit** from its ellipsis (three dots) menu.
 
@@ -258,7 +254,7 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 7.  From the Database Actions menu, under **Development**, select **SQL**.
 
-    ![Select SQL from Database Actions menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-06-db-actions.png " ")
+    ![Select SQL from Database Actions menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png " ")
 
 8.  Download the sample database schema:
 
@@ -284,5 +280,5 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
 - **Contributor** - Julien Testut, Database Product Management
-- **Last Updated by** - Jenny Chan, June 2023
+- **Last Updated by** - Jenny Chan, September 2023
 - **PAR Expiration date** - February 2024
