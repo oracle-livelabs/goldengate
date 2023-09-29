@@ -222,4 +222,4 @@ In this task, you create a user in the target deployment for the Distribution Pa
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, June 2023
+* **Last Updated By/Date** - Jenny Chan, September 2023

@@ -8,7 +8,7 @@ Estimated time: 30 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate resources
 
-An Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. You can create different deployments types such as, Oracle Database, MySQL, or Big Data. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
+An Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. You can create different deployments types such as, Oracle Database, MySQL, SQL Server, PostgreSQL, or Big Data. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
 
 Connections capture source and target credential information. A connection also enables networking between the Oracle Cloud Infrastructure (OCI) GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
 
@@ -16,16 +16,16 @@ Connections capture source and target credential information. A connection also 
 
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
-* Create an OCI GoldenGate deployment for OCI MySQL Database
+* Create an OCI GoldenGate deployment for MySQL Heatwave
 * Create an OCI GoldenGate deployment for Autonomous Data Warehouse
-* Create connections for the source OCI MySQL DB System and target Autonomous Data Warehouse
+* Create connections for the source MySQL Heatwave and target Autonomous Data Warehouse
 * Assign connections to deployments
 
 ### Prerequisites
 
 This lab assumes you completed the environment set up lab, if you're running this workshop on your own tenancy.
 
-## Task 1: Create a deployment for OCI MySQL Database
+## Task 1: Create a deployment for MySQL Heatwave
 
 1.  Open the Oracle Cloud console navigation menu, click **Oracle Database**, and then click **GoldenGate**.
 
@@ -47,7 +47,7 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
 6.  From the Compartment dropdown, select a compartment.
 
-7.  For OCPU Count, enter `1`.
+7.  Select **Development or testing**. OCPU Count updates based on your selection.
 
 8.  For **Subnet**, select a subnet.
 
@@ -73,7 +73,7 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
   ![MySQL deployment details](./images/01-16-mysql-deployment.png " ")
 
-You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
+You're brought to the deployment details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
 ## Task 2: Create a deployment for Autonomous Data Warehouse
 
@@ -83,7 +83,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 3.  From the Compartment dropdown, select a compartment.
 
-4.  For OCPU Count, enter **1**.
+4.  Select **Development or testing**. OCPU Count updates based on your selection.
 
 5.  For Subnet, select a subnet.
 
@@ -109,7 +109,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
   ![ADW deployment details](./images/02-13-adw-deployment.png " ")
 
-You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
+You're brought to the deployment details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
 ## Task 3: Create a connection to the source MySQL database
 
@@ -127,17 +127,17 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 4.  In the Create Connection panel, for Name, enter `SourceMySQL`.
 
-5.  From the Type dropdown, select **OCI MySQL Database Service**.
-
-    ![Create a MySQL connection - General Information](./images/03-05-mysql-conn.png " ")
+5.  From the Type dropdown, select **OCI MySQL Heatwave**.
 
 6.  Click **Next**.
+
+    ![Create a MySQL connection - General Information](./images/03-05-mysql-conn.png " ")
 
 7.  Select the source MySQL Database system (SourceMySQL) from the Database system dropdown.
 
 8.  For Database name, enter `SRC_OCIGGLL`.
 
-    >**Note:** *If running this lab on your own tenancy using the sample scripts provided, this is the name of the database table created in the environment setup lab.*
+    >**Note:** If running this lab on your own tenancy using the sample scripts provided, this is the name of the database table created in the environment setup lab.
 
 9.  For Database username, enter `ggadmin`.
 
@@ -163,7 +163,9 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
 6.  From the **Database** dropdown, select the Autonomous Database (TargetADW).
 
-7.  For **Password**, enter the password for the `ggadmin` user.
+7.  For **Password**, enter the password for the `ggadmin` user. 
+
+    >**Note:** Enter the same password you used to unlock the `ggadmin` user in Lab 1, Task 6, Step 6.
 
     ![ADW connection details](./images/04-07-create-adw-conn.png " ")
 
@@ -241,5 +243,5 @@ Create a GoldenGate connection if your ADW deployment doesn't have a public endp
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, October 2022
+* **Last Updated By/Date** - Jenny Chan, September 2023
 * **PAR Expiration** - February 2024
