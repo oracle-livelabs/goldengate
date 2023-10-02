@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Replicate data from OCI MySQL Database to Autonomous Data Warehouse",
+    "workshoptitle": "Replicate data from MySQL Heatwave to Autonomous Data Warehouse",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
@@ -30,7 +30,7 @@
             "filename": "../../adw/adw.md"
         },
         {
-            "title": "Lab 5: Run and monitor replication processes",
+            "title": "Lab 5: Monitor Extracts and Replicats",
             "filename": "../../monitor/monitor.md"
         },
         {
