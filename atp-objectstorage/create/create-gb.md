@@ -66,7 +66,7 @@ In Task 5, you must upload a private key and enter the corresponding public key 
 
 6.  From the Compartment dropdown, select a compartment.
 
-7.  For OCPU Count, enter **1**.
+7.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
 8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
@@ -78,19 +78,27 @@ In Task 5, you must upload a private key and enter the corresponding public key 
 
 11. Click **Next**.
 
-12. From the Select a technology dropdown, select **Oracle Database**.
+12. For Select a deployment type, select **Data replication**.
 
-13. For GoldenGate Instance Name, enter **ATPinstance**.
+13. For Select a technology, select **Oracle Database**.
 
-14. For Administrator Username, enter **oggadmin**.
+14. For GoldenGate Instance Name, enter **ggsinstance**.
 
-15. For Administrator Password, enter a password. Take note of this password.
+15. For Administrator Username, enter **oggadmin**.
 
-16. Click **Create**.
+16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![Completed GoldenGate details](images/01-16-create-atp-deployment-summary.png " ")
+17. In the Create secret panel, enter `LLsecret`.
 
-You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
+18. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+
+    > **NOTE**: The special characters must not be $, ^, or ?. 
+
+19. Confirm the password, and then click **Create**.
+
+20. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
+
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, 4 and 5 while you wait for the deployment creation to complete.
 
 ## Task 2: Create a deployment for Oracle Object Storage
 
@@ -100,7 +108,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 3.  From the Compartment dropdown, select a compartment.
 
-4.  For OCPU Count, enter **1**.
+4.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
 5.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
@@ -118,7 +126,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 11. For Administrator Username, enter **oggadmin**.
 
-12. For Administrator Password, enter a password. Take note of this password.
+12. For Password secret, select **LLsecret**.
 
 13. Click **Create**.
 
@@ -270,4 +278,4 @@ After your deployments and connections become active, you can assign the connect
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Deniz Sendil, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2023
+* **Last Updated By/Date** - Jenny Chan, October 2023

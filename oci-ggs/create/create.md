@@ -19,6 +19,9 @@ In this lab, you will:
 * Create a OCI GoldenGate deployment
 * Create the source and target connections
 
+### Prerequisites
+
+To successfully complete this lab in your own tenancy, you must have access to OCI Vault and have a Vault created. [Learn more.](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault)
 
 ## Task 1: Create a deployment
 
@@ -52,17 +55,25 @@ In this lab, you will:
 
 10. Click **Next**.
 
-12. For Select a deployment type, select **Data replication**.
+12. For Choose a deployment type, select **Data replication**.
 
-13. For Select a technology dropdown, select **Oracle Database**.
+13. For Select a technology, select **Oracle Database**.
 
-14. For GoldenGate Instance Name, enter **ggsinstance**.
+14. For GoldenGate instance name, enter `ggsinstance`.
 
-15. For Administrator Username, enter **oggadmin**.
+15. For Administrator username, enter `oggadmin`.
 
-16. For Administrator Password, enter a password. Take note of this password.
+16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-17. Click **Create**.
+17. In the Create secret panel, enter `LLsecret``.
+
+18. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+
+    > **NOTE**: The special characters must not be $, ^, or ?. 
+
+19. Confirm the password, and then click **Create**.
+
+20. Back in the Create deployment panel, ensure LLsecret is selected, and then click **Create**.
 
     ![Completed GoldenGate details](images/01-16-create-deployment-gg-details.png " ")
 
