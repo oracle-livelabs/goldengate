@@ -47,7 +47,7 @@ This lab assumes that you completed all preceding labs.
 
 5.  From the Compartment dropdown, select a compartment.
 
-6.  For OCPU Count, enter **1**.
+6.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
 7.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
@@ -59,17 +59,25 @@ This lab assumes that you completed all preceding labs.
 
 10. Click **Next**.
 
-11. For Select a technology dropdown, select **Oracle Database**.
+11. For Select a deployment type, select **Data replication**.
 
-12. For GoldenGate Instance Name, enter **ggsinstance**.
+12. For Select a technology, select **Oracle Database**.
 
-13. For Administrator Username, enter **oggadmin**.
+13. For GoldenGate instance name, enter **ggsinstance**.
 
-14. For Administrator Password, enter a password. Take note of this password.
+14. For Administrator username, enter **oggadmin**.
 
-15. Click **Create**.
+15. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-summary.png " ")
+16. In the Create secret panel, enter `LLsecret``.
+
+17. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+
+    > **NOTE**: The special characters must not be $, ^, or ?. 
+
+18. Confirm the password, and then click **Create**.
+
+19. Back in the Create deployment panel, ensure LLsecret is selected, and then click **Create**.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
