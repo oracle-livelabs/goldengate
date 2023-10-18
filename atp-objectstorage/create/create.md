@@ -22,6 +22,7 @@ In this lab, you will:
 * Assign connections to deployments
 
 ### Prerequisites
+To successfully complete this lab in your own tenancy, you must have access to OCI Vault and a Vault created. [Learn more](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault).
 
 In Task 5, you must upload a private key and enter the corresponding public key fingerprint. To add an API key:
 
@@ -63,7 +64,7 @@ In Task 5, you must upload a private key and enter the corresponding public key 
 
 6.  From the Compartment dropdown, select a compartment.
 
-7.  For OCPU Count, enter **1**.
+7.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
 8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
@@ -73,21 +74,27 @@ In Task 5, you must upload a private key and enter the corresponding public key 
 
     ![Completed Create GoldenGate Deployment fields](images/01-10-create-atp-deployment-summary.png " ")
 
-11. Click **Next**.
+12. For Select a deployment type, select **Data replication**.
 
-12. From the Select a technology dropdown, select **Oracle Database**.
+13. For Select a technology dropdown, select **Oracle Database**.
 
-13. For GoldenGate Instance Name, enter **ATPinstance**.
+14. For GoldenGate Instance Name, enter **ggsinstance**.
 
-14. For Administrator Username, enter **oggadmin**.
+15. For Administrator Username, enter **oggadmin**.
 
-15. For Administrator Password, enter a password. Take note of this password.
+16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-16. Click **Create**.
+17. In the Create secret panel, enter `LLsecret`.
 
-    ![Completed GoldenGate details](images/01-16-create-atp-deployment-summary.png " ")
+18. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
 
-You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
+    > **NOTE**: The special characters must not be $, ^, or ?. 
+
+19. Confirm the password, and then click **Create**.
+
+20. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
+
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, 4 and 5 while you wait for the deployment creation to complete.
 
 ## Task 2: Create a deployment for Oracle Object Storage
 
@@ -97,27 +104,29 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 3.  From the Compartment dropdown, select a compartment.
 
-4.  For OCPU Count, enter **1**.
+4.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
-5.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
+5.  For Subnet, select a subnet in which to create the deployment.
 
-6.  For License type, select **Bring You Own License (BYOL)**.
+6.  For License type, select **Bring your own license (BYOL)**.
 
-7.  Click **Show Advanced Options**, and then select **Enable GoldenGate console public access**.
+7.  Click **Show advanced pptions**, and then select **Enable GoldenGate console public access**.
 
     ![Completed Create GoldenGate Deployment fields](images/02-07-bigdata.png " ")
 
 8.  Click **Next**.
 
-9.  From the Select a technology dropdown, select **Big Data**.
+9.  For Select a deployment type, select **Data replication**.
 
-10. For GoldenGate Instance Name, enter **BDinstance**.
+10. From the Select a technology dropdown, select **Big Data**.
 
-11. For Administrator Username, enter **oggadmin**.
+11. For GoldenGate instance name, enter **BDinstance**.
 
-12. For Administrator Password, enter a password. Take note of this password.
+12. For Administrator username, enter **oggadmin**.
 
-13. Click **Create**.
+13. For Password secret, select LLsecret.
+
+14. Click **Create**.
 
     ![Completed GoldenGate details](images/02-13-bigdata.png " ")
 
@@ -167,31 +176,27 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![Autonomous Databases page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-sourceatp.png " ")
 
-3.  On the SourceATP Database Details page, click **Database Actions**.
+3.  On the SourceATP Database Details page, click **Database actions**, and select **Database Users** from the dropdown.
 
     ![SourceATP Database Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-db-actions.png " ")
 
     > **Note:** *If you're prompted to log in to Database Actions, use the source database admin credentials.*
 
-4.  Under **Administration**, click **Database Users**.
-
-    ![Database Actions](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-04-db-users.png " ")
-
-5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
+4.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
     !![Database users](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-05-ggadmin.png " ")
 
-6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the connection Task 3, Step 8, and then click **Apply Changes**.
+5.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the connection Task 3, Step 8, and then click **Apply Changes**.
 
     ![Edit user](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-06-ggadmin-edit-user.png " ")
 
     Note that the user icon changes from a padlock to a checkmark.
 
-7.  From the navigation menu (hamburger icon), click **SQL**.
+6.  From the navigation menu (hamburger icon), click **SQL**.
 
     ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png " ")
 
-8.  In the worksheet, enter the following, and then click **Run Statement**:
+7.  In the worksheet, enter the following, and then click **Run Statement**:
 
     ```
     <copy>
@@ -305,4 +310,4 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2023
+* **Last Updated By/Date** - Jenny Chan, October 2023

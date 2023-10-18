@@ -6,6 +6,9 @@ In this lab, you learn to create Purge Tasks in the Oracle Cloud Infrastructure 
 
 Estimated time: 5 minutes
 
+Watch the video below for a quick walk through of the lab.
+[Watch the video](videohub:1_ni87slbs)
+
 ### About Purge Tasks
 
 Purge Tasks help you to manage unused Trail files in your deployment. Trail files can add up over time and hinder the performance of your deployment.
