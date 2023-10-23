@@ -24,13 +24,15 @@ In this lab, you learn to:
 * This lab assumes that you completed all preceding labs
 * Your deployment is in the Active state.
 
-## Task 1: Launch the GoldenGate Deployment Console
+## Task 1: Launch the OCI GoldenGate deployment console
 
-1. When the deployment is active, click **Launch Console**.
+1. On the Deployment details page, click **Launch Console**.
 
     ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/07-01-launchconsole.png " ")
 
-2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password you provided in the previous Lab, and then click **Sign In**.
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password secret you provided in the previous Lab, and then click **Sign In**.
+
+    > **NOTE:** If using OCI IAM, you must click **Allow** when prompted to give the application access to `get_groups`.
 
     ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin.png " ")
 
@@ -38,7 +40,7 @@ After you log in successfully, you're brought to the GoldenGate deployment conso
 
 ## Task 2: Add Transaction Data and a Checkpoint Table
 
-> **Note:** Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.
+> **NOTE:** Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.
 
 1.  Open the navigation menu and then click **Configuration**.
 
@@ -74,9 +76,9 @@ After you log in successfully, you're brought to the GoldenGate deployment conso
 
     ![Populated Checkpoint table field and submit button highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-08-checktable.png " ")
 
-To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
+To return to the GoldenGate deployment console Home page, click **Overview** in the left navigation.
 
-## Task 3: Add and Run an Extract
+## Task 3: Add and run an Extract
 
 1.  On the OCI GoldenGate Deployment Console Home page, click **Add Extract** (plus icon).
 
@@ -132,7 +134,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Copied and pasted script on the parameter file page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-09-params.png " ")
 
-10. Click **Create**. You return to the OCI GoldenGate Deployment Console Home page.
+10. Click **Create**. You return to the OCI GoldenGate deployment console Home page.
 
 11. In the UAEXT **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
@@ -312,4 +314,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, September 2023
+* **Last Updated By/Date** - Jenny Chan, October 2023
