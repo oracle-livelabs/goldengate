@@ -23,11 +23,11 @@
             "filename": "../../create/create.md"
         },
         {
-            "title": "Lab 3: Create the Extract process and export data using Oracle Data Pump",
+            "title": "Lab 3: Create the Extract process and use Oracle Data Pump to export data",
             "filename": "../../extract/extract.md"
         },
         {
-            "title": "Lab 4: Import data using Oracle Data Pump and create the Replicat",
+            "title": "Lab 4: Use Oracle Data Pump to import data and create the Replicat",
             "filename": "../../extracts-replicats/extracts-replicats.md"
         },
         {

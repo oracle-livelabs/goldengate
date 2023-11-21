@@ -1,9 +1,12 @@
-# Create the Extract process and export data using Oracle Data Pump
+# Create the Extract process and use Oracle Data Pump to export data
 
 ## Introduction
 This lab instructs you to use the OCI GoldenGate deployment console to add transaction information to the source database, add a checkpoint table to the target database, add and run an Extract, and instantiate the target database using Oracle Data Pump.
 
 Estimated time: 25 minutes
+
+Watch the video below for a quick walk through of the lab.
+[Watch the video](videohub:1_j398evq1)
 
 ### About the Extract process
 An Extract is a process that extracts, or captures, data from a source database.
@@ -16,13 +19,20 @@ In this lab, you learn to:
 * Add and run an Extract
 * Export data from the source database using Oracle Data Pump
 
-## Task 1: Launch the GoldenGate Deployment Console
+### Prerequisites
 
-1. When the deployment is active, click **Launch Console**.
+* This lab assumes that you completed all preceding labs
+* Your deployment is in the Active state.
+
+## Task 1: Launch the OCI GoldenGate deployment console
+
+1. On the Deployment details page, click **Launch Console**.
 
     ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/07-01-launchconsole.png " ")
 
-2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password you provided in the previous Lab, and then click **Sign In**.
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password secret you provided in the previous Lab, and then click **Sign In**.
+
+    > **NOTE:** If using OCI IAM, you must click **Allow** when prompted to give the application access to `get_groups`.
 
     ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin.png " ")
 
@@ -30,7 +40,7 @@ After you log in successfully, you're brought to the GoldenGate deployment conso
 
 ## Task 2: Add Transaction Data and a Checkpoint Table
 
-> **Note:** Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.
+> **NOTE:** Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.
 
 1.  Open the navigation menu and then click **Configuration**.
 
@@ -66,9 +76,9 @@ After you log in successfully, you're brought to the GoldenGate deployment conso
 
     ![Populated Checkpoint table field and submit button highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-08-checktable.png " ")
 
-To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
+To return to the GoldenGate deployment console Home page, click **Overview** in the left navigation.
 
-## Task 3: Add and Run an Extract
+## Task 3: Add and run an Extract
 
 1.  On the OCI GoldenGate Deployment Console Home page, click **Add Extract** (plus icon).
 
@@ -124,7 +134,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Copied and pasted script on the parameter file page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-09-params.png " ")
 
-10. Click **Create**. You return to the OCI GoldenGate Deployment Console Home page.
+10. Click **Create**. You return to the OCI GoldenGate deployment console Home page.
 
 11. In the UAEXT **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
@@ -202,7 +212,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
     ![Copy highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-13-copy-token.png " ")
 
-14. In the source database SQL window, enter the following script, replace the placeholders with your user name and token value, and then click **Run Statement**:
+14. In the source database SQL window, enter the following script, replace the placeholders with your user name (UPPERCASE) and token value, and then click **Run Statement**:
 
     ```
     <copy>BEGIN
@@ -293,9 +303,9 @@ END;</copy>
 
     ![SQL worksheet Run Script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-15-sql-return.png " ")
 
-    > **Note:** Review the DBMS Output tab and ignore the error if the Job successfully completed.
+> **Note:** The Script Output displays what looks like an error, but it reports "Job has completed successfully." You can also review the **DBMS Output** tab to see the same message displayed.
 
-**Proceed to the next lab.**
+You may now **proceed to the next lab.**
 
 ## Learn more
 
@@ -304,4 +314,4 @@ END;</copy>
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2023
+* **Last Updated By/Date** - Jenny Chan, October 2023

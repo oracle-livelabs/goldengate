@@ -1,20 +1,21 @@
-# Create the Oracle Cloud Infrastructure GoldenGate Deployment for Source
+# Create the OCI GoldenGate deployments
 
 ## Introduction
 
-This lab walks you through the steps to create an Oracle Cloud Infrastructure (OCI) GoldenGate deployment.
+In this lab, you learn to create the source and target Oracle Cloud Infrastructure (OCI) GoldenGate deployments.
 
-Estimated time: 5 minutes
+Estimated Time: 5 minutes
 
-### About Oracle Cloud Infrastructure GoldenGate Deployments
+### About OCI GoldenGate deployments
 
-A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
+OCI GoldenGate deployments contain and manage the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
 
 ### Objectives
 
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
-* Create a OCI GoldenGate deployment
+* Create the source deployment
+* Create the target deployment
 * Review the OCI GoldenGate deployment details
 * Access the OCI GoldenGate deployment console
 
@@ -22,88 +23,99 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs.
 
-## Task 1: Create a deployment
+## Task 1: Create the source deployment
 
-> **Note:** *Compartment names in the screenshots may differ from values that appear in your environment.*
+1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
 
-1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
+    ![GoldenGate in the Oracle Cloud navigation menu](images/database-goldengate.png " ")
 
-    ![GoldenGate in Oracle Cloud navigation menu](images/database-goldengate.png " ")
+2.  On the GoldenGate **Overview** page, click **Create deployment**.
 
-2.  On the GoldenGate **Overview** page, click **Deployments**.
+    ![Deployments page](images/create-deployment-select.png "")
+3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment **LiveLabCompartment**.
 
-    ![GoldenGate Overview page](images/01-02-ggs-overview.png " ")
+4.  In the Create Deployment panel, enter **SourceDeployment** for Name.
 
-3.  You may need to select a compartment. Under List Scope, from the Comparment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
+5.  From the Compartment dropdown, select **LiveLabCompartment**.
 
-4.  On the Deployments page, click **Create Deployment**.
+6.  For OCPU Count, enter **1**.
 
-    ![Deployments page](images/01-02-01.png "")
+7.  For Subnet, select a subnet. If you're using the workshop environment, select **LiveLabWebSubnet**.
 
-5.  In the Create Deployment panel, enter **GGSDeployment** for Name.
+8.  For License type, select **Bring Your Own License (BYOL)**.
 
-6.  From the Compartment dropdown, select a compartment.
+9. Click **Show advanced Options**, and then select **Create public endpoint**.
 
-7.  For OCPU Count, enter **1**.
+    ![Completed Create GoldenGate Deployment fields](images/create-deployment-general-info.png " ")
 
-8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
+10. Click **Next**.
+11. For Select a technology, select **Oracle Database**.
 
-9.  For License type, select **Bring You Own License (BYOL)**.
+11. For GoldenGate Instance Name, enter **ggsource**.
 
-10. Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+12. For Administrator Username, enter **oggadmin**.
 
-    ![Completed Create GoldenGate Deployment fields](images/01-09.png " ")
+13. For Administrator Password, enter a password. Take note of this password.
 
-11. Click **Next**.
+    > **Note:** *For the purposes of this LiveLab, you use the same passwords for the oggadmin user and the database user. To ensure the password works for both users, enter a password containing only upper case letters, lower case letters, numbers, and underscores. If using the green button version of this lab (running on LiveLabs sandbox), you can use the database admin password on the reservation page*.
 
-12. For GoldenGate Instance Name, enter **ggsinstance**.
+14. Click **Create**.
 
-13. For Administrator Username, enter **oggadmin**.
+    ![Completed GoldenGate details](images/create-deployment-completed.png " ")
 
-14. For Administrator Password, enter a password. Take note of this password.
+    > **Note:** *You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.*
 
->**Note:** This password needs to match password of a database user that we will use later. In order to make sure the password works for both, we suggest you enter a password containing only upper case letters, lower case letters, numbers, and underscores. If you are using the green button (run on LiveLabs tenancy), you can use your database admin password given to you on the reservation page.
+    ![Deployment creation completed](images/deployment-active-status.png " ")
 
-15. Click **Create**.
+## Task 2: Create the target deployment.
 
-    ![Completed GoldenGate details](images/02-13.png " ")
+1. Go back to the GoldenGate **Overview** page, click **Create Deployment**.
 
-You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
+    ![Deployments page](images/create-deployment-select.png "")
 
-## Task 2: Review the Deployment details
+2.  In the Create Deployment panel, enter **OCI GoldenGate Big Data** for Name.
 
-On the Deployment Details page, you can:
+3.  From the Compartment dropdown, select **LiveLabCompartment**.
 
-* Review the deployment's status
-* Launch the GoldenGate service deployment console
-* Edit the deployment's name or description
-* Stop and start the deployment
-* Move the deployment to a different compartment
-* Review the deployment resource information
-* Add tags
+4.  For OCPU Count, enter **1**.
 
-    ![Deployment Details page](images/02-01-deployment-details.png " ")
+5.  For Subnet, select a subnet. If you're using the workshop environment, select **LiveLabWebSubnet**.
 
-## Task 3: Launch the GoldenGate Deployment Console
+6.  For License type, select **License included**.
 
-1. When the deployment is active, click **Launch Console**.
+7.  Click **Show advanced options**, and then select **Create public endpoint**.
 
-    ![Launch Console](images/03-01.png " ")
 
-2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided above, and then click **Sign In**.
+8. Click **Next**.
+    ![Completed GoldenGate details](images/create-deployment-click.png " ")
 
-    ![GoldenGate Deployment Console](images/02-02.png " ")
+9. For Select a technology, select **Big Data**.
 
-After you log in, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
+10. For GoldenGate Instance Name, enter **OCIGGBigData**.
 
-In this lab, you created an OCI Deployment, reviewed its Deployment details, and launched the Deployment Console.
+11. For Administrator Username, enter **oggadmin**.
+
+12. For Administrator Password, enter a password. Take note of this password.
+
+    > **Note:** *For the purposes of this LiveLab, you use the same passwords for the oggadmin user and the database user. To ensure the password works for both users, enter a password containing only upper case letters, lower case letters, numbers, and underscores. If using the green button version of this lab (running on LiveLabs sandbox), you can use the database admin password on the reservation page.*
+
+13. Click **Create**.
+
+    ![Completed GoldenGate details](images/ggbd-deployment-create.png " ")
+
+    >**Note:** *You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.*
+
+
+    ![Deployment creation completed](images/deployment-lanch-kafka.png " ")
+
+You may now **proceed to the next lab**.
 
 ## Learn More
 
-* [Managing Deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/deployments.html)
+* [Managing deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/deployments.html)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management; Madhu Kumar S, AppDev and Integration
-* **Last Updated By/Date** - 
+* **Author** - Madhu Kumar S, Senior Solution Engineer, AppDev and Integration
+* **Contributors** -  Denis Sendil, Database Product Management; Jenny Chan, Consulting User Assistance Developer, Database User Assistance
+* **Last Updated By/Date** - Madhu Kumar S, Senior Solution Engineer, AppDev and Integration
 

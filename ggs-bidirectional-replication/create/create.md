@@ -47,7 +47,7 @@ This lab assumes that you completed all preceding labs.
 
 6.  From the Compartment dropdown, select a compartment.
 
-7.  For OCPU Count, enter **1**.
+7.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
 8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
@@ -59,19 +59,27 @@ This lab assumes that you completed all preceding labs.
 
 11. Click **Next**.
 
-12. For Select a technology dropdown, select **Oracle Database**.
+12. For Select a deployment type, select **Data replication**.
 
-13. For GoldenGate Instance Name, enter **ggsinstance**.
+13. For Select a technology dropdown, select **Oracle Database**.
 
-14. For Administrator Username, enter **oggadmin**.
+14. For GoldenGate Instance Name, enter **ggsinstance**.
 
-15. For Administrator Password, enter a password. Take note of this password.
+15. For Administrator Username, enter **oggadmin**.
 
-16. Click **Create**.
+16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-summary.png " ")
+17. In the Create secret panel, enter `LLsecret`.
 
-You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
+18. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+
+    > **NOTE**: The special characters must not be $, ^, or ?. 
+
+19. Confirm the password, and then click **Create**.
+
+20. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
+
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, and 4 while you wait for the deployment creation to complete.
 
 ## Task 2: Create the source connection
 
@@ -122,31 +130,27 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![Autonomous Databases page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-sourceatp.png " ")
 
-3.  On the SourceATP Database Details page, click **Database Actions**.
+3.  On the SourceATP Database Details page, click **Database actions**, and select **Database Users** from the dropdown.
 
     ![Database Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-db-actions.png " ")
 
     > **Note:** *If you're prompted to log in to Database Actions, use the source database admin credentials.*
 
-4.  Under **Administration**, click **Database Users**.
-
-    ![Database Actions](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-04-db-users.png " ")
-
-5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
+4.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
     ![GGADMIN user context menu highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-05-ggadmin.png)
 
-6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
+5.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
 
     ![Edit user](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-06-ggadmin-edit-user.png)
 
     Note that the user icon changes from a padlock to a checkmark.
 
-7.  From the navigation menu (hamburger icon), click **SQL**.
+6.  From the navigation menu (hamburger icon), click **SQL**.
 
     ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png)
 
-8.  In the worksheet, enter the following, and then click **Run Statement**:
+7.  In the worksheet, enter the following, and then click **Run Statement**:
 
     ```
     <copy>
@@ -190,7 +194,7 @@ Now, follow the steps below to create the target Autonomous Data Warehouse \(ADW
 
     The source and target databases appear in the list of Connections. The database registration becomes Active after a few minutes.
 
-10.  Repeat Task 3, steps 1-8, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
+10.  Repeat Task 3, steps 1-7, to unlock the GGADMIN user and enable supplemental logging on the TargetADW database.
 
 11.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
 
@@ -244,4 +248,4 @@ After the deployment is created and active, you can perform the following action
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2023
+* **Last Updated By/Date** - Jenny Chan, October 2023
