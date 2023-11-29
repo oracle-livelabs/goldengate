@@ -173,4 +173,4 @@ You should be already logged in after completing the lab *Initialize Environment
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
 * **Contributors** - Sumathi Nelapati
-* **Last Updated By/Date** - Pratibha Manjunath, March 2023
+* **Last Updated By/Date** - Pratibha Manjunath, December 2023

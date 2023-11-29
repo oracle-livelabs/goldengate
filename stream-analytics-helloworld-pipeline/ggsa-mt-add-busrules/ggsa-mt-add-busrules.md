@@ -87,4 +87,4 @@ The SpeedViolation Business Rules page is displayed. The values you provide on t
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
 * **Contributors** - Sumathi Nelapati
-* **Last Updated By/Date** - Pratibha Manjunath, March 2023
+* **Last Updated By/Date** - Pratibha Manjunath, December 2023
