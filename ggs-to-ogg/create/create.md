@@ -47,7 +47,7 @@ This lab assumes that you completed all preceding labs.
 
 6.  From the Compartment dropdown, select a compartment in which to create the deployment.
 
-7.  For OCPU Count, enter **1**.
+7.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
 8.  For Subnet, select a subnet. 
 
@@ -59,17 +59,27 @@ This lab assumes that you completed all preceding labs.
 
 11. Click **Next**.
 
-12. For Select a technology dropdown, select **Oracle Database**.
+12. For Select a deployment type, select **Data replication**.
 
-13. For GoldenGate Instance Name, enter **ggsinstance**.
+13. For Select a technology dropdown, select **Oracle Database**.
 
-14. For Administrator Username, enter **oggadmin**.
+14. For GoldenGate Instance Name, enter **ggsinstance**.
 
-15. For Administrator Password, enter a password. Take note of this password.
+15. For Administrator Username, enter **oggadmin**.
 
-16. Click **Create**.
+16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![Completed GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-summary.png " ")
+17. In the Create secret panel, enter `LLsecret`.
+
+18. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+
+    > **NOTE**: The special characters must not be $, ^, or ?. 
+
+19. Confirm the password, and then click **Create**.
+
+20. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
+
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, and 4 while you wait for the deployment creation to complete.
 
 You're brought to the deployment details page. It takes a few minutes for the deployment to become Active. Move on to the next set of tasks while you wait.
 
@@ -123,7 +133,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![SourceATP Database Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-db-actions.png " ")
 
-    > **Note:** *If you're prompted to log in to Database Actions, use the SourceATP admin credentials located in the Workshop Details.*
+    > **Note:** If you're prompted to log in to Database Actions, use the SourceATP admin credentials located in the Workshop Details.
 
 4.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 

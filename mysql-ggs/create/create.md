@@ -61,19 +61,27 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
   ![Example create deployment options](./images/01-11-create-deployment.png " ")
 
-12. From the Select a technology dropdown, select **MySQL**.
+12. For Select a deployment type, select **Data replication**.
 
-13. For GoldenGate Instance Name, enter `MySQL-Instance`.
+13. For Select a technology dropdown, select **Oracle Database**.
 
-14. For Administrator Username, enter `oggadmin`.
+14. For GoldenGate Instance Name, enter **ggsinstance**.
 
-15. For Administrator Password, enter a password. Take note of this password.
+15. For Administrator Username, enter **oggadmin**.
 
-16. Click **Create**.
+16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-  ![MySQL deployment details](./images/01-16-mysql-deployment.png " ")
+17. In the Create secret panel, enter `LLsecret`.
 
-You're brought to the deployment details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
+18. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+
+    > **NOTE**: The special characters must not be $, ^, or ?. 
+
+19. Confirm the password, and then click **Create**.
+
+20. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
+
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, and 4 while you wait for the deployment creation to complete.
 
 ## Task 2: Create a deployment for Autonomous Data Warehouse
 
@@ -97,15 +105,17 @@ You're brought to the deployment details page. It takes a few minutes for the de
 
   ![Example create ADW deployment options](./images/02-08-adw-deployment.png " ")
 
-9.  From the Select a technology dropdown, select **Oracle Database**.
+9.  For Select a deployment type, select **Data replication**.
 
-10. For GoldenGate Instance Name, enter `ADWinstance`.
+10. From the Select a technology dropdown, select **Oracle Database**.
 
-11. For Administrator Username, enter `oggadmin`.
+11. For GoldenGate Instance Name, enter `ADWinstance`.
 
-12. For Administrator Password, enter a password. Take note of this password.
+12. For Administrator Username, enter `oggadmin`.
 
-13. Click **Create**.
+13. For Password secret, select **LLsecret**.
+
+14. Click **Create**.
 
   ![ADW deployment details](./images/02-13-adw-deployment.png " ")
 

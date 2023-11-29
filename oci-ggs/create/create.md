@@ -19,6 +19,9 @@ In this lab, you will:
 * Create a OCI GoldenGate deployment
 * Create the source and target connections
 
+### Prerequisites
+
+To successfully complete this lab in your own tenancy, you must have access to OCI Vault and have a Vault created. [Learn more.](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault)
 
 ## Task 1: Create a deployment
 
@@ -52,19 +55,32 @@ In this lab, you will:
 
 10. Click **Next**.
 
-12. For Select a deployment type, select **Data replication**.
+11. For Select a technology dropdown, select **Oracle Database**.
 
-13. For Select a technology dropdown, select **Oracle Database**.
+12. For GoldenGate Instance Name, enter **ggsinstance**.
 
-14. For GoldenGate Instance Name, enter **ggsinstance**.
+13. In an IAM-enabled tenancy, select a Credential Store. 
 
-15. For Administrator Username, enter **oggadmin**.
+    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 2.
+    * If you select GoldenGate, complete the following steps.
 
-16. For Administrator Password, enter a password. Take note of this password.
+14. For Administrator Username, enter **oggadmin**.
 
-17. Click **Create**.
+15. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![Completed GoldenGate details](images/01-16-create-deployment-gg-details.png " ")
+    ![GoldenGate details](./images/01-16-create-deployment-gg-details.png " ")
+
+16. In the Create secret panel, enter `LLsecret`.
+
+17. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+
+    > **NOTE**: The special characters must not be $, ^, or ?. 
+
+    ![Create Password secret](./images/01-17-passwordsecret.png " ")
+
+18. Confirm the password, and then click **Create**.
+
+19. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, and 4 while you wait for the deployment creation to complete.
 
@@ -179,7 +195,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 ## Task 5: Review the deployment details
 
-After the deployment is created and active, you can perform the following actions on the deployment details page:
+Return to the OCI GoldenGate Deployments page in the Oracle Cloud console. After the deployment is created and active, you can perform the following actions on the deployment details page:
 
 * Review the deployment's status
 * Launch the GoldenGate service deployment console
@@ -193,7 +209,7 @@ After the deployment is created and active, you can perform the following action
 
 ## Task 6: Assign connections to the deployment
 
-1. Click **Assigned connections**.
+1. On the Deployment details page, click **Assigned connections**.
 
     ![Assigned connections under Resources](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-01-assigned-connections.png " ")
 
@@ -221,4 +237,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, September 2023
+* **Last Updated By/Date** - Jenny Chan, October 2023

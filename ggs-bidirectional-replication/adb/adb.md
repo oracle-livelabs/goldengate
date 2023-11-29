@@ -79,7 +79,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 
-## Task 3: Load the ATP schema
+## Task 3: Load the ATP schema and enable supplemenal logging
 
 1.  Download the database schema:
 
@@ -131,7 +131,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
 
-## Task 4: Create an ADW instance and user
+## Task 4: Create an ADW instance and user 
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 
@@ -163,7 +163,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 9.  Click **Create Autonomous Database**. After it finishes provisioning, you can click on the instance name to see details of it.
 
-10. On the Autonomous Database details page, click **Database Actions**.
+10. On the Autonomous Database details page, click **Database actions**.
 
 11. Log in using the ADMIN username and password set in step 7.
 
@@ -171,10 +171,12 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 	![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
 
-13. Log out of Database Actions.
+13. Replace the script in the SQL worksheet with `ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;` and then click **Run Script**.
+
+14. Log out of Database actions.
 
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated by** - Katherine Wardhana, March 2023
+- **Last Updated by** - Jenny Chan, October 2023
 - **PAR Expiration date** - February 2024
