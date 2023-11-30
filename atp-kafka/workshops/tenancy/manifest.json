@@ -14,7 +14,7 @@
         },
 		{
 
-            "title": "Lab 1: Environment Setup",
+            "title": "Lab 1: Set up the environment",
             "description": "Provision Autonomous Databases to use as the source and target as kafka.",
             "filename": "../../environment-setup/environment-setup.md"
         },

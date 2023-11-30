@@ -10,6 +10,8 @@ Estimated Time: 20 minutes
 
 A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
 
+### About OCI GoldenGate connections
+
 Connections capture source and target credential information. A connection also enables networking between the Oracle Cloud Infrastructure (OCI) GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
 
 ### Objectives
@@ -42,55 +44,55 @@ This lab assumes that you completed all preceding labs.
 
 5.  From the Compartment dropdown, select **LiveLabCompartment**.
 
-6.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
+6.  Select **Development or testing**. The OCPU count autopopulates based on your selection.
 
 7.  For Subnet, select a subnet. If you're using the workshop environment, select **LiveLabWebSubnet**.
 
 8.  For License type, select **Bring Your Own License (BYOL)**.
 
-9. Click **Show advanced Options**, and then select **Enable GoldenGate console public access**.
-
-    ![Completed Create GoldenGate Deployment fields](images/01-09-create-deployment-general-info.png " ")
+9. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
 10. Click **Next**.
 
+    ![Completed Create GoldenGate Deployment fields](images/01-09-create-deployment-general-info.png " ")
+
 11. For deployment type, select **Data replication**.
 
-11. For Select a technology dropdown, select **Oracle Database**.
+12. From a Select a technology dropdown, select **Oracle Database**.
 
-12. For GoldenGate Instance Name, enter **ggsource**. Take note of the instance name. This helps you identify the source as you switch between deployment consoles. 
+13. For GoldenGate instance name, enter **ggsource**. Take note of the instance name. This helps you identify the source as you switch between deployment consoles. 
 
-13. In an IAM-enabled tenancy, select a Credential Store.
+14. In an IAM-enabled tenancy, select a Credential Store.
 
     * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 2.
     * If you select **GoldenGate**, complete the following steps.
 
-13. For Administrator Username, enter **oggadmin**.
+15. For Administrator username, enter **oggadmin**.
 
-14. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
+16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-14-passwordsecret.png " ")
+    ![Completed Create GoldenGate Deployment fields](./images/01-16-passwordsecret.png " ")
 
-15. In the Create secret panel, for Name, enter **LLsecret**.
+17. In the Create Secret panel, for Name, enter **LLsecret**.
 
-16. From the Compartment dropdown, select **LiveLabCompartment**.
+18. From the Compartment dropdown, select **LiveLabCompartment**.
 
-17. From the Vault dropdown, select your vault.
+19. From the Vault dropdown, select your vault.
 
-18. From the Encryption key dropdown, select your encryption key.
+20. From the Encryption key dropdown, select your encryption key.
 
-19. For User Password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+21. For User Password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
 
     > **Note:** The special characters must not be $, ^, or ?.
 
-20. Click **Create**.
+22. Click **Create**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-21-password-secret.png " ")
+    ![Completed Create GoldenGate Deployment fields](./images/01-22-password-secret.png " ")
 
-21. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
+23. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 3 and 4 while you wait for the deployment creation to complete.
-    ![Deployment creation completed](./images/01-21-deployment-active-status.png " ")
+    ![Deployment creation completed](./images/01-23-deployment-active-status.png " ")
 
 ## Task 2: Create the target deployment
 
@@ -102,7 +104,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 3.  From the Compartment dropdown, select **LiveLabCompartment**.
 
-4.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
+4.  Select **Development or testing**. The OCPU count autopopulates based on your selection.
 
 5.  For Subnet, select a subnet. If you're using the workshop environment, select **LiveLabWebSubnet**.
 
@@ -117,16 +119,16 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 9. For deployment type, select **Data replication**.
 
-9. For Select a technology, select **Big Data**.
+9. From the Select a technology dropdown, select **Big Data**.
 
-10. For GoldenGate Instance Name, enter **OCIGGBigData**.
+10. For GoldenGate instance name, enter **OCIGGBigData**.
 
 11. In an IAM-enabled tenancy, select a Credential Store.
 
     * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 3.
     * If you select **GoldenGate**, complete the following steps.
 
-11. For Administrator Username, enter **oggadmin**.
+11. For Administrator username, enter **oggadmin**.
 
 12. For Password secret, select **LLsecret** from the dropdown.
 
@@ -207,7 +209,9 @@ You may now **proceed to the next lab**.
 
 ## Learn More
 
-* [Managing deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/ebbpf/index.html#articletitle)
+* [Create data replication resources](https://docs.oracle.com/en/cloud/paas/goldengate-service/llyhq/#articletitle)
+* [Connect to Oracle Autonomous Databases](https://docs.oracle.com/en/cloud/paas/goldengate-service/tqrlh/#articletitle)
+* [Connect to Apache Kafka](https://docs.oracle.com/en/cloud/paas/goldengate-service/wkynw/#articletitle)
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, Senior Solution Engineer, AppDev and Integration

@@ -13,9 +13,7 @@ The Replicat process runs on the target system, reads the trail on that system, 
 
 ### Objectives
 
-In this lab, you will:
-* Add a checkpoint table
-* Add and run a Replicat process
+In this lab, you will add and run a Replicat process.
 
 ### Prerequisites
 
@@ -70,7 +68,7 @@ In this lab, you created a replicat for OCI GoldenGate for Big Data Deployment.
 You may now **proceed to the next lab**.
 
 ## Learn More
-* [Creating a Replicat](https://docs.oracle.com/en/cloud/paas/goldengate-service/nbxnd/#articletitle)
+* [Add a Replicat for Kafka](https://docs.oracle.com/en/cloud/paas/goldengate-service/nbxnd/#articletitle)
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, Senior Solution Engineer, AppDev and Integration

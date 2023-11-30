@@ -26,7 +26,7 @@ This lab assumes that you completed all preceding labs.
 
 2. On the Deployments page, select **OCI GoldenGate Big Data**.
 
-3. On the Deployment Details page, click **Launch Console**.
+3. On the Deployment details page, click **Launch console**.
 
     ![Big data deployment Details page](images/01-03-ggs-launch-oracle.png " ")
 
@@ -122,7 +122,7 @@ You may now **proceed to the next lab**.
 
 ## Learn More
 
-* [Managing deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/ebbpf/index.html#articletitle)
+* [Add a Distribution Path](https://docs.oracle.com/en/cloud/paas/goldengate-service/adpen/#articletitle)
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, Senior Solution Engineer, AppDev and Integration

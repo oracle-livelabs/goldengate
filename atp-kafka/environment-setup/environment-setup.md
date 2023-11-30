@@ -1,4 +1,4 @@
-# Environment Setup
+# Set up the environment
 
 ## Introduction
 
@@ -8,7 +8,7 @@ Estimated time: 20 minutes
 
 ### Objectives
 
-In this first lab, we will prepare our work environment and create our lab resources using a Terraform script.
+In this lab, you:
 
 -   Create SSH keys in a Cloud Shell environment.
 -	Modify a terraform variables file to interact with the script.
@@ -21,7 +21,7 @@ To successfully complete this lab in your own tenancy, you must have access to O
 
 ## Task 1: Use Cloud Shell to clone the lab repository
 
-1. In the Oracle Cloud console global header, click **Cloud Shell**. Cloud Shell opens as a separate panel in the Oracle Cloud console, which you can expand to full screen.
+1. In the Oracle Cloud Console global header, click **Developer tools**, and then **Cloud Shell**. The Cloud Shell drawer opens at the bottom of your screen.
 
     > **Note:** It takes a few minutes for Cloud Shell to connect and load your session.
 
@@ -137,7 +137,7 @@ To successfully complete this lab in your own tenancy, you must have access to O
 
 ## Task 5: Create a source ATP schema
 
-1.  From the Oracle Cloud Console Navigation Menu (hamburger icon), click **Oracle Database**, and then select **Autonomous Database**.
+1.  From the Oracle Cloud Console navigation menu (hamburger icon), click **Oracle Database**, and then select **Autonomous Database**.
 
     ![Autonomous Database in the Oracle Cloud Console navigation menu](./images/05-01-auto-db.png " ")
 
@@ -145,7 +145,7 @@ To successfully complete this lab in your own tenancy, you must have access to O
 
     ![Autonomous Database page](./images/05-02-adw-home.png " ")
 
-3.  On the ATP_Source Database Details page, click **Database actions**, and select **SQL** from the dropdown.
+3.  On the ATP_Source Database details page, click **Database actions**, and select **SQL** from the dropdown.
 
     ![DB Actions log in page](./images/05-03-atp-db-options.png " ")
 

@@ -10,6 +10,9 @@ Estimated time: 15 minutes
 
 Adding Transaction information (TRANDATA) allows Oracle GoldenGate to collect the information it needs from database transaction records.
 
+### About the Extract process
+
+An Extract is a process that extracts, or captures, data from a source database.
 
 ### Objectives
 
@@ -30,7 +33,7 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 2.  On the Deployments page, select **SourceDeployment**.
 
-3.  On the Deployment Details page, click **Launch Console**.
+3.  On the Deployment Details page, click **Launch console**.
 
     ![Deployment Details page](images/01-03-ggs-launch-oracle.png " ")
 
@@ -139,7 +142,8 @@ You may now **proceed to the next lab**.
 
 ## Learn more
 
-* [Add TRANDATA](https://docs.oracle.com/en/middleware/goldengate/core/21.3/coredoc/extract-adding-extract.html#GUID-5848749D-282E-4DA9-9D65-00C34ED5F3BF)
+* [Enable TRANDATA](https://docs.oracle.com/en/middleware/goldengate/core/21.3/coredoc/extract-adding-extract.html#GUID-5848749D-282E-4DA9-9D65-00C34ED5F3BF)
+* [Add an Extract for Oracle Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/#articletitle)
 
 You may now **proceed to the next lab**.
 
