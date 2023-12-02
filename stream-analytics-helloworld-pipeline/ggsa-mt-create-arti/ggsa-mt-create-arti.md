@@ -21,29 +21,7 @@ In this Lab you will:
   [Click here to download file.](./files/BusStream.json?download=1)
 
 
-## **Task 1:** Log in to GoldenGate Stream Analytics
-
-You should be already logged in after completing the lab *Initialize Environment*. If that's not the case, perform the following:
-
-1. Double click on the *Get Started with Your Workshop* icon on the upper left corner in your remote desktop to launch a fresh browser session.
-
-    ![Get Started with your Workshop](../initialize-environment/images/get-started-icon.png "")
-
-2. On the web browser window on the right preloaded with *GoldenGate Stream Analytics* login page, provide the credentials below to login:
-
-    - Username
-
-    ```
-    <copy>osaadmin</copy>
-    ```
-
-    - Password
-
-    ```
-    <copy>xY3q3svdHt8=</copy>
-    ```
-
-## **Task 2:** Create a Kafka Connection
+## **Task 1:** Create a Kafka Connection
 
 1. On the **Catalog** page, click **Create New Item**, and select **Connection**.
 
@@ -65,7 +43,7 @@ You should be already logged in after completing the lab *Initialize Environment
     ![Testing a Kafka Connection](./images/KafkaConn2.PNG "")
 
 
-## **Task 3:** Create a File Stream
+## **Task 2:** Create a File Stream
 
 1. On the Catalog page, **Create New Item**, and select **Stream**.
 
@@ -92,7 +70,7 @@ You should be already logged in after completing the lab *Initialize Environment
 
 6. Click **Save**.
 
-## **Task 4:** Create a GeoFence
+## **Task 3:** Create a GeoFence
 
 1. On the Catalog page, **Create New Item**, and select **Geo Fence**.
 
@@ -164,7 +142,7 @@ You should be already logged in after completing the lab *Initialize Environment
 
 * [Transform and Analyze Data Streams](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/creating-pipeline-transform-and-analyze-data-streams.html#GUID-9DB9B57A-1095-4557-ACB9-816A696EB121)
 
-* [Installing GoldenGate Stream Analytics](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/install/how-install-goldengate-stream-analytics.html#GUID-13BC895D-6AD1-4398-98E2-B5BE5B14D26B).
+* [Installing GoldenGate Stream Analytics](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/install-and-upgrade.html#GUID-A687DFF0-728A-4071-947A-F3E90ABF65F6).
 
 * [GoldenGate Stream Analytics on Oracle Cloud Marketplace](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/osamp/getting-started-goldengate-stream-analytics-oci.html#GUID-B488861E-1C43-4177-A1F8-40F8E44754AD).
 
