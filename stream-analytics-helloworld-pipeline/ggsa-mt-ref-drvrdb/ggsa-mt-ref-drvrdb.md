@@ -23,7 +23,7 @@ This Lab assumes you have:
 3. Add a correlation condition:
   - Select **driver _ id** from the first drop-down, **equals** from the operator drop-down, and **Bus_DriveNo** from the drop-down.
 
-![Adding a Database Reference](./images/AddRef.PNG "")
+![Adding a Database Reference](./images/addref.png "")
 
 
 ## Learn More

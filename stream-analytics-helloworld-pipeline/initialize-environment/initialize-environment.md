@@ -168,7 +168,7 @@ If for any reason you want to login from a location that is external to your rem
     - Password
 
     ```
-    <copy>xY3q3svdHt8=</copy>
+    <copy>welcome1</copy>
     ```
 
     - URL

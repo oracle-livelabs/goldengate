@@ -40,7 +40,7 @@ The SpeedViolation Business Rules page is displayed. The values you provide on t
  - For the IF clause, select **BUS_Hwy** from the **Select a field** drop-down list, and **equals (case sensitive)** from the **Select an operator** drop-down list, leave the **Enter a value** blank.
  - For the THEN clause, select **BUS_Hwy** from the **SET** drop-down list, enter **UNKNOWN** in the **TO** field.
 
- ![Adding a rule for highway name](./images/DFLT_HWY.PNG "")
+ ![Adding a rule for highway name](./images/dflt-hwy.PNG "")
 
  
 ## **Task 3:** Add a Rule to identify Reckless Driving
@@ -51,7 +51,7 @@ The SpeedViolation Business Rules page is displayed. The values you provide on t
  - For the IF clause, select **Bus_Speed** from the **Select a field** drop-down list, and **greater than** from the **Select an operator** drop-down list, and **60** in the **Enter a value** text field.
  - For the THEN clause, select **status** from the **SET** drop-down list, enter **RECKLESS** in the **TO** field.
 
- ![Business Rule to identify Reckless driving](./images/Reckless.PNG "")
+ ![Business Rule to identify Reckless driving](./images/reckless.png "")
  
 ## **Task 4:** Add a Rule to identify Major Speed Violations
 1. On the **Rules** tab of the **SpeedViolation** page, enter the following details:
@@ -62,7 +62,7 @@ The SpeedViolation Business Rules page is displayed. The values you provide on t
  - Click the **Add a Condition** link and select **Bus_Speed** from the **Select a field** drop-down list, and **lower than or Equals** from the **Select an operator** drop-down list, enter **60** in the **Enter a value** field.
  - For the THEN clause, select **status** from the **SET** drop-down list, enter **MAJOR** in the **TO** field.
 
-  ![Business Rule to identify Major Speed Violation](./images/Major.PNG "")
+  ![Business Rule to identify Major Speed Violation](./images/major.png "")
 
 ## **Task 5:** Add a Rule to identify Minor Speed Violations
 1. On the **Rules** tab of the **SpeedViolation** page, enter the following details:
@@ -73,7 +73,7 @@ The SpeedViolation Business Rules page is displayed. The values you provide on t
  - Click the **Add a Condition** link and select **Bus_speed** from the **Select a field** drop-down list, and **lower than or Equals** from the **Select an operator** drop-down list, enter **45** in the **Enter a value** field.
  - For the THEN clause, select **status** from the **SET** drop-down list, enter **MINOR** in the **TO** field.
 
-  ![Business Rule to identify Minor Speed Violation](./images/Minor.PNG "")
+  ![Business Rule to identify Minor Speed Violation](./images/minor.png "")
 ## Learn More
 
 * [Transform and Analyze Data Streams](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/creating-pipeline-transform-and-analyze-data-streams.html#GUID-9DB9B57A-1095-4557-ACB9-816A696EB121)

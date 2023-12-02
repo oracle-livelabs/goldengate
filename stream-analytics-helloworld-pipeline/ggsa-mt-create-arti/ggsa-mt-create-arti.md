@@ -18,7 +18,7 @@ In this Lab you will:
 
 ### Prerequisite
 - A json file with the sample data to be used in this tutorial:
-  [Click here to download file.](./files/BusStream.json?download=1)
+  [Click here to download file.](./files/busstream.json?download=1)
 
 
 ## **Task 1:** Create a Kafka Connection
@@ -34,13 +34,13 @@ In this Lab you will:
     -  In the **Tags** field, enter **transportation, tutorial**.
     -  In the **Connection Type** drop-down, the selected connection is displayed. **Kafka** in this example.
 
-    ![Creating a Kafka Connection](./images/KafkaConn1.PNG "")
+    ![Creating a Kafka Connection](./images/kafka-conn1.PNG "")
 
 4. On the **Connection Details** page, enter **localhost** in the **Zookeepers** field.
 
 5. Click **Test Connection**, and wait till the status is successful. Click **Save**.
 
-    ![Testing a Kafka Connection](./images/KafkaConn2.PNG "")
+    ![Testing a Kafka Connection](./images/kafka-conn2.png "")
 
 
 ## **Task 2:** Create a File Stream
@@ -55,18 +55,20 @@ In this Lab you will:
     - In the **Tags** field, enter **transportation, tutorial**.
     - In the **Stream Type** drop-down, the selected stream is displayed. **File** in this example.
 
+    ![Selecting Type Properties for the Stream file](./images/filestream1.png "")
+
 4. On the **Source Details** page:
-    - Click **Upload** to upload the **BusStream.json** file that you downloaded earlier.
+    - Click **Upload** to upload the **busstream.json** file that you downloaded earlier.
     - Select **JSON** from the **Data Format** drop-down.
 
-    ![Uploading an input stream file](./images/UploadJsonfile.PNG "")
+    ![Uploading an input stream file](./images/upload-jsonfile.PNG "")
 
 5. On the **Shape** page:
     -  Select the **Infer Shape** option and click **Infer**.
     -  Wait till the Shape is successfully inferred from the input stream.
     -  In the **Shape Name** field, enter **BusStream**.
 
-    ![Inferring a Shape](./images/FileStream3.PNG "")
+    ![Inferring a Shape](./images/filestream3.png "")
 
 6. Click **Save**.
 
@@ -77,15 +79,17 @@ In this Lab you will:
 2. Select **Geo Fence** from the submenu, to display the **Create Geo Fence** screen.
 
 3. On the **Type Properties** screen, enter the following details:
-    - In the **Name** field, enter **AtlantaRegion**.
+    - In the **Name** field, enter **AtlantaRegions**.
     - In the **Display Name** field, enter a display name for the geo fence. If left blank, the **Name** field value is copied.
-    - In the **Description** field, enter **Geofence around Atlanta**.
+    - In the **Description** field, enter **Geofence to include Atlanta Regions**.
     - In the **Tags** field, enter **transportation, tutorial**.
     - In the **Geo Fence Type** drop-down, select **Manually Created Geo Fence**.
 
+![Selecting Type Properties for the Manual Geofence](./images/geofence1.png "")
+
 4. Click **Save**. A page with the world map is displayed. Mark a geo fence around Atlanta. Use the **Marquee Zoom** to zoom-in a specific area.
 
-![Creating a Manual Geofence](./images/CreateGeoFence.PNG "")
+![Creating a Manual Geofence](./images/create-geofence.png "")
 
 5. On top left of the page, click the **Polygon** tool on the toolbar and do the following:
     - Start marking the geofence on the map. When you are done, click the **Polygon** tool again.
@@ -106,14 +110,14 @@ In this Lab you will:
     - In the **Display Name** field, enter a display name for the Connection. If left blank, the **Name** field value is copied.
     - In the **Tags** field, enter **tutorial, transportation**.
 
-![Creating a Database Connection](./images/DBConn1.PNG "")
+![Creating a Database Connection](./images/db-conn1.PNG "")
 
 
 4. On the **Connection Details** page, enter the following details:
     - In the **database** field, select **MySQL** from the dropdown.
     - In the **jdbc url** field, enter **jdbc:mysql://OSA _ DEMO:Welcome123!@localhost:3306/OSA _ DEMO**.
 
-![Creating a Database Connection](./images/DBConn2.PNG "")
+![Creating a Database Connection](./images/db-conn2.PNG "")
 
 5. Click **Test Connection**, and wait till the status is successful. Click **Save**.
 
@@ -129,14 +133,17 @@ In this Lab you will:
     - In the **Description**, enter **Database Reference to fetch Driver Details**.
     - In the **Tags** field, enter **tutorial, transportation**.
 
+![Selecting Type Properties for the Database Reference](./images/ref1.png "")
+
 4. On the **Source Details** page, select the **LocalMySQLDB** connection that you created earlier, and click **Next**.
 
-![Selecting a Database Connection](./images/Ref2.PNG "")
+![Selecting a Database Connection](./images/ref2.png "")
 
 5. On the **Shape** page, select **driver_details** from the **Shape Name** drop-down. Click **Save**.
 
-![Selecting a Database Table](./images/Ref3.PNG "")
+![Selecting a Database Table](./images/ref3.png "")
 
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

@@ -31,22 +31,22 @@ This Lab assumes you have:
     -  In the **Tags** field, enter **transportation,tutorial**.
     -  In the **Target Type** drop-down, the selected target is displayed. **Kafka** in this example. Click **Next**.
 
-![Creating a Kafka Target](./images/CreateTarget.PNG "")
+![Creating a Kafka Target](./images/createtarget.png "")
 
 4. On the **Target Details** screen, enter the following details:
     - From the **Connection** drop-down list, select the **LocalKafka** connection that you had earlier created.
     - In the **Topic name** field, enter **LocalKafka****.
     - From the **Data Format** drop-down, select **JSON**. Click **Next**.
 
-![Adding Target Details](./images/TargetDet.PNG "")
+![Adding Target Details](./images/targetdet.png "")
 
-5. On the **Data Format** page, check the **Create nested json object** option. Click **Next**.
+5. On the **Data Format** screen, check the **Create nested json object** option. Click **Next**.
 
-6. On the **Shape** page: 
+6. On the **Shape** screen: 
     - Check the **Select Existing Shape** option.
     - From the **Select Existing Shape** drop-down list, select **driver_details**. All the fields in the selected shape are displayed. Select the fields to include in the target.
 
-![Assigning Target Shape](./images/TarShape.PNG "")
+![Assigning Target Shape](./images/tarshape.png "")
 
 ## **Task 2:** Use the Target in Your Pipeline
 
@@ -56,19 +56,23 @@ This Lab assumes you have:
 
 3. Select **Target** .
 
+![Adding a Target from the Pipeline Editor](./images/addtarget.png "")
+
 4. On the **Create Target Stage** page:
 
     - In the name field, enter **ReportViolations**.
     - In the **Description** field, enter **Report Violations to a downstream application**.
     - Click **Save**.
 
-5. On the **Target Mapping** page, select the **ReportViolations** target that you created in **Task 1**.
+![Creating a Target from the Pipeline Editor](./images/pipetar.png "")
 
-![Target Mapping in Pipeline Editor](./images/TarMap.PNG "")
+5. On the **Target Mapping** page, select the **ReportViolations** target.
+
+![Target Mapping in Pipeline Editor](./images/tarmap.png "")
 
 The Live Output table for the selected Target:
 
-![Report Violations Traget Live Output](./images/TargetLivOP.PNG "")
+![Report Violations Traget Live Output](./images/target-liv-op.png "")
 
 
 ## Learn More

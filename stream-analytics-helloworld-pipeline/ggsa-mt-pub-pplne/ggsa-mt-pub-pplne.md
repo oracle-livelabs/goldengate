@@ -21,20 +21,20 @@ This Lab assumes you have:
 1. On the **Catalog** page, click the draft **MonitorPublicTransport** pipeline.
 2. In the Pipeline Editor, click **Publish**.
 
-![Publish Pipeline from the Pipeline Editor](./images/PubPPlneEditor.PNG "")
+![Publish Pipeline from the Pipeline Editor](./images/pub-pplne-editor.png "")
 
 3. You can also publish a pipeline from the **Catalog** page using the **Publish** option in the Actions menu.
 
-![Publish Pipeline from the Catalog Page](./images/PubPPlneCat.PNG "")
+![Publish Pipeline from the Catalog Page](./images/pub-pplne-cat.png "")
 
 4. In both the publish methods, the **Pipeline Settings** dialog box opens, retain the default settings. 
 5. Click **Publish**.
 
-![Publish Pipeline from the Pipeline Editor](./images/PubPPlneSettings.PNG "")
+![Publish Pipeline from the Pipeline Editor](./images/pub-pplne-settings.png "")
 
 A confirmation message appears when the pipeline is published. The pipeline status changes from **Draft** to **Running**.
 
-![Publish Pipeline from the Pipeline Editor](./images/PublishedPPlne.PNG "")
+![Publish Pipeline from the Pipeline Editor](./images/published-pplne.png "")
 
 
 
