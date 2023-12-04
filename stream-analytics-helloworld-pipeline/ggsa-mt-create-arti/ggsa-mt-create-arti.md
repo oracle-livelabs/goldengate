@@ -1,5 +1,5 @@
 
-# Create Artifacts for Your Stream Analytics Pipeline
+# Create artifacts for the Stream Analytics pipeline
 
 ## Introduction
 
@@ -16,7 +16,9 @@ In this Lab you will:
 - Create a Database Connection
 - Create a Database Reference
 
-### Prerequisite
+### Prerequisites
+
+- You should have successfully completed all the previous labs.
 - A json file with the sample data to be used in this tutorial:
   [Click here to download file.](./files/busstream.json?download=1)
 
@@ -143,7 +145,7 @@ In this Lab you will:
 
 ![Selecting a Database Table](./images/ref3.png "")
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Learn More
 

@@ -1,9 +1,9 @@
 
-# Configure Graphical Views in your Stream Analytics Pipeline
+# Configure graphical views in the Stream Analytics pipeline
 
 ## Introduction
 
-This lab walks you through steps to configure Graphical Views in a Stream Analytics pipeline, to visualize traffic conditions in a marked geograhical location.
+This lab walks you through steps to configure graphical views in a Stream Analytics pipeline, to visualize traffic conditions in a marked geograhical location.
 
 
 *Estimated Time*: 15 minutes
@@ -14,9 +14,7 @@ In this Lab you will:
 - Configure a Bar Chart Visualization
 
 ### Prerequisites
-This Lab assumes you have:
-- A Free Tier, Paid, or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+You should have successfully completed all the previous labs.
 
 ## **Task 1:** Configure a Geo Spatial Visualization for Spatial Analytics of Vehicles in a marked geographical area
 1. Click **Visualizations** tab of the **SpeedViolation** Business Rules page:
@@ -66,6 +64,8 @@ The map is updated instantly as the new data arrives, displaying different drivi
  The Bar chart displays the highways with the lower-than-average speeds that are currently experiencing traffic congestion.
 
     ![Bar Graph displaying Traffic Congestion](./images/barvis2.png "")
+
+    You may now **proceed to the next lab**.
 
 ## Learn More
 

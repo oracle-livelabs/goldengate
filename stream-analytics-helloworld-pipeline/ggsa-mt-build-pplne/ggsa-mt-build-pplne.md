@@ -1,5 +1,5 @@
 
-# Build Your Stream Analytics Pipeline
+# Build the Stream Analytics pipeline
 
 ## Introduction
 
@@ -14,10 +14,7 @@ In this Lab you will:
 - Create a Query Stage to Ignore Stationary Vehicles
 
 ### Prerequisites
-This Lab assumes you have:
-- A Free Tier, Paid, or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
-- Completed [Lab 4: Create Artifacts for Your Stream Analytics Pipeline.] (#prev)
+You should have successfully completed all the previous labs.
 
 ## **Task 1:** Create a Pipeline
 
@@ -68,6 +65,7 @@ The pipeline is created and displayed. Listening for events begins, and then str
   
 ![Adding a Range and Frequency to the Pattern](./images/ran-freq.PNG "")
 
+You may now **proceed to the next lab**.
 
 ## Learn More
 

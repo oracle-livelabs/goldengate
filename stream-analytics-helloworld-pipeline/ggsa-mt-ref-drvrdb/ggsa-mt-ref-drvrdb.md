@@ -1,5 +1,5 @@
 
-# Add a Reference to the Driver Details Table in the Local Database
+# Add a Database Reference to the Stream Analytics pipeline
 
 ## Introduction
 
@@ -12,9 +12,7 @@ In this Lab you will:
 - Add the Driver Details Reference in the Pipeline
 
 ### Prerequisites
-This Lab assumes you have:
-- A Free Tier, Paid, or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+You should have successfully completed all the previous labs.
 
 ## **Task 1:** Add a Database Reference to fetch Driver Details
 
@@ -25,6 +23,7 @@ This Lab assumes you have:
 
 ![Adding a Database Reference](./images/addref.png "")
 
+You may now **proceed to the next lab**.
 
 ## Learn More
 

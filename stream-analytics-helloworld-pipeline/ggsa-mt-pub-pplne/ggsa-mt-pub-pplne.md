@@ -1,5 +1,5 @@
 
-# Publish the Stream Analytics Pipeline
+# Publish the Stream Analytics pipeline
 
 ## Introduction
 
@@ -12,9 +12,7 @@ In this Lab you will:
 - Publish Your Stream Analytics Pipeline to Monitor Public Transport System
 
 ### Prerequisites
-This Lab assumes you have:
-- A Free Tier, Paid, or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+You should have successfully completed all the previous labs.
 
 ## **Task 1:** Publish the MonitorPublicTransport Pipeline
 

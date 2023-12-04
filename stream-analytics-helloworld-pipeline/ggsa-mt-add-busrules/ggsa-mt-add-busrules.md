@@ -1,5 +1,5 @@
 
-# Add Business Rules to Your Stream Analytics Pipeline
+# Add business rules to the Stream Analytics pipeline
 
 ## Introduction
 
@@ -18,9 +18,7 @@ In this Lab you will:
 
 
 ### Prerequisites
-This Lab assumes you have:
-- A Free Tier, Paid, or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+You should have successfully completed all the previous labs.
 
 ## **Task 1:** Create a Rule Stage
 
@@ -74,6 +72,9 @@ The SpeedViolation Business Rules page is displayed. The values you provide on t
  - For the THEN clause, select **status** from the **SET** drop-down list, enter **MINOR** in the **TO** field.
 
   ![Business Rule to identify Minor Speed Violation](./images/minor.png "")
+
+  You may now **proceed to the next lab**.
+
 ## Learn More
 
 * [Transform and Analyze Data Streams](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/creating-pipeline-transform-and-analyze-data-streams.html#GUID-9DB9B57A-1095-4557-ACB9-816A696EB121)

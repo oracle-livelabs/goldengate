@@ -1,5 +1,5 @@
 
-# Define a Target in your Stream Analytics Pipeline
+# Define a Target in the Stream Analytics pipeline
 
 ## Introduction
 
@@ -14,9 +14,7 @@ In this Lab you will:
 - Use the Target in Your Pipeline
 
 ### Prerequisites
-This Lab assumes you have:
-- A Free Tier, Paid, or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+You should have successfully completed all the previous labs.
 
 ## **Task 1:** Create a Target
 
@@ -74,6 +72,7 @@ The Live Output table for the selected Target:
 
 ![Report Violations Traget Live Output](./images/target-liv-op.png "")
 
+You may now **proceed to the next lab**.
 
 ## Learn More
 
