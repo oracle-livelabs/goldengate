@@ -84,9 +84,9 @@ In this lab, you will:
 
 13. On the GoldenGate details screen, for Choose a deployment type, select **Stream analytics**.
 
-14. For GoldenGate Instance Name, enter **ggsinstance**.
+14. For GoldenGate Instance Name, enter **ggsa**.
 
-15. For Administrator Username, enter **oggadmin**.
+15. For Administrator Username, enter **osaadmin**.
 
 16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
