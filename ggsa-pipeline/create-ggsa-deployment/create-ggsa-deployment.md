@@ -90,7 +90,7 @@ In this lab, you will:
 
 16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
+    ![GoldenGate details](./images/create_deployment_2.png " ")
 
 17. In the Create secret panel, enter `LLsecret`.
 
