@@ -260,10 +260,10 @@ To successfully complete this lab in your own tenancy, you must have access to O
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
 
-8. Run the **alter user** command to unlock the **ggadmin** user and set the password for it.
+8. Run the **alter user** command to unlock the **ggadmin** user and set the password for it. Take note of the password. 
 
     ```
-    <copy>alter user ggadmin identified by Or4cl3##2023 account unlock;</copy>
+    <copy>alter user ggadmin identified by <password> account unlock;</copy>
     ```
 
 You may now **proceed to the next lab**.

@@ -1,4 +1,4 @@
-# Add and run the Extract
+# Create and run the Extract
 
 ## Introduction
 
