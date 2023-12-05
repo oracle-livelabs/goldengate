@@ -88,13 +88,21 @@ In this lab, you will:
 
 15. For Administrator Username, enter **osaadmin**.
 
-16. For Administrator Password, click **Copy value** for **Admin Password** in Terraform Values section of your Reservation Information panel.
+16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![Terraform values](./images/02-16-terraformvalues.png " ")
+    ![GoldenGate details](./images/create_deployment_2.png " ")
 
-17. Click **Create**.
+17. In the Create secret panel, enter `LLsecret`.
 
-    ![Completed GoldenGate details](./images/create_deployment_2.png " ")
+18. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+
+    > **NOTE**: The special characters must not be $, ^, or ?. 
+
+    ![Create Password secret](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-17-passwordsecret.png " ")
+
+19. Confirm the password, and then click **Create**.
+
+20. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 
 You're brought to the Deployment details page. Continue with the following tasks while the deployment creates. Its status changes from CREATING to ACTIVE when it's ready for you to use.
 
@@ -222,5 +230,5 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2023
+* **Last Updated By/Date** - Jenny Chan, November 2023
 
