@@ -65,7 +65,7 @@ The map is updated instantly as the new data arrives, displaying different drivi
 
     ![Bar Graph displaying Traffic Congestion](./images/barvis2.png "")
 
-    You may now **proceed to the next lab**.
+       You may now **proceed to the next lab**.
 
 ## Learn More
 
