@@ -38,7 +38,7 @@ The SpeedViolation Business Rules page is displayed. The values you provide on t
  - For the IF clause, select **BUS_Hwy** from the **Select a field** drop-down list, and **equals (case sensitive)** from the **Select an operator** drop-down list, leave the **Enter a value** blank.
  - For the THEN clause, select **BUS_Hwy** from the **SET** drop-down list, enter **UNKNOWN** in the **TO** field.
 
- ![Adding a rule for highway name](./images/dflt-hwy.PNG "")
+ ![Adding a rule for highway name](./images/dflt-hwy.png "")
 
  
 ## **Task 3:** Add a Rule to identify Reckless Driving
