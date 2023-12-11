@@ -63,7 +63,7 @@ The pipeline is created and displayed. Listening for events begins, and then str
     - For **IgnoreStationaryVehicle**, click the Timer icon in the second row below **Sources**.
     - Enter a **range** of 10 seconds and **evaluation frequency** of 10 seconds. PatternGeoFenceInside 10s/10s is displayed.
   
-![Adding a Range and Frequency to the Pattern](./images/ran-freq.PNG "")
+![Adding a Range and Frequency to the Pattern](./images/ran-freq.png "")
 
 You may now **proceed to the next lab**.
 
