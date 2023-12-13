@@ -47,7 +47,7 @@ The pipeline is created and displayed. Listening for events begins, and then str
     - For **Object Key** select **BUStripid**.
     - For **Coordination System** accept the default value **8307**.
 
-    ![Adding Parameters to the Geo Filter](./images/geofilter.png "")
+    ![Adding Parameters to the Geo Filter](./images/gfilter.png "")
 
 
 ## **Task 3:** Create a Query Stage to Ignore Stationary Vehicles
@@ -63,7 +63,7 @@ The pipeline is created and displayed. Listening for events begins, and then str
     - For **IgnoreStationaryVehicle**, click the Timer icon in the second row below **Sources**.
     - Enter a **range** of 10 seconds and **evaluation frequency** of 10 seconds. PatternGeoFenceInside 10s/10s is displayed.
   
-![Adding a Range and Frequency to the Pattern](./images/ran-freq.png "")
+![Adding a Range and Frequency to the Pattern](./images/ranfreq.png "")
 
 You may now **proceed to the next lab**.
 
