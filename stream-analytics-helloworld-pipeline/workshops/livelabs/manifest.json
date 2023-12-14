@@ -19,7 +19,7 @@
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 4: Create Your HelloWorld Pipeline",
+      "title": "Lab 3: Create Your HelloWorld Pipeline",
       "description": "How to create a basic pipeline using a File stream and add a Query Stage and a Filter to it,",
       "filename": "../../1-ggsa-hwp/1-ggsa-hwp.md"
     },

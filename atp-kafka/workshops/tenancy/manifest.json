@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Replicate data from Autonomous Transaction Processing to Apache Kafka",
+    "workshoptitle": "Replicating Data to Apache Kafka Using OCI GoldenGate",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {

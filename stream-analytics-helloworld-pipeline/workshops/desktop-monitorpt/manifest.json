@@ -1,11 +1,11 @@
 {
-  "workshoptitle": "Create a Pipeline in 15 minutes with GoldenGate Stream Analytics",
+  "workshoptitle": "Monitor public transportation using GoldenGate Stream Analytics",
   "help": "livelabs-help-license_us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
       "description": "Introduction",
-      "filename": "../../introduction/introduction.md"
+      "filename": "../../introduction/intro-mt.md"
     },
     {
       "title": "Get Started with noVNC Remote Desktop",
@@ -19,9 +19,38 @@
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 2: Create Your HelloWorld Pipeline",
-      "description": "How to create a basic pipeline using a File stream and add a Query Stage and a Filter to it,",
-      "filename": "../../1-ggsa-hwp/1-ggsa-hwp.md"
+      "title": "Lab 2: Create artifacts for the Stream Analytics pipeline",
+      "description": "How to create Artifacts for a Stream Analytics pipeline to monitor public transport in a specifed region,",
+      "filename": "../../ggsa-mt-create-arti/ggsa-mt-create-arti.md"
+    },
+    {
+      "title": "Lab 3: Build the Stream Analytics pipeline",
+      "description": "How to build a Stream Analytics pipeline to monitor public transport in a specifed region,",
+      "filename": "../../ggsa-mt-build-pplne/ggsa-mt-build-pplne.md"
+    },
+    {
+      "title": "Lab 4: Add business rules to the Stream Analytics pipeline",
+      "description": "How to Add Business Rules to a Stream Analytics Pipeline, to monitor public transport in a specifed region,",
+      "filename": "../../ggsa-mt-add-busrules/ggsa-mt-add-busrules.md"
+    },{
+      "title": "Lab 5: Add a Database Reference to the Stream Analytics pipeline",
+      "description": "How to Add a Database Reference to a Stream Analytics pipeline,",
+      "filename": "../../ggsa-mt-ref-drvrdb/ggsa-mt-ref-drvrdb.md"
+    },
+    {
+      "title": "Lab 6: Configure graphical views in the Stream Analytics pipeline",
+      "description": "How to configure Graphical Views in the Stream Analytics pipeline,",
+      "filename": "../../ggsa-mt-graphviews/ggsa-mt-graphviews.md"
+    },
+    {
+      "title": "Lab 7: Define a Target in the Stream Analytics pipeline",
+      "description": "How to define a Target in the Stream Analytics pipeline,",
+      "filename": "../../ggsa-mt-target/ggsa-mt-target.md"
+    },
+    {
+      "title": "Lab 8: Publish the Stream Analytics pipeline",
+      "description": "How to publish the Stream Analytics pipeline,",
+      "filename": "../../ggsa-mt-pub-pplne/ggsa-mt-pub-pplne.md"
     },
     {
       "title": "Need Help?",
