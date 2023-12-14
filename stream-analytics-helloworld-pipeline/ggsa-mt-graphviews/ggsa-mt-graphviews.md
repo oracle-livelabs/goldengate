@@ -29,7 +29,7 @@ You should have successfully completed all the previous labs.
        4. From the **Long** drop-down list, select **BUSlong**.
        5. From the **Key** drop-down list, select **BUStripId**.
 
- ![Geo Spatial Visualization Parameters](./images/geospat.png "") 
+ ![Geo Spatial Visualization Parameters](./images/geospa.png "") 
 
 4. On the **Customizations** tab, click **+** and specify the following values:
        1. Select **Violation**, from the **Field** drop-down list.
@@ -38,11 +38,11 @@ You should have successfully completed all the previous labs.
        4. Assign a marker color from the **Style** tab, to represent each violation type.
        5. Click **Create**.
 
-    ![Geo Spatial Visualization Speed Violation Type](./images/geospatcust.png "")
+    ![Geo Spatial Visualization Speed Violation Type](./images/gscust.png "")
 
 The map is updated instantly as the new data arrives, displaying different driving behaviors.
     
-![Geo Spatial Visualization](./images/custmap.png "")
+![Geo Spatial Visualization](./images/cmap.png "")
 
 ## **Task 2:** Configure a Bar Chart Visualization to view Highway Activity 
 
@@ -57,15 +57,15 @@ The map is updated instantly as the new data arrives, displaying different drivi
        5. From the **X Axis Field Selection** drop-down list, select **Bus_Hwy**.
        6. In the **Axis Label** field, enter **HWY**.
 
-    ![Create Bar Visualization](./images/barvis.png "")      
+    ![Create Bar Visualization](./images/barvis1.png "")      
 
 4. Click **Create**.
   
  The Bar chart displays the highways with the lower-than-average speeds that are currently experiencing traffic congestion.
 
-    ![Bar Graph displaying Traffic Congestion](./images/barvis2.png "")
+    ![Bar Graph displaying Traffic Congestion](./images/bar-vis2.png "")
 
-    You may now **proceed to the next lab**.
+       You may now **proceed to the next lab**.
 
 ## Learn More
 
