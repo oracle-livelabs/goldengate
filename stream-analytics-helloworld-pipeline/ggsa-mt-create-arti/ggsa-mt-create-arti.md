@@ -63,7 +63,7 @@ In this Lab you will:
     - Click **Upload** to upload the **busstream.json** file that you downloaded earlier.
     - Select **JSON** from the **Data Format** drop-down.
 
-    ![Uploading an input stream file](./images/upload-jsonfile.png "")
+    ![Uploading an input stream file](./images/upload-json-file.png "")
 
 5. On the **Shape** page:
     -  Select the **Infer Shape** option and click **Infer**.
@@ -112,14 +112,14 @@ In this Lab you will:
     - In the **Display Name** field, enter a display name for the Connection. If left blank, the **Name** field value is copied.
     - In the **Tags** field, enter **tutorial, transportation**.
 
-![Creating a Database Connection](./images/db-conn1.png "")
+![Creating a Database Connection](./images/db-conn-1.png "")
 
 
 4. On the **Connection Details** page, enter the following details:
     - In the **database** field, select **MySQL** from the dropdown.
     - In the **jdbc url** field, enter **jdbc:mysql://OSA _ DEMO:Welcome123!@localhost:3306/OSA _ DEMO**.
 
-![Creating a Database Connection](./images/db-conn2.png "")
+![Creating a Database Connection](./images/db-conn-2.png "")
 
 5. Click **Test Connection**, and wait till the status is successful. Click **Save**.
 
