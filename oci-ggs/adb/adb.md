@@ -72,11 +72,17 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
 
-8.  Under **Choose a license type**, select **License Included**.
+8. Under **Access type**, select **Secure access from everywhere**.
+
+9.  Select **Require mutual TLS (mTLS) authentication**. ***upload image to gg commons?***
+
+    ![Choose network access options](./images/02-09-choose-network-access.png " ")
+
+10.  Under **Choose a license type**, select **License Included**. or ... Under **Choose license and Oracle Database edition**, keep the **License Included** license type. ***change image on gg commons?***
 
     ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
 
-9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
+11.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 
 ## Task 3: Load the ATP schema
@@ -91,7 +97,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-03-atp.png " ")
 
-4.  On the Autonomous Database details page, click **Database actions**.
+4.  On the SourceATP Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions** directly, and then select **SQL** from the Database actions page. ***ggs-commons already updated just need to push***
 
     ![ATP details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-dbdetails.png)
 
@@ -99,33 +105,29 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
 
-6.  From the Database Actions menu, under **Development**, select **SQL**.
+6.  (Optional) Close the Help dialog.
 
-    ![Database Actions page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-06-db-actions.png " ")
-
-7.  (Optional) Close the Help dialog.
-
-8.  Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** into the SQL Worksheet.
+7.  Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** into the SQL Worksheet.
 
     ![Pasted script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-08-atp-sql.png " ")
 
-9.  Click **Run Script**. The Script Output tab displays confirmation messages.
+8.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
-10. Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SRC\_USER\_SEED\_DATA.sql** a new SQL Worksheet.
+9. Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SRC\_USER\_SEED\_DATA.sql** a new SQL Worksheet.
 
     ![Pasted schema script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-10-atp-schema.png " ")
 
-11. Click **Run Script**. The Script Output tab displays confirmation messages.
+10. Click **Run Script**. The Script Output tab displays confirmation messages.
 
 	> **Note:** If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.
 
-12. Close the SQL window and then reopen it from Database Actions again.
+11. Close the SQL window and then reopen it from Database Actions again.
 
-13. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
+12. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
 
     ![Displays the SRC\_OCIGGLL tables](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-11-verify.png " ")
 
-14. To enable supplemental logging, run the following command:
+13. To enable supplemental logging, run the following command:
 
     ```
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
@@ -157,15 +159,21 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
 
-8.  Under **Choose a license type**, select **License Included**.
+8. Under **Access type**, select **Secure access from everywhere**.
+
+9.  Select **Require mutual TLS (mTLS) authentication**. ***upload image to gg commons?***
+
+    ![Choose network access options](./images/02-09-choose-network-access.png " ")
+
+10.  Under **Choose a license type**, select **License Included**. or ... Under **Choose license and Oracle Database edition**, keep the **License Included** license type. ***change image on gg commons?***
 
     ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
 
-9.  Click **Create Autonomous Database**. After it finishes provisioning, you can click on the instance name to see details of it.
+11.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
-10. On the Autonomous Database details page, click **Database Actions**.
+10. On the TargetADW Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions**, and then select **SQL** from the Database actions page. 
 
-11. Log in using the ADMIN username and password set in step 7.
+11. If prompted, log in using the ADMIN username and password set in step 7.
 
 12. Copy and paste the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** into the SQL worksheet, and then click **Run Script**.
 
