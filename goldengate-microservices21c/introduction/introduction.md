@@ -10,10 +10,12 @@ The labs will walk you through all the steps to configure all the components of 
 
 *Estimated Lab Time*: 2 hours
 
-### About Oracle GoldenGate 21c
+## About Oracle GoldenGate 21c
+
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making. This workshop focuses on **GoldenGate Real Time Data Capture** demonstrating how you can use such a setup (both on-premise and in the cloud) to capture real time data changes from your sources.
 
 ### Lab Architecture
+
 ![Image of the Lab Architecture, showing Source, Target and capturing components](./images/gg21c-lab-archi.png " ")
 
 KEY FEATURES
@@ -30,21 +32,23 @@ KEY BENEFITS
 Oracle GoldenGate real-time data streaming platform also allows customers to keep their data reservoirs up to date with their production systems.
 
 ### Objectives
+
 The objectives of the labs is to familiarize you with the process to create data replication objects that will allow you to replicate data real-time using GoldenGate while leveraging Restful APIs.
 
 ### Prerequisites
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* A general understanding of database and data replication concepts using Oracle GoldenGate
+
+- An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+- A general understanding of database and data replication concepts using Oracle GoldenGate
 
 ### Passwords
 
 The passwords for all accounts are:
 
 ```
-Database Accounts (sys/system, etc..): Welcome#123
-GoldenGate Database Users (c##ggate, ggate): Welcome#123
-GoldenGate Admin(oggadmin): oggadmin
-```  
+Database Accounts (sys/system, etc..): <copy>Welcome#123</copy>
+GoldenGate Database Users (c##ggate, ggate): <copy>Welcome#123</copy>
+GoldenGate Admin(oggadmin): <copy>oggadmin</copy>
+```
 
 You may now [proceed to the next lab](#next).
 
@@ -53,6 +57,7 @@ You may now [proceed to the next lab](#next).
 * [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/understanding/getting-started-oracle-goldengate.html#GUID-F317FD3B-5078-47BA-A4EC-8A138C36BD59)
 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration Team, Oracle, November 2020
-* **Contributors** -Zia Khan, Meghana Banka, Rene Fontcha
-- **Last Updated By/Date** - Jan Leemans, update to 21c, Dec-2023
+
+- **Author** - Jan Leemans, December 2023
+- **Contributors** -Carmelo Millan
+- **Last Updated By/Date**
