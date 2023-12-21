@@ -1,0 +1,36 @@
+{
+  "workshoptitle": "Oracle GoldenGate Microservices",
+  "help": "livelabs-help-license_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Introduction to GoldenGate Microservices",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Environment Setup",
+      "description": "Verify Setup of compute instance",
+      "filename": "https://oracle-livelabs.github.io/common/labs/verify-compute/verify-compute-novnc.md"
+    },
+    {
+      "title": "Lab 2: Discover the Environment",
+      "description": "Discovering components",
+      "filename": "../../discover/discover.md"
+    },
+    {
+      "title": "Lab 3: Create a Replication from Oracle to Kafka",
+      "description": "GG Replication",
+      "filename": "../../create-replication/create-replication.md"
+    },
+    {
+      "title": "Lab 4: Run a simulation and observe the results",
+      "description": "Simulate DB activity",
+      "filename": "../../simulate/simulate.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
