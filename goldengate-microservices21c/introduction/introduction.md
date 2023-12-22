@@ -16,7 +16,7 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 
 ### Lab Architecture
 
-![Image of the Lab Architecture, showing Source, Target and capturing components](./images/gg21c-lab-archi.png " ")
+![Image of the Lab Architecture showing Source Target and Capturing components](./images/gg21c-lab-archi.png " ")
 
 KEY FEATURES
 

@@ -48,18 +48,18 @@ This lab assumes you have:
 
 - Click on the **Activities** button in the upper left corner, and select the 3rd "Terminal" icon.
 
-![Opening a Terminal](./images/OpenTerminal.png " ")
+![Opening a Terminal](./images/open-terminal.png " ")
 
 You will be logged in as user **Oracle**, with access to a set of scripts to interact with the various components. You can see the relevant environment variables in the header.
 
-![Initial terminal window](./images/Terminal.png " ")
+![Initial terminal window](./images/one-terminal.png " ")
 
 
 3. In the course of the lab we'll ask you run multiple commands in parallel, so you should open up a second Terminal window.
 
 - Click on the **Terminal** icon on the top right, and select **New Window**
 
-![Second terminal window](./images/2ndTerminal.png " ")
+![Second terminal window](./images/2nd-terminal.png " ")
 
 This will open a second Terminal window.  Arrange the 4 window in a convenient way to easily navigate between them.
 
