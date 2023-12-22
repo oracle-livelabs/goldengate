@@ -50,7 +50,7 @@ GoldenGate Database Users (c##ggate, ggate): <copy>Welcome#123</copy>
 GoldenGate Admin(oggadmin): <copy>oggadmin</copy>
 ```
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Learn More
 

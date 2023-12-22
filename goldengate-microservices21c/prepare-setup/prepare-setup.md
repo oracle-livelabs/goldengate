@@ -70,7 +70,7 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 
 - **Task 1B: Create Stack: Compute only** with an existing VCN where security lists have been updated as per *Step 2* above
     
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

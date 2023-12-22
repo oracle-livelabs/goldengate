@@ -1,4 +1,4 @@
-# GoldenGate Microservices Active-Active
+# Run a simulation and observe the results
 
 ## Introduction
 
@@ -34,120 +34,115 @@ To simulate an active application interacting with a database, we'll be using a 
 
 1. Return to the 2 **Terminal** windows we've opened in the beginning of this lab
 
-- If necessary reorganize the 2 windows to be side by side
+    - If necessary reorganize the 2 windows to be side by side
 
-![Two terminal windows side by side](./images/two-shells.png " ")
+    ![Two terminal windows side by side](./images/two-shells.png " ")
 
-- Ensure you are logged in as user **oracle**
-- Change directory in both terminal windows to the **scripts** subdirectory
+    - Ensure you are logged in as user **oracle**
+    - Change directory in both terminal windows to the **scripts** subdirectory
 
-```
-<copy>cd scripts</copy>
-```
+      ```
+      <copy>cd scripts</copy>
+      ```
 2. Run the **load.sh** script to start injecting data into the Oracle database:
 
-```
-<copy>
-sh load.sh
-</copy>
-```
+    ```
+    <copy>
+    sh load.sh
+    </copy>
+    ```
+    You should see an output as in the below image:
 
-![output load script](./images/load-res.png " ")
+   ![output load script](./images/load-res.png " ")
 
-3. Observe the transactions being inserted into the database
+3. Observe the transactions being inserted into the database: in the **second Terminal** window, run the monitor command to observe the database insertions:
 
-- In the second Terminal window, run the monitor command to observe the database insertions:
+      ```
+      <copy>
+      sh monitor_oracle.sh
+      </copy>
+      ```
 
-```
-<copy>
-sh monitor_oracle.sh
-</copy>
-```
+    - You can see the counter increasing
+    - Interrupt the monitor script with the key combination **Ctrl-C**
 
-![output monitor script oracle](./images/monitor-o.png " ")
+    ![output monitor script oracle](./images/monitor-o.png " ")
 
-- You can see the counter increasing
-- Interrupt the monitor script with the key combination **Ctrl-C**
 
-4. Observe the Kafka topics
+4. List the available Kafka topics:
 
-- List the available Kafka topics:
+    ```
+    <copy>
+    sh list_topics.sh
+    </copy>
+    ```
 
-```
-<copy>
-sh list_topics.sh
-</copy>
-```
+    ![List kafka topics](./images/list-topics.png " ")
 
-![List kafka topics](./images/list-topics.png " ")
+5. List the events on the Kafka topic **EMPLOYEES**
 
-- List the events on the topic **EMPLOYEES**
+    ```
+    <copy>
+    sh monitor_kafka.sh
+    </copy>
+    ```
 
-```
-<copy>
-sh monitor_kafka.sh
-</copy>
-```
+    ![output monitor script kafka](./images/list-emp.png " ")
 
-- Observe the events on the topic
-
-![output monitor script kafka](./images/list-emp.png " ")
-
-- You can see the database records represented in JSON being made available in the Kaka stream.
+    You can see the database records represented in JSON being made available in the Kaka stream.
 
 ## Task 2: Observe the various GoldenGate dashboards
 
-1. We'll return to the browser window with the GoldenGate Administration Service
+We'll return to the browser window with the GoldenGate Administration Service
 
-- Open the GoldenGate Administration Service on port 10000
-- Select the **oracledb** deployment
-- Open the **Administration Service**
-- Click on the name of the Extract: **E_ORACLE**
+1. Open the GoldenGate Administration Service on port 10000
+2. Select the **oracledb** deployment
+3. Open the **Administration Service**
+4. Click on the name of the Extract: **E_ORACLE**
 
-![Admin tab oracledb deployment](./images/extract.png " ")
+    ![Admin tab oracledb deployment](./images/extract.png " ")
 
-- Now select the tab called **Statistics**
+5. Now select the tab called **Statistics**
 
-![Stats tab](./images/db-stats.png " ")
+    ![Stats tab](./images/db-stats.png " ")
 
-- You should see some records already inserted, and you can use the **Refresh** button to see the counter increase.
+    You should see some records already inserted, and you can use the **Refresh** button to see the counter increase.
 
-2. We can see much more detailed information through the **Performance Metrics** Service
+6. Click on the tab **Performance Metrics Service** on the very top of the window to see much more detailed information
 
-- Click on the tab **Performance Metrics Service** on the very top of the window
-- You get a visual representation of the various services associated with the deployment **oracledb**.  In this case we are interested in the **Extract** process
+    You get a visual representation of the various services associated with the deployment **oracledb**.  In this case we are interested in the **Extract** process
 
-![DB performance tab](./images/db-perf.png " ")
+    ![DB performance tab](./images/db-perf.png " ")
 
-- Click on the box **Extract Running**
+7. Click on the box **Extract Running**
 
-![Process performance](./images/stat-db.png " ")
+    ![Process performance](./images/stat-db.png " ")
 
-- You can see various dashboards associated with the different entities you might be interested in: Process Performance, Trail Files, Database Statistics, etc.
+    You can see various dashboards associated with the different entities you might be interested in: Process Performance, Trail Files, Database Statistics, etc.
 
-![Database statistics](./images/db-stats2.png " ")
+    ![Database statistics](./images/db-stats2.png " ")
 
-- Click on the various tabs to see the statistics
+8. Click on the various tabs to see the statistics
 
-![Trail statistics](./images/db-trail.png " ")
+    ![Trail statistics](./images/db-trail.png " ")
 
-2. We can also look at the statistics on the receiving end.
+9. We can also look at the statistics on the receiving end.
 
-- Open the browser window with the GoldenGate Administration Service on port 10000
-- Select the deployment **bigdata**
-- Click on the service **Performance Metrics Service** on port 10203
+    - Open the browser window with the GoldenGate Administration Service on port 10000
+    - Select the deployment **bigdata**
+    - Click on the service **Performance Metrics Service** on port 10203
 
-![bigdata deployment](./images/bigd.png " ")
+        ![bigdata deployment](./images/bigd.png " ")
 
-- Select the **Replicat** process
+10. Select the **Replicat** process
 
-![bigdata performance](./images/bigd-metr.png " ")
+    ![bigdata performance](./images/bigd-metr.png " ")
 
-- Observe the various dashboards you have available: Process Performance, Trail Files, and more.
+11. Observe the various dashboards you have available: Process Performance, Trail Files, and more.
 
-![big data process performance](./images/bigd-proc.png " ")
+    ![big data process performance](./images/bigd-proc.png " ")
 
-![big data trail performance](./images/bigd-trail.png " ")
+    ![big data trail performance](./images/bigd-trail.png " ")
 
 **Congratulations, you have reached the end of this Lab !**
 

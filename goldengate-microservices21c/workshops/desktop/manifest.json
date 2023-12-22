@@ -18,7 +18,7 @@
       "filename": "../../discover/discover.md"
     },
     {
-      "title": "Lab 2: Create a Replication from Oracle to Kafka",
+      "title": "Lab 2: Setup of the GoldenGate Replication",
       "description": "GG Replication",
       "filename": "../../create-replication/create-replication.md"
     },

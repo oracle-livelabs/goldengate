@@ -38,27 +38,33 @@ This lab assumes you have:
 
 1. Open the GoldenGate Service Manager on port 10000
 
-- In the previous step you already logged in to this console.
-- Select the *Deployment type* = **oracledb**
+    In the previous step you already logged in to this console.
+
+2. Select the *Deployment type* = **oracledb**
+
     ![select oracle deployment](./images/deploy-ora.png " ")
+
     You now only see the four services associated with the Oracle DB Deployment
-- Select the OracleDB Administration service, running on port 10100
-![oracledb deployment filter](./images/show-oradeploy.png " ")
+
+3. Select the OracleDB Administration service, running on port 10100
+
+    ![oracledb deployment filter](./images/show-oradeploy.png " ")
+
     You have to log in again, using the same credentials as before :
     - user = oggadmin
     - password = oggadmin
 
-2. Now select the hamburger icon in the top left to visualize the menu
+4. Now select the hamburger icon in the top left to visualize the menu
 
     ![expand menu on left](./images/ora-admin.png " ")
 
     This displays the menu of the console
 
-- Select the item **Configuration**
+5. Select the item **Configuration**
 
     ![Configuration selection](./images/ora-admin-menu.png " ")
 
-- To create a new Credential, hit the **+** icon
+6. Create a new Credential by clicking the **+** icon
 
     ![Credentials screen](./images/ora-config.png " ")
 
@@ -68,37 +74,42 @@ This lab assumes you have:
     - *User ID*: **C##GGADMIN@ORCLCDB**
     - *Password*: **Welcome#123**
     - *Verify Password*: **Welcome#123**
-    - Hit the **Submit** button
+    - Click the **Submit** button
 
     ![Add credentials screen](./images/ora-create-cred.png " ")
 
     - You can see a new credential has appeared as we defined it.
-    - Test the connection by clicking the small database icon besides the new credential:
+
+7. Test the connection by clicking the small database icon besides the new credential:
 
     ![result of entering credentials](./images/ora-cred-result1.png " ")
 
-    3. We now need to add a TRANDATA table to the database to acquire the transaction records in the database.
+    You can see the login take place, and the section *TRANDATA* appear on the screen.
+
+8. We now need to add a TRANDATA table to the database to acquire the transaction records in the database.
     - Click on the **+** symbol besides the *TRANDATA Information* title
 
-    ![Test connection](./images/ora-cred-result2.png " ")
-    Enter the below parameters:
-    -  *Schema Name*: **ORCLPDB1.SOURCE_APP**
-    - Select **All Columns**
-    - All other parameters remain the default ones
+        ![Test connection](./images/ora-cred-result2.png " ")
+
+    - Enter the below parameters:
+
+        -  *Schema Name*: **ORCLPDB1.SOURCE_APP**
+        - Select **All Columns**
+        - All other parameters remain the default ones
     - Click the **Submit** button
 
-    ![Add trandata](./images/add-trandata.png " ")
+        ![Add trandata](./images/add-trandata.png " ")
 
-    We can now check the tables in the schema specified:
-    - in the search box of the *TRANDATA* section: **ORCLPDB1.SOURCE_APP
+9. We can now check the tables in the schema specified:
+
+    - In the search box of the *TRANDATA* section, type: **ORCLPDB1.SOURCE_APP**
     - click the search icon besides the box
 
-
-    ![check trandata](./images/check-tran.png " ")
+        ![check trandata](./images/check-tran.png " ")
 
     - You can see there is one table enabled for replication in this schema.
 
-     ![result of trandata check](./images/check-tran2.png " ")
+         ![result of trandata check](./images/check-tran2.png " ")
 
 This concludes the configuration of the Credentials.
 
@@ -107,128 +118,131 @@ This concludes the configuration of the Credentials.
 
 1. Navigate to the Home screen to start creating an extract
 
-- If necessary open the left-menu by clicking on the hamburger icon in the top left corner
-- Select **Overview** to return to the home screen of the service
+    - If necessary open the left-menu by clicking on the hamburger icon in the top left corner
+    - Select **Overview** to return to the home screen of the service
 
-![Add extract to oracledb deployment](./images/ora-extract.png " ")
+    ![Add extract to oracledb deployment](./images/ora-extract.png " ")
 
 2. Create a new **Extract**
 
-- Click the **+** icon of the **Extracts** box as highlighted in the picture above
-- Select the *Extract Type* **Integrated Extract**
-- Click **Next** to continue
+    - Click the **+** icon of the **Extracts** box as highlighted in the picture above
+    - Select the *Extract Type* **Integrated Extract**
+    - Click **Next** to continue
 
-![extract type choice](./images/extr-type.png " ")
+    ![extract type choice](./images/extr-type.png " ")
 
 3. Enter the following parameters:
 
-- *Process Name*: **E_ORACLE**
-- *trail name*: **ex**
-- *Credentials Domain*: **OracleGoldenGate**
-- *Credentials Alias*: **OGG_CAPTURE**
+    - *Process Name*: **E_ORACLE**
+    - *trail name*: **ex**
+    - *Credentials Domain*: **OracleGoldenGate**
+    - *Credentials Alias*: **OGG_CAPTURE**
 
-![extract options entry part 1](./images/extr-opt.png " ")
+    ![extract options entry part 1](./images/extr-opt.png " ")
 
 4. Scroll down to see more parameters:
 
-- *Register to PDBs*: **ORCLPDB1**
-- Click the **Next** button to continue
+    - *Register to PDBs*: **ORCLPDB1**
+    - Click the **Next** button to continue
 
-![extract options entry part 2](./images/extr-opt2.png " ")
+    ![extract options entry part 2](./images/extr-opt2.png " ")
 
 5. This leads you to the **Parameter File** screen.
 
-- Complete the config by adding the below line to the config:
+    - Complete the config by adding the below line to the config:
 
-```
-<copy>TABLE ORCLPDB1.SOURCE_APP.*;</copy>
-```
+        ```
+        <copy>TABLE ORCLPDB1.SOURCE_APP.*;</copy>
+        ```
 
-- Click the **Create and Run** button
+    - Click the **Create and Run** button
 
-![extract parameters](./images/extr-param.png " ")
+        ![extract parameters](./images/extr-param.png " ")
 
 6. You will be returned to the Overview screen, with a box showing the creation of the extract in progress:
 
-![extract creating](./images/extr-creating.png " ")
+    ![extract creating](./images/extr-creating.png " ")
 
-If all goes well, after a few seconds the icon will turn green, indicating the creation of the extract succeeded.
+7. If all goes well, after a few seconds the icon will turn green, indicating the creation of the extract succeeded.
 
-![extract created](./images/extr-ok.png " ")
+    ![extract created](./images/extr-ok.png " ")
 
-7. You can click on the name of the extract **E_Oracle** to see more details, for example the statistics.  As nothing is happening on the Oracle database yet, we see no records yet.
+8. You can click on the name of the extract **E_Oracle** to see more details, for example the statistics.  As nothing is happening on the Oracle database yet, we see no records yet.
 
-![extract stats - empty](./images/extr-stats.png " ")
+    ![extract stats - empty](./images/extr-stats.png " ")
 
-You can now move to the next step of the configuration.
+This concludes the configuration of the Extract.
 
 ## Task 3: Set up the Distribution service
 
 In this step we'll set up the **Distribution** service that will send the transactions to the remote system.  In this case of course the receiving service will also run on the test environment, but in a real-world implementation this process could run very far away.
 
-1. Before we start the actual configuration we'll check the port on which the Big Data **Receiver** service is running, as this will be our target.
+Before we start the actual configuration we'll check the port on which the Big Data **Receiver** service is running, as this will be our target.
 
-- Navigate back to the overall **GoldenGate Service Manager** running on port 10000
-- Select the **bigdata** Deployment type
+1. Navigate back to the overall **GoldenGate Service Manager** running on port 10000
 
-![select bigdata](./images/sel-bigd.png " ")
+2. Select the **bigdata** Deployment type
 
-- Note the port of the **Receiver** service : **10202**.  This will be our destination for the Distribution setup.
+    ![select bigdata](./images/sel-bigd.png " ")
 
-![bigdata services](./images/show-bigd.png " ")
+3. Note the port of the **Receiver** service : **10202**.  This will be our destination for the Distribution setup.
 
-2. Now we'll navigate back to the **oracledb** deployment
+    ![bigdata services](./images/show-bigd.png " ")
 
-- Set the deployment filter back to **oracledb**
-- Select the **Distribution Service** on port **10101**
+    Now we'll navigate back to the **oracledb** deployment
 
-![oracledb services](./images/show-ora.png " ")
+4. Set the deployment filter back to **oracledb**
 
-- Click on the **+** sign to configure a new Distribution process
+5. Select the **Distribution Service** on port **10101**
 
-![Add Distribution](./images/ora-distri.png " ")
+    ![oracledb services](./images/show-ora.png " ")
 
-3. We can now configure the distribution service, please enter the following parameters:
+6. Click on the **+** sign to configure a new Distribution process
 
-- *Path Name*: **ORA2KAFKA**
-- *Source*: **E_ORACLE**
-- *Trail Name*: **ex**
-- *Target protocol*: **ogg**
-- *Target Type*: **Receive Service**
-- *Target*: **localhost**
-- *Port Number*: **10202**
-- *Trail Name*: **rt**
+    ![Add Distribution](./images/ora-distri.png " ")
+
+7. Enter the following parameters:
+
+    - *Path Name*: **ORA2KAFKA**
+    - *Source*: **E_ORACLE**
+    - *Trail Name*: **ex**
+    - *Target protocol*: **ogg**
+    - *Target Type*: **Receive Service**
+    - *Target*: **localhost**
+    - *Port Number*: **10202**
+    - *Trail Name*: **rt**
 
     Leave the other parameters as the default values provided
-- Scroll down and click on the button **Create and Run**
 
-![Configure distributed](./images/distri-conf.png " ")
+8. Scroll down and click on the button **Create and Run**
 
-4. You'll be returned to the home screen of the service, with the new Distribution being created.  After a few seconds the icon should show as steady green :
+    ![Configure distributed](./images/distri-conf.png " ")
 
-![distribution result](./images/distr-result.png " ")
+9. You'll be returned to the home screen of the service, with the new Distribution being created.  After a few seconds the icon should show as steady green :
+
+    ![distribution result](./images/distr-result.png " ")
 
 Congratulations, you configured the **Distribution** service to send out the transactions remotely
-
 
 ## Task 4 : Check the Receive service on the BigData Deployment
 
 Because you already configured the Distribution service specifying another GoldenGate environment Receiver service as a target, the receiving end will be configured by default.
 
-1. We'll simply check if this configuration is visible on the receiving end of the bigdata deployment.
+We'll simply check if this configuration is visible on the receiving end of the bigdata deployment.
 
-- Navigate back to the overall **GoldenGate Service Manager** running on port 10000
-- Select the **bigdata** deployment
-- Click on the **Receiver Service** with port 10202
+1. Navigate back to the overall **GoldenGate Service Manager** running on port 10000
 
-![bigdata deployment services](./images/bigdata-receiv.png " ")
+2. Select the **bigdata** deployment
 
-2. You can see that the same configuration we already configured in the Distribution service of the **oracledb** deployment is also visible here in the **bigdata** deployment Receive service:
+3. Click on the **Receiver Service** with port 10202
 
-![Receiver service config](./images/rec-stat.png " ")
+    ![bigdata deployment services](./images/bigdata-receiv.png " ")
+
+4. You can see that the same configuration we already configured in the Distribution service of the **oracledb** deployment is also visible here in the **bigdata** deployment Receive service:
+
+    ![Receiver service config](./images/rec-stat.png " ")
 
 No further actions are required on the receiving end.
-
 
 ## Task 5 : Configure the Replicat service to Kafka
 
@@ -236,66 +250,64 @@ As we are receiving transactions in the **bigdata** deployment, we can use a **R
 
 1. Navigate to the Home screen of the service
 
-- Click on the **Administrative Service** tab on the top of the screen
-- Click on the **+** sign of the **Replicat** section
+2. Click on the **Administrative Service** tab on the top of the screen
 
-![bigdata admin tab](./images/bigd-repl.png " ")
+3. Click on the **+** sign of the **Replicat** section
 
-2. You can configure the Replicat Type:
+    ![bigdata admin tab](./images/bigd-repl.png " ")
 
-- Select the *Replicat Type* = **Classic Replicat**
-- Click **Next** to continue
+4. Select the *Replicat Type* = **Classic Replicat**
 
-![replicat type](./images/repl-type.png " ")
+5. Click **Next** to continue
 
-3. We'll now configure the Replicat Options with following parameter values:
+    ![replicat type](./images/repl-type.png " ")
 
-- *Process Name*: **R_KAFKA**
-- *Trail Name*: **rt**
-- *Target*: **Kafka**
-- Click **Next** to continue
+6. We'll now configure the Replicat Options with following parameter values:
 
-![replicat options](./images/rep-opt.png " ")
+    - *Process Name*: **R_KAFKA**
+    - *Trail Name*: **rt**
+    - *Target*: **Kafka**
+    - Click **Next** to continue
 
-4. Configure the Replicat Parameters:
+    ![replicat options](./images/rep-opt.png " ")
 
-- Replace the 2nd line of the parameter file with the below value
+7. Configure the Replicat Parameters: replace the 2nd line of the parameter file with the below value
 
-```
-<copy>MAP ORCLPDB1.SOURCE_APP.*, TARGET TARGET_APP.*;</copy>
-```
+    ```
+    <copy>MAP ORCLPDB1.SOURCE_APP.*, TARGET TARGET_APP.*;</copy>
+    ```
 
-- Click **Next** to continue
+8. Click **Next** to continue
 
-![replicat parameters](./images/rep-param.png " ")
+    ![replicat parameters](./images/rep-param.png " ")
 
-5. Configure the Properties file
+9. Configure the Properties file
 
-- In the default properties file you can see 3 locations that need to be filled in as a minimum (marked as **TODO** in the text): the Kafka properties file, the Name resolving template, and the Kafka classpath.
+    In the default properties file you can see 3 locations that need to be filled in as a minimum (marked as **TODO** in the text): the Kafka properties file, the Name resolving template, and the Kafka classpath.
 
-![replicat properties](./images/rep-prop-ori.png " ")
+    ![replicat properties](./images/rep-prop-ori.png " ")
 
-- We already provided a valid config, no need to type this in : select the small "Files" icon besides the title **Properties File**
-- Select the **R_KAFKA.properties file
-- Click the **Copy** button
+10. Select the small "Files" icon besides the title **Properties File** to select a config file that was already prepared for you
+11. Select the **R_KAFKA.properties** file
+12. Click the **Copy** button
 
-![select file](./images/rep-prop-sel.png " ")
+    ![select file](./images/rep-prop-sel.png " ")
 
-- You now should see a filled-in file (with the comments removed) :
+    You now should see a filled-in file (with the comments removed) :
 
-![result of properties edit](./images/rep-prop-ok.png " ")
+    ![result of properties edit](./images/rep-prop-ok.png " ")
 
-- Click the **Create and Run** button to finalize the creation of the Replicat
+13. Click the **Create and Run** button to finalize the creation of the Replicat
 
-6. Validate the creation finishes without errors
+14. Validate the creation finishes without errors
 
 - First you'll see the yellow exclamation mark icon.
 
-![waiting icon](./images/rep-cre1.png " ")
+    ![waiting icon](./images/rep-cre1.png " ")
 
 - After a few seconds you'll see a green icon appear:
 
-![creation finished icon](./images/rep-cre2.png " ")
+    ![creation finished icon](./images/rep-cre2.png " ")
 
 You finalized the setup of the replication !
 
@@ -305,7 +317,7 @@ The objectives of the lab was to familiarize you with the process to create data
 
 Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform. It easily extends customers’ real-time data integration architectures without impacting the performance of the source systems and enables timely business insight for better decision making.
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Learn More
 
