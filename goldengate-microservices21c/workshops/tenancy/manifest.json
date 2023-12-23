@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle GoldenGate Microservices",
+  "workshoptitle": "Goldengate 21c Microservices",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
@@ -8,7 +8,7 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Get Started",
+      "title": "Get Started - Cloud login",
       "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts",
       "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
     },
@@ -19,7 +19,7 @@
       "filename": "../../prepare-setup/prepare-setup.md"
     },
     {
-      "title": "Lab 2: Environment Setup",
+      "title": "Lab 2: Set up compute instance",
       "description": "How to provision the workshop environment and connect to it",
       "publisheddate": "06/30/2020",
       "filename": "https://oracle-livelabs.github.io/common/labs/setup-compute-generic/setup-compute-novnc.md"
