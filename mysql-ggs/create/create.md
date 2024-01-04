@@ -67,15 +67,19 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
 14. For GoldenGate Instance Name, enter **ggsinstance**.
 
-15. For Administrator Username, enter **oggadmin**.
+15. For Administrator Username, enter **oggadmin**. 
 
 16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-17. In the Create secret panel, enter `LLsecret`.
+  ![Example create deployment options](./images/01-16-mysql-deployment.png " ")
+
+17. In the Create secret panel, enter `LLsecret`. 
 
 18. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
 
-    > **NOTE**: The special characters must not be $, ^, or ?. 
+    > **NOTE**: The special characters must not be $, ^, or ?
+
+  ![Example create deployment options](./images/01-18-passwordsecret.png " ") 
 
 19. Confirm the password, and then click **Create**.
 
@@ -117,7 +121,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 14. Click **Create**.
 
-  ![ADW deployment details](./images/02-13-adw-deployment.png " ")
+  ![ADW deployment details](./images/02-14-adw-deployment.png " ")
 
 You're brought to the deployment details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
@@ -151,9 +155,15 @@ You're brought to the deployment details page. It takes a few minutes for the de
 
 9.  For Database username, enter `ggadmin`.
 
-10. For Database user password, enter the password for the `ggadmin` user in the Password field, and then click **Create**.
+10. For Database user password, enter the password for the `ggadmin` user in the Password field.
 
-    ![MySQL connection details](./images/03-10-create-mysql-conn.png " ")
+11. Under **Traffic routing method**, choose **Shared endpoint**.
+
+12. From the Security protocol dropdown, select **Plain**.
+
+13. Click **Create**.
+
+    ![MySQL connection details](./images/03-13-create-mysql-conn.png " ")
 
 The connection becomes Active after a few minutes. Return to the Connections page.
 
@@ -177,9 +187,13 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
     >**Note:** Enter the same password you used to unlock the `ggadmin` user in Lab 1, Task 6, Step 6.
 
-    ![ADW connection details](./images/04-07-create-adw-conn.png " ")
+8. Under **Traffic routing method**, choose **Shared endpoint**.
 
-8.  Click **Create**.
+9. Under **Session mode**, choose **Direct**.
+
+10. Click **Create**.
+
+    ![ADW connection details](./images/04-10-create-adw-conn.png " ")
 
 The connection becomes Active after a few minutes.
 
