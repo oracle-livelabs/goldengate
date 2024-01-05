@@ -42,7 +42,7 @@ variable "novnc_delay_sec" {
 }
 
 variable "desktop_guide_url" {
-  default = "https://janleemans.github.io/goldengate/goldengate-microservices21/workshops/desktop"
+  default = "https://oracle-livelabs.github.io/goldengate/goldengate-microservices21c/workshops/desktop"
 }
 
 variable "desktop_app1_url" {
