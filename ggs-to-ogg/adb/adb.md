@@ -70,11 +70,17 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
     ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
 
-8.  Under **Choose a license type**, select **License Included**.
+8. Under **Access type**, select **Secure access from everywhere**.
+
+9.  Select **Require mutual TLS (mTLS) authentication**.
+
+    ![Choose network access options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-09-choose-network-access.png " ")
+
+10.  For **Choose license and Oracle Database edition**, use the default selection.
 
     ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
 
-9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
+11.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 
 ## Task 3: Load the Autonomous Transaction Processing schema
@@ -137,13 +143,13 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
 3. Select **Compartment** by clicking on the drop-down list. Note that yours will be different - do not select **ManagedCompartmentforPaaS**. Enter **TargetADW** for **Display Name** and **Database Name**.
 
-    ![Create Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-03-compartment.png " ")
+    ![Create Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-03-compartment.png " ")
 
 4.  Under **Choose a workload type**, select **Data Warehouse**.
 
 5.  Under **Choose a deployment type**, select **Serverless**.
 
-    ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-deployment-dw.png " ")
+    ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-deployment-dw.png " ")
 
 6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
 
@@ -151,11 +157,17 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
     ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
 
-8.  Under **Choose a license type**, select **License Included**.
+8. Under **Access type**, select **Secure access from everywhere**.
+
+9.  Select **Require mutual TLS (mTLS) authentication**.
+
+    ![Choose network access options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-09-choose-network-access.png " ")
+
+10.  Under **Choose a license type**, select **License Included**. or ... Under **Choose license and Oracle Database edition**, keep the **License Included** license type.
 
     ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
 
-9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
+11.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 ## Task 5: Load the Autonomous Data Warehouse schema
 
@@ -163,36 +175,32 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
     ![Autonomous Database list](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/05-01-adw.png " ")
 
-2.  Click the **Tools** tab, and then click **Open Database Actions**.
+2.  On the TargetADW Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions**, and then select **SQL** from the Database actions page. 
 
     ![Autonomous Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/05-02-db-actions.png " ")
 
-3.  Log in with the ADMIN user and password provided when you created the Autonomous Transaction Processing instance.
+3.  If prompted, log in with the ADMIN user and password provided when you created the Autonomous Transaction Processing instance.
 
     ![Oracle Database Actions login](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
 
-4.  From the Database Actions menu, under **Development**, select **SQL**.
-
-    ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-06-db-actions.png " ")
-
-5.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
+4.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
 
     ![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-08-atp-sql.png " ")
 
-6.  Click **Run Script**. The Script Output tab displays confirmation messages.
+5.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
-7.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
+6.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
 
     ![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-10-atp-schema.png " ")
 
-8.  Click **Run Script**. The Script Output tab displays confirmation messages.
+7.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
-9.  In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
+8.  In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Jenny Chan, July 2023
+- **Last Updated By/Date** - Katherine Wardhana, January 2024
 - **PAR Expiration date** - March 31, 2022

@@ -43,44 +43,50 @@ To successfully complete this lab in your own tenancy, you must have access to O
 
 5.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
-6.  Select Development/testing. The OCPU count autopopulates based on this selection.
+6.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
-7.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
+7.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
+
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-07-create-deployment-general-info.png " ")
 
 8.  For License type, select **Bring Your Own License (BYOL)**.
 
 9.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
+10. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
+
+11. Click **Next**.
+
     ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
-10. Click **Next**.
+12. For Choose a deployment type, select **Data replication**.
 
-11. For Select a technology dropdown, select **Oracle Database**.
+13. For Select a technology dropdown, select **Oracle Database**.
 
-12. For GoldenGate Instance Name, enter **ggsinstance**.
+14. For GoldenGate Instance Name, enter **ggsinstance**.
 
-13. In an IAM-enabled tenancy, select a Credential Store. 
+15. In an IAM-enabled tenancy, select a Credential Store. 
 
     * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 2.
     * If you select GoldenGate, complete the following steps.
 
-14. For Administrator Username, enter **oggadmin**.
+16. For Administrator Username, enter **oggadmin**.
 
-15. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
+17. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![GoldenGate details](./images/01-16-create-deployment-gg-details.png " ")
+    ![GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
 
-16. In the Create secret panel, enter `LLsecret`.
+18. In the Create secret panel, for Name, enter `LLsecret`.
 
-17. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+19. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
 
     > **NOTE**: The special characters must not be $, ^, or ?. 
 
-    ![Create Password secret](./images/01-17-passwordsecret.png " ")
+    ![Create Password secret](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-19-passwordsecret.png " ")
 
-18. Confirm the password, and then click **Create**.
+20. Confirm the password, and then click **Create**.
 
-19. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
+21. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, and 4 while you wait for the deployment creation to complete.
 
@@ -98,7 +104,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
     ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
 
-4.  In the Create connection panel, for Name, enter **SourceATP** and optionally, a description.
+4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **SourceATP** and optionally, a description.
 
 5.  From the Type dropdown, select **Oracle Autonomous Database**.
 
@@ -110,9 +116,17 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 8.  For **Database in &lt;compartment-name&gt;**, select **SourceATP-&lt;numbers&gt;** from the dropdown. 
 
-9.  Enter the database's password in the Password field, and then click **Create**.
+9. For Database username, enter `ggadmin`.
 
-    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-10-create-connection-gg-details.png)
+10.  Enter the database's password in the Password field. Take note of the password.
+
+11. For Traffic routing method, select **Shared endpoint**.
+
+12. For Session mode, select **Direct**.
+
+13. Click **Create**.
+
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-13-create-connection-gg-details.png)
 
     The connection becomes Active after a few minutes.
 
@@ -176,22 +190,27 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 5.  From the a Type dropdown, select **Oracle Autonomous Database**.
 
-    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-05-create-connec-general-info.png)
-
 6.  Click **Next**.
+
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-06-create-connec-general-info.png)
 
 7. On the Connection details page, under Database details, select **Select database**.
 
 8. For **Database in &lt;compartment-name&gt;**, select **TargetADW-&lt;numbers&gt;** from the dropdown. 
 
-9. Enter the database's password in the Password field, and then click **Create**.
+9. For Database username, enter `ggadmin`.
 
-    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-09-create-connec-details.png)
+10. Enter the database's password in the Password field.
 
-    The connection becomes Active after a few minutes.
+11. For Traffic routing method, select **Shared endpoint**.
 
-10. Repeat Task 3, steps 1-5, to unlock the GGADMIN user for the TargetADW database.
+12. For Session mode, select **Direct**.
 
+13. Click **Create**.
+
+    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-13-create-connec-details.png)
+
+14. Repeat Task 3, steps 1-5, to unlock the GGADMIN user for the TargetADW database.
 
 ## Task 5: Review the deployment details
 
@@ -237,4 +256,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, October 2023
+* **Last Updated By/Date** - Katherine Wardhana, January 2024

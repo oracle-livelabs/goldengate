@@ -52,7 +52,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 2.  On the **Autonomous Database &lt;compartment-name&gt;** page, click **Create Autonomous Database**.
 
-    ![Autonomous Database page](./images/02-02-create-adb.png " ")
+    ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-02-create-adb.png " ")
 
 3. For **Compartment** select a compartment from the dropdown. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **ATPSource** for **Display Name** and **Database Name**.
 
@@ -70,12 +70,17 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
 
-8.  Under **Choose a license type**, select **License Included**.
+8. Under **Access type**, select **Secure access from everywhere**.
+
+9.  Select **Require mutual TLS (mTLS) authentication**.
+
+    ![Choose network access options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-09-choose-network-access.png " ")
+
+10.  For **Choose license and Oracle Database edition**, use the default selection.
 
     ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
 
-9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
-
+11.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 ## Task 3: Load the ATP schema
 
@@ -137,19 +142,17 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 2.  Click **Create Autonomous Database**.
 
-    ![Autonomous Database page](./images/02-02-create-adb.png " ")
+    ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-02-create-adw.png " ")
 
 3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **ADWTarget** for **Display Name** and **Database Name**.
 
-    ![Create Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-03-compartment.png " ")
+    ![Create Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-03-compartment.png " ")
 
 4.  Under **Choose a workload type**, select **Data Warehouse**.
 
-    ![Workload type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-04-workload.png " ")
-
 5.  Under **Choose a deployment type**, select **Serverless**.
 
-    ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-deployment.png " ")
+    ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-deployment-dw.png " ")
 
 6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
 
@@ -157,21 +160,17 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
 
-8.  Under **Choose a license type**, select **License Included**.
+8. Under **Access type**, select **Secure access from everywhere**.
+
+9.  Select **Require mutual TLS (mTLS) authentication**.
+
+    ![Choose network access options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-09-choose-network-access.png " ")
+
+10.  For **Choose license and Oracle Database edition**, use the default selection.
 
     ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
 
-9.  Click **Create Autonomous Database**. After it finishes provisioning, you can click on the instance name to see details of it.
-
-10. On the Details page, click **Database Actions**.
-
-11. Log in using the ADMIN username and password set in step 7.
-
-12. Copy and paste the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** into the SQL worksheet, and then click **Run Script**.
-
-	![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
-
-13. Log out of Database Actions.
+11.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 ## Task 5: Load the ADW schema
 
@@ -179,38 +178,32 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![List of Autonomous Databases](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/05-01-adw.png " ")
 
-2.  Click **Database Actions**.
+2. On the TargetADW Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions**, and then select **SQL** from the Database actions page.
 
-    ![Autonomous Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/05-02-db-actions.png " ")
+	![TargetADW database details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/05-02-db-actions.png " ")
 
-3.  If prompted, log in with the ADMIN user and password provided when you created the ADW instance.
+3. If prompted, log in using the ADMIN username and password set in task 4, step 7.
 
-    ![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
-
-4.  From the Database Actions menu, under **Development**, select **SQL**.
-
-    ![Database Actions page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-06-db-actions.png " ")
-
-5.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
+4.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
 
     ![Copy target schema script into SQL tool](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-08-atp-sql.png " ")
 
-6.  Click **Run Script**. The Script Output tab displays confirmation messages.
+5.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
 	>**Note:** If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.
 
-7.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
+6.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
 
     ![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-10-atp-schema.png " ")
 
-8.  Click **Run Script**. The Script Output tab displays confirmation messages.
+7.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
-9.  In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
+8.  In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
 
 **Proceed to the next lab.**
 
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Katherine Wardhana, March 2023
+- **Last Updated By/Date** - Katherine Wardhana, January 2024
 - **PAR Expiration date** - February 2024
