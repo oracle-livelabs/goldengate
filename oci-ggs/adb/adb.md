@@ -74,11 +74,11 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 8. Under **Access type**, select **Secure access from everywhere**.
 
-9.  Select **Require mutual TLS (mTLS) authentication**. ***upload image to gg commons?***
+9.  Select **Require mutual TLS (mTLS) authentication**.
 
-    ![Choose network access options](./images/02-09-choose-network-access.png " ")
+    ![Choose network access options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-09-choose-network-access.png " ")
 
-10.  Under **Choose a license type**, select **License Included**. or ... Under **Choose license and Oracle Database edition**, keep the **License Included** license type. ***change image on gg commons?***
+10.  For **Choose license and Oracle Database edition**, use the default selection.
 
     ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
 
@@ -97,7 +97,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-03-atp.png " ")
 
-4.  On the SourceATP Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions** directly, and then select **SQL** from the Database actions page. ***ggs-commons already updated just need to push***
+4.  On the SourceATP Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions** directly, and then select **SQL** from the Database actions page.
 
     ![ATP details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-dbdetails.png)
 
@@ -145,7 +145,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **TargetADW** for **Display Name** and **Database Name**.
 
-    ![Create Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-03-compartment.png " ")
+    ![Create Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-03-compartment.png " ")
 
 4.  Under **Choose a workload type**, select **Data Warehouse**.
 
@@ -161,30 +161,30 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 8. Under **Access type**, select **Secure access from everywhere**.
 
-9.  Select **Require mutual TLS (mTLS) authentication**. ***upload image to gg commons?***
+9.  Select **Require mutual TLS (mTLS) authentication**.
 
-    ![Choose network access options](./images/02-09-choose-network-access.png " ")
+    ![Choose network access options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-09-choose-network-access.png " ")
 
-10.  Under **Choose a license type**, select **License Included**. or ... Under **Choose license and Oracle Database edition**, keep the **License Included** license type. ***change image on gg commons?***
+10.  Under **Choose a license type**, select **License Included**. or ... Under **Choose license and Oracle Database edition**, keep the **License Included** license type.
 
     ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
 
 11.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
-10. On the TargetADW Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions**, and then select **SQL** from the Database actions page. 
+12. On the TargetADW Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions**, and then select **SQL** from the Database actions page. 
 
-11. If prompted, log in using the ADMIN username and password set in step 7.
+13. If prompted, log in using the ADMIN username and password set in step 7.
 
-12. Copy and paste the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** into the SQL worksheet, and then click **Run Script**.
+14. Copy and paste the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** into the SQL worksheet, and then click **Run Script**.
 
 	![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
 
-13. Log out of Database Actions.
+15. Log out of Database Actions.
 
 You may now **proceed to the next lab.**
 
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated by** - Jenny Chan, June 2023
+- **Last Updated by** - Katherine Wardhana, January 2024
 - **PAR Expiration date** - February 2024
