@@ -51,7 +51,7 @@ This lab assumes that you completed all preceding labs.
 
 8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-07-create-deployment-general-info.png " ")
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-07-create-deployment-general-info.png " ")
 
 9.  For License type, select **Bring Your Own License (BYOL)**.
 
@@ -61,7 +61,7 @@ This lab assumes that you completed all preceding labs.
 
 12. Click **Next**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-10-create-deployment-general-info.png " ")
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
 13. For Choose a deployment type, select **Data replication**.
 
@@ -73,7 +73,7 @@ This lab assumes that you completed all preceding labs.
 
 17. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![GoldenGate details](./images/01-16-create-deployment-gg-details.png " ")
+    ![GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
 
 18. In the Create secret panel, enter `LLsecret`.
 
@@ -81,7 +81,7 @@ This lab assumes that you completed all preceding labs.
 
     > **NOTE**: The special characters must not be $, ^, or ?. 
 
-    ![Create Password secret](./images/01-17-passwordsecret.png " ")
+    ![Create Password secret](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-19-passwordsecret.png " ")
 
 20. Confirm the password, and then click **Create**.
 
@@ -155,17 +155,17 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 4.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
-    ![Database users](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-05-ggadmin.png)
+    ![Database users](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-05-ggadmin.png " ")
 
 5.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
 
-    ![Edit user](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-06-ggadmin-edit-user.png)
+    ![Edit user](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-06-ggadmin-edit-user.png " ")
 
     Note that the user icon changes from a padlock to a checkmark.
 
 6.  Open the navigation menu (hamburger icon), and then under **Development**, select **SQL**.
 
-    ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png)
+    ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png " ")
 
 7.  Enter the following into the Worksheet, and then click **Run Statement**.
 
@@ -197,7 +197,7 @@ Now, follow the steps below to connect the target Autonomous Data Warehouse \(AD
 
 2.  Click **Connections** and then **Create Connection**.
 
-    ![Create Connection in GoldenGate menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-02-connections.png)
+    ![Create Connection in GoldenGate menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-02-connections.png " ")
 
 3.  The Create connection panel consists of two pages. On the General information page, for Name, enter **TargetADW** and optionally, a description.
 
@@ -207,7 +207,7 @@ Now, follow the steps below to connect the target Autonomous Data Warehouse \(AD
 
 6.  Click **Next**.
 
-    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-05-create-connec-general-info.png)
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-06-create-connec-general-info.png " ")
 
 7. On the Connection details page, under Database details, select **Select database**.
 
@@ -223,7 +223,7 @@ Now, follow the steps below to connect the target Autonomous Data Warehouse \(AD
 
 13. Click **Create**.
 
-    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-13-create-connec-details.png)
+    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-13-create-connec-details.png " ")
 
     The source and target databases appear in the list of Connections. The connection becomes Active after a few minutes.
 

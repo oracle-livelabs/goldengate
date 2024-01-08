@@ -51,7 +51,7 @@ In this lab, you will:
 
 8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-07-create-deployment-general-info.png " ")
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-07-create-deployment-general-info.png " ")
 
 9.  For License type, select **Bring Your Own License (BYOL)**.
 
@@ -61,7 +61,7 @@ In this lab, you will:
 
 12. Click **Next**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-10-create-deployment-general-info.png " ")
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
 13. For Choose a deployment type, select **Data replication**.
 

@@ -78,7 +78,7 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
 18. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-  ![Example create deployment options](./images/01-18-mysql-deployment.png " ")
+  ![Example create deployment options](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
 
 19. In the Create secret panel, enter `LLsecret`. 
 
@@ -86,7 +86,7 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
     > **NOTE**: The special characters must not be $, ^, or ?
 
-  ![Example create deployment options](./images/01-18-passwordsecret.png " ") 
+  ![Example create deployment options](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-19-passwordsecret.png " ") 
 
 21. Confirm the password, and then click **Create**.
 
@@ -168,7 +168,7 @@ You're brought to the deployment details page. It takes a few minutes for the de
 
 11. Under **Traffic routing method**, choose **Shared endpoint**.
 
-12. From the Security protocol dropdown, select **Plain**.
+12. For **Session mode**, choose **Direct**.
 
 13. Click **Create**.
 
@@ -274,5 +274,5 @@ Create a GoldenGate connection if your ADW deployment doesn't have a public endp
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2023
+* **Last Updated By/Date** - Katherine Wardhana, January 2024
 * **PAR Expiration** - February 2024
