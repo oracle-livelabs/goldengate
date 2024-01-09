@@ -79,7 +79,7 @@ This lab assumes that you completed all preceding labs.
 
 18. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![GoldenGate details](./images/01-16-create-deployment-gg-details.png " ")
+    ![GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
 
 19. In the Create secret panel, for Name, enter `LLsecret`.
 
@@ -87,7 +87,7 @@ This lab assumes that you completed all preceding labs.
 
     > **NOTE**: The special characters must not be $, ^, or ?. 
 
-    ![Create Password secret](./images/01-19-passwordsecret.png " ")
+    ![Create Password secret](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-19-passwordsecret.png " ")
 
 21. Confirm the password, and then click **Create**.
 

@@ -52,7 +52,7 @@ This lab assumes that you completed all preceding labs.
 
 8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-07-create-deployment-general-info.png " ")
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-07-create-deployment-general-info.png " ")
 
 9.  For License type, select **Bring Your Own License (BYOL)**.
 
@@ -62,7 +62,7 @@ This lab assumes that you completed all preceding labs.
 
 12. Click **Next**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-10-create-deployment-general-info.png " ")
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
 13. For Choose a deployment type, select **Data replication**.
 
@@ -74,7 +74,7 @@ This lab assumes that you completed all preceding labs.
 
 17. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![GoldenGate details](./images/01-16-create-deployment-gg-details.png " ")
+    ![GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
 
 18. In the Create secret panel, enter `LLsecret`.
 
@@ -82,7 +82,7 @@ This lab assumes that you completed all preceding labs.
 
     > **NOTE**: The special characters must not be $, ^, or ?. 
 
-    ![Create Password secret](./images/01-19-passwordsecret.png " ")
+    ![Create Password secret](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-19-passwordsecret.png " ")
 
 20. Confirm the password, and then click **Create**.
 
