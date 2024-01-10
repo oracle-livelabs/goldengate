@@ -81,7 +81,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 7.  Select **Standalone**.
 
-	![Example MySQL DB System options](./images/02-07-create-dbsys-1.png " ")
+	![Example MySQL DB System options](./images/02-06-create-dbsys-1.png " ")
 
 8.  Under **Create Administrator credentials**, for Username, enter `ggadmin`, and then enter a password for the admin user. Take note of this password.
 
