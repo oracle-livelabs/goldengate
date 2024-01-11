@@ -54,7 +54,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 2.  On the **Autonomous Database &lt;compartment-name&gt;** page, click **Create Autonomous Database**.
 
-    ![Autonomous Database page](./images/02-02-create-adb.png " ")
+    ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-02-create-adb.png " ")
 
 3. For **Compartment** select a compartment from the dropdown. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **SourceATP** for **Display Name** and **Database Name**.
 
@@ -72,11 +72,17 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
 
-8.  Under **Choose a license type**, select **License Included**.
+8. Under **Access type**, select **Secure access from everywhere**.
+
+9.  Select **Require mutual TLS (mTLS) authentication**.
+
+    ![Choose network access options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-09-choose-network-access.png " ")
+
+10.  For **Choose license and Oracle Database edition**, use the default selection.
 
     ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
 
-9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
+11.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 
 ## Task 3: Load the ATP schema
@@ -91,19 +97,15 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-03-atp.png " ") 
 
-4.  Click **Open DB Actions**.
+4. On the SourceATP Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions** directly, and then select **SQL** from the Database actions page.
 
-    ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-dbdetails.png " ")
+    ![ATP details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-dbdetails.png)
 
 5.  If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
 
     ![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
 
-6.  From the Database Actions menu, under **Development**, select **SQL**.
-
-    ![Database Actions page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-06-db-actions.png " ")
-
-7.  (Optional) Click **X** to close the Help dialog.
+6.  (Optional) Close the Help dialog.
 
 8.  Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** into the SQL Worksheet.
 
@@ -136,5 +138,5 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated by** - Katherine Wardhana, March 2023
+- **Last Updated by** - Katherine Wardhana, January 2024
 - **PAR Expiration date** - February 2024
