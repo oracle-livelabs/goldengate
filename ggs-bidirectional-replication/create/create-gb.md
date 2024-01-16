@@ -61,7 +61,7 @@ This lab assumes that you completed all preceding labs.
 
 12. Click **Next**.
 
-10. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
 13. For Choose a deployment type, select **Data replication**.
 
