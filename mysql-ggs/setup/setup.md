@@ -71,30 +71,35 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 	![Click Create DB System](./images/02-02-create-dbsystem.png " ")
 
-3.  On the Create DB system page, under **Provide DB System** information, select a compartment in which to create the MySQL DB system.
+3. On the Create DB system page, under **Provide DB System** information, select **Development or testing**
 
-4.  For **Name**, leave the default, or replace the default with a name of your choice. For example, `SourceMySQL`.
+4.  For **Create in Compartment**, select a compartment in which to create the MySQL DB system.
 
-5.  (Optional) For Description, enter a description for the MySQL DB system.
+5.  For **Name**, leave the default, or replace the default with a name of your choice. For example, `SourceMySQL`.
 
-6.  Select **Standalone**.
+6.  (Optional) For Description, enter a description for the MySQL DB system.
+
+7.  Select **Standalone**.
 
 	![Example MySQL DB System options](./images/02-06-create-dbsys-1.png " ")
 
-7.  Under **Create Administrator credentials**, for Username, enter `admin`, and then enter a password for the admin user. Take note of this password.
+8.  Under **Create Administrator credentials**, for Username, enter `ggadmin`, and then enter a password for the admin user. Take note of this password.
 
-8.  Under **Configure networking**, select the **VCN** and **Subnet** created in Task 1.
+	![Example MySQL DB System options](./images/02-08-create-dbsys-2.png " ")
 
-9.  Under **Configure placement**, select an Availability Domain.
+9.  Under **Configure networking**, select the **VCN** and **Subnet** created in Task 1.
 
-10. Click **Create**.
+10.  Under **Configure placement**, select an Availability Domain.
+
+11. Click **Create**.
+
+	![Example MySQL DB System options](./images/02-11-create-dbsys-3.png " ")
 
 	You're returned to the DB Systems page where the MySQL DB System you created appears. It will take a few minutes for the system to become Active.
 
-11. On the DB System details page, in the **Endpoint** section of the **DB System information**, copy the **Private IP Address**.
+12. On the DB System details page, in the **Endpoint** section of the **DB System information**, copy the **Private IP Address**.
 
-	![Copy the Private IP](./images/02-11-private-ip.png " ")
-
+	![Copy the Private IP](./images/02-12-private-ip.png " ")
 
 ## Task 3A: Create a bastion and session
 

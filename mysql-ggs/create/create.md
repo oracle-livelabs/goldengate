@@ -166,9 +166,9 @@ You're brought to the deployment details page. It takes a few minutes for the de
 
 10. For Database user password, enter the password for the `ggadmin` user in the Password field.
 
-11. Under **Traffic routing method**, choose **Shared endpoint**.
+11. For **Security protocol**, select **Plain** from the dropdown.
 
-12. For **Session mode**, choose **Direct**.
+12. For **Traffic routing method**, choose **Shared endpoint**.
 
 13. Click **Create**.
 
