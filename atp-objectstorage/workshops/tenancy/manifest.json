@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Replicate data from Autonomous Transaction Processing to OCI Object Storage",
+    "workshoptitle": "Real Time Data Streaming into OCI Object Storage with OCI GoldenGate",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
