@@ -121,35 +121,33 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 4.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
-5.  For OCPU Count, enter **1**.
-
-6.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
+5.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
     ![Completed Create GoldenGate Deployment fields](images/02-06-bigdata.png " ")
 
-7. For License type, select **Bring Your Own License (BYOL)**.
+6. For License type, select **Bring Your Own License (BYOL)**.
 
-8.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
+7.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
-9. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
+8. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
 
-10. Click **Next**.
+9. Click **Next**.
 
     ![Completed Create GoldenGate Deployment fields](images/02-10-bigdata.png " ")
 
-11.  For Select a deployment type, select **Data replication**.
+10.  For Select a deployment type, select **Data replication**.
 
-12. From the Select a technology dropdown, select **Big Data**.
+11. From the Select a technology dropdown, select **Big Data**.
 
-13. For GoldenGate instance name, enter **BDinstance**.
+12. For GoldenGate instance name, enter **BDinstance**.
 
-14. For Administrator username, enter **oggadmin**.
+13. For Administrator username, enter **oggadmin**.
 
-15. For Password secret, select LLsecret.
+14. For Password secret, select LLsecret.
 
-16. Click **Create**.
+15. Click **Create**.
 
-    ![Completed GoldenGate details](images/02-16-bigdata.png " ")
+    ![Completed GoldenGate details](images/02-15-bigdata.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
