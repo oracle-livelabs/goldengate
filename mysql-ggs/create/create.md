@@ -49,7 +49,7 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
 7.  Select **Development or testing**. OCPU Count updates based on your selection.
 
-8.  For **Subnet**, select a subnet.If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
+8.  For **Subnet**, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
     ![Completed Create GoldenGate Deployment fields](./images/01-08-create-deployment.png " ")
 

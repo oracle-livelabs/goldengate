@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Real Time Data Streaming into OCI Object Storage with OCI GoldenGate",
+    "workshoptitle": "Use OCI GoldenGate to stream real time data into OCI Object Storage",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
