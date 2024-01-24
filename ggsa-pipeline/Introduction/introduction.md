@@ -16,6 +16,7 @@ In this lab you:
 * Familiarity with Oracle GoldenGate is helpful, but not required
 * Familiarity with Oracle Cloud Infrastructure is helpful, but not required
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* For non-IAM enabled tenancies, you need an OCI Vault
 
 ## What is OCI GoldenGate Stream Analytics
 
