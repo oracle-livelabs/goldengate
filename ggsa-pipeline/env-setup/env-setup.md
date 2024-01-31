@@ -11,6 +11,7 @@ Estimated time: 20 minutes
 -  Provision a VCN and subnet
 -  Provision, connect, and load data into an Autonomous Transaction Processing (ATP) instance
 -  Create an OCI GoldenGate data replication deployment
+-  Create a Stream
 
 ### Prerequisites
 
@@ -44,7 +45,11 @@ This lab assumes you have completed the following labs:
 
     ![Verify configuration details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-05-create-vcn.png " ")
 
-You can click View VCN Details and see both a Public and Private subnet were created.
+6.  Click **View VCN**. You're brought to the Virtual Cloud Network Details page. In the Subnets section, both a private and public subnet were created.
+
+7.  Select the private subnet, and then on the private subnet's details page, under **Security Lists**, select the Default security list.
+
+8.  On the Security List Details page, under **Ingress Rules**, click **Add Ingress Rules**.
 
 ## Task 2: Create an ATP instance
 
@@ -230,6 +235,14 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 20. Confirm the password, and then click **Create**.
 
 21. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
+
+## Task 6: Create a Stream
+
+1. In the OCI navigation menu, click **Analytics & AI**, and then under Messaging, select **Streaming**.
+
+2. On the Streams page, click **Create Stream**.
+
+3. On the Create Stream page, enter a **Stream Name**, and then click **Create**.
 
 You may now **proceed to the next lab.**
 

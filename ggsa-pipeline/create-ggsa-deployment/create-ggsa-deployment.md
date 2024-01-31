@@ -72,7 +72,7 @@ In this lab, you will:
 
 8.  Select **Auto scaling**.
 
-9.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
+9.  For Subnet, select a private subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
 10.  For License type, select **Bring Your Own License (BYOL)**.
 
