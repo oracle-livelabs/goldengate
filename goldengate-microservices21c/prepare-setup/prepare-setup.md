@@ -21,20 +21,11 @@ This lab assumes you have:
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment:
 
-    - [ll-orm-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/goldengate-library/ll-orm-mkplc-freetier.zip)
+    - [ll-orm-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Oj2dZE8mmhbNfrqmDtE-8nm6f9eADGpf52xR3ctq1PAj4yYUiJWLyftG1np00_rM/n/c4u04/b/livelabsfiles/o/goldengate-library/gg21c-microservices.zip)
 
-2. Save in your downloads folder.
+2. Save the file in your downloads folder.
 
-    ***TEMPORARY ACTIVITIES AWAITING IMAGE AVAILABILITY ON MARKETPLACE***
-
-    As the lab image is not yet available on marketplace, some extra steps are required to run this lab.  It is assumed you are familiar with OCI to perform these steps, no detailed screenshots are provided:
-
-    - Unzip the stack zip file on you local machine
-    - Create a new Custom Compute image, importing it using [this Object Storage URL](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/siH5t5NlLNbwypWi8aDZiEPH_o_dKg4vmH5dYkql1rS4-yw845dK2dLdFoFkXqEk/n/oractdemeabdmautodb/b/bucket-20231204-1409/o/gg21c-livelab-image-20231221-1415)
-    - Copy the OCID of the new Custom Image you just created
-    - Edit the **variables.tf** file, and replace the OCID image ID on line 32 with the new one you just created
-    - Zip the altered stack definition into a new zip file
-    - You can now continue the lab from here, using the new zip file you just created
+    - You will use this file in the next lab section to start the Terraform Resource Manager, spinning up the Virtual Network and the Compute instance.
 
 We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Step 3* to follow our recommendations. If you would rather use an exiting VCN then proceed to the next step as indicated below to update your existing VCN with the required Egress rules.
 
@@ -46,7 +37,6 @@ This workshop requires a certain number of ports to be available, a requirement 
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
 | 443            | NGINX Proxy (https)                   |
-| 16000          | GGMA Admin Server                     |
 | 6080           | noVNC Remote Desktop                  |
 | 10000-10400    | GoldenGate consoles                   |
 
