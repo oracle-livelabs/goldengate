@@ -14,22 +14,22 @@ Marketplace UI Parameters (Update all default values)
 
 variable "use_marketplace_image" {
   # Set to false when testing a local image
-  default = false
+  default = true
 }
 
 variable "mp_listing_id" {
   #Provide the Listing OCID
-  default = "Enter valid listing OCID"
+  default = "ocid1.appcataloglisting.oc1..aaaaaaaa2fuvrqk2cqcarsxugamehrjyigpwwe3sgprpxp6u2ustmsljj3yq"
 }
 
 variable "mp_listing_resource_version" {
   #Provide the listing version
-  default = "Enter valid listing version"
+  default = "1.0"
 }
 
 variable "instance_image_id" {
   #Provide the image OCID
-  default = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaazxpcsobp2qgbn257gyoqerli6xlreieficwfkxmdpohjc52pnuia"
+  default = "ocid1.image.oc1..aaaaaaaazemy4groczrvfzllplftpwxrm4ocpu72qgckiwinycbppcyc5wwa"
 }
 
 /*
