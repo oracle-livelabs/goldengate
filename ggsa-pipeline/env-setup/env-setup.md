@@ -47,9 +47,20 @@ This lab assumes you have completed the following labs:
 
 6.  Click **View VCN**. You're brought to the Virtual Cloud Network Details page. In the Subnets section, both a private and public subnet were created.
 
-7.  Select the private subnet, and then on the private subnet's details page, under **Security Lists**, select the Default security list.
+## Task 2: Add Ingress rules
 
-8.  On the Security List Details page, under **Ingress Rules**, click **Add Ingress Rules**.
+1.  On the Virtual Cloud Network Details page, select the private subnet.
+
+2.  On the private subnet's details page, under **Security Lists**, select the Default security list.
+
+3.  On the Security List Details page, under **Ingress Rules**, click **Add Ingress Rules**.
+
+4.  In the Add Ingress Rules panel, complete the following fields, and then click **Add Ingress Rules**: 
+
+    - For **Source CIDR**, enter `10.0.0.0/24`.
+    - For **Destination Port Range**, enter `443`.
+
+5.  Repeat steps 1 to 4 for the public subnet.
 
 ## Task 2: Create an ATP instance
 
@@ -236,7 +247,27 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 21. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 
-## Task 6: Create a Stream
+## Task 6: Create an Auth token
+
+1. In the Oracle Cloud console global header, click **Profile**, and then select **User settings**.
+
+2. On the User Details page, under **Resources**, click **Auth Tokens**, and then click **Generate Token**. 
+
+3. In the Generate Token dialog, enter a description, and then click **Generate Token**.
+
+4. Copy the auth token from the dialog to a secure location from where you can retrieve it later, and then click **Close**.
+
+## Task 7: Copy the Stream Pool username
+
+1. From the Oracle Cloud console navigation menu, select **Streaming**, and then **Stream Pools**.
+
+2. On the Stream Pools page, select your stream pool to view its details.
+
+3. On the Stream Pool details page, under **Resources**, click **Kafka Connection Settings**.
+
+4. Copy the **Bootstrap Servers** value and username parameter value from the **SASL Connection Strings** field to a text editor for later use.
+
+## Task 8: Create a Stream
 
 1. In the OCI navigation menu, click **Analytics & AI**, and then under Messaging, select **Streaming**.
 

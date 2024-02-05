@@ -152,33 +152,39 @@ Follow these steps to connect the GoldenGate Replication deployment to the GGSA 
 
     The connection becomes Active after a few minutes. You can continue with the next task.
 
-## Task 4: Create the OCI Streaming connection
+## Task 4: Create the Kafka connection
+
+Follow these steps to connect the Kafka event hub.
 
 1.  Use the breadcrumb to return to the Connections page.
 
 2.  Click **Create connection**.
 
-3.  In the Create connection panel, on the General information page, for Name, enter **OCIStream** and optionally, a description.
+3.  In the Create connection panel, on the General information page, for Name, enter **Kafka** and optionally, a description.
 
 4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
-5.  From the a Type dropdown, select **OCI Streaming** from the Big Data section.
+5.  From the a Type dropdown, select **Apache Kafka** from the Big Data section.
+
+    ![Kafka details](./images/kafka_connect_1.png)
 
 6.  Click **Next**.
 
-7.  On the Connection details page, choose **Enter stream pool information**. 
+7.  On the Connection details page, under Bootstrap servers, select **Customer-assigned subnet**.
 
-8.  For Host, paste the stream pool's Bootstrap Servers host value copied from Lab 1 Task 7.
+8.  For Host, copy and paste the **Kafka Private FQDN** from the Reservation Information panel.
 
-9.  For Port, paste the stream pool's Bootstrap Servers port value copied from Lab 1 Task 7.
+9.  For Port, enter **9092**.
 
-10. For **Username**, enter the Stream Pool username copied from the SASL Connection Settings in Lab 1 Task 7.
+10. For Private IP address, copy and paste the **Kafka Private IP** from the Reservation Information panel.
 
-11. For **Password**, enter the Auth token copied in Lab 1 Task 6.
+11. Click **Create**.
 
-12. Click **Create**.
+    ![Kafka details page 2](./images/kafka_connect_2.png)
 
-13.  Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
+12.  Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
+
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/conn_breadcrumb_from_ggconn.png " ")
 
 The connection becomes Active after a few minutes. Please wait for both new connections to become Active before proceeding.    
 
