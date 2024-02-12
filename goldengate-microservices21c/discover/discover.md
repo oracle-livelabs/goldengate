@@ -86,25 +86,16 @@ This lab assumes you have:
     - **monitor_kafka.sh**: read the kafka topic EMPLOYEES where we'll be inserting the changes coming from the Oracle Database.
     - **demo_reset.sh**: completely reset the lab environment to restart the lab execution.  You can use this script to restart the lab execution with a fresh setup.
 
-7. Access the Oracle database directly using **sqlplus** from the command line:
+7. Access the Oracle database directly using **sqlplus** from the command line. Below 2 alternative database users at your disposal:
+
     ```
-    <copy>sqlplus system/Welcome#123 as sysdba </copy>
+    <copy>sqlplus c##ggadmin/Welcome#123 </copy>
+    <copy>sqlplus sys/Welcome#123 as sysdba </copy>
     ```
 
-8. Make sure the listener is set up correctly, by issuing the following command:
-    ```
-    <copy>alter system set LOCAL_LISTENER='' scope=both;</copy>
-    ```
+    Use the ```exit``` command to quit your sqlplus session.
 
-    Now use the ```exit``` command to quit your sqlplus session.
-
-9. Make sure the listener is started properly, by issuing the following command:
-    ```
-    <copy>lsnrctl start</copy>
-    ```
-    You can use the command ```lsnrctl status``` to check the result
-
-10. List the available **kafka topics** with the below command:
+8. List the available **kafka topics** with the below command:
 
     ```
     <copy>/opt/kafka/bin/kafka-topics.sh --list --bootstrap-server localhost:9092</copy>
