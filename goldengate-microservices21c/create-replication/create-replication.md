@@ -84,14 +84,7 @@ This lab assumes you have:
 
     ![result of entering credentials](./images/ora-cred-result1.png " ")
 
-    You can see the login takes place, and the section *TRANDATA* appears on the screen.
-
-    **Troubelshooting**: In case you get an error when testing the connection to the database, double-check your listener configuration is set up correctly, as already explained in the *Discover the Environment section*:
-
-    - In the terminal window, connect to the database as system: ```sqlplus system/Welcome#123 as sysdba```
-    - configure the listener: ```alter system set LOCAL_LISTENER='' scope=both;```
-    - exit sqlplus with ```end```
-    - restart the listener with ```lsnrctl stop``` followed by ```lsnrctl start```
+    You can see the login take place, and the section *TRANDATA* appear on the screen.
 
 8. We now need to add a TRANDATA table to the database to acquire the transaction records in the database.
     - Click on the **+** symbol besides the *TRANDATA Information* title
