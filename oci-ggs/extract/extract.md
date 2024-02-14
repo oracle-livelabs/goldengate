@@ -26,17 +26,7 @@ In this lab, you learn to:
 
 ## Task 1: Launch the OCI GoldenGate deployment console
 
-1. On the Deployment details page, click **Launch Console**.
-
-    ![Launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/07-01-launchconsole.png " ")
-
-2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password secret you provided in the previous Lab, and then click **Sign In**.
-
-    > **NOTE:** If using OCI IAM, you must click **Allow** when prompted to give the application access to `get_groups`.
-
-    ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin.png " ")
-
-After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
+[](include:01-launch-console.md)
 
 ## Task 2: Add Transaction Data and a Checkpoint Table
 
