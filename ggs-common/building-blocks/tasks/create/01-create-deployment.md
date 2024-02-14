@@ -8,11 +8,11 @@
 
 1.  In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
 
-    ![GoldenGate in Oracle Cloud navigation menu](../../../ggs-common/create/images/database-goldengate.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](../../../create/images/database-goldengate.png " ")
 
 2.  On the GoldenGate **Overview** page, click **Deployments**.
 
-    ![GoldenGate Overview page](../../../ggs-common/create/images/01-02-ggs-overview.png " ")
+    ![GoldenGate Overview page](../../../create/images/01-02-ggs-overview.png " ")
 
 3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, expand LiveLabs, and then select the compartment **LL1234-COMPARTMENT**.
 
@@ -20,7 +20,7 @@
 
 4.  On the Deployments page, click **Create deployment**.
 
-    ![Deployments page](../../../ggs-common/create/images/01-04-create-deployment.png " ")
+    ![Deployments page](../../../create/images/01-04-create-deployment.png " ")
 
 5.  In the Create Deployment panel, enter **GGSDeployment** for Name.
 
@@ -30,7 +30,7 @@
 
 8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
-    ![Completed Create GoldenGate Deployment fields](../../../ggs-common/create/images/01-07-create-deployment-general-info.png " ")
+    ![Completed Create GoldenGate Deployment fields](../../../create/images/01-07-create-deployment-general-info.png " ")
 
 9.  For License type, select **Bring Your Own License (BYOL)**.
 
@@ -40,7 +40,7 @@
 
 12. Click **Next**.
 
-    ![Completed Create GoldenGate Deployment fields](../../../ggs-common/create/images/01-10-create-deployment-general-info.png " ")
+    ![Completed Create GoldenGate Deployment fields](../../../create/images/01-10-create-deployment-general-info.png " ")
 
 13. For Choose a deployment type, select **Data replication**.
 
@@ -52,7 +52,7 @@
 
 17. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![GoldenGate details](../../../ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
+    ![GoldenGate details](../../../create/images/01-16-create-deployment-gg-details.png " ")
 
 18. In the Create secret panel, enter `LLsecret`.
 
@@ -60,7 +60,7 @@
 
     > **NOTE**: The special characters must not be $, ^, or ?. 
 
-    ![Create Password secret](../../../ggs-common/create/images/01-19-passwordsecret.png " ")
+    ![Create Password secret](../../../create/images/01-19-passwordsecret.png " ")
 
 20. Confirm the password, and then click **Create**.
 

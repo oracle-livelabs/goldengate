@@ -10,7 +10,7 @@ Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) i
 
 2.  Click **Connections** and then **Create Connection**.
 
-    ![Create Connection in GoldenGate menu](../../../ggs-common/create/images/04-02-connections.png " ")
+    ![Create Connection in GoldenGate menu](../../../create/images/04-02-connections.png " ")
 
 3.  The Create connection panel consists of two pages. On the General information page, for Name, enter **TargetADW** and optionally, a description.
 
@@ -20,7 +20,7 @@ Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) i
 
 6.  Click **Next**.
 
-    ![Source Database details](../../../ggs-common/create/images/04-06-create-connec-general-info.png " ")
+    ![Source Database details](../../../create/images/04-06-create-connec-general-info.png " ")
 
 7. On the Connection details page, under Database details, select **Select database**.
 
@@ -36,7 +36,7 @@ Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) i
 
 13. Click **Create**.
 
-    ![Target Database details](../../../ggs-common/create/images/04-13-create-connec-details.png)
+    ![Target Database details](../../../create/images/04-13-create-connec-details.png)
 
     The source and target databases appear in the list of Connections. The connection becomes Active after a few minutes.
 

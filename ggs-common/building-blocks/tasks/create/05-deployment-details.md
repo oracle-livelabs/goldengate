@@ -12,4 +12,4 @@
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details page](../../../ggs-common/create/images/05-01-deployment-details.png " ")
+    ![Deployment Details page](../../../create/images/05-01-deployment-details.png " ")
