@@ -48,22 +48,27 @@
 
 15. For GoldenGate Instance Name, enter **ggsinstance**.
 
-16. For Administrator Username, enter **oggadmin**.
+16. In an IAM-enabled tenancy, select a **Credential store**. 
 
-17. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
+    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to the next lab (skip the following steps).
+    * If you select GoldenGate, complete the following steps.
+
+17. For Administrator Username, enter **oggadmin**.
+
+18. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
     ![GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
 
-18. In the Create secret panel, enter `LLsecret`.
+19. In the Create secret panel, enter `LLsecret`.
 
-19. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+20. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
 
     > **NOTE**: The special characters must not be $, ^, or ?. 
 
-    ![Create Password secret](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-19-passwordsecret.png " ")
+21. Confirm the password, and then click **Create**.
 
-20. Confirm the password, and then click **Create**.
+    ![Create Password secret](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-21-passwordsecret.png " ")
 
-21. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
+22. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, and 4 while you wait for the deployment creation to complete.
