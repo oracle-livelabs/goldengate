@@ -38,7 +38,7 @@ In this lab, you will:
 
 ## Task 4: Review the deployment details
 
-Return to the OCI GoldenGate Deployments page in the Oracle Cloud console. After the deployment is created and active, you can perform the following actions on the deployment details page:
+Return to OCI GoldenGate in the Oracle Cloud console. After the deployment is created and active, you can perform the following actions on the deployment details page:
 
 [](include:04-deployment-details.md)
 
@@ -57,4 +57,3 @@ You may now **proceed to the next lab.**
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
 * **Last Updated By/Date** - Katherine Wardhana, February 2024
-

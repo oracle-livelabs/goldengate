@@ -12,27 +12,27 @@
 
 3.  Back in the Oracle Cloud console, select your ATP instance from the Autonomous Databases page to view its details and access tools.
 
-    ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-03-atp.png " ")
+    ![Select your Autonomous Database instance](../../../adb/images/03-03-atp.png " ")
 
 4.  On the SourceATP Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions** directly, and then select **SQL** from the Database actions page.
 
-    ![ATP details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-dbdetails.png)
+    ![ATP details page](../../../adb/images/03-04-dbdetails.png)
 
 5.  If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
 
-    ![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
+    ![DB Actions log in page](../../../adb/images/03-05-login.png " ")
 
 6.  (Optional) Close the Help dialog.
 
 7.  Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** into the SQL Worksheet.
 
-    ![Pasted script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-08-atp-sql.png " ")
+    ![Pasted script in SQL Worksheet](../../../adb/images/03-08-atp-sql.png " ")
 
 8.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
 9. Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SRC\_USER\_SEED\_DATA.sql** a new SQL Worksheet.
 
-    ![Pasted schema script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-10-atp-schema.png " ")
+    ![Pasted schema script in SQL Worksheet](../../../adb/images/03-10-atp-schema.png " ")
 
 10. Click **Run Script**. The Script Output tab displays confirmation messages.
 
@@ -42,7 +42,7 @@
 
 12. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
 
-    ![Displays the SRC\_OCIGGLL tables](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-11-verify.png " ")
+    ![Displays the SRC\_OCIGGLL tables](../../../adb/images/03-11-verify.png " ")
 
 13. To enable supplemental logging, run the following command:
 
