@@ -6,24 +6,23 @@ In this lab, you learn to create an Oracle Cloud Infrastructure (OCI) GoldenGate
 
 Estimated time: 20 minutes
 
-### About Oracle Cloud Infrastructure GoldenGate Deployments and Connections
+Watch the video below for a quick walk through of the lab.
+[Watch the video](videohub:1_hz7gsiin)
+
+### About Oracle Cloud Infrastructure GoldenGate deployments and connections
 
 A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
 
-Connections capture source and target credential information. A connection also enables networking between the Oracle Cloud Infrastructure (OCI) GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
+Connections store the source and target credential information for OCI GoldenGate. A connection also enables networking between the Oracle Cloud Infrastructure (OCI) GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
 
 ### Objectives
 
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
-* Create a OCI GoldenGate deployment
 * Create the source and target connections
 
-### Prerequisites
 
-This lab assumes that you completed all preceding labs.
-
-# Task 1: Create the source connection
+## Task 1: Create the source connection
 
 [](include:02-create-source-connection.md)
 
@@ -37,7 +36,7 @@ This lab assumes that you completed all preceding labs.
 
 ## Task 4: Review the deployment details
 
-1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**. 
+1.  From the Oracle Cloud Console navigation menu, click **Oracle Database**, and then select **GoldenGate**.
 
 2. On the GoldenGate Overview page, click **Deployments**.
 
@@ -60,3 +59,4 @@ You may now **proceed to the next lab.**
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
 * **Last Updated By/Date** - Katherine Wardhana, February 2024
+

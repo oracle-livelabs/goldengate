@@ -15,6 +15,7 @@
         "01-launch-console.md":"../../../ggs-common/building-blocks/tasks/extract/01-launch-console.md",
         "01-create-purge-task.md":"../../../ggs-common/building-blocks/tasks/purge/01-create-purge-task.md"
       },
+
     "tutorials": [
         {
             "title": "Introduction",

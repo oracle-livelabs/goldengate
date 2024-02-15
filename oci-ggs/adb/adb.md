@@ -32,7 +32,7 @@ To successfully complete this lab, you must:
 
 [](include:02-create-atp-instance.md)
 
-## Task 3: Load the ATP schema and enable supplemenal logging
+## Task 3: Load the ATP schema and enable supplemental logging
 
 [](include:03-load-atp-schema.md)
 

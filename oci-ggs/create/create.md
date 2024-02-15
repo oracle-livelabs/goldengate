@@ -41,7 +41,7 @@ To successfully complete this lab in your own tenancy, you must have access to O
 
 ## Task 5: Review the deployment details
 
-Return to OCI GoldenGate in the Oracle Cloud console. After the deployment is created and active, you can perform the following actions on the deployment details page:
+Return to the OCI GoldenGate Deployments page in the Oracle Cloud console. After the deployment is created and active, you can perform the following actions on the deployment details page:
 
 [](include:05-deployment-details.md)
 
