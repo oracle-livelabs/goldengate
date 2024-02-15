@@ -71,4 +71,4 @@
 
 22. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 
-You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, and 4 while you wait for the deployment creation to complete.
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use.
