@@ -8,33 +8,33 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 1.  From the Oracle Cloud Console navigation menu, click **Oracle Database**, and then select **Autonomous Transaction Processing**.
 
-	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](../../../create/images/database-atp.png " ")
+	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-atp.png " ")
 
 2.  From the list of databases, select **SourceATP**.
 
-    ![Autonomous Transaction Processing page](../../../create/images/03-02-sourceatp.png " ")
+    ![Autonomous Transaction Processing page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-sourceatp.png " ")
 
 3.  On the SourceATP Database Details page, click **Database actions**, and then select **Database Users** from the dropdown. If the Database actions menu takes too long to load, you can click **Database actions** directly, and then select **Database users** from the Database actions page.
 
-    ![SourceATP Database Details page](../../../create/images/03-03-db-actions.png " ")
+    ![SourceATP Database Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-db-actions.png " ")
 
 4.  If prompted, log in to Database actions as **admin**, using the ATP Admin Password from **View Login Info** in your Workshop instructions.
 
-    ![ATP Database actions log in](../../../create/images/03-04-login.png " ")
+    ![ATP Database actions log in](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-04-login.png " ")
 
 5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
-    ![Database users](../../../create/images/03-05-ggadmin.png " ")
+    ![Database users](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-05-ggadmin.png " ")
 
 6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the Task 2, Step 10, and then click **Apply Changes**.
 
-    ![Edit user](../../../create/images/03-06-ggadmin-edit-user.png " ")
+    ![Edit user](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-06-ggadmin-edit-user.png " ")
 
     Note that the user icon changes from a padlock to a checkmark.
 
 7.  Open the Database actions navigation menu, and then under **Development**, select **SQL**.
 
-    ![Open navigation menu](../../../create/images/03-07-sql.png " ")
+    ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png " ")
 
     > **Note:**  (Optional) Close the SQL Help dialogs. 
 
@@ -44,7 +44,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
 
-    ![Script Output](../../../create/images/03-08-sql-script-return.png " ")
+    ![Script Output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-08-sql-script-return.png " ")
 
 9.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
 
@@ -56,6 +56,6 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     The Script Output panel displays six tables whose Support_Mode is **FULL**.
 
-    ![Script Output](../../../create/images/03-09-sql-script-return.png " ")
+    ![Script Output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-09-sql-script-return.png " ")
 
     You can leave the SQL window open and continue with the next Task.

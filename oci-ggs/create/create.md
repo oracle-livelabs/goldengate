@@ -6,48 +6,45 @@ In this lab, you learn to create an Oracle Cloud Infrastructure (OCI) GoldenGate
 
 Estimated time: 20 minutes
 
-### About Oracle Cloud Infrastructure GoldenGate Deployments and Connections
+Watch the video below for a quick walk through of the lab.
+[Watch the video](videohub:1_hz7gsiin)
+
+### About Oracle Cloud Infrastructure GoldenGate deployments and connections
 
 A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
 
-Connections capture source and target credential information. A connection also enables networking between the Oracle Cloud Infrastructure (OCI) GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
+Connections store the source and target credential information for OCI GoldenGate. A connection also enables networking between the Oracle Cloud Infrastructure (OCI) GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
 
 ### Objectives
 
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
-* Create a OCI GoldenGate deployment
 * Create the source and target connections
+* Review the deployment details
+* Assign connections to the deployments 
 
-### Prerequisites
 
-To successfully complete this lab in your own tenancy, you must have access to OCI Vault and have a Vault created. [Learn more.](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault)
+## Task 1: Create the source connection
 
-## Task 1: Create a deployment
+[](include:01-create-source-connection.md)
 
-[](include:01-create-deployment.md)
+## Task 2: Unlock the GGADMIN user and enable supplemental logging for the source database
 
-## Task 2: Create a connection to the source database
+[](include:02-unlock-source-ggadmin.md)
 
-[](include:02-create-source-connection.md)
+## Task 3: Create the target connection and unlock the GGADMIN user
 
-## Task 3: Unlock the GGADMIN user and check support mode for the source database
+[](include:03-create-target-connection.md)
 
-[](include:03-unlock-source-ggadmin.md)
-
-## Task 4: Create a connection to the target database and unlock the GGADMIN user
-
-[](include:04-create-target-connection.md)
-
-## Task 5: Review the deployment details
+## Task 4: Review the deployment details
 
 Return to OCI GoldenGate in the Oracle Cloud console. After the deployment is created and active, you can perform the following actions on the deployment details page:
 
-[](include:05-deployment-details.md)
+[](include:04-deployment-details.md)
 
-## Task 6: Assign connections to the deployment
+## Task 5: Assign connections to the deployment
 
-[](include:06-assign-connection.md)
+[](include:05-assign-connection.md)
 
 You may now **proceed to the next lab.**
 

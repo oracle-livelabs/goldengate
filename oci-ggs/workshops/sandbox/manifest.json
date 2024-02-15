@@ -1,6 +1,19 @@
 {
     "workshoptitle": "Replicate data using Oracle Cloud Infrastructure GoldenGate",
     "help": "livelabs-help-db_us@oracle.com",
+    "include": {
+        "01-create-vcn-subnet.md":"../../../ggs-common/building-blocks/tasks/adb/01-create-vcn-subnet.md",
+        "02-create-atp-instance.md":"../../../ggs-common/building-blocks/tasks/adb/02-create-atp-instance.md",
+        "03-load-atp-schema.md":"../../../ggs-common/building-blocks/tasks/adb/03-load-atp-schema.md",
+        "04-create-adw-instance.md":"../../../ggs-common/building-blocks/tasks/adb/04-create-adw-instance.md",
+        "01-create-source-connection.md":"../../../ggs-common/building-blocks/tasks/create/01-create-source-connection.md",
+        "02-unlock-source-ggadmin.md":"../../../ggs-common/building-blocks/tasks/create/02-unlock-source-ggadmin.md",
+        "03-create-target-connection.md":"../../../ggs-common/building-blocks/tasks/create/03-create-target-connection.md",
+        "04-deployment-details.md":"../../../ggs-common/building-blocks/tasks/create/04-deployment-details.md",
+        "05-assign-connection.md":"../../../ggs-common/building-blocks/tasks/create/05-assign-connection.md",
+        "01-launch-console.md":"../../../ggs-common/building-blocks/tasks/extract/01-launch-console.md",
+        "01-create-purge-task.md":"../../../ggs-common/building-blocks/tasks/purge/01-create-purge-task.md"
+      },
     "tutorials": [
         {
             "title": "Introduction",
@@ -14,7 +27,7 @@
         },
         {
             "title": "Lab 1: Create the OCI GoldenGate resources",
-            "filename": "../../create/create-gb.md"
+            "filename": "../../create/create.md"
         },
         {
             "title": "Lab 2: Create the Extract process and use Oracle Data Pump to export data",
