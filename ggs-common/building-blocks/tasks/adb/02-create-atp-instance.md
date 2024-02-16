@@ -6,7 +6,7 @@
 -->
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
-	![Autonomous Transaction Processing in Oracle Cloud navigation menu](../../../adb/images/database-atp.png " ")
+	![Autonomous Transaction Processing in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/database-atp.png " ")
 
 2.  On the **Autonomous Database &lt;compartment-name&gt;** page, click **Create Autonomous Database**.
 
