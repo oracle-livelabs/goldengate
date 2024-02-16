@@ -11,6 +11,7 @@ Estimated time: 20 minutes
 -  Provision a VCN and subnet
 -  Provision, connect, and load data into an Autonomous Transaction Processing (ATP) instance
 -  Provision, connect, and load data into an Autonomous Data Warehouse (ADW) instance
+- Create a deployment
 
 ### Prerequisites
 
@@ -32,7 +33,7 @@ To successfully complete this lab, you must:
 
 [](include:02-create-atp-instance.md)
 
-## Task 3: Load the ATP schema and enable supplemenal logging
+## Task 3: Load the ATP schema and enable supplemental logging
 
 [](include:03-load-atp-schema.md)
 
@@ -49,6 +50,10 @@ To successfully complete this lab, you must:
 	![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
 
 15. Log out of Database actions.
+
+## Task 5: Create a deployment
+
+[](include:05-create-deployment.md)
 
 You may now **proceed to the next lab.**
 
