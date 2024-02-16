@@ -20,7 +20,7 @@
 
 5.  Under **Choose a deployment type**, select **Serverless**.
 
-    ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/images/04-05-deployment-dw.png " ")
+    ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-deployment-dw.png " ")
 
 6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
 
