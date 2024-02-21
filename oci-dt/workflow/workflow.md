@@ -2,20 +2,17 @@
 
 ## Introduction
 
-In this lab, you learn to create Purge Tasks in the Oracle Cloud Infrastructure (OCI) GoldenGate Deployment Console. Completion of this lab is optional.
+In this lab, you learn to create and run a workflow on the Data Transforms deployment console. 
 
-Estimated time: 20 minutes
+Estimated time: 30 minutes
 
-Watch the video below for a quick walk through of the lab.
-[Watch the video](videohub:1_ni87slbs)
+### About Workflows
 
-### About Purge Tasks
-
-Purge Tasks help you to manage unused Trail files in your deployment. Trail files can add up over time and hinder the performance of your deployment.
+A workflow is made up of multiple flows organized in a sequence in which they must be executed. Each data flow is executed as a step. You can also add workflows as well as SQL queries as steps within a workflow. When you execute a workflow, a data flow either succeeds or fails. Depending on whether the first data flow succeeds or fails, you can choose the next data flow that must be executed.
 
 ### Objectives
 
-In this lab, you will create and run a Purge task.
+In this lab, you will create and run a workflow.
 
 ### Prerequisites
 
@@ -23,17 +20,19 @@ This lab assumes you completed all preceding labs.
 
 ## Task 1: Launch the Data transforms Deployment Console
 
-1.  When the deployment is active, click **Launch Console**.
+1.  On the DTDeployment’s details page, click **Launch Console**.
 
-    ![Launch Data transforms console](./images/01-01-dt-launch-console.png " ")
+    ![Launch Data transforms console](./images/01-01a-dt-launch-console.png " ")
 
-2.  To log in to the Data transforms deployment console, enter **SUPERVISOR** for User name and the password you provided in the previous Lab, and then click **Connect**.
+    ![Data transforms console homepage](./images/01-01b-console-homepage.png " ")
+
+2.  On the Sign in to Oracle Data Transforms page, enter **SUPERVISOR** for User name and the password you provided in the previous Lab, and then click **Connect**.
 
     ![Data transforms console log in](./images/01-02-dt-launch-console.png " ")
 
 After you log in successfully, you're brought to the Oracle Data Transforms home page. 
 
-## Task 2: Create ADW Connection
+## Task 2: Create an ADW Connection
 
 1.  Open the navigation menu, click **Connections**, and then click **Create Connection**.
 
@@ -43,19 +42,19 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
     ![Click create connection](./images/02-02-select-db-type.png " ")
 
-3.  On the Connection details page, under Database details, for Name, enter **ADW_IAD**.
+3.  On the Connection details page, under Database details, for Name, enter `ADW_IAD`.
 
-4. Select **Use Credential File**.
+4. Under Connection, select **Use Credential File**.
 
 5. For Wallet File, drag and drop your wallet file. 
 
-> **Note:** To download your ADW wallet file, click Database Connection on the ADW details page.
+    > **Note:** To download your ADW wallet file, click **Database Connection** on the ADW details page.
 
 6. From the Services dropdown, select **&lt;name&gt;\_low**.
 
 7. For User, enter **GGADMIN**.
 
-8. For Password, enter a password. The password must be the same as your ADW password.
+8. For Password, enter a password. The password must be the same as your ADW password, from Lab 2, Task 3, Step 10.
 
 9. Click **Create**.
 
@@ -69,7 +68,7 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
 2.  From the Connection dropdown, select **ADW_IAD**.
 
-3.  From the Schema dropdown, select **SRCMIRROR_OCIGGL**.
+3.  From the Schema dropdown, select **SRCMIRROR_OCIGGLL**.
 
 4. Click **Start**.
 
@@ -85,96 +84,103 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
     ![Enter project name](./images/04-02-project-name.png " ")
 
-3.  Select your project name, click **Data Flows** under Resources, and then select **Create Data Flow**.
+3.  On the Project Details page, under **Resources**, click **Data Flows**, and then click **Create Data Flow**.
 
     ![Enter project name](./images/04-03-create-data-flow.png " ")
 
-4.  The Create Data Flow dialog appears. On the Create Data Flow page, for Name, enter **Load TRG\_CUSTOMER** and optionally, a description, and then click **Create**.
+4.  In the Create Data Flow dialog, for Name, enter **Load TRG\_CUSTOMER** and optionally, a description, and then click **Create**.
 
     ![Create Data Flow dialog](./images/04-04-data-flow-name.png " ")
 
-5. An Add a Schema dialog appears. For Connection, select **ADW\_IAD** from the dropdown.
+5. In the Add a Schema dialog, for Connection select **ADW\_IAD** from the dropdown.
 
-6. For Schema, select **SRCMIRROR\_OCIGGL** from the dropdown.
+6. For Schema, select **SRCMIRROR\_OCIGGL** from the dropdown and then select **OK**.
 
-7. Select **OK**.
+    ![Add schema dialog](./images/04-06-add-schema-dialog.png " ")
 
-    ![Add a Schema dialog](./images/04-07-add-schema-dialog.png " ")
+7. On the Data Flow Details page, in the Data Entities panel, expand **SRCMIRROR\_OCIGGLL**.
 
-8. Expand the **SRCMIRROR\_OCIGGL** schema. Drag the **SRC\_AGE\_GROUP** data entity to the design canvas.
+8. Drag and drop the following data entities onto the canvas:
+    * SRC\_AGE\_GROUP
+    * SRC\_CUSTOMER
+    * SRC\_SALES\_PERSON
 
-    ![Drag and drop data entity](./images/04-08-src-age-grou-drag.png " ")
+    ![Drag and drop data entities](./images/04-08-drag-entities.png " ")
 
-9. Under the **SRCMIRROR\_OCIGGL** schema, drag the **SRC\_CUSTOMER** data entity to the design canvas.
+9. From the Data Transform tool bar, drag and drop the following components to the canvas:
+    * Join
+    * Lookup
 
-10. Under the **SRCMIRROR\_OCIGGL** schema, drag the **SRC\_SALES\_PERSON** data entity to the design canvas.
+    ![Drag and drop the data entities](./images/04-09-drag-data-transform.png " ")
 
-    ![Drag and drop the data entities](./images/04-10-drag-data-entities.png " ")
+10. Select **SRC\_AGE\_GROUP**, and then click its connector icon and drag it to the Lookup component.
 
-11. From the Data Transform toolbar, drag the **Lookup** component to the design canvas.
+11. Repeat the previous step to connect  **SRC\_CUSTOMER** to the Lookup component.
 
-12. From the Data Transform toolbar, drag the **Join** component to the design canvas.
+    ![Drag connector icon to Lookup component](./images/04-11-drag-connector-lookup.png " ")
 
-    ![Drag and drop the data entities](./images/04-12-drag-data-transform.png " ")
+12. On the design canvas, select **Lookup** to open the Lookup panel. 
 
-13. Click on the **SRC\_AGE\_GROUP** Connector icon and drag the icon to the **Lookup** component.
-
-14. Click on the **SRC\_CUSTOMER** Connector icon and drag the icon to tje **Lookup** component.
-
-    ![Drag connector icon to Lookup component](./images/04-14-drag-connector-lookup.png " ")
-
-15. On the design canvas, click Lookup to open the **Lookup** panel. In the Lookup panel, switch to the **Attributes** tab and then paste the following query into the **Lookup Condition**:
+13. In the Lookup panel, switch to the **Attributes**, and then paste the following query into the **Lookup Condition**:
 
     ```
     <copy>SRC_CUSTOMER.AGE between SRC_AGE_GROUP.AGE_MIN and SRC_AGE_GROUP.AGE_MAX;</copy>
     ```
 
-    Collapse the **Lookup** panel.
+14. Collapse the **Lookup** panel.
 
-    ![Drag connector icon to Lookup component](./images/04-15-lookup-condition.png " ")
+   ![Lookup panel edit](./images/04-14-lookup-condition.png " ")
 
-16. In the Data Entities panel, click on the **SRC\_SALES\_PERSON** Connector icon and drag the icon to the **Join** component.
+15. In the Data Entities panel, connect **SRC\_SALES\_PERSON** to the **Join** component.
 
-17. Click on the **Lookup** component icon and drag the icon to the **Join** component.
+16. Connect **Lookup** to **Join**.
 
-    ![Drag connector icon to Join component](./images/04-17-drag-connector-join.png " ")
+    ![Connect Lookup to Join](./images/04-16-drag-connector-join.png " ")
 
-18. On the design canvas, click Join to open the **Join** panel. In the Lookup panel, switch to the **Attributes** tab and then paste the following query into the **Join Condition**:
+17. Select **Join** to open the Join panel.
+
+18. In the Lookup panel, switch to the **Attributes** tab and then paste the following query into the **Join Condition**:
 
     ```
     <copy>SRC_CUSTOMER.SALES_PERS_ID=SRC_SALES_PERSON.SALES_PERS_ID;</copy>
     ```
 
-    Collapse the **Lookup** panel.
+19. Collapse the **Join** panel.
 
-    ![Drag connector icon to Lookup component](./images/04-18-join-condition.png " ")
+    ![Join panel edit](./images/04-19-join-condition.png " ")
 
-19. In the Data Entities panel, under **SRCMIRROR\_OCIGGLL**, drag the **TRG\_CUSTOMER** data entity to the design canvas.
+20. On the Data Flow Details page, in the Data Entities panel, drag and drop **TRG\_CUSTOMER** onto the design canvas.
 
-20. Click on the **Join** Connector icon and drag the icon to the **TRG\_CUSTOMER** data entity.
+21. Connect **Join** to **TRG\_CUSTOMER**.
 
-    ![Drag connector icon to Lookup component](./images/04-20-trg-customer.png " ")
+    ![Drag connector icon to TRG_CUSTOMER component](./images/04-21-trg-customer.png " ")
 
-21. On the design canvas, click TRG\_CUSTOMER to open the **TRG\_CUSTOMER** panel. In the TRG_CUSTOMER panel, switch to the **Attributes** tab and enable Key for **CUST\_ID**, and disable Update for **CRE\_DATE** and disable Insert for **UPD\_DATE**. 
+22. Select **TRG\_CUSTOMER** to open the TRG_CUSTOMER panel.
 
-    ![Drag connector icon to Lookup component](./images/04-21-trg-customer-attribute.png " ")
+23. In the TRG_CUSTOMER panel, click **Attributes**.
 
-22. In the navigation menu, click **Column Mapping** and select the edit icon besides the **CUST\_ID** name. In the Expression Editor dialog, under Expression, enter **SRC\_CUSTOMER.CUSTID**. Click **OK**.
+24. On the Attributes screen,
+    * For CUST_ID, select **Key**.
+    * For CRE_DATE, deselect **Update**.
+    * For UPD_DATE, deselect **Insert**.
 
-    ![Drag connector icon to Lookup component](./images/04-22a-column-mapping.png " ")
+    ![Attributes screen changes](./images/04-24-trg-customer-attribute.png " ")
 
-    ![Drag connector icon to Lookup component](./images/04-22b-expression-editor.png " ")
+25. Click **Column Mapping**, and then for CUST_ID, click **Edit**.
 
+    ![Click Column Mapping](./images/04-25-column-mapping.png " ")
 
-23. For the **DEAR** name, enter **CASE WHEN SRC\_CUSTOMER.DEAR = 0 THEN 'Mr' WHEN SRC\_CUSTOMER.DEAR = 1 THEN 'Mrs' ELSE 'Ms' END** as the expression.
+26. In the Expression Editor, enter `SRC_CUSTOMER.CUSTID` in the Expression field, and then click **OK**.
 
-24. For the **CUST\_NAME** name, enter **SRC\_CUSTOMER.FIRST\_NAME || ' ' || UPPER(SRC\_CUSTOMER.LAST\_NAME)** as the expression.
+    ![Expression Editor](./images/04-26-expression-editor.png " ")
 
-25. For the **SALES\_PERS** name, enter **SRC\_SALES\_PERSON.FIRST\_NAME || ' ' ||UPPER(SRC\_SALES\_PERSON.LAST\_NAME)** as the expression.
-
-26. For the **CRE\_DATE** name, enter **SYSDATE** as the expression.
-
-27. For the **UPD\_DATE** name, enter **SYSDATE** as the expression. Keep the other mappings as-is.
+27. Repeat the steps above to these names:
+    * For **DEAR**, enter `CASE WHEN SRC\_CUSTOMER.DEAR = 0 THEN 'Mr' WHEN SRC\_CUSTOMER.DEAR = 1 THEN 'Mrs' ELSE 'Ms' END` as the expression.
+    * For **CUST\_NAME**, enter `SRC\_CUSTOMER.FIRST\_NAME || ' ' || UPPER(SRC\_CUSTOMER.LAST\_NAME)` as the expression.
+    * For **SALES\_PERS**, enter `SRC\_SALES\_PERSON.FIRST\_NAME || ' ' ||UPPER(SRC\_SALES\_PERSON.LAST\_NAME)` as the expression.
+    * For **CRE\_DATE** name, enter `SYSDATE` as the expression.
+    * For **UPD\_DATE** name, enter `SYSDATE` as the expression.
+    * Keep the other mappings as-is.
 
     ![All column mapping](./images/04-27-all-column-mapping.png " ")
 
@@ -242,7 +248,12 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
 ## Learn more
 
-* [Manage Trail Files](https://docs.oracle.com/en/cloud/paas/goldengate-service/ntzlj/index.html#articletitle)
+* [Oracle Data Transforms](https://docs.oracle.com/en/database/data-integration/data-transforms/index.html)
+* [Data Loads](https://docs-uat.us.oracle.com/en/database/data-integration/data-transforms/using/data-loads1.html)
+* [Data Entities](https://docs-uat.us.oracle.com/en/database/data-integration/data-transforms/using/data-entities1.html)
+* [Projects](https://docs-uat.us.oracle.com/en/database/data-integration/data-transforms/using/projects1.html)
+* [Workflows](https://docs-uat.us.oracle.com/en/database/data-integration/data-transforms/using/workflows1.html)
+* [Jobs](https://docs-uat.us.oracle.com/en/database/data-integration/data-transforms/using/jobs1.html)
 
 ## Acknowledgements
 

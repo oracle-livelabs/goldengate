@@ -28,7 +28,7 @@ Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) i
 
 9. For Database username, enter `ggadmin`.
 
-10. Enter the database's password in the Password field.
+10. Enter the database's password in the Password field. Ensure that you record this password for later use.
 
 11. For Traffic routing method, select **Shared endpoint**.
 

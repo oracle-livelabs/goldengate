@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "OCI GoldenGate Data Transforms LiveLabs",
+    "workshoptitle": "Discover OCI GoldenGate Data Transforms",
     "help": "livelabs-help-db_us@oracle.com",
     "include": {
         "01-create-vcn-subnet.md":"../../../ggs-common/building-blocks/tasks/adb/01-create-vcn-subnet.md",

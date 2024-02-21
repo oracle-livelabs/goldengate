@@ -2,83 +2,71 @@
 
 ## Introduction
 
-In this lab, you learn to create an Oracle Cloud Infrastructure (OCI) GoldenGate deployment.
+In this lab, you learn to create a Data Transforms deployment and a generic connection.
 
 Estimated time: 20 minutes
 
-Watch the video below for a quick walk through of the lab.
-[Watch the video](videohub:1_hz7gsiin)
+### About Data Transforms deployments and generic connection 
 
-### About Oracle Cloud Infrastructure GoldenGate deployments and connections
+A Data Transforms deployment manages the resources it requires to function. The Data Transforms deployment also lets you access the Data Transforms deployment console, where you can create data loads, data flows, and workflows to move and transform data between systems.
 
-A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
-
-Connections store the source and target credential information for OCI GoldenGate. A connection also enables networking between the Oracle Cloud Infrastructure (OCI) GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
+Connections help you to connect Data Transforms to various technologies reachable from your OCI network.
 
 ### Objectives
 
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
-* Create a OCI GoldenGate deployment
-* Create the source and target connections
-
+* Create a Data Transforms deployment
+* Create a generic connection
 
 ## Task 1: Create a Data transforms deployment
 
 > **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
-1.  In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
+1.  Use the Oracle Cloud Console navigation menu to navigate back to **GoldenGate**.
 
-    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
+2.  On the Deployments page, click **Create deployment**.
 
-2.  On the GoldenGate **Overview** page, click **Deployments**.
+    ![Deployments page](./images/01-02-create-deployment.png " ")
 
-    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
+3.  In the Create Deployment panel, enter **DTDeployment** for Name.
 
-3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, expand LiveLabs, and then select the compartment **LL1234-COMPARTMENT**.
+4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
-    > **Tip:** You can find your Username in the Workshop instruction's **View Login Info**.
+5.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
-4.  On the Deployments page, click **Create deployment**.
+6. Select **Auto scaling**.
 
-    ![Deployments page](./images/01-04-create-deployment.png " ")
+7.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
-5.  In the Create Deployment panel, enter **DTDeployment** for Name.
+    ![Completed Create GoldenGate Deployment fields](./images/01-07-create-deployment-general-info.png " ")
 
-6.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
+8.  For License type, select **Bring Your Own License (BYOL)**.
 
-7.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
+9. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
-8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
+10. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-08-create-deployment-general-info.png " ")
-
-9.  For License type, select **Bring Your Own License (BYOL)**.
-
-10. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
-
-11. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
-
-12. Click **Next**.
+11. Click **Next**.
 
     ![Completed Create GoldenGate Deployment fields](./images/01-12-create-deployment-general-info.png " ")
 
-13. For Select a deployment type, select **Data transforms**.
+12. For Select a deployment type, select **Data transforms**.
 
-14. For Select a technology dropdown, select **Oracle Data Transforms**.
+13. For Select a technology dropdown, select **Oracle Data Transforms**.
 
-15. For GoldenGate Instance Name, enter **ggsinstance**.
+14. For GoldenGate Instance Name, enter **ggsinstance**.
 
-16. In an IAM-enabled tenancy, select a Credential store. 
+15. In an IAM-enabled tenancy, select a Credential store. 
 
     * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to the next lab (skip the following steps).
     * If you select GoldenGate, complete the following steps.
 
-17. For Administrator Username, enter **SUPERVISOR**.
+16. For Administrator Username, enter **SUPERVISOR**.
 
-18. For Password secret in &lt;USER&gt;-COMPARTMENT, select a password from the dropdown.
+17. For Password secret in &lt;USER&gt;-COMPARTMENT, select a password from the dropdown.
 
-19. Click **Create**.
+18. Click **Create**.
 
     ![Completed Create GoldenGate Deployment fields](./images/01-19-create-deployment-general-info.png " ")
 
@@ -86,7 +74,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 ## Task 2: Create the Generic connection
 
-Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) instance.
+Follow the steps below to connect the target Generic connection to Autonomous Data Warehouse (ADW).
 
 1.  Use the Oracle Cloud Console navigation menu to navigate back to **GoldenGate**.
 
@@ -116,21 +104,9 @@ Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) i
 
     The connection becomes Active after a few minutes.
 
-## Task 3: Review the deployment details
+## Task 3: Assign the connection to the deployment
 
-After the deployment is created and active, you can perform the following actions on the deployment details page:
-
-* Review the deployment's status
-* Launch the GoldenGate service deployment console
-* Edit the deployment's name or description
-* Stop and start the deployment
-* Move the deployment to a different compartment
-* Review the deployment resource information
-* Add tags
-
-    ![Deployment Details page](./images/05-01-deployment-details.png " ")
-
-## Task 4: Assign the connection to the deployment
+After the deployment becomes Active, you can assign connections on the deployment details page.
 
 1. Click **Assigned connections**.
 
