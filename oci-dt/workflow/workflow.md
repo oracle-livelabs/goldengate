@@ -12,7 +12,12 @@ A workflow is made up of multiple flows organized in a sequence in which they mu
 
 ### Objectives
 
-In this lab, you will create and run a workflow.
+In this lab, you will:
+* Create an ADW connection in the Data Transforms console
+* Import data entities
+* Create a project and data flow
+* Create a workflow and use the design canvas
+* Create and manage jobs
 
 ### Prerequisites
 
@@ -24,13 +29,13 @@ This lab assumes you completed all preceding labs.
 
     ![Launch Data transforms console](./images/01-01a-dt-launch-console.png " ")
 
-    ![Data transforms console homepage](./images/01-01b-console-homepage.png " ")
-
 2.  On the Sign in to Oracle Data Transforms page, enter **SUPERVISOR** for User name and the password you provided in the previous Lab, and then click **Connect**.
 
-    ![Data transforms console log in](./images/01-02-dt-launch-console.png " ")
+    ![Data transforms console log in](./images/01-02a-dt-launch-console.png " ")
 
 After you log in successfully, you're brought to the Oracle Data Transforms home page. 
+
+![Data transforms console homepage](./images/01-02b-console-homepage.png " ")
 
 ## Task 2: Create an ADW Connection
 
@@ -42,7 +47,7 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
     ![Click create connection](./images/02-02-select-db-type.png " ")
 
-3.  On the Connection details page, under Database details, for Name, enter `ADW_IAD`.
+3.  On the Connection details page, under Database details, for **Connection Name**, enter `ADW_IAD`.
 
 4. Under Connection, select **Use Credential File**.
 
@@ -94,7 +99,7 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
 5. In the Add a Schema dialog, for Connection select **ADW\_IAD** from the dropdown.
 
-6. For Schema, select **SRCMIRROR\_OCIGGL** from the dropdown and then select **OK**.
+6. For Schema, select **SRCMIRROR\_OCIGGLL** from the dropdown and then select **OK**.
 
     ![Add schema dialog](./images/04-06-add-schema-dialog.png " ")
 
@@ -113,7 +118,7 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
     ![Drag and drop the data entities](./images/04-09-drag-data-transform.png " ")
 
-10. Select **SRC\_AGE\_GROUP**, and then click its connector icon and drag it to the Lookup component.
+10. On the design canvas, select **SRC\_AGE\_GROUP**, and then click its connector icon and drag it to the Lookup component.
 
 11. Repeat the previous step to connect  **SRC\_CUSTOMER** to the Lookup component.
 
@@ -174,13 +179,12 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
     ![Expression Editor](./images/04-26-expression-editor.png " ")
 
-27. Repeat the steps above to these names:
-    * For **DEAR**, enter `CASE WHEN SRC\_CUSTOMER.DEAR = 0 THEN 'Mr' WHEN SRC\_CUSTOMER.DEAR = 1 THEN 'Mrs' ELSE 'Ms' END` as the expression.
-    * For **CUST\_NAME**, enter `SRC\_CUSTOMER.FIRST\_NAME || ' ' || UPPER(SRC\_CUSTOMER.LAST\_NAME)` as the expression.
-    * For **SALES\_PERS**, enter `SRC\_SALES\_PERSON.FIRST\_NAME || ' ' ||UPPER(SRC\_SALES\_PERSON.LAST\_NAME)` as the expression.
-    * For **CRE\_DATE** name, enter `SYSDATE` as the expression.
-    * For **UPD\_DATE** name, enter `SYSDATE` as the expression.
-    * Keep the other mappings as-is.
+27. Repeat steps 25 and 26 for the following columns:
+    * For **DEAR**, enter `CASE WHEN SRC_CUSTOMER.DEAR = 0 THEN 'Mr' WHEN SRC_CUSTOMER.DEAR = 1 THEN 'Mrs' ELSE 'Ms' END` into the expression field.
+    * For **CUST\_NAME**, enter `SRC_CUSTOMER.FIRST\_NAME || ' ' || UPPER(SRC_CUSTOMER.LAST\_NAME)` into the expression field.
+    * For **SALES\_PERS**, enter `SRC_SALES_PERSON.FIRST\_NAME || ' ' ||UPPER(SRC_SALES_PERSON.LAST_NAME)` into the expression field.
+    * For **CRE\_DATE** name, enter `SYSDATE` into the expression field.
+    * For **UPD\_DATE** name, enter `SYSDATE` into the expression field.
 
     ![All column mapping](./images/04-27-all-column-mapping.png " ")
 
@@ -196,53 +200,55 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
 ## Task 5: Create Workflow
 
-1.  On the project navigation menu, select **Workflows**, and then click **Create Workflow**.
+1.  In the project navigation menu, select **Workflows**, and then click **Create Workflow**.
 
     ![Click Create Worflow](./images/05-01-create-workflow.png " ")
 
-2.  For Name, enter **Orchestrate Data Warehouse Load**. Click **Create**.
+2.  In the Create Workflow dialog, enter **Orchestrate Data Warehouse Load** for Name, and then click **Create**.
 
     ![Enter workflow name](./images/05-02-workflow-name.png " ")
 
-3.  Drag the SQL icon on the design canvas.
+3.  Drag and drop SQL from the toolbar to the design canvas.
 
     ![Drag SQL icon](./images/05-03-sql-icon.png " ")
 
-4.  Double click the SQL icon in the editor to open the properties page. On the General page, for name, enter **Data Cleansing**.
+4.  Double-click SQL to open its properties. 
 
-    ![Change name in the properties page](./images/05-04-change-sql-name.png " ")
+5. In the Data Cleansing panel, on the General page, enter **Data Cleansing** for Name.
 
-5. Select Attributes, and for Connection select **ADW\_IAD** from the dropdown.
+    ![Change name in the properties page](./images/05-05-change-sql-name.png " ")
 
-6. For SQL, copy the following query:
+6. Click Attributes, and then select **ADW\_IAD** from the Connection dropdown.
+
+7. For SQL, enter the following query, and then collapse the panel:
 
     ```
     <copy>delete from SRCMIRROR_OCIGGLL.TRG_CUSTOMER where CITY_ID > 110</copy>
     ```
-    ![Change name in the properties page](./images/05-06-attributes.png " ")
+    ![Change name in the properties page](./images/05-07-attributes.png " ")
 
-7. Collapse the SQL pop-up.
-
-8. Under Data Flows, drag the Load TRG_CUSTOMER Data Flow to the design canvas.
+8. On the Workflow Details page, under Data Flows, drag and drop Load TRG_CUSTOMER to the design canvas.
 
     ![Drag the data flow](./images/05-08-drag-data-flow.png " ")
 
-9. Click on the Data Cleansing SQL workflow line and drag the ok (green arrow) icon to the Load TRG_CUSTOMER Data Flow.
+9. Click on the Data Cleansing workflow line and drag the ok (green arrow) icon to the Load TRG_CUSTOMER Data Flow.
 
     ![Drag the data flow](./images/05-09-workflow-line.png " ")
 
-10. Click Save Workflow, and then click Start Workflow. A pop-up appears. Click **Start**.
+10. Click **Save Workflow**, and then click **Start Workflow**.
 
-    ![Save data flow](./images/05-10a-save-workflow.png " ")
+    ![Save data flow](./images/05-10-save-workflow.png " ")
 
-    ![Start data flow](./images/05-10b-start-workflow.png " ")
+11. In the Start Workflow dialog, click **Start**.
+
+    ![Start data flow](./images/05-11-start-workflow.png " ")
 
 ## Task 6: Create and manage Jobs
-1.  On the project navigation menu, select **Jobs**, and then select your job.
+1.  In the project navigation menu, select **Jobs**, and then select your job from the Jobs list.
 
     ![Select Job](./images/06-01-select-job.png " ")
 
-2.  In the Job Details page, you can review the status of the different steps. 
+2.  On the Job Details page, you can review the different steps of the job.
 
     ![View job details](./images/06-02-view-job-details.png " ")
 

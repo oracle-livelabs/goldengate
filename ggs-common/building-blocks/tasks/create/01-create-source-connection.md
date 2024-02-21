@@ -34,13 +34,13 @@
 
 11.  Enter the database's password in the Password field. Take note of the password.
 
-    > **NOTE:** This password will be used to unlock `GGADMIN` in Task 3.
+    > **NOTE:** This password will be used to unlock `GGADMIN` in Task 2.
 
 12. For Traffic routing method, select **Shared endpoint**.
 
 13. For Session mode, select **Direct**.
 
-14. Click **Create**
+14. Click **Create**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-13-create-connection-gg-details.png)
 

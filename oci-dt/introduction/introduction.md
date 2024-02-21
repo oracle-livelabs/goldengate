@@ -23,12 +23,12 @@ Oracle Data Transforms is a built-in Extract, Transform, Load (ETL) tool in Auto
 
 ## Learn more
 
-* [Overview of Oracle Cloud Infrastructure GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/overview-goldengate.html#GUID-0AF49219-46DC-4BF2-BBFA-64E4D3F557F2)
+* [Overview of Oracle Cloud Infrastructure GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/druyg/index.html#articletitle)
 * [Take an interactive tour of OCI GoldenGate](https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:29986)
 * [Oracle Data Transforms](https://docs.oracle.com/en/database/data-integration/data-transforms/index.html)
 
 ## Acknowledgements
 
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management & Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2023
+* **Author** - Katherine Wardhana, User Assistance Developer
+* **Contributors** -  Jenny Chan, Consulting User Assistance Developer, Database User Assistance; Julien Testut, Database Product Management
+* **Last Updated By/Date** - Katherine Wardhana, February 2024
