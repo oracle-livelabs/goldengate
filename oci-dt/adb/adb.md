@@ -20,6 +20,7 @@ To successfully complete this lab, you must:
 * For IAM-enabled tenancies, ensure that you [configure Identity domains for OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/mkmbs/#GUID-DD9C1BF8-69FE-4C9A-A2D1-74C73550ED65).
 * For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault). [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
 * If you enable public deployment console access when creating the deployment, OCI GoldenGate creates a load balancer in your tenancy VCN on your behalf. To ensure successful creation of the deployment and load balancer, you must have the appropriate policies, quotas, and limits in place.
+* If you enable public deployment console access when creating the deployment, OCI GoldenGate creates a load balancer in your tenancy VCN on your behalf. To ensure successful creation of the deployment and load balancer, you must have the appropriate policies, quotas, and limits in place.
 
 > **Notes:** 
 
@@ -55,6 +56,59 @@ To successfully complete this lab, you must:
 ## Task 5: Create a data replication deployment
 
 [](include:05-create-deployment.md)
+
+## Task 6: Create a data transforms deployment
+
+> **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
+
+1.  Use the Oracle Cloud Console navigation menu to navigate back to **GoldenGate**.
+
+2.  On the Deployments page, click **Create deployment**.
+
+    ![Deployments page](./images/01-02-create-deployment.png " ")
+
+3.  In the Create Deployment panel, enter **DTDeployment** for Name.
+
+4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
+
+5.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
+
+6. Select **Auto scaling**.
+
+7.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
+
+    ![Completed Create GoldenGate Deployment fields](./images/01-07-create-deployment-general-info.png " ")
+
+8.  For License type, select **Bring Your Own License (BYOL)**.
+
+9. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
+
+10. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
+
+11. Click **Next**.
+
+    ![Completed Create GoldenGate Deployment fields](./images/01-12-create-deployment-general-info.png " ")
+
+12. For Select a deployment type, select **Data transforms**.
+
+13. For Select a technology dropdown, select **Oracle Data Transforms**.
+
+14. For GoldenGate Instance Name, enter **ggsinstance**.
+
+15. In an IAM-enabled tenancy, select a Credential store. 
+
+    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to the next lab (skip the following steps).
+    * If you select GoldenGate, complete the following steps.
+
+16. For Administrator Username, enter **SUPERVISOR**.
+
+17. For Password secret in &lt;USER&gt;-COMPARTMENT, select a password from the dropdown.
+
+18. Click **Create**.
+
+    ![Completed Create GoldenGate Deployment fields](./images/01-19-create-deployment-general-info.png " ")
+
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Task 2 while you wait for the deployment creation to complete.
 
 You may now **proceed to the next lab.**
 

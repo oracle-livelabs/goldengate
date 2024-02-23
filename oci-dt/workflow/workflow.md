@@ -23,21 +23,101 @@ In this lab, you will:
 
 This lab assumes you completed all preceding labs.
 
-## Task 1: Launch the Data transforms Deployment Console
+## Task 1: Perform Inserts to the target table
+
+1.  Return to the Oracle Cloud console and use the navigation menu to navigate back to **Oracle Database**, **Autonomous Data Warehouse**, and then **TargetADW**.
+
+2. On the Target ADW page, click **Database actions**, and the click **SQL**.
+
+3. Enter the following inserts, and then click **Run Script**:
+
+    ```
+    <copy> create table SRCMIRROR_OCIGGLL.TRG_CUSTOMER (
+        CUST_ID              NUMBER(10,0)              not null,
+        DEAR                 VARCHAR2(4 BYTE),
+        CUST_NAME            VARCHAR2(50 BYTE),
+        ADDRESS              VARCHAR2(100 BYTE),
+        CITY_ID              NUMBER(10,0),
+        PHONE                VARCHAR2(50 BYTE),
+        AGE                  NUMBER(3,0),
+        AGE_RANGE            VARCHAR2(50 BYTE),
+        SALES_PERS           VARCHAR2(50 BYTE),
+        CRE_DATE             DATE,
+        UPD_DATE             DATE,
+        constraint PK_TRG_CUSTOMER primary key (CUST_ID)
+    );
+    </copy>
+    ```
+
+    ![Run scripted highlight](./images/01-03-run-sql.png " ")
+
+In this lab, you learned to monitor performance in the OCI GoldenGate Deployment Console and in the OCI Console.
+
+## Task 2: Create the Generic connection
+
+Follow the steps below to connect the target Generic connection to Autonomous Data Warehouse (ADW).
+
+1.  Use the Oracle Cloud Console navigation menu to navigate back to **GoldenGate**.
+
+2.  Click **Connections** and then **Create Connection**.
+
+    ![Create Connection in GoldenGate menu](./images/02-02-create-connection.png " ")
+
+3.  The Create connection panel consists of two pages. On the General information page, for Name, enter **GenericADW** and optionally, a description.
+
+4.  From the **Compartment** dropdown, select a compartment.
+
+5.  From the a Type dropdown, select **Generic connection**.
+
+    ![Source Database details](./images/02-05-general-info.png " ")
+
+6.  Click **Next**.
+
+7. On the Connection details page, under Host, enter **adb.&lt;region&gt;.oraclecloud.com:1522**.
+
+8. For Traffic routing method, select **Dedicated endpoint**.
+
+9. Under Network connectivity, for Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
+
+10. Click **Create**.
+
+    ![Target Database details](./images/02-10-connection-details.png " ")
+
+    The connection becomes Active after a few minutes.
+
+## Task 3: Assign the connection to the deployment
+
+After the connection becomes Active, you can assign deployment on the connection details page.
+
+1. Click **Assigned deployments**.
+
+    ![Select Assigned deployments under Resources](./images/03-01-assign-connection.png " ")
+
+2. Click **Assign deployment**.
+
+    ![Assigned deployment under Resources](./images/03-02-select-assign-connection.png " ")
+
+3. In the Assign connection dialog, from the Connection in &lt;compartment-number&gt;-COMPARTMENT dropdown, select **SourceATP**. Click **Assign connection**.
+
+    ![Assigned connection to GenericADW](./images/03-03a-assigne-genericadw.png " ") 
+
+    ![Assigned connection to GenericADW](./images/03-03b-connection-assigned.png " ") 
+
+## Task 4: Launch the Data transforms Deployment Console
 
 1.  On the DTDeployment’s details page, click **Launch Console**.
 
-    ![Launch Data transforms console](./images/01-01a-dt-launch-console.png " ")
+    ![Launch Data transforms console](./images/04-01a-dt-launch-console.png " ")
 
 2.  On the Sign in to Oracle Data Transforms page, enter **SUPERVISOR** for User name and the password you provided in the previous Lab, and then click **Connect**.
 
-    ![Data transforms console log in](./images/01-02a-dt-launch-console.png " ")
+    ![Data transforms console log in](./images/04-02a-dt-launch-console.png " ")
 
 After you log in successfully, you're brought to the Oracle Data Transforms home page. 
 
-![Data transforms console homepage](./images/01-02b-console-homepage.png " ")
+![Data transforms console homepage](./images/04-02b-console-homepage.png " ")
 
-## Task 2: Create an ADW Connection
+## Task 5: Create an ADW Connection
 
 1.  Open the navigation menu, click **Connections**, and then click **Create Connection**.
 
@@ -65,7 +145,7 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
     ![Connection details page](./images/02-09-connection-details.png " ")
 
-## Task 3: Import Data Entities
+## Task 6: Import Data Entities
 
 1.  Open the navigation menu, click **Data Entities**, and then click **Import Data Entities**.
 
@@ -79,7 +159,7 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
     ![Click Import Data Entities](./images/03-02-data-entities-dialog.png " ")
 
-## Task 4: Create Project and Data Flow
+## Task 7: Create Project and Data Flow
 
 1.  Open the navigation menu, select **Projects**, and then click **Create Project**.
 
@@ -198,7 +278,7 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
     ![Save data flow](./images/04-30-save-data-flow.png " ")
 
-## Task 5: Create Workflow
+## Task 8: Create Workflow
 
 1.  In the project navigation menu, select **Workflows**, and then click **Create Workflow**.
 
@@ -243,7 +323,7 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
     ![Start data flow](./images/05-11-start-workflow.png " ")
 
-## Task 6: Create and manage Jobs
+## Task 9: Create and manage Jobs
 1.  In the project navigation menu, select **Jobs**, and then select your job from the Jobs list.
 
     ![Select Job](./images/06-01-select-job.png " ")

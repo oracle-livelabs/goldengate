@@ -84,36 +84,6 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 4.  Refresh your view after 5 minutes to see updated metrics.
 
-## Task 4: Perform Inserts to the target database
-
-1.  Return to the Oracle Cloud console and use the navigation menu to navigate back to **Oracle Database**, **Autonomous Data Warehouse**, and then **TargetADW**.
-
-2. On the Target ADW page, click **Database actions**, and the click **SQL**.
-
-3. Enter the following inserts, and then click **Run Script**:
-
-    ```
-    <copy> create table SRCMIRROR_OCIGGLL.TRG_CUSTOMER (
-        CUST_ID              NUMBER(10,0)              not null,
-        DEAR                 VARCHAR2(4 BYTE),
-        CUST_NAME            VARCHAR2(50 BYTE),
-        ADDRESS              VARCHAR2(100 BYTE),
-        CITY_ID              NUMBER(10,0),
-        PHONE                VARCHAR2(50 BYTE),
-        AGE                  NUMBER(3,0),
-        AGE_RANGE            VARCHAR2(50 BYTE),
-        SALES_PERS           VARCHAR2(50 BYTE),
-        CRE_DATE             DATE,
-        UPD_DATE             DATE,
-        constraint PK_TRG_CUSTOMER primary key (CUST_ID)
-    );
-    </copy>
-    ```
-
-    ![Run scripted highlight](./images/04-03-run-sql.png " ")
-
-In this lab, you learned to monitor performance in the OCI GoldenGate Deployment Console and in the OCI Console.
-
 You may now **proceed to the next lab.**
 
 ## Learn more
