@@ -1,5 +1,5 @@
 
-# Define a Target in your Stream Analytics Pipeline
+# Define a Target in the Stream Analytics pipeline
 
 ## Introduction
 
@@ -14,9 +14,7 @@ In this Lab you will:
 - Use the Target in Your Pipeline
 
 ### Prerequisites
-This Lab assumes you have:
-- A Free Tier, Paid, or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+You should have successfully completed all the previous labs.
 
 ## **Task 1:** Create a Target
 
@@ -31,22 +29,22 @@ This Lab assumes you have:
     -  In the **Tags** field, enter **transportation,tutorial**.
     -  In the **Target Type** drop-down, the selected target is displayed. **Kafka** in this example. Click **Next**.
 
-![Creating a Kafka Target](./images/CreateTarget.PNG "")
+![Creating a Kafka Target](./images/crtetarget.png "")
 
 4. On the **Target Details** screen, enter the following details:
     - From the **Connection** drop-down list, select the **LocalKafka** connection that you had earlier created.
     - In the **Topic name** field, enter **LocalKafka****.
     - From the **Data Format** drop-down, select **JSON**. Click **Next**.
 
-![Adding Target Details](./images/TargetDet.PNG "")
+![Adding Target Details](./images/tgtdet.png "")
 
-5. On the **Data Format** page, check the **Create nested json object** option. Click **Next**.
+5. On the **Data Format** screen, check the **Create nested json object** option. Click **Next**.
 
-6. On the **Shape** page: 
+6. On the **Shape** screen: 
     - Check the **Select Existing Shape** option.
     - From the **Select Existing Shape** drop-down list, select **driver_details**. All the fields in the selected shape are displayed. Select the fields to include in the target.
 
-![Assigning Target Shape](./images/TarShape.PNG "")
+![Assigning Target Shape](./images/tshape.png "")
 
 ## **Task 2:** Use the Target in Your Pipeline
 
@@ -56,26 +54,31 @@ This Lab assumes you have:
 
 3. Select **Target** .
 
+![Adding a Target from the Pipeline Editor](./images/addtgt.png "")
+
 4. On the **Create Target Stage** page:
 
     - In the name field, enter **ReportViolations**.
     - In the **Description** field, enter **Report Violations to a downstream application**.
     - Click **Save**.
 
-5. On the **Target Mapping** page, select the **ReportViolations** target that you created in **Task 1**.
+![Creating a Target from the Pipeline Editor](./images/pipetrgt.png "")
 
-![Target Mapping in Pipeline Editor](./images/TarMap.PNG "")
+5. On the **Target Mapping** page, select the **ReportViolations** target.
+
+![Target Mapping in Pipeline Editor](./images/tmap.png "")
 
 The Live Output table for the selected Target:
 
-![Report Violations Traget Live Output](./images/TargetLivOP.PNG "")
+![Report Violations Traget Live Output](./images/target-liv-op.png "")
 
+You may now **proceed to the next lab**.
 
 ## Learn More
 
 * [Transform and Analyze Data Streams](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/creating-pipeline-transform-and-analyze-data-streams.html#GUID-9DB9B57A-1095-4557-ACB9-816A696EB121)
 
-* [Installing GoldenGate Stream Analytics](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/install/how-install-goldengate-stream-analytics.html#GUID-13BC895D-6AD1-4398-98E2-B5BE5B14D26B).
+* [Installing GoldenGate Stream Analytics](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/install-and-upgrade.html#GUID-A687DFF0-728A-4071-947A-F3E90ABF65F6).
 
 * [GoldenGate Stream Analytics on Oracle Cloud Marketplace](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/osamp/getting-started-goldengate-stream-analytics-oci.html#GUID-B488861E-1C43-4177-A1F8-40F8E44754AD).
 
@@ -84,4 +87,4 @@ The Live Output table for the selected Target:
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
 * **Contributors** - Sumathi Nelapati
-* **Last Updated By/Date** - Pratibha Manjunath, March 2023
+* **Last Updated By/Date** - Pratibha Manjunath, December 2023

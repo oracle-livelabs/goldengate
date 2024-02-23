@@ -1,10 +1,10 @@
-# Setup a Stream Analytics Pipeline
+# Create and publish the Stream Analytics pipeline
 
 ## Introduction
 
 Estimated Time: 20 minutes
 
-This lab focuses on creating a pipeline and establishing stages, filters, and visualizations.
+In this lab, you create a pipeline and add stages, filters, and visualizations.
 
 Watch the video below for a quick walk through of the lab.
 [Watch the video](videohub:1_d9leh5at)
@@ -16,176 +16,197 @@ Watch the video below for a quick walk through of the lab.
 * Publish a pipeline
 
 ### Prerequisites
-* Completion of Lab 2: Prepare a Stream Analytics Pipeline
+In order to complete this lab, you should have successfully completed the preceding lab.
 
 ## Task 1: Create a pipeline
 
 Now that we have created deployment and connections, we can open the Stream Analytics console and start building a pipeline.
 
-1. Open the GGSA console on the Catalog page. If you don't have it open, please repeat lab 1, task 1, steps 1-4.
-
-2. In the catalog page, click on **Create New Item** and select **Pipeline**.
+1. On the Catalog page, click **Create New Item** and select **Pipeline**.
 
    ![Create Pipeline](./images/create_pipeline.png "")
 
-3. On the Create Pipeline dialog, for Name, enter **MoviePromotion**.
+2. In the Create Pipeline dialog, for Name, enter **MoviePromotion**.
 
-4. For Stream, select **ActivityStream**
-
-5. Press **Save**.
+3. For Stream, select **ActivityStream**, and then click **Save**.
 
    ![Create Pipeline page 1](./images/pipeline_dlg.png "")
 
-6. The pipeline editor opens. At this point the pipeline is being deployed in draft mode, which will take 1-2 min. Please wait until "Starting Pipeline..." at the bottom disappears and events are started to be listed. You can press the **Got it** button on the help text appearing next to the ActivityStream stage.
+4. The pipeline editor opens. At this point, the pipeline is deployed in draft mode, which takes 1-2 minutes. Wait until "Starting Pipeline..." disappears at the bottom of the page and events start to be appear. Click **Got it** in the help dialog to continue.
 
    ![View Pipeline](./images/initial_pipeline.png "")
 
 ## Task 2: Enrich Events with Database References and Select Columns
 
-In this task we will add a Query Stage, which, much like a SQL Select statement, can join, filter, and aggregate events and select and tranform columns.
+In this task, you add a Query Stage, which can join, filter, and aggregate events and select and transform columns, similar to a SQL Select statement.
 
-1. Right-click the ActivityStream stage and select in the menu **Add a Stage** and in the submenu **Query**.
+1. Right-click the ActivityStream stage, select **Add a Stage**, and then **Query**.
+
    ![Create Query](./images/create_query1.png "")
 
-2. In the Create Query Stage dialog, for Name enter **EnrichActivity**.
+2. In the Create Query Stage dialog, for Name, enter **EnrichActivity**, and then click **Save**.
 
-3. Press **Save**.
-  ![Name Query](./images/name_query1.png "")
+   ![Name Query](./images/name_query1.png "")
 
-4. Press the **Add Source** button on the right side of the screen.
-
-5. In the menu select **Customer**.
+3. In the EnrichActivity panel, click **Add a Source**, and then select **Customer**.
 
    ![Query add source](./images/query1_add_source.png "")
 
-6. Ignore errors appearing on the screen, they warn that the current join is incomplete. Press again the **Add Source** button on the right side of the screen.
-
-7. In the menu select **Movie**.
+4. Ignore the errors that appear, they warn that the current join is incomplete. Click the **Add Source**, and then select **Movie**.
 
    ![Query add movie source](./images/query1_add_movie.png "")
 
-8. Press **Add Condition**
+5. Under Correlation Conditions, click **Add Condition**.
 
    ![Query add condition](./images/query1_add_condition.png "")
 
-9. In the three condition fields select **Movie > MOVIE\_ID**, **equals**, and **after\_MOVIE\_ID**
+6. In the three condition fields select **MOVIE\_ID**, **equals**, and **after\_MOVIE\_ID**.
 
-  ![Query add condition for movie](./images/query1_movie_condition.png "")
+   ![Query add condition for movie](./images/query1_movie_condition.png "")
 
-10. Press **Add Condition** again
+7. Click **Add Condition** again.
 
-9. In the three condition fields select **Customer > CUST\_ID**, **equals**, and **after\_CUST\_ID**
+8. In the three condition fields select **CUST\_ID** (scroll down to expand Customer), **equals**, and **after\_CUST\_ID**.
 
   ![Query add condition for custid](./images/query1_customer_condition.png "")
 
-12. Click somewhere outside the condition box to apply the condition.
+9. Click anywhere outside the condition box to apply the conditions.
 
    ![Finished query](./images/query1_click.png "")
 
-13. Click on **Columns** above the Live Event Output. 
+10. In the EnrichActivity - Live Output panel, click **Columns**. 
+
    ![Map columns](./images/column_button.png "")
 
-14. On the Columns dialog, first press the **<<** button to unselect all columns. They are moved to the left side. 
+11. In the Columns dialog, **Move ALL** unselect all columns. All columns move to the Unselected/Removed Columns list. 
 
-15. Select the following columns and press **>** to move them to the right side. You can do multi-select with Ctrl button or move one-by-one. 
+   ![Move all columns](./images/columns-moveall.png " ")
 
-   after\_GENRE\_ID, LOC\_LAT, LOC\_LONG, AGE, INCOME, INSUFF\_FUNDS\_INCIDENTS, NUM\_CARS, CITY, FIRST\_NAME, CUST\_ID, LAST\_NAME, TITLE
+12. CTRL+click to multiselect the following columns and then click **Move Selected**.
+
+      * after\_GENRE\_ID
+      * LOC\_LAT
+      * LOC\_LONG
+      * AGE
+      * INCOME
+      * INSUFF\_FUNDS\_INCIDENTS
+      * NUM\_CARS
+      * CITY
+      * FIRST\_NAME
+      * CUST\_ID
+      * LAST\_NAME
+      * TITLE
 
    ![Select columns](./images/column_dlg.png "")
 
-16. Press Save to close the dialog.
+13. Click **Save**.
 
-17. We need to rename the column **after\_GENRE\_ID** to **GENRE\_ID**. Double-click on the **after\_GENRE\_ID** column header. An edit field will appear, change the name to **GENRE\_ID**. Press Enter after renaming.
+14. Rename the column **after\_GENRE\_ID** to **GENRE\_ID**. Double-click the **after\_GENRE\_ID** column header. In the edit field change the name to **GENRE\_ID**. Click Enter to save your changes.
    ![rename genre id](./images/rename_genre_id.png "")
 
 ## Task 3: Filter Customers with Geo Fence
-In this task we will add a Query Stage, which, much like a SQL Select statement, can join, filter, and aggregate events and select and tranform columns.
 
-1. Right-click the EnrichActivity stage and select in the menu **Add a Stage** and in the submenu **Pattern**.
+In this task you add a Query Stage, which can join, filter, and aggregate events and select and transform columns similar to a SQL statement.
+
+1. Right-click the EnrichActivity stage, then select **Add a Stage**, and then **Pattern**.
+
    ![Add Geo Fence pattern](./images/add_geofence.png "")
 
-2. In the Select Pattern dialog, choose the category **Spatial** and then the Pattern **Geo Fence**.
+2. In the Select Pattern dialog, select the category **Spatial**, and then the Pattern **Geo Fence**.
+
    ![Pick Geofence](./images/pattern_geofence.png "")
 
-3. In the Create Pattern Stage dialog, for Name, enter **FilterRegion** and press **Save**.
+3. In the Create Pattern Stage dialog, for Name, enter **FilterRegion** and click **Save**.
+
    ![Setup Geo Fence](./images/geofence_dlg.png "")
 
-4. In the field **Geo Fence** select **Regions**
-5. In the field **Latitude** select **LOC\_LAT**
-6. In the field **Longitude** select **LOC\_LONG**
-7. In the field **Object Key** select **CUST\_ID**
-8. In **Tracking Events** deselect **Near**, **Exit**, and **Stay**, so that only **Enter** remains checked.
+4. In the FilterRegion panel, for **Geo Fence** select **Regions**.
+
+5. For **Latitude** select **LOC\_LAT**.
+
+6. For **Longitude** select **LOC\_LONG**.
+
+7. For **Object Key** select **CUST\_ID**.
+
+8. In **Tracking Events** deselect **Near**, **Exit**, and **Stay**, so that only **Enter** remains selected.
+
 9. Click somewhere outside the condition box to apply the changes.
 
   ![Geo Fence finished](./images/config_geofence.png "")
 
-10. Wait for changes to apply and events to appear in the Live Event Output. Then press the Visualizations tab and see customer locations within the West Coast and East Coast regions.
+10. Wait for changes to apply and events to appear in the Live Event Output. Click **Visualizations** to see customer locations within the West Coast and East Coast regions.
 
   ![Geo Fence map](./images/geofence_map.png "")
 
-## Task 4: Add OML Machine Learning Scoring
+## Task 4: Add Machine Learning (OML) Scoring
 
-We can now score customer events based on the likelihood to respond to a promotion. We have a pre-trained OML model in the autonomous data warehouse that we can use.
+You can now score customer events based on the likelihood to respond to a promotion. There is a pre-trained OML model in the Autonomous Data Warehouse that you can use.
 
-1. Right-click the FilterRegion stage and select in the menu **Add a Stage** and in the submenu **Pattern**.
+1. Right-click the FilterRegion stage, select **Add a Stage**, and then **Pattern**.
+
    ![Create OML](./images/add_oml.png "")
 
 2. In the Select Pattern dialog, choose the category **Machine Learning** and then the Pattern **Oracle Machine Learning Services**.
+
    ![Pick Pattern](./images/pattern_oml.png "")
 
-3. In the Create Pattern Stage dialog, for Name, enter **Score** and press **Save**.
+3. In the Create Pattern Stage dialog, for Name, enter **Score** and then click **Save**.
+
    ![Configure OML stage](./images/oml_dlg.png "")
 
-4. In the field **OML server url** enter **ADB URL** from the Terraform output. When copying the URL, make sure no / character is added to the end of the URL. 
-5. In the field **Tenant** enter **Tenant OCID** from the Terraform output
-6. In the field **OML Services Name** enter **ADB Name** from the Terraform output
-7. In the field **Username** enter **omluser**
-8. In the field **Password** enter **Admin Password** from the Terraform output
-9. In the field **OML\_Model** enter **score\_promo**
-10. In **Input Fields** select **CITY**, **GENRE\_ID**, **INCOME**, **INSUFF\_FUNDS\_INCIDENTS**, and **NUM\_CARS**.
+4. In the Score panel, for OML server url, copy and paste the **ADB URL** from the Reservation Information panel. Ensure that no trailing slashes (/) are added to the end of the url.
+
+5. For **Tenant**, copy and paste the **Tenancy OCID** from the Reservation Information panel.
+
+6. For **OML Services Name**, enter **ADB Name** from the Reservation Information panel.
+
+7. For **Username**, enter **omluser**.
+
+8. For **Password**, click **Change password** and then copy and paste the **Admin Password** from the Reservation Information panel.
+
+9. For **OML\_Model** enter **score\_promo**.
+
+10. For **Input Fields** select **CITY**, **GENRE\_ID**, **INCOME**, **INSUFF\_FUNDS\_INCIDENTS**, and **NUM\_CARS**.
+
 11. Click somewhere outside the condition box to apply the changes.
 
   ![OML Stage finished](./images/oml_fields.png "")
 
-12. Wait for changes to apply and events to appear in the Live Event Output. The rightmost column in output is **SCORING** and has typically values up to 0.1. We will use scores above 0.04 later to determine candidates for promotion.
+12. Wait for changes to apply and events to appear in the Live Event Output. A **SCORING** column appears and has values up to 0.1. Later, you will use scores above 0.04 to determine candidates for promotion.
 
    ![OML stage with data](./images/oml_scores.png "")
 
-
 ## Task 5: Add Target to Write to Data Warehouse
 
-We want to write all score results to a data warehouse for later analysis. We add a target here prior to filtering. 
+Write all score results to a data warehouse for later analysis. Add a target here prior to filtering. 
 
-1. Right-click the Score stage and select in the menu **Add a Stage** and in the submenu **Target**.
+1. Right-click the Score stage, select **Add a Stage**, and then **Target**.
+
    ![Add target](./images/add_dwhtarget.png "")
 
-2. In the Create Target Stage dialog, for Name, enter **WriteToADW** and press **Save**.
+2. In the Create Target Stage dialog, for Name, enter **WriteToADW** and then click **Save**.
+
    ![Config target stasge](./images/dwhtarget_dlg.png "")
 
-2. On the Target Mapping panel, press **Create**.
+2. In the WriteToADW panel, for Target, click **Create**.
+
    ![Map target](./images/create_target.png "")
 
-3. On the first page of the Create Target dialog, for Name, enter **WriteToADW**.
+3. The Create Target dialog consists of four pages. On the Type Properties page, for Name, enter **WriteToADW**.
 
-4. For Target Type, select **Database Table**.
-
-5. Press **Next**.
+4. For Target Type, select **Database Table**, and then click **Next**.
 
    ![Create Target](./images/dwhtarget1.png "")
 
-6. On the second page of the Create Target dialog, for Connection, select **ADB\_Connection**.
-
-7. Press **Next**.
+5. On the Target Details page, for Connection, select **ADB\_Connection**, and then click **Next**.
 
    ![Create Target page 2](./images/dwhtarget2.png "")
 
-8. On the last page of the Create dialog, for Table Name, select **PROMO\_CUSTOMER**.
-
-9. Press **Save**.
+6. On the Shape page, for Table Name, select **PROMO\_CUSTOMER**, and then click **Save.**
 
   ![Create Target page 3](./images/dwhtarget4.png "")
 
-10. All fields of the events are automatically mapped to target fields as they have the same name. Wait for changes to apply and events to appear in the Live Event Output.
+7. All fields of the events are automatically mapped to target fields as they have the same name. Wait for changes to apply and events to appear in the Live Event Output.
 
   ![Create Target finished](./images/dwhtarget_done.png "")
 
@@ -193,92 +214,83 @@ We want to write all score results to a data warehouse for later analysis. We ad
 
 ## Task 6: Filter Customers based on ML Score
 
-In this task we will add a Query Stage to filter events by the ML score. Only events with a score above 0.04 should proceed.
+In this task, you add a Query Stage to filter events by the ML score. Only events with a score above 0.04 should proceed.
 
-1. Right-click the Score stage and select in the menu **Add a Stage** and in the submenu **Query**.
+1. Right-click the Score stage, select **Add a Stage**, and then **Query**.
+
    ![Create Query](./images/query2_create.png "")
 
-2. In the Create Query Stage dialog, for Name enter **FilterScore**.
+2. In the Create Query Stage dialog, for Name, enter **FilterScore**, and then click **Save**.
 
-3. Press **Save**.
   ![Name Query](./images/query2_name.png "")
 
-4. Select the Filter tab on the right-hand side
+3. In the FilterScore panel, click **Filters**, and then click **Add Filter**.
 
-5. Press the **Add Filter** button.
    ![Add Filter](./images/query2_filter.png "")
 
-6. In the three condition fields select **Score > SCORING**, **greater than or equals**, and type in **0.04**
+4. In the three condition fields select **SCORING**, **greater than or equals**, and type in **0.04**.
    ![Set condition for filter](./images/query2_condition.png "")
 
-7. Click somewhere outside the condition box to apply the changes.
+5. Click anywhere outside the condition box to apply the changes.
 
   ![Filter finished](./images/query2_done.png "")
 
 
 ## Task 7: Add Target to Send Offer to Customer
 
-In the final task we create a Kafka target to send out offer messages that will be relayed to the customer through downstream applications. 
+In the final task you create a Kafka target to send out offer messages that will be relayed to the customer through downstream applications. 
 
-1. Right-click the Filter stage and select in the menu **Add a Stage** and in the submenu **Target**.
+1. Right-click the FilterScore stage, select **Add a Stage**, and then **Target**.
+
    ![Add target](./images/add_kafkatarget.png "")
 
-2. In the Create Target Stage dialog, for Name, enter **SendOffer** and press **Save**.
+2. In the Create Target Stage dialog, for Name, enter **SendOffer** and then click **Save**.
+
    ![Create target stage](./images/kafkatarget_dlg.png "")
 
-2. On the Target Mapping panel, press **Create**.
+2. In the SendOffer Target Mapping panel, click **Create**.
+
    ![Create target](./images/create_kafkatarget.png "")
 
-3. On the first page of the Create Target dialog, for Name, enter **SendOffer**.
+3. On the Type Properties page, for Name, enter **SendOffer**.
 
-4. For Target Type, select **Kafka**.
-
-5. Press **Next**.
+4. For Target Type, select **Kafka**, and then click **Next**.
 
    ![Create Target page 1](./images/kafkatarget1.png "")
 
-6. On the second page of the Create Target dialog, for Connection, select **Kafka**.
+5. On the Target Details page, for Connection, select **Kafka**.
 
-7. For Topic, enter **CustomerOffer**.
-
-8. Press **Next**.
+6. For Topic name, enter **CustomerOffer**, and then click **Next**.
 
    ![Create Target page 2](./images/kafkatarget2.png "")
 
-9.  On the third page of the Create Stream dialog, press **Next** without changes.
+7.  On the Shape page, you can leave all field mappings unchanged. The JSON document inside Kafka events will contain these fields. Click **Save**.
 
-10. On the last page of the Create dialog, you can leave all field mappings unchanged. The JSON document inside Kafka events will contain these fields.
-
-11. Press **Save**.
-
-  ![Create Target page 3](./images/kafkatarget4.png "")
-
+   ![Create Target page 3](./images/kafkatarget4.png "")
 
 12. Wait for the changes to apply and new events to be displayed in the Live Event Output. The pipeline is now finished and produces offers to customers.
 
-  ![Pipeline finished](./images/pipeline_final.png "")
+   ![Pipeline finished](./images/pipeline_final.png "")
 
 
 ## Task 8: Publish Pipeline
 
 The pipeline currently runs in draft mode for developers, meaning that it will stop when the editor is closed, and no output is written to the targets. To run a pipeline in production, it needs to be published.
 
-1. Press the **Publish** button on the upper right.
+1. Click **Publish**.
 
   ![Publish Button](./images/publish_button.png "")
 
-2. In the publish dialog you can set resource allocation and runtime parameters for the pipeline. Leave the defaults unchanged and press the **Publish** button.
+2. In the publish dialog, you can set resource allocation and runtime parameters for the pipeline. Leave the defaults unchanged and click **Publish**.
 
   ![Publish Dialog](./images/publish_dlg.png "")
 
-3. Wait for the pipeline to get published, After the pipeline is published, the status is shown on the upper right. The pipeline is now in production and writes to Autonomous Data Warehouse and Kafka. 
+3. Wait for the pipeline to publish. After the pipeline is published, the status is shown on the upper right. The pipeline is now in production and writes to Autonomous Data Warehouse and Kafka. 
 
   ![Publish Done](./images/publish_done.png "")
 
 
-
-
-You have now successfully completed Introduction to GoldenGate Stream Analytics!
+You have now successfully completed your introduction to GoldenGate Stream Analytics!
 
 ## Learn More
 
@@ -288,4 +300,4 @@ You have now successfully completed Introduction to GoldenGate Stream Analytics!
 
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Hope Fisher, June 2023
+* **Last Updated By/Date** - Jenny Chan, September 2023

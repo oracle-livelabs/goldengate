@@ -17,11 +17,12 @@ This lab assumes you have:
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 
-    - [ggma-db21-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/hAvnCQrR8mlkHP0wS2vGJSlk0K8xftAGMb6eAVEb9OdC-Cc9ekmIwhjiNDk0nQYB/n/natdsecurity/b/stack/o/ggma-db21-mkplc-freetier.zip)
+    - [ggma-db21-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Oj2dZE8mmhbNfrqmDtE-8nm6f9eADGpf52xR3ctq1PAj4yYUiJWLyftG1np00_rM/n/c4u04/b/livelabsfiles/o/goldengate-library/ggma-db21-mkplc-freetier.zip)
+    
 
-2.  Save in your downloads folder.
+ 2.  Save in your downloads folder.
 
-We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Task 3* to follow our recommendations. If you would rather use an existing VCN then proceed to the next task to update your existing VCN with the required Ingress rules.
+ We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Task 3* to follow our recommendations. If you would rather use an existing VCN then proceed to the next task to update your existing VCN with the required Ingress rules.
 
 ## Task 2: Adding security rules to an existing VCN
 

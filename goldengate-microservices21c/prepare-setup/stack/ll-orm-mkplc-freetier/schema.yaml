@@ -1,0 +1,265 @@
+#
+# Copyright (c) 2021 Oracle and/or its affiliates. All rights reserved.
+# by - Rene Fontcha - Oracle LiveLabs Platform Lead
+# Last Updated - 11/01/2022
+
+# Title shown in Application Information tab.
+title:  Product_Name on LiveLabs
+# Sub Title shown in Application Information tab.
+description:  Product_Name on LiveLabs
+stackDescription: "Deploy (N) count of Product_Name on LiveLabs Multi-Labs Workshop VM instances"
+informationalText: "This Stack is purposedly built to support a workshop from the LiveLabs catalog. Upon completing all labs as provided in the guide, navigate to the stack details page and click on destroy to cleanly dispose of the resources."
+schemaVersion: 1.1.0
+version: "20200526"
+locale: "en"
+
+# URL of Logo Icon used on Application Information tab. Logo must be 130x130 pixels.
+# (Optional)
+
+logoUrl: "https://cloudmarketplace.oracle.com/marketplace/content?contentId=95549453"
+# Used in Application Information tab to Hyperlink Title and Logo to the Marketplace
+# Listing.
+# Also used to link to Listing Usage section for "View Instructions".
+# (Optional) If it is missing, Application Information uses the
+# "marketplace-listing-id" tag for the same purpose.
+source:
+  type: marketplace
+  reference: 86539424
+  # https://cloudmarketplace.oracle.com/marketplace/listing/86539424
+
+variableGroups:
+  - title: General Configuration
+    visible: false
+    variables:
+    - compartment_ocid
+    - tenancy_ocid
+    - region
+    - instance_image_id
+    - use_marketplace_image
+    - mp_listing_resource_version
+    - mp_listing_id
+    - novnc_delay_sec
+    - desktop_guide_url
+    - desktop_app1_url
+    - desktop_app2_url
+
+  - title: Main Configuration
+    visible: true
+    variables:
+    - instance_count
+    - availability_domain_name
+    - inst_use_ssh
+    - generate_ssh_key_pair
+    - ssh_public_key
+
+
+  - title: Options
+    visible: true
+    variables:
+    - shape_use_flex
+    - flex_instance_shape
+    - instance_shape_config_ocpus
+    - fixed_instance_shape
+    - vcn_use_existing
+    - vcn_existing
+    - subnet_public_existing
+
+variables:
+  compartment_ocid:
+    type: oci:identity:compartment:id
+    required: true
+    title: Compartment
+    description: "Compartment where you want to create the solution resources"
+
+  availability_domain_name:
+    type: oci:identity:availabilitydomain:name
+    title: "Select an availability domain"
+    required: true
+    description: "All instances will be provisioned in this availability domain"
+    dependsOn:
+      compartmentId: ${compartment_ocid}
+
+  instance_count:
+    type: number
+    required: true
+    title: "Instance Count"
+    description: "Provide the total count of instances you would like provisioned by this stack"
+    minimum: 1
+    default: 1
+
+  shape_use_flex:
+    type: boolean
+    title: Use Flexible Instance Shape with Adjustable OCPU Count?
+    required: true
+    default: true
+
+  inst_use_ssh:
+    type: boolean
+    title: Need Remote Access via SSH?
+    description: "Keep this box Unchecked if instance access via Browser-Based noVNC Remote Desktop is sufficient for your needs - Default"
+    required: true
+    default: true
+
+  fixed_instance_shape:
+    type: oci:core:instanceshape:name
+    required: true
+    title: "Instance Shape"
+    description: "A shape is a template that determines the number of CPUs, amount of memory, and other resources allocated to a newly created instance."
+    default: "VM.Standard.E2.2"
+    pattern: ^VM\.((Standard\d\.(2|4|8|16|24))|(DenseIO2\.(8|16|24))|(Standard\.E2\.(2|4|8)))$|^BM\.((Standard(\d\.\d+|\.E\d\.\d+)|DenseIO2\.\d+|Optimized\d\.\d+))$
+    dependsOn:
+      compartmentId: ${compartment_ocid}
+    visible:
+      not:
+        - shape_use_flex
+
+  flex_instance_shape:
+    type: oci:core:instanceshape:name
+    required: true
+    title: "Instance Shape"
+    description: "A shape is a template that determines the number of CPUs, amount of memory, and other resources allocated to a newly created instance."
+    pattern: ^VM\.((Standard\d|Standard\.E\d|Optimized\d)\.Flex)$
+    dependsOn:
+      compartmentId: ${compartment_ocid}
+    visible: shape_use_flex
+
+  instance_shape_config_ocpus:
+    type: number
+    required: true
+    title: "Select OCPUs Count per Instance"
+    description: "Using Flex shape. Provide the total count of OCPUs you would like provisioned per instance. [1-24]. NB. 16GB memory will be auto allocated per ocpu"
+    default: 2
+    minimum: 1
+    maximum: 24
+    dependsOn:
+      compartmentId: ${compartment_ocid}
+    visible: shape_use_flex
+
+  ssh_public_key:
+    title: ${Messages.solutionsHub.solutions.ociDevTools.variables.ssh_public_key.title()}
+    description: ${Messages.solutionsHub.solutions.ociDevTools.variables.ssh_public_key.description()}
+    type: oci:core:ssh:publickey
+    required: true
+    additionalProps:
+      allowMultiple: true
+    pattern: "((^(ssh-rsa AAAAB3NzaC1yc2|ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNT|ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzOD|ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1Mj|ssh-ed25519 AAAAC3NzaC1lZDI1NTE5|ssh-dss AAAAB3NzaC1kc3)[0-9A-Za-z+\/]+[=]{0,3})( [^,]*)?)(,((ssh-rsa AAAAB3NzaC1yc2|ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNT|ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzOD|ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1Mj|ssh-ed25519 AAAAC3NzaC1lZDI1NTE5|ssh-dss AAAAB3NzaC1kc3)[0-9A-Za-z+\/]+[=]{0,3})( [^,]*)?)*$"
+    visible:
+      and:
+        - ${inst_use_ssh}
+        - not:
+          - ${generate_ssh_key_pair}
+
+  generate_ssh_key_pair:
+    title: Auto Generate SSH Key Pair?
+    description: "Check this box to auto generate a key-pair during provisioning. Otherwise, Keep it unchecked and drag-n-drop or paste in an existing public key you already have, or manually generate one and provide it below. If checked, the private key needed to access the instance via SSH will be provided in the job output post provisioning"
+    type: boolean
+    default: false
+    required: true
+    visible: inst_use_ssh
+
+  novnc_delay_sec:
+    type: text
+    required: true
+    title: "noVNC startup Delay "
+    description: "Delay in seconds before starting noVNC resources. Done to ensure that the VM is fully initialized prior to activating the remote desktop"
+    pattern: ^\d+s$
+
+  desktop_guide_url:
+    type: text
+    required: true
+    title: "Workshop Guide"
+    description: "Workshop Guide on noVNC Desktop"
+
+  desktop_app1_url:
+    type: text
+    required: false
+    title: "Application URL 1"
+    description: "Application URL 1 on noVNC Desktop"
+
+  desktop_app2_url:
+    type: text
+    required: false
+    title: "Application URL 2"
+    description: "Application URL 2 on noVNC Desktop"
+
+  region:
+    type: oci:identity:region:name
+    required: true
+    title: Region
+    description: Region where you want to deploy the resources defined by this stack
+
+  instance_image_id:
+    type: oci:core:image:id
+    required: true
+    title: "Instance Image OCID"
+
+  use_marketplace_image:
+    type: boolean
+    default: true
+
+  mp_listing_resource_version:
+    type: string
+
+  mp_listing_id:
+    type: string
+
+  vcn_use_existing:
+    type: boolean
+    title: Use Existing VCN?
+    required: true
+    default: false
+
+  vcn_existing:
+    type: oci:core:vcn:id
+    title: Select existing VCN with regional public subnet and required security list
+    required: true
+    dependsOn:
+      compartmentId: compartment_ocid
+    visible: vcn_use_existing
+
+  subnet_public_existing:
+    type: oci:core:subnet:id
+    title: Select your Public Subnet
+    description: Public Subnet from Existing VCN
+    dependsOn:
+      compartmentId: compartment_ocid
+      vcnId: vcn_existing
+    required: true
+    visible: vcn_use_existing
+
+outputs:
+  workshop_desc:
+    type: string
+    title: Notes
+    visible: true
+
+  remote_desktop:
+    type: string
+    title: Remote Desktop(s)
+    visible: true
+    # type: link
+    # displayText: Click to Launch
+
+  instances:
+    type: string
+    title: Hands-on Lab Instance(s)
+    visible: true
+
+  generated_instance_ssh_private_key:
+    title: Auto Generated SSH Private Key
+    displayText: Generated Private Key for SSH Access
+    type: string
+    visible: generate_ssh_key_pair
+
+# primaryOutputButton: ${remote_desktop}
+
+outputGroups:
+  - title: Build Details
+    outputs:
+      - ${workshop_desc}
+
+  - title: Access Information
+    outputs:
+      - ${instances}
+      - ${remote_desktop}
+      - ${generated_instance_ssh_private_key}

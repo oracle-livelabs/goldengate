@@ -1,0 +1,36 @@
+{
+  "workshoptitle": "Oracle GoldenGate Microservices",
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Get Started",
+      "description": "Prerequisites for LiveLabs.",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction to GoldenGate Microservices 21c",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Discover the Environment",
+      "description": "Discovering components",
+      "filename": "../../discover/discover.md"
+    },
+    {
+      "title": "Lab 2: Setup of the GoldenGate Replication",
+      "description": "GG Replication",
+      "filename": "../../create-replication/create-replication.md"
+    },
+    {
+      "title": "Lab 3: Run a simulation and observe the results",
+      "description": "Simulate DB activity",
+      "filename": "../../simulate/simulate.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
