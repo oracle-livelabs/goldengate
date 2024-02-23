@@ -11,7 +11,7 @@ Estimated time: 20 minutes
 -  Provision a VCN and subnet
 -  Provision, connect, and load data into an Autonomous Transaction Processing (ATP) instance
 -  Provision, connect, and load data into an Autonomous Data Warehouse (ADW) instance
--  Create a data replication deployment
+-  Create deployments
 
 ### Prerequisites
 
@@ -19,7 +19,6 @@ To successfully complete this lab, you must:
 * Have completed the Get Started lab and sign up for Free Tier/Log in to Oracle Cloud.
 * For IAM-enabled tenancies, ensure that you [configure Identity domains for OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/mkmbs/#GUID-DD9C1BF8-69FE-4C9A-A2D1-74C73550ED65).
 * For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault). [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
-* If you enable public deployment console access when creating the deployment, OCI GoldenGate creates a load balancer in your tenancy VCN on your behalf. To ensure successful creation of the deployment and load balancer, you must have the appropriate policies, quotas, and limits in place.
 * If you enable public deployment console access when creating the deployment, OCI GoldenGate creates a load balancer in your tenancy VCN on your behalf. To ensure successful creation of the deployment and load balancer, you must have the appropriate policies, quotas, and limits in place.
 
 > **Notes:** 
@@ -61,11 +60,11 @@ To successfully complete this lab, you must:
 
 > **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
-1.  Use the Oracle Cloud Console navigation menu to navigate back to **GoldenGate**.
+1.  Use the breadcrumb to navigate back to the **Deployments** page.
 
 2.  On the Deployments page, click **Create deployment**.
 
-    ![Deployments page](./images/01-02-create-deployment.png " ")
+    ![Deployments page](./images/06-02-create-deployment.png " ")
 
 3.  In the Create Deployment panel, enter **DTDeployment** for Name.
 
@@ -77,7 +76,7 @@ To successfully complete this lab, you must:
 
 7.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-07-create-deployment-general-info.png " ")
+    ![Completed Create GoldenGate Deployment fields](./images/06-07-create-deployment-general-info.png " ")
 
 8.  For License type, select **Bring Your Own License (BYOL)**.
 
@@ -87,7 +86,7 @@ To successfully complete this lab, you must:
 
 11. Click **Next**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-12-create-deployment-general-info.png " ")
+    ![Completed Create GoldenGate Deployment fields](./images/06-11-create-deployment-general-info.png " ")
 
 12. For Select a deployment type, select **Data transforms**.
 
@@ -95,25 +94,20 @@ To successfully complete this lab, you must:
 
 14. For GoldenGate Instance Name, enter **ggsinstance**.
 
-15. In an IAM-enabled tenancy, select a Credential store. 
+15. For Administrator Username, enter **SUPERVISOR**.
 
-    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to the next lab (skip the following steps).
-    * If you select GoldenGate, complete the following steps.
+16. For Password secret in &lt;USER&gt;-COMPARTMENT, select a password from the dropdown.
 
-16. For Administrator Username, enter **SUPERVISOR**.
+17. Click **Create**.
 
-17. For Password secret in &lt;USER&gt;-COMPARTMENT, select a password from the dropdown.
+    ![Completed Create GoldenGate Deployment fields](./images/06-17-create-deployment-general-info.png " ")
 
-18. Click **Create**.
-
-    ![Completed Create GoldenGate Deployment fields](./images/01-19-create-deployment-general-info.png " ")
-
-You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Task 2 while you wait for the deployment creation to complete.
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Lab 2 while you wait for the deployment creation to complete.
 
 You may now **proceed to the next lab.**
 
 ## Acknowledgements
 
 - **Author** - Katherine Wardhana, User Assistance Developer
-- **Last Updated by** - Katherine Wardhana, January 2024
+- **Last Updated by** - Katherine Wardhana, March 2024
 - **PAR Expiration date** - ?
