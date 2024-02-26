@@ -31,4 +31,4 @@ Oracle Data Transforms is a built-in Extract, Transform, Load (ETL) tool in Auto
 
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** -  Jenny Chan, Consulting User Assistance Developer, Database User Assistance; Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, February 2024
+* **Last Updated By/Date** - Katherine Wardhana, March 2024

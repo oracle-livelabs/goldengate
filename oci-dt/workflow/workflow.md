@@ -23,7 +23,7 @@ In this lab, you will:
 
 This lab assumes you completed all preceding labs.
 
-## Task 1: Perform Inserts to the target table
+## Task 1: Create target table
 
 1.  Return to the Oracle Cloud console and use the navigation menu to navigate back to **Oracle Database**, **Autonomous Data Warehouse**, and then **TargetADW**.
 
@@ -345,4 +345,4 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management, & Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, February 2024
+* **Last Updated By/Date** - Katherine Wardhana, March 2024
