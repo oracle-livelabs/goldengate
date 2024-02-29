@@ -43,7 +43,7 @@ To successfully complete this lab, you must:
     - For **Source CIDR**, enter `10.0.0.0/0`.
     - For **Destination Port Range**, enter `443`.
 
-5.  Repeat steps 1 to 4 for the public subnet.
+5.  Repeat steps 1 to 4 to add Source CIDR `0.0.0.0/0` and Destination Port Range `443` to the public subnet.
 
 ## Task 2: Create an ATP instance
 
