@@ -4,7 +4,7 @@ This workshop uses Oracle Cloud Infrastructure (OCI) GoldenGate Stream Analytics
 
 ### Workshop Objectives
 
-In this lab you:
+In this workshop you:
 
 * Create OCI GoldenGate deployments and connections
 * Create and deploy GoldenGate Stream Analytics
@@ -34,6 +34,6 @@ A pipeline is a sequence of data processing stages such as, Query, Pattern, Rule
 
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, January 2024
+* **Last Updated By/Date** - Jenny Chan, February 2024
 
 

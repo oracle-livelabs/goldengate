@@ -10,13 +10,15 @@ Estimated time: 20 minutes
 
 -  Provision a VCN and subnet
 -  Provision, connect, and load data into an Autonomous Transaction Processing (ATP) instance
--  Create an OCI GoldenGate data replication deployment
--  Create a Stream
 
 ### Prerequisites
 
-This lab assumes you have completed the following labs:
-* Get started - Cloud login
+To successfully complete this lab, you must:
+
+* Have completed the Get Started lab and sign up for Free Tier/Log in to Oracle Cloud.
+* For IAM-enabled tenancies, ensure that you [configure Identity domains for OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/mkmbs/#GUID-DD9C1BF8-69FE-4C9A-A2D1-74C73550ED65).
+* For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault).  [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
+
 
 > **Notes:** 
 
@@ -25,27 +27,8 @@ This lab assumes you have completed the following labs:
 
 ## Task 1: Create a VCN and subnet
 
-1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
+[](include:01-create-vcn-subnet.md)
 
-	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/networking-vcn.png " ")
-
-2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
-
-	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-start-vcn-wizard.png " ")
-
-3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
-
-    ![Start VCN Wizard dialog](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-03-vcn-wizard.png " ")
-
-4.  Enter a name for the VCN, select a compartment, and then click **Next**.
-
-    ![Enter VCN details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-04-vcn-details.png " ")
-
-5.  Verify the configuration, and then click **Create**.
-
-    ![Verify configuration details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-05-create-vcn.png " ")
-
-6.  Click **View VCN**. You're brought to the Virtual Cloud Network Details page. In the Subnets section, both a private and public subnet were created.
 
 ## Task 2: Add Ingress rules
 
@@ -57,51 +40,17 @@ This lab assumes you have completed the following labs:
 
 4.  In the Add Ingress Rules panel, complete the following fields, and then click **Add Ingress Rules**: 
 
-    - For **Source CIDR**, enter `10.0.0.0/24`.
+    - For **Source CIDR**, enter `10.0.0.0/0`.
     - For **Destination Port Range**, enter `443`.
 
 5.  Repeat steps 1 to 4 for the public subnet.
 
 ## Task 2: Create an ATP instance
 
-1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
-
-	![Autonomous Transaction Processing in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/database-atp.png " ")
-
-2.  On the **Autonomous Database &lt;compartment-name&gt;** page, click **Create Autonomous Database**.
-
-    ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-create-adb.png " ")
-
-3. For **Compartment** select a compartment from the dropdown. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **SourceATP** for **Display Name** and **Database Name**.
-
-    ![Create Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-03-compartment.png " ")
-
-4.  Under **Choose a workload type**, select **Transaction Processing**.
-
-5.  Under **Choose a deployment type**, select **Serverless**.
-
-    ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-deployment.png " ")
-
-6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
-
-7.  Add a password. Take note of the password, you will need it later in this lab.
-
-    ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
-
-8. Under **Access type**, select **Secure access from everywhere**.
-
-9.  Select **Require mutual TLS (mTLS) authentication**.
-
-    ![Choose network access options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-09-choose-network-access.png " ")
-
-10.  For **Choose license and Oracle Database edition**, use the default selection.
-
-    ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
-
-11.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
+[](include:02-create-atp-instance.md)
 
 
-## Task 3: Load the ATP schema
+## Task 3: Load the ATP schema and enable supplemental logging
 
 1.  Download the database schema:
 
@@ -115,7 +64,7 @@ This lab assumes you have completed the following labs:
 
 4.  On the SourceATP Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions** directly, and then select **SQL** from the Database actions page.
 
-    ![ATP details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-dbdetails.png)
+    ![ATP details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images//03-04-dbdetails.png)
 
 5.  If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
 
@@ -127,7 +76,7 @@ This lab assumes you have completed the following labs:
 
     ![Pasted script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-08-atp-sql.png " ")
 
-8.  Edit the script to remove the special characters from the `SRC_OCIGGLL` user's password.
+8.  On Line 1 of the SQL worksheet, change the password to remove special characters. Ensure that it has at least 12 alphanumeric characters.
 
 9.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
@@ -149,7 +98,8 @@ This lab assumes you have completed the following labs:
 
     ```
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
-    ```
+    `
+
 
 ## Task 4: Unlock the GGADMIN user
 
@@ -182,103 +132,10 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
     Note that the user icon changes from a padlock to a checkmark.
 
 
-## Task 5: Create an OCI GoldenGate deployment for data replication
-
-> **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
-
-1.  In the Oracle Cloud console, open the navigation menu, navigate to **Oracle Database**, and select **GoldenGate**.
-
-    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
-
-2.  On the GoldenGate **Overview** page, click **Deployments**.
-
-    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
-
-3.  On the Deployments page, click **Create deployment**.
-
-    ![Deployments page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-create-deployment.png " ")
-
-4.  In the Create Deployment panel, enter **GGSDeployment** for Name.
-
-5.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
-
-6.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
-
-7.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
-
-    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-07-create-deployment-general-info.png " ")
-
-8.  For License type, select **Bring Your Own License (BYOL)**.
-
-9.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
-
-10. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
-
-11. Click **Next**.
-
-    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
-
-12. For Choose a deployment type, select **Data replication**.
-
-13. For Select a technology dropdown, select **Oracle Database**.
-
-14. For GoldenGate Instance Name, enter **ggsinstance**.
-
-15. In an IAM-enabled tenancy, select a Credential Store. 
-
-    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to the next lab (skip the following steps).
-    * If you select GoldenGate, complete the following steps.
-
-16. For Administrator Username, enter **oggadmin**.
-
-17. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
-
-    ![GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
-
-18. In the Create secret panel, for Name, enter `LLsecret`.
-
-19. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
-
-    > **NOTE**: The special characters must not be $, ^, or ?. 
-
-    ![Create Password secret](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-19-passwordsecret.png " ")
-
-20. Confirm the password, and then click **Create**.
-
-21. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
-
-## Task 6: Create an Auth token
-
-1. In the Oracle Cloud console global header, click **Profile**, and then select **User settings**.
-
-2. On the User Details page, under **Resources**, click **Auth Tokens**, and then click **Generate Token**. 
-
-3. In the Generate Token dialog, enter a description, and then click **Generate Token**.
-
-4. Copy the auth token from the dialog to a secure location from where you can retrieve it later, and then click **Close**.
-
-## Task 7: Copy the Stream Pool username
-
-1. From the Oracle Cloud console navigation menu, select **Streaming**, and then **Stream Pools**.
-
-2. On the Stream Pools page, select your stream pool to view its details.
-
-3. On the Stream Pool details page, under **Resources**, click **Kafka Connection Settings**.
-
-4. Copy the **Bootstrap Servers** value and username parameter value from the **SASL Connection Strings** field to a text editor for later use.
-
-## Task 8: Create a Stream
-
-1. In the OCI navigation menu, click **Analytics & AI**, and then under Messaging, select **Streaming**.
-
-2. On the Streams page, click **Create Stream**.
-
-3. On the Create Stream page, enter a **Stream Name**, and then click **Create**.
-
 You may now **proceed to the next lab.**
 
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated** - January 2024
+- **Last Updated** - February 2024
 - **PAR Expiration date** - February 2024
