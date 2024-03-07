@@ -1,6 +1,6 @@
 {
     "workshoptitle": "Use OCI GoldenGate to stream real time data into OCI Object Storage",
-    "help": "livelabs-help-db_us@oracle.com",
+    "help": "livelabs-help-db_us@oracle.com",  
     "tutorials": [
         {
             "title": "Introduction",
@@ -14,7 +14,7 @@
         },
         {
             "title": "Lab 1: Create the OCI GoldenGate resources",
-            "filename": "../../create/create-gb.md"
+            "filename": "../../create/create.md"
         },
         {
             "title": "Lab 2: Set up and run replication processes",
