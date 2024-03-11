@@ -4,9 +4,11 @@ This workshop uses Oracle Cloud Infrastructure (OCI) GoldenGate Stream Analytics
 
 ### Workshop Objectives
 
-* Lab 1: Review how to replicate GoldenGate
-* Lab 2: Create and deploy GoldenGate Stream Analytics
-* Lab 3: Setup a Stream Analytics pipeline
+In this workshop you:
+
+* Create OCI GoldenGate deployments and connections
+* Create and deploy GoldenGate Stream Analytics
+* Set up a Stream Analytics pipeline
 
 ### Prerequisites
 
@@ -14,6 +16,8 @@ This workshop uses Oracle Cloud Infrastructure (OCI) GoldenGate Stream Analytics
 * Familiarity with Oracle GoldenGate is helpful, but not required
 * Familiarity with Oracle Cloud Infrastructure is helpful, but not required
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* For non-IAM enabled tenancies, you need an OCI Vault
+* Access to OCI Streaming
 
 ## What is OCI GoldenGate Stream Analytics
 
@@ -30,6 +34,6 @@ A pipeline is a sequence of data processing stages such as, Query, Pattern, Rule
 
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2023
+* **Last Updated By/Date** - Jenny Chan, February 2024
 
 
