@@ -109,5 +109,6 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Katherine Wardhana, User Assistance Developer
+* **Contributors** -  Jenny Chan, Consulting User Assistance Developer, Database 
 - **Last Updated by** - Katherine Wardhana, March 2024
-- **PAR Expiration date** - ?
+- **PAR Expiration date** - February, 2024
