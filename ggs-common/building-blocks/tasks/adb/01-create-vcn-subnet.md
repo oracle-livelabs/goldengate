@@ -24,4 +24,4 @@
 
     ![Verify configuration details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-05-create-vcn.png " ")
 
-You can click View VCN Details and see both a Public and Private subnet were created.
+You can click **View VCN Details** and see both a Public and Private subnet were created.

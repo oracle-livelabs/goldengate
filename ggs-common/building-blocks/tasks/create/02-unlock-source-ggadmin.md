@@ -18,7 +18,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![SourceATP Database Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-db-actions.png " ")
 
-4.  If prompted, log in to Database actions as **admin**, using the ATP Admin Password from **View Login Info** in your Workshop instructions.
+4.  If prompted, log in to Database actions as **admin**, using the ATP Admin Password using the ATP Admin Password .
 
     ![ATP Database actions log in](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-04-login.png " ")
 
@@ -26,7 +26,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![Database users](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-05-ggadmin.png " ")
 
-6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the Task 2, Step 10, and then click **Apply Changes**.
+6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the Task 1, Step 11, and then click **Apply Changes**.
 
     ![Edit user](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-06-ggadmin-edit-user.png " ")
 
