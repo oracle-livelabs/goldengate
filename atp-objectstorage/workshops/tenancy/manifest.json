@@ -1,6 +1,11 @@
 {
     "workshoptitle": "Use OCI GoldenGate to stream real time data into OCI Object Storage",
     "help": "livelabs-help-db_us@oracle.com",
+    "include": {
+        "01-create-vcn-subnet.md":"../../../ggs-common/building-blocks/tasks/adb/01-create-vcn-subnet.md",
+        "02-create-atp-instance.md":"../../../ggs-common/building-blocks/tasks/adb/02-create-atp-instance.md",
+        "03-load-atp-schema.md":"../../../ggs-common/building-blocks/tasks/adb/03-load-atp-schema.md"
+      },    
     "tutorials": [
         {
             "title": "Introduction",
