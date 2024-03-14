@@ -24,17 +24,15 @@ In this lab, you will:
 * Assign connections to the deployments 
 
 
-## Task 1: Create the source connection
+## Task 1: Review the deployment
 
-[](include:01-create-source-connection.md)
+1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
 
-15. Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
-    ![Source Database details](./images/02-15-connections.png)
+2. On the GoldenGate **Overview** page, click **Deployment** and then **OCI GoldenGate Deployment**.
 
-16. Click **Deployments** and then **OCI GoldenGate Deployment**.
-
-    ![Click OCI GodenGate Deployment](./images/02-16-select-deployment.png)
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview-deployment.png " ")
 
 You can perform the following actions on the deployment details page:
 
@@ -47,6 +45,11 @@ You can perform the following actions on the deployment details page:
 * Add tags
 
     ![Deployment Details](./images/02-17-deployment-details.png)
+
+## Task 2: Create the source connection
+
+[](include:01-create-source-connection.md)
+
 
 ## Task 2: Unlock the GGADMIN user and enable supplemental logging for the source database
 

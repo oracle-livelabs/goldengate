@@ -4,41 +4,37 @@
         "description":"Create the source connection"
     }
 -->
-1. If you're not already in the GoldenGate service, in the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
+1. Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
 
-    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-breadcrumb-deployment.png " ")
 
-2.  On the GoldenGate **Overview** page, click **Connections**.
-
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-02-ggs-overview-connections.png " ")
-
-3.  Click **Create connection**.
+2.  Click **Connections** and then click **Create Connection**.
 
     ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
 
-4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **SourceATP** and optionally, a description.
+3.  The Create connection panel consists of two pages. On the General information page, for Name, enter **SourceATP** and optionally, a description.
 
-5.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
+4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
-6.  From the a Type dropdown, select **Oracle Autonomous Database**.
+5.  From the a Type dropdown, select **Oracle Autonomous Database**.
 
-7.  Click **Next**.
+6.  Click **Next**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
 
-8. On the Connection details page, under Database details, select **Select database**.
+7. On the Connection details page, under Database details, select **Select database**.
 
-9.  For **Database in &lt;compartment-name&gt;**, select **SourceATP-&lt;numbers&gt;** from the dropdown. 
+8.  For **Database in &lt;compartment-name&gt;**, select **SourceATP-&lt;numbers&gt;** from the dropdown. 
 
-10.  For Database username, enter `ggadmin`.
+9.  For Database username, enter `ggadmin`.
 
-11.  Enter the database's password in the Password field. Take note of the password.
+10.  Enter the database's password in the Password field. Take note of the password.
 
     > **NOTE:** This password will be used to unlock `GGADMIN` in Task 2.
 
-12. For Traffic routing method, select **Shared endpoint**.
+11. For Traffic routing method, select **Shared endpoint**.
 
-13. Click **Create**.
+12. Click **Create**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-13-create-connection-gg-details.png)
 
