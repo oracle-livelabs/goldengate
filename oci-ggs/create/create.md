@@ -28,6 +28,26 @@ In this lab, you will:
 
 [](include:01-create-source-connection.md)
 
+15. Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
+
+    ![Source Database details](./images/02-15-connections.png)
+
+16. Click **Deployments** and then **OCI GoldenGate Deployment**.
+
+    ![Click OCI GodenGate Deployment](./images/02-16-select-deployment.png)
+
+You can perform the following actions on the deployment details page:
+
+* Review the deployment's status
+* Launch the GoldenGate service deployment console
+* Edit the deployment's name or description
+* Stop and start the deployment
+* Move the deployment to a different compartment
+* Review the deployment resource information
+* Add tags
+
+    ![Deployment Details](./images/02-17-deployment-details.png)
+
 ## Task 2: Unlock the GGADMIN user and enable supplemental logging for the source database
 
 [](include:02-unlock-source-ggadmin.md)
@@ -36,13 +56,7 @@ In this lab, you will:
 
 [](include:03-create-target-connection.md)
 
-## Task 4: Review the deployment details
-
-Return to OCI GoldenGate in the Oracle Cloud console. After the deployment is created and active, you can perform the following actions on the deployment details page:
-
-[](include:04-deployment-details.md)
-
-## Task 5: Assign connections to the deployment
+## Task 4: Assign connections to the deployment
 
 [](include:05-assign-connection.md)
 

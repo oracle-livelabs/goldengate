@@ -4,13 +4,13 @@
         "description":"Create the source connection"
     }
 -->
-1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
+1. If you're not already in the GoldenGate service, in the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
 
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-01-deployment-details.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
-2.  Click **Connections**.
+2.  On the GoldenGate **Overview** page, click **Connections**.
 
-    ![Connections in GoldenGate menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-02-connections.png " ")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-02-ggs-overview-connections.png " ")
 
 3.  Click **Create connection**.
 
@@ -38,9 +38,7 @@
 
 12. For Traffic routing method, select **Shared endpoint**.
 
-13. For Session mode, select **Direct**.
-
-14. Click **Create**.
+13. Click **Create**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-13-create-connection-gg-details.png)
 
