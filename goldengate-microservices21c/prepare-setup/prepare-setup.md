@@ -21,7 +21,7 @@ This lab assumes you have:
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment:
 
-    - [ll-orm-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/goldengate-library/ll-orm-mkplc-freetier.zip)
+    - [ll-orm-mkplc-freetier.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/goldengate-library/ll-orm-mkplc-freetier.zip)
 
 2. Save in your downloads folder.
 
@@ -42,13 +42,13 @@ We strongly recommend using this stack to create a self-contained/dedicated VCN 
 
 This workshop requires a certain number of ports to be available, a requirement that can be met by using the default ORM stack execution that creates a dedicated VCN. In order to use an existing VCN the following ports should be added to Egress rules
 
-| Port           |Description                            |
-| :------------- | :------------------------------------ |
-| 22             | SSH                                   |
-| 443            | NGINX Proxy (https)                   |
-| 16000          | GGMA Admin Server                     |
-| 6080           | noVNC Remote Desktop                  |
-| 10000-10400    | GoldenGate consoles                   |
+| Port        | Description          |
+| :---------- | :------------------- |
+| 22          | SSH                  |
+| 443         | NGINX Proxy (https)  |
+| 16000       | GGMA Admin Server    |
+| 6080        | noVNC Remote Desktop |
+| 10000-10400 | GoldenGate consoles  |
 
 1. Go to *Networking >> Virtual Cloud Networks*
 2. Choose your network
