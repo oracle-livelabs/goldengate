@@ -25,72 +25,17 @@ In order to complete this lab:
 * You should have completed the preceding lab
 * Have both an Extract and Replicat running
 
-## Task 1: Perform Inserts to the source database
+## Task 1: Perform inserts to the source database
 
-1.  Return to the Oracle Cloud console and use the navigation menu to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
+[](include:01-perform-inserts-source-db.md)
 
-2.  On the Source ATP Details page, click **Database actions**, and then **SQL**.
+## Task 2: Using the Performance Metrics Server
 
-3.  Enter the following inserts, and then click **Run Script**:
-
-    ```
-    <copy>Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1000,'Houston',20,743113);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1001,'Dallas',20,822416);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1002,'San Francisco',21,157574);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1003,'Los Angeles',21,743878);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1004,'San Diego',21,840689);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1005,'Chicago',23,616472);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1006,'Memphis',23,580075);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1007,'New York City',22,124434);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1008,'Boston',22,275581);
-Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1009,'Washington D.C.',22,688002);</copy>
-    ```
-
-4.  In the OCI GoldenGate Deployment Console, click the **Extract name (UAEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
-
-    ![Extract Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/04-17-ext-stats.png " ")
-
-5.  Go back to the Overview screen, click the **Replicat name (REP)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
-
-    ![Replicat Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-06-rep-statistics.png " ")
-
-## Task 2: Using the Performance Metrics Service
-
-1.  In the GoldenGate deployment console, click **Performance Metrics Service**, and then click **UAEXT**.
-
-    ![Performance Metrics Service page - EXT highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-01-perf-serv.png)
-
-    > **Note:** You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.
-
-2.  Click **Database Statistics**.
-
-    ![Database Statistics page](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-03-db-stats.png)
-
-    Here, you can view the real time database statistics, such as Inserts, Updates, Deletes, and so on.
-
-4.  Repeat steps 1-3 to view a snapshot of the Replicat's (named **Rep** in our lab) Database Statistics.
+[](include:02-performance-metrics-server.md)
 
 ## Task 3: Viewing GoldenGate metrics in the Oracle Cloud console
 
-1.  In the Oracle Cloud console navigation menu, click **Observability & Management**, and then under **Monitoring**, click **Metrics Explorer**. 
-
-    ![Metrics Explorer in Oracle Cloud console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/03-01-metrics-explorer.png " ")
-
-2.  In the Query section, complete the following fields:
-
-    * Compartment: Select your compartment.
-    * Metric namespace: Select **oci_goldengate**.
-    * Metric name: Select **ExtractLag**.
-    * Dimension name: Select **deploymentName**.
-    * Dimension value: Select **ggsinstance**.
-
-    ![ExtractLag metrics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/03-02-query1.png)
-
-3.  Click **Update Chart**.
-
-4.  Click **Add Query**, and then repeat steps 2 and 3 for Metric name, **ReplicatLag**.
-
-    ![Metrics explorer](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/03-04-query2.png)
+[](include:03-viewing-gg-metrics-console.md)
 
 In this lab, you learned to monitor performance in the OCI GoldenGate deployment console and in the Oracle Cloud console.
 
