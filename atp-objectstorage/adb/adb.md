@@ -24,32 +24,11 @@ To successfully complete this lab, you must:
 
 ## Task 1: Create a VCN and subnet
 
-1.  Open the **Navigation Menu**, select to **Networking**, and select **Virtual cloud networks**.
-
-	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
-
-2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
-
-	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-start-vcn-wizard.png " ")
-
-3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
-
-    ![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-03-vcn-wizard.png " ")
-
-4.  Enter a name for the VCN, select a compartment, and then click **Next**.
-
-    ![Enter VCN details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-04-vcn-details.png " ")
-
-5.  Verify the configuration, and then click **Create**.
-
-    ![Verify configuration details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-05-create-vcn.png " ")
-
-You can click View VCN Details and see both a Public and Private subnet were created.
+[](include:01-create-vcn-subnet.md)
 
 ## Task 2: Create an ATP instance
 
 [](include:02-create-atp-instance.md)
-
 
 ## Task 3: Load the ATP schema and enable supplemental logging
 
@@ -59,17 +38,17 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-    ![GoldenGate in Oracle Cloud navigation menu](../../../ggs-common/create/images/database-goldengate.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
 2.  On the GoldenGate **Overview** page, click **Deployments**.
 
-    ![GoldenGate Overview page](../../../ggs-common/create/images/01-02-ggs-overview.png " ")
+    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
 3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
 
 4.  On the Deployments page, click **Create Deployment**.
 
-    ![Deployments page](../../../ggs-common/create/images/01-04-create-deployment.png "")
+    ![Deployments page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-create-deployment.png "")
 
 5.  In the Create Deployment panel, enter **ATPDeployment** for Name.
 
@@ -77,7 +56,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 7.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
-8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
+8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
 
     ![Completed Create GoldenGate Deployment fields](./images/01-09-create-atp-deployment-summary.png " ")
 
@@ -106,7 +85,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 18. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![GoldenGate details](../../../ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
+    ![GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
 
 19. In the Create secret panel, for Name, enter `LLsecret`.
 
@@ -114,7 +93,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     > **NOTE**: The special characters must not be $, ^, or ?. 
 
-    ![Create Password secret](../../../ggs-common/create/images/01-19-passwordsecret.png " ")
+    ![Create Password secret](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-21-passwordsecret.png " ")
 
 21. Confirm the password, and then click **Create**.
 
