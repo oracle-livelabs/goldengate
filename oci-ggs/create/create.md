@@ -51,15 +51,15 @@ You can perform the following actions on the deployment details page:
 [](include:01-create-source-connection.md)
 
 
-## Task 2: Unlock the GGADMIN user and enable supplemental logging for the source database
+## Task 3: Unlock the GGADMIN user and enable supplemental logging for the source database
 
 [](include:02-unlock-source-ggadmin.md)
 
-## Task 3: Create the target connection and unlock the GGADMIN user
+## Task 4: Create the target connection and unlock the GGADMIN user
 
 [](include:03-create-target-connection.md)
 
-## Task 4: Assign connections to the deployment
+## Task 5: Assign connections to the deployment
 
 [](include:05-assign-connection.md)
 
