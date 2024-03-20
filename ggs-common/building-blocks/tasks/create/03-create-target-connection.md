@@ -32,12 +32,10 @@ Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) i
 
 11. For Traffic routing method, select **Shared endpoint**.
 
-12. For Session mode, select **Direct**.
-
-13. Click **Create**.
+12. Click **Create**.
 
     ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-13-create-connec-details.png)
 
     The source and target databases appear in the list of Connections. The connection becomes Active after a few minutes.
 
-10. Repeat Task 2, steps 1-6, to unlock the GGADMIN user for the TargetADW database.
+13. Repeat Task 2, steps 1-6, to unlock the GGADMIN user for the TargetADW database.
