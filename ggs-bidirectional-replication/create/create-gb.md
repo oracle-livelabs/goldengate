@@ -28,9 +28,17 @@ This lab assumes that you completed all preceding labs.
 
 1. If you're not already on the OCI GoldenGate Deployments page, then open the Oracle Cloud navigation menu, click **Oracle Database**, and then select **GoldenGate**.
 
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
+
 2. On the GoldenGate Overview page, click **Deployments**.
 
+    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
+
+3. You may need to select your compartment from the Compartment dropdown. 
+
 3. On the Deployments page, select the OCI GoldenGate deployment to view its details.
+
+    ![Select OCI GoldenGate Deployment](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-review-deployment.png " ")
 
 After the deployment is created and active, you can perform the following actions on the deployment details page:
 
