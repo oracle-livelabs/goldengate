@@ -30,7 +30,9 @@ In this lab, you will:
 
     ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
-2. On the GoldenGate **Overview** page, click **Deployment** and then **OCI GoldenGate Deployment**.
+2. You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment.
+
+3. On the GoldenGate **Overview** page, click **Deployment** and then **OCI GoldenGate Deployment**.
 
     ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview-deployment.png " ")
 
@@ -73,4 +75,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, February 2024
+* **Last Updated By/Date** - Katherine Wardhana, March 2024

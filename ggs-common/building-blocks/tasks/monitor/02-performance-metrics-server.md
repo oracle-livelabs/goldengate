@@ -8,7 +8,7 @@
 
     ![Performance Metrics Service page - EXT highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-01-perf-serv.png " ")
 
-    > **Note:** *You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.*
+    > **Note:** You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.
 
 2.  Click **Database Statistics**.
 
