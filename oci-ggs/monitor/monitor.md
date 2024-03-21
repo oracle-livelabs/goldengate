@@ -31,11 +31,29 @@ In order to complete this lab:
 
 ## Task 2: Using the Performance Metrics Server
 
-[](include:02-performance-metrics-server.md)
+1.  In the GoldenGate deployment console, click **Performance Metrics Server**, and then click **EXT**.
+
+    ![Performance Metrics Service page - EXT highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-01-perf-serv.png " ")
+
+    > **Note:** *You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.*
+
+2.  Click **Database Statistics**.
+
+    ![Database Statistics page](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-03-db-stats.png " ")
+
+    Here, you can view the real time database statistics, such as Inserts, Updates, Deletes, and so on.
 
 ## Task 3: Viewing GoldenGate metrics in the Oracle Cloud console
 
-[](include:03-viewing-gg-metrics-console.md)
+1.  On the OCI GoldenGate Deployments page, select **OCI GoldenGate Deployment**.
+
+2.  On the OCI GoldenGate Deployment details page, scroll down to the **Metrics** section.
+
+    ![Metrics on Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05b-02-metrics.png " ")
+
+3.  Review the **DeploymentInboundLag** and **DeploymentOutboundLag** charts.
+
+4.  Refresh your view after 5 minutes to see updated metrics.
 
 In this lab, you learned to monitor performance in the OCI GoldenGate deployment console and in the Oracle Cloud console.
 
