@@ -175,7 +175,7 @@ To create the GoldenGate connection, you must first obtain the data replication 
 
     ![Kafka connection settings](./images/06-07-kafkasettings.png " ")
 
-## Task 8: Create the OCI Streaming connection
+## Task 7: Create the OCI Streaming connection
 
 1.  Use the Oracle Cloud console navigation menu to return to GoldenGate.
 
@@ -206,7 +206,7 @@ To create the GoldenGate connection, you must first obtain the data replication 
 The connection becomes Active after a few minutes. Please wait for both new connections to become Active before proceeding.    
 
 
-## Task 9: Assign connections
+## Task 8: Assign connections
 
 You must assign connections to deployments you can use them. 
 
@@ -242,11 +242,12 @@ You may now **proceed to the next lab.**
 
 ## Learn more
 
-* [Managing deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/ebbpf/index.html)
-* [Managing connections](https://docs.oracle.com/en/cloud/paas/goldengate-service/mcjzr/index.html)
+* [Create Stream Analytics resources](https://docs.oracle.com/en/cloud/paas/goldengate-service/cwuvu/index.html)
+* [Connect to GoldenGate Paths](https://docs.oracle.com/en/cloud/paas/goldengate-service/cggjh/index.html)
+* [Connect to OCI Streaming](https://docs.oracle.com/en/cloud/paas/goldengate-service/oioio/index.html)
 
 ## Acknowledgements
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, Feburary 2024
+* **Last Updated By/Date** - Jenny Chan, March 2024
 

@@ -2,6 +2,8 @@
 
 This workshop uses Oracle Cloud Infrastructure (OCI) GoldenGate Stream Analytics to transform and analyze real-time data streams.
 
+Estimated time: 2 hours
+
 ### Workshop Objectives
 
 In this workshop you:
@@ -27,6 +29,7 @@ A pipeline is a sequence of data processing stages such as, Query, Pattern, Rule
 
 ## Learn More
 
+* [About OCI GoldenGate Stream Analytics](https://docs.oracle.com/en/cloud/paas/goldengate-service/apead/index.html)
 * [GoldenGate current release](https://www.oracle.com/middleware/technologies)
 
 
@@ -34,6 +37,6 @@ A pipeline is a sequence of data processing stages such as, Query, Pattern, Rule
 
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, February 2024
+* **Last Updated By/Date** - Jenny Chan, March 2024
 
 

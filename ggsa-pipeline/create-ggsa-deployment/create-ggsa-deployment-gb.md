@@ -11,7 +11,7 @@ Watch the video below for a quick walk through of the lab.
 
 ### About Oracle Cloud Infrastructure GoldenGate Stream Analytics deployments and connections
 
-A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate Stream Analytics console, where you can create and manage Stream Analytics pipelines and dashboards.
+A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate Stream Analytics console, where you can create and manage Stream Analytics pipelines and dashboards. For this workshop, you work with two deployments: a Data Replication deployment, and a Stream Analytics deployment.
 
 Connections store the source and target credential information for OCI GoldenGate. A connection also enables networking between the Oracle Cloud Infrastructure (OCI) GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
 
@@ -19,96 +19,46 @@ Connections store the source and target credential information for OCI GoldenGat
 
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
-* Create an OCI GoldenGate Stream Analytics deployment
+* Review the OCI GoldenGate Data Replication and Stream Analytics deployments
 * Create connections to Kafka and GoldenGate replication
 * Assign connections to the Stream Analytics deployment
 
 ### Prerequisites
 * Completion of Get started - LiveLabs login
 
-## Task 1: Log in to the Oracle Cloud console
+## Task 1: Review the deployment details
 
-1. In your lab instructions, click **View Login Info**. The Reservation Information panel opens.
+1. If you're not already on the OCI GoldenGate Deployments page, then open the Oracle Cloud navigation menu, click **Oracle Database**, and then select **GoldenGate**.
 
-    ![View Login Info](./images/00-view-login-info.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
-2. In the Reservation Information panel, click **Launch OCI**.
+2. On the GoldenGate Overview page, click **Deployments**.
 
-    ![Reservation Information](./images/00-res-info.png " ")
+    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
-3. The User Name should be auto filled. If not, copy and paste it from the Reservation Information panel.
+3. You may need to select your compartment from the Compartment dropdown. 
 
-4. For Password, copy and paste the **Password** from the Reservation Information panel. 
+3. On the Deployments page, select the OCI GoldenGate deployment to view its details.
 
-5. Click **Sign In**. 
+    ![Select OCI GoldenGate Deployment](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-review-deployment.png " ")
 
-    > **Note:** If this is your first time logging in, you must reset the default password.
+After the deployment is created and active, you can perform the following actions on the deployment details page:
 
-## Task 2: Create a Stream Analytics deployment
+* Review the deployment's status
+* Launch the GoldenGate service deployment console
+* Edit the deployment's name or description
+* Stop and start the deployment
+* Move the deployment to a different compartment
+* Review the deployment resource information
+* Add tags
 
-> **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
+    ![Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-01-deployment-details.png " ")
 
-1.  In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
+4.  Use the Oracle Cloud breadcrumb to return to the Deployments page. Repeat step 3 to review the GGSA deployment details.
 
-    ![GoldenGate in Oracle Cloud navigation menu](./images/database-goldengate.png " ")
+## Task 2: Create the GoldenGate connection
 
-2.  On the GoldenGate **Overview** page, click **Deployments**.
-
-    ![GoldenGate Overview page](./images/01-02-ggs-overview.png " ")
-
-3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, expand LiveLabs, and then select the compartment **LL1234-COMPARTMENT**.
-
-    > **Tip:** You can find your Username in the **Reservation Information** panel.
-
-4.  On the Deployments page, a precreated **Replication** deployment appears in Deployments list for this lab. Click **Create deployment**.
-
-    ![Deployments page](./images/01-04-create-deployment.png " ")
-
-5.  In the Create Deployment panel, enter **GGSA** for Name.
-
-6.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
-
-7.  Select **Development or testing**. Your **OCPU count** updates to the preset governed by your selection.
-
-8.  Select **Auto scaling**.
-
-9.  For Subnet, select a private subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
-
-10.  For License type, select **Bring Your Own License (BYOL)**.
-
-11. Click **Show advanced options**, and then select **Enable GoldenGate console public access**. 
-
-12. Click **Next**.
-
-    ![Completed Create GoldenGate Deployment fields](./images/create_deployment_1.png "" ) 
-
-13. On the GoldenGate details screen, for Choose a deployment type, select **Stream analytics**.
-
-14. For GoldenGate Instance Name, enter **ggsa**.
-
-15. For Administrator Username, enter **osaadmin**.
-
-16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
-
-    ![GoldenGate details](./images/create_deployment_2.png " ")
-
-17. In the Create secret panel, enter `LLsecret`.
-
-18. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
-
-    > **NOTE**: The special characters must not be $, ^, or ?. 
-
-    ![Create Password secret](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-17-passwordsecret.png " ")
-
-19. Confirm the password, and then click **Create**.
-
-20. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
-
-You're brought to the Deployment details page. Continue with the following tasks while the deployment creates. Its status changes from CREATING to ACTIVE when it's ready for you to use.
-
-## Task 3: Create the GoldenGate connection
-
-Follow these steps to connect the GoldenGate Replication deployment to the GGSA deployment.
+Follow these steps to connect the OCI GoldenGate Data Replication deployment to the GGSA deployment.
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate to the **Deployments** page. 
 
@@ -152,7 +102,7 @@ Follow these steps to connect the GoldenGate Replication deployment to the GGSA 
 
     The connection becomes Active after a few minutes. You can continue with the next task.
 
-## Task 4: Create the Kafka connection
+## Task 3: Create the Kafka connection
 
 Follow these steps to connect the Kafka event hub.
 
@@ -188,7 +138,7 @@ Follow these steps to connect the Kafka event hub.
 
 The connection becomes Active after a few minutes. Please wait for both new connections to become Active before proceeding.    
 
-## Task 5: Create connection assignments
+## Task 4: Create connection assignments
 
 You must assign connections need to a deployment before they can be used. 
 
@@ -224,11 +174,12 @@ You may now **proceed to the next lab.**
 
 ## Learn more
 
-* [Managing deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/ebbpf/index.html)
-* [Managing connections](https://docs.oracle.com/en/cloud/paas/goldengate-service/mcjzr/index.html)
+* [Create Stream Analytics resources](https://docs.oracle.com/en/cloud/paas/goldengate-service/cwuvu/index.html)
+* [Connect to GoldenGate Paths](https://docs.oracle.com/en/cloud/paas/goldengate-service/cggjh/index.html)
+* [Connect to Kafka](https://docs.oracle.com/en/cloud/paas/goldengate-service/wkynw/index.html)
 
 ## Acknowledgements
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, November 2023
+* **Last Updated By/Date** - Jenny Chan, March 2024
 
