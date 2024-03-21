@@ -105,9 +105,9 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
     ![Extract completed](./images/02-11-admin-service-overview.png)
 
-## Task 3: Perform Inserts to the Source Database
+## Task 3: Perform Inserts to the Target Database
 
-1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **TargetADW**.
+1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Data Warehouse**, and then **TargetADW**.
 
     ![Autonomous Transaction Processing in Oracle Cloud navigation menu](./images/03-01a-auto-trans-process.png " ")
 
@@ -154,4 +154,4 @@ Insert into SRCMIRROR_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) value
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2023
+* **Last Updated By/Date** - Jenny Chan, March 2024

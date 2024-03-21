@@ -29,15 +29,7 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 ## Task 1: Launch the GoldenGate Deployment Console
 
-1.  When the deployment is active, click **Launch Console**.
-
-    ![Deployment launch console](./images/02-01-launchconsole.png " ")
-
-2.  To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password you provided in the previous Lab, and then click **Sign In**.
-
-    ![GoldenGate deployment console sign in](./images/02-02-oggadmin.png " ")
-
-    After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
+[](include:01-launch-console.md)
 
 ## Task 2: Add Transaction Data and a Checkpoint Table
 
@@ -93,7 +85,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 ## Task 3: Add and run an Extract
 
-1.  On the GoldenGate Deployment Console Home page, click **Add Extract** (plus icon).
+1.  Use the navigation to return to the Overview page, then click **Add Extract** (plus icon).
 
     ![Click Add Extract](./images/02-01-ggs-add-extract.png " ")
 
@@ -150,7 +142,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Copy and paste the text onto Parameter File](./images/02-09-params.png " ")
 
-    > **Note:** *'tranlogoptions excludeuser ggadmin' avoids recapturing transactions applied by 'ggadmin' in bidirectional replication scenarios.*
+    > **Note:** 'tranlogoptions excludeuser ggadmin' avoids recapturing transactions applied by 'ggadmin' in bidirectional replication scenarios.
 
 10. Click **Create and Run**. You're returned to the OCI GoldenGate Deployment Console Home page.
 
@@ -188,13 +180,15 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 4.  From the list of buckets, click the bucket you created. You're brought to the bucket Details page.
 
-5.  Using the bucket details, formulate and take note of your bucket URI:
+5.  Using the bucket details, take note of your bucket URI:
 
     ```
     <copy>https://objectstorage.&lt;region&gt;.oraclecloud.com/n/&lt;namespace&gt;/b/&lt;bucket-name&gt;/o/</copy>
     ```
 
     For example, if your region is Phoenix, your namespace is c4u04, and your bucket name ADB-LLStore, then your URI would be: `https://objectstorage.us-phoenix-1.oraclecloud.com/n/c4u04/b/ADB-LLStore/o/`.
+
+    > **NOTE:** Ignore the URL deprecation notice. DataPump doesn't yet support the new URL syntax.
 
 6.  In the Oracle Cloud Console global header, click **Profile** (user icon), and then select your username.
 
@@ -210,11 +204,13 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 9.  Click **Copy**, and then click **Close**.
 
-    > **Note:** *Paste the token to a text editor for use in the next step.*
+    > **Note:** Paste the token to a text editor for use in the next step.
 
     ![Copy highlighted](./images/05-09-copy-token.png " ")
 
 10. In the source database SQL window, enter the following script, replace the placeholders with your user name and token value, and then click **Run Statement**:
+
+    >**Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
 
     ```
     <copy>BEGIN
@@ -225,10 +221,6 @@ Before using Oracle Data Pump to export data from the source database, first cre
   );
 END;</copy>
     ```
-
-    > **Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
-
-
     ![SQL worksheet](./images/05-10-create-credential.png " ")
 
 11. Use the following script to create the Export Data job using Oracle Data Pump ExpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI** from step 5. `SRC_OCIGGLL.dmp` is a file that will be created when this script runs.
@@ -317,11 +309,13 @@ Before importing data to the target database, create a credential in the target 
 
     ![Autonomous Data Warehouse page](./images/06-02-targetadw.png " ")
 
-3. On the **TargetADW Details** page, click **Tools**, and then click **Open Database Actions**.
+3. On the **TargetADW Details** page, from the **Database actions** dropdown, select **SQL**.
 
-    ![TargetADW Details page](./images/06-03-db-actions.png " ")
+    ![TargetADW Details page](../../../ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
 
-4. Log in to Database Actions as ADMIN, and then click **SQL**.
+4. If prompted, log in to Database Actions as ADMIN, and then click **SQL**.
+
+    > **NOTE:** If using the LiveLabs Sandbox environment, you can find the database admin password in the View Login Details panel of your workshop instructions.
 
 5. Enter the following script and then click **Run Statement** to create a credential in ADW:
 
@@ -489,7 +483,7 @@ Before importing data to the target database, create a credential in the target 
 
     ![Add Replicat - Parameter File](./images/07-09-param-file.png " ")
 
-    > **Note:** *'DBOPTIONS ENABLE\_INSTATIATION\_FILTERING' enables CSN filtering on tables imported using Oracle Data Pump. For more information, see [DBOPTIONS Reference](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service/using&id=GWURF-GUID-BA8C0CED-D87F-4106-862E-4AD22D910160).*
+    > **Note:** 'DBOPTIONS ENABLE\_INSTATIATION\_FILTERING' enables CSN filtering on tables imported using Oracle Data Pump. For more information, see [DBOPTIONS Reference](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service/using&id=GWURF-GUID-BA8C0CED-D87F-4106-862E-4AD22D910160).
 
 10.  Click **Create and Run**.
 
@@ -545,4 +539,4 @@ Before importing data to the target database, create a credential in the target 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2023
+* **Last Updated By/Date** - Jenny Chan, March 2024
