@@ -34,13 +34,13 @@ Before importing data to the target database, create a credential in the target 
 
     ![Autonomous Data Warehouse page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-02-targetadw.png " ")
 
-3. On the **TargetADW Details** page, click **Database actions**.
+3. On the **TargetADW Details** page, click **Database actions**, and then select **SQL** from the dropdown.
 
     ![TargetADW Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
 
-4. Log in to Database Actions as ADMIN, and then click **SQL**.
+    > **Note:** (Optional) Close the SQL Help dialogs.
 
-5. Enter the following script and then click **Run Statement** to create a credential in ADW:
+4. Enter the following script and then click **Run Statement** to create a credential in ADW:
 
     ```
     <copy>BEGIN
@@ -57,7 +57,7 @@ Before importing data to the target database, create a credential in the target 
 
     ![Script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-05-sql-script.png " ")
 
-6.  Enter the following script and then click **Run Statement** to import data using ImpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI**: 
+5.  Enter the following script and then click **Run Statement** to import data using ImpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI**: 
 
     ```
     <copy>DECLARE

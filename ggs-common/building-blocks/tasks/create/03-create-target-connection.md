@@ -38,4 +38,4 @@ Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) i
 
     The source and target databases appear in the list of Connections. The connection becomes Active after a few minutes.
 
-13. Repeat Task 3, Steps 1-6, to unlock the GGADMIN user for the TargetADW database.
+13. Repeat Task 3, steps 1-6, to unlock the GGADMIN user for the TargetADW database.
