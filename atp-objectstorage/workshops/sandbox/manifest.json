@@ -1,6 +1,18 @@
 {
     "workshoptitle": "Use OCI GoldenGate to stream real time data into OCI Object Storage",
     "help": "livelabs-help-db_us@oracle.com",  
+    "include": {
+        "01-create-source-connection.md":"../../../ggs-common/building-blocks/tasks/create/01-create-source-connection.md",
+        "02-unlock-source-ggadmin.md":"../../../ggs-common/building-blocks/tasks/create/02-unlock-source-ggadmin.md",
+        "03-create-target-connection.md":"../../../ggs-common/building-blocks/tasks/create/03-create-target-connection.md",
+        "04-deployment-details.md":"../../../ggs-common/building-blocks/tasks/create/04-deployment-details.md",
+        "05-assign-connection.md":"../../../ggs-common/building-blocks/tasks/create/05-assign-connection.md",
+        "01-launch-console.md":"../../../ggs-common/building-blocks/tasks/extract/01-launch-console.md",
+        "01-perform-inserts-source-db.md":"../../../ggs-common/building-blocks/tasks/monitor/01-perform-inserts-source-db.md",
+        "02-performance-metrics-server.md":"../../../ggs-common/building-blocks/tasks/monitor/02-performance-metrics-server.md",
+        "03-viewing-gg-metrics-console.md":"../../../ggs-common/building-blocks/tasks/monitor/03-viewing-gg-metrics-console.md",
+        "01-create-purge-task.md":"../../../ggs-common/building-blocks/tasks/purge/01-create-purge-task.md"
+    },
     "tutorials": [
         {
             "title": "Introduction",
