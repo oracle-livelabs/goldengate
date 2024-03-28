@@ -60,7 +60,7 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
 3.  Click **Create Connection**.
 
-    ![Connections page](../../../ggs-common/create/images/02-03-create-connection.png " ")
+    ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
 
 4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **SourceATP** and optionally, a description.
 
@@ -68,7 +68,7 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
 6.  Click **Next**.
 
-    ![Create connections page](../../../ggs-common/create/images/02-06-create-connection-general-info.png)
+    ![Create connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
 
 7. On the Connection details page, under Database details, select **Select database**.
 
@@ -80,11 +80,9 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
 11. For Traffic routing method, select **Shared endpoint**.
 
-12. For Session mode, select **Direct**.
+12. Click **Create**.
 
-13. Click **Create**.
-
-    ![Source Database details](../../../ggs-common/create/images/02-13-create-connection-gg-details.png)
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-13-create-connection-gg-details.png)
 
     The connection becomes Active after a few minutes.
 
@@ -94,31 +92,31 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 1.  From the Oracle Cloud Console **Navigation Menu** (hamburger icon), click **Oracle Database**, and then select **Autonomous Transaction Processing**.
 
-	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](../../../ggs-common/create/images/03-01-auto-db.png " ")
+	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-01-auto-db.png " ")
 
 2.  From the list of databases, select **SourceATP**.
 
-    ![Autonomous Databases page](../../../ggs-common/create/images/03-02-sourceatp.png " ")
+    ![Autonomous Databases page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-02-sourceatp.png " ")
 
 3.  On the SourceATP Database Details page, click **Database actions**, and select **Database Users** from the dropdown.
 
-    ![SourceATP Database Details page](../../../ggs-common/create/images/03-03-db-actions.png " ")
+    ![SourceATP Database Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-03-db-actions.png " ")
 
     > **Note:** If you're prompted to log in to Database Actions, use the source database admin credentials.
 
 4.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
-    ![Database users](../../../ggs-common/create/images/03-05-ggadmin.png " ")
+    ![Database users](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-05-ggadmin.png " ")
 
 5.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the connection Task 3, Step 8, and then click **Apply Changes**.
 
-    ![Edit user](../../../ggs-common/create/images/03-06-ggadmin-edit-user.png " ")
+    ![Edit user](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-06-ggadmin-edit-user.png " ")
 
     Note that the user icon changes from a padlock to a checkmark.
 
 6.  From the navigation menu (hamburger icon), click **SQL**.
 
-    ![Open navigation menu](../../../ggs-common/create/images/03-07-sql.png " ")
+    ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png " ")
 
 7.  In the worksheet, enter the following, and then click **Run Statement**:
 
@@ -238,4 +236,4 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, February 2024
+* **Last Updated By/Date** - Katherine Wardhana, March 2024
