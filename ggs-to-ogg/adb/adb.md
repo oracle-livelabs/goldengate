@@ -18,156 +18,23 @@ Estimated time: 20 minutes
 
 This lab assumes you have completed the Get started lab.
 
-> **Note:** *You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
+> **Note:** You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.
 
 ## Task 1: Create a VCN and Subnet
 
-1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
-
-	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
-
-2.  Click **Start VCN Wizard**.
-
-    ![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-start-vcn-wizard.png " ")
-
-3.  Select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
-
-    ![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-03-vcn-wizard.png " ")
-
-4.  Enter a name for the VCN, select a compartment, and then click **Next**.
-
-    ![Enter VCN details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-04-vcn-details.png " ")
-
-5.  Review the configuration, and then click **Create**.
-
-    ![Verify configuration details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-05-create-vcn.png " ")
-
-You can click **View VCN Details** and to verify both a Public and Private subnet were created.
+[](include:01-create-vcn-subnet.md)
 
 ## Task 2: Create an Autonomous Transaction Processing instance
 
-1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
-
-	![Autonomous Transaction Processing in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/database-atp.png " ")
-
-2.  Click **Create Autonomous Database**.
-
-    ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-create-adb.png " ")
-
-3. Select **Compartment** by clicking on the drop-down list. Note that yours will be different - do not select **ManagedCompartmentforPaaS**. Enter **SourceATP** for **Display Name** and **Database Name**.
-
-    ![Create Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-03-compartment.png " ")
-
-4.  Under **Choose a workload type**, select **Transaction Processing**.
-
-5.  Under **Choose a deployment type**, select **Serverless**.
-
-    ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-deployment.png " ")
-
-6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
-
-7.  Add a password. Take note of the password, you will need it later in this lab.
-
-    ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
-
-8. Under **Access type**, select **Secure access from everywhere**.
-
-9.  Select **Require mutual TLS (mTLS) authentication**.
-
-    ![Choose network access options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-09-choose-network-access.png " ")
-
-10.  For **Choose license and Oracle Database edition**, use the default selection.
-
-    ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
-
-11.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
-
+[](include:02-create-atp-instance.md)
 
 ## Task 3: Load the Autonomous Transaction Processing schema
 
-1.  Click the following link to download the database schema.
-
-    [Archive.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/Archive.zip)
-
-2.  Save `Archive.zip` to a download directory, and then unzip the file.
-
-3.  Back in the OCI Console, select your Autonomous Transaction Processing instance from the Autonomous Databases list to view its details and access tools.
-
-    ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-03-atp.png " ")
-
-4.  Click the **Tools** tab, and then click **Database Actions**.
-
-    ![Autonomous Database Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-dbdetails.png "")
-
-5.  Log in with the ADMIN user and password provided when you created the Autonomous Transaction Processing instance.
-
-    ![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
-
-6.  From the Database Actions menu, under **Development**, select **SQL**.
-
-    ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-06-db-actions.png " ")
-
-7.  (Optional) Click **X** to close the Help dialog.
-
-8.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** paste it into the SQL Worksheet.
-
-    ![Script output](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-08-atp-sql.png " ")
-
-9.  Click **Run Script**. The Script Output tab displays confirmation messages.
-
-10. Copy the SQL script from **OCIGGLL\_OCIGGS\_SRC\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
-
-    ![Script output](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-10-atp-schema.png " ")
-
-11. Click **Run Script**. The Script Output tab displays confirmation messages.
-
-12. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
-
-    ![Script navigator](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-11-verify.png " ")
-
-13. To enable supplemental logging, run the following command:
-
-    ```
-    <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
-    ```
+[](include:03-load-atp-schema.md)
 
 ## Task 4: Create an Autonomous Data Warehouse instance
 
-1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
-
-	![Autonomous Data Warehouse in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/database-adw.png " ")
-
-2.  Click **Create Autonomous Database**.
-
-    ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-create-adb.png " ")
-
-3. Select **Compartment** by clicking on the drop-down list. Note that yours will be different - do not select **ManagedCompartmentforPaaS**. Enter **TargetADW** for **Display Name** and **Database Name**.
-
-    ![Create Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-03-compartment.png " ")
-
-4.  Under **Choose a workload type**, select **Data Warehouse**.
-
-5.  Under **Choose a deployment type**, select **Serverless**.
-
-    ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-deployment-dw.png " ")
-
-6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
-
-7.  Add a password. Note the password down in a notepad, you will need it later in Lab 2.
-
-    ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
-
-8. Under **Access type**, select **Secure access from everywhere**.
-
-9.  Select **Require mutual TLS (mTLS) authentication**.
-
-    ![Choose network access options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-09-choose-network-access.png " ")
-
-10.  Under **Choose a license type**, select **License Included**. or ... Under **Choose license and Oracle Database edition**, keep the **License Included** license type.
-
-    ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
-
-11.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
+[](include:04-create-adw-instance.md)
 
 ## Task 5: Load the Autonomous Data Warehouse schema
 
@@ -197,10 +64,14 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
 8.  In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
 
+## Task 6: Create the deployment
+
+[](include:05-create-deployment.md)
+
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Katherine Wardhana, January 2024
-- **PAR Expiration date** - March 31, 2022
+- **Last Updated By/Date** - Jenny Chan, April 2024
+- **PAR Expiration date** - March 31, 2024
