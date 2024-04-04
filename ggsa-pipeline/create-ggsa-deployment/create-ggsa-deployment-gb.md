@@ -38,11 +38,11 @@ In this lab, you will:
 
 3. You may need to select your compartment from the Compartment dropdown. 
 
-3. On the Deployments page, select the OCI GoldenGate deployment to view its details.
+3. On the Deployments page, select either the Replication or GGSA deployment to view its details.
 
-    ![Select OCI GoldenGate Deployment](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-review-deployment.png " ")
+    ![Select OCI GoldenGate Deployment](./images/01-04-review-deployment.png " ")
 
-After the deployment is created and active, you can perform the following actions on the deployment details page:
+After a deployment is created and active, you can perform the following actions on the deployment details page:
 
 * Review the deployment's status
 * Launch the GoldenGate service deployment console
@@ -51,8 +51,6 @@ After the deployment is created and active, you can perform the following action
 * Move the deployment to a different compartment
 * Review the deployment resource information
 * Add tags
-
-    ![Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-01-deployment-details.png " ")
 
 4.  Use the Oracle Cloud breadcrumb to return to the Deployments page. Repeat step 3 to review the GGSA deployment details.
 
@@ -86,7 +84,7 @@ Follow these steps to connect the OCI GoldenGate Data Replication deployment to 
 
     ![GG Deployment Host from Reservation Information](./images/03-08-gg-dep-host.png " ")
 
-9.  On the Connection details page, under GoldenGate deployment, select **Enter GoldenGate information**
+9.  On the Connection details page, under GoldenGate deployment, select **Enter GoldenGate information**.
 
 10.  For Host, paste the **GG Deployment Host** value copied from the Reservation Information panel (Step 8).
 
@@ -120,13 +118,13 @@ Follow these steps to connect the Kafka event hub.
 
 6.  Click **Next**.
 
-7.  On the Connection details page, under Bootstrap servers, select **Customer-assigned subnet**.
+7.  On the Connection details page, in the Bootstrap servers section, select **Dedicated endpoint** for **Traffic routing method**.
 
-8.  For Host, copy and paste the **Kafka Private FQDN** from the Reservation Information panel.
+8.  Select the private subnet from the **Subnet** dropdown.
 
-9.  For Port, enter **9092**.
+9.  For Host, copy and paste the **Kafka Private FQDN** from the Reservation Information panel.
 
-10. For Private IP address, copy and paste the **Kafka Private IP** from the Reservation Information panel.
+10.  For Port, enter **9092**.
 
 11. Click **Create**.
 
@@ -138,9 +136,9 @@ Follow these steps to connect the Kafka event hub.
 
 The connection becomes Active after a few minutes. Please wait for both new connections to become Active before proceeding.    
 
-## Task 4: Create connection assignments
+## Task 4: Assign connections
 
-You must assign connections need to a deployment before they can be used. 
+Before you can use connections, you must first assign connections a deployment. 
 
 1.  Click **Deployments** in the GoldenGate menu.
 
@@ -162,7 +160,7 @@ You must assign connections need to a deployment before they can be used.
 
     ![Assigned connections under Resources](./images/assign_connection.png " ")
 
-6. In the Assign connection dialog, from the Connection in &lt;compartment-number&gt;-COMPARTMENT dropdown, select **ADB\_Connection**. Click **Assign connection**.
+6. In the Assign connection dialog, from the Connection in &lt;compartment-number&gt;-COMPARTMENT dropdown, select **ADB\_moviestream**. Click **Assign connection**.
 
     ![Assigned connection to SourceATP](./images/assign_connection_dlg.png " ")
 
@@ -181,5 +179,5 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, March 2024
+* **Last Updated By/Date** - Jenny Chan, April 2024
 
