@@ -55,7 +55,7 @@ After you log in, you're brought to the GoldenGate deployment console home page.
 
 ## Task 3: Add transaction data
 
-> **Note:** *Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.*
+> **Note:** Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.
 
 1.  Open the navigation menu and then click **Configuration**.
 
@@ -159,7 +159,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 ## Task 6: Create a credential on the source deployment for the dpuser
 
->**Note**: *Complete the following steps in the source **ATPDeployment** deployment console (ATPinstance).*
+>**Note**: Complete the following steps in the source **ATPDeployment** deployment console (ATPinstance).
 
 1.  In the source ATPinstance deployment console, click **Administration Service**, open the navigation menu, and then select **Configuration**.  
 
@@ -183,7 +183,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 ## Task 7: Add and run a Distribution Path in the source deployment console
 
->**Note**: *Complete the following steps in the source **ATPDeployment** deployment console (ATPinstance).*
+>**Note**: Complete the following steps in the source **ATPDeployment** deployment console (ATPinstance).
 
 The Distribution Path initiates the process to send the GoldenGate trail file to Oracle Object Storage.
 
@@ -201,7 +201,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 6.  For **Target Host**, enter the BDinstance hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
-    >**Note:** *You can copy the host from the browser address bar of target BDinstance deployment console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
+    >**Note:** You can copy the host from the browser address bar of target BDinstance deployment console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).
 
   ![Deployment details](./images/07-06-deployment-details.png " ")
 
@@ -221,7 +221,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 The Distribution path on the source ATPinstance creates a Receiver path on the target BDinstance.
 
->**Note**: *Complete the following steps in the **OBJDeployment** deployment console (BDinstance).*
+>**Note**: Complete the following steps in the **OBJDeployment** deployment console (BDinstance).
 
 1.  In the target BDinstance deployment console, click **Receiver Service**.
 
@@ -231,7 +231,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 ## Task 9: Add and run a Replicat
 
->**Note**: *Complete the following steps in the **OBJDeployment** deployment console (BDinstance).*
+>**Note**: Complete the following steps in the **OBJDeployment** deployment console (BDinstance).
 
 1.  Click **Administration Service**.
 
@@ -261,7 +261,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 10. On the Properties File page, locate `gg.eventhandler.oci.compartment`, and then replace the placeholder with your compartment's OCID.
 
-  >**NOTE:** *If running this lab in a Sandbox environment, you can find your compartment OCID in the View Login Info panel. You can also copy the compartment OCID from the Compartments page in the Oracle Cloud console. Enter `Compartments` into the search bar, or locate **Compartments** in the Oracle Cloud console navigation menu under **Identity & Security**.*
+  >**NOTE:** If running this lab in a Sandbox environment, you can find your compartment OCID in the View Login Info panel. You can also copy the compartment OCID from the Compartments page in the Oracle Cloud console. Enter `Compartments` into the search bar, or locate **Compartments** in the Oracle Cloud console navigation menu under **Identity & Security**.
 
 11. Locate `gg.eventhandler.oci.bucketMappingTemplate`, and then replace the placeholder with a name for your target bucket.
 
@@ -289,4 +289,4 @@ In this lab, you:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Deniz Sendil, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2023
+* **Last Updated By/Date** - Katherine Wardhana, March 2024

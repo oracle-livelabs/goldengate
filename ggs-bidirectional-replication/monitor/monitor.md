@@ -26,7 +26,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
     ![Performance Metrics Service page - EXT highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-01-perf-serv.png)
 
-    > **Note:** *You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.*
+    > **Note:** You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.
 
 2.  Click **Database Statistics**.
 
@@ -57,4 +57,4 @@ In this lab, you learned to monitor performance in the OCI GoldenGate Deployment
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, October 2022
+* **Last Updated By/Date** - Jenny Chan, March 2024

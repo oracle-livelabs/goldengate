@@ -34,9 +34,3 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 6.  Go back to the Overview screen, click the **Replicat name (REP)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Replicat Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-06-rep-statistics.png " ")
-
-7.  In the Oracle Cloud console, navigate to the OCI Object Storage bucket and then download the JSON file OCI GoldenGate created.
-
-    ![Buckets in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-07a-buckets.png " ")
-
-    ![Buckets](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-07b-buckets.png " ")
