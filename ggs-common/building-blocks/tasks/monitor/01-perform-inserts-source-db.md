@@ -34,3 +34,7 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 6.  Go back to the Overview screen, click the **Replicat name (REP)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Replicat Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-06-rep-statistics.png " ")
+
+7. Click **Performance Metrics Service**.
+
+    ![Performance Metrics Service](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-07-pms-statistics.png " ")

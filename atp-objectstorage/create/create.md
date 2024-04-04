@@ -118,7 +118,15 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png " ")
 
-7.  In the worksheet, enter the following, and then click **Run Statement**:
+7.  Enter the following into the Worksheet, and then click **Run Statement**.
+
+    ```
+    <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
+    ```
+
+    ![Script Output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-08-sql-script-return.png " ")
+
+8.  In the worksheet, enter the following, and then click **Run Statement**:
 
     ```
     <copy>
@@ -128,7 +136,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     The Script Output panel displays six tables whose Support_Mode is **FULL**.
 
-    ![Script output](../../../ggs-common/create/images/03-09-sql-script-return.png " ")
+    ![Script output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-09-sql-script-return.png " ")
 
 You can leave the source database SQL window open for use in a later lab.
 
@@ -208,6 +216,8 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 
 5.  Click **Next**.
 
+    ![Create connection details](./images/07-05-create-connection.png " ")
+
 6.  For Deployment, select the Big Data deployment from the dropdown.
 
 7.  For Username, enter `oggadmin`.
@@ -218,11 +228,15 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 
 9. Click **Create**.
 
+    ![Create connection details](./images/07-09-create-connection.png " ")
+
 10. After the connection is active, on its details page, under **Resources**, click **Assigned deployments**.
 
 11. Click **Assign deployment**.
 
 12. In the Assign deployment dialog, select the source **ATPDeployment**, and then click **Assign deployment**.
+
+    ![Assign deployment](./images/07-12-assign-deployment.png " ")
 
 **Proceed to the next lab**.
 
@@ -236,4 +250,4 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2024
+* **Last Updated By/Date** - Katherine Wardhana, April 2024
