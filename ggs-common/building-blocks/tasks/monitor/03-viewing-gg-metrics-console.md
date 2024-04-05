@@ -24,6 +24,6 @@
     * Dimension name: Select **deploymentName**
     * Dimension value: Select **OCI GoldenGate Deployment**
 
-    ![Metrics query for ADWDeployment](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/03-03-query2.png " ")
+    ![Metrics query for ADWDeployment](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/03-04-query2.png " ")
 
 4.  Refresh your view after 5 minutes to see updated metrics.

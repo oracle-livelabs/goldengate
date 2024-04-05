@@ -27,11 +27,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 [](include:01-perform-inserts-source-db.md)
 
-## Task 2: Using the Performance Metrics Server
-
-[](include:02-performance-metrics-server.md)
-
-## Task 3: Viewing GoldenGate metrics in the Oracle Cloud console
+## Task 2: Viewing GoldenGate metrics in the Oracle Cloud console
 
 [](include:03-viewing-gg-metrics-console.md)
 
@@ -47,4 +43,4 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2024
+* **Last Updated By/Date** - Katherine Wardhana, April 2024
