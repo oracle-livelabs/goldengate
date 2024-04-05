@@ -52,7 +52,6 @@ You can perform the following actions on the deployment details page:
 
 [](include:01-create-source-connection.md)
 
-
 ## Task 3: Unlock the GGADMIN user and enable supplemental logging for the source database
 
 [](include:02-unlock-source-ggadmin.md)
