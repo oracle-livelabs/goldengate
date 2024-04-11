@@ -47,7 +47,9 @@ On the Deployment Details page, you can:
 
     ![ATPDeployment Launch Console](images/02-01-launch-console.png " ")
 
-2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided in the previous lab (Task 1, Step 15), and then click **Sign In**.
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password, and then click **Sign In**.
+
+    > **Note:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
 
     ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin.png " ")
 
@@ -112,7 +114,27 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 9.  On the Parameter File page, in the text area, add a new line to the existing text and add the following:
 
     ```
-    <copy>table SRC_OCIGGLL.*;</copy>
+    <copy>-- Capture DDL operations for listed schema tables
+    ddl include mapped
+
+    -- Add step-by-step history of ddl operations captured
+    -- to the report file. Very useful when troubleshooting.
+    ddloptions report
+
+    -- Write capture stats per table to the report file daily.
+    report at 00:01
+
+    -- Rollover the report file weekly. Useful when IE runs
+    -- without being stopped/started for long periods of time to
+    -- keep the report files from becoming too large.
+    reportrollover at 00:01 on Sunday
+
+    -- Report total operations captured, and operations per second
+    -- every 10 minutes.
+    reportcount every 10 minutes, rate
+
+    -- Table list for capture
+    table SRC_OCIGGLL.*;</copy>
     ```
 
     ![Extract Parameter File](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-09-params.png " ")
@@ -129,7 +151,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 ## Task 5: Create a user on the target deployment
 
->**Note**: *Complete the following steps in the target **OBJDeployment**'s deployment console (BDinstance).*
+>**Note**: Complete the following steps in the target **OBJDeployment**'s deployment console (BDinstance).
 
 1.  In the Oracle Cloud console, click **Deployments** in the breadcrumb.
 
@@ -139,7 +161,9 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![OBJDeployment Launch Console](images/05-03-launch-console.png " ")
 
-4.  Sign in to the deployment console using the **oggadmin** credentials you created in the previous lab Task 2, Step 12.
+4.  To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password, and then click **Sign In**.
+
+    > **Note:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
 
 5.  In the BDinstance deployment console, open the navigation menu, and then click **Administrator**.
 
@@ -289,4 +313,4 @@ In this lab, you:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Deniz Sendil, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2024
+* **Last Updated By/Date** - Katherine Wardhana, April 2024

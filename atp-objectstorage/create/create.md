@@ -45,8 +45,31 @@ To successfully complete this lab in your own tenancy:
 
 > **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
+## Task 1: Review the deployment
 
-## Task 1: Create an Autonomous Database connection
+1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
+
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
+
+2. You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment.
+
+3. On the GoldenGate **Overview** page, click **Deployment** and then **OCI GoldenGate Deployment**.
+
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/01-03-deployment.png " ")
+
+You can perform the following actions on the deployment details page:
+
+* Review the deployment's status
+* Launch the GoldenGate service deployment console
+* Edit the deployment's name or description
+* Stop and start the deployment
+* Move the deployment to a different compartment
+* Review the deployment resource information
+* Add tags
+
+    ![Deployment Details](./images/03-03-deployment-details.png)
+
+## Task 2: Create an Autonomous Database connection
 
 Follow the steps below to create a connection for the source Oracle Autonomous Transaction Processing \(ATP\) Database.
 
@@ -86,7 +109,7 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
     The connection becomes Active after a few minutes.
 
-## Task 2: Unlock the GGADMIN user and check support mode for the source database
+## Task 3: Unlock the GGADMIN user and check support mode for the source database
 
 Oracle Autonomous Databases come with a GGADMIN user that is locked by default. The following steps guide you through how to unlock the GGADMIN user.
 
@@ -118,7 +141,15 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![Open navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png " ")
 
-7.  In the worksheet, enter the following, and then click **Run Statement**:
+7.  Enter the following into the Worksheet, and then click **Run Statement**.
+
+    ```
+    <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
+    ```
+
+    ![Script Output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-08-sql-script-return.png " ")
+
+8.  In the worksheet, enter the following, and then click **Run Statement**:
 
     ```
     <copy>
@@ -128,11 +159,11 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     The Script Output panel displays six tables whose Support_Mode is **FULL**.
 
-    ![Script output](../../../ggs-common/create/images/03-09-sql-script-return.png " ")
+    ![Script output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-09-sql-script-return.png " ")
 
 You can leave the source database SQL window open for use in a later lab.
 
-## Task 3: Create a connection for Oracle Object Storage
+## Task 4: Create a connection for Oracle Object Storage
 
 1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate. Open the Oracle Cloud console navigation menu, click **Oracle Database**, and then **GoldenGate**.
 
@@ -164,7 +195,7 @@ You can leave the source database SQL window open for use in a later lab.
 
     The Connection becomes Active after a few minutes.
 
-## Task 4: Assign connections to deployments
+## Task 5: Assign connections to deployments
 
 After your deployments and connections become active, you can assign the connections to the appropriate deployments.
 
@@ -192,7 +223,7 @@ After your deployments and connections become active, you can assign the connect
 
     ![OBJDeployment details](./images/06-07-obj-bdconnection.png " ")
 
-## Task 5: Create a GoldenGate connection
+## Task 6 Create a GoldenGate connection
 
 Create a GoldenGate connection if your Big Data deployment doesn't have a public endpoint, and then assign it to the source ATP deployment.
 
@@ -208,6 +239,8 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 
 5.  Click **Next**.
 
+    ![Create connection details](./images/07-05-create-connection.png " ")
+
 6.  For Deployment, select the Big Data deployment from the dropdown.
 
 7.  For Username, enter `oggadmin`.
@@ -218,11 +251,15 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 
 9. Click **Create**.
 
+    ![Create connection details](./images/07-09-create-connection.png " ")
+
 10. After the connection is active, on its details page, under **Resources**, click **Assigned deployments**.
 
 11. Click **Assign deployment**.
 
 12. In the Assign deployment dialog, select the source **ATPDeployment**, and then click **Assign deployment**.
+
+    ![Assign deployment](./images/07-12-assign-deployment.png " ")
 
 **Proceed to the next lab**.
 
@@ -236,4 +273,4 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2024
+* **Last Updated By/Date** - Katherine Wardhana, April 2024
