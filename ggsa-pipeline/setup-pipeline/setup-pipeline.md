@@ -198,7 +198,7 @@ Write all score results to a data warehouse for later analysis. Add a target her
 
    ![Create Target](./images/dwhtarget1.png "")
 
-5. On the Target Details page, for Connection, select **ADB\_Connection**, and then click **Next**.
+5. On the Target Details page, for Connection, select **ADB\_moviestream**, and then click **Next**.
 
    ![Create Target page 2](./images/dwhtarget2.png "")
 
@@ -300,4 +300,4 @@ You have now successfully completed your introduction to GoldenGate Stream Analy
 
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2023
+* **Last Updated By/Date** - Jenny Chan, April 2024
