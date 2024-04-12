@@ -12,6 +12,10 @@ A Data Transforms deployment manages the resources it requires to function. The 
 
 Connections help you to connect Data Transforms to various technologies reachable from your OCI network.
 
+### Prerequisites
+
+The Data Transforms deployment type doesn't support OCI IAM as a credential store. Ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault). [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
+
 ### Objectives
 
 In this lab, you will:
@@ -57,10 +61,7 @@ In this lab, you will:
 
 14. For GoldenGate Instance Name, enter **ggsinstance**.
 
-15. In an IAM-enabled tenancy, select a Credential store. 
-
-    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to the next lab (skip the following steps).
-    * If you select GoldenGate, complete the following steps.
+15. For Credential store, select **GoldenGate**.
 
 16. For Administrator Username, enter **SUPERVISOR**.
 
@@ -126,10 +127,10 @@ You may now **proceed to the next lab.**
 
 ## Learn more
 
-* [Managing deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/ebbpf/index.html)
+* [Create Data Transforms resources](https://docs.oracle.com/en/cloud/paas/goldengate-service/cstlg/index.html)
 * [Managing connections](https://docs.oracle.com/en/cloud/paas/goldengate-service/mcjzr/index.html)
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** -  Jenny Chan, Consulting User Assistance Developer, Database User Assistance; Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, March 2024
+* **Last Updated By/Date** - Jenny Chan, April 2024
