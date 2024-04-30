@@ -62,11 +62,11 @@ Follow these steps to connect the OCI GoldenGate Data Replication deployment to 
 
     ![Deployments highlighted in Oracle Cloud Console breadcrumb](./images/03-01-deployments-breadcrumb.png " ")
 
-2.  In the GoldenGate menu, click **Connections**.
+2.  In the GoldenGate menu on the left-hand side, click **Connections**.
 
     ![Connections in GoldenGate menu](./images/03-02-connections.png " ")
 
-3.  On the Connections page, a precreated **ADB_Connection** connection appears in the Connections list for this lab. Click **Create connection**. 
+3.  On the Connections page, precreated **ADB\_ggadmin** and **CADB\_moviestream** connections appear in the Connections list for this lab. Click **Create connection**. 
 
     ![Connections page](./images/create_connection.png " ")
 
