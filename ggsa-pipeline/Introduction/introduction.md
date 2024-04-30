@@ -2,7 +2,7 @@
 
 This workshop uses Oracle Cloud Infrastructure (OCI) GoldenGate Stream Analytics to transform and analyze real-time data streams.
 
-Estimated time: 2 hours
+Estimated time: 30 minutes
 
 ### Workshop Objectives
 
