@@ -54,6 +54,8 @@ OCI GoldenGate Stream Analytics embeds a GoldenGate Big Data environment to rece
 
 4. Click **Start Cluster** and wait until the status of the cluster is **Cluster Status: Running**. Close the System Settings dialog.
 
+      > **Note:** In rare cases, cluster creation will take longer than expected and a message **“Activating GGBD cluster is taking time”** will appear. In this case, close and reopen System Settings dialog after waiting for 1 minute. When cluster is running, close the System Settings dialog.
+
    ![GGSA system settings start cluster](./images/start_ggbd.png "")
 
 ## Task 3: Start Event Generator
@@ -83,6 +85,10 @@ For this workshop, an event generator continuously inserts rows into the source 
       > **Note:** The password won't be visible in Cloud Shell when you paste it in.
 
 8. At the command prompt, run `sh eventgen.sh`. A continuous output of insert statements will be shown. Keep the cloud shell window open for the duration of the workshop. The command can be stopped and restarted as necessary.
+
+      ```
+      <copy>sh eventgen.sh</copy>
+      ```
 
    ![Cloud shell commands](./images/cloudshell.png "")
 
