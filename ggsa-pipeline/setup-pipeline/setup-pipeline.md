@@ -300,4 +300,4 @@ You have now successfully completed your introduction to GoldenGate Stream Analy
 
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, April 2024
+* **Last Updated By/Date** - Katherine Wardhana, May 2024
