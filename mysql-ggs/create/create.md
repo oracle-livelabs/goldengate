@@ -275,5 +275,5 @@ Create a GoldenGate connection if your ADW deployment doesn't have a public endp
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, January 2024
-* **PAR Expiration** - February 2024
+* **Last Updated By/Date** - Katherine Wardhana, May 2024
+* **PAR Expiration** - February 2030
