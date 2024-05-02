@@ -259,35 +259,35 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 	![ADW log in](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-login.png " ")
 
-5.  On the Database Users page, locate GGADMIN, and then select **Edit** from its ellipsis (three dots) menu.
+4.  On the Database Users page, locate GGADMIN, and then select **Edit** from its ellipsis (three dots) menu.
 
 	![Select Edit from ggadmin's menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/06-05-ggadmin.png " ")
 
-6.  In the Edit User panel, deselect **Account is Locked**, enter a password for `ggadmin` and confirm it, and then click **Apply Changes**.
+5.  In the Edit User panel, deselect **Account is Locked**, enter a password for `ggadmin` and confirm it, and then click **Apply Changes**.
 
 	![Unlock the ggadmin user in the Edit User panel](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/06-06-unlock-ggadmin.png " ")
 
-7.  From the Database Actions menu, under **Development**, select **SQL**.
+6.  From the Database Actions menu, under **Development**, select **SQL**.
 
     ![Select SQL from Database Actions menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png " ")
 
-8.  Download the sample database schema:
+7.  Download the sample database schema:
 
 	[Archive.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/Archive.zip)
 
-9.  Copy the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
+8.  Copy the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
 
-10. Click **Run Script**. The Script Output tab displays confirmation messages.
+9. Click **Run Script**. The Script Output tab displays confirmation messages.
 
     ![Paste script into SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
 
-11.  Copy only the CREATE TABLE scripts (the first 123 lines) from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
+10.  Copy only the CREATE TABLE scripts (the first 123 lines) from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
 
     ![ADW schema scripts in SQL worksheet](./images/04-07-adw-schema.png " ")
 
-12.  Click **Run Script**. The Script Output tab displays confirmation messages.
+11.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
-13. In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
+12. In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
 
 **Proceed to the next lab.**
 
@@ -295,5 +295,5 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
 - **Contributor** - Julien Testut, Database Product Management
-- **Last Updated by** - Katherine Wardhana, January 2024
-- **PAR Expiration date** - February 2024
+- **Last Updated by** - Katherine Wardhana, May 2024
+- **PAR Expiration date** - February 2030
