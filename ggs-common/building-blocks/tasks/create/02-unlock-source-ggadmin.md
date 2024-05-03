@@ -54,7 +54,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
     </copy>
     ```
 
-    The Script Output panel displays six tables whose Support_Mode is **FULL**.
+    The Script Output panel displays eight tables whose Support_Mode is **FULL**.
 
     ![Script Output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-09-sql-script-return.png " ")
 
