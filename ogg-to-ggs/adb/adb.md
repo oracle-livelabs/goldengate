@@ -50,11 +50,11 @@ This lab assumes you completed the Get started lab.
 
 4.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
 
-    ![Copy target schema script into SQL tool](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-08-atp-sql.png " ")
-
 5.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
 	>**Note:** If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.
+
+    ![Copy target schema script into SQL tool](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-08-atp-sql.png " ")
 
 6.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
 
@@ -77,5 +77,5 @@ This lab assumes you completed the Get started lab.
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Jenny Chan, April 2024
-- **PAR Expiration date** - February 2024
+- **Last Updated By/Date** - Katherine Wardhana, May 2024
+- **PAR Expiration date** - February 2030
