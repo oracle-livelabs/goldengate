@@ -539,4 +539,4 @@ Before importing data to the target database, create a credential in the target 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, March 2024
+* **Last Updated By/Date** - Katherine Wardhana, May 2024
