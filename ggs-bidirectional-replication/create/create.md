@@ -100,9 +100,9 @@ select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
     </copy>
     ```
 
-    The Script Output panel displays six tables whose Support_Mode is **FULL**.
+    The Script Output panel displays eight tables whose Support_Mode is **FULL**.
 
-    ![Script output](./images/03-09-sql-script-return.png " ")
+    ![Script output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-09-sql-script-return.png " ")
 
 You can leave the source database SQL window open for use in a later lab.
 
@@ -158,4 +158,4 @@ Now, follow the steps below to create the target Autonomous Data Warehouse \(ADW
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, March 2024
+* **Last Updated By/Date** - Katherine Wardhana, May 2024
