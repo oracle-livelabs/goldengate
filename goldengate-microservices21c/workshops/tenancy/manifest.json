@@ -1,0 +1,48 @@
+{
+  "workshoptitle": "Goldengate 21c Microservices",
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Introduction to GoldenGate Microservices",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started - Cloud login",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+    },
+    {
+      "title": "Lab 1: Prepare Setup",
+      "description": "How to download your ORM stack and update security rules for an existing VCN",
+      "publisheddate": "09/28/2020",
+      "filename": "../../prepare-setup/prepare-setup.md"
+    },
+    {
+      "title": "Lab 2: Set up compute instance",
+      "description": "How to provision the workshop environment and connect to it",
+      "publisheddate": "06/30/2020",
+      "filename": "https://oracle-livelabs.github.io/common/labs/setup-compute-generic/setup-compute-novnc.md"
+    },
+    {
+      "title": "Lab 3: Discover the Environment",
+      "description": "Discovering components",
+      "filename": "../../discover/discover.md"
+    },
+    {
+      "title": "Lab 4: Setup of the GoldenGate Replication",
+      "description": "GG Replication",
+      "filename": "../../create-replication/create-replication.md"
+    },
+    {
+      "title": "Lab 5: Run a simulation and observe the results",
+      "description": "Simulate DB activity",
+      "filename": "../../simulate/simulate.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}

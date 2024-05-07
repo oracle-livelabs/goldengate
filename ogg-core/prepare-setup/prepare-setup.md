@@ -17,7 +17,7 @@ This lab assumes you have:
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 
-    - [ggma-db21-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Oj2dZE8mmhbNfrqmDtE-8nm6f9eADGpf52xR3ctq1PAj4yYUiJWLyftG1np00_rM/n/c4u04/b/livelabsfiles/o/goldengate-library/ggma-db21-mkplc-freetier.zip)
+    - [ggma-db21-mkplc-freetier.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/goldengate-library/ggma-db21-mkplc-freetier.zip)
     
 
  2.  Save in your downloads folder.
@@ -30,19 +30,19 @@ This workshop requires a certain number of ports to be available, a requirement 
 
 ### **(1) Ingress Rules**
 
-|Stateless          |Source Type	|Source CIDR	|IP Protocol	|Source Port Range	|Destination Port Range	|Description                |
-| :-----------      |  :--------:   |  :--------:   | :----------:  | :------------:    | :-----------------:   | :------------------------ |
-|False (unchecked)  |CIDR           |0.0.0.0/0      |TCP            |All                |22                     |SSH                        |
-|False (unchecked)  |CIDR           |0.0.0.0/0      |TCP            |All                |80                     |Remote Desktop using noVNC |
+| Stateless         | Source Type | Source CIDR | IP Protocol | Source Port Range | Destination Port Range | Description                |
+| :---------------- | :---------: | :---------: | :---------: | :---------------: | :--------------------: | :------------------------- |
+| False (unchecked) |    CIDR     |  0.0.0.0/0  |     TCP     |        All        |           22           | SSH                        |
+| False (unchecked) |    CIDR     |  0.0.0.0/0  |     TCP     |        All        |           80           | Remote Desktop using noVNC |
 {: title="List of Required Network Security Rules (Ingress)"}
 
 <!-- **Notes**: This next table is for reference and should be adapted for the workshop. If optional rules are needed as shown in the example below, then uncomment it and add those optional rules. The first entry is just for illustration and may not fit your workshop -->
 
 <!--
-|Stateless          |Source Type	|Source CIDR	|IP Protocol	|Source Port Range	|Destination Port Range	|Description                        |
-| :-----------      |:-----------   |  :--------:   | :----------:  | :------------:    | :-----------------:   | :------------------------         |
-|False (unchecked)  |CIDR           |0.0.0.0/0      |TCP            |All                |8080                   |e.g. Remote access for web app #1  |
-|False (unchecked)  |CIDR           |0.0.0.0/0      |TCP            |All                |443                    |e.g. Remote access for web app #2  |
+| Stateless         | Source Type | Source CIDR | IP Protocol | Source Port Range | Destination Port Range | Description                       |
+| :---------------- | :---------- | :---------: | :---------: | :---------------: | :--------------------: | :-------------------------------- |
+| False (unchecked) | CIDR        |  0.0.0.0/0  |     TCP     |        All        |          8080          | e.g. Remote access for web app #1 |
+| False (unchecked) | CIDR        |  0.0.0.0/0  |     TCP     |        All        |          443           | e.g. Remote access for web app #2 |
 {: title="List of Optional Network Security Rules (Ingress)"}
 -->
 
@@ -64,19 +64,19 @@ This workshop requires a certain number of ports to be available, a requirement 
 
 ### **(2) Egress Rules**
 
-|Stateless          |Source Type	|Destination CIDR	|IP Protocol	|Source Port Range	|Destination Port Range	|Description                |
-| :-----------      |  :--------:   |  :--------:       | :----------:  | :------------:    | :-----------------:   | :------------------------ |
-|False (unchecked)  |CIDR           |0.0.0.0/0          |TCP            |All                |80                     |Outbound HTTP access       |
-|False (unchecked)  |CIDR           |0.0.0.0/0          |TCP            |All                |443                    |Outbound HTTPS access      |
+| Stateless         | Source Type | Destination CIDR | IP Protocol | Source Port Range | Destination Port Range | Description           |
+| :---------------- | :---------: | :--------------: | :---------: | :---------------: | :--------------------: | :-------------------- |
+| False (unchecked) |    CIDR     |    0.0.0.0/0     |     TCP     |        All        |           80           | Outbound HTTP access  |
+| False (unchecked) |    CIDR     |    0.0.0.0/0     |     TCP     |        All        |          443           | Outbound HTTPS access |
 {: title="List of Required Network Security Rules (Egress)"}
 
 <!-- **Notes**: This next table is for reference and should be adapted for the workshop. If optional rules are needed as shown in the example below, then uncomment it and add those optional rules. The first entry is just for illustration and may not fit your workshop -->
 
 <!--
-|Stateless          |Source Type	|Destination CIDR	|IP Protocol	|Source Port Range	|Destination Port Range	|Description                                        |
-| :-----------      | :-----------  |  :--------:       | :----------:  | :------------:    | :-----------------:   | :------------------------                         |
-|False (unchecked)  |CIDR           |0.0.0.0/0          |TCP            |All                |1521                   |e.g. Remote oracle DB Listener anywhere            |
-|False (unchecked)  |CIDR           |130.129.10.45/32   |TCP            |All                |1525                   |e.g. Remote oracle DB Listener at IP 130.129.10.45 |
+| Stateless         | Source Type | Destination CIDR | IP Protocol | Source Port Range | Destination Port Range | Description                                        |
+| :---------------- | :---------- | :--------------: | :---------: | :---------------: | :--------------------: | :------------------------------------------------- |
+| False (unchecked) | CIDR        |    0.0.0.0/0     |     TCP     |        All        |          1521          | e.g. Remote oracle DB Listener anywhere            |
+| False (unchecked) | CIDR        | 130.129.10.45/32 |     TCP     |        All        |          1525          | e.g. Remote oracle DB Listener at IP 130.129.10.45 |
 {: title="List of Optional Network Security Rules (Egress)"}
 -->
 
