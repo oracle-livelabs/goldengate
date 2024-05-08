@@ -27,7 +27,8 @@ This Lab assumes you have:
 
 ## **Task 1:** Create a CSV file
 
-Create a CSV file on your local drive with the data below:
+Create a CSV file:
+1. Copy the data below:
 
     ```
     <copy>
@@ -40,6 +41,20 @@ Create a CSV file on your local drive with the data below:
     </copy>
 
     ```
+1. Open the graphical text editor:
+
+    ![Opening the text editor](./images/texteditor.png "")
+
+2. Right-click to paste the copied data:
+
+    ![Selecting the paste option](./images/pastedata.png "")
+
+    ![Pasting the copied data](./images/pastedata2.png "")
+
+   
+3. Save the data to *sample* csv:
+
+    ![Saving the copied data to sample csv](./images/savesample.png "")
 
 ## **Task 2:** Log in to GoldenGate Stream Analytics
 
@@ -171,6 +186,6 @@ To publish the pipeline:
 * [Mandatory RTE Configurations](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/configuring-runtime-environment.html#GUID-EB33DDFD-7444-434D-8944-059564A453FD).
 
 ## Acknowledgements
-* **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
-* **Contributors** - Prabhu Thukaram, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2022
+* **Author** - Pratibha Manjunath, Principal User Assistance Developer, GoldenGate Stream Analytics
+* **Contributors** - Prabhu Thukaram, Rene Fontcha, Alex Kotopoulis
+* **Last Updated By/Date** - Pratibha Manjunath, Principal User Assistance Developer, GoldenGate Stream Analytics, May 2024
