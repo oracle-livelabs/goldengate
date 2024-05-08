@@ -27,7 +27,8 @@ This Lab assumes you have:
 
 ## **Task 1:** Create a CSV file
 
-Create a CSV file on your local drive with the data below:
+Create a CSV file:
+1. Copy the data below:
 
     ```
     <copy>
@@ -40,6 +41,19 @@ Create a CSV file on your local drive with the data below:
     </copy>
 
     ```
+1. Open the graphical text editor:
+
+    ![Opening the text editor](./images/texteditor.png "")
+
+2. Right-click to paste the copied data:
+
+    ![Pasting Data](./images/pastedata.png "")
+
+    ![Copied Data](./images/pastedata2.png "")
+
+3. Save the data to *sample* csv:
+
+    ![Saving data to sample csv](./images/savesample.png "")
 
 ## **Task 2:** Log in to GoldenGate Stream Analytics
 
