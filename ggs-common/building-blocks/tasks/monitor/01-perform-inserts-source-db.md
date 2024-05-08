@@ -35,8 +35,6 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
     ![Replicat Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-06-rep-statistics.png " ")
 
-7.  In the Oracle Cloud console, navigate to the OCI Object Storage bucket and then download the JSON file OCI GoldenGate created.
+7. Click **Performance Metrics Service**.
 
-    ![Buckets in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-07a-buckets.png " ")
-
-    ![Buckets](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-07b-buckets.png " ")
+    ![Performance Metrics Service](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-07-pms-statistics.png " ")

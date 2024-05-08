@@ -47,7 +47,9 @@ On the Deployment Details page, you can:
 
     ![ATPDeployment Launch Console](images/02-01-launch-console.png " ")
 
-2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided in the previous lab (Task 1, Step 15), and then click **Sign In**.
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password, and then click **Sign In**.
+
+    > **Note:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
 
     ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin.png " ")
 
@@ -55,7 +57,7 @@ After you log in, you're brought to the GoldenGate deployment console home page.
 
 ## Task 3: Add transaction data
 
-> **Note:** *Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.*
+> **Note:** Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.
 
 1.  Open the navigation menu and then click **Configuration**.
 
@@ -112,7 +114,27 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 9.  On the Parameter File page, in the text area, add a new line to the existing text and add the following:
 
     ```
-    <copy>table SRC_OCIGGLL.*;</copy>
+    <copy>-- Capture DDL operations for listed schema tables
+    ddl include mapped
+
+    -- Add step-by-step history of ddl operations captured
+    -- to the report file. Very useful when troubleshooting.
+    ddloptions report
+
+    -- Write capture stats per table to the report file daily.
+    report at 00:01
+
+    -- Rollover the report file weekly. Useful when IE runs
+    -- without being stopped/started for long periods of time to
+    -- keep the report files from becoming too large.
+    reportrollover at 00:01 on Sunday
+
+    -- Report total operations captured, and operations per second
+    -- every 10 minutes.
+    reportcount every 10 minutes, rate
+
+    -- Table list for capture
+    table SRC_OCIGGLL.*;</copy>
     ```
 
     ![Extract Parameter File](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-09-params.png " ")
@@ -129,7 +151,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 ## Task 5: Create a user on the target deployment
 
->**Note**: *Complete the following steps in the target **OBJDeployment**'s deployment console (BDinstance).*
+>**Note**: Complete the following steps in the target **OBJDeployment**'s deployment console (BDinstance).
 
 1.  In the Oracle Cloud console, click **Deployments** in the breadcrumb.
 
@@ -139,7 +161,9 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![OBJDeployment Launch Console](images/05-03-launch-console.png " ")
 
-4.  Sign in to the deployment console using the **oggadmin** credentials you created in the previous lab Task 2, Step 12.
+4.  To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password, and then click **Sign In**.
+
+    > **Note:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
 
 5.  In the BDinstance deployment console, open the navigation menu, and then click **Administrator**.
 
@@ -159,7 +183,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 ## Task 6: Create a credential on the source deployment for the dpuser
 
->**Note**: *Complete the following steps in the source **ATPDeployment** deployment console (ATPinstance).*
+>**Note**: Complete the following steps in the source **ATPDeployment** deployment console (ATPinstance).
 
 1.  In the source ATPinstance deployment console, click **Administration Service**, open the navigation menu, and then select **Configuration**.  
 
@@ -183,7 +207,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 ## Task 7: Add and run a Distribution Path in the source deployment console
 
->**Note**: *Complete the following steps in the source **ATPDeployment** deployment console (ATPinstance).*
+>**Note**: Complete the following steps in the source **ATPDeployment** deployment console (ATPinstance).
 
 The Distribution Path initiates the process to send the GoldenGate trail file to Oracle Object Storage.
 
@@ -201,7 +225,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 6.  For **Target Host**, enter the BDinstance hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
-    >**Note:** *You can copy the host from the browser address bar of target BDinstance deployment console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
+    >**Note:** You can copy the host from the browser address bar of target BDinstance deployment console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).
 
   ![Deployment details](./images/07-06-deployment-details.png " ")
 
@@ -221,7 +245,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 The Distribution path on the source ATPinstance creates a Receiver path on the target BDinstance.
 
->**Note**: *Complete the following steps in the **OBJDeployment** deployment console (BDinstance).*
+>**Note**: Complete the following steps in the **OBJDeployment** deployment console (BDinstance).
 
 1.  In the target BDinstance deployment console, click **Receiver Service**.
 
@@ -231,7 +255,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 ## Task 9: Add and run a Replicat
 
->**Note**: *Complete the following steps in the **OBJDeployment** deployment console (BDinstance).*
+>**Note**: Complete the following steps in the **OBJDeployment** deployment console (BDinstance).
 
 1.  Click **Administration Service**.
 
@@ -261,7 +285,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 10. On the Properties File page, locate `gg.eventhandler.oci.compartment`, and then replace the placeholder with your compartment's OCID.
 
-  >**NOTE:** *If running this lab in a Sandbox environment, you can find your compartment OCID in the View Login Info panel. You can also copy the compartment OCID from the Compartments page in the Oracle Cloud console. Enter `Compartments` into the search bar, or locate **Compartments** in the Oracle Cloud console navigation menu under **Identity & Security**.*
+  >**NOTE:** If running this lab in a Sandbox environment, you can find your compartment OCID in the View Login Info panel. You can also copy the compartment OCID from the Compartments page in the Oracle Cloud console. Enter `Compartments` into the search bar, or locate **Compartments** in the Oracle Cloud console navigation menu under **Identity & Security**.
 
 11. Locate `gg.eventhandler.oci.bucketMappingTemplate`, and then replace the placeholder with a name for your target bucket.
 
@@ -289,4 +313,4 @@ In this lab, you:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Deniz Sendil, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2023
+* **Last Updated By/Date** - Katherine Wardhana, April 2024
