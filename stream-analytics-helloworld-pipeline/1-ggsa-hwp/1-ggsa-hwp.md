@@ -186,6 +186,6 @@ To publish the pipeline:
 * [Mandatory RTE Configurations](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/configuring-runtime-environment.html#GUID-EB33DDFD-7444-434D-8944-059564A453FD).
 
 ## Acknowledgements
-* **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
-* **Contributors** - Prabhu Thukaram, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2022
+* **Author** - Pratibha Manjunath, Principal User Assistance Developer, GoldenGate Stream Analytics
+* **Contributors** - Prabhu Thukaram, Rene Fontcha, Alex Kotopoulis
+* **Last Updated By/Date** - Pratibha Manjunath, Principal User Assistance Developer, GoldenGate Stream Analytics, May 2024
