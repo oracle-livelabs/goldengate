@@ -47,13 +47,10 @@ Create a CSV file:
 
 2. Right-click to paste the copied data:
 
-    ![Pasting Data](./images/pastedata.png "")
-
-    ![Copied Data](./images/pastedata2.png "")
-
+   
 3. Save the data to *sample* csv:
 
-    ![Saving data to sample csv](./images/savesample.png "")
+    
 
 ## **Task 2:** Log in to GoldenGate Stream Analytics
 
