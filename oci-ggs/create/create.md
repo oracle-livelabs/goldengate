@@ -46,7 +46,7 @@ You can perform the following actions on the deployment details page:
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details](./images/02-17-deployment-details.png)
+    ![Deployment Details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-01-deployment-details.png " ")
 
 ## Task 2: Create the source connection
 
@@ -74,4 +74,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2024
+* **Last Updated By/Date** - Katherine Wardhana, May 2024
