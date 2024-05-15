@@ -27,7 +27,7 @@
         },
         {
             "title": "Lab 1: Create the OCI GoldenGate resources",
-            "filename": "../../create/create-gb.md"
+            "filename": "../../create/create.md"
         },
         {
             "title": "Lab 2: Replicate data from source to target",
