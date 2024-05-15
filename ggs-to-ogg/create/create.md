@@ -48,7 +48,7 @@ You can perform the following actions on the deployment details page:
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details](./images/02-17-deployment-details.png)
+    ![Deployment Details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-01-deployment-details.png " ")
 
 ## Task 2: Create the source connection
 
@@ -66,7 +66,7 @@ You can perform the following actions on the deployment details page:
 
 1. On the deployment details page, in the Resources menu, click **Assigned connections**.
 
-    ![Assigned connections under Resources](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-01-assigned-connections.png " ")
+    ![Assigned connections under Resources](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-03-assigned-connections.png " ")
 
 2. Under Assigned connections, click **Assign connection**.
 
@@ -74,11 +74,11 @@ You can perform the following actions on the deployment details page:
 
 3. In the Assign connection panel, from the Connection in &lt;compartment-number&gt;-COMPARTMENT dropdown, select **SourceATP**, and then click **Assign connection**.
 
-    ![Assigned connection to SourceATP](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-03-sourceatp-assign-connec.png " ")
+    ![Assigned connection to SourceATP](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-05-sourceatp-assign-connec.png " ")
 
 4.  Repeat Task 6, steps 1-3, to assign the TargetADW connection to the deployment.
 
-    ![Assigned connections to SourceATP and TargetADW](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-04-targetadw-assign-connec.png " ") 
+    ![Assigned connections to SourceATP and TargetADW](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-06b-assigned-connections-list.png " ") 
 
 ## Task 6: Launch the GoldenGate Deployment Console
 
@@ -102,4 +102,4 @@ In this lab, you created the OCI GoldenGate deployment and registered the source
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, April 2024
+* **Last Updated By/Date** - Katherine Wardhana, May 2024

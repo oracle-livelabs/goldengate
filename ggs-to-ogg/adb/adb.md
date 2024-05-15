@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create the required resources you'll use for this workshop. You'll learn to create a VCN and subnet, provision autonomous databases, and load data into the databases for use with this LiveLab.
 
-> **Note:** *This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
+> **Note:** This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.
 
 Estimated time: 20 minutes
 
@@ -73,5 +73,5 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Jenny Chan, April 2024
+- **Last Updated By/Date** - Katherine Wardhana, May 2024
 - **PAR Expiration date** - March 31, 2024

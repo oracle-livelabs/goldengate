@@ -248,27 +248,27 @@ In the final task you create a Kafka target to send out offer messages that will
 
    ![Create target stage](./images/kafkatarget_dlg.png "")
 
-2. In the SendOffer Target Mapping panel, click **Create**.
+3. In the SendOffer Target Mapping panel, click **Create**.
 
    ![Create target](./images/create_kafkatarget.png "")
 
-3. On the Type Properties page, for Name, enter **SendOffer**.
+4. On the Type Properties page, for Name, enter **SendOffer**.
 
-4. For Target Type, select **Kafka**, and then click **Next**.
+5. For Target Type, select **Kafka**, and then click **Next**.
 
    ![Create Target page 1](./images/kafkatarget1.png "")
 
-5. On the Target Details page, for Connection, select **Kafka**.
+6. On the Target Details page, for Connection, select **Kafka**.
 
-6. For Topic name, enter **CustomerOffer**, and then click **Next**.
+7. For Topic name, enter **CustomerOffer**, and then click **Next**. On Data Formats page, keep the default and press **Next**.
 
    ![Create Target page 2](./images/kafkatarget2.png "")
 
-7.  On the Shape page, you can leave all field mappings unchanged. The JSON document inside Kafka events will contain these fields. Click **Save**.
+8.  On the Shape page, you can leave all field mappings unchanged. The JSON document inside Kafka events will contain these fields. Click **Save**.
 
    ![Create Target page 3](./images/kafkatarget4.png "")
 
-12. Wait for the changes to apply and new events to be displayed in the Live Event Output. The pipeline is now finished and produces offers to customers.
+9. Wait for the changes to apply and new events to be displayed in the Live Event Output. The pipeline is now finished and produces offers to customers.
 
    ![Pipeline finished](./images/pipeline_final.png "")
 
@@ -300,4 +300,4 @@ You have now successfully completed your introduction to GoldenGate Stream Analy
 
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, April 2024
+* **Last Updated By/Date** - Katherine Wardhana, May 2024

@@ -67,7 +67,7 @@ You can perform the following actions on the deployment details page:
 
 [](include:05-assign-connection.md)
 
-## Task 6: Launch the GoldenGate Deployment Console
+## Task 5: Launch the GoldenGate Deployment Console
 
 [](include:01-launch-console.md)
 
@@ -80,5 +80,5 @@ In this lab, you created the OCI GoldenGate deployment and registered the source
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, March 2024
+* **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, May 2024
