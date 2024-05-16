@@ -86,9 +86,9 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
     > **NOTE**: The special characters must not be $, ^, or ?
 
-  ![Example create deployment options](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-21-passwordsecret.png " ") 
-
 21. Confirm the password, and then click **Create**.
+
+  ![Example create deployment options](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-21-passwordsecret.png " ") 
 
 22. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 

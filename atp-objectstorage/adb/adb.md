@@ -151,5 +151,5 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated by** - Katherine Wardhana, March 2024
+- **Last Updated by** - Katherine Wardhana, May 2024
 - **PAR Expiration date** - February 2030
