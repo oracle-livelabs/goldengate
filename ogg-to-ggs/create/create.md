@@ -49,7 +49,7 @@ You can perform the following actions on the deployment details page:
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details](./images/02-17-deployment-details.png)
+    ![Deployment Details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-01-deployment-details.png " ")
 
 ## Task 2: Create the source and target connections
 

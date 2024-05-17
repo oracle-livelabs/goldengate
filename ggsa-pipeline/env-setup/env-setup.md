@@ -45,12 +45,12 @@ To successfully complete this lab, you must:
 
 5.  Repeat steps 1 to 4 to add Source CIDR `0.0.0.0/0` and Destination Port Range `443` to the public subnet.
 
-## Task 2: Create an ATP instance
+## Task 3: Create an ATP instance
 
 [](include:02-create-atp-instance.md)
 
 
-## Task 3: Load the ATP schema and enable supplemental logging
+## Task 4: Load the ATP schema and enable supplemental logging
 
 [](include:03-load-atp-schema.md)
 
@@ -90,5 +90,5 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated** - March 2024
+- **Last Updated** - Katherine Wardhana, May 2024
 - **PAR Expiration date** - February 2030
