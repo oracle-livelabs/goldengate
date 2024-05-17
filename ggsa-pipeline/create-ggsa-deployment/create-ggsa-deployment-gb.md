@@ -38,7 +38,7 @@ In this lab, you will:
 
 3. You may need to select your compartment from the Compartment dropdown. 
 
-3. On the Deployments page, select either the Replication or GGSA deployment to view its details.
+4. On the Deployments page, select either the Replication or GGSA deployment to view its details.
 
     ![Select OCI GoldenGate Deployment](./images/01-04-review-deployment.png " ")
 
@@ -52,7 +52,7 @@ After a deployment is created and active, you can perform the following actions 
 * Review the deployment resource information
 * Add tags
 
-4.  Use the Oracle Cloud breadcrumb to return to the Deployments page. Repeat step 3 to review the GGSA deployment details.
+5.  Use the Oracle Cloud breadcrumb to return to the Deployments page. Repeat step 3 to review the GGSA deployment details.
 
 ## Task 2: Create the GoldenGate connection
 
@@ -179,5 +179,5 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, April 2024
+* **Last Updated By/Date** - Katherine Wardhana, May 2024
 
