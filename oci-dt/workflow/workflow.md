@@ -121,7 +121,7 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
 1.  Open the navigation menu, click **Connections**, and then click **Create Connection**.
 
-    ![Click create connection](./images/02-01-create-connection.png " ")
+    ![Click create connection](./images/05-01-create-connection.png " ")
 
 2.  The Create connection panel consists of two pages. On the Select Type page, under Databases select **Oracle**, and then click **Next**.
 

@@ -98,7 +98,7 @@ You can perform the following actions on the deployment details page:
 
 2. Click **Deployments**, and then select the **GGSDeployment**.
 
-    ![Deployments details](./images//05-02-deployments-details.png " ")
+    ![Deployments details](./images/05-02-deployments-details.png " ")
 
 3. On the deployment details page, under the Resources menu, click **Assigned connections**.
 
