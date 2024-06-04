@@ -12,7 +12,7 @@
 
     ![Select the correct compartment](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/00-02-select-compartment.png " ")
 
-    To view your Compartment number, in your lab instructions, click **View Login Info**. On the Reservation Information page, under **Compartment**, you can view your compartment number.
+    If using a LiveLab Sandbox environment, click **View Login Info** to view your Compartment number on the Reservation Information page.
 
     ![Click login info](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/00-03-login-info.png " ")
 

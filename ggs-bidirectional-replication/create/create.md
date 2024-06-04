@@ -25,7 +25,11 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs.
 
-## Task 1: Review the deployment's details
+## Task 1: Select the compartment
+
+[](include:00-select-compartment.md)
+
+## Task 2: Review the deployment's details
 
 > **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
@@ -54,13 +58,13 @@ After the deployment is created and active, you can perform the following action
     ![Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-01-deployment-details.png " ")
 
 
-## Task 2: Create the source connection
+## Task 3: Create the source connection
 
 Follow the steps below to connect the source Oracle Autonomous Transaction Processing \(ATP\) Database.
 
 [](include:01-create-source-connection.md)
 
-## Task 3: Unlock the GGADMIN user and check support mode for the source database
+## Task 4: Unlock the GGADMIN user and check support mode for the source database
 
 Oracle Autonomous Databases come with a GGADMIN user that is locked by default. The following steps guide you through how to unlock the GGADMIN user.
 
@@ -106,7 +110,7 @@ select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
 
 You can leave the source database SQL window open for use in a later lab.
 
-## Task 4: Create the target connection
+## Task 5: Create the target connection
 
 Now, follow the steps below to create the target Autonomous Data Warehouse \(ADW\) instance.
 
@@ -146,7 +150,7 @@ Now, follow the steps below to create the target Autonomous Data Warehouse \(ADW
 
 14.  Repeat Task 3, steps 1-7, to unlock the GGADMIN user, enable supplemental logging, and check support mode on the TargetADW database.
 
-## Task 5: Assign connections to the deployment
+## Task 6: Assign connections to the deployment
 
 [](include:05-assign-connection.md)
 
@@ -158,4 +162,4 @@ Now, follow the steps below to create the target Autonomous Data Warehouse \(ADW
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2024
+* **Last Updated By/Date** - Katherine Wardhana, June 2024
