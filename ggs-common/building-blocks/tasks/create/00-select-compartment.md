@@ -1,7 +1,7 @@
 <!--
     {
-        "name":"Set up the compartment",
-        "description":"Set up the compartment"
+        "name":"Select the compartment",
+        "description":"Select the compartment"
     }
 -->
 1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **Autonomous Database**.

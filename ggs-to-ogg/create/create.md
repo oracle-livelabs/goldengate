@@ -26,7 +26,11 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs.
 
-## Task 1: Review the deployment details
+## Task 1: Select the compartment
+
+[](include:00-select-compartment.md)
+
+## Task 2: Review the deployment details
 
 1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
 
@@ -50,19 +54,19 @@ You can perform the following actions on the deployment details page:
 
     ![Deployment Details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-01-deployment-details.png " ")
 
-## Task 2: Create the source connection
+## Task 3: Create the source connection
 
 [](include:01-create-source-connection.md)
 
-## Task 3: Unlock the GGADMIN user and enable supplemental logging for the source database
+## Task 4: Unlock the GGADMIN user and enable supplemental logging for the source database
 
 [](include:02-unlock-source-ggadmin.md)
 
-## Task 4: Create the target connection and unlock the GGADMIN user
+## Task 5: Create the target connection and unlock the GGADMIN user
 
 [](include:03-create-target-connection.md)
 
-## Task 5: Assign connections to the deployment
+## Task 6 Assign connections to the deployment
 
 1. On the deployment details page, in the Resources menu, click **Assigned connections**.
 
@@ -102,4 +106,4 @@ In this lab, you created the OCI GoldenGate deployment and registered the source
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2024
+* **Last Updated By/Date** - Katherine Wardhana, June 2024
