@@ -23,9 +23,9 @@ In this lab, you will:
 * Review the deployment details
 * Assign connections to the deployments 
 
-## Task 1: Set up the compartment
+## Task 1: Select the compartment
 
-[](include:00-set-up-compartment.md)
+[](include:00-select-compartment.md)
 
 ## Task 2: Review the deployment
 
@@ -75,4 +75,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2024
+* **Last Updated By/Date** - Katherine Wardhana, June 2024

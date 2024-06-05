@@ -26,7 +26,11 @@ In this lab, you will:
 ### Prerequisites
 * Completion of Get started - LiveLabs login
 
-## Task 1: Review the deployment details
+## Task 1: Select the compartment
+
+[](include:00-select-compartment.md)
+
+## Task 2: Review the deployment details
 
 1. If you're not already on the OCI GoldenGate Deployments page, then open the Oracle Cloud navigation menu, click **Oracle Database**, and then select **GoldenGate**.
 
@@ -54,7 +58,7 @@ After a deployment is created and active, you can perform the following actions 
 
 5.  Use the Oracle Cloud breadcrumb to return to the Deployments page. Repeat step 3 to review the GGSA deployment details.
 
-## Task 2: Create the GoldenGate connection
+## Task 3: Create the GoldenGate connection
 
 Follow these steps to connect the OCI GoldenGate Data Replication deployment to the GGSA deployment.
 
@@ -100,7 +104,7 @@ Follow these steps to connect the OCI GoldenGate Data Replication deployment to 
 
     The connection becomes Active after a few minutes. You can continue with the next task.
 
-## Task 3: Create the Kafka connection
+## Task 4: Create the Kafka connection
 
 Follow these steps to connect the Kafka event hub.
 
@@ -136,7 +140,7 @@ Follow these steps to connect the Kafka event hub.
 
 The connection becomes Active after a few minutes. Please wait for both new connections to become Active before proceeding.    
 
-## Task 4: Assign connections
+## Task 5: Assign connections
 
 Before you can use connections, you must first assign connections a deployment. 
 
@@ -179,5 +183,5 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, May 2024
+* **Last Updated By/Date** - Katherine Wardhana, June 2024
 
