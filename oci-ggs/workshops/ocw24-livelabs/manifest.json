@@ -18,11 +18,11 @@
         },
         {
             "title": "Lab 2: Create the Extract process and use Oracle Data Pump to export data",
-            "filename": "../../extract/extract.md"
+            "filename": "../../extract/extract-23ai.md"
         },
         {
             "title": "Lab 3: Use Oracle Data Pump to import data and create the Replicat",
-            "filename": "../../extracts-replicats/extracts-replicats.md"
+            "filename": "../../extracts-replicats/extracts-replicats-23ai.md"
         },
         {
             "title": "Lab 4: Monitor Extracts and Replicats",
