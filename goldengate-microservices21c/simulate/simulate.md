@@ -181,4 +181,4 @@ We'll return to the browser window with the GoldenGate Administration Service
 
 - **Author** - Jan Leemans, December 2023
 - **Contributors** - Carmelo Millan
-- **Last Updated By/Date**
+- **Last Updated** - Jan Leemans, June 2024
