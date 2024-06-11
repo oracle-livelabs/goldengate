@@ -72,7 +72,7 @@ To simulate an active application interacting with a database, we'll be using a 
         <copy>sqlplus sys/Welcome#123@PDB as sysdba</copy>
         ```
 
-        and
+    and
 
         ```sql
         <copy>ALTER USER SOURCE_APP identified by Welcome#123</copy>
