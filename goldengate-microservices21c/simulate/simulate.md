@@ -45,7 +45,8 @@ To simulate an active application interacting with a database, we'll be using a 
       <copy>cd scripts</copy>
       ```
 
-2. Clean the Kafka stream Employees
+2. Clean the Kafka stream "Employees"
+
     To ensure you have no old data in the Kafka stream, you can run a shell script to clean the queue:
 
     ```bash
