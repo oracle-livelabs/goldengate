@@ -69,13 +69,17 @@ To simulate an active application interacting with a database, we'll be using a 
    - Simply connect to the database as user sys@PDB and reset the password:
 
         ```bash
-        <copy>sqlplus sys/Welcome#123@PDB as sysdba</copy>
+        <copy>
+        sqlplus sys/Welcome#123@PDB as sysdba
+        </copy>
         ```
 
     and
 
         ```sql
-        <copy>ALTER USER SOURCE_APP identified by Welcome#123</copy>
+        <copy>
+        ALTER USER SOURCE_APP identified by Welcome#123
+        </copy>
         ```
 
 4. Observe the transactions being inserted into the database: in the **second Terminal** window, run the monitor command to observe the database insertions:
