@@ -149,31 +149,33 @@ Before importing data to the target database, create a credential in the target 
 
 ## Task 2: Add and run the Replicat
 
-1.  Return to the OCI GoldenGate Deployment Console Home page. On the Overview page, click **Add Replicat** (plus icon).
+1.  Return to the OCI GoldenGate Deployment Console. In the left navigation menu, click **Replicats**.
 
-    ![GoldenGate Deployment Console Home page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-01-ggs-add-replicat.png)
+    ![GoldenGate Deployment Console Home page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-01-replicats.png)
 
-2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
+2.  On Replicats page, click **Add Replicat** (plus icon).
 
-    ![Add Replicat page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-02-rep-type.png " ")
+    ![Add Replicat page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-02-add-replicat.png " ")
 
-3.  On the Replicat Options page, for **Process Name**, enter **Rep**.
+3.  In the Add Replicat panel, on the Replicat Information page, for Replicate Type, select **Nonintegrated Replicat**.
 
-4.  For **Credential Domain**, select **OracleGoldenGate**.
+4.  For **Process Name**, enter `REP`, and then click **Next**.
 
-5.  For **Credential Alias**, select **TargetADW**.
+    ![Replicat information](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-04-replicat-info.png " ")
 
-6.  For **Trail Name**, enter E1.
+4.  On the Replicat Options page, for Replicat Trail **Name**, enter `E1`.
 
-7.  For **Checkpoint Table**, select **"SRCMIRROR\_OCIGGLL","CHECKTABLE"**.
+5.  For Target Credentials, from the **Domain** dropdown, select **OracleGoldenGate**, and then select **TargetADW** for **Alias**.
 
-    ![Add Replicat - Basic Information](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-07-rep-options.png " ")
+6.  For **Checkpoint Table**, select **"SRCMIRROR\_OCIGGLL","CHECKTABLE"**, and then click **Next**.
 
-8.  Under **Managed Options**, enable **Critical to deployment health**, and then click **Next**.
+    ![Replicat options](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/04-06-replicat-opts.png " ")
 
-    ![Critical to deployment health highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-08-dephealth.png " ")
+8.  On the **Managed Options** page, enable **Critical to deployment health**, and then click **Next**.
 
-9.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with the following script:
+    ![Managed options](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/04-07-managed-opts.png " ")
+
+9.  On the **Parameter File** page, replace **MAP \*.\*, TARGET \*.\*;** with the following script:
 
     ```
     <copy>-- Capture DDL operations for listed schema tables
@@ -208,13 +210,13 @@ Before importing data to the target database, create a credential in the target 
 
     > **Note:** `DBOPTIONS ENABLE_INSTATIATION_FILTERING` enables CSN filtering on tables imported using Oracle Data Pump. For more information, see [DBOPTIONS Reference](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service/using&id=GWURF-GUID-BA8C0CED-D87F-4106-862E-4AD22D910160).
 
-10.  Click **Create**.
+10.  Click **Create and Run**.
 
-    ![Add Replicat - Parameter File](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-09-param-file.png " ")
+    ![Add Replicat - Parameter File](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/04-10-param-file.png " ")
 
-11. In the REP Replicat **Action** menu, select **Start**.
+    The Replicats page updates with your newly created Replicat after a few moments, with the status **Running**. 
 
-    The yellow exclamation point icon changes to a green checkmark.
+    ![Replicats page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/04-11-replicats-page.png " ")
 
 You may now **proceed to the next lab.**
 
@@ -225,4 +227,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2024
+* **Last Updated By/Date** - Jenny Chan, June 2024

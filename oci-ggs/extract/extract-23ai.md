@@ -88,7 +88,7 @@ To return to the GoldenGate deployment console Home page, click **Overview** in 
 
 7.  On the Managed Options page, enable **Critical to deployment health**, and then click **Next**.
 
-    ![Critical to deployment health highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-07-dephealth.png " ")
+    ![Critical to deployment health highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-07-dephealth-23ai.png " ")
 
 8.  On the Parameter File page, in the text area, add a new line to the existing text and add the following:
 
