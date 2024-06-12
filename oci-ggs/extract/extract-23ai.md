@@ -26,7 +26,7 @@ In this lab, you learn to:
 
 ## Task 1: Launch the OCI GoldenGate deployment console
 
-[](include:01-launch-console-23ai.md)
+[](include:01-launch-console.md)
 
 ## Task 2: Add Transaction Data and a Checkpoint Table
 
