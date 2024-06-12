@@ -1,6 +1,18 @@
 {
     "workshoptitle": "Build faster replication processes with OCI GoldenGate",
     "help": "livelabs-help-db_us@oracle.com",
+    "include": {
+        "01-create-source-connection.md":"../../../ggs-common/building-blocks/tasks/create/01-create-source-connection.md",
+        "02-unlock-source-ggadmin.md":"../../../ggs-common/building-blocks/tasks/create/02-unlock-source-ggadmin.md",
+        "03-create-target-connection.md":"../../../ggs-common/building-blocks/tasks/create/03-create-target-connection.md",
+        "04-deployment-details.md":"../../../ggs-common/building-blocks/tasks/create/04-deployment-details.md",
+        "05-assign-connection.md":"../../../ggs-common/building-blocks/tasks/create/05-assign-connection.md",
+        "01-launch-console.md":"../../../ggs-common/building-blocks/tasks/extract/01-launch-console-23ai.md",
+        "01-perform-inserts-source-db.md":"../../../ggs-common/building-blocks/tasks/monitor/01-perform-inserts-source-db-23ai.md",
+        "02-performance-metrics-server.md":"../../../ggs-common/building-blocks/tasks/monitor/02-performance-metrics-server-23ai.md",
+        "03-viewing-gg-metrics-console.md":"../../../ggs-common/building-blocks/tasks/monitor/03-viewing-gg-metrics-console.md",
+        "01-create-purge-task.md":"../../../ggs-common/building-blocks/tasks/purge/01-create-purge-task-23ai.md"
+    },    
     "tutorials": [
         {
             "title": "Introduction",
@@ -14,7 +26,7 @@
         },
         {
             "title": "Lab 1: Create the OCI GoldenGate resources",
-            "filename": "../../create/create-gb.md"
+            "filename": "../../create/create.md"
         },
         {
             "title": "Lab 2: Create the Extract process and use Oracle Data Pump to export data",
@@ -26,11 +38,11 @@
         },
         {
             "title": "Lab 4: Monitor Extracts and Replicats",
-            "filename": "../../monitor/monitor.md"
+            "filename": "../../monitor/monitor-23ai.md"
         },
         {
             "title": "Lab 5: Purge unused Trail files",
-            "filename": "../../purge/purge.md"
+            "filename": "../../purge/purge-23ai.md"
         },
         {
             "title": "Need Help?",
@@ -38,9 +50,9 @@
             "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
         },
         {
-            "title": "Oracle CloudWorld 2023 - Support",
-            "description": "Find frequently asked questions, technical requirements, and tips & tricks",
-            "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }
