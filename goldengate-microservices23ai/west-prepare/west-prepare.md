@@ -2,18 +2,14 @@
 
 ## Introduction
 
-In this lab, you learn to...
+This lab walks you through the steps to create a connection to a source database, add transaction information, add a checkpoint table, create a path connection, and create a custom-managed profile in the Oracle GoldenGate West 23ai Microservices WebUI.
 
 Estimated time: 20 minutes
 
-### About the Extract process
-An Extract is a process that extracts, or captures, data from a source database.
 
 ### Objectives
 In this lab, you learn to:
-* Log in to the Oracle GoldenGate 23ai Microservices WebUI
-* Create a New User Administrator
-* Create a Connection to the East Source database
+* Create a Connection to the West Source database
 * Add transaction data and a checkpoint table
 * Create a Path Connection
 * Create a custom-managed Profile
@@ -21,53 +17,10 @@ In this lab, you learn to:
 ### Prerequisites
 
 * This lab assumes that you completed all preceding labs
-* Your deployment is in the Active state.
 
-## Task 1: Launch the Oracle GoldenGate West 23ai Microservices WebUI
+## Task 1: Create a Connection to the West Source database and a Checkpoint table
 
-1. In your lab instructions, click **View Login Info**.
-
-    ![View login info ](./images/01-01-view-login-info.png " ")
-
-2. On the Reservation Information page, click on the **ogg\_west\_url** link to access the Oracle GoldenGate West 23ai Microservices WebUI console.
-
-3.  To log in to the Oracle GoldenGate West 23ai Microservices WebUI console, enter **oggadmin** for User name and the password, and then click **Sign In**. 
-
-    > **NOTE:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
-
-    ![GoldenGate deployment console sign in](./images/01-03-console-login.png " ")
-
-    After you log in successfully, you're brought to the Oracle GoldenGate 23ai deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
-
-## Task 2: Create a New User Administrator
-
-1. Open the navigation menu and then click **User Administration**.
-
-    ![Administration Service navigation menu](./images/02-01-nav-config.png " ")
-
-2. Click **Add New User**.
-
-    ![Add New User](./images/02-02-click-add-new-user.png " ")
-
-3. A Create new User pop up will appear. For the Authenticated By dropdown, select **Password**.
-
-4. For the Role dropdown, select **Operator**.
-
-5. For Info, enter **Distribution Path User**.
-
-6. For Username, enter **oggnet**.
-
-7. For password, paste the Global Password from the Reservation Information. Verify the password. Click **Submit**.
-
-    ![Add new user popup](./images/02-07-add-new-user.png " ")
-
-8. The user you created appears in the Users list.
-
-    ![Users list](./images/02-08-users-list.png " ")
-
-## Task 3: Create a Connection to the East Source database and a Checkpoint table
-
-1. Open the navigation menu and then click **DB Connections**.
+1. Return to the East Microservices WebUI. In the navigation menu and click **DB Connections**.
 
     ![Administration Service navigation menu](./images/03-01-nav-config.png " ")
 
@@ -75,7 +28,7 @@ In this lab, you learn to:
 
     ![Add DB Connection](./images/03-02-add-db-connec.png " ")
 
-3. A Credentials panel will appear. For Credential Alias, enter **EAST**.
+3. A Credentials panel will appear. For Credential Alias, enter **WEST**.
 
 4. For User Alias, paste the **db\_west\_private\_connection** value from the Reservation Information. 
 
@@ -99,7 +52,7 @@ In this lab, you learn to:
 
     ![Checkpoint Table](./images/03-10-checkpoint-table.png " ")
 
-## Task 4: Create Trandata and a Checkpoint table
+## Task 2: Create Trandata and a Checkpoint table
 
 1. In the navigation menu, click **Trandata**.
 
@@ -127,7 +80,7 @@ In this lab, you learn to:
 
     ![Add Heartbeat Table](./images/04-07-add-heartbeat-table.png " ")
 
-## Task 5: Create a Path Connection
+## Task 3: Create a Path Connection
 1. In the navigation menu, click **Path Connections**.
 
     ![Path Connections](./images/05-01-path-connections.png " ")
@@ -144,7 +97,7 @@ In this lab, you learn to:
 
     ![Path Connection panel](./images/05-05-path-connection-panel.png " ")
 
-## Task 6: Create a custom-managed Profile
+## Task 4: Create a custom-managed Profile
 
 1. In the navigation menu, click **Managed Process Profiles**.
 
@@ -174,5 +127,5 @@ You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
-* **Contributors** -  Alex Lima Gray, Database Product Management
+* **Contributors** -  Alex Lima, Database Product Management
 * **Last Updated By/Date** - Katherine Wardhana, July 2024

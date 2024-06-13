@@ -2,20 +2,20 @@
 
 ## Introduction
 
-Now that replication is established and verified from the source database to the target database, you can set up bidirectional replication from the target to the source. This lab walks you through the steps create and run an Extract on the target, and create and run a Replicat on the source in the Oracle Cloud Infrastructure (OCI) GoldenGate Deployment Console.
+This lab walks you through the steps create and run an Extract, create an run a Distribution Path, and create and run a Target-Initiated Path.
 
 Estimated time: 20 minutes
 
-### About Extracts, Distribution Paths, and Target Initiated Paths 
+### About Extracts, Distribution Paths, and Target-Initiated Paths 
 
-An Extract is a process that extracts, or captures, data from a source database. 
+An Extract is a process that extracts, or captures, data from a source database. A Distribution Path is a source-to-destination configuration that uses the Distribution Service to send data in a distributed environment. A Target-initiated path enables the Receiver Service to initiate a path to the Distribution Service on the target deployment and pull trail files.
 
 ### Objectives
 
 In this lab, you will:
-* Add and run an Extract
-* Add and run a Distribution Path
-* Add and run a Target Initiated Path
+* Add and run an Extract process to capture data
+* Add and run a Distribution Path to send data
+* Add and run a Target-Initiated Path to pull trail files
 
 ## Task 1:  Add and run an Extract
 
@@ -127,7 +127,7 @@ In this lab, you will:
 
     ![Start Distribution Path](./images/02-18-start-dist-path.png " ")
 
-## Task 3: Create Target Initiated Path from East Deployment 
+## Task 3: Create Target-Initiated Path from East Deployment 
 
 1. On the top navigation menu, click **Receiver Service**. 
 
@@ -186,5 +186,5 @@ You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
-* **Contributors** -  Alex Lima Gray, Database Product Management
+* **Contributors** -  Alex Lima, Database Product Management
 * **Last Updated By/Date** - Katherine Wardhana, July 2024

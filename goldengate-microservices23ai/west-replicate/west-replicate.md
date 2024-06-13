@@ -2,20 +2,20 @@
 
 ## Introduction
 
-In this lab, you learn to...
+This lab walks you through the steps create and run an Extract, create an run a Distribution Path, and create and run a Replicat.
 
 Estimated time: 20 minutes
 
 ### About Extracts, Distribution Paths, and Replicats 
 
-An Extract is a process that extracts, or captures, data from a source database. 
+An Extract is a process that extracts, or captures, data from a source database. A Distribution Path is a source-to-destination configuration that uses the Distribution Service to send data in a distributed environment. A Replicat is a process that delivers data to a target database.
 
 ### Objectives
 
 In this lab, you will:
-* Add and run an Extract
-* Add and run a Distribution Path
-* Add and run a Target Initiated Path
+* Add and run an Extract process to capture data
+* Add and run a Distribution Path to send data
+* Add and run a Replicat process to consume the trail file received from the East database
 
 ## Task 1:  Add and run an Extract
 
@@ -95,7 +95,7 @@ In this lab, you will:
 
 8. On the Target Options page, for Target Host, enter the **ogg-west-public\_ip** value from the Reservation Information. 
 
-6. For Port Number, enter **9014**.**
+6. For Port Number, enter **9014**.
 
 7. For Trail Name, enter **dw**.
 
@@ -125,53 +125,49 @@ In this lab, you will:
 
 ## Task 3: Create a Replicat to apply to the East target database
 
-1. Open the navigation menu and then click **Replicats**.
+1. Open the top navigation menu, click **Administration Service**. Click **Add Replicat**.
 
     ![Administration Service navigation menu](./images/03-01-nav-config.png " ")
 
-2. Click **Add Replicat**.
+2. The Add Replicat panel consists of four pages. On the Replicat information page, for Replicat Type, select **Parallel Replicat**.
 
-    ![Administration Service navigation menu](./images/03-02-add-rep.png " ")
+3. For Parallel Replicat Type, select **Nonintegrated**.
 
-3. The Add Replicat panel consists of four pages. On the Replicat information page, for Replicat Type, select **Parallel Replicat**.
+4. For Process Name, enter **RWEST**.
 
-4. For Parallel Replicat Type, select **Nonintegrated**.
-
-5. For Process Name, enter **RWEST**.
-
-6. Click **Next**.
+5. Click **Next**.
 
     ![Replication Information page](./images/03-06-rep-info.png " ")
 
-7. On the Replicat Options page, for Replicat Trail, enter **de**.
+6. On the Replicat Options page, for Replicat Trail, enter **de**.
 
-8. For Domain, select **OracleGoldenGate** from the dropdown.
+7. For Domain, select **OracleGoldenGate** from the dropdown.
 
-9. For Alias, select **WEST** from the dropdown.
+8. For Alias, select **WEST** from the dropdown.
 
-10. For Checkpoint Table, select **"OGGADMIN"."CHECKPOINTTABLE** from the dropdown.
+9. For Checkpoint Table, select **"OGGADMIN"."CHECKPOINTTABLE** from the dropdown.
 
-11. Click **Next**.
+10. Click **Next**.
 
     ![Replication Options page](./images/03-11-rep-options.png " ")
 
-12. On the Managed Options page, for Profile Name, select **west-profile** from the dropdown.
+11. On the Managed Options page, for Profile Name, select **west-profile** from the dropdown.
 
-13. Click **Next**.
+12. Click **Next**.
 
     ![Managed Options page](./images/03-13-managed-options.png " ")
 
-14. On the Parameter File page, in the text area, replace **MAP *.*, TARGET *.*;** with the following script:
+13. On the Parameter File page, in the text area, replace **MAP *.*, TARGET *.*;** with the following script:
 
     ```
     <copy>DDL INCLUDE MAPPED
     MAP HR.*, TARGET HR.*;</copy>
     ```
-15. Click **Create**.
+14. Click **Create**.
 
     ![Parameter File page](./images/03-15-param-file.png " ")
 
-16. In the RWEST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**. 
+15. In the RWEST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**. 
 
     ![Start Replicat](./images/03-16-start-replicat.png " ")
 
@@ -183,5 +179,5 @@ You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
-* **Contributors** -  Alex Lima Gray, Database Product Management
+* **Contributors** -  Alex Lima, Database Product Management
 * **Last Updated By/Date** - Katherine Wardhana, July 2024
