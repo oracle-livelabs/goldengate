@@ -23,7 +23,7 @@ This lab assumes you completed all preceding labs.
 
 ## Task 1: Create a Purge Task
 
-[](include:01-create-purge-task.md)
+[](include:01-create-purge-task-23ai.md)
 
 ## Learn more
 

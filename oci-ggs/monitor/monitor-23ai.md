@@ -27,11 +27,11 @@ In order to complete this lab:
 
 ## Task 1: Perform inserts to the source database
 
-[](include:01-perform-inserts-source-db.md)
+[](include:01-perform-inserts-source-db-23ai.md)
 
 ## Task 2: Using the Performance Metrics Server
 
-[](include:02-performance-metrics-server.md)
+[](include:02-performance-metrics-server-23ai.md)
 
 ## Task 3: Viewing GoldenGate metrics in the Oracle Cloud console
 
