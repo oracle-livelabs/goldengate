@@ -214,7 +214,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 END;</copy>
     ```
 
-    > **Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
+    > **Note:** If you're using a federated user, then the username should be in the following format: `OracleIdentityCloudService/<user-name>`
 
 
     ![SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-14-create-credential.png " ")
