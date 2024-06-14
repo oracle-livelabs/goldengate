@@ -141,11 +141,11 @@ In this lab, you will:
 
     ![Path Information page](./images/03-03-path-info.png " ")
 
-4. On the Source Options page, for Source Host, paste the **ogg-east-public_ip** value from the Reservation Information. 
+4. On the Source Options page, for Source Host, paste the **ogg-west-public_ip** value from the Reservation Information. 
 
 5. For Port Number, enter **9014**.
 
-6. For Trail Name, enter **de**.
+6. For Trail Name, enter **dw**.
 
 7. For For Alias, enter **oggnet_alias**.
 

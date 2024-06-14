@@ -91,8 +91,7 @@ Keep the East WebUI console open.
 
     After you log in successfully, you're brought to the Oracle GoldenGate 23ai deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
 
-4. Repeat tasks 1 and 2 above to create a new User Admistrator and new Path Connection on the West console. Keep the West WebUI console open.
-
+4. Repeat tasks 2 and 3 above to create a new User Admistrator and new Path Connection on the West console.
 Keep the West WebUI console open.
 
 You may now **proceed to the next lab.**
