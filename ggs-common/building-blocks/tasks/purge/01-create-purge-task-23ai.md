@@ -16,8 +16,6 @@
 
 4.  For **Trail**, enter the name of a Trail file. For example, in this workshop, our Extract Trail file is called `E1`.
 
-    ![Trail field highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-04-add-trail.png " ")
-
 5.  For **Keep Rule**, select **Number of Files**, and then enter `1`. This indicates that one Trail file will be kept, while all others are purged.
 
 6.  For **Purge Frequency**, select **Hours**, and then enter `1`. This indicates that this Purge task will run every hour.

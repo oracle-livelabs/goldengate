@@ -62,7 +62,10 @@ In this lab, you learn to:
 
     ![Populated Checkpoint table field and submit button highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-08-checktable-23ai.png " ")
 
-To return to the GoldenGate deployment console Home page, click **Overview** in the left navigation.
+    The Checkpoint table updates with the newly added checkpoint table.
+
+    ![Updated checkpoint table](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-09-checktable.png " ")
+
 
 ## Task 3: Add and run an Extract
 
@@ -70,7 +73,7 @@ To return to the GoldenGate deployment console Home page, click **Overview** in 
 
     ![Click Extracts in left menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-01-extracts-23ai.png " ")
 
-2.  Next to Extracts, click **Add Extract** (plus icon).
+2.  On the Extracts page, click **Add Extract** (plus icon). 
 
     ![Click Add Extract](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-02-add-extract-23ai.png " ")
 
