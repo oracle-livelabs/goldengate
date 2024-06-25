@@ -13,31 +13,23 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
-            "title": "Lab 1: Launch console, create new User Administrators, and create Path Connections",
-            "filename": "../../new-user/new-user.md"
+            "title": "Lab 1: Connect and prepare databases",
+            "filename": "../../prepare-consoles/prepare-consoles.md"
         },
         {
-            "title": "Lab 2: Prepare East to West Replication",
-            "filename": "../../east-prepare/east-prepare.md"
-        },
-        {
-            "title": "Lab 3: Replicate data from East to West",
+            "title": "Lab 2: Replicate data from East to West",
             "filename": "../../east-replicate/east-replicate.md"
         },
         {
-            "title": "Lab 4: Prepare West to East Replication",
-            "filename": "../../west-prepare/west-prepare.md"
-        },
-        {
-            "title": "Lab 5: Replicate data from West to East",
+            "title": "Lab 3: Replicate data from West to East",
             "filename": "../../west-replicate/west-replicate.md"
         },
         {
-            "title": "Lab 6 Review Configuration",
+            "title": "Lab 4 Review Configuration",
             "filename": "../../review-config/review-config.md"
         },
         {
-            "title": "Lab 7: Create transactions",
+            "title": "Lab 5: Create transactions",
             "filename": "../../transactions/transactions.md"
         },
         {

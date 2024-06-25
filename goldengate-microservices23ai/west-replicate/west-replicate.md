@@ -19,39 +19,30 @@ In this lab, you will:
 
 ## Task 1:  Add and run an Extract
 
-1. In the navigation menu, click **Extracts**.
-
-    ![Click Extracts](./images/01-01-extracts.png " ")
+1. Make sure you're on the the **West** Microservices WebUI. In the navigation menu, click **Extracts**.
 
 2. Click **Add Extract**.
 
     ![Add Extracts](./images/01-02-add-extract.png " ")
 
-3. The Add Extract panel consists of five pages. On the Extract information page, for Extract Type, select **Integrated Extract**.
+3. The Add Extract panel consists of five pages. On the Extract information page, complete the following fields, and then click **Next**:
+    * For Extract Type, select **Integrated Extract**.
+    * For Process Name, enter **EWEST** and optionally, a description.
 
-4. For Process Name, enter **EWEST** and optionally, a description.
+    ![Extract Information page](./images/01-03-extract-info.png " ")
 
-5. Click **Next**.
+4. On the Extract Options page, complete the following fields, and then click **Next**: 
+    * For Domain, select **OracleGoldenGate** from the dropdown.
+    * For Alias, select **WEST** from the dropdown.
+    * For Name, enter **ew**.
 
-    ![Extract Information page](./images/01-05-extract-info.png " ")
+    ![Extract Options page](./images/01-04-extract-options.png " ")
 
-6. On the Extract Options page, under Source Credentials, for Domain, select **OracleGoldenGate** from the dropdown.
+5. On the Managed Options page, for Profile Name, select **east-profile** from the dropdown, and then click **Next**.
 
-7. For Alias, select **WEST** from the dropdown.
+    ![Managed Options page](./images/01-05-managed-options.png " ")
 
-8. Under Extract Trail, for Name, enter **ew**.
-
-9. Click **Next**.
-
-    ![Extract Options page](./images/01-09-extract-options.png " ")
-
-10. On the Managed Options page, for Profile Name, select **east-profile** from the dropdown.
-
-11. Click **Next**.
-
-    ![Managed Options page](./images/01-11-managed-options.png " ")
-
-12. On the Parameter File page, in the text area, add a new line to the existing text and add the following:
+6. On the Parameter File page, in the text area, add a new line to the existing text and add the following:
 
     ```
     <copy>TRANLOGOPTIONS EXCLUDETAG 00
@@ -59,117 +50,128 @@ In this lab, you will:
     table HR.*;</copy>
     ```
 
-13. Click **Create**. 
+7. Click **Create**. 
 
-    ![Parameter File page](./images/01-13-param-file.png " ")
+    ![Parameter File page](./images/01-07-param-file.png " ")
 
-    You return to the GoldenGate 23ai Microservices WebUI Home page.
+8. In the EWEST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**. 
 
-14. In the EWEST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**. 
+    ![Start Extract](./images/01-08-start-extract.png " ")
 
-    ![Start Extract](./images/01-14-start-extract.png " ")
+## Task 2: Add an East Oracle GoldenGate user
 
-## Task 2: Create a Distribution Path to West Deployment
+1. Open the navigation menu and then click **User Administration**.
 
-1. On the top navigation menu, click **Receiver Service**. 
+2. Click **Add New User**. 
 
-    ![Distribution Service](./images/02-01-dist-service.png " ")
+    ![Add New User](./images/02-02-new-user-list.png " ")
 
-2. Click **Add Distribution Path**. 
+3. A Create new User pop up will appear, complete the following fields, and then click **Submit**:  
+    * For the Authenticated By dropdown, select **Password**.
+    * For the Role dropdown, select **Operator**.
+    * For Info, enter **Distribution Path User**.
+    * For Username, enter **oggnet**.
+    * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
-    ![Click Add Distribution Path](./images/02-02-add-dist-path.png " ")
+    ![Create New User](./images/02-03-create-new-user.png " ")
 
-3. The Add Path panel consists of seven pages. On the Path Information page, for Name, enter **DPWEST**. 
+4. The user you created appears in the Users list. 
 
-4. Click **Next**.
+## Task 3: Add a Path Connection
 
-    ![Path Information page](./images/02-04-path-info.png " ")
+1. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection**.
 
-5. On the Source Options page, for Source Extract, select **EWEST** from the dropdown.
+    ![Click Add Path Connection](./images/03-01-add-path-connect.png " ")
 
-6. For Trail Name, select **ew** from the dropdown.
+2. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
+    * For Credential Alias, enter **oggnet\_alias**.
+    * For User ID, enter **oggnet**.
+    * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
-7. Click **Next**.
+    ![Path Connection panel](./images/03-02-path-connect.png " ")
 
-    ![Source Options page](./images/02-07-source-opts.png " ")
+## Task 4: Add a Target-Initiated path on East Oracle GoldenGate
 
-8. On the Target Options page, for Target Host, enter the **ogg-west-public\_ip** value from the Reservation Information. 
+1. Switch to the **East** Microservices WebUI.
 
-6. For Port Number, enter **9014**.
+2. On the top navigation menu, click **Receiver Service**, and then click **Add Target-Initiated Path**. 
 
-7. For Trail Name, enter **dw**.
+    ![Click Add Target-Initiated Path](./images/04-02-add-target-in-path.png " ")
 
-8. For Alias, enter **oggnet\_alias**.
+3. The Add Path panel consists of seven pages. On the Path Information page, for Name, enter **TPEAST**, and then click **Next**.
 
-9. Click **Next**.
+    ![Path Information page](./images/04-03-path-info.png " ")
 
-    ![Source Options page](./images/02-09-target-options.png " ")
+4. On the Source Options page, complete the following fields, and then click **Next**:
+    * For Source Host, paste the **ogg-west-public\_ip** value from the Reservation Information.
+    * For Port Number, enter **9013**.
+    * For Trail Name, enter **dw**.
+    * For For Alias, enter **oggnet\_alias**.
 
-10. On the Advanced Options page, leave the fields as is, and click **Next**.
+    ![Source Options page](./images/04-04-source-opts.png " ")
 
-    ![Advanced Options page](./images/02-10-adv-options.png " ")
+5. On the Target Options page, for Trail Name, enter **ee**, and then click **Next**.
 
-11. On the Filtering Options page, leave the fields as is, and click **Next**.
+    ![Target Options page](./images/04-05-target-opts.png " ")
 
-    ![Filtering Options page](./images/02-11-filtering-options.png " ")
+6. On the Advanced Options page, leave the fields as is, and click **Next**.
 
-12. On the Managed Options page, leave the fields as is, and click **Create Path**.
+    ![Advanced Options page](./images/04-06-adv-options.png " ")
 
-    ![Managed Options page](./images/02-12-managed-options.png " ")
+7. On the Filtering Options page, leave the fields as is, and click **Next**.
 
-13. On the left hand navigation menu, click **Distribution Paths**.
+    ![Filtering Options page](./images/04-07-filtering-options.png " ")
 
-14. In the DPWEST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
+8. On the Managed Options page, leave the fields as is, and click **Create Path**.
 
-    ![Start Distribution Path](./images/02-14-start-dp.png " ")
+    ![Managed Options page](./images/04-08-managed-options.png " ")
 
-## Task 3: Create a Replicat to apply to the East target database
+9. On the left hand navigation menu, click **Target-Initiated Paths**.
+
+10. In the TPEAST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
+
+    ![Start Target-Initiated Path](./images/04-10-start-tip.png " ")
+
+## Task 5: Add a Replicat on East deployment
 
 1. Open the top navigation menu, click **Administration Service**. Click **Add Replicat**.
 
-    ![Administration Service navigation menu](./images/03-01-nav-config.png " ")
+    ![Administration Service navigation menu](./images/05-01-nav-config.png " ")
 
-2. The Add Replicat panel consists of four pages. On the Replicat information page, for Replicat Type, select **Parallel Replicat**.
+2. The Add Replicat panel consists of four pages. On the Replicat Information page, complete the following fields, and then click **Next**:
+    * For Replicat Type, select **Parallel Replicat**.
+    * For Parallel Replicat Type, select **Nonintegrated**.
+    * For Process Name, enter **REAST**.
 
-3. For Parallel Replicat Type, select **Nonintegrated**.
+    ![Replicat Information page](./images/05-02-rep-info.png " ")
 
-4. For Process Name, enter **RWEST**.
+3. On the Replicat Options page, complete the following fields, and then click **Next**:
+    * For Replicat Trail, enter **ee**.
+    * For Domain, select **OracleGoldenGate** from the dropdown.
+    * For Alias, select **EAST** from the dropdown.
+    * For Checkpoint Table, select **"OGGADMIN"."CHECKPOINTTABLE** from the dropdown.
 
-5. Click **Next**.
+    ![Replicat Options page](./images/05-03-rep-opts.png " ")
 
-    ![Replication Information page](./images/03-06-rep-info.png " ")
+4. On the Managed Options page, for Profile Name, select **east-profile** from the dropdown.
 
-6. On the Replicat Options page, for Replicat Trail, enter **de**.
+    ![Managed Options page](./images/05-04-managed-opts.png " ")
 
-7. For Domain, select **OracleGoldenGate** from the dropdown.
-
-8. For Alias, select **WEST** from the dropdown.
-
-9. For Checkpoint Table, select **"OGGADMIN"."CHECKPOINTTABLE** from the dropdown.
-
-10. Click **Next**.
-
-    ![Replication Options page](./images/03-11-rep-options.png " ")
-
-11. On the Managed Options page, for Profile Name, select **west-profile** from the dropdown.
-
-12. Click **Next**.
-
-    ![Managed Options page](./images/03-13-managed-options.png " ")
-
-13. On the Parameter File page, in the text area, replace **MAP *.*, TARGET *.*;** with the following script:
+5. On the Parameter File page, page, in the text area, replace **MAP ., TARGET .;** with the following script:
 
     ```
     <copy>DDL INCLUDE MAPPED
     MAP HR.*, TARGET HR.*;</copy>
     ```
-14. Click **Create**.
+6. Click **Create**.
 
-    ![Parameter File page](./images/03-15-param-file.png " ")
+    ![Parameter File page](./images/05-06-param-file.png " ")
 
-15. In the RWEST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**. 
+7. In the navigation menu, click **Replicats**.
 
-    ![Start Replicat](./images/03-16-start-replicat.png " ")
+8. In the REAST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**. 
+
+    ![Start Replicat](./images/05-08-start-replicat.png " ")
 
 You may now **proceed to the next lab.**
 
