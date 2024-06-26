@@ -31,7 +31,7 @@ In this lab, you will:
 
 1. In the navigation menu, click **Extracts**
 
-2. Click **Add Extract**.
+2. Click **Add Extract** (plus icon).
 
     ![Add Extracts](./images/01-02-add-extract.png " ")
 
@@ -76,7 +76,7 @@ In this lab, you will:
 
 2. Open the navigation menu and then click **User Administration**.
 
-3. Click **Add New User**. 
+3. Click **Add New User** (plus icon). 
 
     ![Add New User](./images/02-03-add-new-user.png " ")
 
@@ -95,7 +95,7 @@ In this lab, you will:
 
 1. Switch to the **East** Microservices WebUI.
 
-2. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection**.
+2. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection** (plus icon).
 
     ![Click Add Path Connection](./images/03-02-add-path-connect.png " ")
 
@@ -108,7 +108,7 @@ In this lab, you will:
 
 ## Task 4: Add a Distribution Path to West deployment
 
-1. On the top navigation menu, click **Distribution Service**, and then click **Add Distribution Path**. 
+1. On the top navigation menu, click **Distribution Service**, and then click **Add Distribution Path** (plus icon). 
 
     ![Click Add Distribution Path](./images/04-01-add-dist-path.png " ")
 
@@ -155,7 +155,7 @@ In this lab, you will:
 
 1. Switch to the **West** Microservices WebUI.
 
-2. Open the top navigation menu, click **Administration Service**, and then click **Add Replicat**.
+2. Open the top navigation menu, click **Administration Service**, and then click **Add Replicat** (plus icon).
 
     ![Administration Service navigation menu](./images/05-02-nav-config.png " ")
 
@@ -170,7 +170,7 @@ In this lab, you will:
     * On the Replicat Options page, for Replicat Trail, enter **de**.
     * For Domain, select **OracleGoldenGate** from the dropdown.
     * For Alias, select **WEST** from the dropdown.
-    * For Checkpoint Table, select **"OGGADMIN"."CHECKPOINTTABLE** from the dropdown.
+    * For Checkpoint Table, select **"OGGADMIN"."CHECKPOINTTABLE"** from the dropdown.
 
     ![Replication Options page](./images/05-04-rep-options.png " ")
 

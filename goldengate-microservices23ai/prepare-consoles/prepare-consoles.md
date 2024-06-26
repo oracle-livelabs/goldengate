@@ -49,7 +49,7 @@ In this lab, you will:
 
     ![Administration Service navigation menu](./images/01-04-add-db-connec.png " ")
 
-5. Click **Add DB Connection**.
+5. Click **Add DB Connection** (plus icon).
 
     ![Add DB Connection](./images/01-05-add-db-connec.png " ")
 
@@ -60,13 +60,13 @@ In this lab, you will:
 
     ![Credentials panel](./images/01-06-credentials.png " ")
 
-7. Click **Connect to database**.
+7. Click **Connect to database**. You are directed to the Checkpoint page. 
 
     ![Connect to database](./images/01-07-connect-to-db.png " ")
 
 ## Task 2: Add a Checkpoint table, Transaction information, and Heartbeat table
 
-1. You are directed to the Checkpoint page. Click **Add Checkpoint**.
+1. In the navigation menu, click **Checkpoint**. In the Checkpoint page, click **Add Checkpoint** (plus icon).
 
     ![Add checkpoint](./images/02-01-add-checkpoint.png " ")
 
@@ -78,7 +78,7 @@ In this lab, you will:
 
     ![Trandata](./images/02-03-trandata.png " ")
 
-4. Click **Add TRANDATA**.
+4. Click **Add TRANDATA** (plus icon).
 
     ![Add Trandata](./images/02-04-add-trandata.png " ")
 
@@ -90,7 +90,7 @@ In this lab, you will:
 
     ![Verify Trandata](./images/02-06-verify-trandata.png " ")
 
-7. In the navigation menu, click **Heartbeat**. Click **Add Heartbeat**.
+7. In the navigation menu, click **Heartbeat**. Click **Add Heartbeat** (plus icon).
 
     ![Add Heartbeat](./images/02-07-add-heartbeat.png " ")
 
@@ -102,7 +102,7 @@ In this lab, you will:
 
 1. In the navigation menu, click **Managed Process Profiles**.
 
-2. Click **Add Profile**.
+2. Click **Add Profile** (plus icon).
 
     ![Click Add Profile](./images/03-02-add-profile.png " ")
 
@@ -132,7 +132,7 @@ Keep the **East** WebUI console open.
 
     ![Administration Service navigation menu](./images/04-03-nav-config.png " ")
 
-4. Click **Add DB Connection**.
+4. Click **Add DB Connection** (plus icon).
 
     ![Add DB Connection](./images/04-04-add-db-connec.png " ")
 

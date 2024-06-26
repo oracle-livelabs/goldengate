@@ -31,7 +31,7 @@ In this lab, you will:
 
 1. Make sure you're on the the **West** Microservices WebUI. In the navigation menu, click **Extracts**.
 
-2. Click **Add Extract**.
+2. Click **Add Extract** (plus icon).
 
     ![Add Extracts](./images/01-02-add-extract.png " ")
 
@@ -70,7 +70,7 @@ In this lab, you will:
 
 ## Task 2: Add a Path Connection
 
-1. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection**.
+1. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection** (plus icon).
 
     ![Click Add Path Connection](./images/02-01-add-path-connect.png " ")
 
@@ -87,7 +87,7 @@ In this lab, you will:
 
 2. Open the navigation menu and then click **User Administration**.
 
-3. Click **Add New User**. 
+3. Click **Add New User** (plus icon). 
 
     ![Add New User](./images/03-03-new-user-list.png " ")
 
@@ -104,7 +104,7 @@ In this lab, you will:
 
 ## Task 4: Add a Target-Initiated path on East Oracle GoldenGate
 
-1. On the top navigation menu, click **Receiver Service**, and then click **Add Target-Initiated Path**. 
+1. On the top navigation menu, click **Receiver Service**, and then click **Add Target-Initiated Path** (plus icon). 
 
     ![Click Add Target-Initiated Path](./images/04-02-add-target-in-path.png " ")
 
@@ -115,12 +115,12 @@ In this lab, you will:
 3. On the Source Options page, complete the following fields, and then click **Next**:
     * For Source Host, paste the **ogg-west-public\_ip** value from the Reservation Information.
     * For Port Number, enter **9013**.
-    * For Trail Name, enter **dw**.
+    * For Trail Name, enter **ew**.
     * For For Alias, enter **oggnet\_alias**.
 
     ![Source Options page](./images/04-04-source-opts.png " ")
 
-4. On the Target Options page, for Trail Name, enter **ee**, and then click **Next**.
+4. On the Target Options page, for Trail Name, enter **dw**, and then click **Next**.
 
     ![Target Options page](./images/04-05-target-opts.png " ")
 
@@ -144,7 +144,7 @@ In this lab, you will:
 
 ## Task 5: Add a Replicat on East deployment
 
-1. Open the top navigation menu, click **Administration Service**. Click **Add Replicat**.
+1. Open the top navigation menu, click **Administration Service**. Click **Add Replicat** (plus icon).
 
     ![Administration Service navigation menu](./images/05-01-nav-config.png " ")
 
@@ -159,7 +159,7 @@ In this lab, you will:
     * For Replicat Trail, enter **ee**.
     * For Domain, select **OracleGoldenGate** from the dropdown.
     * For Alias, select **EAST** from the dropdown.
-    * For Checkpoint Table, select **"OGGADMIN"."CHECKPOINTTABLE** from the dropdown.
+    * For Checkpoint Table, select **"OGGADMIN"."CHECKPOINTTABLE"** from the dropdown.
 
     ![Replicat Options page](./images/05-03-rep-opts.png " ")
 
