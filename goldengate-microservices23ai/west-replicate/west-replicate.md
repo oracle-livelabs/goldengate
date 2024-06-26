@@ -2,19 +2,29 @@
 
 ## Introduction
 
-This lab walks you through the steps create and run an Extract, create an run a Distribution Path, and create and run a Replicat.
+This lab walks you through the steps create and run an Extract, add a User Administrator, create a Path Connection, create and run a Target-Initiated Path, and create and run a Replicat.
 
 Estimated time: 20 minutes
 
-### About Extracts, Distribution Paths, and Replicats 
+### About Extracts, Target-Initiated Paths, and Replicats
 
-An Extract is a process that extracts, or captures, data from a source database. A Distribution Path is a source-to-destination configuration that uses the Distribution Service to send data in a distributed environment. A Replicat is a process that delivers data to a target database.
+An Extract is a process that extracts or captures data from a source database. A Target-initiated path enables the Receiver Service to initiate a path to the Distribution Service on the target deployment and pull trail files. A Replicat is a process that delivers data to a target database.
+
+### About User Administrators
+
+Authorization in Oracle GoldenGate relies on user roles. As a User Administrator, you can choose and assign various user roles when creating Oracle GoldenGate users. These roles include a User, an Operator, an Administrator, and a Security.
+
+### About a Path Connection
+
+A Path Connection creates Credentials for the DistPath to connect to a GoldenGate Deployment. You will need to provide the login information for the GoldenGate alias. 
 
 ### Objectives
 
 In this lab, you will:
 * Add and run an Extract process to capture data
-* Add and run a Distribution Path to send data
+* Create a Path Connections
+* Create a new User Administrator
+* Add and run a Target-Initiated Path to pull trail files
 * Add and run a Replicat process to consume the trail file received from the East database
 
 ## Task 1:  Add and run an Extract
@@ -58,51 +68,51 @@ In this lab, you will:
 
     ![Start Extract](./images/01-08-start-extract.png " ")
 
-## Task 2: Add an East Oracle GoldenGate user
-
-1. Open the navigation menu and then click **User Administration**.
-
-2. Click **Add New User**. 
-
-    ![Add New User](./images/02-02-new-user-list.png " ")
-
-3. A Create new User pop up will appear, complete the following fields, and then click **Submit**:  
-    * For the Authenticated By dropdown, select **Password**.
-    * For the Role dropdown, select **Operator**.
-    * For Info, enter **Distribution Path User**.
-    * For Username, enter **oggnet**.
-    * For password, paste the Global Password from the Reservation Information. Verify the password. 
-
-    ![Create New User](./images/02-03-create-new-user.png " ")
-
-4. The user you created appears in the Users list. 
-
-## Task 3: Add a Path Connection
+## Task 2: Add a Path Connection
 
 1. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection**.
 
-    ![Click Add Path Connection](./images/03-01-add-path-connect.png " ")
+    ![Click Add Path Connection](./images/02-01-add-path-connect.png " ")
 
 2. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
     * For Credential Alias, enter **oggnet\_alias**.
     * For User ID, enter **oggnet**.
     * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
-    ![Path Connection panel](./images/03-02-path-connect.png " ")
+    ![Path Connection panel](./images/02-02-path-connect.png " ")
 
-## Task 4: Add a Target-Initiated path on East Oracle GoldenGate
+## Task 3: Add an East Oracle GoldenGate user
 
 1. Switch to the **East** Microservices WebUI.
 
-2. On the top navigation menu, click **Receiver Service**, and then click **Add Target-Initiated Path**. 
+2. Open the navigation menu and then click **User Administration**.
+
+3. Click **Add New User**. 
+
+    ![Add New User](./images/03-03-new-user-list.png " ")
+
+4. A Create new User pop up will appear, complete the following fields, and then click **Submit**:  
+    * For the Authenticated By dropdown, select **Password**.
+    * For the Role dropdown, select **Operator**.
+    * For Info, enter **Distribution Path User**.
+    * For Username, enter **oggnet**.
+    * For password, paste the Global Password from the Reservation Information. Verify the password. 
+
+    ![Create New User](./images/03-04-create-new-user.png " ")
+
+5. The user you created appears in the Users list. 
+
+## Task 4: Add a Target-Initiated path on East Oracle GoldenGate
+
+1. On the top navigation menu, click **Receiver Service**, and then click **Add Target-Initiated Path**. 
 
     ![Click Add Target-Initiated Path](./images/04-02-add-target-in-path.png " ")
 
-3. The Add Path panel consists of seven pages. On the Path Information page, for Name, enter **TPEAST**, and then click **Next**.
+2. The Add Path panel consists of seven pages. On the Path Information page, for Name, enter **TPEAST**, and then click **Next**.
 
     ![Path Information page](./images/04-03-path-info.png " ")
 
-4. On the Source Options page, complete the following fields, and then click **Next**:
+3. On the Source Options page, complete the following fields, and then click **Next**:
     * For Source Host, paste the **ogg-west-public\_ip** value from the Reservation Information.
     * For Port Number, enter **9013**.
     * For Trail Name, enter **dw**.
@@ -110,25 +120,25 @@ In this lab, you will:
 
     ![Source Options page](./images/04-04-source-opts.png " ")
 
-5. On the Target Options page, for Trail Name, enter **ee**, and then click **Next**.
+4. On the Target Options page, for Trail Name, enter **ee**, and then click **Next**.
 
     ![Target Options page](./images/04-05-target-opts.png " ")
 
-6. On the Advanced Options page, leave the fields as is, and click **Next**.
+5. On the Advanced Options page, leave the fields as is, and click **Next**.
 
     ![Advanced Options page](./images/04-06-adv-options.png " ")
 
-7. On the Filtering Options page, leave the fields as is, and click **Next**.
+6. On the Filtering Options page, leave the fields as is, and click **Next**.
 
     ![Filtering Options page](./images/04-07-filtering-options.png " ")
 
-8. On the Managed Options page, leave the fields as is, and click **Create Path**.
+7. On the Managed Options page, leave the fields as is, and click **Create Path**.
 
     ![Managed Options page](./images/04-08-managed-options.png " ")
 
-9. On the left hand navigation menu, click **Target-Initiated Paths**.
+8. On the left hand navigation menu, click **Target-Initiated Paths**.
 
-10. In the TPEAST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
+9. In the TPEAST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
     ![Start Target-Initiated Path](./images/04-10-start-tip.png " ")
 
@@ -177,7 +187,9 @@ You may now **proceed to the next lab.**
 
 ## Learn more
 
-* [Add an Extract for Oracle Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/index.html)
+* [Add an Extract (23ai)](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/#GUID-3A056934-CEC3-4377-8F7B-41438C39CD70)
+* [Create and run a Target-initiated Path (23ai)](https://docs.oracle.com/en/cloud/paas/goldengate-service/vtpxl/#GUID-4E51BABA-12ED-4B40-B9C9-53C00BA83CF5)
+* [Add a Replicat (23ai)](https://docs.oracle.com/en/cloud/paas/goldengate-service/cress/#GUID-F86BCD8A-5AAB-40A0-90C7-20AAFA1DECBC)
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer

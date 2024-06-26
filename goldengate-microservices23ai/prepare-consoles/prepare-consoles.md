@@ -1,18 +1,33 @@
 # Connect and prepare databases
 ## Introduction
 
-This lab walks you through the steps to launch the Oracle GoldenGate 23ai Microservices WebUI, create new user administrators, and create Path Connections.
+This lab walks you through the steps to launch the Oracle GoldenGate 23ai Microservices WebUI, create a connection to a source database, add transaction information, add a checkpoint table, add a heartbeat table, and create a custom-managed profile in the Oracle GoldenGate East and West 23ai Microservices WebUI.
 
-You will log in to the Oracle GoldenGate 23ai Microservices WebUI for both the West and East console to perform a replication process on both deloyments. You will create a user on the target deployment so it can be used to log in the other source deployment and make changes. You will also create a Path Connection to create an alias user for the target deployment which will be used for bidirection on both deployments. 
+Estimated time: 20 minutes
 
-Estimated time: 30 minutes
+### About DB Connections
+
+DB Connections is a database login credential that allows you to connect to a database and manage Checkpoint Tables, Transaction Information, and a Heartbeat Table.
+
+### About Checkpoint table and Trandata
+
+A Checkpoint table is created to add fault tolerance to the replication process. GoldenGate Extract and Replicat processes record their read and write positions to maintain a record of their read position in the trail for recovery purposes. Trandata enables the unconditional logging of the primary key and the conditional supplemental logging of all unique and foreign keys of the specified table.
+
+### About Heartbeat tables
+
+Heartbeat tables monitor lag throughout the data replication cycle. Automatic heartbeats are sent from each source database into the replication streams by updating the records in a heartbeat seed table and a heartbeat table and constructing a heartbeat history record.
+
+### About Managed Process Profiles
+
+A Custom-managed profile provides the name of the auto start and auto restart profile. You can select the default or custom options.
 
 ### Objectives
 
 In this lab, you will:
 * Log in to the Oracle GoldenGate 23ai Microservices WebUI
-* Create New User Administrators
-* Create Path Connections
+* Create a Connection to the East and West Source database
+* Add transaction data, a checkpoint table, and a heartbeat table
+* Create a custom-managed Profile
 
 ## Task 1: Add DB Connection to East database
 
@@ -99,7 +114,7 @@ In this lab, you will:
 
     ![Add Managed Process Settings Profile panel](./images/03-03-add-profile-panel.png " ")
 
-Keep the East WebUI console open.
+Keep the **East** WebUI console open.
 
 ## Task 4: Add DB connection to West database
 
@@ -134,26 +149,11 @@ Keep the East WebUI console open.
 
 7. Repeat task 2 above to create a new Checkpoint table, Transaction information, and Heartbeat table. 
 
-8. In the navigation menu, click **Managed Process Profiles**, and then click **Add Profile**.
+8. Repeat task 3 above to create a Managed Process Profile for **west-profile**.
 
-    ![Click Add Profile](./images/04-08-add-profile.png " ")
-
-9. An Add Managed Process Settings Profile panel appears, complete the following fields, and then click **Submit**: 
-    * For Profile Name, enter **west-profile**.
-    * Select the Default Profile toggle.
-    * Select the Auto Start toggle.
-    * Select the Auto Restart toggle.
-
-    ![Add Managed Process Settings Profile panel](./images/04-09-add-profile-panel.png " ")
-
-Keep the West WebUI console open.
+Keep the **West** WebUI console open.
 
 You may now **proceed to the next lab.**
-
-## Learn more
-
-* [Managing deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/ebbpf/index.html)
-* [Managing connections](https://docs.oracle.com/en/cloud/paas/goldengate-service/mcjzr/index.html)
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer

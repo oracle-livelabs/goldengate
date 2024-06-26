@@ -2,20 +2,23 @@
 
 ## Introduction
 
-This lab walks you through the steps to instantiate the target database using Oracle Data Pump, and then add and run a Replicat in the Oracle Cloud Infrastructure (OCI) GoldenGate Deployment Console.
+In this lab, you learn to monitor the Extract and Replicat processes that were created and run in the previous labs.
 
-Estimated time: 15 minutes
+Estimated time: 10 minutes
+
+### About Performance Monitoring
+
+Monitoring the performance of your GoldenGate instance ensures that your data replication processes are running smoothly and efficiently. You can monitor performance in the Oracle GoldenGate 23ai Microservices WebUI.
 
 ### Objectives
 
 In this lab, you will:
-* Instantiate the target database using Oracle Data Pump
-* Add and run a Replicat
+* Review the Oracle GoldenGate Microservices, such as, Administration Service, Distribution Service, Performance Metrics Service, and Receiver Service.
+* View charts and statistics using the Performance Metrics Server in the Oracle GoldenGate 23ai Microservices WebUI.
 
 ### Prerequisites
 
 * This lab assumes that you completed all preceding labs
-* Your deployment is in the Active state.
 
 ## Task 1: Review Extract details
 
@@ -149,7 +152,7 @@ You may now **proceed to the next lab.**
 
 ## Learn more
 
-* [Add a Replicat for Oracle Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/cress/index.html)
+* [Monitor performance using the Oracle Cloud console](https://docs.oracle.com/en/cloud/paas/goldengate-service/vddvk/)
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer

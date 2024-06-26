@@ -2,20 +2,30 @@
 
 ## Introduction
 
-This lab walks you through the steps create and run an Extract, create an run a Distribution Path, and create and run a Target-Initiated Path.
+This lab walks you through the steps create and run an Extract, add a User Administrator, create a Path Connection, create and run a Distribution Path, and create and run a Replicat.
 
 Estimated time: 20 minutes
 
-### About Extracts, Distribution Paths, and Target-Initiated Paths 
+### About Extracts, Distribution Paths, and Replicats
 
-An Extract is a process that extracts, or captures, data from a source database. A Distribution Path is a source-to-destination configuration that uses the Distribution Service to send data in a distributed environment. A Target-initiated path enables the Receiver Service to initiate a path to the Distribution Service on the target deployment and pull trail files.
+An Extract is a process that extracts or captures data from a source database. A Distribution Path is a source-to-destination configuration that uses the Distribution Service to send data in a distributed environment. A Replicat is a process that delivers data to a target database.
+
+### About User Administrators
+
+Authorization in Oracle GoldenGate relies on user roles. As a User Administrator, you can choose and assign various user roles when creating Oracle GoldenGate users. These roles include a User, an Operator, an Administrator, and a Security.
+
+### About a Path Connection
+
+A Path Connection creates Credentials for the DistPath to connect to a GoldenGate Deployment. You will need to provide the login information for the GoldenGate alias. 
 
 ### Objectives
 
 In this lab, you will:
 * Add and run an Extract process to capture data
+* Create a new User Administrator
+* Create a Path Connections
 * Add and run a Distribution Path to send data
-* Add and run a Target-Initiated Path to pull trail files
+* Add and run a Replicat process to consume the trail file received from the West database
 
 ## Task 1:  Add and run an Extract
 
@@ -26,8 +36,8 @@ In this lab, you will:
     ![Add Extracts](./images/01-02-add-extract.png " ")
 
 3. The Add Extract panel consists of five pages. On the Extract information page, complete the following fields, and then click **Next**:  
-    * For Extract Type, select **Integrated Extract**
-    * For Process Name, enter **EEAST**
+    * For Extract Type, select **Integrated Extract**.
+    * For Process Name, enter **EEAST**.
 
     ![Extract Information page](./images/01-03-extract-info.png " ")
 
@@ -62,35 +72,39 @@ In this lab, you will:
 
 ## Task 2: Add a West Oracle GoldenGate user
 
-1. Open the navigation menu and then click **User Administration**.
+1. Switch to the **West** Microservices WebUI.
 
-2. Click **Add New User**. 
+2. Open the navigation menu and then click **User Administration**.
 
-    ![Add New User](./images/02-02-add-new-user.png " ")
+3. Click **Add New User**. 
 
-3. A Create new User pop up will appear, complete the following fields, and then click **Submit**:  
+    ![Add New User](./images/02-03-add-new-user.png " ")
+
+4. A Create new User pop up will appear, complete the following fields, and then click **Submit**:  
     * For the Authenticated By dropdown, select **Password**.
     * For the Role dropdown, select **Operator**.
     * For Info, enter **Distribution Path User**.
     * For Username, enter **oggnet**.
     * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
-    ![Create New User](./images/02-03-create-new-user.png " ")
+    ![Create New User](./images/02-04-create-new-user.png " ")
 
-4. The user you created appears in the Users list. 
+5. The user you created appears in the Users list. 
 
 ## Task 3: Add a Path Connection
 
-1. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection**.
+1. Switch to the **East** Microservices WebUI.
 
-    ![Click Add Path Connection](./images/03-01-add-path-connect.png " ")
+2. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection**.
 
-2. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
+    ![Click Add Path Connection](./images/03-02-add-path-connect.png " ")
+
+3. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
     * For Credential Alias, enter **oggnet\_alias**.
     * For User ID, enter **oggnet**.
     * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
-    ![Path Connection panel](./images/03-02-path-connect.png " ")
+    ![Path Connection panel](./images/03-03-path-connect.png " ")
 
 ## Task 4: Add a Distribution Path to West deployment
 
@@ -182,8 +196,9 @@ You may now **proceed to the next lab.**
 
 ## Learn more
 
-* [Managing deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/ebbpf/index.html)
-* [Managing connections](https://docs.oracle.com/en/cloud/paas/goldengate-service/mcjzr/index.html)
+* [Add an Extract (23ai)](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/#GUID-3A056934-CEC3-4377-8F7B-41438C39CD70)
+* [Create and run a Distribution Path (23ai)](https://docs.oracle.com/en/cloud/paas/goldengate-service/adpen/#GUID-A18AF727-42E5-4D55-BB94-566F84EC69B1)
+* [Add a Replicat (23ai)](https://docs.oracle.com/en/cloud/paas/goldengate-service/cress/#GUID-F86BCD8A-5AAB-40A0-90C7-20AAFA1DECBC)
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
