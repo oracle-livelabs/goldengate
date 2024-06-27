@@ -71,7 +71,7 @@ In this lab, you will:
     ![Start Extract](./images/01-08-start-extract.png " ")
 
 ## Task 2: Add a West Oracle GoldenGate user
-The User is being created to connect to the Path Connection that will be created in Task 3. The User and Path Connection is needed to create the Distribution Path in Step 4.
+The User performs operational actions required to create and run the Distribution Path. Operational actions include creating, starting, and stopping resources.
 
 1. Switch to the **West** Microservices WebUI.
 
@@ -95,7 +95,7 @@ The User is being created to connect to the Path Connection that will be created
     ![User list](./images/02-05-user-list.png " ")
 
 ## Task 3: Add a Path Connection
-The Path Connection is created as a Credential Alias that contains the target Oracle GoldenGate UserID and password. The alias is used to create the Distribution Path in Step 4.
+A Path Connection creates Credentials for the Distribution Path to connect to a database. The Credential Alias contains the target user ID and password.
 
 1. Switch to the **East** Microservices WebUI.
 

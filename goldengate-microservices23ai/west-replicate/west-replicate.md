@@ -69,7 +69,7 @@ In this lab, you will:
     ![Start Extract](./images/01-08-start-extract.png " ")
 
 ## Task 2: Add a Path Connection
-The Path Connection is created as a Credential Alias that contains the target Oracle GoldenGate UserID and password. The alias is used to create the Distribution Path in Step 4
+A Path Connection creates Credentials for the Distribution Path to connect to a database. The Credential Alias contains the target user ID and password.
 
 1. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection** (plus icon).
 
@@ -87,7 +87,7 @@ The Path Connection is created as a Credential Alias that contains the target Or
     ![Path Connection list](./images/02-03-pc-list.png " ")
 
 ## Task 3: Add an East Oracle GoldenGate user
-The User is being created to connect to the Path Connection we created in Task 2. The User and Path Connection is needed to create the Target-Initiated Path in Step 4.
+The User performs operational actions required to create and run the Distribution Path. Operational actions include creating, starting, and stopping resources.
 
 1. Switch to the **East** Microservices WebUI.
 
@@ -100,7 +100,7 @@ The User is being created to connect to the Path Connection we created in Task 2
 4. A Create new User pop up will appear, complete the following fields, and then click **Submit**:  
     * For the Authenticated By dropdown, select **Password**.
     * For the Role dropdown, select **Operator**.
-    * For Info, enter **Distribution Path User**.
+    * For Info, enter **Target-Initiated path user**.
     * For Username, enter **oggnet-east**.
     * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
@@ -164,7 +164,7 @@ The User is being created to connect to the Path Connection we created in Task 2
     ![Replicat Information page](./images/05-02-rep-info.png " ")
 
 3. On the Replicat Options page, complete the following fields, and then click **Next**:
-    * For Replicat Trail, enter **ee**.
+    * For Replicat Trail, enter **dw**.
     * For Domain, select **OracleGoldenGate** from the dropdown.
     * For Alias, select **EAST** from the dropdown.
     * For Checkpoint Table, select **"OGGADMIN"."CHECKPOINTTABLE"** from the dropdown.
