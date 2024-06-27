@@ -77,7 +77,7 @@ The Path Connection is created as a Credential Alias that contains the target Or
 
 2. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
     * For Credential Alias, enter **west\_to\_east**.
-    * For User ID, enter **oggnet-west**.
+    * For User ID, enter **oggnet-east**.
     * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
     ![Path Connection panel](./images/02-02-path-connect.png " ")
