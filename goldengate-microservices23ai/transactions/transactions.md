@@ -19,11 +19,19 @@ In order to complete this lab:
 * You should have completed the preceding lab
 * Have an Extract and Replicat running
 
-## Task 1: Log into to East database with SQL developer (or another client) 
+## Task 1: Log into to the East database with SQL developer (or another client) 
+
+1. Acess your SQL developer. Download the Oracle SQL Server [here](https://www.oracle.com/database/sqldeveloper/technologies/download/).
+
+2. Using the Reservation Information details, paste the link to the SQL developer:
+
+    ```
+    <copy>https://hr/&lt;global_password&gt;/&lt;db-west-public_ip&gt;:1521/freepdb1</copy>
+    ```
 
 ## Task 2: SQL inserts
 
-1. Enter the following into the Worksheet, and then click **Run Statement**. This statement creates a table named `players` in the HR schema.
+1. Run the following script to creates a table named `players` in the HR schema, and then click **Run Statement**.
 
     ```
     <copy>CREATE TABLE HR.PLAYERS (
@@ -32,7 +40,7 @@ In order to complete this lab:
     role VARCHAR2(100)
     );</copy>
     ```
-2. Enter the following into the Worksheet, and then click **Run Statement**. This statement inserts five male players and one male coach into the `HR.players` table.
+2. Run the following script to insert five male players and one male coach into the `HR.players` table in the HR schema, and then click **Run Statement**.
 
     ```
     <copy>INSERT INTO HR.PLAYERS (id, name, role) VALUES (1, 'John Doe', 'player');
@@ -49,7 +57,7 @@ In order to complete this lab:
     -- Look the Replicat Statistics in the the WEBUI EAST OGG. You should see 1 DDL and 6 inserts on HR.PLAYERS Table. </copy></copy>
     ```
 
-3. Enter the following into the Worksheet, and then click **Run Statement**. This statement selects all records to verify the updates made in the statements above.
+3. Run the following script to select all records to verify the updates made in the statements above, and then click **Run Statement**.
     ```
     <copy> SELECT * FROM HR.PLAYERS;
    -- You should see the following in both:
@@ -65,7 +73,7 @@ In order to complete this lab:
     </copy>
     ```
 
-4. Enter the following into the Worksheet, and then click **Run Statement**. This statement updates the player with `id=1` to a new name.
+4. Run the following script to update the player with `id=1` to a new name, and then click **Run Statement**.
     ```
     <copy> UPDATE HR.PLAYERS SET name = 'Johnathan Doe' WHERE id = 1; 
 
@@ -77,7 +85,7 @@ In order to complete this lab:
     </copy>
     ```
 
-5. Enter the following into the Worksheet, and then click **Run Statement**. This statement deletes players with the record `id=4`.
+5. Run the following script to delete players with the record `id=4` to a new name, and then click **Run Statement**.
     ```
     <copy> DELETE FROM HR.PLAYERS where id=4;
 
@@ -89,7 +97,7 @@ In order to complete this lab:
 
     </copy>
     ```
-6. Enter the following into the Worksheet, and then click **Run Statement**. This statement selects all records to verify the updates made in the statements above.
+6. Run the following script to select all records to verify the updates made in the statements above, and then click **Run Statement**.
 
     ```
     <copy>

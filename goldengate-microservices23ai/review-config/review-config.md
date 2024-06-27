@@ -152,7 +152,7 @@ You may now **proceed to the next lab.**
 
 ## Learn more
 
-* [Monitor performance using the Oracle Cloud console](https://docs.oracle.com/en/cloud/paas/goldengate-service/vddvk/)
+* [Monitor Processes from the Performance Metrics Service](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/monitor-performance-metrics-server.html)
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer

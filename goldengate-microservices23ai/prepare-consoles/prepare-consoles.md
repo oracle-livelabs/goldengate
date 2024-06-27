@@ -60,7 +60,7 @@ In this lab, you will:
 
     ![Credentials panel](./images/01-06-credentials.png " ")
 
-7. Click **Connect to database**. You are directed to the Checkpoint page. 
+7. Click **Connect to database**. If successful, you are directed to the Checkpoint page. 
 
     ![Connect to database](./images/01-07-connect-to-db.png " ")
 
@@ -108,9 +108,9 @@ In this lab, you will:
 
 3. An Add Managed Process Settings Profile panel appears, complete the following fields, and then click **Submit**: 
     * For Profile Name, enter **east-profile**.
-    * Select the Default Profile toggle.
-    * Select the Auto Start toggle.
-    * Select the Auto Restart toggle.
+    * Enable **Default Profile** toggle.
+    * Enable **Auto Start** toggle.
+    * Enable **Auto Restart** toggle.
 
     ![Add Managed Process Settings Profile panel](./images/03-03-add-profile-panel.png " ")
 
@@ -143,7 +143,7 @@ Keep the **East** WebUI console open.
 
     ![Credentials panel](./images/04-05-credentials.png " ")
 
-6. Click **Connect to database**.
+6. Click **Connect to database**. If successful, you are directed to the Checkpoint page. 
 
     ![Connect to database](./images/04-06-connect-to-db.png " ")
 
@@ -154,6 +154,10 @@ Keep the **East** WebUI console open.
 Keep the **West** WebUI console open.
 
 You may now **proceed to the next lab.**
+
+## Learn more
+
+* [Add Database Connections](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/extract-add-and-alter-database-connections.html#GUID-45112AEE-19[…]3AE-18571BFA831B)
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer

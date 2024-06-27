@@ -71,6 +71,7 @@ In this lab, you will:
     ![Start Extract](./images/01-08-start-extract.png " ")
 
 ## Task 2: Add a West Oracle GoldenGate user
+The User is being created to connect to the Path Connection that will be created in Task 3. The User and Path Connection is needed to create the Distribution Path in Step 4.
 
 1. Switch to the **West** Microservices WebUI.
 
@@ -84,14 +85,17 @@ In this lab, you will:
     * For the Authenticated By dropdown, select **Password**.
     * For the Role dropdown, select **Operator**.
     * For Info, enter **Distribution Path User**.
-    * For Username, enter **oggnet**.
+    * For Username, enter **oggnet-west**.
     * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
     ![Create New User](./images/02-04-create-new-user.png " ")
 
-5. The user you created appears in the Users list. 
+5. The user you created appears in the Users list.
+
+    ![User list](./images/02-05-user-list.png " ")
 
 ## Task 3: Add a Path Connection
+The Path Connection is created as a Credential Alias that contains the target Oracle GoldenGate UserID and password. The alias is used to create the Distribution Path in Step 4.
 
 1. Switch to the **East** Microservices WebUI.
 
@@ -100,11 +104,15 @@ In this lab, you will:
     ![Click Add Path Connection](./images/03-02-add-path-connect.png " ")
 
 3. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
-    * For Credential Alias, enter **oggnet\_alias**.
-    * For User ID, enter **oggnet**.
+    * For Credential Alias, enter **east\_to\_west**.
+    * For User ID, enter **oggnet-west**.
     * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
     ![Path Connection panel](./images/03-03-path-connect.png " ")
+
+4. The path connection you created appears in the Path Connections list.
+
+    ![Path Connection list](./images/03-04-pc-list.png " ")
 
 ## Task 4: Add a Distribution Path to West deployment
 
@@ -119,7 +127,6 @@ In this lab, you will:
 3. On the Source Options page, complete the following fields, and then click **Next**:  
     * For Source Extract, select **EEAST** from the dropdown.
     * For Trail Name, **ee** should automatically populate the field.
-    * For Generated Source URI, keep as is.
 
     ![Source Options page](./images/04-03-source-options.png " ")
 
@@ -127,7 +134,7 @@ In this lab, you will:
     * For Target Host, paste the **ogg-west-public\_ip** value from the Reservation Information. 
     * For Port Number, enter **9014**.
     * For Trail Name, enter **de**.
-    * For Alias, enter **oggnet\_alias**.
+    * For Alias, enter **east\_to\_west**.
 
     ![Target Options page](./images/04-04-target-options.png " ")
     
@@ -178,7 +185,7 @@ In this lab, you will:
 
     ![Managed Options page](./images/05-05-managed-options.png " ")
 
-6. On the Parameter File page, in the text area, replace **MAP *.*, TARGET *.*;** with the following script:
+6. On the Parameter File page, in the text area, replace **MAP *\.\*, TARGET \*.\*;** with the following script:
 
     ```
     <copy>DDL INCLUDE MAPPED
@@ -196,9 +203,11 @@ You may now **proceed to the next lab.**
 
 ## Learn more
 
-* [Add an Extract (23ai)](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/#GUID-3A056934-CEC3-4377-8F7B-41438C39CD70)
-* [Create and run a Distribution Path (23ai)](https://docs.oracle.com/en/cloud/paas/goldengate-service/adpen/#GUID-A18AF727-42E5-4D55-BB94-566F84EC69B1)
-* [Add a Replicat (23ai)](https://docs.oracle.com/en/cloud/paas/goldengate-service/cress/#GUID-F86BCD8A-5AAB-40A0-90C7-20AAFA1DECBC)
+* [Before Adding Extract and Replicat Processes](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/configure-ogg-adding-extract-and-replicat.html#GUID-C1044A4D-945E-4080-B79C-74FA9D004143)
+* [Registering Extract for Oracle](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/extract-oracle-registering-extract.html)
+* [Access Extract Details](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/extract-access-extract-details.html)
+* [About Distribution Service](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/distribute-distribution-service.html)
+* [About Replicat](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/replicat-replicat.html)
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
