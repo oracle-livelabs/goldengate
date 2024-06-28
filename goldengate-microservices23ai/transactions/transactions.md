@@ -26,6 +26,7 @@ In order to complete this lab:
 
     ```
     <copy>https://hr/&lt;global_password&gt;/&lt;db-west-public_ip&gt;:1521/freepdb1</copy>
+    ```
 
 2. Run the following script to creates a table named `players` in the HR schema, and then click **Run Statement**.
 
@@ -36,7 +37,7 @@ In order to complete this lab:
     role VARCHAR2(100)
     );</copy>
     ```
-3. Run the following script to insert five male players and one male coach into the `HR.players` table in the HR schema, and then click **Run Statement**.
+3. Run the following script to insert five male players and one male coach into the `HR.players` table, and then click **Run Statement**.
 
     ```
     <copy>INSERT INTO HR.PLAYERS (id, name, role) VALUES (1, 'John Doe', 'player');
@@ -54,6 +55,7 @@ In order to complete this lab:
     ```
 
 4. Run the following script to select all records to verify the updates made in the statements above, and then click **Run Statement**.
+
     ```
     <copy> SELECT * FROM HR.PLAYERS;
    -- You should see the following in both:
@@ -70,6 +72,7 @@ In order to complete this lab:
     ```
 
 5. Run the following script to update the player with `id=1` to a new name, and then click **Run Statement**.
+
     ```
     <copy> UPDATE HR.PLAYERS SET name = 'Johnathan Doe' WHERE id = 1; 
 
@@ -82,6 +85,7 @@ In order to complete this lab:
     ```
 
 6. Run the following script to delete players with the record `id=4` to a new name, and then click **Run Statement**.
+
     ```
     <copy> DELETE FROM HR.PLAYERS where id=4;
 
