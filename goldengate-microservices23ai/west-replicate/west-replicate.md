@@ -69,7 +69,7 @@ In this lab, you will:
     ![Start Extract](./images/01-08-start-extract.png " ")
 
 ## Task 2: Add a Path Connection
-A Path Connection creates Credentials for the Distribution Path to connect to a database. The Credential Alias contains the target user ID and password.
+A Path Connection creates Credentials for the West Distribution Service to connect to the East Receiver Service. 
 
 1. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection** (plus icon).
 
@@ -86,29 +86,27 @@ A Path Connection creates Credentials for the Distribution Path to connect to a 
 
     ![Path Connection list](./images/02-03-pc-list.png " ")
 
-## Task 3: Add an East Oracle GoldenGate user
-The User performs operational actions required to create and run the Distribution Path. Operational actions include creating, starting, and stopping resources.
+## Task 3: Add a West Oracle GoldenGate user
+This user will be used by the West Deployment to connect to the East Receiver Service. 
 
-1. Switch to the **East** Microservices WebUI.
+1. Open the navigation menu and then click **User Administration**.
 
-2. Open the navigation menu and then click **User Administration**.
+2. Click **Add New User** (plus icon). 
 
-3. Click **Add New User** (plus icon). 
+    ![Add New User](./images/03-02-new-user-list.png " ")
 
-    ![Add New User](./images/03-03-new-user-list.png " ")
-
-4. A Create new User pop up will appear, complete the following fields, and then click **Submit**:  
+3. A Create new User pop up will appear, complete the following fields, and then click **Submit**:  
     * For the Authenticated By dropdown, select **Password**.
     * For the Role dropdown, select **Operator**.
     * For Info, enter **Target-Initiated path user**.
-    * For Username, enter **oggnet-east**.
+    * For Username, enter **oggnet-west**.
     * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
-    ![Create New User](./images/03-04-create-new-user.png " ")
+    ![Create New User](./images/03-03-create-new-user.png " ")
 
-5. The user you created appears in the Users list.
+4. The user you created appears in the Users list.
 
-    ![User list](./images/03-05-user-list.png " ")
+    ![User list](./images/03-04-user-list.png " ")
 
 ## Task 4: Add a Target-Initiated Path on East Oracle GoldenGate
 

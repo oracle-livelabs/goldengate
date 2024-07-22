@@ -55,7 +55,7 @@ In this lab, you will:
 
 6. A Credentials panel will appear, complete the following fields, and then click **Submit**:
     * For Credential Alias, enter **EAST**.
-    * For User Alias, paste the **db\_east\_private\_connection** value from the Reservation Information. 
+    * For User ID, paste the **db\_east\_private\_connection** value from the Reservation Information. 
     * For password, paste the **Global Password** from the Reservation Information. Verify the password. 
 
     ![Credentials panel](./images/01-06-credentials.png " ")
@@ -138,7 +138,7 @@ Keep the **East** WebUI console open.
 
 5. A Credentials panel will appear, complete the following fields, and then click **Submit**:
     * For Credential Alias, enter **WEST**.
-    * For User Alias, paste the **db\_west\_private\_connection** value from the Reservation Information. 
+    * For User ID, paste the **db\_west\_private\_connection** value from the Reservation Information. 
     * For password, paste the **Global Password** from the Reservation Information. Verify the password. 
 
     ![Credentials panel](./images/04-05-credentials.png " ")
