@@ -5,6 +5,8 @@ This lab walks you through the steps to launch the Oracle GoldenGate 23ai Micros
 
 Estimated time: 20 minutes
 
+   ![Create database connections](./images/create-db.png " ")
+
 ### About DB Connections
 
 DB Connections is a database login credential that allows you to connect to a database and manage Checkpoint Tables, Transaction Information, and a Heartbeat Table.

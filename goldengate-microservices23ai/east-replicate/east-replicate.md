@@ -6,6 +6,8 @@ This lab walks you through the steps create and run an Extract, add a User Admin
 
 Estimated time: 20 minutes
 
+   ![Replication from East to West with Distribution Path](./images/rep-east-west-dp.png " ")
+
 ### About Extracts, Distribution Paths, and Replicats
 
 An Extract is a process that extracts or captures data from a source database. A Distribution Path is a source-to-destination configuration that uses the Distribution Service to send data in a distributed environment. A Replicat is a process that delivers data to a target database.
@@ -29,7 +31,7 @@ In this lab, you will:
 
 ## Task 1:  Add and run an Extract
 
-1. In the navigation menu, click **Extracts**
+1. Make sure that you're on the **East** Microservices WebUI. In the navigation menu, click **Extracts**.
 
 2. Click **Add Extract** (plus icon).
 
@@ -73,42 +75,46 @@ In this lab, you will:
 ## Task 2: Add an East Oracle GoldenGate user
 This user will be used by the East Deployment to connect to the West Receiver Service. 
 
-1. Open the navigation menu and then click **User Administration**.
+1. Switch to the **West** Microservices WebUI.
 
-2. Click **Add New User** (plus icon). 
+2. Open the navigation menu and then click **User Administration**.
 
-    ![Add New User](./images/02-02-new-user-list.png " ")
+3. Click **Add New User** (plus icon). 
 
-3. A Create new User pop up will appear, complete the following fields, and then click **Submit**:  
+    ![Add New User](./images/02-03-new-user-list.png " ")
+
+4. A Create new User pop up will appear, complete the following fields, and then click **Submit**:  
     * For the Authenticated By dropdown, select **Password**.
     * For the Role dropdown, select **Operator**.
     * For Info, enter **Distribution Path User**.
-    * For Username, enter **oggnet-east**.
+    * For Username, enter **oggnet-west**.
     * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
-    ![Create New User](./images/02-03-create-new-user.png " ")
+    ![Create New User](./images/02-04-create-new-user.png " ")
 
-4. The user you created appears in the Users list.
+5. The user you created appears in the Users list.
 
-    ![User list](./images/02-04-user-list.png " ")
+    ![User list](./images/02-05-user-list.png " ")
 
 ## Task 3: Add a Path Connection
 A Path Connection creates Credentials for the East Distribution Service to connect to the West Receiver Service. 
 
-1. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection** (plus icon).
+1. Switch to the **East** Microservices WebUI.
 
-    ![Click Add Path Connection](./images/03-01-add-path-connect.png " ")
+2. In the navigation menu, click **Path Connections**, and then click **Add Path Connection** (plus icon).
 
-2. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
+    ![Click Add Path Connection](./images/03-02-add-path-connect.png " ")
+
+3. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
     * For Credential Alias, enter **east\_to\_west**.
     * For User ID, enter **oggnet-west**.
     * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
-    ![Path Connection panel](./images/03-02-path-connect.png " ")
+    ![Path Connection panel](./images/03-03-path-connect.png " ")
 
-3. The path connection you created appears in the Path Connections list.
+4. The path connection you created appears in the Path Connections list.
 
-    ![Path Connection list](./images/03-03-pc-list.png " ")
+    ![Path Connection list](./images/03-04-pc-list.png " ")
 
 ## Task 4: Add a Distribution Path to West deployment
 

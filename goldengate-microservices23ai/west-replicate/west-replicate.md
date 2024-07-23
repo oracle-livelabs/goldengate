@@ -6,6 +6,8 @@ This lab walks you through the steps create and run an Extract, add a User Admin
 
 Estimated time: 20 minutes
 
+   ![Replication from West to East with Target Initiated Path](./images/rep-west-east-tip.png " ")
+
 ### About Extracts, Target-Initiated Paths, and Replicats
 
 An Extract is a process that extracts or captures data from a source database. A Target-initiated path enables the Receiver Service to initiate a path to the Distribution Service on the target deployment and pull trail files. A Replicat is a process that delivers data to a target database.
@@ -77,7 +79,7 @@ A Path Connection creates Credentials for the West Distribution Service to conne
 
 2. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
     * For Credential Alias, enter **west\_to\_east**.
-    * For User ID, enter **oggnet-east**.
+    * For User ID, enter **oggnet-west**.
     * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
     ![Path Connection panel](./images/02-02-path-connect.png " ")
@@ -86,39 +88,19 @@ A Path Connection creates Credentials for the West Distribution Service to conne
 
     ![Path Connection list](./images/02-03-pc-list.png " ")
 
-## Task 3: Add a West Oracle GoldenGate user
-This user will be used by the West Deployment to connect to the East Receiver Service. 
+## Task 3: Add a Target-Initiated Path on East Oracle GoldenGate
 
-1. Open the navigation menu and then click **User Administration**.
+1. Switch to the **East** Microservices WebUI.
 
-2. Click **Add New User** (plus icon). 
-
-    ![Add New User](./images/03-02-new-user-list.png " ")
-
-3. A Create new User pop up will appear, complete the following fields, and then click **Submit**:  
-    * For the Authenticated By dropdown, select **Password**.
-    * For the Role dropdown, select **Operator**.
-    * For Info, enter **Target-Initiated path user**.
-    * For Username, enter **oggnet-west**.
-    * For password, paste the Global Password from the Reservation Information. Verify the password. 
-
-    ![Create New User](./images/03-03-create-new-user.png " ")
-
-4. The user you created appears in the Users list.
-
-    ![User list](./images/03-04-user-list.png " ")
-
-## Task 4: Add a Target-Initiated Path on East Oracle GoldenGate
-
-1. On the top navigation menu, click **Receiver Service**, and then click **Add Target-Initiated Path** (plus icon). 
+2. On the top navigation menu, click **Receiver Service**, and then click **Add Target-Initiated Path** (plus icon). 
 
     ![Click Add Target-Initiated Path](./images/04-01-add-target-in-path.png " ")
 
-2. The Add Path panel consists of seven pages. On the Path Information page, for Name, enter **TPEAST**, and then click **Next**.
+3. The Add Path panel consists of seven pages. On the Path Information page, for Name, enter **TPEAST**, and then click **Next**.
 
     ![Path Information page](./images/04-02-path-info.png " ")
 
-3. On the Source Options page, complete the following fields, and then click **Next**:
+4. On the Source Options page, complete the following fields, and then click **Next**:
     * For Source Host, paste the **ogg-west-public\_ip** value from the Reservation Information.
     * For Port Number, enter **9013**.
     * For Trail Name, enter **ew**.
@@ -126,29 +108,29 @@ This user will be used by the West Deployment to connect to the East Receiver Se
 
     ![Source Options page](./images/04-03-source-opts.png " ")
 
-4. On the Target Options page, for Trail Name, enter **dw**, and then click **Next**.
+5. On the Target Options page, for Trail Name, enter **dw**, and then click **Next**.
 
     ![Target Options page](./images/04-04-target-opts.png " ")
 
-5. On the Advanced Options page, leave the fields as is, and click **Next**.
+6. On the Advanced Options page, leave the fields as is, and click **Next**.
 
     ![Advanced Options page](./images/04-05-adv-options.png " ")
 
-6. On the Filtering Options page, leave the fields as is, and click **Next**.
+7. On the Filtering Options page, leave the fields as is, and click **Next**.
 
     ![Filtering Options page](./images/04-06-filtering-options.png " ")
 
-7. On the Managed Options page, leave the fields as is, and click **Create Path**.
+8. On the Managed Options page, leave the fields as is, and click **Create Path**.
 
     ![Managed Options page](./images/04-07-managed-options.png " ")
 
-8. On the left hand navigation menu, click **Target-Initiated Paths**.
+9. On the left hand navigation menu, click **Target-Initiated Paths**.
 
-9. In the TPEAST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
+10. In the TPEAST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
     ![Start Target-Initiated Path](./images/04-09-start-tip.png " ")
 
-## Task 5: Add a Replicat on East deployment
+## Task 4: Add a Replicat on East deployment
 
 1. Open the top navigation menu, click **Administration Service**. Click **Add Replicat** (plus icon).
 
