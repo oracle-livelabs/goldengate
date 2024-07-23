@@ -1,7 +1,7 @@
 # Connect and prepare databases
 ## Introduction
 
-This lab walks you through the steps to launch the Oracle GoldenGate 23ai Microservices WebUI, create a connection to a source database, add transaction information, add a checkpoint table, add a heartbeat table, and create a custom-managed profile in the Oracle GoldenGate East and West 23ai Microservices WebUI.
+This lab walks you through the steps to launch the Oracle GoldenGate 23ai Microservices WebUI, create a connection to a source database, add Trandata information, add a checkpoint table, add a heartbeat table, and create a custom-managed profile in the Oracle GoldenGate East and West 23ai Microservices WebUI.
 
 Estimated time: 20 minutes
 
@@ -9,11 +9,11 @@ Estimated time: 20 minutes
 
 ### About DB Connections
 
-DB Connections is a database login credential that allows you to connect to a database and manage Checkpoint Tables, Transaction Information, and a Heartbeat Table.
+DB Connections is a database login credential that allows you to connect to a database and manage Checkpoint Tables, Trandata Information, and a Heartbeat Table.
 
 ### About Checkpoint table and Trandata
 
-A Checkpoint table is created to add fault tolerance to the replication process. GoldenGate Extract and Replicat processes record their read and write positions to maintain a record of their read position in the trail for recovery purposes. Trandata enables the unconditional logging of the primary key and the conditional supplemental logging of all unique and foreign keys of the specified table.
+A Checkpoint table is created in the database to add fault tolerance to a Replicat process. Trandata enables the unconditional logging of the primary key and the conditional supplemental logging of all unique and foreign keys of the specified table.
 
 ### About Heartbeat tables
 
@@ -28,7 +28,7 @@ A Custom-managed profile provides the name of the auto start and auto restart pr
 In this lab, you will:
 * Log in to the Oracle GoldenGate 23ai Microservices WebUI
 * Create a Connection to the East and West Source database
-* Add transaction data, a checkpoint table, and a heartbeat table
+* Add Trandata information, a checkpoint table, and a heartbeat table
 * Create a custom-managed Profile
 
 ## Task 1: Add DB Connection to East database
@@ -66,7 +66,7 @@ In this lab, you will:
 
     ![Connect to database](./images/01-07-connect-to-db.png " ")
 
-## Task 2: Add a Checkpoint table, Transaction information, and Heartbeat table
+## Task 2: Add a Checkpoint table, Trandata information, and Heartbeat table
 
 1. In the navigation menu, click **Checkpoint**. In the Checkpoint page, click **Add Checkpoint** (plus icon).
 
@@ -149,7 +149,7 @@ Keep the **East** WebUI console open.
 
     ![Connect to database](./images/04-06-connect-to-db.png " ")
 
-7. Repeat task 2 above to create a new Checkpoint table, Transaction information, and Heartbeat table. 
+7. Repeat task 2 above to create a new Checkpoint table, Trandata information, and Heartbeat table. 
 
 8. Repeat task 3 above to create a Managed Process Profile for **west-profile**.
 

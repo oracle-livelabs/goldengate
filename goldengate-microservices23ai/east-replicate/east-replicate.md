@@ -72,8 +72,8 @@ In this lab, you will:
 
     ![Start Extract](./images/01-08-start-extract.png " ")
 
-## Task 2: Add an East Oracle GoldenGate user
-This user will be used by the East Deployment to connect to the West Receiver Service. 
+## Task 2: Add a West Oracle GoldenGate user
+This user will be used by the West Deployment to connect to the East Receiver Service. 
 
 1. Switch to the **West** Microservices WebUI.
 
@@ -86,7 +86,7 @@ This user will be used by the East Deployment to connect to the West Receiver Se
 4. A Create new User pop up will appear, complete the following fields, and then click **Submit**:  
     * For the Authenticated By dropdown, select **Password**.
     * For the Role dropdown, select **Operator**.
-    * For Info, enter **Distribution Path User**.
+    * For Info, enter **Path User**.
     * For Username, enter **oggnet-west**.
     * For password, paste the Global Password from the Reservation Information. Verify the password. 
 

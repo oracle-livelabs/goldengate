@@ -73,26 +73,26 @@ In this lab, you will:
 ## Task 2: Add a Path Connection
 A Path Connection creates Credentials for the West Distribution Service to connect to the East Receiver Service. 
 
-1. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection** (plus icon).
+1. Switch to the **East** Microservices WebUI.
 
-    ![Click Add Path Connection](./images/02-01-add-path-connect.png " ")
+2. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection** (plus icon).
 
-2. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
+    ![Click Add Path Connection](./images/02-02-add-path-connect.png " ")
+
+3. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
     * For Credential Alias, enter **west\_to\_east**.
     * For User ID, enter **oggnet-west**.
     * For password, paste the Global Password from the Reservation Information. Verify the password. 
 
-    ![Path Connection panel](./images/02-02-path-connect.png " ")
+    ![Path Connection panel](./images/02-03-path-connect.png " ")
 
-3. The path connection you created appears in the Path Connections list.
+4. The path connection you created appears in the Path Connections list.
 
-    ![Path Connection list](./images/02-03-pc-list.png " ")
+    ![Path Connection list](./images/02-04-pc-list.png " ")
 
 ## Task 3: Add a Target-Initiated Path on East Oracle GoldenGate
 
-1. Switch to the **East** Microservices WebUI.
-
-2. On the top navigation menu, click **Receiver Service**, and then click **Add Target-Initiated Path** (plus icon). 
+1. On the top navigation menu, click **Receiver Service**, and then click **Add Target-Initiated Path** (plus icon). 
 
     ![Click Add Target-Initiated Path](./images/04-01-add-target-in-path.png " ")
 
