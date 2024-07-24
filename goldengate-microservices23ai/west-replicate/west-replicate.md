@@ -82,7 +82,7 @@ A Path Connection creates Credentials for the West Distribution Service to conne
 3. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
     * For Credential Alias, enter **west\_to\_east**.
     * For User ID, enter **oggnet-west**.
-    * For password, paste the Global Password from the Reservation Information. Verify the password. 
+    * For Password, paste the Global Password from the Reservation Information. Verify the password. 
 
     ![Path Connection panel](./images/02-03-path-connect.png " ")
 
@@ -184,4 +184,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** -  Alex Lima, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, July 2024
+* **Last Updated By/Date** - Katherine Wardhana, August 2024

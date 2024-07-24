@@ -157,4 +157,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** -  Alex Lima, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, July 2024
+* **Last Updated By/Date** - Katherine Wardhana, August 2024

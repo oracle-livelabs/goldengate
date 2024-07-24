@@ -39,7 +39,7 @@ In this lab, you will:
 
 2. On the Reservation Information page, click on the **ogg\_east\_url** link to access the Oracle GoldenGate East 23ai Microservices WebUI console.
 
-3.  To log in to the Oracle GoldenGate East 23ai Microservices WebUI console, enter **oggadmin** for User name and the password, and then click **Sign In**. 
+3.  To log in to the Oracle GoldenGate East 23ai Microservices WebUI console, enter **oggadmin** for Username and the Password, and then click **Sign In**. 
 
     > **NOTE:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
 
@@ -58,7 +58,7 @@ In this lab, you will:
 6. A Credentials panel will appear, complete the following fields, and then click **Submit**:
     * For Credential Alias, enter **EAST**.
     * For User ID, paste the **db\_east\_private\_connection** value from the Reservation Information. 
-    * For password, paste the **Global Password** from the Reservation Information. Verify the password. 
+    * For Password, paste the **Global Password** from the Reservation Information. Verify the password. 
 
     ![Credentials panel](./images/01-06-credentials.png " ")
 
@@ -122,7 +122,7 @@ Keep the **East** WebUI console open.
 
 1. On the Reservation Information page, click on the **ogg\_west\_url** link to access the Oracle GoldenGate West 23ai Microservices WebUI console.
 
-2. To log in to the Oracle GoldenGate West 23ai Microservices WebUI console, enter **oggadmin** for User name and the password, and then click **Sign In**. 
+2. To log in to the Oracle GoldenGate West 23ai Microservices WebUI console, enter **oggadmin** for Username and the Password, and then click **Sign In**. 
 
     > **NOTE:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
 
@@ -141,7 +141,7 @@ Keep the **East** WebUI console open.
 5. A Credentials panel will appear, complete the following fields, and then click **Submit**:
     * For Credential Alias, enter **WEST**.
     * For User ID, paste the **db\_west\_private\_connection** value from the Reservation Information. 
-    * For password, paste the **Global Password** from the Reservation Information. Verify the password. 
+    * For Password, paste the **Global Password** from the Reservation Information. Verify the password. 
 
     ![Credentials panel](./images/04-05-credentials.png " ")
 
@@ -164,4 +164,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** -  Alex Lima, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, July 2024
+* **Last Updated By/Date** - Katherine Wardhana, August 2024

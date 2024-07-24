@@ -29,4 +29,4 @@ GoldenGate 23ai has many new features, such as Data Streams for Pub/Sub access t
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** -  Alex Lima, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, July 2024
+* **Last Updated By/Date** - Katherine Wardhana, August 2024

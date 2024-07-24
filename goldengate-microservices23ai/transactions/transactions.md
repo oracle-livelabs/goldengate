@@ -9,15 +9,15 @@ Estimated time: 10 minutes
 ### Objectives
 
 In this lab, you will:
-* Learn how to connect the database to a client SQL developer
-* Perform a create table statement on the schema 
-* Perform inserts, update, and delete statements on the schema
+* Learn how to connect the database to a client SQL developer.
+* Perform a create table statement on the schema.
+* Perform inserts, update, and delete statements on the schema.
 
 ### Prerequisites
 
 In order to complete this lab:
-* You should have completed the preceding lab
-* Have an Extract and Replicat running
+* You should have completed the preceding lab.
+* Have an Extract and Replicat running.
 * Acess your SQL developer. Download the Oracle SQL Server [here](https://www.oracle.com/database/sqldeveloper/technologies/download/).
 
 ## Task 1: Log into to the East database with SQL developer (or another client) and SQL inserts
@@ -108,4 +108,4 @@ In order to complete this lab:
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** -  Alex Lima, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, July 2024
+* **Last Updated By/Date** - Katherine Wardhana, August 2024
