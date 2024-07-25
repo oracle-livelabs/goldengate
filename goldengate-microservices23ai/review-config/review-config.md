@@ -2,20 +2,23 @@
 
 ## Introduction
 
-This lab walks you through the steps to instantiate the target database using Oracle Data Pump, and then add and run a Replicat in the Oracle Cloud Infrastructure (OCI) GoldenGate Deployment Console.
+In this lab, you learn to monitor the Extract and Replicat processes that were created and run in the previous labs.
 
-Estimated time: 15 minutes
+Estimated time: 10 minutes
+
+### About Performance Monitoring
+
+Monitoring the performance of your GoldenGate instance ensures that your data replication processes are running smoothly and efficiently. You can monitor performance in the Oracle GoldenGate 23ai Microservices WebUI.
 
 ### Objectives
 
 In this lab, you will:
-* Instantiate the target database using Oracle Data Pump
-* Add and run a Replicat
+* Review the Oracle GoldenGate Microservices, such as, Administration Service, Distribution Service, Performance Metrics Service, and Receiver Service.
+* View charts and statistics using the Performance Metrics Server in the Oracle GoldenGate 23ai Microservices WebUI.
 
 ### Prerequisites
 
 * This lab assumes that you completed all preceding labs
-* Your deployment is in the Active state.
 
 ## Task 1: Review Extract details
 
@@ -87,6 +90,20 @@ In this lab, you will:
 
 ## Task 3: Navigate Distribution Service
 
+1. On the top navigation, select **Distribution Service** and then select **Distribution Paths**.
+
+2. On the Distribution Paths page, select **DPEAST**.
+
+    ![Select Distribution Path](./images/03-02-select-dp.png " ")
+
+3. On the **Path Information** screen, view the Basic Information, Filter Rules, Encryption, and Advanced Options.
+
+    ![Path Information page](./images/03-03-path-info.png " ")
+
+4. On the **Path Statistics** screen, view the LCR Table, DDL Table, and Statistics Table. 
+
+    ![Path Statistics page](./images/03-04-path-stats.png " ")
+
 ## Task 4: Navigate Performance Metrics Service
 
 1. On the top navigation, select **Performance Metrics Service**.
@@ -103,13 +120,41 @@ In this lab, you will:
 
 ## Task 5: Navigate Receiver Service
 
+1. Open the **East** Microservices WebUI.
+
+2. On the top navigation menu, click **Receiver Service**, and then on the left navigation menu, click **Target-Initiated Paths**. 
+
+3. On the Target-Initiated Path page, click **TPEAST**.
+
+    ![Click TPEAST](./images/05-01-tpeast.png " ")
+
+4. On the **Path Information** screen, view the Basic Information, Filter Rules, Encryption, and Advanced Options.
+
+    ![Path Information page](./images/05-04-path-info.png " ")
+
+5. On the **Path Statistics** screen, view the LCR Table, DDL Table, and Statistics Table. 
+
+    ![Path Statistics page](./images/05-05-path-stats.png " ")
+
+6. Open the **West** Microservices WebUI.
+
+7. On the top navigation menu, click **Receiver Service**, and then on the left navigation menu, click **Distribution Paths**. 
+
+8. On the Distribution Path page, click **DPWEST**.
+
+    ![Click DPWEST](./images/05-08-dpwest.png " ")
+
+9. On the **Network Statistics** screen, view the Basic Information, Filter Rules, Encryption, and Advanced Options.
+
+    ![Network Statistics page](./images/05-09-network-stats.png " ")
+
 You may now **proceed to the next lab.**
 
 ## Learn more
 
-* [Add a Replicat for Oracle Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/cress/index.html)
+* [Monitor Processes from the Performance Metrics Service](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/monitor-performance-metrics-server.html)
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** -  Alex Lima, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, July 2024
+* **Last Updated By/Date** - Katherine Wardhana, August 2024

@@ -2,21 +2,17 @@
 
 ## About this Workshop
 
-Oracle GoldenGate is the market leading technology for real-time heterogeneous data integration and building global transactional data fabrics. This workshop guides how to build fast pipelines both ways using Oracle GoldenGate 23ai Microservices WebUI.
+Oracle GoldenGate is the market-leading technology for real-time heterogeneous data integration and building global transactional data fabrics. This workshop guides you through building fast pipelines both ways by setting up a two-way data replication between East and West cloud databases using the Oracle GoldenGate 23ai Microservices WebUI.
 
    ![GoldenGate deployment console sign in](./images/23aibidirection.png " ")
-
-we're doing bidrectional or two-way replication ...
 
 Estimated workshop time: 2 hours
 
 ### About Oracle GoldenGate 23ai Microservices WebUI
 
-Oracle GoldenGate 23ai Microservices WebUI is a fully-managed service that uses Oracle GoldenGate Microservices to help you replicate data in real time, at scale, in the cloud.
+Oracle GoldenGate 23ai Microservices WebUI is a fully-managed service that uses Oracle GoldenGate Microservices to help you replicate data in real-time, at scale, in the cloud. Oracle GoldenGate 23ai includes a brand-new user interface with additional features and an updated end-user experience.
 
-Oracle GoldenGate Microservices Architecture has been introduced since Oracle GoldenGate version 12.3. With each new release, Oracle has improved the Microservices architecture. Oracle GoldenGate 23ai includes a brand-new user interface with additional features and an updated end user experience.
-
-all new releases... list 3 things
+GoldenGate 23ai has many new features, such as Data Streams for Pub/Sub access to database events via AsyncAPI, an updated graphical user experience, enhanced security management and user authorization, and so much more! Among its many new features, it now supports real-time replication for enterprise-class vector embeddings to improve Generative AI and large language model accuracy. 
 
 ### Prerequisites
 
@@ -33,4 +29,4 @@ all new releases... list 3 things
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** -  Alex Lima, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, July 2024
+* **Last Updated By/Date** - Katherine Wardhana, August 2024
