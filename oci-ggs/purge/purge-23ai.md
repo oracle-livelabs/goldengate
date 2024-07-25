@@ -6,8 +6,6 @@ In this lab, you learn to create Purge Tasks in the Oracle Cloud Infrastructure 
 
 Estimated time: 5 minutes
 
-Watch the video below for a quick walk through of the lab.
-[Watch the video](videohub:1_ni87slbs)
 
 ### About Purge Tasks
 
@@ -33,4 +31,4 @@ This lab assumes you completed all preceding labs.
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management, & Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, June 2024
+* **Last Updated By/Date** - Jenny Chan, July 2024
