@@ -35,11 +35,13 @@ In this lab, you will:
 
 1. In your lab instructions, click **View Login Info**.
 
-    ![View login info ](./images/01-01-view-login-info.png " ")
+    ![View login info](./images/01-01-view-login-info.png " ")
 
-2. On the Reservation Information page, click on the **ogg\_east\_url** link to access the Oracle GoldenGate East 23ai Microservices WebUI console.
+2. On the Reservation Information page, under Terraform Values, click on the **OGG East URL** link to access the Oracle GoldenGate East 23ai Microservices WebUI console.
 
-3.  To log in to the Oracle GoldenGate East 23ai Microservices WebUI console, enter **oggadmin** for Username and the Password, and then click **Sign In**. 
+    ![Terraform Values](./images/01-02-terraform-values.png " ")
+
+3.  To log in to the Oracle GoldenGate East 23ai Microservices WebUI console, enter **oggadmin** for Username and paste the **Global Password** from the Reservation Information for Password, and then click **Sign In**. 
 
     > **NOTE:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
 
@@ -57,7 +59,7 @@ In this lab, you will:
 
 6. A Credentials panel will appear, complete the following fields, and then click **Submit**:
     * For Credential Alias, enter **EAST**.
-    * For User ID, paste the **db\_east\_private\_connection** value from the Reservation Information. 
+    * For User ID, paste the **DB East Private Connection** value from the Reservation Information. 
     * For Password, paste the **Global Password** from the Reservation Information. Verify the password. 
 
     ![Credentials panel](./images/01-06-credentials.png " ")
@@ -120,9 +122,11 @@ Keep the **East** WebUI console open.
 
 ## Task 4: Add DB connection to West database
 
-1. On the Reservation Information page, click on the **ogg\_west\_url** link to access the Oracle GoldenGate West 23ai Microservices WebUI console.
+1. On the Reservation Information page, click on the **OGG West URL** link to access the Oracle GoldenGate West 23ai Microservices WebUI console.
 
-2. To log in to the Oracle GoldenGate West 23ai Microservices WebUI console, enter **oggadmin** for Username and the Password, and then click **Sign In**. 
+    ![Terraform values](./images/04-01-terraform-values.png " ")
+
+2. To log in to the Oracle GoldenGate East 23ai Microservices WebUI console, enter **oggadmin** for Username and paste the **Global Password** from the Reservation Information for Password, and then click **Sign In**. 
 
     > **NOTE:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
 
@@ -140,7 +144,7 @@ Keep the **East** WebUI console open.
 
 5. A Credentials panel will appear, complete the following fields, and then click **Submit**:
     * For Credential Alias, enter **WEST**.
-    * For User ID, paste the **db\_west\_private\_connection** value from the Reservation Information. 
+    * For User ID, paste the **DB West Private Connection** value from the Reservation Information. 
     * For Password, paste the **Global Password** from the Reservation Information. Verify the password. 
 
     ![Credentials panel](./images/04-05-credentials.png " ")

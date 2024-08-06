@@ -133,7 +133,7 @@ A Path Connection creates Credentials for the East Distribution Service to conne
     ![Source Options page](./images/04-03-source-options.png " ")
 
 4. On the Target Options page, complete the following fields, and then click **Next**:  
-    * For Target Host, paste the **ogg-west-public\_ip** value from the Reservation Information. 
+    * For Target Host, paste the **OGG West Public IP** value from the Reservation Information. 
     * For Port Number, enter **9014**.
     * For Trail Name, enter **de**.
     * For Alias, enter **east\_to\_west**.
