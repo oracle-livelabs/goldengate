@@ -16,16 +16,18 @@
 
     ![Assigned connections under Resources](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-03-assigned-connections.png " ")
 
-4. The two connections should now appear in the Assigned connections list. Click **Assign connection**.
+4. Click **Assign connection**.
 
-    ![Assigned connections under Resources](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-04-assign-connections.png " ")
+    ![Click Assign connection](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-02-assign-connection.png " ")
 
 5. In the Assign connection dialog, from the Connection compartment dropdown, select **SourceATP**. Click **+ Another connection**, and then select **TargetADW** from the dropdown. Click **Assign connection**.
 
-    ![Assigned connection to SourceATP and TargetADW](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-05-sourceatp-assign-connec.png " ")
+    ![Assigned connection dialog](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-04-assign-connections.png " ")
 
 6. Click **Close**.
 
     ![Close Assign connection dialog](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-06a-close-assign-connections.png " ")
+
+    The two connections should now appear in the Assigned connections list. 
 
     ![Assigned connections list](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-06b-assigned-connections-list.png " ")
