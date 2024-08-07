@@ -101,7 +101,7 @@ A Path Connection creates Credentials for the West Distribution Service to conne
     ![Path Information page](./images/04-02-path-info.png " ")
 
 4. On the Source Options page, complete the following fields, and then click **Next**:
-    * For Source Host, paste the **ogg-west-public\_ip** value from the Reservation Information.
+    * For Source Host, paste the **OGG West Public IP** value from the Reservation Information.
     * For Port Number, enter **9013**.
     * For Trail Name, enter **ew**.
     * For For Alias, enter **west\_to\_east**.
