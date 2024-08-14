@@ -133,7 +133,7 @@ A Path Connection creates Credentials for the East Distribution Service to conne
     ![Source Options page](./images/04-03-source-options.png " ")
 
 4. On the Target Options page, complete the following fields, and then click **Next**:  
-    * For Target Host, paste the **OGG West Public IP** value from the Reservation Information. 
+    * For Target Host, paste the **OGG West Private IP** value from the Reservation Information. 
     * For Port Number, enter **9014**.
     * For Trail Name, enter **de**.
     * For Alias, enter **east\_to\_west**.
@@ -176,7 +176,7 @@ A Path Connection creates Credentials for the East Distribution Service to conne
     ![Replication Information page](./images/05-03-rep-info.png " ")
 
 4. The Replicat Options panel consists of four pages. Complete the following fields, and then click **Next**:  
-    * On the Replicat Options page, for Replicat Trail, enter **de**.
+    * On the Replicat Options page, for Name, enter **de**.
     * For Domain, select **OracleGoldenGate** from the dropdown.
     * For Alias, select **WEST** from the dropdown.
     * For Checkpoint Table, select **"OGGADMIN"."CHECKPOINTTABLE"** from the dropdown.
