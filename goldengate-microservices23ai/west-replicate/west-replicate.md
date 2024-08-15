@@ -96,12 +96,12 @@ A Path Connection creates Credentials for the West Distribution Service to conne
 
     ![Click Add Target-Initiated Path](./images/04-01-add-target-in-path.png " ")
 
-3. The Add Path panel consists of seven pages. On the Path Information page, for Name, enter **TPEAST**, and then click **Next**.
+3. The Add Path panel consists of seven pages. On the Path Information page, for Path Name, enter **TPEAST**, and then click **Next**.
 
     ![Path Information page](./images/04-02-path-info.png " ")
 
 4. On the Source Options page, complete the following fields, and then click **Next**:
-    * For Source Host, paste the **OGG West Public IP** value from the Reservation Information.
+    * For Source Host, paste the **OGG West Private IP** value from the Reservation Information.
     * For Port Number, enter **9013**.
     * For Trail Name, enter **ew**.
     * For For Alias, enter **west\_to\_east**.
@@ -144,7 +144,7 @@ A Path Connection creates Credentials for the West Distribution Service to conne
     ![Replicat Information page](./images/05-02-rep-info.png " ")
 
 3. On the Replicat Options page, complete the following fields, and then click **Next**:
-    * For Replicat Trail, enter **dw**.
+    * For Name, enter **dw**.
     * For Domain, select **OracleGoldenGate** from the dropdown.
     * For Alias, select **EAST** from the dropdown.
     * For Checkpoint Table, select **"OGGADMIN"."CHECKPOINTTABLE"** from the dropdown.

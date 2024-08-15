@@ -114,9 +114,29 @@ In this lab, you will:
 
     ![Select Replicat](./images/04-02-services.png " ")
 
-3. Click **Services**, view the status of all the processes.
+3. Click **Admin Service**, and then select **Process Performance** to monitor the performance.
 
-    ![Select Replicat](./images/04-02-services.png " ")
+    ![Select Admin service](./images/04-03-admin-service.png " ")
+
+4. Under **Thread Performance**, monitor different threads, such as Extract, Service Threads, and Monitoring.
+
+    ![Select Thread Performance](./images/04-04-thread-perf.png " ")
+
+5. Under **Status and Configuration**, view various Process Messages and Process Status Changes.
+
+    ![Select Status and Configuration](./images/04-05-status-conf.png " ")
+
+6. Click **Dist Service**, and then select **Process Performance** to monitor the performance. Select **Thread Performance** and **Status and Configuration** to monitor different threads, and view various Process Messages and Process Status Changes.
+
+    ![Select Dist Service](./images/04-06-dist-service.png " ")
+
+7. Click **PM Service**, and then select **Process Performance** to monitor the performance. Select **Thread Performance**, **Status and Configuration**, and **Performance Metric Service** to monitor different threads, and view various Process Messages and Process Status Changes.
+
+    ![Select PM Service](./images/04-07-pm-service.png " ")
+
+8. Click **Recv Service**, and then select **Process Performance** to monitor the performance. Select **Thread Performance**, and **Status and Configuration** to monitor different threads, and view various Process Messages and Process Status Changes.
+
+    ![Select Recv Service](./images/04-08-recv-service.png " ")
 
 ## Task 5: Navigate Receiver Service
 
