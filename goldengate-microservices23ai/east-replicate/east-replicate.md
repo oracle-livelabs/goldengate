@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps create and run an Extract, add a User Administrator, create a Path Connection, create and run a Distribution Path, and create and run a Replicat.
+In this lab, you create and run an Extract, add a User Administrator, create a Path Connection, create and run a Distribution Path, and create and run a Replicat that replicates data one way from East to West
 
 Estimated time: 20 minutes
 
@@ -31,7 +31,7 @@ In this lab, you will:
 
 ## Task 1:  Add and run an Extract
 
-1. Make sure that you're on the **East** Microservices WebUI. In the navigation menu, click **Extracts**.
+1. Ensure that you're on the **East** Microservices WebUI. In the navigation menu, click **Extracts**.
 
 2. Click **Add Extract** (plus icon).
 
@@ -68,7 +68,7 @@ In this lab, you will:
 
     You return to the GoldenGate 23ai Microservices WebUI Home page.
 
-8. In the EEAST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**. 
+8. The EEAST Extract appears. In the EEAST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**. 
 
     ![Start Extract](./images/01-08-start-extract.png " ")
 
@@ -77,13 +77,13 @@ This user will be used by the West Deployment to connect to the East Receiver Se
 
 1. Switch to the **West** Microservices WebUI.
 
-2. Open the navigation menu and then click **User Administration**.
+2. In the navigation menu and then click **User Administration**.
 
-3. Click **Add New User** (plus icon). 
+3. On the Users page, click **Add New User** (plus icon). 
 
     ![Add New User](./images/02-03-new-user-list.png " ")
 
-4. A Create new User pop up will appear, complete the following fields, and then click **Submit**:  
+4. In the Create new User panel, complete the following fields, and then click **Submit**:  
     * For the Authenticated By dropdown, select **Password**.
     * For the Role dropdown, select **Operator**.
     * For Info, enter **Path User**.
@@ -92,7 +92,7 @@ This user will be used by the West Deployment to connect to the East Receiver Se
 
     ![Create New User](./images/02-04-create-new-user.png " ")
 
-5. The user you created appears in the Users list.
+    The user you created appears in the Users list.
 
     ![User list](./images/02-05-user-list.png " ")
 
@@ -105,14 +105,14 @@ A Path Connection creates Credentials for the East Distribution Service to conne
 
     ![Click Add Path Connection](./images/03-02-add-path-connect.png " ")
 
-3. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
+3. In the Path Connection panel, complete the following fields, and then click **Submit**:  
     * For Credential Alias, enter **east\_to\_west**.
     * For User ID, enter **oggnet-west**.
     * For Password, paste the Global Password from the Reservation Information. Verify the password. 
 
     ![Path Connection panel](./images/03-03-path-connect.png " ")
 
-4. The path connection you created appears in the Path Connections list.
+    The path connection you created appears in the Path Connections list.
 
     ![Path Connection list](./images/03-04-pc-list.png " ")
 
@@ -140,15 +140,15 @@ A Path Connection creates Credentials for the East Distribution Service to conne
 
     ![Target Options page](./images/04-04-target-options.png " ")
     
-5. On the Advanced Options page, leave the fields as is, and click **Next**.
+5. On the Advanced Options page, leave the fields as they are, and click **Next**.
 
     ![Advanced Options page](./images/04-05-adv-options.png " ")
 
-6. On the Filtering Options page, leave the fields as is, and click **Next**.
+6. On the Filtering Options page, leave the fields as they are, and click **Next**.
 
     ![Filtering Options page](./images/04-06-filtering-options.png " ")
 
-7. On the Managed Options page, leave the fields as is, and click **Create Path**.
+7. On the Managed Options page, leave the fields as they are, and click **Create Path**.
 
     ![Managed Options page](./images/04-07-managed-options.png " ")
 
@@ -197,7 +197,7 @@ A Path Connection creates Credentials for the East Distribution Service to conne
 
     ![Parameter File page](./images/05-07-param-file.png " ")
 
-8. In the RWEST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**. 
+8. The RWEST Replicat appears. In the RWEST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**. 
 
     ![Start Replicat](./images/05-08-start-replicat.png " ")
 

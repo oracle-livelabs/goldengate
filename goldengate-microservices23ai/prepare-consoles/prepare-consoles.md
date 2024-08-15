@@ -78,7 +78,7 @@ In this lab, you will:
 
     ![Checkpoint Table](./images/02-02-checkpoint-table.png " ")
 
-3. In the navigation menu, click **Trandata**.
+3. The new Checkpoint table appears in the list. In the navigation menu, click **Trandata**.
 
     ![Trandata](./images/02-03-trandata.png " ")
 
@@ -90,7 +90,7 @@ In this lab, you will:
 
     ![Trandata panel](./images/02-05-trandata.png " ")
 
-6. To verify, enter **HR** into the Search field and click Search.
+6. To verify, enter **HR** into the Search field and click **Search**. The HR schema appears in the search results.
 
     ![Verify Trandata](./images/02-06-verify-trandata.png " ")
 
@@ -98,9 +98,13 @@ In this lab, you will:
 
     ![Add Heartbeat](./images/02-07-add-heartbeat.png " ")
 
-8. An Add Heartbeat Table panel appears. Keeps the fields as is and click **Submit**.
+8. An Add Heartbeat Table panel appears. Keep the fields as they are, and then click **Submit**.
 
     ![Add Heartbeat Table](./images/02-08-add-heartbeat-table.png " ")
+
+9. The Heartbeat page refreshes with the new settings.
+
+    ![Refreshed Heartbeat page](./images/02-09-new-heartbeat.png " ")
 
 ## Task 3: Add a custom-managed profile
 
@@ -112,11 +116,15 @@ In this lab, you will:
 
 3. An Add Managed Process Settings Profile panel appears, complete the following fields, and then click **Submit**: 
     * For Profile Name, enter **east-profile**.
-    * Enable **Default Profile** toggle.
-    * Enable **Auto Start** toggle.
-    * Enable **Auto Restart** toggle.
+    * Enable **Default Profile**.
+    * Enable **Auto Start**.
+    * Enable **Auto Restart**.
 
     ![Add Managed Process Settings Profile panel](./images/03-03-add-profile-panel.png " ")
+
+4. The Managed Process Profiles list updates with **east-profile**.
+
+    ![Refreshed Profiles page](./images/03-04-new-profile.png " ")
 
 Keep the **East** WebUI console open.
 
