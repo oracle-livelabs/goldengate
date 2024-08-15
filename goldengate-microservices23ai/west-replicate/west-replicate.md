@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps create and run an Extract, add a User Administrator, create a Path Connection, create and run a Target-Initiated Path, and create and run a Replicat.
+In this lab, you create and run an Extract, add a User Administrator, create a Path Connection, create and run a Target-Initiated Path, and create and run a Replicat that replicates data in the opposite direction from West to East.
 
 Estimated time: 20 minutes
 
@@ -66,27 +66,27 @@ In this lab, you will:
 
     ![Parameter File page](./images/01-07-param-file.png " ")
 
-8. In the EWEST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**. 
+8. The EWEST Extract appears. In the EWEST **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**. 
 
     ![Start Extract](./images/01-08-start-extract.png " ")
 
 ## Task 2: Add a Path Connection
 A Path Connection creates Credentials for the West Distribution Service to connect to the East Receiver Service. 
 
-1. Switch to the **East** Microservices WebUI.
+1. Switch to the **East** Microservices WebUI. On the top navigation menu, click **Administration Service**.
 
-2. In the navigation menu, click **Path Connections**, and then Click **Add Path Connection** (plus icon).
+2. In the navigation menu, click **Path Connections**, and then click **Add Path Connection** (plus icon).
 
     ![Click Add Path Connection](./images/02-02-add-path-connect.png " ")
 
-3. A Path Connection panel appears, complete the following fields, and then click **Submit**:  
+3. In the Path Connection panel, complete the following fields, and then click **Submit**:  
     * For Credential Alias, enter **west\_to\_east**.
     * For User ID, enter **oggnet-west**.
     * For Password, paste the Global Password from the Reservation Information. Verify the password. 
 
     ![Path Connection panel](./images/02-03-path-connect.png " ")
 
-4. The path connection you created appears in the Path Connections list.
+    The path connection you created appears in the Path Connections list.
 
     ![Path Connection list](./images/02-04-pc-list.png " ")
 
@@ -112,15 +112,15 @@ A Path Connection creates Credentials for the West Distribution Service to conne
 
     ![Target Options page](./images/04-04-target-opts.png " ")
 
-6. On the Advanced Options page, leave the fields as is, and click **Next**.
+6. On the Advanced Options page, leave the fields as they are, and click **Next**.
 
     ![Advanced Options page](./images/04-05-adv-options.png " ")
 
-7. On the Filtering Options page, leave the fields as is, and click **Next**.
+7. On the Filtering Options page, leave the fields as they are, and click **Next**.
 
     ![Filtering Options page](./images/04-06-filtering-options.png " ")
 
-8. On the Managed Options page, leave the fields as is, and click **Create Path**.
+8. On the Managed Options page, leave the fields as they are, and click **Create Path**.
 
     ![Managed Options page](./images/04-07-managed-options.png " ")
 
