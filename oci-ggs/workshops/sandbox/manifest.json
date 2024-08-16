@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Build faster replication processes with OCI GoldenGate",
+    "workshoptitle": "Mirror your data in minutes with OCI GoldenGate",
     "help": "livelabs-help-db_us@oracle.com",
     "include": {
         "01-create-source-connection.md":"../../../ggs-common/building-blocks/tasks/create/01-create-source-connection.md",
