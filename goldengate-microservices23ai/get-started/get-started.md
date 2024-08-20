@@ -14,7 +14,7 @@ Estimated Time: 5 minutes
 
 ## Task 1: View Login Information
 
-1. Create a reservation for a LiveLab Workshop by clicking the **Start** button, then on the green button, **Run on the LiveLabs Sandbox**.
+1. To create a reservation, click **Start**, and then **Run on LiveLabs Sandbox**.
 
     ![Run on sandbox](./images/01-01-run-sandbox.png " ")
 
@@ -22,11 +22,11 @@ Estimated Time: 5 minutes
 
     ![Submit the reservation](./images/01-02-submit-res.png " ")
 
-3. After creating a reservation for a LiveLab Workshop, you will receive an e-mail indicating that your reservation is being processed, followed by an e-mail indicating that your environment has been created.
+3. You'll receive emails updating you on the status of your reservation, including one notifying you that your environment is ready to use.
 
     ![Rservation email](./images/01-03-res-email.png " ")
 
-4. Log into LiveLabs. Click your username, and click **My Reservations**. Then click the **Launch Workshop** link for the Workshop environment you'd like to use. Note that you may have several Workshops listed.
+4. Log in to LiveLabs. Click your username, and then **My Reservations**. On the My Reservations page, click **Launch Workshop** for the environment you want to use.
 
     ![My reservations](./images/01-04-my-res.png " ")
 
