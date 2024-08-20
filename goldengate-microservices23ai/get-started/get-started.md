@@ -38,6 +38,8 @@ Estimated Time: 5 minutes
 
     ![Terraform Values](./images/01-06-terraform-values.png " ")
 
+    > **NOTE:** If you see “Your connection is not private” or its variations, for the purposes of this lab, proceed to access the website.
+
 7.  To log in to the Oracle GoldenGate East 23ai Microservices WebUI console, enter **oggadmin** for Username and paste the **Global Password** from the Reservation Information for Password, and then click **Sign In**. 
 
     > **NOTE:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
