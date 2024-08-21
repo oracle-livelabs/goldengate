@@ -122,7 +122,7 @@ Keep the **East** WebUI console open.
 
     > **NOTE:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
 
-    ![GoldenGate deployment console sign in](./images/01-03-console-login.png " ")
+    ![GoldenGate deployment console sign in](./images/04-02-console-login.png " ")
 
     After you log in successfully, you're brought to the Oracle GoldenGate 23ai deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
 
