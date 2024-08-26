@@ -23,10 +23,10 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
 
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-    - Lab: Environment Setup
-    - Lab: Discovery of the environment
-    - Lab: Setup of the replication between Oracle and Kafka
+  - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+  - Lab: Environment Setup
+  - Lab: Discovery of the environment
+  - Lab: Setup of the replication between Oracle and Kafka
 
 ## Task 1:Generate Transactions on the Oracle database
 
@@ -41,23 +41,51 @@ To simulate an active application interacting with a database, we'll be using a 
     - Ensure you are logged in as user **oracle**
     - Change directory in both terminal windows to the **scripts** subdirectory
 
-      ```
+      ```bash
       <copy>cd scripts</copy>
       ```
-2. Run the **load.sh** script to start injecting data into the Oracle database:
 
+2. Clean the Kafka stream "Employees"
+
+    To ensure you have no old data in the Kafka stream, you can run a shell script to clean the queue:
+
+    ```bash
+    <copy>sh delete_kafka.sh</copy>
     ```
+
+3. Run the **load.sh** script to start injecting data into the Oracle database:
+
+    ```bash
     <copy>
     sh load.sh
     </copy>
     ```
+
     You should see an output as in the below image:
 
    ![output load script](./images/load-res.png " ")
 
-3. Observe the transactions being inserted into the database: in the **second Terminal** window, run the monitor command to observe the database insertions:
+   **Trouble-shooting:** You might see the error "ORA-28002 The Password Will Expire ..." or "ORA-28001 The Password has expired".
 
-      ```
+   Simply connect to the database as user sys@PDB and reset the password:
+
+    ```bash
+    <copy>
+    sqlplus sys/Welcome#123@PDB as sysdba
+    </copy>
+    ```
+
+    and
+
+    ```sql
+    <copy>
+    ALTER USER SOURCE_APP identified by Welcome#123
+    </copy>
+    ```
+
+4. Observe the transactions being inserted into the database: in the **second Terminal** window, run the monitor command to observe the database insertions:
+
+      ```bash
       <copy>
       sh monitor_oracle.sh
       </copy>
@@ -68,10 +96,9 @@ To simulate an active application interacting with a database, we'll be using a 
 
     ![output monitor script oracle](./images/monitor-o.png " ")
 
+5. List the available Kafka topics:
 
-4. List the available Kafka topics:
-
-    ```
+    ```bash
     <copy>
     sh list_topics.sh
     </copy>
@@ -79,9 +106,9 @@ To simulate an active application interacting with a database, we'll be using a 
 
     ![List kafka topics](./images/list-topics.png " ")
 
-5. List the events on the Kafka topic **EMPLOYEES**
+6. List the events on the Kafka topic **EMPLOYEES**
 
-    ```
+    ```bash
     <copy>
     sh monitor_kafka.sh
     </copy>
@@ -106,7 +133,7 @@ We'll return to the browser window with the GoldenGate Administration Service
 
     ![Stats tab](./images/db-stats.png " ")
 
-    You should see some records already inserted, and you can use the **Refresh** button to see the counter increase.
+    You should see some records already inserted, you can use the **Refresh** button to see the counter increase.
 
 6. Click on the tab **Performance Metrics Service** on the very top of the window to see much more detailed information
 
@@ -154,4 +181,4 @@ We'll return to the browser window with the GoldenGate Administration Service
 
 - **Author** - Jan Leemans, December 2023
 - **Contributors** - Carmelo Millan
-- **Last Updated By/Date**
+- **Last Updated** - Jan Leemans, June 2024

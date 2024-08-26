@@ -4,7 +4,7 @@
 
 Oracle GoldenGate, the industry-leading data replication and integration software, is now available as a fully managed cloud service on Oracle Cloud Infrastructure (OCI). Existing Oracle GoldenGate customers with an on-premises installation or Marketplace image can use this workshop to help you data from Oracle GoldenGate to OCI GoldenGate.
 
-> ***Note:** This workshop uses Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
+> **Note:** This workshop uses Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.
 
 ![Diagram](./images/onprem2oci.png)
 

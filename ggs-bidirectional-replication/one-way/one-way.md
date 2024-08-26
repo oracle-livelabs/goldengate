@@ -29,89 +29,93 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 ## Task 1: Launch the GoldenGate Deployment Console
 
-[](include:01-launch-console.md)
+[](include:01-launch-console-23ai.md)
 
-## Task 2: Add Transaction Data and a Checkpoint Table
+## Task 2: Add a Checkpoint Table and Transaction information
 
-1.  Open the navigation menu and then click **Configuration**.
+1.  In the navigation menu, click **DB Connections**.
 
-    ![Administration Service navigation menu](./images/01-02-nav-config.png " ")
+    ![Administration Service navigation menu](./images/01-01-nav-dbconn.png " ")
 
-2.  On the **Database** page, in the **Credentials** table, under **Action**, click **Connect to database SourceATP**. Checkpoint, TRANDATA Information, and Heartbeat options appear.
+2.  On the **DB Connections** page, click **Connect to database SourceATP** in the Actions column.
 
-    ![Credentials list with Connect to database SourceATP highlighted](./images/01-03-connect-source.png " ")
+    ![Credentials list with Connect to database SourceATP highlighted](./images/01-02-connect-source.png " ")
 
-3.  Next to **TRANDATA Information** click **Add TRANDATA**.
+3.  On the Checkpoint page, click **Add Checkpoint** (plus icon).
 
-    ![Add TRANDATA](./images/01-04-trandata.png " ")
+    ![Add Checkpoint table](./images/01-03-add-checkpoint.png " ")
 
-4.  For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**. The deployment console processes your request, but does not refresh the page.
+4.  For **Checkpoint Table**, enter **"SRC\_OCIGGLL"."ATP\_CHECKTABLE"**, and then click **Submit**.
 
-    ![Schema Name field populated with SRC_OCIGGLL](./images/01-05-schema-name.png " ")
+    ![Add checkpoint to source](./images/01-04-src-checkpoint.png " ")
 
-5.  To verify, click **Search TRANDATA**, and then enter **SRC\_OCIGGLL** into the Search field and click **Search**. SRC_OCIGGLL is returned and 6 tables are prepared for instantiation.
+5.  In the navigation menu, under **SourceATP**, click **Trandata**.
 
-    ![Search icon highlighted](./images/01-06a-search.png " ")
+6.  On the TRANDATA Information page, click **Add TRANDATA** (plus icon). 
 
-    ![SRC_OCIGGLL entered in search field and search results returned](./images/01-06b-trandata.png " ")
+    ![Click Trandata](./images/01-05-trandata.png)
 
-6.  Next to Checkpoint, click **Add Checkpoint**.
+7.  In the Trandata panel, enter `SRC_OCIGGLL` and then click **Submit**.
 
-7.  For **Checkpoint Table**, enter **"SRC\_OCIGGLL"."ATP\_CHECKTABLE"**, and then click **Submit**.
+    ![Schema Name field populated with SRC_OCIGGLL](./images/01-06-schema-name.png " ")
 
-    ![Add checkpoint to source](./images/01-08-src-checkpoint.png " ")
+8.  To verify, enter **SRC\_OCIGGLL** into the Search for Schema field and click **Search**. SRC_OCIGGLL is returned and 8 tables are prepared for instantiation.
 
-8.  In the **Credentials** table, under **Action**, click **Connect to database TargetADW**. Checkpoint, TRANDATA Information, and Heartbeat options for TargetADW appear. It may takes a few minutes to connect to the database.
+    ![Search icon highlighted](./images/01-08-search-schema.png " ")
 
-    ![Credentials list with Connect to database TargetADW highlighted](./images/01-09-credentials-targetadw.png " ")
+9.  In the navigation menu, click **TargetADW**, then **Checkpoint**.
 
-9. Next to **TRANDATA Information**, click **Add TRANDATA**.
+10. On the Checkpoint page, click **Add Checkpoint**.
 
-10. For **Schema Name**, enter **SRCMIRROR\_OCIGGLL**, and then click **Submit**. The deployment console processes your request, but does not refresh the page.
+    ![Connect to TargetADW](./images/01-09-targetadw.png " ")
 
-    ![Add trandata to target](./images/01-11-tgt-trandata.png " ")
+11. For **Checkpoint Table**, enter `"SRCMIRROR_OCIGGLL"."CHECKTABLE"`, and then click **Submit**.
 
-11. To verify, click **Search TRANDATA**, and then enter **SRCMIRROR\_OCIGGLL** into the Search field and click **Search**.
+    ![Populated Checkpoint table field and submit button highlighted](./images/01-11-checktable.png " ")
 
-12. Next to Checkpoint, click **Add Checkpoint**.
+    The Checkpoint table now lists "SRCMIRROR\_OCIGGLL"."CHECKTABLE".
 
-    ![Add Checkpoint highlighted](./images/01-13-add-checkpoint.png " ")
+    ![Checkpoint table refreshed](./images/01-11b-checktable.png " ")
 
-13. For **Checkpoint Table**, enter **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**, and then click **Submit**.
+12. In the navigation menu, under **TargetADW**, click **Trandata**.
 
-    ![Populated Checkpoint table field and submit button highlighted](./images/01-14-checktable.png " ")
+13. On the TRANDATA Information page, click **Add TRANDATA**. 
 
-To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
+    ![Add trandata](./images/01-13-add-trandata.png " ")
+
+14. In the Trandata panel, for **Schema Name**, enter `SRCMIRROR_OCIGGLL`, and then click **Submit**. The deployment console processes your request, but does not refresh the page.
+
+    ![Add trandata to target](./images/01-14-trandata.png " ")
+
+15. To verify, click **Search TRANDATA**, and then enter **SRCMIRROR\_OCIGGLL** into the Search field and click **Search**.
+
+    ![Verify target trandata](./images/01-15-verifytrandata.png " ")
 
 ## Task 3: Add and run an Extract
 
-1.  Use the navigation to return to the Overview page, then click **Add Extract** (plus icon).
+1.  In the navigation menu, click **Extracts**.
 
-    ![Click Add Extract](./images/02-01-ggs-add-extract.png " ")
+2.  On the Extracts page, click **Add Extract** (plus icon). 
 
-2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
+    ![Add Extract page with Integrated Extract highlighted](./images/02-02-extracts.png " ")
 
-    ![Add Extract page with Integrated Extract highlighted](./images/02-02-integrated-extract.png " ")
+3.  In the Add Extract panel, select Integrated Extract, enter `EXTA` for **Process Name**, and then click **Next**.
 
-3.  For **Process Name**, enter UAEXT.
+    ![Extract Information page](./images/02-02-integrated-extract.png " ")
 
-4.  For **Trail Name**, enter E1.
+4.  On the Extract Options page, complete the following fields, and then click **Next**:
+
+    * For **Domain**, select **OracleGoldenGate**.
+    * For **Alias**, select **SourceATP**.
+    * For **Trail Name**, enter `E1`.
 
     ![Add Extract - Basic Information](./images/02-04-ggs-basic-info.png " ")
 
-5.  Under **Source Database Credential**, for **Credential Domain**, select **OracleGoldenGate**.
-
-6.  For **Credential Alias**, select the **SourceATP**.
-
-    ![Add Extract - Source Database Credential](./images/02-06-ggs-src-db-credential.png " ")
-
-7.  Under Managed Options, enable **Critical to deployment health**.
+5.  On the Managed Options page, enable **Critical to deployment health**.
 
     ![Critical to deployment health highlighted](./images/02-07-crit-deploy-health.png " ")
 
-8.  Click **Next**.
-
-9.  On the Parameter File page, in the text area, add a new line to the existing text and add the following:
+6.  On the Parameter File page, in the text area, add a new line to the existing text and add the following:
 
     ```
     <copy>-- Capture DDL operations for listed schema tables
@@ -144,9 +148,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     > **Note:** 'tranlogoptions excludeuser ggadmin' avoids recapturing transactions applied by 'ggadmin' in bidirectional replication scenarios.
 
-10. Click **Create and Run**. You're returned to the OCI GoldenGate Deployment Console Home page.
-
-    It may takes a few minutes for the extract to be created. The yellow exclamation point icon changes to a green checkmark. 
+7.  Click **Create and Run**. The Extract appears after a few moments.
 
     ![Extract started](./images/02-10-ggs-extract-started.png)
 
@@ -424,31 +426,30 @@ Before importing data to the target database, create a credential in the target 
 
 ## Task 7: Add and run the Replicat
 
-1.  On the GoldenGate Deployment Console Home page, click **Add Replicat** (plus icon).
+1.  In the navigation menu, click **Replicats**. 
+
+2.  On the Replicats page, click **Add Replicat** (plus icon).
 
     ![GoldenGate Deployment Console Home page](./images/07-01-ggs-add-replicat.png)
 
-2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
+3.  In the Add Replicat panel, select **Nonintegrated Replicat**, enter `REPA` **Process Name**, and then click **Next**.
 
     ![Add Replicat page](./images/07-02-nonintegrated-rep.png " ")
 
-3.  On the Replicat Options page, for **Process Name**, enter **Rep**.
+3.  On the Replicat Options page, complete the following fields, and then click **Next**: 
 
-4.  For **Credential Domain**, select **OracleGoldenGate**.
+    * For **Replicat Trail Name**, enter `E1`.
+    * For **Domain**, select **OracleGoldenGate**.
+    * For **Alias**, select **TargetADW**.
+    * For **Checkpoint Table**, select **"SRCMIRROR_OCIGGLL","CHECKTABLE"**.
 
-5.  For **Credential Alias**, select **TargetADW**.
+    ![Add Replicat - Replicat Options](./images/07-03-rep-opts.png " ")
 
-6.  For **Trail Name**, enter E1.
+4.  On the **Managed Options** page, enable **Critical to deployment health**, and then click **Next**.
 
-7.  For **Checkpoint Table**, select **"SRCMIRROR_OCIGGLL","CHECKTABLE"**.
+    ![Critical to deployment health highlighted](./images/07-04-dep-health.png " ")
 
-    ![Add Replicat - Basic Information](./images/07-07-add-replicat.png " ")
-
-8.  Under **Managed Options**, enable **Critical to deployment health**, and then click **Next**.
-
-    ![Critical to deployment health highlighted](./images/07-08-crit-deploy-health.png " ")
-
-9.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with the following script:
+5.  On the **Parameter File** page, in the text area, replace **MAP \*.\*, TARGET \*.\*;** with the following script:
 
     ```
     <copy>-- Capture DDL operations for listed schema tables
@@ -481,15 +482,13 @@ Before importing data to the target database, create a credential in the target 
     MAP SRC_OCIGGLL.*, TARGET SRCMIRROR_OCIGGLL.*;</copy>
     ```
 
-    ![Add Replicat - Parameter File](./images/07-09-param-file.png " ")
+    ![Add Replicat - Parameter File](./images/07-05-param-file.png " ")
 
     > **Note:** 'DBOPTIONS ENABLE\_INSTATIATION\_FILTERING' enables CSN filtering on tables imported using Oracle Data Pump. For more information, see [DBOPTIONS Reference](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service/using&id=GWURF-GUID-BA8C0CED-D87F-4106-862E-4AD22D910160).
 
-10.  Click **Create and Run**.
+6.  Click **Create and Run**. Your Replicat appears after a few moments.
 
-     It may takes a few minutes for the replicat to be created. The yellow exclamation point icon changes to a green checkmark.
-
-    ![Checkmark next to the replicat](./images/07-10-rep-checkmark.png " ")
+    ![Checkmark next to the replicat](./images/07-06-replicats.png " ")
 
 ## Task 8: Perform Inserts to the Source Database
 
@@ -499,13 +498,10 @@ Before importing data to the target database, create a credential in the target 
 
     ![Autonomous Transaction Processing page](./images/08-01b-sourceatp.png " ")
 
-2.  On the Source ATP Details page, click **Database Actions**.
+2.  On the Source ATP Details page, click **Database Actions**, then **SQL**.
     ![SourceATP Database Details page](./images/08-02-db-actions.png " ")
 
-3.  Click **SQL**.
-    ![Click SQL](./images/08-03-sql.png " ")
-
-4.  Enter the following inserts, and then click **Run Script**:
+3.  Enter the following inserts, and then click **Run Script**:
 
     ```
     <copy>Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1000,'Houston',20,743113);
@@ -522,21 +518,21 @@ Before importing data to the target database, create a credential in the target 
 
     ![SQL Return](./images/08-04-sql-script-return.png " ")
 
-5.  In the OCI GoldenGate Deployment Console, click the **Extract name (UAEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+5.  In the OCI GoldenGate deployment console navigation menu, click **Extracts**, then **Extract name (EXTA)**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Extract Process Information - Statistics](./images/08-05-ext-statistics.png " ")
 
-6.  Go back to the Overview screen, click the **Replicat name (REP)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+6.  In the navigation menu, click **Replicats**, then **Replicat name (REPA)**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Replicat Process Information - Statistics](./images/08-06-rep-statistics.png " ")
 
 
 ## Learn more
 
-* [Creating an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-3B004DB0-2F41-4FC2-BDD4-4DE809F52448)
-* [Creating a Replicat](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-063CCFD9-81E0-4FEC-AFCC-3C9D9D3B8953)
+* [Add an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/)
+* [Add a Replicat](https://docs.oracle.com/en/cloud/paas/goldengate-service/cress/)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, March 2024
+* **Last Updated By/Date** - Jenny Chan, June 2024

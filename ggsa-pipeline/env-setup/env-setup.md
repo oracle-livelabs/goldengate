@@ -17,7 +17,7 @@ To successfully complete this lab, you must:
 
 * Have completed the Get Started lab and sign up for Free Tier/Log in to Oracle Cloud.
 * For IAM-enabled tenancies, ensure that you [configure Identity domains for OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/mkmbs/#GUID-DD9C1BF8-69FE-4C9A-A2D1-74C73550ED65).
-* For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault).  [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
+* For non-IAM enabled tenancies and Stream Analytics, ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault).  [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
 
 
 > **Notes:** 
@@ -45,12 +45,12 @@ To successfully complete this lab, you must:
 
 5.  Repeat steps 1 to 4 to add Source CIDR `0.0.0.0/0` and Destination Port Range `443` to the public subnet.
 
-## Task 2: Create an ATP instance
+## Task 3: Create an ATP instance
 
 [](include:02-create-atp-instance.md)
 
 
-## Task 3: Load the ATP schema and enable supplemental logging
+## Task 4: Load the ATP schema and enable supplemental logging
 
 [](include:03-load-atp-schema.md)
 
@@ -90,5 +90,5 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated** - March 2024
+- **Last Updated** - Katherine Wardhana, May 2024
 - **PAR Expiration date** - February 2030

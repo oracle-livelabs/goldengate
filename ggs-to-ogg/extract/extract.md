@@ -34,7 +34,7 @@ This lab assumes that you completed all preceding labs. For the purposes of this
 
     ![Add TRANDATA](./images/01-03-trandata.png " ")
 
-4.  For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**. *You only need to click Submit once. Click Search, and then enter SRC_OCIGGLL to verify.*
+4.  For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**. You only need to click Submit once. Click Search, and then enter SRC_OCIGGLL to verify.
 
     ![Schema Name field populated with SRC_OCIGGLL](./images/01-04-trandata.png " ")
 
@@ -257,4 +257,4 @@ In this lab, you created an Extract, a Receiver Path, and a Replicat, and you ve
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2023
+* **Last Updated By/Date** - Katherine Wardhana, May 2024

@@ -23,18 +23,23 @@ In this lab, you will:
 * Review the deployment details
 * Assign connections to the deployments 
 
-
 ## Task 1: Review the deployment
 
 1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
 
     ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
-2. You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment.
+2. On the GoldenGate **Overview** page, click **Deployments**.
 
-3. On the GoldenGate **Overview** page, click **Deployment** and then **OCI GoldenGate Deployment**.
+    ![GoldenGate Overview - Deployments](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview-deployment.png " ")
+3. On the Deployments page, under **List scope**, select your compartment from the **Compartment** dropdown.
+
+    > **NOTE**: If you're using the LiveLab Sandbox environment, you can find your compartment number in the Reservation Information panel (View Login Info) of the workshop instructions.
+
+4. Select **OCI GoldenGate Deployment** in the Deployments list.
+
+    ![Select OCI GoldenGate Deployment](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-ggs-deployments.png " ")
 
 You can perform the following actions on the deployment details page:
 
@@ -46,12 +51,11 @@ You can perform the following actions on the deployment details page:
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details](./images/02-17-deployment-details.png)
+    ![Deployment Details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-01-deployment-details.png " ")
 
 ## Task 2: Create the source connection
 
 [](include:01-create-source-connection.md)
-
 
 ## Task 3: Unlock the GGADMIN user and enable supplemental logging for the source database
 
@@ -61,6 +65,8 @@ You can perform the following actions on the deployment details page:
 
 [](include:03-create-target-connection.md)
 
+13. Repeat Task 3, steps 1-6, to unlock the GGADMIN user for the TargetADW database.
+
 ## Task 5: Assign connections to the deployment
 
 [](include:05-assign-connection.md)
@@ -69,10 +75,11 @@ You may now **proceed to the next lab.**
 
 ## Learn more
 
-* [Managing deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/ebbpf/index.html)
-* [Managing connections](https://docs.oracle.com/en/cloud/paas/goldengate-service/mcjzr/index.html)
+* [Create a data replication deployment](https://docs.oracle.com/en/cloud/paas/goldengate-service/llyhq/#GUID-899C1348-58CA-43EE-B775-EAD3B365A7A9)
+* [Connect to Oracle Autonomous Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/tqrlh/)
+* [Assign a connection to a deployment](https://docs.oracle.com/en/cloud/paas/goldengate-service/llyhq/#GUID-69F7C944-DD31-40FA-8589-4CB5113E74D0)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2024
+* **Last Updated By/Date** - Jenny Chan, July 2024

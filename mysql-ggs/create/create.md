@@ -25,6 +25,29 @@ In this lab, you will:
 
 This lab assumes you completed the environment set up lab, if you're running this workshop on your own tenancy.
 
+To successfully complete this lab in your own tenancy:
+* For IAM-enabled tenancies, ensure that you [configure Identity domains for OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/mkmbs/#GUID-DD9C1BF8-69FE-4C9A-A2D1-74C73550ED65).
+* For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault). [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
+* Add an API key in your profile settings to be used in Task 3:
+
+1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **User settings**.
+
+    ![Oracle Cloud console User menu](images/00-01-profile.png " ")
+
+2.  On the user details page, under **Resources**, click **API Keys**.
+
+3.  Click **Add API Key**.
+
+    ![Resources on User details page](images/00-03-apikey.png " ")
+
+4.  In the Add API Key dialog, click **Download Private Key** to download the key, and then click **Add**.
+
+    ![Download Private key](images/00-04-privatekey.png " ")
+
+5.  In the Configuration File Preview dialog, copy the fingerprint to a text editor, and then click **Close**.
+
+> **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
+
 ## Task 1: Create a deployment for MySQL Heatwave
 
 1.  Open the Oracle Cloud console navigation menu, click **Oracle Database**, and then click **GoldenGate**.
@@ -86,9 +109,9 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
     > **NOTE**: The special characters must not be $, ^, or ?
 
-  ![Example create deployment options](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-19-passwordsecret.png " ") 
-
 21. Confirm the password, and then click **Create**.
+
+  ![Example create deployment options](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-21-passwordsecret.png " ") 
 
 22. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 
@@ -118,19 +141,24 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
   ![Example create ADW deployment options](./images/02-09-adw-deployment.png " ")
 
-10.  For Select a deployment type, select **Data replication**.
+10. For Choose a deployment type, select **Data replication**.
 
-11. From the Select a technology dropdown, select **Oracle Database**.
+11. For Select a technology dropdown, select **Oracle Database**.
 
-12. For GoldenGate Instance Name, enter `ADWinstance`.
+12. For GoldenGate Instance Name, enter **ggsinstance**.
 
-13. For Administrator Username, enter `oggadmin`.
+13. In an IAM-enabled tenancy, select a Credential Store. 
 
-14. For Password secret, select **LLsecret**.
+    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 3.
+    * If you select GoldenGate, complete the following steps.
 
-15. Click **Create**.
+14. For Administrator Username, enter **oggadmin**.
 
-  ![ADW deployment details](./images/02-14-adw-deployment.png " ")
+15. For Password secret, select **LLsecret**.
+
+16. Click **Create**.
+
+  ![ADW deployment details](./images/02-16-adw-deployment.png " ")
 
 You're brought to the deployment details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
@@ -168,11 +196,9 @@ You're brought to the deployment details page. It takes a few minutes for the de
 
 11. For **Security protocol**, select **Plain** from the dropdown.
 
-12. For **Traffic routing method**, choose **Shared endpoint**.
+12. Click **Create**.
 
-13. Click **Create**.
-
-    ![MySQL connection details](./images/03-13-create-mysql-conn.png " ")
+    ![MySQL connection details](./images/03-12-create-mysql-conn.png " ")
 
 The connection becomes Active after a few minutes. Return to the Connections page.
 
@@ -198,11 +224,9 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
 8. Under **Traffic routing method**, choose **Shared endpoint**.
 
-9. Under **Session mode**, choose **Direct**.
+9. Click **Create**.
 
-10. Click **Create**.
-
-    ![ADW connection details](./images/04-10-create-adw-conn.png " ")
+    ![ADW connection details](./images/04-09-create-adw-conn.png " ")
 
 The connection becomes Active after a few minutes.
 
@@ -274,5 +298,5 @@ Create a GoldenGate connection if your ADW deployment doesn't have a public endp
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, January 2024
-* **PAR Expiration** - February 2024
+* **Last Updated By/Date** - Katherine Wardhana, May 2024
+* **PAR Expiration** - February 2030
