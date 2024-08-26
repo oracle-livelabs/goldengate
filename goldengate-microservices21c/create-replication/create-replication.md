@@ -89,9 +89,18 @@ This lab assumes you have:
     **Troubelshooting**: In case you get an error when testing the connection to the database, double-check your listener configuration is set up correctly, as already explained in the *Discover the Environment section*:
 
     - In the terminal window, connect to the database as system: ```sqlplus system/Welcome#123 as sysdba```
-    - configure the listener: ```alter system set LOCAL_LISTENER='' scope=both;```
+    - Configure the listener: ```alter system set LOCAL_LISTENER='' scope=both;```
+    - If you had an error stating that the password has expired ("ORA-28002 The Password Will Expire ..." or "ORA-28001 The Password has expired"), run the following command:
+
+        ```sql
+        <copy>
+        sqlplus alter user C##GGADMIN identified by Welcome#123;
+        </copy>
+        ```
+
     - exit sqlplus with ```end```
     - restart the listener with ```lsnrctl stop``` followed by ```lsnrctl start```
+    - Retry to connect to the database by re-clocking the icon.
 
 8. We now need to add a TRANDATA table to the database to acquire the transaction records in the database.
     - Click on the **+** symbol besides the *TRANDATA Information* title
