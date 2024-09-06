@@ -181,7 +181,6 @@ We'll return to the browser window with the GoldenGate Administration Service
 
 10. Observe the various dashboards you have available: Process Performance, Trail Files, and more.
 
-
 **Congratulations, you have reached the end of this Lab !**
 
 ## Learn More

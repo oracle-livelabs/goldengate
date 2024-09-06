@@ -269,9 +269,9 @@ No further actions are required on the receiving end.
 
 As we are receiving transactions in the **oggdaa** deployment, we can use a **Replicat** service to insert them into another destination, in this case we'll be using a Kafka system as a target.
 
-1. Navigate to the Home screen of the service
+1. Re-open the Service Manager (service on port 10000) and select the oggdaa Deployment
 
-2. Click on the **Administrative Service** tab on the top of the screen
+2. Click on the **Administrative Service** Service
 
 3. Click on the **+** sign of the **Replicat** section
 
@@ -286,7 +286,6 @@ As we are receiving transactions in the **oggdaa** deployment, we can use a **Re
 
 5. We'll now configure the Replicat Options with following parameter values:
 
-    - 
     - *Replicat Trail Name*: **rt**
     - *Target*: **Kafka**
     - Click **Next** to continue
