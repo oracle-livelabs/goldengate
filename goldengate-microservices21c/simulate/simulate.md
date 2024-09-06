@@ -65,9 +65,7 @@ To simulate an active application interacting with a database, we'll be using a 
 3. Run the **load.sh** script to start injecting data into the Oracle database:
 
     ```bash
-    <copy>
     sh load.sh
-    </copy>
     ```
 
     You should see an output as in the below image:
