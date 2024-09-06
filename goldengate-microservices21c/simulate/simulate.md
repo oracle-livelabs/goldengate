@@ -74,7 +74,7 @@ To simulate an active application interacting with a database, we'll be using a 
 
    ![output load script](./images/load-res.png " ")
 
-   **Trouble-shooting:** You might see the error "ORA-28002 The Password Will Expire ..." or "ORA-28001 The Password has expired".
+   **Trouble-shooting:** You might see the error  "ORA-28002 The Password Will Expire ..." or "ORA-28001 The Password has expired".
 
    Simply connect to the database as user sys@PDB and reset the password:
 
