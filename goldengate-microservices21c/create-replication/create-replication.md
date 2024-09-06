@@ -10,7 +10,6 @@ In the previous lab you got acquainted with the various components that constitu
 
 *Estimated Lab Time*: 20 mins
 
-
 ### Objectives
 
 In this lab environment all components are on a single Linux Compute environment.  In reality, these components can be distributed across various machines and locations, even if they are very remote from one another.
@@ -30,9 +29,9 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
 
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-    - Lab: Environment Setup
-    - Lab: Discover the environment
+  - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+  - Lab: Environment Setup
+  - Lab: Discover the environment
 
 ## Task 1: Configuring the Database Credentials
 
@@ -86,7 +85,7 @@ This lab assumes you have:
 
     You can see the login takes place, and the section *TRANDATA* appears on the screen.
 
-    **Troubelshooting**: In case you get an error when testing the connection to the database, double-check your listener configuration is set up correctly, as already explained in the *Discover the Environment section*:
+    **Troubleshooting**: In case you get an error when testing the connection to the database, double-check your listener configuration is set up correctly, as already explained in the *Discover the Environment section*:
 
     - In the terminal window, connect to the database as system: ```sqlplus system/Welcome#123 as sysdba```
     - Configure the listener: ```alter system set LOCAL_LISTENER='' scope=both;```
@@ -100,7 +99,7 @@ This lab assumes you have:
 
     - exit sqlplus with ```end```
     - restart the listener with ```lsnrctl stop``` followed by ```lsnrctl start```
-    - Retry to connect to the database by re-clocking the icon.
+    - Retry to connect to the database by re-clicking the icon.
 
 8. We now need to add a TRANDATA table to the database to acquire the transaction records in the database.
     - Click on the **+** symbol besides the *TRANDATA Information* title
@@ -109,7 +108,7 @@ This lab assumes you have:
 
     - Enter the below parameters:
 
-        -  *Schema Name*: **ORCLPDB1.SOURCE_APP**
+        - *Schema Name*: **ORCLPDB1.SOURCE_APP**
         - Select **All Columns**
         - All other parameters remain the default ones
     - Click the **Submit** button
@@ -128,7 +127,6 @@ This lab assumes you have:
          ![result of trandata check](./images/check-tran2.png " ")
 
 This concludes the configuration of the Credentials.
-
 
 ## Task 2 : Configure the Extract process from the source Oracle Database
 
@@ -167,7 +165,7 @@ This concludes the configuration of the Credentials.
 
     - Complete the config by adding the below line to the config:
 
-        ```
+        ```sql
         <copy>TABLE ORCLPDB1.SOURCE_APP.*;</copy>
         ```
 
@@ -289,7 +287,7 @@ As we are receiving transactions in the **bigdata** deployment, we can use a **R
 
 7. Configure the Replicat Parameters: replace the 2nd line of the parameter file with the below value
 
-    ```
+    ```sql
     <copy>MAP ORCLPDB1.SOURCE_APP.*, TARGET TARGET_APP.*;</copy>
     ```
 
@@ -338,7 +336,6 @@ You may now **proceed to the next lab**.
 ## Learn More
 
 - [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/understanding/getting-started-oracle-goldengate.html#GUID-F317FD3B-5078-47BA-A4EC-8A138C36BD59)
-
 
 ## Acknowledgements
 
