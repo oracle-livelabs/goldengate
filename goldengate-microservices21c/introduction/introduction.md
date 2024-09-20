@@ -1,18 +1,20 @@
 # Introduction
 
-This hands-on lab is designed to demonstrate how Oracle GoldenGate 21c can be used to setup a replication environment from an Oracle 21c database towards a Apache Kafka target.
+This hands-on lab is designed to demonstrate how Oracle GoldenGate 23ai can be used to setup a replication environment from an Oracle database towards a Apache Kafka target.
 
-You will be using a pre-configured environment that comprises all components for running this setup: GoldenGate 21 for Oracle and GoldenGate 21c for Distributed Applications and Analytics (previously known as GG for Big Data), as well as an Oracle 21c database and an Apache Kafka.
+You will be using a pre-configured environment that comprises all components for running this setup: GoldenGate 23ai for Oracle and GoldenGate 23ai for Distributed Applications and Analytics (previously known as GG for Big Data), as well as an Oracle 21c database and an Apache Kafka.
 
-We will simulate continuous transactions in the Oracle database “SOURCE_APP”.”EMPLOYEES” table, capture these transactions, send them to the BigData deployment, and deliver them in real-time to a Kafka topic.
+We will simulate continuous transactions in the Oracle database “SOURCE_APP”.”EMPLOYEES” table, capture these transactions, send them to the Distributed Data and Analytics deployment, and deliver them in real-time to a Kafka topic.
 
 The labs will walk you through all the steps to configure all the components of Oracle GoldenGate replication.
 
 *Estimated Lab Time*: 2 hours
 
-## About Oracle GoldenGate 21c
+## About Oracle GoldenGate 23ai
 
-Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making. This workshop focuses on **GoldenGate Real Time Data Capture** demonstrating how you can use such a setup (both on-premise and in the cloud) to capture real time data changes from your sources.
+Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for a wide range of environments. It easily extends customers’ real-time data integration architectures to Analytics systems without impacting the performance of the source systems and enables timely business insight for better decision making. This workshop focuses on **GoldenGate Real Time Data Capture** demonstrating how you can use such a setup (both on-premise and in the cloud) to capture real time data changes from your sources.
+
+We upgraded this lab in September 2024 to use the GoldenGate 23ai version of GoldenGate.
 
 ### Lab Architecture
 
@@ -25,7 +27,7 @@ Non-invasive, real-time transactional data streaming while applying target trans
 KEY BENEFITS
 
 - Improve IT productivity in integrating with data management systems.
-- Use real-time data in big data analytics for more timely and reliable insight
+- Use real-time data in Analytics for more timely and reliable insight
 - Improve operations and customer experience with enhanced business insight
 - Minimize overhead on source systems to maintain high performance
 
@@ -54,10 +56,10 @@ You may now **proceed to the next lab**.
 
 ## Learn More
 
-* [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/understanding/getting-started-oracle-goldengate.html#GUID-F317FD3B-5078-47BA-A4EC-8A138C36BD59)
+* [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/overview-oracle-goldengate.html#GUID-3B1EF969-4A36-4338-820E-16F82B5C646D)
 
 ## Acknowledgements
 
 - **Author** - Jan Leemans, December 2023
 - **Contributors** -Carmelo Millan
-- **Last Updated** - Jan Leemans, June 2024
+- **Last Updated** - Jan Leemans, August 2024

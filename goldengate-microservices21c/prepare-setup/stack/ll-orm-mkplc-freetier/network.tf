@@ -98,7 +98,7 @@ resource "oci_core_network_security_group_security_rule" "llw-net-security-group
   stateless                 = "false"
   tcp_options {
     destination_port_range {
-      max = "10400"
+      max = "10500"
       min = "10000"
     }
   }
