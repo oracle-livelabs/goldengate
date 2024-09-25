@@ -27,17 +27,21 @@ The following diagram shows a standard unidirectional replication in Oracle Gold
 ### Objectives
 
 In this workshop, you will:
-  * Add supplemental logging at source database
-  * Add database credentials
-  * Add Heartbeat table
-  * Add Checkpoint table
-  * Add an Extract process
-  * Add a Replicat process
+  
+  * Run cURL commands using an automation script to set up unidirectional data replication.
+  * Access the Standard Business Reports based on preloaded data.
+  * Delete the data replication environment using cURL commands in another automation script.
+  * Run the OBEY commands using an automation script to set up unidirectional data replication.
+  * Access View the Standard Business Reports
+  * Delete the data replication environment using OBEY commands in another automation script
+  
 
 ### Prerequisites
 The following are required to complete this lab:
-    * Prior knowledge of using Linux command-line options 
-    * Prior knowledge of basic database commands
+
+    * Prior knowledge of using cURL commands 
+    * Prior knowledge of Oracle GoldenGate  
+      commands
 
 
 Watch this short video on adding Database Credentials, Extract, and Replicat Processes in Oracle GoldenGate Microservices on MySQL database:
@@ -48,13 +52,13 @@ You may now **proceed to the next lab**.
 
 ## Learn More
 
-Use these links to get more information about Oracle GoldenGate:
+Use these links to get more information about Oracle GoldenGate 23ai:
 
-* [Oracle GoldenGate Microservices Documentation](https://docs.oracle.com/en/middleware/goldengate/core/21.3/coredoc/index.html)
+* [Oracle GoldenGate Microservices Documentation](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/index.html)
 
-* [Command Line Interface Reference for Oracle GoldenGate](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-credentials.html#GUID-6D80E0AC-9497-46C6-92D9-2F817D04BD99)
+* [Command Line Interface Reference for Oracle GoldenGate](https://docs.oracle.com/en/middleware/goldengate/core/23/gclir/add-credentials.html#GUID-6D80E0AC-9497-46C6-92D9-2F817D04BD99)
 
 ## Acknowledgements
 * **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Volker Kuhr
-* **Last Updated By/Date** - Preeti Shukla, April 2023
+* **Last Updated By/Date** - Preeti Shukla,  2024
