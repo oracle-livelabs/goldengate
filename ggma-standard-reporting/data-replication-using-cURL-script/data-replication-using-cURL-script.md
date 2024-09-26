@@ -1,28 +1,35 @@
-# Test the data replication
+# Set Up Data Replication using cURL Scripts
 
 ## Introduction
 
-This lab describes how to test whether or not the replication is working successfully between source and target databases.
+This lab describes how to use the <code>add_replication_reporting_curl.sh script</code> to automatically set up an Oracle GoldenGate processes on the source (<b>depl_north</b>) and target (<b>depl_south</b>) deployments. 
+
+The source deployment <b>depl_north</b> is connected to the <b>DBNORTH</b> PDB and the <b>depl_south</b> deployment is connected to the <b>DBSOUTH</b> PDB. The deployments are already created in the environment. 
 
 Estimated Time: 10 minutes
 
 ### Objectives
-In this lab, you will:
-* Test the Replication process using Oracle GoldenGate statistics.
-* View the actual database records to confirm that the updates were successful.
+In this lab, you will: 
+
+* Run the <code>add_replication_reporting_curl.sh script</code>, which would automatically perform the following tasks:
+
+   * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the Database instance
+   *	Add supplemental logging to the database schema hr (SCHEMATRANDATA) on the source PDB, <b>DBNORTH</b>.
+   *	Add heartbeat and checkpoint tables on the source and target PDBs.
+   *	Add Extract on the source PDB, <b>DBNORTH</b>.
+   *	Set up the Extract parameter file
+   *	Add Distribution Path from source to target systems.
+   *	Add Replicat on the target PDB, <b>DBSOUTH</b>
 
 
 ### Prerequisites
-This lab assumes that you have:
-- Completed the tasks in **Initialize environment**
-- Completed the tasks in **Lab - Configure Database Credentials, Trandata, Heartbeat, and Checkpoint Tables**.
-- Completed the tasks in **Lab - Add Extract**.
-- Completed the tasks in **Lab - Add Replicat**.
+
+This lab assumes that you have completed the tasks in **initial-setup**
 
 
-## Task 1: Update records in source database **pdbwest**
+## Task 1: 
 
-   To test the data replication, let’s update some columns in the hr.employees table on the source database, The result should show the replicated result on the target database. 
+   To  
 
    In this case, update the phone number columns for 3 employees from the hr.employees table:
 

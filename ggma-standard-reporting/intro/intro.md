@@ -60,5 +60,5 @@ Use these links to get more information about Oracle GoldenGate 23ai:
 
 ## Acknowledgements
 * **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Volker Kuhr
+* **Contributors** - Volker Kuhr
 * **Last Updated By/Date** - Preeti Shukla,  2024
