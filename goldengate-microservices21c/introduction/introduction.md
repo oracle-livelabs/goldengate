@@ -39,7 +39,6 @@ The objectives of the labs is to familiarize you with the process to create data
 
 ### Prerequisites
 
-- An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 - A general understanding of database and data replication concepts using Oracle GoldenGate
 
 ### Passwords
