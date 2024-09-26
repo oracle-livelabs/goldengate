@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Step by Step: Data Replication Using Oracle GoldenGate Admin Client",
+  "workshoptitle": "Standard Business Reporting Using Oracle GoldenGate",
   "help": "livelabs-help-license_us@oracle.com",
   "tutorials": [
     {
@@ -28,24 +28,24 @@
      "filename": "../../initial-setup/initial-setup.md"
    },
    {
-      "title": "Lab 4: Configure Database Credentials, Trandata, Heartbeat, and Checkpoint Tables",
-      "description": "Configure Database Credentials, Trandata, Heartbeat, and Checkpoint Tables",
-      "filename": "../../ogg-add-trandata-heartbeat-checkpoint/ogg-add-trandata-heartbeat-checkpoint.md"
+      "title": "Lab 4: Set Up Data Replication Environment Using cURL Script",
+      "description": "Configure Data Replication Using the automation scripts containing cURL commands",
+      "filename": "../../data-replication-using-cURL-script/data-replication-using-cURL-script.md"
     },
     {
-      "title": "Lab 5: Add Extract",
-      "description": "Add Extract",
-      "filename": "../../ogg-add-extract/ogg-add-extract.md"
+      "title": "Lab 5: Access Standard Reports from Oracle GoldenGate",
+      "description": "View the sample standard business reports from the Oracle GoldenGate console",
+      "filename": "../../data-replication-using-OBEY-script/data-replication-using-OBEY-script.md"
     },
     {
-      "title": "Lab 6: Add Replicat",
-      "description": "Add Replicat",
-      "filename": "../../ogg-add-replicat/ogg-add-replicat.md"
+      "title": "Lab 6: Set Up Data Replication Environment Using OBEY Script",
+      "description": "data replication using OBEY script",
+      "filename": "../../data-replication-using-OBEY-script/data-replication-using-OBEY-script.md"
     },
     {
-      "title": "Lab 7: Test the data replication process",
-      "description": "Test Data Replication",
-      "filename": "../../ogg-test-data-replication-process/ogg-test-data-replication-process.md"
+      "title": "Lab 7: Access Standard Reports from Oracle GoldenGate Admin Client",
+      "description": "View the sample standard business reports from Oracle GoldenGate Admin Client",
+      "filename": "../../view-sample-standard-reports-using-admin-client/view-sample-standard-reports-using-admin-client.md"
     },
     {
       "title": "Need Help?",
