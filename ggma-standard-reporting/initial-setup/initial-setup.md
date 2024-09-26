@@ -1,31 +1,54 @@
 # Initialize environment
 
 ## Introduction
-In this lab you will learn to setup the required database and Oracle GoldenGate replication users.
+The livelab environment set up includes the following:
+
+* A single database (free edition) with 2 PDBs.
+* One Oracle GoldenGate installation setup.
+* The Service Manager manages two deployments: North and South.
+* All services, including database, database listener, and Oracle GoldenGate instances, which start when you start the LiveLab environment and run the given scripts.
+* Scripts to set up complete data replication using cURL commands.
+* Scripts to set up complete data replication using OBEY commands.
 
 *Estimated Time*:  10 minutes
 
 ### Objectives
-Understanding how to prepare and set up an Oracle multitenant database for replication and create users for replication. Users are created using scripts that populate the multitenant environment with required Oracle Users while applying aliases to be used by GoldenGate.
+* Learn to use scripts to perform basic data replication configuration in Oracle GoldenGate 23ai with Oracle Database 23ai
+* Allow users to copy the scripts and use them to test various tasks in their own environments.
 
 ### Lab Configuration
-![GoldenGate MA Architecture](./images/data_replication_hub_based.png " ")
+![GoldenGate MA Architecture](./images/data_replication.png " ")
 
 This lab environment consists of two container database instances: CDB1 and CDB2. The following table provides a snapshot of the available environment:
 
-|  Name   | Description |
- ---------| ------------
-| CDB1      | Container Database instance |
-| CDB2      | Container Database instance |
-| PDBWEST   | Pluggable database on container    database CDB1 |
-| PDBEAST   | Pluggable database on container database CDB2|
-| c##ggadmin | Common user on Container Database CDB1 <br><br>Password: Welcome2OGG|
-|ggadmin     | Local user on Pluggable Database PDBWEST of Container Database CDB1 <br><br>Password: Welcome2OGG|
-|ggadmin     | Local user on Pluggable Database PDBWEST of Container Database CDB2 <br><br>Password: Welcome2OGG|
+| Component | Name  | Description |
+ -----------| ------- | -------------
+| Server Names      | NORTH | north.livelabs.oraclevcn.com
+|                   | SOUTH | south.livelabs.oraclevcn.com
+| Database Type     | Oracle Database 23.5 Free Edition | Contains 1 CDB and 2 PDBs
+| CDB Name   | FREE | CDB login details: 
+|            |      |    User name: sys
+|            |      |   Password: oracle4GG
+| PDB Name   | DBNORTH | PDB login details: 
+|            |      |   User name: sys
+|            |      |   Password: oracle4GG
+|PDB Name    | DBSOUTH | Login Details:  
+|            |       |   User name: sys
+|             |      |   Password: oracle4GG
+|OGG Login Credentials ||  Username: ggadmin
+|             |      |   Password: ggadmin
+|Oracle GoldenGate | Service Manager | Port: 9000 
+| ||Login Credentials:
+| | | User name: ggma
+| | | Password: GGma_23ai   
+|Oracle GoldenGate | Deployment Name: depl_north | Port: 9000 to 9004 <br> </br> Login details: ggma/GGma_23ai 
+| | Deployment Name: depl_south | Port: : 9100 to 9104 <br> </br> Login details: ggma/GGma_23ai
+|
 
-To set up unidirectional replication, CDB1 is the source database with pluggable database PDBWEST. The target database is CDB2 with pluggable database PDBEAST. 
 
-Privileges for database common user for CDB1 (c##ggadmin), and local users for PDBWEST and PDBEAST (ggadmin) have been pre-granted for this lab. 
+To set up unidirectional replication, CDB1 is the source database with pluggable database PDBNORTH. The target is the pluggable database PDBSOUTH. 
+
+Privileges for database common user for CDB1, and local users for PDBWEST and PDBEAST (ggadmin) have been pre-granted for this lab. 
 
 In this lab, the database users (c##ggadmin and ggadmin) have been granted DBA privileges for simplifying access requirements. 
 
