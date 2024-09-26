@@ -14,12 +14,14 @@ In this lab, you will:
 * Run the <code>add_replication_reporting_curl.sh script</code>, which would automatically perform the following tasks:
 
    * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the Database instance
-   *	Add supplemental logging to the database schema hr (SCHEMATRANDATA) on the source PDB, <b>DBNORTH</b>.
+   *	Add supplemental logging to the database schema hr (SCHEMATRANDATA) on the source PDB, <b>DBNORTH</b>
    *	Add heartbeat and checkpoint tables on the source and target PDBs.
-   *	Add Extract on the source PDB, <b>DBNORTH</b>.
+   *	Add Extract on the source PDB, <b>DBNORTH</b>
    *	Set up the Extract parameter file
-   *	Add Distribution Path from source to target systems.
+   *	Add Distribution Path from source to target systems
    *	Add Replicat on the target PDB, <b>DBSOUTH</b>
+* View the Standard Business Report based on sample data.
+* Delete the data replication environment using the <code>delete_replication_reporting_curl.sh</code> script.
 
 
 ### Prerequisites
@@ -29,66 +31,53 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
 ## Task 1: 
 
-   To  
-
-   In this case, update the phone number columns for 3 employees from the hr.employees table:
-
+   Make sure you are in the /scripts/UseCases/01_Reporting/ directory and perform the following tasks:
    
-   |  FIRST_NAME       |      LAST_NAME  |
-   --------------------|------------------
-   |  Peter            |      Vargas     |
-   |  Alana            |      Walsh      |
-   |  Jennifer         |      Whalen     |
-
-
-   To update records in the source database **pdbwest**:
-
-   1. Open a new terminal and run the script **.set-env-db.sh**: 
-   
+   1. Move to the <code>REST-API</code> directory and list the content for this directory:
+     
       ```
       <copy>
-      source /usr/local/bin/.set-env-db.sh
+      cd REST-API
+      ls-l
       </copy>
       ```
-   2. Start the sql prompt and connect to **pdbwest**:
+      The components of the directory are listed as shown in the following image:
+
+       ![Contents of the REST-API directory](./images/rest-api_dir.png " ")
+
+   2. Run the <code>add_replication_reporting_curl.sh script</code> script:
 
        ```
        <copy>
-        sqlplus ggadmin/Welcome2OGG@pdbwest
+        
        </copy>
        ```
 
-   3. (Optional) Run the following query to view the records in the hr.employees table:
+   3. 
    
        ```
        <copy>
-        Select first_name, last_name from hr.employees
+        
        </copy>
        ```
         
-   4. Run the following command to update the phone numbers for the specified employees and then commit the transaction:
+   4. 
           
          ```
            <copy>
-            UPDATE hr.employees set PHONE_NUMBER='501-901-000-345' where LAST_NAME='Vargas' and FIRST_NAME='Peter';
+            
 
-            UPDATE hr.employees set PHONE_NUMBER='305.234.656' where LAST_NAME='Walsh' and FIRST_NAME='Alana';
-
-            UPDATE hr.employees set PHONE_NUMBER='656.424.971' where LAST_NAME='Whalen' and FIRST_NAME='Jennifer';
-
-            COMMIT;
+            
           </copy>
          ```   
          
-         The following image displays the query on the sql prompt:
-
-        ![Update records in pdbwest](./images/updatesqlquery.png " ")
+         
     
-## Task 2: Verify that the updated records are captured by Extract
+## Task 2: View the Sample Standard Business Report
 
-   To check if this committed transaction is captured by Extract:
+   To view the Standard Report based on sample data:
 
-   1. Start the Admin Client:
+   1. 
    
        ```
          <copy>
@@ -96,11 +85,11 @@ This lab assumes that you have completed the tasks in **initial-setup**
          </copy>
        ```
   
-   2. Connect to the deployment:
+   2. :
 
       ```
       <copy>
-       CONNECT http://localhost:9012 DEPLOYMENT depl_01 as ggma PASSWORD ggma
+       
       </copy>
       ```
 
@@ -108,7 +97,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
       ```
        <copy>
-        DBLOGIN USERIDALIAS ggwest
+       
        </copy>
       ```
 
@@ -116,31 +105,33 @@ This lab assumes that you have completed the tasks in **initial-setup**
      
       ```
       <copy>
-       STATS EXTRACT extw
+       
       </copy>
       ```
       The output displays the following:
 
-      ![Extract statistics](./images/stats_extw.png " ")
+      ![Extract statistics](./images/.png " ")
 
       Notice that there are 3 update records captured by Extract.
 
-## Task 3: Verify that the Replicat applied the updates to the target database
+## Task 3: Delete the Data Replication Setup
 
-   To check if Replicat successfully applied the UPDATE transactions:
+   It's essential to delete the setup to be able to test the same feature using the OBEY commands within the same environment. You can also use this script to test and delete data replication environments in your own test enviornment. 
+   
+   To delete the setup:
 
-   1. Connect to **pdbeast** using alias **ggeast**
+   1. 
 
       ```
       <copy>
-       DBLOGIN USERIDALIAS ggeast
+       
       </copy>
       ```
    2. Run the commmand:
 
       ```
       <copy>
-       STATS REPLICAT repe
+       
       </copy>
       ```
      The output displays 3 update records:
@@ -158,37 +149,29 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
       ```
        <copy>
-        sqlplus ggadmin/Welcome2OGG@pdbeast
+       
        </copy>
       ```
     
-       ![Connect to pdbeast](./images/connect_pdbeast.png " ")
+       ![Connect to pdbeast](./images/.png " ")
 
    5. Check the updated records in the database by running the following SQL query on target database **pdbeast**:
  
       ```
       <copy>
-       Select last_name, first_name, phone_number from hr.employees where last_name=’Vargas’ and first_name=’Peter’;
-    
-       Select last_name, first_name, phone_number from hr.employees where last_name=’Walsh’ and first_name=’Alana’;
-
-       Select last_name, first_name, phone_number from hr.employees where last_name=’Whalen’ and first_name=’Jennifer’;
+       
       </copy>
       ```
 
-      The output should displays as follows:
-
-      ![Output for updated records in pdbeast](./images/pdbeast_output.png)
-
-      Notice the updated phone numbers for each of the records.
+      
 
 
 ## Learn More
-* [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.3/coredoc/administer-microservices-command-line-interface.html#GUID-0403FAF0-B2F7-48A0-838F-AB4421E5C5E2)
+* [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/administer-microservices-command-line-interface.html#GUID-0403FAF0-B2F7-48A0-838F-AB4421E5C5E2)
 
 
 
 ## Acknowledgements
 * **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Volker Kuhr, Alex Lima, Madhusudhan Rao
-* **Last Updated By/Date** - Preeti Shukla, April 2023
+* **Contributors** -  Volker Kuhr, Nick Wagner
+* **Last Updated By/Date** - Preeti Shukla, October 2024
