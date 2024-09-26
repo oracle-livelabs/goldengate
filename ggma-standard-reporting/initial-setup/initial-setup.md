@@ -17,9 +17,10 @@ The livelab environment set up includes the following:
 * Allow users to copy the scripts and use them to test various tasks in their own environments.
 
 ### Lab Configuration
-![GoldenGate MA Architecture](./images/data_replication.png " ")
 
-This lab environment consists of two container database instances: CDB1 and CDB2. The following table provides a snapshot of the available environment:
+This lab environment consists of 1 container database instance and two pluggable database instances. 
+
+The following table provides a snapshot of the available environment:
 
 | Component | Name  | Description |
  -----------| ------- | -------------
@@ -45,106 +46,53 @@ This lab environment consists of two container database instances: CDB1 and CDB2
 | | Deployment Name: depl_south | Port: : 9100 to 9104 <br> </br> Login details: ggma/GGma_23ai
 |
 
-
-To set up unidirectional replication, CDB1 is the source database with pluggable database PDBNORTH. The target is the pluggable database PDBSOUTH. 
-
-Privileges for database common user for CDB1, and local users for PDBWEST and PDBEAST (ggadmin) have been pre-granted for this lab. 
-
-In this lab, the database users (c##ggadmin and ggadmin) have been granted DBA privileges for simplifying access requirements. 
-
-> **Note:** Granting DBA role is not mandatory for every user. Privileges should be granted depending on the actions that the user needs to perform on the database. For example, to grant DML operation privileges to insert, update, and delete transactions to ggadmin, you can use the GRANT ANY INSERT/UPDATE/DELETE privileges and to further allow users to work with tables and indexes as part of DML operations, use the GRANT CREATE/DROP/ALTER ANY TABLE/INDEX privileges. 
-
-If you want to learn to configure the prerequisites for an Oracle database user in a multitenant database, see the [Appendix 1: Check Parameters Required to Enable GoldenGate on the Database](#appendix-1-check-parameters-required-to-enable-goldengate-on-the-database)
+To set up unidirectional replication, the CDB contains DBNORTH (source) and DBSOUTH (target) pluggable databases.  
 
 ### Prerequisites
-This lab assumes you have completed:
-  - Lab: Prepare setup
-  - Lab: Environment setup
+This lab contains the following tasks:
 
+  - Lab: Understand the Directory Structure
 
-## Task 1: Set the Environment Variables
-
-The script available with this lab will set up the environment variables for the required database. Follow these steps to set the environment variables for CDB1:
-
-  1. Run the following script on the terminal to set the environment variables:
-
-       ```
-        <copy>
-         source /usr/local/bin/.set-env-db.sh
-        </copy>
-       ```
-    
-
-      The following image shows the execution of the .set-env-db.sh script:
-      
-      
-      ![Setting Environment Variables](./images/setenv_script.png " ")
-
-  2. Select 1 to set the database environment for CDB1 when the system prompts you to select the container database option that you want to use.
-
+  - Lab: Load the Oracle GoldenGate and Database Environment
   
-       ![Select 1 to set environment variables for CDB1](./images/select1.png " ")
+## Task 2: Load the Oracle GoldenGate and Database Environment 
 
-     At the top of the terminal, you will see the list of environment variables that have been set up for CDB1.
-
-## Task 2: Connect to CDB1, PDWEST, and PDBEAST
-
-   1. Connect to CDB1 common user c##ggadmin.
+   1. Load the database environment by running the following command:
     
        ```
        <copy>
-       sqlplus c##ggadmin/ggadmin@cdb1
+       source /usr/local/bin/.set-env-db.sh
        </copy>
 
        ```
-   2. Connect to PDBWEST to verify that you are able to connect to the PDB:
-      
-      ```
-       <copy>
-         connect ggadmin/Welcome2OGG@pdbwest
-       </copy>
-
-      ```
-   3. Similarly, connect to PDBEAST to verify that you are able to connect to the PDB:
-     
-      ```
-       <copy>
-         connect ggadmin/Welcome2OGG@pdbeast
-       </copy>
-      ```
-
-## Appendix 1: Check Parameters Required to Enable GoldenGate on the Database
+   2. Enter the option 1 to select the FREE database option. This loads the database environment with settings for the required environment variables, Oracle Database, and Oracle GoldenGate directories.
+         
    
-   In this lab, Oracle GoldenGate replication is enabled on the database side. However, if you want to check if Oracle GoldenGate is enabled on a database, you can use the following steps:
+## Task 2: Understand the Directory Structure
 
-   1. Connect to the common CDB user.
+The directory structure lists the location of the important artifacts for Oracle Database and Oracle GoldenGate. 
 
-      ```
-       <copy>sqlplus c##ggadmin/ggadmin@cdb1</copy>
 
-      ```
-  
-   2. Run the command to check if Oracle GoldenGate is enabled:
+| Directory Name   |     Location         |
+--------------     | ----------------     |
+| ORACLE_BASE      |  /opt/oracle         |
+| ORACLE_HOME      | /opt/oracle/product/23ai/dbhomeFree                                |
+| TNS_ADMIN        | ~/network/admin      |
+| OGG_HOME         | /u01/app/oracle/product/23.0.0.0/gghome_1                         |
+| Deployments      | /u01/app/oracle/deployments/{ServiceManager, depl_north, depl_south}                               |
+| Certificates     | ~/certs              |    
 
-        ```
-         <copy>show parameter enable_goldengate_replication</copy>
-        ```
 
-       The return value must be TRUE.
+In this lab, you will be able to view the directories mentioned in this table:
 
-   3. From the sql prompt, connect to CDB2 using the command:  
+Run the command to list the directories. You will be able to see the <code>scripts</code> directory structure as shown in the following image:
 
-      ```
-      <copy>connect c##ggadmin/ggadmin@cdb2</copy>
-      
-      ```
-   4. After connecting to CDB2, run the following command:
-      
-       ```
-        <copy>show parameter enable_goldengate_replication</copy>
-       ```
-     
-       The return value must be TRUE.
+
+
+ 
+
+
+
 
 You may now **proceed to the next lab**.
 
