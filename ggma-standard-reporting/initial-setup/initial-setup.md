@@ -85,16 +85,29 @@ The directory structure lists the location of the important artifacts for Oracle
 
 In this lab, you will be able to view the directories mentioned in this table:
 
-Run the command to list the directories. You will be able to see the <code>scripts</code> directory structure as shown in the following image:
+1. Run the command to list the directories:
 
+       ```
+       <copy>
+       ls -l
+       
+       </copy>
 
+       ```
 
- 
+2.  Move to the <code>scripts</code> directory 
 
+       ```
+       <copy>
+       cd scripts       
+       </copy>
 
+       ```
+    You will be able to see the scripts that are going to be used in the labs for data replication and testing purposes. The <code>scripts</code> folder contains the sub-directory <code>01_Reporting</code>.
 
+3. Move to the <code>Reporting</code> directory. It contains the REST-API directory for cURL and the Admin Client directory for OBEY commands.
 
-You may now **proceed to the next lab**.
+You may now **proceed to the next lab** to run cURL scripts to set up data replication and test for standard reporting.
 
 ## Learn More
 
