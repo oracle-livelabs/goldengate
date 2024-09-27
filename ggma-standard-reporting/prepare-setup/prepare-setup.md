@@ -20,7 +20,7 @@ This lab assumes you have:
     **//to be added later//**
     
 
- 2.  Save in your downloads folder.
+ 2.  Save in the downloads folder.
 
  We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Task 3* to follow our recommendations. If you would rather use an existing VCN then proceed to the next task to update your existing VCN with the required Ingress rules.
 
