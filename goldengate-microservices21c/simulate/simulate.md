@@ -77,9 +77,7 @@ To simulate an active application interacting with a database, we'll be using a 
    Simply connect to the database as user sys@PDB and reset the password:
 
     ```bash
-    <copy>
     sqlplus sys/Welcome#123@PDB as sysdba
-    </copy>
     ```
 
     and
