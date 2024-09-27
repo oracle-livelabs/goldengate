@@ -17,7 +17,7 @@ This lab assumes you have:
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 
-    - [ggma-db21-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Oj2dZE8mmhbNfrqmDtE-8nm6f9eADGpf52xR3ctq1PAj4yYUiJWLyftG1np00_rM/n/c4u04/b/livelabsfiles/o/goldengate-library/ggma-db21-mkplc-freetier.zip)
+    **//to be added later//**
     
 
  2.  Save in your downloads folder.
@@ -103,4 +103,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
 * **Contributors** - Meghana Banka
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2023
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2024

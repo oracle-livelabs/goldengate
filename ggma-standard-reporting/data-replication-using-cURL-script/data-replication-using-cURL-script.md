@@ -142,7 +142,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
       ```
       <copy>
-       EXIT
+       
       </copy>
       ```
    4. Connect to the target pluggable database **pdbeast**.
