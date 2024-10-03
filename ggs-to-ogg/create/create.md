@@ -66,7 +66,7 @@ You can perform the following actions on the deployment details page:
 
 [](include:03-create-target-connection.md)
 
-## Task 6 Assign connections to the deployment
+## Task 6: Assign connections to the deployment
 
 1. On the deployment details page, in the Resources menu, click **Assigned connections**.
 
@@ -84,7 +84,7 @@ You can perform the following actions on the deployment details page:
 
     ![Assigned connections to SourceATP and TargetADW](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-06b-assigned-connections-list.png " ") 
 
-## Task 6: Launch the GoldenGate Deployment Console
+## Task 7: Launch the GoldenGate Deployment Console
 
 1. On the deployment details page, click **Launch Console**.
 

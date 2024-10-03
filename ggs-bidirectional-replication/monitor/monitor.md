@@ -26,7 +26,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 ## Task 2: View GoldenGate Metrics in the Oracle Cloud console
 
-[](include:03-viewing-gg-metrics-console-23ai.md)
+[](include:03-viewing-gg-metrics-console.md)
 
 ## Learn More
 
