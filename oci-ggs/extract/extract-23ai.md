@@ -203,7 +203,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
     <copy>BEGIN
   DBMS_CLOUD.CREATE_CREDENTIAL(
     credential_name => 'ADB_OBJECTSTORE',
-    username => '<user-name>',
+    username => '<identity-domain>/<user-name>',
     password => '<token>'
   );
 END;</copy>
