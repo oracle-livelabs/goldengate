@@ -208,10 +208,10 @@ Before using Oracle Data Pump to export data from the source database, first cre
     <copy>BEGIN
   DBMS_CLOUD.CREATE_CREDENTIAL(
     credential_name => 'ADB_OBJECTSTORE',
-    username => '<user-name>',
+    username => '<identity-domain>/<user-name>',
     password => '<token>'
   );
-END;</copy>
+  END;</copy>
     ```
 
     > **Note:** If you're using a federated user, then the username should be in the following format: `OracleIdentityCloudService/<user-name>`
@@ -304,4 +304,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** -  Jenny Chan, Consulting User Assistance Developer, Database User Assistance; Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, May 2024
+* **Last Updated By/Date** - Katherine Wardhana, October 2024
