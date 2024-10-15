@@ -33,40 +33,24 @@ In this lab, you will:
 
 ## Task 1: Add DB Connection to East database
 
-1. In your lab instructions, click **View Login Info**.
+1. In the navigation menu and click **DB Connections**.
 
-    ![View login info](./images/01-01-view-login-info.png " ")
+    ![Administration Service navigation menu](./images/01-01-add-db-connec.png " ")
 
-2. On the Reservation Information page, under Terraform Values, click on the **OGG East URL** link to access the Oracle GoldenGate East 23ai Microservices WebUI console.
+2. Click **Add DB Connection** (plus icon).
 
-    ![Terraform Values](./images/01-02-terraform-values.png " ")
+    ![Add DB Connection](./images/01-02-add-db-connec.png " ")
 
-3.  To log in to the Oracle GoldenGate East 23ai Microservices WebUI console, enter **oggadmin** for Username and paste the **Global Password** from the Reservation Information for Password, and then click **Sign In**. 
-
-    > **NOTE:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
-
-    ![GoldenGate deployment console sign in](./images/01-03-console-login.png " ")
-
-    After you log in successfully, you're brought to the Oracle GoldenGate 23ai deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
-
-4. In the navigation menu and click **DB Connections**.
-
-    ![Administration Service navigation menu](./images/01-04-add-db-connec.png " ")
-
-5. Click **Add DB Connection** (plus icon).
-
-    ![Add DB Connection](./images/01-05-add-db-connec.png " ")
-
-6. A Credentials panel will appear, complete the following fields, and then click **Submit**:
+3. A Credentials panel will appear, complete the following fields, and then click **Submit**:
     * For Credential Alias, enter **EAST**.
     * For User ID, paste the **DB East Private Connection** value from the Reservation Information. 
     * For Password, paste the **Global Password** from the Reservation Information. Verify the password. 
 
-    ![Credentials panel](./images/01-06-credentials.png " ")
+    ![Credentials panel](./images/01-03-credentials.png " ")
 
-7. Click **Connect to database**. If successful, you are directed to the Checkpoint page. 
+4. Click **Connect to database**. If successful, you are directed to the Checkpoint page. 
 
-    ![Connect to database](./images/01-07-connect-to-db.png " ")
+    ![Connect to database](./images/01-04-connect-to-db.png " ")
 
 ## Task 2: Add a Checkpoint table, Trandata information, and Heartbeat table
 
@@ -138,7 +122,7 @@ Keep the **East** WebUI console open.
 
     > **NOTE:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
 
-    ![GoldenGate deployment console sign in](./images/01-03-console-login.png " ")
+    ![GoldenGate deployment console sign in](./images/04-02-console-login.png " ")
 
     After you log in successfully, you're brought to the Oracle GoldenGate 23ai deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
 

@@ -8,28 +8,28 @@
             "filename": "../../introduction/gb-intro.md"
         },
         {
-            "title": "Get Started",
+            "title": "Lab 1: Get Started",
             "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+            "filename": "../../get-started/get-started.md"
         },
         {
-            "title": "Lab 1: Connect and prepare databases",
+            "title": "Lab 2: Connect and prepare databases",
             "filename": "../../prepare-consoles/prepare-consoles.md"
         },
         {
-            "title": "Lab 2: Replicate data from East to West",
+            "title": "Lab 3: Replicate data from East to West",
             "filename": "../../east-replicate/east-replicate.md"
         },
         {
-            "title": "Lab 3: Replicate data from West to East",
+            "title": "Lab 4: Replicate data from West to East",
             "filename": "../../west-replicate/west-replicate.md"
         },
         {
-            "title": "Lab 4: Review Configuration",
+            "title": "Lab 5: Review Configuration",
             "filename": "../../review-config/review-config.md"
         },
         {
-            "title": "Lab 5: (Optional) Create transactions",
+            "title": "Lab 6: (Optional) Create transactions",
             "filename": "../../transactions/transactions.md"
         },
         {
