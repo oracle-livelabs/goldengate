@@ -46,7 +46,7 @@ Before importing data to the target database, create a credential in the target 
     <copy>BEGIN
     DBMS_CLOUD.CREATE_CREDENTIAL(
       credential_name => 'ADB_OBJECTSTORE',
-      username => '<user-name>',
+      username => '<identity-domain>/<user-name>',
       password => '<token>'
     );
     END;
@@ -206,11 +206,11 @@ Before importing data to the target database, create a credential in the target 
     MAP SRC_OCIGGLL.*, TARGET SRCMIRROR_OCIGGLL.*;</copy>
     ```
 
-    ![Add Replicat - Parameter File](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-09-param-file.png " ")
-
     > **Note:** `DBOPTIONS ENABLE_INSTATIATION_FILTERING` enables CSN filtering on tables imported using Oracle Data Pump. For more information, see [DBOPTIONS Reference](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service/using&id=GWURF-GUID-BA8C0CED-D87F-4106-862E-4AD22D910160).
 
 10.  Click **Create**.
+
+    ![Add Replicat - Parameter File](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-09-param-file.png " ")
 
 11. In the REP Replicat **Action** menu, select **Start**.
 
@@ -225,4 +225,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2024
+* **Last Updated By/Date** - Katherine Wardhana, October 2024
