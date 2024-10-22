@@ -125,5 +125,5 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, Senior Solution Engineer, AppDev and Integration
-* **Contributors** -  Denis Sendil, Database Product Management; Jenny Chan, Consulting User Assistance Developer, Database User Assistance; Katherine Wardhana, User Assistance Developer
+* **Contributors** -  Denis Sendil, Database Product Management; Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Last Updated By/Date** - Katherine Wardhana, User Assistance Developer, December 2023

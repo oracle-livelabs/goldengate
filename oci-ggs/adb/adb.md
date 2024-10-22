@@ -60,5 +60,5 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated by** - Katherine Wardhana, May 2024
+- **Last Updated by** - Katherine Wardhana, March 2024
 - **PAR Expiration date** - February 2030

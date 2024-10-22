@@ -25,29 +25,6 @@ In this lab, you will:
 
 This lab assumes you completed the environment set up lab, if you're running this workshop on your own tenancy.
 
-To successfully complete this lab in your own tenancy:
-* For IAM-enabled tenancies, ensure that you [configure Identity domains for OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/mkmbs/#GUID-DD9C1BF8-69FE-4C9A-A2D1-74C73550ED65).
-* For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault). [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
-* Add an API key in your profile settings to be used in Task 3:
-
-1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **User settings**.
-
-    ![Oracle Cloud console User menu](images/00-01-profile.png " ")
-
-2.  On the user details page, under **Resources**, click **API Keys**.
-
-3.  Click **Add API Key**.
-
-    ![Resources on User details page](images/00-03-apikey.png " ")
-
-4.  In the Add API Key dialog, click **Download Private Key** to download the key, and then click **Add**.
-
-    ![Download Private key](images/00-04-privatekey.png " ")
-
-5.  In the Configuration File Preview dialog, copy the fingerprint to a text editor, and then click **Close**.
-
-> **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
-
 ## Task 1: Create a deployment for MySQL Heatwave
 
 1.  Open the Oracle Cloud console navigation menu, click **Oracle Database**, and then click **GoldenGate**.
@@ -109,9 +86,9 @@ To successfully complete this lab in your own tenancy:
 
     > **NOTE**: The special characters must not be $, ^, or ?
 
-21. Confirm the password, and then click **Create**.
-
   ![Example create deployment options](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-21-passwordsecret.png " ") 
+
+21. Confirm the password, and then click **Create**.
 
 22. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 

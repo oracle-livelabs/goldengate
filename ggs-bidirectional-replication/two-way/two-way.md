@@ -23,29 +23,29 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 ## Task 1: Add and run an Extract
 
-First, create the Extract for the target (ADW) database.
-
-1.  In the navigation menu, click **Extracts**.
-
-2.  On the Extracts page, click **Add Extract** (plus icon).
+1.  Return to the Overview screen and click **Add Extract**.
     
     ![Overview screen](./images/01-01-add-ext.png " ")
 
-3.  In the Add Extract panel, select **Integrated Extract**, enter `EXTB` for **Process Name**, and then click **Next**.
+2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
     
-    ![Extract information page](./images/01-02-integrated-extract.png " ")
+    ![Extract page](./images/01-02-integrated-extract.png " ")
 
-4.  On the Extract Options page, complete the following fields and then click **Next**: 
+3.  On the Extract Options page, for Process Name, enter **EXTB**.
 
-    * From the **Domain** dropdown, select **OracleGoldenGate**.
-    * From the **Alias** dropdown, select **TargetADW**.
-    * For Extract **Trail Name**, enter `E2` 
+4.  For Trail Name, enter **E2**.
+
+5.  From the Credential Domain dropdown, select **OracleGoldenGate**.
+
+6.  From the Credential Alias dropdown, select **TargetADW**.
 
     ![Extract options page](./images/01-06-extract-options.png " ")
 
-7.  On the Managed Options page, enable **Critical to deployment health**, and then click **Next**.
+7.  Under Managed Options, select **Critical to deployment health**.
 
-    ![Managed options page](./images/01-08-crit-deploy-health.png " ")
+8.  Click **Next**.
+
+    ![Extract options page](./images/01-08-crit-deploy-health.png " ")
 
 9.  On the Parameter File page, in the text area, add a new line under EXTTRAIL E2, and then add the following:
 
@@ -57,38 +57,38 @@ First, create the Extract for the target (ADW) database.
     tranlogoptions excludeuser ggadmin</copy>
     ```
 
-    ![Parameter File page](./images/01-10-param-file.png " ")
+10. Click **Create and Run**. You're returned to the Overview page. The EXTB Extract process is created.
 
-10. Click **Create and Run**. The EXTB Extract process appears after a few moments.
+    It may takes a few minutes for the extract to be created. The yellow exclamation point icon changes to a green checkmark. 
 
-    ![Extracts](./images/01-10-extracts.png " ")
+    ![Parameter file page](./images/01-10-param-file.png " ")
+
 
 ## Task 2: Add and run the Replicat
 
-Next, create the Replicat on the source (ATP) database.
-
-1.  In the navigation menu, click **Replicats**. 
-
-2.  On the Replicats page, click **Add Replicat** (plus icon).
+1.  Click **Add Replicat**.
 
     ![Add replicat](./images/02-01-add-replicat.png " ")
 
-3.  In the Add Replicat panel, on the Replicat Information page, select **Nonintegrated Replicat**, enter `REPB` for Process Name, and then click **Next**.
+2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
 
     ![Replicat type page](./images/02-02-rep-type-page.png " ")
 
-4.  On the Replicat Options page, complete the following fields, and then click **Next**:
+3.  For Process Name, enter **REPB**.
 
-    * For Replicat Trail **Name**, enter `E2`.
-    * From the Target Credential **Domain** dropdown, select **OracleGoldenGate**.
-    * From the Target Credential **Alias** dropdown, select **SourceATP**.
-    * For Checkpoint Table, select **"SRC\_OCIGGLL"."ATP\_CHECKTABLE"**.
+4.  From the Credential Domain dropdown, select **OracleGoldenGate**.
 
-        > **NOTE**: The Checkpoint Table may take a few moments to populate.
+5.  From the Credential Alias dropdown, select **SourceATP**.
+
+6.  For Trail Name, enter **E2**.
+
+7.  For Checkpoint Table, select **"SRC\_OCIGGLL"."ATP\_CHECKTABLE"**.
 
     ![Replicat type page](./images/02-07-rep-options.png " ")
 
-5.  On the Managed Options page, enable **Critical to deployment health**, and then click **Next**.
+8.  Under Managed Options, select **Critical to deployment health**.
+
+9.  Click **Next**.
 
     ![Replicat type page](./images/02-09-crit-deploy-health.png " ")
 
@@ -99,23 +99,29 @@ Next, create the Replicat on the source (ATP) database.
     ```
     ![Replicat type page](./images/02-10-param-file.png " ")
 
-11. Click **Create and Run**. The new Replicat appears after a few moments. 
+11. Click **Create and Run**. You're returned to the Overview page. The Replicat process is created.
+
+    It may takes a few minutes for the extract to be created. The yellow exclamation point icon changes to a green checkmark. 
 
     ![Extract completed](./images/02-11-admin-service-overview.png)
 
-## Task 3: Perform Inserts into the target database
+## Task 3: Perform Inserts to the Target Database
 
 1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Data Warehouse**, and then **TargetADW**.
 
-    ![Autonomous Transaction Processing in Oracle Cloud navigation menu](./images/03-01-adw.png " ")
+    ![Autonomous Transaction Processing in Oracle Cloud navigation menu](./images/03-01a-auto-trans-process.png " ")
 
     ![Autonomous Transaction Processing page](./images/03-01b-target.png " ")
 
-2.  On the Target ADW Details page, click **Database Actions**, then **SQL**.
+2.  On the Target ADW Details page, click **Database Actions**.
 
     ![TargetADW Database Details page](./images/03-02-db-actions.png)
 
-3.  Enter the following inserts, and then click **Run Script**:
+3.  Click **SQL**.
+
+    ![Click SQL](./images/03-03-sql.png)
+
+4.  Enter the following inserts, and then click **Run Script**:
 
     ```
     <copy>Insert into SRCMIRROR_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (2000,'Houston',20,743113);
@@ -131,21 +137,21 @@ Insert into SRCMIRROR_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) value
     ```
     ![SQL return](./images/03-04-sql-script-return.png " ")
 
-4.  In the OCI GoldenGate deployment console navigation menu, click **Extracts**, then **Extract name (EXTB)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+5.  In the OCI GoldenGate Deployment Console, click the **Extract name (EXTB)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Extract Process Information - Statistics](./images/03-05-ext-statistics.png " ")
 
-5.  Go back to the Overview screen, click the **Replicat name (REPB)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+6.  Go back to the Overview screen, click the **Replicat name (REPB)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Replicat Process Information - Statistics](./images/03-06-rep-statistics.png " ")
 
 
 ## Learn more
 
-* [Add an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/index.html)
-* [Add a Replicat](https://docs.oracle.com/en/cloud/paas/goldengate-service/cress/index.html)
+* [Creating an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/eeske/index.html)
+* [Creating a Replicat](https://docs.oracle.com/en/cloud/paas/goldengate-service/cress/index.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, June 2024
+* **Last Updated By/Date** - Katherine Wardhana, May 2024

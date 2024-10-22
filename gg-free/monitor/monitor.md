@@ -83,7 +83,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
     ![Checkpoint page](./images/03-03-checkpoint.png " ")
 
-4.  On the **Statistics** screen, view the Data Definition Language (DDL) and Table Statistics. You can organize the statistics based on total, daily, or hourly.
+4.  On the **Statistics** screen, view the Data Definition Language (DDL) and Table Statistics. You can organize the statistics based on total, daily, or hourly.  change to extract instead of replicat
 
     ![Statistics page](./images/03-04-statistics.png " ")
 

@@ -257,7 +257,7 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 3.  If you're prompted to log in, enter the Autonomous Data Warehouse admin username and password from Task 5, Step 7.
 
-	![ADW log in](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
+	![ADW log in](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-login.png " ")
 
 4.  On the Database Users page, locate GGADMIN, and then select **Edit** from its ellipsis (three dots) menu.
 

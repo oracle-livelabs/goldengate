@@ -45,11 +45,7 @@ To successfully complete this lab in your own tenancy:
 
 > **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
-## Task 1: Select the compartment
-
-[](include:00-select-compartment.md)
-
-## Task 2: Review the deployment
+## Task 1: Review the deployment
 
 1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
 
@@ -73,7 +69,7 @@ You can perform the following actions on the deployment details page:
 
     ![Deployment Details](./images/03-03-deployment-details.png)
 
-## Task 3: Create an Autonomous Database connection
+## Task 2: Create an Autonomous Database connection
 
 Follow the steps below to create a connection for the source Oracle Autonomous Transaction Processing \(ATP\) Database.
 
@@ -113,7 +109,7 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
     The connection becomes Active after a few minutes.
 
-## Task 4: Unlock the GGADMIN user and check support mode for the source database
+## Task 3: Unlock the GGADMIN user and check support mode for the source database
 
 Oracle Autonomous Databases come with a GGADMIN user that is locked by default. The following steps guide you through how to unlock the GGADMIN user.
 
@@ -167,7 +163,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 You can leave the source database SQL window open for use in a later lab.
 
-## Task 5: Create a connection for Oracle Object Storage
+## Task 4: Create a connection for Oracle Object Storage
 
 1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate. Open the Oracle Cloud console navigation menu, click **Oracle Database**, and then **GoldenGate**.
 
@@ -199,7 +195,7 @@ You can leave the source database SQL window open for use in a later lab.
 
     The Connection becomes Active after a few minutes.
 
-## Task 6: Assign connections to deployments
+## Task 5: Assign connections to deployments
 
 After your deployments and connections become active, you can assign the connections to the appropriate deployments.
 
@@ -227,7 +223,7 @@ After your deployments and connections become active, you can assign the connect
 
     ![OBJDeployment details](./images/06-07-obj-bdconnection.png " ")
 
-## Task 7: Create a GoldenGate connection
+## Task 6 Create a GoldenGate connection
 
 Create a GoldenGate connection if your Big Data deployment doesn't have a public endpoint, and then assign it to the source ATP deployment.
 
@@ -277,4 +273,4 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, June 2024
+* **Last Updated By/Date** - Katherine Wardhana, April 2024

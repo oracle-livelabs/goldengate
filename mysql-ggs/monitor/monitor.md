@@ -30,31 +30,31 @@ In order to complete this lab, you should have completed the preceding labs.
 
 3.  Open the Oracle Cloud console navigation menu and navigate to **Identity & Security**, and then click **Bastion**.
 
-4.  On the **Bastions** page, select your Bastion to view its details.
+5.  On the **Bastions** page, select your Bastion to view its details.
 
-5.  Under **Sessions**, click **Create session**.
+6.  Under **Sessions**, click **Create session**.
 
     >**NOTE:** If you already have a session running for your SourceMySQL DB system, you can skip to step 14.
 
-6.  In the Create session panel, select **SSH port forwarding session** from the session type dropdown.
+7.  In the Create session panel, select **SSH port forwarding session** from the session type dropdown.
 
-7.  For **IP address**, paste the Private IP Address you copied from the SourceMySQL details page.
+8.  For **IP address**, paste the Private IP Address you copied from the SourceMySQL details page.
 
-8.  For **Port**, change the value to `3306`.
+9.  For **Port**, change the value to `3306`.
 
-8. For SSH key, you can either upload an existing SSH public key, or generate a new SSH key pair.
+10. For SSH key, you can either upload an existing SSH public key, or generate a new SSH key pair.
 
-10. Click **Create session**.
+11. Click **Create session**.
 
-11. After the session is Active, select Copy SSH command from the Action (ellipsis icon) menu.
+12. After the session is Active, select Copy SSH command from the Action (ellipsis icon) menu.
 
-12. Open Cloud Shell.
+13. Open Cloud Shell.
 
-13. After the cloud shell session is active, paste the SSH command from your bastion session. Ensure that you replace the `<privateKey` and `<localPort>` values.
+14. After the cloud shell session is active, paste the SSH command from your bastion session. Ensure that you replace the `<privateKey` and `<localPort>` values.
 
     >**NOTE:** If you generated a new SSH key pair in step 10, you must first upload your private key to Cloud Shell using the Cloud Shell Settings menu, and change the permission on the key (`chmod 600 <privateKey>`).
 
-14. Enter the following command to start MySQL Shell.
+15. Enter the following command to start MySQL Shell.
 
     >**NOTE:** If using a Bastion session, replace localhost with the private IP of the MySQL database.
 
@@ -62,7 +62,7 @@ In order to complete this lab, you should have completed the preceding labs.
     <copy>mysqlsh admin@localhost:3306 --sql</copy>
     ```
 
-15.  Enter the following inserts:
+4.  Enter the following inserts:
 
     ```
     <copy>use SRC_OCIGGLL;
@@ -79,23 +79,23 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 commit;</copy>
     ```
 
-16.  In the MySQLDeployment console, click the **Extract name (CDCEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+5.  In the MySQLDeployment console, click the **Extract name (CDCEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Extract Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/04-17-ext-stats.png " ")
 
-17.  Go back to the Overview screen, click the **Replicat name (RCDC)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+6.  Go back to the Overview screen, click the **Replicat name (RCDC)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Replicat Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-06-rep-statistics.png " ")
 
-18.  In the Oracle Cloud console, open Database actions from the TargetADW Database details page. 
+7.  In the Oracle Cloud console, open Database actions from the TargetADW Database details page. 
 
-19.  On the Database actions page, select **SQL**.
+8.  On the Database actions page, select **SQL**.
 
-20.  In the Navigator panel, from the Schema dropdown, select **SRCMIRROR_OCIGGLL**.
+9.  In the Navigator panel, from the Schema dropdown, select **SRCMIRROR_OCIGGLL**.
 
-21. In the list of tables, right-click **SRC_CITY** and then select **Open**.
+10. In the list of tables, right-click **SRC_CITY** and then select **Open**.
 
-22. In the SRCMIRROR\_OCIGGLL.SRC_CITY view, click **Data**, and then verify that the 10 new entries inserted in Step 4 appear.
+11. In the SRCMIRROR_OCIGGLL.SRC_CITY view, click **Data**, and then verify that the 10 new entries inserted in Step 4 appear.
 
 ## Task 2: Using the Performance Metrics Server
 
@@ -176,4 +176,4 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, May 2024
+* **Last Updated By/Date** - Jenny Chan, September 2023

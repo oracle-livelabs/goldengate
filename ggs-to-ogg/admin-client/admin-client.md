@@ -52,7 +52,7 @@ This lab assumes you successfully completed all preceding labs.
     ```
     <copy>connect <OCI-GoldenGate-deployment-url> as oggadmin password <oggadmin-password> !</copy>
     ```
-    > **Note:** The exclamation point (!) is very important. Without it, the command fails and returns an error.
+    > **Note:** *The exclamation point (!) is very important. Without it, the command fails and returns an error.*
 
     ![Cloud Shell script](./images/02-03-cloud-shell.png " ")
 
@@ -87,4 +87,4 @@ This lab assumes you successfully completed all preceding labs.
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2023
+* **Last Updated By/Date** - Katherine Wardhana, March 2023

@@ -24,7 +24,7 @@ To successfully complete this lab, you must have:
 
 ## Task 1A: Use Chrome to download the root certificate
 
-> **Note:** Mac users should follow Task 1B and use FireFox to download the root certificate.
+> **Note:** *Mac users should follow Task 1B and use FireFox to download the root certificate.*
 
 1.  Launch the OCI GoldenGate Deployment Console if you don't already have it open, and log in.
 
@@ -149,4 +149,4 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2024
+* **Last Updated By/Date** - Jenny Chan, June 2023

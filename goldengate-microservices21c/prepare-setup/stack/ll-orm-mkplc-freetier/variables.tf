@@ -19,7 +19,7 @@ variable "use_marketplace_image" {
 
 variable "mp_listing_id" {
   #Provide the Listing OCID
-  default = "ocid1.appcataloglisting.oc1..aaaaaaaa7ciugn26p2trlsj3dhsq7ezcwgmowclfsnbmvhlddt3eeipwslga"
+  default = "ocid1.appcataloglisting.oc1..aaaaaaaa2fuvrqk2cqcarsxugamehrjyigpwwe3sgprpxp6u2ustmsljj3yq"
 }
 
 variable "mp_listing_resource_version" {
@@ -29,7 +29,7 @@ variable "mp_listing_resource_version" {
 
 variable "instance_image_id" {
   #Provide the image OCID
-  default = "ocid1.image.oc1..aaaaaaaayismjvmwqbuzdgwvoo5vfo5mdedmelm77dl7ziir5m4fksgzruqa"
+  default = "ocid1.image.oc1..aaaaaaaazemy4groczrvfzllplftpwxrm4ocpu72qgckiwinycbppcyc5wwa"
 }
 
 /*

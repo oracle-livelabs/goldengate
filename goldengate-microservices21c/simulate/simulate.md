@@ -23,10 +23,10 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
 
-  - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-  - Lab: Environment Setup
-  - Lab: Discovery of the environment
-  - Lab: Setup of the replication between Oracle and Kafka
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Discovery of the environment
+    - Lab: Setup of the replication between Oracle and Kafka
 
 ## Task 1:Generate Transactions on the Oracle database
 
@@ -41,56 +41,23 @@ To simulate an active application interacting with a database, we'll be using a 
     - Ensure you are logged in as user **oracle**
     - Change directory in both terminal windows to the **scripts** subdirectory
 
-      ```bash
+      ```
       <copy>cd scripts</copy>
       ```
+2. Run the **load.sh** script to start injecting data into the Oracle database:
 
-2. Clean the Kafka stream "Employees"
-
-    To ensure you have no old data in the Kafka stream, you can run a shell script to clean the queue:
-
-    ```bash
-    <copy>sh delete_kafka.sh</copy>
     ```
-
-    **Troubleshooting:** You might get an error "*Connection to host .. could not be established*".  This probably means the Kafka server did not start up correctly at system boot.  You can force the startup, and check the result with the below commands:
-
-    ```bash
-    <copy>sudo systemctl start kafka
-    sudo systemctl status kafka<copy>
-    ```
-
-    Now retry the delete_kafka.sh command
-
-3. Run the **load.sh** script to start injecting data into the Oracle database:
-
-    ```bash
+    <copy>
     sh load.sh
+    </copy>
     ```
-
     You should see an output as in the below image:
 
    ![output load script](./images/load-res.png " ")
 
-   **Trouble-shooting:** You might see the error  "ORA-28002 The Password Will Expire ..." or "ORA-28001 The Password has expired".
+3. Observe the transactions being inserted into the database: in the **second Terminal** window, run the monitor command to observe the database insertions:
 
-   Simply connect to the database as user sys@PDB and reset the password:
-
-    ```bash
-    sqlplus sys/Welcome#123@PDB as sysdba
-    ```
-
-    and
-
-    ```sql
-    <copy>
-    ALTER USER SOURCE_APP identified by Welcome#123
-    </copy>
-    ```
-
-4. Observe the transactions being inserted into the database: in the **second Terminal** window, run the monitor command to observe the database insertions:
-
-      ```bash
+      ```
       <copy>
       sh monitor_oracle.sh
       </copy>
@@ -101,9 +68,10 @@ To simulate an active application interacting with a database, we'll be using a 
 
     ![output monitor script oracle](./images/monitor-o.png " ")
 
-5. List the available Kafka topics:
 
-    ```bash
+4. List the available Kafka topics:
+
+    ```
     <copy>
     sh list_topics.sh
     </copy>
@@ -111,9 +79,9 @@ To simulate an active application interacting with a database, we'll be using a 
 
     ![List kafka topics](./images/list-topics.png " ")
 
-6. List the events on the Kafka topic **EMPLOYEES**
+5. List the events on the Kafka topic **EMPLOYEES**
 
-    ```bash
+    ```
     <copy>
     sh monitor_kafka.sh
     </copy>
@@ -127,55 +95,54 @@ To simulate an active application interacting with a database, we'll be using a 
 
 We'll return to the browser window with the GoldenGate Administration Service
 
-1. Navigate the **oracledb** deployment console
-2. Click on the name of the Extract: **E_ORACLE**
+1. Open the GoldenGate Administration Service on port 10000
+2. Select the **oracledb** deployment
+3. Open the **Administration Service**
+4. Click on the name of the Extract: **E_ORACLE**
 
-    ![Admin tab oracledb deployment](./images/extract23.png " ")
+    ![Admin tab oracledb deployment](./images/extract.png " ")
 
-3. Now select the menu item **Statistics** in the left-hand menu
+5. Now select the tab called **Statistics**
 
-    ![Stats tab](./images/db-stats23.png " ")
+    ![Stats tab](./images/db-stats.png " ")
 
-    You should see some records already inserted, you can use the **Refresh** icon to see the counter increase.
+    You should see some records already inserted, and you can use the **Refresh** button to see the counter increase.
 
-4. Click on the tab **Performance Metrics Service** on the very top of the window to see much more detailed information
+6. Click on the tab **Performance Metrics Service** on the very top of the window to see much more detailed information
 
     You get a visual representation of the various services associated with the deployment **oracledb**.  In this case we are interested in the **Extract** process
 
-    ![DB performance tab](./images/db-perf23.png " ")
+    ![DB performance tab](./images/db-perf.png " ")
 
-5. Click on the **Extracts**
+7. Click on the box **Extract Running**
 
-    ![Process performance](./images/extract-stat23.png " ")
-
-6. Click on the **E_ORACLE** extract process
-
-    ![Process performance](./images/stat-db23.png " ")
+    ![Process performance](./images/stat-db.png " ")
 
     You can see various dashboards associated with the different entities you might be interested in: Process Performance, Trail Files, Database Statistics, etc.
 
-7. Click on the various tabs to see the statistics
+    ![Database statistics](./images/db-stats2.png " ")
 
-    ![Trail statistics](./images/stat-db2-23.png " ")
+8. Click on the various tabs to see the statistics
 
-8. We can also look at the statistics on the receiving end.
+    ![Trail statistics](./images/db-trail.png " ")
 
-    - Open the browser window with the  **oggdaa** deployment console
-    - Select the deployment R_KAFKA
-    - Select the **Statistics** in the left menu
+9. We can also look at the statistics on the receiving end.
 
-        ![oggdaa deployment](./images/oggdaa-stat1.png " ")
+    - Open the browser window with the GoldenGate Administration Service on port 10000
+    - Select the deployment **bigdata**
+    - Click on the service **Performance Metrics Service** on port 10203
 
-    - You can see the nb of inserts performed.
+        ![bigdata deployment](./images/bigd.png " ")
 
-9. Let's now look at live statistics of the processes running:
-    - Select the **Performance Metrics** tab in the top menu
-    - Select the **Replicats** in the center screen
-    - Select the **R_KAFKA** process
+10. Select the **Replicat** process
 
-    ![oggdaa performance](./images/oggdaa-stat2.png " ")
+    ![bigdata performance](./images/bigd-metr.png " ")
 
-10. Observe the various dashboards you have available: Process Performance, Trail Files, and more.
+11. Observe the various dashboards you have available: Process Performance, Trail Files, and more.
+
+    ![big data process performance](./images/bigd-proc.png " ")
+
+    ![big data trail performance](./images/bigd-trail.png " ")
 
 **Congratulations, you have reached the end of this Lab !**
 
@@ -187,4 +154,4 @@ We'll return to the browser window with the GoldenGate Administration Service
 
 - **Author** - Jan Leemans, December 2023
 - **Contributors** - Carmelo Millan
-- **Last Updated** - Jan Leemans, August 2024
+- **Last Updated By/Date**

@@ -182,7 +182,6 @@ Create a GeoFence to select customers for two regions in the United States. Only
    ![Geo Fence polygon tool](./images/geofence3.png "")
 
 7. Rename the region **West Coast** in the Polygon dialog and press Enter.
-
     ![Geo Fence west coast area](./images/geofence4.png "")
 
 8. If necessary, use your mouse to click and drag the map so the East Coast is fully visible.
@@ -221,6 +220,7 @@ Create a stream to feed a pipeline with events from the Kafka topic into which G
 7. Click **Save**.
 
   ![Create Kafka Stream page 4](./images/stream4.png "")
+
 
 
 You may now **proceed to the next lab.**
