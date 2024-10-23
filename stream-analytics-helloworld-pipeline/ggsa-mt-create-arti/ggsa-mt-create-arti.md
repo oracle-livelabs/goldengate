@@ -20,7 +20,7 @@ In this Lab you will:
 
 - You should have successfully completed all the previous labs.
 - A json file with the sample data to be used in this tutorial:
-  [Click here to download file.](./files/busstream.json?download=1)
+  [Click here to download file.](./files/bus.json)
 
 
 ## **Task 1:** Create a Kafka Connection
