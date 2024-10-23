@@ -160,4 +160,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
 * **Contributors** - Sumathi Nelapati
-* **Last Updated By/Date** - Pratibha Manjunath, December 2023
+* **Last Updated By/Date** - Pratibha Manjunath, October 2024
