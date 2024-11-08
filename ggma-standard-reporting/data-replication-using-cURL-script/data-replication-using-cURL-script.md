@@ -29,7 +29,7 @@ In this lab, you will:
 This lab assumes that you have completed the tasks in **initial-setup**
 
 
-## Task 1: 
+## Task 1: Set Up Data Replication
 
    Make sure you are in the /scripts/UseCases/01_Reporting/ directory and perform the following tasks:
    
