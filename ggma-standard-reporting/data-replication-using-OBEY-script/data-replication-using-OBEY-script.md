@@ -37,11 +37,19 @@ This lab assumes that you have completed the tasks in **initial-setup**
    1. Move to the <code>AdminClient</code> directory and list the content for this directory:
      
    2. Run the <code>add_replication_reporting.oby</code> script:
+      
+       ```
+         <copy>
+            ./add_replication_reporting.oby
+         </copy>
+       ```
+      The script connects to the source and target PDBs and creates the Extract, Replicat, Distribution Path processes. 
+   
    
     
-## Task 2: Verify that the updated records are captured by Extract
+## Task 2: Check the Status of Processes
 
-   To check if this committed transaction is captured by Extract:
+   Check if the Oracle GoldenGate processes are up and running:
 
    1. Start the Admin Client:
    
@@ -55,7 +63,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
       ```
       <copy>
-       CONNECT http://localhost:9012 DEPLOYMENT depl_01 as ggma PASSWORD ggma
+       CONNECT https://south:9101 DEPLOYMENT depl_south AS ggma Password GGma_23ai !
       </copy>
       ```
 
@@ -63,7 +71,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
       ```
        <copy>
-        DBLOGIN USERIDALIAS ggwest
+        DBLOGIN USERIDALIAS ggsouth
        </copy>
       ```
 
@@ -71,16 +79,23 @@ This lab assumes that you have completed the tasks in **initial-setup**
      
       ```
       <copy>
-       STATS EXTRACT extw
+       INFO EXTRACT extn
       </copy>
       ```
-      The output displays the following:
+      The output displays the status of the Extract process. You can run the INFO ALL command to check the status of all processes. 
+   
+   5. You can also run the OBEY script to check these details, as follows: 
 
-      ![Extract statistics](./images/stats_extw.png " ")
+   ```
+      <copy>
+       ./check_replication_reporting.oby
+      </copy>
+      ```
+      
 
-      Notice that there are 3 update records captured by Extract.
+      
 
-## Task 3: Verify that the Replicat applied the updates to the target database
+## Task 3: 
 
    To check if Replicat successfully applied the UPDATE transactions:
 
