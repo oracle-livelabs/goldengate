@@ -36,7 +36,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
    
    1. Move to the <code>AdminClient</code> directory and list the content for this directory:
      
-   2. 
+   2. Run the <code>add_replication_reporting.oby</code> script:
    
     
 ## Task 2: Verify that the updated records are captured by Extract
