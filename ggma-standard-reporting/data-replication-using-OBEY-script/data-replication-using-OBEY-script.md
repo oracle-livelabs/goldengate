@@ -90,32 +90,33 @@ This lab assumes that you have completed the tasks in **initial-setup**
       <copy>
        ./check_replication_reporting.oby
       </copy>
-      ```
-      
+   ```
+   
+   This script includes the following processes:
+        ![check_replication_reporting_oby](./images/check_replication_reporting_oby.png " ")
 
-      
 
-## Task 3: 
+## Task 3: Delete the Replication Environment
 
-   To check if Replicat successfully applied the UPDATE transactions:
+After you check the reports, delete the data replication environment. This is required for testing the other scripts. 
 
-   1. Connect to **pdbeast** using alias **ggeast**
+   1. 
 
       ```
       <copy>
-       DBLOGIN USERIDALIAS ggeast
+       
       </copy>
       ```
    2. Run the commmand:
 
       ```
       <copy>
-       STATS REPLICAT repe
+       
       </copy>
       ```
      The output displays 3 update records:
 
-      ![STATS Replicat](./images/stats_repe.png " ")
+      ![](./images/stats_repe.png " ")
 
    3. Exit from admin client:
 
@@ -124,33 +125,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
        EXIT
       </copy>
       ```
-   4. Connect to the target pluggable database **pdbeast**.
-
-      ```
-       <copy>
-        sqlplus ggadmin/Welcome2OGG@pdbeast
-       </copy>
-      ```
-    
-       ![Connect to pdbeast](./images/connect_pdbeast.png " ")
-
-   5. Check the updated records in the database by running the following SQL query on target database **pdbeast**:
- 
-      ```
-      <copy>
-       Select last_name, first_name, phone_number from hr.employees where last_name=’Vargas’ and first_name=’Peter’;
-    
-       Select last_name, first_name, phone_number from hr.employees where last_name=’Walsh’ and first_name=’Alana’;
-
-       Select last_name, first_name, phone_number from hr.employees where last_name=’Whalen’ and first_name=’Jennifer’;
-      </copy>
-      ```
-
-      The output should displays as follows:
-
-      ![Output for updated records in pdbeast](./images/pdbeast_output.png)
-
-      Notice the updated phone numbers for each of the records.
+   
 
 
 ## Learn More
