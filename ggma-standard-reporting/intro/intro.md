@@ -12,11 +12,14 @@ Estimated Workshop Time: 2 hour
 
 
 ### About Oracle GoldenGate Standard Reporting
-Oracle GoldenGate is a change data capture software that provides real-time data integration and replication.
 
-The Admin Client command line utility available with Microservices Architecture can be used to run OBEY commands to set up various data replication scenarios. 
+Oracle GoldenGate Microservices Architecture provides a RESTful interface to install, deploy, configure, monitor, and manage change data with near real-time data integration and replication.
 
-The cURL commands are also a way to set up data replication by calling Oracle GoldenGate REST APIs.
+You can use various alternatives to configure Oracle GoldenGate: 
+
+•	The Admin Client CLI using OBEY commands
+•	The REST API cURL commands
+
 
 The following diagram shows a standard unidirectional replication in Oracle GoldenGate. In the standard Oracle GoldenGate configuration, an Extract sends captured data using the Distribution Service over TCP/IP to a trail on the target system, where it is received by the Receiver Service and stored until processed by the Replicat.
 
