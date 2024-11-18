@@ -49,27 +49,16 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
        ```
        <copy>
-        
+        ./add_replication_reporting_curl.sh
        </copy>
        ```
+      The output for this command looks similar to the following:
 
-   3. 
+      ![Output of the add_replication_reporting_curl.sh script](./images/rest-api_script_output.png)
+
+      After this script runs successfully, data replication begins between source and target.
    
-       ```
-       <copy>
-        
-       </copy>
-       ```
-        
-   4. 
-          
-         ```
-           <copy>
-            
-
-            
-          </copy>
-         ```   
+   In the next task, you will be able to test the sample report based on the transactions committed when the add_replication_reporting_curl.sh script runs.
          
          
     
@@ -77,95 +66,42 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
    To view the Standard Report based on sample data:
 
-   1. 
+   1. Run the check_replication_reporting.sh script
    
        ```
          <copy>
-            adminclient
+            ./check_replication_reporting.sh
          </copy>
        ```
   
-   2. :
+   2. You can view the report containing statistics for the committed transactions, as shown in the following image:
+  
+   ![Statistics report for all Oracle GoldenGate processes](./images/rest-api-curl_check_replication_reporting.png " ")
 
-      ```
-      <copy>
-       
-      </copy>
-      ```
-
-   3. Connect to **pdbwest** using alias **ggwest**
-
-      ```
-       <copy>
-       
-       </copy>
-      ```
-
-   4. Run the following command:
-     
-      ```
-      <copy>
-       
-      </copy>
-      ```
-      The output displays the following:
-
-      ![Extract statistics](./images/.png " ")
-
-      Notice that there are 3 update records captured by Extract.
 
 ## Task 3: Delete the Data Replication Setup
 
-   It's essential to delete the setup to be able to test the same feature using the OBEY commands within the same environment. You can also use this script to test and delete data replication environments in your own test enviornment. 
+   It's essential to delete the setup to be able to test the same feature using the OBEY commands within the same environment. 
+   
+   You can also use this script to test and delete data replication environments in your own test enviornment. 
    
    To delete the setup:
 
-   1. 
+   1. Run the script <code>delete_replication_reporting_curl.sh</sh>
+   
+   ```
+     <copy>
+      ./delete_replication_reporting_curl.sh  
+     </copy>
+   ```
+   
+   2. You can verify that the environment was deleted after you the following message on the screen:
+   
+   ![Message displayed after the replication environment is deleted.](./images/rest-api_delete_reporting-curl.png " ")
 
-      ```
-      <copy>
-       
-      </copy>
-      ```
-   2. Run the commmand:
+   After you delete the environment, you can use the script anytime to rebuild the environment or copy the script to apply in your own test environment.
 
-      ```
-      <copy>
-       
-      </copy>
-      ```
-     The output displays 3 update records:
-
-      ![STATS Replicat](./images/stats_repe.png " ")
-
-   3. Exit from admin client:
-
-      ```
-      <copy>
-       
-      </copy>
-      ```
-   4. Connect to the target pluggable database **pdbeast**.
-
-      ```
-       <copy>
-       
-       </copy>
-      ```
-    
-       ![Connect to pdbeast](./images/.png " ")
-
-   5. Check the updated records in the database by running the following SQL query on target database **pdbeast**:
- 
-      ```
-      <copy>
-       
-      </copy>
-      ```
-
-      
-
-
+   
 ## Learn More
 * [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/administer-microservices-command-line-interface.html#GUID-0403FAF0-B2F7-48A0-838F-AB4421E5C5E2)
 
@@ -174,4 +110,4 @@ This lab assumes that you have completed the tasks in **initial-setup**
 ## Acknowledgements
 * **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Volker Kuhr, Nick Wagner
-* **Last Updated By/Date** - Preeti Shukla, October 2024
+* **Last Updated By/Date** - Preeti Shukla, 2024
