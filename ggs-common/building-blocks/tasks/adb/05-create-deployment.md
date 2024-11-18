@@ -22,7 +22,7 @@
 
     ![Deployments page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-create-deployment.png " ")
 
-5.  In the Create Deployment panel, enter **GGSDeployment** for Name.
+5.  In the Create Deployment panel, enter **OCI GoldenGate Deployment** for Name.
 
 6.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 

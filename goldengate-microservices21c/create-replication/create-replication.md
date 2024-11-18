@@ -10,7 +10,6 @@ In the previous lab you got acquainted with the various components that constitu
 
 *Estimated Lab Time*: 20 mins
 
-
 ### Objectives
 
 In this lab environment all components are on a single Linux Compute environment.  In reality, these components can be distributed across various machines and locations, even if they are very remote from one another.
@@ -20,7 +19,7 @@ We'll be performing the following tasks:
 - Configure the **Database credentials** to connect to the source Oracle Database, and creation of a CheckPoint Table
 - Set up the **Extract** process on the Oracle database, selecting all the tables from the SOURCE_APP schema to be replicated
 - Set up the **Distribution** service to forward the transactions to a remote system
-- Verify the **Receive** service is automatically set up on the remote (bigdata) system
+- Verify the **Receive** service is automatically set up on the remote (oggdaa) system
 - Set up the **Replicat** service to inject the transactions into the Kafka topic corresponding to the source database table
 
 ### Prerequisites
@@ -30,9 +29,9 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
 
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-    - Lab: Environment Setup
-    - Lab: Discover the environment
+  - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+  - Lab: Environment Setup
+  - Lab: Discover the environment
 
 ## Task 1: Configuring the Database Credentials
 
@@ -40,143 +39,139 @@ This lab assumes you have:
 
     In the previous step you already logged in to this console.
 
-2. Select the *Deployment type* = **oracledb**
+2. Select the **oracledb** Deployment menu in the left navigation bar
 
-    ![select oracle deployment](./images/deploy-ora.png " ")
+    ![select oracle deployment](./images/gg-oracle-services23.png " ")
 
-    You now only see the four services associated with the Oracle DB Deployment
+    You see the four services associated with the Oracle DB Deployment
 
-3. Select the OracleDB Administration service, running on port 10100
-
-    ![oracledb deployment filter](./images/show-oradeploy.png " ")
+3. Select the OracleDB Administration service
 
     You have to log in again, using the same credentials as before :
     - user = oggadmin
     - password = oggadmin
 
-4. Now select the hamburger icon in the top left to visualize the menu
+    ![expand menu on left](./images/ora-admin23.png " ")
 
-    ![expand menu on left](./images/ora-admin.png " ")
+4. Now select the **DB Connections** item in the left menu bar
 
-    This displays the menu of the console
+    ![expand menu on left](./images/db-connection23.png " ")
 
-5. Select the item **Configuration**
-
-    ![Configuration selection](./images/ora-admin-menu.png " ")
-
-6. Create a new Credential by clicking the **+** icon
-
-    ![Credentials screen](./images/ora-config.png " ")
+5. Create a new Connection by clicking the **+** icon
 
     Now you can enter the credentials for the connection from GoldenGate to the database we already have up and running in the environment
-    - Leave the *Credentials Domain* blank
+    - *Credentials Domain*: OracleGoldenGate
     - *Credentials Alias*: **OGG_CAPTURE**
     - *User ID*: **C##GGADMIN@ORCLCDB**
     - *Password*: **Welcome#123**
     - *Verify Password*: **Welcome#123**
     - Click the **Submit** button
 
-    ![Add credentials screen](./images/ora-create-cred.png " ")
+    ![Add credentials screen](./images/ora-create-cred23.png " ")
 
     - You can see a new credential has appeared as we defined it.
 
-7. Test the connection by clicking the small database icon besides the new credential:
+6. Test the connection by clicking the arrow icon besides the new credential:
 
-    ![result of entering credentials](./images/ora-cred-result1.png " ")
+    ![result of entering credentials](./images/ora-cred-result23.png " ")
 
     You can see the login takes place, and the section *TRANDATA* appears on the screen.
 
-    **Troubelshooting**: In case you get an error when testing the connection to the database, double-check your listener configuration is set up correctly, as already explained in the *Discover the Environment section*:
+    **Troubleshooting**: In case you get an error when testing the connection to the database, double-check your listener configuration is set up correctly, as already explained in the *Discover the Environment section*:
 
     - In the terminal window, connect to the database as system: ```sqlplus system/Welcome#123 as sysdba```
     - configure the listener: ```alter system set LOCAL_LISTENER='' scope=both;```
+    - If you had an error stating that the password has expired ("ORA-28002 The Password Will Expire ..." or "ORA-28001 The Password has expired"), run the following command:
+
+        ```sql
+        <copy>
+        sqlplus alter user C##GGADMIN identified by Welcome#123;
+        </copy>
+        ```
+
     - exit sqlplus with ```end```
     - restart the listener with ```lsnrctl stop``` followed by ```lsnrctl start```
 
-8. We now need to add a TRANDATA table to the database to acquire the transaction records in the database.
+7. We now need to add a TRANDATA table to the database to acquire the transaction records in the database.
     - Click on the **+** symbol besides the *TRANDATA Information* title
 
-        ![Test connection](./images/ora-cred-result2.png " ")
+        ![Test connection](./images/gg-connection23.png " ")
 
     - Enter the below parameters:
 
-        -  *Schema Name*: **ORCLPDB1.SOURCE_APP**
-        - Select **All Columns**
-        - All other parameters remain the default ones
+      - *Schema Name*: **ORCLPDB1.SOURCE_APP**
+      - Select the **All Columns** checkbox
+      - All other parameters remain the default ones
     - Click the **Submit** button
 
-        ![Add trandata](./images/add-trandata.png " ")
+        ![Add trandata](./images/add-trandata23.png " ")
 
-9. We can now check the tables in the schema specified:
+8. We can now check the tables in the schema specified:
 
     - In the search box of the *TRANDATA* section, type: **ORCLPDB1.SOURCE_APP**
     - click the search icon besides the box
 
-        ![check trandata](./images/check-tran.png " ")
+        ![check trandata](./images/check-tran23.png " ")
 
     - You can see there is one table enabled for replication in this schema.
 
-         ![result of trandata check](./images/check-tran2.png " ")
+         ![result of trandata check](./images/check-tran2-23.png " ")
 
 This concludes the configuration of the Credentials.
 
-
 ## Task 2 : Configure the Extract process from the source Oracle Database
 
-1. Navigate to the Home screen to start creating an extract
+1. Select the  **Extracts** topic in the left-side menu
 
-    - If necessary open the left-menu by clicking on the hamburger icon in the top left corner
-    - Select **Overview** to return to the home screen of the service
-
-    ![Add extract to oracledb deployment](./images/ora-extract.png " ")
+    ![Add extract to oracledb deployment](./images/ora-extract23.png " ")
 
 2. Create a new **Extract**
 
     - Click the **+** icon of the **Extracts** box as highlighted in the picture above
     - Select the *Extract Type* **Integrated Extract**
+    - *Process Name*: **E_ORACLE**
     - Click **Next** to continue
 
-    ![extract type choice](./images/extr-type.png " ")
+    ![extract type choice](./images/extract-info23.png " ")
 
-3. Enter the following parameters:
+3. Enter the following Extract Options:
 
-    - *Process Name*: **E_ORACLE**
-    - *trail name*: **ex**
     - *Credentials Domain*: **OracleGoldenGate**
     - *Credentials Alias*: **OGG_CAPTURE**
-
-    ![extract options entry part 1](./images/extr-opt.png " ")
-
-4. Scroll down to see more parameters:
-
     - *Register to PDBs*: **ORCLPDB1**
-    - Click the **Next** button to continue
+    - *Extract Trail - Name*: **ex**
 
-    ![extract options entry part 2](./images/extr-opt2.png " ")
+    ![extract options entry part 1](./images/extr-opt23.png " ")
+
+4. Click on **Next** to advance to the *Managed Options* screen:
+
+    - Accept the default parameters and click the **Next** button to continue
+
+    ![extract options entry part 2](./images/extr-opt2-23.png " ")
 
 5. This leads you to the **Parameter File** screen.
 
     - Complete the config by adding the below line to the config:
 
-        ```
-        <copy>TABLE ORCLPDB1.SOURCE_APP.*;</copy>
-        ```
+      ```sql
+      <copy>TABLE ORCLPDB1.SOURCE_APP.*;</copy>
+      ```
 
     - Click the **Create and Run** button
 
-        ![extract parameters](./images/extr-param.png " ")
+        ![extract parameters](./images/extr-param23.png " ")
 
-6. You will be returned to the Overview screen, with a box showing the creation of the extract in progress:
+6. You will be returned to the Overview screen, with the status still showing stopped while the creation of the extract is in progress:
 
-    ![extract creating](./images/extr-creating.png " ")
+    ![extract creating](./images/extr-creating23.png " ")
 
-7. If all goes well, after a few seconds the icon will turn green, indicating the creation of the extract succeeded.
+7. If all goes well, after a few seconds the icon will turn to green *Running*, indicating the creation of the extract succeeded.
 
-    ![extract created](./images/extr-ok.png " ")
+    ![extract created](./images/extr-ok23.png " ")
 
 8. You can click on the name of the extract **E_Oracle** to see more details, for example the statistics.  As nothing is happening on the Oracle database yet, we see no records yet.
 
-    ![extract stats - empty](./images/extr-stats.png " ")
+    ![extract stats - empty](./images/extr-stats23.png " ")
 
 This concludes the configuration of the Extract.
 
@@ -184,137 +179,165 @@ This concludes the configuration of the Extract.
 
 In this step we'll set up the **Distribution** service that will send the transactions to the remote system.  In this case of course the receiving service will also run on the test environment, but in a real-world implementation this process could run very far away.
 
-Before we start the actual configuration we'll check the port on which the Big Data **Receiver** service is running, as this will be our target.
+Before we start the actual configuration we'll check the port on which the oggdaa (Distributed Transactions and Analytics) **Receiver** service is running, as this will be our target.
 
-1. Navigate back to the overall **GoldenGate Service Manager** running on port 10000
+1. Navigate to the **GoldenGate Service Manager** running on port 10000
 
-2. Select the **bigdata** Deployment type
+2. Select the **oggdaa** Deployment type - Distributed Applications and Analytics
 
-    ![select bigdata](./images/sel-bigd.png " ")
+    ![select Distributed Applications](./images/oggdaa-rec.png " ")
 
-3. Note the port of the **Receiver** service : **10202**.  This will be our destination for the Distribution setup.
-
-    ![bigdata services](./images/show-bigd.png " ")
+3. While you hover over the oggdaa **Receiver Service** link, you can see at the bottom of the screen that this service is listening on port **10403**.  This will be our destination for the Distribution setup.
 
     Now we'll navigate back to the **oracledb** deployment
 
-4. Set the deployment filter back to **oracledb**
+4. Select the **oracledb** deployment again
 
-5. Select the **Distribution Service** on port **10101**
+    ![Add Distribution](./images/ora-distr23.png " ")
 
-    ![oracledb services](./images/show-ora.png " ")
+5. Select the **Distribution Service**
 
-6. Click on the **+** sign to configure a new Distribution process
+    ![oracledb services](./images/show-ora23.png " ")
 
-    ![Add Distribution](./images/ora-distri.png " ")
+6. Click on the **+** sign besides the **Distribution Paths** to configure a new Distribution process
 
-7. Enter the following parameters:
+    Enter the following parameter:
 
     - *Path Name*: **ORA2KAFKA**
+
+    and click on **Next**
+
+    ![Add Distribution](./images/ora-distri-path23.png " ")
+
+7. Enter the **Source Options**:
+
     - *Source*: **E_ORACLE**
     - *Trail Name*: **ex**
+
+    and click on Next
+
+    ![Configure distributed](./images/distri-source23.png " ")
+
+8. Enter the **Target Options**:
+
     - *Target protocol*: **ogg**
     - *Target Type*: **Receive Service**
     - *Target*: **localhost**
-    - *Port Number*: **10202**
+    - *Port Number*: **10403**
     - *Trail Name*: **rt**
 
-    Leave the other parameters as the default values provided
+    Leave the other parameters as the default values provided and click **Next**
 
-8. Scroll down and click on the button **Create and Run**
+    ![Configure distributed](./images/distri-target23.png " ")
 
-    ![Configure distributed](./images/distri-conf.png " ")
+9. Leave the parameters on the following screens as is
 
-9. You'll be returned to the home screen of the service, with the new Distribution being created.  After a few seconds the icon should show as steady green :
+    - Accept the default parameters for the screens **Advanced Options**, **Filtering Options** and **Managed Options**
+    - At the, select **Create Path and Run**
 
-    ![distribution result](./images/distr-result.png " ")
+10. You'll be returned to the home screen of the service, with the new Distribution being created.  After a few seconds the icon should show as steady green :
+
+    ![distribution result](./images/distr-result23.png " ")
+
+    - To see the details of the Distribution Path, click on the blue title **Distribution Paths**
+
+    ![distribution result](./images/distr-result23-2.png " ")
 
 Congratulations, you configured the **Distribution** service to send out the transactions remotely
 
-## Task 4 : Check the Receive service on the BigData Deployment
+## Task 4 : Check the Receive service on the oggdaa Deployment
 
 Because you already configured the Distribution service specifying another GoldenGate environment Receiver service as a target, the receiving end will be configured by default.
 
-We'll simply check if this configuration is visible on the receiving end of the bigdata deployment.
+We'll simply check if this configuration is visible on the receiving end of the Distributed Application and Analytics deployment.
 
 1. Navigate back to the overall **GoldenGate Service Manager** running on port 10000
 
-2. Select the **bigdata** deployment
+2. Select the **oggdaa** deployment
 
-3. Click on the **Receiver Service** with port 10202
+3. Click on the **Receiver Service** with port 10403
 
-    ![bigdata deployment services](./images/bigdata-receiv.png " ")
+    ![oggdaa deployment services](./images/oggdaa-rec.png " ")
 
-4. You can see that the same configuration we already configured in the Distribution service of the **oracledb** deployment is also visible here in the **bigdata** deployment Receive service:
+4. You can see that the same configuration we already configured in the Distribution service of the **oracledb** deployment is also visible here in the **oggdaa** deployment Receive service:
 
-    ![Receiver service config](./images/rec-stat.png " ")
+    ![Receiver service config](./images/oggdaa-rec2.png " ")
 
 No further actions are required on the receiving end.
 
 ## Task 5 : Configure the Replicat service to Kafka
 
-As we are receiving transactions in the **bigdata** deployment, we can use a **Replicat** service to insert them into another destination, in this case we'll be using a Kafka system as a target.
+As we are receiving transactions in the **oggdaa** deployment, we can use a **Replicat** service to insert them into another destination, in this case we'll be using a Kafka system as a target.
 
-1. Navigate to the Home screen of the service
+1. Re-open the Service Manager (service on port 10000) and select the oggdaa Deployment
 
-2. Click on the **Administrative Service** tab on the top of the screen
+2. Click on the **Administrative Service** Service
 
 3. Click on the **+** sign of the **Replicat** section
 
-    ![bigdata admin tab](./images/bigd-repl.png " ")
+    ![oggdaa admin tab](./images/oggdaa-home.png " ")
 
-4. Select the *Replicat Type* = **Classic Replicat**
+4. Configure the **Add Replicat** screen:
+    - Select the *Replicat Type* = **Classic Replicat**
+    - Set *Process Name*: **R_KAFKA**
+    - Click **Next** to continue
 
-5. Click **Next** to continue
+    ![replicat type](./images/oggdaa-add-repl.png " ")
 
-    ![replicat type](./images/repl-type.png " ")
+5. We'll now configure the Replicat Options with following parameter values:
 
-6. We'll now configure the Replicat Options with following parameter values:
-
-    - *Process Name*: **R_KAFKA**
-    - *Trail Name*: **rt**
+    - *Replicat Trail Name*: **rt**
     - *Target*: **Kafka**
     - Click **Next** to continue
 
-    ![replicat options](./images/rep-opt.png " ")
+    ![replicat options](./images/oggdaa-add-options.png " ")
+
+6. Leave all parameters of the **Managed Options** screen as per the default and click **Next**
 
 7. Configure the Replicat Parameters: replace the 2nd line of the parameter file with the below value
 
-    ```
+    ```sql
     <copy>MAP ORCLPDB1.SOURCE_APP.*, TARGET TARGET_APP.*;</copy>
     ```
 
 8. Click **Next** to continue
 
-    ![replicat parameters](./images/rep-param.png " ")
+    ![replicat parameters](./images/oggdaa-params.png " ")
 
 9. Configure the Properties file
 
-    In the default properties file you can see 3 locations that need to be filled in as a minimum (marked as **TODO** in the text): the Kafka properties file, the Name resolving template, and the Kafka classpath.
+    In the default properties file you can see 3 locations that need to be filled in as a minimum (marked as **TODO** in the text): the Kafka properties file, the Name resolving template, and the Kafka class path.
 
-    ![replicat properties](./images/rep-prop-ori.png " ")
+    Replace the parameter file with the below text, with the 3 placeholders filled in:
 
-10. Select the small "Files" icon besides the title **Properties File** to select a config file that was already prepared for you
-11. Select the **R_KAFKA.properties** file
-12. Click the **Copy** button
+    ```param
+    # Properties file for Replicat R_KAFKA
+    #Kafka Handler Template
+    gg.handlerlist=kafkahandler
+    gg.handler.kafkahandler.type=kafka
 
-    ![select file](./images/rep-prop-sel.png " ")
+    gg.handler.kafkahandler.kafkaProducerConfigFile=/home/oracle/scripts/kafka_producer.properties
 
-    You now should see a filled-in file (with the comments removed) :
+    gg.handler.kafkahandler.topicMappingTemplate=${tableName}
 
-    ![result of properties edit](./images/rep-prop-ok.png " ")
+    gg.handler.kafkahandler.keyMappingTemplate=${primaryKeys}
+    gg.handler.kafkahandler.mode=op
+    gg.handler.kafkahandler.format=json
+    gg.handler.kafkahandler.format.metaColumnsTemplate=${objectname[table]},${optype[op_type]},${timestamp[op_ts]},${currenttimestamp[current_ts]},${position[pos]}
 
-13. Click the **Create and Run** button to finalize the creation of the Replicat
+    gg.classpath=/opt/kafka/libs/*
+    jvm.bootoptions=-Xmx512m -Xms32m
+    ```
 
-14. Validate the creation finishes without errors
+    ![replicat properties](./images/oggdaa-prop.png " ")
 
-- First you'll see the yellow exclamation mark icon.
+10. Click the **Create and Run** button to finalize the creation of the Replicat
 
-    ![waiting icon](./images/rep-cre1.png " ")
+11. Validate the creation finishes without errors
 
-- After a few seconds you'll see a green icon appear:
+- After a few seconds you'll see a green "Running" icon appear:
 
-    ![creation finished icon](./images/rep-cre2.png " ")
+    ![creation finished icon](./images/oggdaa-running.png " ")
 
 You finalized the setup of the replication !
 
@@ -330,9 +353,8 @@ You may now **proceed to the next lab**.
 
 - [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/understanding/getting-started-oracle-goldengate.html#GUID-F317FD3B-5078-47BA-A4EC-8A138C36BD59)
 
-
 ## Acknowledgements
 
 - **Author** - Jan Leemans, December 2023
 - **Contributors** - Carmelo Millan
-- **Last Updated By/Date**
+- **Last Updated** - Jan Leemans, August 2024
