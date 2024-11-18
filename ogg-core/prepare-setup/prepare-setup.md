@@ -1,7 +1,7 @@
 # Prepare Setup
 
 ## Introduction
-This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to set up the resource needed to run this workshop.
+This lab will describe how to download the Oracle Resource Manager (ORM) stack zip file needed to set up the resource needed to run this workshop.
 
 *Estimated Time:* 10 minutes
 
