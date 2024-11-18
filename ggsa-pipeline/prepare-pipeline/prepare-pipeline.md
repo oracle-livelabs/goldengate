@@ -26,7 +26,7 @@ Now that we have created deployment and connections, we can launch the Stream An
 
    ![GGSA console](./images/ggsa_console_open.png "")
 
-2. The GGSA console will open in a new browser tab. Enter **osaadmin** for User Name. Copy and paste the **Admin Password** from the Reservation Information panel. Click **Sign In**.
+2. The GGSA console will open in a new browser tab. Enter **oggadmin** for User Name. Copy and paste the **Admin Password** from the Reservation Information panel. Click **Sign In**.
 
    ![GGSA login](./images/ggsa_login.png "")
 
@@ -42,7 +42,7 @@ Now that we have created deployment and connections, we can launch the Stream An
 
 OCI GoldenGate Stream Analytics embeds a GoldenGate Big Data environment to receive a change stream from GoldenGate extracts. 
 
-1. Click the osaadmin menu, and then select **System Settings**.
+1. Click the oggadmin menu, and then select **System Settings**.
 
    ![GGSA system settings](./images/ggsa_system_settings.png "")
 
@@ -53,6 +53,8 @@ OCI GoldenGate Stream Analytics embeds a GoldenGate Big Data environment to rece
    ![GGSA system settings manage clusters](./images/manage_ggbd.png "")
 
 4. Click **Start Cluster** and wait until the status of the cluster is **Cluster Status: Running**. Close the System Settings dialog.
+
+      > **Note:** In rare cases, cluster creation will take longer than expected and a message **“Activating GGBD cluster is taking time”** will appear. In this case, close and reopen System Settings dialog after waiting for 1 minute. When cluster is running, close the System Settings dialog.
 
    ![GGSA system settings start cluster](./images/start_ggbd.png "")
 
@@ -83,6 +85,10 @@ For this workshop, an event generator continuously inserts rows into the source 
       > **Note:** The password won't be visible in Cloud Shell when you paste it in.
 
 8. At the command prompt, run `sh eventgen.sh`. A continuous output of insert statements will be shown. Keep the cloud shell window open for the duration of the workshop. The command can be stopped and restarted as necessary.
+
+      ```
+      <copy>sh eventgen.sh</copy>
+      ```
 
    ![Cloud shell commands](./images/cloudshell.png "")
 
@@ -125,25 +131,7 @@ GoldenGate Change Data creates an internal GoldenGate Replicat process that conn
 
    ![Change Data Running](./images/changedata-running.png "")
 
-## Task 5: Change User Name in ADB Connection
-
-Database connections are created with default user ggadmin. The following steps guide you to change this user to moviestream.
-
-1. On the Catalog page, click **ADB\_Connection**. The Edit Connection dialog opens.
-
-   ![Open ADB Connection](./images/catalog_adb_connection.png "")
-
-2. In Edit Connection dialog, on the Type Properties page, click **Next**.
-
-3. On Connection Details page, for Username, enter **moviestream**. Leave the password as is.
-
-4. Click **Test Connection** to check that connection works. The word "Successful" should appear.
-
-5. Click **Save** to close the Dialog.
-
-   ![Edit ADB Connection](./images/edit_adb_conn.png "")
-
-## Task 6: Create Database References
+## Task 5: Create Database References
 
 Create database references for two lookup tables for customers and movies to enrich events in the streaming pipeline.
 
@@ -155,7 +143,7 @@ Create database references for two lookup tables for customers and movies to enr
 
    ![Create Reference Customer page 1](./images/ref_customer_1.png "")
 
-4. On the Source Details page, for Connection, select **ADB\_Connection**, and then click **Next**.
+4. On the Source Details page, for Connection, select **ADB\_moviestream**, and then click **Next**.
 
    ![Create Reference Customer page 2](./images/ref_customer_2.png "")
 
@@ -167,7 +155,7 @@ Create database references for two lookup tables for customers and movies to enr
 
    ![Movie and Customer Database References in catalog](./images/movie-customer-db-ref.png " ")
 
-## Task 7: Create a Geofence
+## Task 6: Create a Geofence
 
 Create a GeoFence to select customers for two regions in the United States. Only customers located in these regions will be selected in the pipeline.
 
@@ -194,6 +182,7 @@ Create a GeoFence to select customers for two regions in the United States. Only
    ![Geo Fence polygon tool](./images/geofence3.png "")
 
 7. Rename the region **West Coast** in the Polygon dialog and press Enter.
+
     ![Geo Fence west coast area](./images/geofence4.png "")
 
 8. If necessary, use your mouse to click and drag the map so the East Coast is fully visible.
@@ -205,7 +194,7 @@ Create a GeoFence to select customers for two regions in the United States. Only
    ![Geo Fence final](./images/geofence5.png "")
 
 
-## Task 8: Create a Kafka Stream
+## Task 7: Create a Kafka Stream
 
 Create a stream to feed a pipeline with events from the Kafka topic into which GoldenGate feeds.
 
@@ -234,7 +223,6 @@ Create a stream to feed a pipeline with events from the Kafka topic into which G
   ![Create Kafka Stream page 4](./images/stream4.png "")
 
 
-
 You may now **proceed to the next lab.**
 
 ## Learn More
@@ -245,4 +233,4 @@ You may now **proceed to the next lab.**
 
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2023
+* **Last Updated By/Date** - Katherine Wardhana, May 2024

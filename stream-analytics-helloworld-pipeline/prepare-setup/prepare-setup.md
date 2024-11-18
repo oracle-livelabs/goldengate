@@ -11,12 +11,12 @@ This lab provides steps to download the Oracle Resource Manager (ORM) stack zip 
 
 ### Prerequisites
 This lab assumes you have:
-- An Oracle Free Tier or Paid Cloud account
+- An Oracle Cloud account
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 1.  Click the link below, to download the Resource Manager zip file, needed to build your environment:
 
-    - [ggsa-uag-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ZuOLyGBxqG7SIXz7MWbFTl2SQaal3-QKChVeRU7vZrw7oWr8s4KsHKoxlr3Bv5_q/n/natdsecurity/b/stack/o/ggsa-uag-mkplc-freetier.zip)
+    - [ggsa-uag-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UJuKpVDTwBaDOym7J0udkJX5K2839e--WW0TqZwWcDTGDAg747s2ZMpjbo-Jxw2N/n/c4u02/b/hosted_workshops/o/stacks/ggsa-uag-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -48,7 +48,7 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
   -  Create Stack:  *Compute + Networking*
   -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Task 2* above
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

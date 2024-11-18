@@ -185,7 +185,7 @@ First, copy the SourceATP connection string from the OCI GoldenGate Deployment C
     * For **Credential Domain**, enter **OracleGoldenGate**.
     * For **Credential Alias**, enter the ATP database name (low) from /home/opc/wallet\_ATP/tnsnames.ora. For example, **atp&lt;user-number&gt;_low**.
     * For **User ID**, paste the modified ATP connection string from step 3.
-    * For **Password**, enter the SourceATP GGADMIN password. *Workshop environment users can copy this value from the Workshop Details.*
+    * For **Password**, enter the SourceATP GGADMIN password. Workshop environment users can copy this value from the Workshop Details.
 
     ![Add a credential for atp_low](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-10.png " ")
 
@@ -201,7 +201,7 @@ First, copy the SourceATP connection string from the OCI GoldenGate Deployment C
 
     ![Click Add Trandata](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-15.png " ")
 
-12. For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**. *You only need to click Submit once. Click Search, and then enter SRC_OCIGGLL to verify.*
+12. For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**. You only need to click Submit once. Click Search, and then enter SRC_OCIGGLL to verify.
 
     ![Enter schema name as directory in step 12 instructions](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/01-05-trandata.png " ")
 
@@ -213,4 +213,4 @@ In this lab, you created a connection from the Oracle GoldenGate Marketplace ins
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, April 2023
+* **Last Updated By/Date** - Katherine Wardhana, May 2024

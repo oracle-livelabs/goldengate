@@ -1,0 +1,48 @@
+{
+    "workshoptitle": "Real-time data integration in the cloud with OCI GoldenGate Stream Analytics",
+    "help": "livelabs-help-db_us@oracle.com",
+    "include": {
+        "01-create-vcn-subnet.md":"../../../ggs-common/building-blocks/tasks/adb/01-create-vcn-subnet.md",
+        "02-create-atp-instance.md":"../../../ggs-common/building-blocks/tasks/adb/02-create-atp-instance.md",
+        "03-load-atp-schema.md":"../../../ggs-common/building-blocks/tasks/adb/03-load-atp-schema.md",
+        "01-create-source-connection.md":"../../../ggs-common/building-blocks/tasks/create/01-create-source-connection.md",
+        "02-unlock-source-ggadmin.md":"../../../ggs-common/building-blocks/tasks/create/02-unlock-source-ggadmin.md",
+        "03-create-target-connection.md":"../../../ggs-common/building-blocks/tasks/create/03-create-target-connection.md",
+        "04-deployment-details.md":"../../../ggs-common/building-blocks/tasks/create/04-deployment-details.md",
+        "05-assign-connection.md":"../../../ggs-common/building-blocks/tasks/create/05-assign-connection.md",
+        "05-create-deployment.md":"../../../ggs-common/building-blocks/tasks/adb/05-create-deployment.md",
+        "01-launch-console.md":"../../../ggs-common/building-blocks/tasks/extract/01-launch-console.md"
+      },    
+    "tutorials": [
+      {
+          "title": "Introduction",
+          "filename": "../../Introduction/introduction.md"
+      },
+      {
+        "title": "Get Started",
+          "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+          "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+      },
+      {
+            "title": "Lab 1: Set up your environment",
+            "filename": "../../env-setup/env-setup.md"
+      },
+        {
+            "title": "Lab 2: Create OCI GoldenGate resources",
+            "filename": "../../create-ggsa-deployment/create-ggsa-deployment.md"
+        },
+        {
+            "title": "Lab 3: Prepare objects for Stream Analytics pipeline",
+            "filename": "../../prepare-pipeline/prepare-pipeline.md"
+        },
+        {
+            "title": "Lab 4: Create and publish the Stream Analytics pipeline",
+            "filename": "../../setup-pipeline/setup-pipeline.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to common problems and directions for receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

@@ -18,13 +18,13 @@ This lab assumes you have:
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 
 <if type="basics">
-    - [ggvd-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Vo75y6-hxT4jgMS5yzQdZs28frxcpv8Fg9BjCg3kJSJEsMRCtzWml25zJGwXcsfK/n/natdsecurity/b/stack/o/ggvd-mkplc-freetier.zip)
+    - [ggvd-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UagakknnEoQsurq99hlvhoAqGGOO5EShzGdOz__4t4TrbVbR-ee6APEAQy_zubRp/n/c4u02/b/hosted_workshops/o/stacks/ggvd-mkplc-freetier.zip)
 </if>
 <if type="advanced">
-    - [ggvd-mkplc-advanced.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JHclbM43HVmaX_i7ZAo3m5qQGet_fIKOLQlMyoQW-SRIhrx141BzEQ_Z5I9yOwxz/n/natdsecurity/b/stack/o/ggvd-mkplc-advanced.zip)
+    - [ggvd-mkplc-advanced.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/l5H-kpu2SP4ddoYXm6YUbHo0bGhknhWvKJ23yGGl6vxAHZPopWqkNGxk5pnYewQM/n/c4u02/b/hosted_workshops/o/stacks/ggvd-mkplc-advanced.zip)
 </if>
 <if type="tools">
-    - [ggvd-mkplc-tools.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/7O8zfAtWGMzgNhexQzwYjORcEToN91EVj6rGE48TwL_6c_XlKhV0chEf4Y5f96qj/n/natdsecurity/b/stack/o/ggvd-mkplc-tools.zip)
+    - [ggvd-mkplc-tools.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/K4_z3U7msabw6zkYDBUyxQY-v3A5mcvzV_SHT6eyc4EJFj6bfq0r5cQ8bhMxMlUQ/n/c4u02/b/hosted_workshops/o/stacks/ggvd-mkplc-tools.zip)
 </if>
 
 2.  Save in your downloads folder.

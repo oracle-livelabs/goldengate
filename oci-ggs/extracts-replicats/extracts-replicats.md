@@ -34,19 +34,19 @@ Before importing data to the target database, create a credential in the target 
 
     ![Autonomous Data Warehouse page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-02-targetadw.png " ")
 
-3. On the **TargetADW Details** page, click **Database actions**.
+3. On the **TargetADW Details** page, click **Database actions**, and then select **SQL** from the dropdown.
 
     ![TargetADW Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
 
-4. Log in to Database Actions as ADMIN, and then click **SQL**.
+    > **Note:** (Optional) Close the SQL Help dialogs.
 
-5. Enter the following script and then click **Run Statement** to create a credential in ADW:
+4. Enter the following script and then click **Run Statement** to create a credential in ADW:
 
     ```
     <copy>BEGIN
     DBMS_CLOUD.CREATE_CREDENTIAL(
       credential_name => 'ADB_OBJECTSTORE',
-      username => '<user-name>',
+      username => '<identity-domain>/<user-name>',
       password => '<token>'
     );
     END;
@@ -57,7 +57,7 @@ Before importing data to the target database, create a credential in the target 
 
     ![Script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-05-sql-script.png " ")
 
-6.  Enter the following script and then click **Run Statement** to import data using ImpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI**: 
+5.  Enter the following script and then click **Run Statement** to import data using ImpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI**: 
 
     ```
     <copy>DECLARE
@@ -149,7 +149,7 @@ Before importing data to the target database, create a credential in the target 
 
 ## Task 2: Add and run the Replicat
 
-1.  On the OCI GoldenGate Deployment Console Home page, click **Add Replicat** (plus icon).
+1.  Return to the OCI GoldenGate Deployment Console Home page. On the Overview page, click **Add Replicat** (plus icon).
 
     ![GoldenGate Deployment Console Home page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-01-ggs-add-replicat.png)
 
@@ -206,11 +206,11 @@ Before importing data to the target database, create a credential in the target 
     MAP SRC_OCIGGLL.*, TARGET SRCMIRROR_OCIGGLL.*;</copy>
     ```
 
-    ![Add Replicat - Parameter File](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-09-param-file.png " ")
-
     > **Note:** `DBOPTIONS ENABLE_INSTATIATION_FILTERING` enables CSN filtering on tables imported using Oracle Data Pump. For more information, see [DBOPTIONS Reference](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service/using&id=GWURF-GUID-BA8C0CED-D87F-4106-862E-4AD22D910160).
 
 10.  Click **Create**.
+
+    ![Add Replicat - Parameter File](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-09-param-file.png " ")
 
 11. In the REP Replicat **Action** menu, select **Start**.
 
@@ -225,4 +225,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, September 2023
+* **Last Updated By/Date** - Katherine Wardhana, October 2024

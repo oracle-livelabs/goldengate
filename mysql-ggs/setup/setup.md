@@ -71,30 +71,35 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 	![Click Create DB System](./images/02-02-create-dbsystem.png " ")
 
-3.  On the Create DB system page, under **Provide DB System** information, select a compartment in which to create the MySQL DB system.
+3. On the Create DB system page, under **Provide DB System** information, select **Development or testing**
 
-4.  For **Name**, leave the default, or replace the default with a name of your choice. For example, `SourceMySQL`.
+4.  For **Create in Compartment**, select a compartment in which to create the MySQL DB system.
 
-5.  (Optional) For Description, enter a description for the MySQL DB system.
+5.  For **Name**, leave the default, or replace the default with a name of your choice. For example, `SourceMySQL`.
 
-6.  Select **Standalone**.
+6.  (Optional) For Description, enter a description for the MySQL DB system.
 
-	![Example MySQL DB System options](./images/02-07-create-dbsys-1.png " ")
+7.  Select **Standalone**.
 
-7.  Under **Create Administrator credentials**, for Username, enter `admin`, and then enter a password for the admin user. Take note of this password.
+	![Example MySQL DB System options](./images/02-06-create-dbsys-1.png " ")
 
-8.  Under **Configure networking**, select the **VCN** and **Subnet** created in Task 1.
+8.  Under **Create Administrator credentials**, for Username, enter `ggadmin`, and then enter a password for the admin user. Take note of this password.
 
-9.  Under **Configure placement**, select an Availability Domain.
+	![Example MySQL DB System options](./images/02-08-create-dbsys-2.png " ")
 
-10. Click **Create**.
+9.  Under **Configure networking**, select the **VCN** and **Subnet** created in Task 1.
+
+10.  Under **Configure placement**, select an Availability Domain.
+
+11. Click **Create**.
+
+	![Example MySQL DB System options](./images/02-11-create-dbsys-3.png " ")
 
 	You're returned to the DB Systems page where the MySQL DB System you created appears. It will take a few minutes for the system to become Active.
 
-11. On the DB System details page, in the **Endpoint** section of the **DB System information**, copy the **Private IP Address**.
+12. On the DB System details page, in the **Endpoint** section of the **DB System information**, copy the **Private IP Address**.
 
-	![Copy the Private IP](./images/02-11-private-ip.png " ")
-
+	![Copy the Private IP](./images/02-12-private-ip.png " ")
 
 ## Task 3A: Create a bastion and session
 
@@ -191,7 +196,7 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 7.  Download and run the sample data script.
 
-	 [seedSRCOCIGGL_MySQL.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/seedSRCOCIGGL_MySQL.sql)
+	 [seedSRCOCIGGL_MySQL.sql](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/seedSRCOCIGGL_MySQL.sql)
 
 8.  Create the ggadmin user using the following script. Ensure that you replace `<ggadmin-password>` with a valid password.
 
@@ -222,13 +227,23 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
     ![Workload and deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-deployment-dw.png " ")
 
-7.  Under Create administrator credentials, enter a password and confirm the password. Note the password down in a notepad, you will need it later.
+7.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
 
-8.  Under **Choose a license type**, select **License Included**.
+8.  Add a password. Take note of the password, you will need it later in this lab.
 
-9.  Click **Create Autonomous Database**.
+    ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
 
-	The Autonomous Data Warehouse instance appears in the list of databases. It becomes active in a few minutes.
+9. Under **Access type**, select **Secure access from everywhere**.
+
+10.  Select **Require mutual TLS (mTLS) authentication**.
+
+    ![Choose network access options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-09-choose-network-access.png " ")
+
+11.  For **Choose license and Oracle Database edition**, use the default selection.
+
+    ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
+
+12.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 ## Task 6: Unlock the GGADMIN user and load the sample schema
 
@@ -242,37 +257,37 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 3.  If you're prompted to log in, enter the Autonomous Data Warehouse admin username and password from Task 5, Step 7.
 
-	![ADW log in](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-login.png " ")
+	![ADW log in](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
 
-5.  On the Database Users page, locate GGADMIN, and then select **Edit** from its ellipsis (three dots) menu.
+4.  On the Database Users page, locate GGADMIN, and then select **Edit** from its ellipsis (three dots) menu.
 
 	![Select Edit from ggadmin's menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/06-05-ggadmin.png " ")
 
-6.  In the Edit User panel, deselect **Account is Locked**, enter a password for `ggadmin` and confirm it, and then click **Apply Changes**.
+5.  In the Edit User panel, deselect **Account is Locked**, enter a password for `ggadmin` and confirm it, and then click **Apply Changes**.
 
 	![Unlock the ggadmin user in the Edit User panel](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/06-06-unlock-ggadmin.png " ")
 
-7.  From the Database Actions menu, under **Development**, select **SQL**.
+6.  From the Database Actions menu, under **Development**, select **SQL**.
 
     ![Select SQL from Database Actions menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-07-sql.png " ")
 
-8.  Download the sample database schema:
+7.  Download the sample database schema:
 
-	[Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/Archive.zip)
+	[Archive.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/Archive.zip)
 
-9.  Copy the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
+8.  Copy the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
+
+9. Click **Run Script**. The Script Output tab displays confirmation messages.
 
     ![Paste script into SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
 
-10. Click **Run Script**. The Script Output tab displays confirmation messages.
-
-11.  Copy only the CREATE TABLE scripts (the first 123 lines) from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
+10.  Copy only the CREATE TABLE scripts (the first 123 lines) from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
 
     ![ADW schema scripts in SQL worksheet](./images/04-07-adw-schema.png " ")
 
-12.  Click **Run Script**. The Script Output tab displays confirmation messages.
+11.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
-13. In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
+12. In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
 
 **Proceed to the next lab.**
 
@@ -280,5 +295,5 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
 - **Contributor** - Julien Testut, Database Product Management
-- **Last Updated by** - Jenny Chan, September 2023
-- **PAR Expiration date** - February 2024
+- **Last Updated by** - Katherine Wardhana, May 2024
+- **PAR Expiration date** - February 2030

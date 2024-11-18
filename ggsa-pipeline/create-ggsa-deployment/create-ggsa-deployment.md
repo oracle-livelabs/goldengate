@@ -18,31 +18,21 @@ Connections store the source and target credential information for OCI GoldenGat
 ### Objectives
 
 In this lab, you will:
-* Locate Oracle Cloud Infrastructure GoldenGate in the Console
 * Create an OCI GoldenGate Stream Analytics deployment
-* Create connections to Kafka and GoldenGate replication
+* Create connections to OCI Streaming and GoldenGate replication
 * Assign connections to the Stream Analytics deployment
 
 ### Prerequisites
-* Completion of Get started - LiveLabs login
 
-## Task 1: Log in to the Oracle Cloud console
+To successfully complete this lab, you must:
 
-1. In your lab instructions, click **View Login Info**. The Reservation Information panel opens.
+* Have successfully completed the Get started lab
+* If you enable public deployment console access when creating the deployment, OCI GoldenGate creates a load balancer in your tenancy VCN on your behalf. To ensure successful creation of the deployment and load balancer, you must have the appropriate policies, quotas, and limits in place.
+* You may want a text editor open to keep track of values you need to reuse.
 
-    ![View Login Info](./images/00-view-login-info.png " ")
+## Task 1: Create an OCI GoldenGate deployment for data replication
 
-2. In the Reservation Information panel, click **Launch OCI**.
-
-    ![Reservation Information](./images/00-res-info.png " ")
-
-3. The User Name should be auto filled. If not, copy and paste it from the Reservation Information panel.
-
-4. For Password, copy and paste the **Password** from the Reservation Information panel. 
-
-5. Click **Sign In**. 
-
-    > **Note:** If this is your first time logging in, you must reset the default password.
+[](include:05-create-deployment.md)
 
 ## Task 2: Create a Stream Analytics deployment
 
@@ -72,11 +62,11 @@ In this lab, you will:
 
 8.  Select **Auto scaling**.
 
-9.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
+9.  For Subnet, select a private subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
 10.  For License type, select **Bring Your Own License (BYOL)**.
 
-11. Click **Show advanced options**, and then select **Enable GoldenGate console public access**. 
+11. Click **Show advanced options**, select **Enable GoldenGate console public access**, and then select a public subnet. 
 
 12. Click **Next**.
 
@@ -88,101 +78,137 @@ In this lab, you will:
 
 15. For Administrator Username, enter **osaadmin**.
 
-16. For Administrator Password, click **Copy value** for **Admin Password** in Terraform Values section of your Reservation Information panel.
+16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![Terraform values](./images/02-16-terraformvalues.png " ")
+    ![GoldenGate details](./images/create_deployment_2.png " ")
 
-17. Click **Create**.
+17. In the Create secret panel, enter `LLsecret`.
 
-    ![Completed GoldenGate details](./images/create_deployment_2.png " ")
+18. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+
+    > **NOTE**: The special characters must not be $, ^, or ?. 
+
+    ![Create Password secret](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-21-passwordsecret.png " ")
+
+19. Confirm the password, and then click **Create**.
+
+20. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 
 You're brought to the Deployment details page. Continue with the following tasks while the deployment creates. Its status changes from CREATING to ACTIVE when it's ready for you to use.
 
-## Task 3: Create the GoldenGate connection
+## Task 3: Create the source Autonomous Database connection
 
-Follow these steps to connect the GoldenGate Replication deployment to the GGSA deployment.
+[](include:01-create-source-connection.md)
 
-1.  Use the Oracle Cloud Console breadcrumb to navigate to the **Deployments** page. 
 
-    ![Deployments highlighted in Oracle Cloud Console breadcrumb](./images/03-01-deployments-breadcrumb.png " ")
+## Task 4: Create the GoldenGate connection
 
-2.  In the GoldenGate menu, click **Connections**.
+To create the GoldenGate connection, you must first obtain the data replication deployment host information and secret password contents. 
 
-    ![Connections in GoldenGate menu](./images/03-02-connections.png " ")
+1.  Use the Oracle Cloud console breadcrumb to navigate to the Deployments page. 
 
-3.  On the Connections page, a precreated **ADB_Connection** connection appears in the Connections list for this lab. Click **Create connection**. 
+2.  On the Deployments page, select the deployment for data replication to open its Details page.
+
+3.  On the deployment details page, in the Deployment information card, under GoldenGate, copy the Console URL value. You can paste this to a text editor for reference.
+
+4.  Use the Oracle Cloud Console breadcrumb to navigate to the **Connections** page. 
+
+5.  On the Connections page, click **Create connection**. 
 
     ![Connections page](./images/create_connection.png " ")
 
-4.  The Create connection wizard consists of 2 pages. On the General information page, for Name, enter **GoldenGate** and optionally, a description.
-
-5.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
-
-6.  From the a Type dropdown, select **GoldenGate** from the **Generic** section.
-
-7.  Click **Next**.
+6.  The Create connection wizard consists of 2 pages. Complete the General information page as follows, and then click **Next**:
+    
+    * For Name, enter **GoldenGate**.
+    * For Compartment, select **&lt;USER&gt;-COMPARTMENT** from the dropdown.
+    * For Type, under **Generic**, select **GoldenGate** from dropdown.
 
     ![GoldenGate details](./images/gg_connect_1.png)
 
-8.  Open the Reservation Information panel, and then click **Copy value** for **GG Deployment Host**. 
+7.  Complete the Connection details page as follows, and then click **Create**:
 
-    ![GG Deployment Host from Reservation Information](./images/03-08-gg-dep-host.png " ")
-
-9.  On the Connection details page, under GoldenGate deployment, select **Enter GoldenGate information**
-
-10.  For Host, paste the **GG Deployment Host** value copied from the Reservation Information panel (Step 8).
-
-11.  For Port, enter **443**.
-
-12.  For Username, enter **oggadmin**.
-
-13. For Password, enter **Admin password** from the Reservation Information panel.
-
-14. Click **Create**.
+    * For GoldenGate deployment, select **Enter GoldenGate information**.
+    * For Host, paste the Console URL value you copied from the data replication deployment details page. Ensure that you remove the https:// and any trailing slashes. 
+    * For Port, enter **443**.
+    * For Username, enter **osaadmin**.
+    * For Password, enter the LLsecret password from Task 1, step 20.
 
     ![GoldenGate details page 2](./images/gg_connect_2.png)
 
     The connection becomes Active after a few minutes. You can continue with the next task.
 
-## Task 4: Create the Kafka connection
+## Task 5: Create an Auth token
 
-Follow these steps to connect the Kafka event hub.
+1. In the Oracle Cloud console global header, click **Profile**, and then select **My profile**.
 
-1.  Use the breadcrumb to return to the Connections page.
+    ![Click Profile, then select My Profile](./images/05-01-myprofile.png " ")
 
-2.  Click **Create connection**.
+2. On the User Details page, under **Resources**, click **Auth tokens**, and then click **Generate token**. 
 
-3.  In the Create connection panel, on the General information page, for Name, enter **Kafka** and optionally, a description.
+    ![Auth tokens](./images/05-02-authtoken.png " ")
+
+3. In the Generate token dialog, enter a description, and then click **Generate Token**.
+
+    ![Generate token](./images/05-03-generate-token.png " ")
+
+4. Copy the auth token from the dialog to a secure location from where you can retrieve it later, and then click **Close**.
+
+    ![Copy token](./images/05-04-copy-token.png " ")
+
+## Task 6: Create a Stream and copy the Stream Pool username
+
+1. In the Oracle Cloud console navigation menu, click **Analytics & AI**, and then under **Messaging**, select **Streaming**.
+
+    ![Open Streaming](./images/06-01-streaming.png " ")
+
+2. On the Streams page, click **Create Stream**.
+
+3. On the Create Stream page, enter a **Stream Name**, and then click **Create**.
+
+4. In the Analytics menu, click **Stream Pools**.
+
+5. On the Stream Pools page, select your stream pool to view its details.
+
+6. On the Stream Pool details page, under **Resources**, click **Kafka Connection Settings**.
+
+7. Copy the **Bootstrap Servers** value and username parameter value from the **SASL Connection Strings** field to a text editor for later use.
+
+    ![Kafka connection settings](./images/06-07-kafkasettings.png " ")
+
+## Task 7: Create the OCI Streaming connection
+
+1.  Use the Oracle Cloud console navigation menu to return to GoldenGate.
+
+2.  On the GoldenGate Overview page, click **Connections**, and then click **Create connection**.
+
+3.  In the Create connection panel, on the General information page, for Name, enter **OCIStream** and optionally, a description.
 
 4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
-5.  From the a Type dropdown, select **Apache Kafka** from the Big Data section.
-
-    ![Kafka details](./images/kafka_connect_1.png)
+5.  From the a Type dropdown, select **OCI Streaming** from the Big Data section.
 
 6.  Click **Next**.
 
-7.  On the Connection details page, under Bootstrap servers, select **Customer-assigned subnet**.
+7.  On the Connection details page, choose **Enter stream pool information**. 
 
-8.  For Host, copy and paste the **Kafka Private FQDN** from the Reservation Information panel.
+8.  For Host, paste the stream pool's Bootstrap Servers host value copied from Lab 1 Task 7.
 
-9.  For Port, enter **9092**.
+9.  For Port, paste the stream pool's Bootstrap Servers port value copied from Lab 1 Task 7.
 
-10. For Private IP address, copy and paste the **Kafka Private IP** from the Reservation Information panel.
+10. For **Username**, enter the Stream Pool username copied from the SASL Connection Settings in Lab 1 Task 7.
 
-11. Click **Create**.
+11. For **Password**, enter the Auth token copied in Lab 1 Task 6.
 
-    ![Kafka details page 2](./images/kafka_connect_2.png)
+12. Click **Create**.
 
-12.  Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
-
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/conn_breadcrumb_from_ggconn.png " ")
+13.  Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
 
 The connection becomes Active after a few minutes. Please wait for both new connections to become Active before proceeding.    
 
-## Task 5: Create connection assignments
 
-You must assign connections need to a deployment before they can be used. 
+## Task 8: Assign connections
+
+You must assign connections to deployments you can use them. 
 
 1.  Click **Deployments** in the GoldenGate menu.
 
@@ -216,11 +242,12 @@ You may now **proceed to the next lab.**
 
 ## Learn more
 
-* [Managing deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/ebbpf/index.html)
-* [Managing connections](https://docs.oracle.com/en/cloud/paas/goldengate-service/mcjzr/index.html)
+* [Create Stream Analytics resources](https://docs.oracle.com/en/cloud/paas/goldengate-service/cwuvu/index.html)
+* [Connect to GoldenGate Paths](https://docs.oracle.com/en/cloud/paas/goldengate-service/cggjh/index.html)
+* [Connect to OCI Streaming](https://docs.oracle.com/en/cloud/paas/goldengate-service/oioio/index.html)
 
 ## Acknowledgements
 * **Author** - Alex Kotopoulis, Director of Product Management, Data Integration Development
 * **Contributors** - Hope Fisher and Kaylien Phan, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2023
+* **Last Updated By/Date** - Katherine Wardhana, May 2024
 

@@ -93,7 +93,7 @@ The following instructions show you how to download the Root Certificate using a
 
 1.  Open the on premises or Marketplace Oracle GoldenGate Service Manager in a browser window.
 
-> **Note:** *To open the Marketplace Oracle GoldenGate Service Manager, use the Public IP of the Marketplace Oracle GoldenGate compute instance from the Oracle Cloud Console, and then enter `<public-ip>:<port 443>` in your browser address bar.*
+> **Note:** To open the Marketplace Oracle GoldenGate Service Manager, use the Public IP of the Marketplace Oracle GoldenGate compute instance from the Oracle Cloud Console, and then enter `<public-ip>:<port 443>` in your browser address bar.
 
 2.  From the navigation menu, click **Certificate Management**.
 
@@ -154,4 +154,4 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Katherine Wardhana, May 2024

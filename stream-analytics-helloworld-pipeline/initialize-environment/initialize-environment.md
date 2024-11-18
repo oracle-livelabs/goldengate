@@ -11,7 +11,7 @@ This lab provides steps to review and start up all the services that are require
 
 ### Prerequisites
 This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- An Oracle Cloud account
 - You have completed:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
@@ -64,8 +64,7 @@ Now with access to your remote desktop session, validate your environment before
 
     If successful, the page above is displayed and your environment is ready.  
 
-    You may now [proceed to the next lab].
-
+    
 4. If you are unable to login, or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, validate the services:
 
     - Check the status of all services:
@@ -112,8 +111,7 @@ Now with access to your remote desktop session, validate your environment before
     | Apache Spark Master             | spark-master.service         |
     | Apache Spark Slave              | spark-slave.service          |
 
-    You may now [proceed to the next lab](#next).
-
+   
 ## Appendix 1: Managing Startup Services
 
 - Start
@@ -168,7 +166,7 @@ If for any reason you want to login from a location that is external to your rem
     - Password
 
     ```
-    <copy>xY3q3svdHt8=</copy>
+    <copy>welcome1</copy>
     ```
 
     - URL
@@ -188,7 +186,7 @@ If for any reason you want to login from a location that is external to your rem
     ![GGSA Landing](images/login-ggsa-external-3.png " ")
 
 
-You may now [proceed to the next lab](#next)
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics

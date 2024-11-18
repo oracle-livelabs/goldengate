@@ -1,5 +1,5 @@
 
-# Build Your Stream Analytics Pipeline
+# Build the Stream Analytics pipeline
 
 ## Introduction
 
@@ -14,10 +14,7 @@ In this Lab you will:
 - Create a Query Stage to Ignore Stationary Vehicles
 
 ### Prerequisites
-This Lab assumes you have:
-- A Free Tier, Paid, or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
-- Completed [Lab 4: Create Artifacts for Your Stream Analytics Pipeline.] (#prev)
+You should have successfully completed all the previous labs.
 
 ## **Task 1:** Create a Pipeline
 
@@ -50,7 +47,7 @@ The pipeline is created and displayed. Listening for events begins, and then str
     - For **Object Key** select **BUStripid**.
     - For **Coordination System** accept the default value **8307**.
 
-    ![Adding Parameters to the Geo Filter](./images/GeoFilter.PNG "")
+    ![Adding Parameters to the Geo Filter](./images/gfilter.png "")
 
 
 ## **Task 3:** Create a Query Stage to Ignore Stationary Vehicles
@@ -66,8 +63,9 @@ The pipeline is created and displayed. Listening for events begins, and then str
     - For **IgnoreStationaryVehicle**, click the Timer icon in the second row below **Sources**.
     - Enter a **range** of 10 seconds and **evaluation frequency** of 10 seconds. PatternGeoFenceInside 10s/10s is displayed.
   
-![Adding a Range and Frequency to the Pattern](./images/RanFreq.PNG "")
+![Adding a Range and Frequency to the Pattern](./images/ranfreq.png "")
 
+You may now **proceed to the next lab**.
 
 ## Learn More
 
@@ -82,4 +80,4 @@ The pipeline is created and displayed. Listening for events begins, and then str
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
 * **Contributors** - Sumathi Nelapati
-* **Last Updated By/Date** - Pratibha Manjunath, March 2023
+* **Last Updated By/Date** - Pratibha Manjunath, December 2023
