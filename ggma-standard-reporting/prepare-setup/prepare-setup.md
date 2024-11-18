@@ -6,7 +6,7 @@ This lab will show you how to download the Oracle Resource Manager (ORM) stack z
 *Estimated Time:* 10 minutes
 
 ### Objectives
--   Download ORM stack
+-   Download the ORM stack
 -   Configure an existing Virtual Cloud Network (VCN)
 
 ### Prerequisites
