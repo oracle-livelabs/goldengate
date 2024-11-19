@@ -20,7 +20,7 @@ In this Lab you will:
 
 - You should have successfully completed all the previous labs.
 - A json file with the sample data to be used in this tutorial:
-  [Click here to download file.](./files/busstream.json?download=1)
+  [Click here to download file.](./files/bus.json?download=1)
 
 
 ## **Task 1:** Create a Kafka Connection
@@ -160,4 +160,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
 * **Contributors** - Sumathi Nelapati
-* **Last Updated By/Date** - Pratibha Manjunath, December 2023
+* **Last Updated By/Date** - Pratibha Manjunath, October 2024
