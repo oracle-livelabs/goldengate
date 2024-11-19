@@ -141,81 +141,49 @@ This lab assumes that you have completed the tasks in **initial-setup**
          </copy>
        ```
   
-   2. :
+   The output of the report is shown in the following image:
 
-      ```
-      <copy>
-       CONNECT https://south:9101 DEPLOYMENT depl_south AS ggma Password GGma_23ai !
-      </copy>
-      ```
-
-   3. Connect to **pdbwest** using alias **ggwest**
-
-      ```
-       <copy>
-        DBLOGIN USERIDALIAS ggsouth
-       </copy>
-      ```
-
-   4. Run the following command:
-     
-      ```
-      <copy>
-       INFO EXTRACT extn
-      </copy>
-      ```
-      The output displays the status of the Extract process. You can run the INFO ALL command to check the status of all processes. 
-   
-   5. You can also run the OBEY script to check these details, as follows: 
-
-   ```
-      <copy>
-       ./check_replication_reporting.oby
-      </copy>
-   ```
-   
-   This script includes the following processes:
-        ![check_replication_reporting_oby](./images/check_replication_reporting_oby.png " ")
+   ![Output for check_replication_reporting_oby script](./images/check_repl_output.png " ")
 
 
 ## Task 3: Delete the Replication Environment
 
-After you check the reports, delete the data replication environment. This is required for testing the other scripts. 
+After you check the reports, you can delete the data replication environment using the . This is required for testing the other scripts. 
 
-   1. 
+1. Make sure you are in the <code>/home/oracle/scripts/UseCases/01_Reporting/AdminClient</code> directory.
 
-      ```
-      <copy>
-       
-      </copy>
-      ```
-   2. Run the commmand:
+2. Run the following commmand:
 
       ```
       <copy>
-       
+         ./delete_replication_reporting.sh
       </copy>
       ```
-     The output displays 3 update records:
-
-      ![](./images/stats_repe.png " ")
-
-   3. Exit from admin client:
-
+   This script consists of the command to run the <code>delete_replication_reporting.oby</code> script. 
+ 
       ```
-      <copy>
-       EXIT
+         <copy>
+         rm -f /u01/app/oracle/deployments/depl_north/etc/conf/ogg/EXTN.prm
+
+         rm -f /u01/app/oracle/deployments/depl_south/etc/conf/ogg/REPN.prm
+         
+         echo "obey delete_replication_reporting.oby" | adminclient
       </copy>
       ```
-   
+ After you run this script, the data replication environment is deleted.  
+
+  
 
 
 ## Learn More
-* [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.3/coredoc/administer-microservices-command-line-interface.html#GUID-0403FAF0-B2F7-48A0-838F-AB4421E5C5E2)
+
+* [Oracle GoldenGate Microservices REST APIs](https://docs.oracle.com/en/middleware/goldengate/core/23/oggra/)
+* [Command Line Reference Guide](https://docs.oracle.com/en/middleware/goldengate/core/23/gclir/index.html)
+
 
 
 
 ## Acknowledgements
 * **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Volker Kuhr, Alex Lima, Madhusudhan Rao
-* **Last Updated By/Date** - Preeti Shukla, April 2023
+* **Contributors** -  Volker Kuhr, Nick Wagner
+* **Last Updated By/Date** - Preeti Shukla, 2024

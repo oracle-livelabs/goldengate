@@ -111,9 +111,10 @@ You may now **proceed to the next lab** to run cURL scripts to set up data repli
 
 ## Learn More
 
-* [GoldenGate Quickstarts](https://docs.oracle.com/en/middleware/goldengate/core/21.3/coredoc/quickstart-your-data-replication-oracle-goldengate-microservices-architecture.html)
+* [Oracle GoldenGate Microservices REST APIs](https://docs.oracle.com/en/middleware/goldengate/core/23/oggra/)
+* [Command Line Reference Guide](https://docs.oracle.com/en/middleware/goldengate/core/23/gclir/index.html)
 
 ## Acknowledgements
 * **Author** - Preeti Shukla
 * **Contributors** - Preeti Shukla, Volker Kuhr
-* **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, April 2023
+* **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, November 2024

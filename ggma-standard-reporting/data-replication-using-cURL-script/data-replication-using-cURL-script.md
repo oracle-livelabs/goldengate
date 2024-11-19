@@ -103,7 +103,9 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
    
 ## Learn More
-* [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/administer-microservices-command-line-interface.html#GUID-0403FAF0-B2F7-48A0-838F-AB4421E5C5E2)
+
+* [Oracle GoldenGate Microservices REST APIs](https://docs.oracle.com/en/middleware/goldengate/core/23/oggra/)
+* [Command Line Reference Guide](https://docs.oracle.com/en/middleware/goldengate/core/23/gclir/index.html)
 
 
 
