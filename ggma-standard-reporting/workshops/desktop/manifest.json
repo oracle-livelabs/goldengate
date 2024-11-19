@@ -38,16 +38,6 @@
       "filename": "../../data-replication-using-OBEY-script/data-replication-using-OBEY-script.md"
     },
     {
-      "title": "Lab 6: Set Up Data Replication Environment Using OBEY Script",
-      "description": "data replication using OBEY script",
-      "filename": "../../data-replication-using-OBEY-script/data-replication-using-OBEY-script.md"
-    },
-    {
-      "title": "Lab 7: Access Standard Reports from Oracle GoldenGate Admin Client",
-      "description": "View the sample standard business reports from Oracle GoldenGate Admin Client",
-      "filename": "../../view-sample-standard-reports-using-admin-client/view-sample-standard-reports-using-admin-client.md"
-    },
-    {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
