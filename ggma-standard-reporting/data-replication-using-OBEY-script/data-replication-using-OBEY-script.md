@@ -32,7 +32,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
 ## Task 1: Set Up Data Replication
 
-  Make sure you are in the /scripts/UseCases/01_Reporting/ directory and perform the following tasks:
+  Make sure you are in the <code>/scripts/UseCases/01_Reporting/</code> directory and perform the following tasks:
    
    1. Move to the <code>AdminClient</code> directory and list the content for this directory:
      
@@ -44,6 +44,8 @@ This lab assumes that you have completed the tasks in **initial-setup**
          </copy>
        ```
       The script connects to the source and target PDBs and creates the Extract, Replicat, Distribution Path processes. 
+
+       
    
    
     
@@ -55,7 +57,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
    
        ```
          <copy>
-            adminclient
+            
          </copy>
        ```
   
