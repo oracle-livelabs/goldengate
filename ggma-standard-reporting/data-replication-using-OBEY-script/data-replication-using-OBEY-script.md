@@ -35,33 +35,113 @@ This lab assumes that you have completed the tasks in **initial-setup**
   Make sure you are in the <code>/scripts/UseCases/01_Reporting/</code> directory and perform the following tasks:
    
    1. Move to the <code>AdminClient</code> directory and list the content for this directory:
+
+       ![Files inside the AdminClient directory](./images/oby_scripts_list.png " ")
      
-   2. Run the <code>add_replication_reporting.oby</code> script:
+   2. Run the <code>add_replication_reporting.sh</code> script:
       
        ```
          <copy>
-            ./add_replication_reporting.oby
+            ./add_replication_reporting.sh
          </copy>
        ```
-      The script connects to the source and target PDBs and creates the Extract, Replicat, Distribution Path processes. 
+      
+      This script contains the following commands:
+      
+         ```
+         <copy>
+            cp EXTN.prm  /u01/app/oracle/deployments/depl_north/etc/conf/ogg/
 
-       
-   
+            cp REPN.prm  /u01/app/oracle/deployments/depl_south/etc/conf/ogg/
+            
+            echo "obey add_replication_reporting.oby" | adminclient
+
+         </copy>
+       ```
+
+      You need to run this script to copy the Extract and Replicat parameter files to Oracle GoldenGate deployment's configuration directory and then run the <code>add_replication_reporting.oby</code> script to set up data replication. 
+
+      The <code>add_replication_reporting.oby</code> script, which is inside the <code>add_replication_reporting_adminclient.sh</code> script, runs after the Extract and Replicat parameter files are copied to the Oracle GoldenGate deployment's <code>/etc/conf/ogg/</code> directory. After the script runs successfully, you will be able to see the Extract and Replicat processes in running state and also view the reports for the committed transactions.  
+
+      This script contains the following commands:
+      
+      ```
+      <copy>
+
+        --
+        -- Connect the GoldenGate Deployment    
+           depl_north
+
+        --
+        CONNECT https://north:9001 DEPLOYMENT 
+        depl_north AS ggma PASSWORD GGma_23ai !
+
+        ALTER CREDENTIALSTORE ADD USER ggadmin@dbnorth ALIAS ggnorth DOMAIN OracleGoldenGate PASSWORD ggadmin
+
+        INFO CREDENTIALSTORE
+
+        DBLOGIN USERIDALIAS ggnorth DOMAIN OracleGoldenGate
+
+        ADD SCHEMATRANDATA hr
+
+        ADD HEARTBEATTABLE
+
+        ADD EXTRACT extn INTEGRATED TRANLOG BEGIN NOW
+
+        REGISTER EXTRACT extn database
+
+        ADD EXTTRAIL north/ea, EXTRACT extn
+
+       START EXTRACT extn
+
+       ADD DISTPATH dpns SOURCE trail://north:9002/services/v2/sources?trail=north/ea TARGET wss://south:9103/services/v2/targets?trail=north/da !
+
+       START DISTPATH dpns
+
+       --
+       -- Connect the GoldenGate Deployment 
+          depl_south
+       --
+       CONNECT https://south:9101 DEPLOYMENT    
+       depl_south AS ggma PASSWORD GGma_23ai !
+      
+       ALTER CREDENTIALSTORE ADD USER ggadmin@dbsouth ALIAS ggsouth DOMAIN OracleGoldenGate PASSWORD ggadmin
+
+       INFO CREDENTIALSTORE
+
+       DBLOGIN USERIDALIAS ggsouth DOMAIN OracleGoldenGate
+      
+      ADD CHECKPOINTTABLE ggadmin.ggs_checkpointtable
+      
+      ADD HEARTBEATTABLE
+      
+      ADD REPLICAT repn, PARALLEL, EXTTRAIL north/da, CHECKPOINTTABLE ggadmin.ggs_checkpointtable 
+      
+      START REPLICAT repn
+      
+      INFO ALL
+      
+      INFO DISTPATH ALL
+      
+      DISCONNECT
+
+      </copy>    
+      ```
    
     
-## Task 2: Check the Status of Processes
+## Task 2: Check the Business Reports
 
-   Check if the Oracle GoldenGate processes are up and running:
+   The statistical reports for the committed transactions are available in the data replication environment. To check these reports, perform the following steps:
 
-   1. Start the Admin Client:
+   1. Run the <code>./check_replication_reporting_adminclient.sh script</code> to run the OBEY commands in the <code>check_replication_reporting_reporting.oby</code> script:
    
        ```
          <copy>
-            
+            ./check_replication_reporting_adminclient.sh
          </copy>
        ```
   
-   2. Connect to the deployment:
+   2. :
 
       ```
       <copy>
