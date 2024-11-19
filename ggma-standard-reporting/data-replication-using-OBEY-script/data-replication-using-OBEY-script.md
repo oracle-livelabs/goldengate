@@ -3,9 +3,9 @@
 
 ## Introduction
 
-This lab describes how to use OBEY scripts <strong>add_replication_reporting.oby</strong> to automatically set up an Oracle GoldenGate processes on the source (<strong>depl_north</strong>) and target (<strong>depl_south</strong>) deployments. Check the business reports using the <strong>check_replication_reporting.oby</strong> script. Delete the data replication environment using the <strong>delete_replication_reporting.oby</strong>.
+This lab describes how to use OBEY scripts <strong>`add_replication_reporting.oby`</strong> to automatically set up an Oracle GoldenGate processes on the source (<strong>`depl_north`</strong>) and target (<strong>`depl_south`</strong>) deployments. Check the business reports using the <strong>`check_replication_reporting.oby`</strong> script. Delete the data replication environment using the <strong>`delete_replication_reporting.oby`</strong>.
 
-The source deployment <strong>depl_north</strong> is connected to the <strong>DBNORTH</strong> PDB and the <strong>depl_south</strong> deployment is connected to the <strong>DBSOUTH</strong> PDB. The deployments are already created in the environment. 
+The source deployment <strong>`depl_north`</strong> is connected to the <strong>`DBNORTH`</strong> PDB and the <strong>`depl_south`</strong> deployment is connected to the <strong>`DBSOUTH`</strong> PDB. The deployments are already created in the environment. 
 
 Estimated Time: 10 minutes
 
@@ -48,20 +48,18 @@ This lab assumes that you have completed the tasks in **initial-setup**
       
       This script contains the following commands:
       
-         ```
-         <copy>
-            cp EXTN.prm  /u01/app/oracle/deployments/depl_north/etc/conf/ogg/
-
-            cp REPN.prm  /u01/app/oracle/deployments/depl_south/etc/conf/ogg/
+          ```
+           <copy>
+              cp EXTN.prm  /u01/app/oracle/deployments/depl_north/etc/conf/ogg/
+              
+              cp REPN.prm  /u01/app/oracle/deployments/depl_south/etc/conf/ogg/
             
-            echo "obey add_replication_reporting.oby" | adminclient
+              echo "obey add_replication_reporting.oby" | adminclient
+           </copy>
+         ```
+You need to run this script to copy the Extract and Replicat parameter files to Oracle GoldenGate deployment's configuration directory and then run the <code>add_replication_reporting.oby</code> script to set up data replication. 
 
-         </copy>
-       ```
-
-      You need to run this script to copy the Extract and Replicat parameter files to Oracle GoldenGate deployment's configuration directory and then run the <code>add_replication_reporting.oby</code> script to set up data replication. 
-
-      The <code>add_replication_reporting.oby</code> script, which is inside the <code>add_replication_reporting_adminclient.sh</code> script, runs after the Extract and Replicat parameter files are copied to the Oracle GoldenGate deployment's <code>/etc/conf/ogg/</code> directory. After the script runs successfully, you will be able to see the Extract and Replicat processes in running state and also view the reports for the committed transactions.  
+   The <code>add_replication_reporting.oby</code> script, which is inside the <code>add_replication_reporting_adminclient.sh</code> script, runs after the Extract and Replicat parameter files are copied to the Oracle GoldenGate deployment's <code>/etc/conf/ogg/</code> directory. After the script runs successfully, you will be able to see the Extract and Replicat processes in running state and also view the reports for the committed transactions.  
 
       This script contains the following commands:
       
