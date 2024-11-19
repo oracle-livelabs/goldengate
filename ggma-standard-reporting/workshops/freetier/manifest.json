@@ -33,7 +33,7 @@
       "filename": "../../data-replication-using-cURL-script/data-replication-using-cURL-script.md"
     },
     {
-      "title": "Lab 5: Set Up Data Replication Environment Using cURL Scripts",
+      "title": "Lab 5: Set Up Data Replication Environment Using OBEY Scripts",
       "description": "View the sample standard business reports from the Oracle GoldenGate console",
       "filename": "../../data-replication-using-OBEY-script/data-replication-using-OBEY-script.md"
     },

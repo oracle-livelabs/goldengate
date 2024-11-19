@@ -3,9 +3,9 @@
 
 ## Introduction
 
-This lab describes how to use the OBEY script <code>add_replication_reporting.oby</code> to automatically set up an Oracle GoldenGate processes on the source (<b>depl_north</b>) and target (<b>depl_south</b>) deployments.
+This lab describes how to use OBEY scripts <strong>add_replication_reporting.oby</strong> to automatically set up an Oracle GoldenGate processes on the source (<strong>depl_north</strong>) and target (<strong>depl_south</strong>) deployments. Check the business reports using the <strong>check_replication_reporting.oby</strong> script. Delete the data replication environment using the <strong>delete_replication_reporting.oby</strong>.
 
-The source deployment <b>depl_north</b> is connected to the <b>DBNORTH</b> PDB and the <b>depl_south</b> deployment is connected to the <b>DBSOUTH</b> PDB. The deployments are already created in the environment. 
+The source deployment <strong>depl_north</strong> is connected to the <strong>DBNORTH</strong> PDB and the <strong>depl_south</strong> deployment is connected to the <strong>DBSOUTH</strong> PDB. The deployments are already created in the environment. 
 
 Estimated Time: 10 minutes
 
