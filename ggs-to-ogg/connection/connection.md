@@ -98,39 +98,38 @@ The following instructions show you how to download the Root Certificate using a
 
 3.  In the Add CA Certificate dialog, enter a **Unique Name**.
 
-    ![Enter a unique name in the Add CA Certificate dialog window](./images/02-03-addcertdialog.png " ")
-
 4.  For **Certificate PEM**, if you downloaded the root certificate from Chrome, open it in a text editor, and then copy and paste the key into the **Enter** text area.
 
-    ![Example of entering a certificate into the Add CA Certificate dialog window](./images/02-04-entercert.png " ")
+> **Note:** If you downloaded the root certificate from FireFox, click **Upload**, and then click **Browse**. Locate and select the PEM file on your local machine.
 
-5.  If you downloaded the root certificate from FireFox, click **Upload**, and then click **Browse**. Locate and select the PEM file on your local machine, and then click **Upload**.
+5.  For **Certification Location**, select **Shared**, and then click **Submit**.
 
     ![Example of uploading a certificate into the Add CA Certificate dialog window](./images/02-05-uploadcert.png " ")
 
-6.  Click **Add**.  The certificate now appears in the Shared list.
+    The certificate now appears in the Shared list.
 
     ![New shared certificate added under CA Certificates](./images/02-06-certlist.png " ")
 
 ## Task 3: Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
 
-1.  Launch the OCI GoldenGate Deployment Console, and then use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
+1.  Launch the OCI GoldenGate Deployment Console, and then use the Navigation menu (hamburger icon) to open the Administration Server's **User Administration** page.
 
     ![Click Administrator in the OCI Goldengate deployment console navigation menu](./images/03-01-administrator.png " ")
 
 2.  Click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. Enter the following values:
 
-    * For Name, enter **ggsnet**.
-    * For Role, select **Operator**.
+    * For Autheticated By, select **Password** from the dropdown.
+    * For Role, select **Operator** from the dropdown.
+    * For Username, enter **ggsnet**.
     * For Password and Verify Password, enter a password.
 
     ![Click Add User](./images/03-02a-users.png " ")
 
     ![Add a ggsnet user with the Operator role](./images/03-02b-users-submit.png " ")
 
-3.  Back in the Oracle GoldenGate Marketplace Administration Server, use the Navigation menu to open the **Configuration** screen.
+3.  Back in the Oracle GoldenGate Marketplace Administration Server, use the Navigation menu to open the **DB Connections** screen.
 
-4.  Under the Database tab, click **Add Credential**, and then complete the following fields:
+4.  Under the Database tab, click **Add DB Connection** (plus icon), and then complete the following fields:
 
     * For **Credential Domain**, enter a name to distinguish this connection, such as **GGSNetwork**.
     * For **Credential Alias**,  enter a name, such as **ggs2ogg**.
@@ -149,4 +148,4 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2024
+* **Last Updated By/Date** - Katherine Wardhana, December 2024
