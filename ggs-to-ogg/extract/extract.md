@@ -188,7 +188,7 @@ This Replicat process consumes the trail file sent from OCI GoldenGate.
 5. On the Parameter File page, in the text area, replace  **MAP \*.\*, TARGET \*.\*;** with the following script:
 
     ```
-    <copy>MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;</copy>
+    <copy>MAP SRC_OCIGGLL.*, TARGET SRCMIRROR_OCIGGLL.*;</copy>
     ```
 
 6.  Click **Create**.

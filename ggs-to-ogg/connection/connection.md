@@ -36,29 +36,11 @@ To successfully complete this lab, you must have:
 
     ![Select Certificate is valid from Connection is secure submenu in Chrome browser](./images/01a-03-certificate.png " ")
 
-4.  In the Certificate window, click **Certification Path**, select **DigiCert Global Root G2**, and then click **View Certificate**.
+4.  In the Certificate Viewer window, click **Details**, select **DigiCert Global Root G2**, and then click **Export...**.
 
-    ![Select DigiCert Global Root G2, then click View Certificate in Certification Path tab of Certificate dialog window](./images/01a-04a-certificate-window.png " ")
+    ![Select DigiCert Global Root G2, then click View Certificate in Certification Path tab of Certificate dialog window](./images/01a-04-certificate-window.png " ")
 
-    Another Certificate window opens, displaying the details for the root DigiCert certificate.
-
-    ![Root DigiCert certificate details pop-up](./images/01a-04b-digicert.png " ")
-
-5.  Click **Details**, and then click **Copy to File**.
-
-    ![Click Copy to File](./images/01a-05-copy-file.png " ")
-
-6.  In the Certificate Export Wizard, click **Next**.
-
-7.  Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
-
-    ![Certificate Export Wizard pop-up](./images/01a-07-cert-export.png " ")
-
-8.  Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
-
-9.  Click **Next**, and then click **Finish**.
-
-A Certificate Export Wizard dialog displays **The export was successful**. You can close the Certificate windows.
+After you have export successfully exported the Certificate, you can close the Certificate windows.
 
 ## Task 1B: Using FireFox to Download the Root Certificate
 
