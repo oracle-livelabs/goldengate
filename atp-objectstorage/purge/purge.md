@@ -20,7 +20,7 @@ This lab assumes you completed all preceding labs.
 
 ## Task 1: Create a Purge Task
 
-[](include:01-create-purge-task.md)
+[](include:01-create-purge-task-23ai.md)
 
 ## Learn more
 
@@ -30,4 +30,4 @@ This lab assumes you completed all preceding labs.
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, March 2023
+* **Last Updated By/Date** - Katherine Wardhana, December 2024
