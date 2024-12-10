@@ -17,14 +17,8 @@ Oracle GoldenGate Microservices Architecture provides a RESTful interface to ins
 
 You can use various alternatives to configure Oracle GoldenGate: 
 
-•	The Admin Client CLI using OBEY commands
-•	The REST API cURL commands
-
-
-The following diagram shows a standard unidirectional replication in Oracle GoldenGate. In the standard Oracle GoldenGate configuration, an Extract sends captured data using the Distribution Service over TCP/IP to a trail on the target system, where it is received by the Receiver Service and stored until processed by the Replicat.
-
-  ![MA Components and Replication Process](./images/data_replication.png " ")
-
+*	The Admin Client CLI using OBEY commands
+*	The REST API cURL commands
 
 
 ### Objectives
@@ -42,14 +36,9 @@ In this workshop, you will:
 ### Prerequisites
 The following are required to complete this lab:
 
-    * Prior knowledge of using cURL commands 
-    * Prior knowledge of Oracle GoldenGate  
-      commands
+* Prior knowledge of using cURL commands 
+* Prior knowledge of Oracle GoldenGate Admin Client commands
 
-
-Watch this short video on adding Database Credentials, Extract, and Replicat Processes in Oracle GoldenGate Microservices on MySQL database:
-
-  [Add credentials, extract, and replicat in GoldenGate](youtube:h0J070YIK4E)
 
 You may now **proceed to the next lab**.
 

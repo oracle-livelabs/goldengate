@@ -20,6 +20,10 @@ The livelab environment set up includes the following:
 
 This lab environment consists of 1 container database instance and two pluggable database instances. 
 
+The following diagram shows a standard unidirectional replication in Oracle GoldenGate. In the standard Oracle GoldenGate configuration, an Extract sends captured data using the Distribution Service over TCP/IP to a trail on the target system, where it is received by the Receiver Service and stored until processed by the Replicat.
+
+  ![MA Components and Replication Process](./images/data_replication.png " ")
+
 The following table provides a snapshot of the available environment:
 
 | Component | Name  | Description |
@@ -28,20 +32,15 @@ The following table provides a snapshot of the available environment:
 |                   | SOUTH | south.livelabs.oraclevcn.com
 | Database Type     | Oracle Database 23.5 Free Edition | Contains 1 CDB and 2 PDBs
 | CDB Name   | FREE | CDB login details: 
-|            |      |    User name: sys
-|            |      |   Password: oracle4GG
+|            |      |    Username/Password: sys/oracle4GG
 | PDB Name   | DBNORTH | PDB login details: 
-|            |      |   User name: sys
-|            |      |   Password: oracle4GG
+|            |      |   Username/Password: sys/oracle4GG
 |PDB Name    | DBSOUTH | Login Details:  
-|            |       |   User name: sys
-|             |      |   Password: oracle4GG
-|OGG Login Credentials ||  Username: ggadmin
-|             |      |   Password: ggadmin
+|            |       |   Username/Password: sys/oracle4GG
+|OGG Login Credentials| |  Username/Password: ggadmin
 |Oracle GoldenGate | Service Manager | Port: 9000 
 | ||Login Credentials:
-| | | User name: ggma
-| | | Password: GGma_23ai   
+| | | Username/Password: ggma/GGma_23ai
 |Oracle GoldenGate | Deployment Name: depl_north | Port: 9000 to 9004 <br> </br> Login details: ggma/GGma_23ai 
 | | Deployment Name: depl_south | Port: : 9100 to 9104 <br> </br> Login details: ggma/GGma_23ai
 |
@@ -55,7 +54,7 @@ This lab contains the following tasks:
 
   - Lab: Load the Oracle GoldenGate and Database Environment
   
-## Task 2: Load the Oracle GoldenGate and Database Environment 
+## Task 1: Load the Oracle GoldenGate and Database Environment 
 
    1. Load the database environment by running the following command:
     
