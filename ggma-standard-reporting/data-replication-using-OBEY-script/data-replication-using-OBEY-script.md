@@ -144,7 +144,14 @@ You need to run this script to copy the Extract and Replicat parameter files to 
    ![Output for check_replication_reporting_oby script](./images/check_repl_output.png " ")
 
 
-## Task 3: Delete the Replication Environment
+## Task 3: Check the Standard Reports in Oracle GoldenGate Microservices Web Interface
+
+The statistical reports that you viewed in Task 2 can also be viewed from the web interface. Following are the steps to access these reports from the web interface:
+
+1. Open a web browser and enter the URL of the Administration Service: 
+
+      
+## Task 4: Delete the Replication Environment
 
 After you check the reports, you can delete the data replication environment using the . This is required for testing the other scripts. 
 
