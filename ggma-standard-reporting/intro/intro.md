@@ -18,6 +18,7 @@ Oracle GoldenGate Microservices Architecture provides a RESTful interface to ins
 You can use various alternatives to configure Oracle GoldenGate: 
 
 *	The Admin Client CLI using OBEY commands
+
 *	The REST API cURL commands
 
 
@@ -49,6 +50,8 @@ Use these links to get more information about Oracle GoldenGate 23ai:
 * [Oracle GoldenGate Microservices Documentation](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/index.html)
 
 * [Command Line Interface Reference for Oracle GoldenGate](https://docs.oracle.com/en/middleware/goldengate/core/23/gclir/add-credentials.html#GUID-6D80E0AC-9497-46C6-92D9-2F817D04BD99)
+
+* [Oracle GoldenGate REST API Documentation](https://docs.oracle.com/en/middleware/goldengate/core/23/oggra/)
 
 ## Acknowledgements
 * **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
