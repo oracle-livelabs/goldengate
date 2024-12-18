@@ -148,9 +148,11 @@ You need to run this script to copy the Extract and Replicat parameter files to 
 
 The statistical reports that you viewed in Task 2 can also be viewed from the web interface. Following are the steps to access these reports from the web interface:
 
-1. Open a web browser and enter the URL of the Administration Service: 
+1. Open a web browser within the environment, and enter the URL of the Administration Service: 
 
       https://north:9001
+2. Log in to the Administration Service using the credentials ggma/GGma_23ai.
+3. 
 ## Task 4: Delete the Replication Environment
 
 After you check the reports, you can delete the data replication environment using the . This is required for testing the other scripts. 

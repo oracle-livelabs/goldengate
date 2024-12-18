@@ -37,7 +37,8 @@ The following table provides a snapshot of the available environment:
 |            |      |   Username/Password: sys/oracle4GG
 |PDB Name    | DBSOUTH | Login Details:  
 |            |       |   Username/Password: sys/oracle4GG
-|OGG Login Credentials| |  Username/Password: ggadmin
+Database Connections| | For DBNORTH Username/Password: ggadmin@dbnorth/ggadmin 
+|                   | | For DBSOUTH Username/Password: ggadmin@dbsouth/ggadmin
 |Oracle GoldenGate | Service Manager | Port: 9000 
 | ||Login Credentials:
 | | | Username/Password: ggma/GGma_23ai
