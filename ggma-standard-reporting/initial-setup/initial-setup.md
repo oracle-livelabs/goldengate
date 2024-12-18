@@ -37,7 +37,7 @@ The following table provides a snapshot of the available environment:
 |            |      |   Username/Password: sys/oracle4GG
 |PDB Name    | DBSOUTH | Login Details:  
 |            |       |   Username/Password: sys/oracle4GG
-Database Connections| | For DBNORTH Username/Password: ggadmin@dbnorth/ggadmin 
+Database Connections| | For DBNORTH: Username/Password: ggadmin@dbnorth/ggadmin 
 |                   | | For DBSOUTH Username/Password: ggadmin@dbsouth/ggadmin
 |Oracle GoldenGate | Service Manager | Port: 9000 
 | ||Login Credentials:
@@ -87,13 +87,12 @@ In this lab, you will be able to view the directories mentioned in this table:
 
 1. Run the command to list the directories:
 
-       ```
+       
        <copy>
        ls -l
        
        </copy>
-
-       ```
+       
 
 2.  Move to the <code>scripts</code> directory 
 
