@@ -146,7 +146,7 @@ unzip <wallet_ATP-filname>.zip -d wallet_ATP</copy>
 
 First, copy the SourceATP connection string from the OCI GoldenGate Deployment Console (ggsinstance). If it's not already open, launch the OCI GoldenGate Deployment Console from the GGSDeployment Details page in the Oracle Cloud Console. Log in using the user name and password you entered in Lab: Create OCI GoldenGate Resources, Task 1, steps 12 and 13.
 
-1.  In the OCI GoldenGate Deployment Console (ggsinstance), open the navigation menu and then click **Configuration**.
+1.  In the OCI GoldenGate Deployment Console (ggsinstance), open the navigation menu and then click **DB Connections**.
 
     ![Click Configuration in the OCI GoldenGate deployment console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-02.png " ")
 
@@ -168,17 +168,21 @@ First, copy the SourceATP connection string from the OCI GoldenGate Deployment C
 
     ![Sign in to Service Manager](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-05-oggcredentials.png " ")
 
-6.  In the Service Manager, under **Services**, click the port number associated with the Administration Server. The Administration Server opens in a new browser tab. If you're prompted to log in again, use the same oggadmin credentials.
+6. In the Service Manager console, under Deployment, click **Marketplace**.
 
-    ![Click the Administration Server's port number in the list of Services](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-03.png " ")
+    ![Service Manager console](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-06-service-mngr.png " ")
 
-7.  In the Administration Server, open the navigation menu, and then select **Configuration**.
+7. Under Marketplace, click **Administration Server**. The Administration Server opens in a new browser tab. If you're prompted to log in again, use the same oggadmin credentials.
 
-    ![Click Configuration in the Administration Server's navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-06.png " ")
+    ![Marketplace page on the Service Manager](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-07-marketplace.png " ")
 
-8.  Click **Add Credential**.
+7.  In the Administration Server, open the navigation menu, and then select **DB Connections**.
 
-    ![Click Add Credential on the Credentials page](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-09.png " ")
+    ![Click DB Connections in the Marketplace's navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-06.png " ")
+
+8.  Click **Add DB Connection**.
+
+    ![Click Add DB Connection](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-09.png " ")
 
 9.  Enter the following information, and then click **Submit**:
 
@@ -197,7 +201,7 @@ First, copy the SourceATP connection string from the OCI GoldenGate Deployment C
 
     ![Click Connect to Database](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-14.png " ")
 
-11. Next to TRANDATA Information, click **Add TRANDATA**.
+11.  In the navigation menu, click **Trandata**. Next to TRANDATA Information, click **Add TRANDATA**.
 
     ![Click Add Trandata](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-15.png " ")
 
