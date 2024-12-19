@@ -275,7 +275,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 3.  On the Replicat Information page, complete the following fields, and then click **Next**:
 
-    * For Replicat Type, select **Coordinated Replicat**.
+    * For Replicat Type, select **Nonintegrated Replicat**
     * For Process Name, enter **REP**.
 
     ![Replicat Information page](images/09-03-add-replicat.png " ")
@@ -285,7 +285,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
     * For Replicat Trail Name, enter **T1**.
     * For Domain, select **OCI Object Storage**.
     * For Alias, select **TargetObjStore**.
-    * For Checkpoint Table, select **"SRCMIRROR_OCIGGLL"."CHECKTABLE"**.
+    * For Checkpoint Table, select "SRCMIRROR_OCIGGLL"."CHECKTABLE".
 
     ![Replicat Options page](images/09-04-replicat-opts.png " ")
 
