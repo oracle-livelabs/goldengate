@@ -27,93 +27,98 @@ This lab assumes that you completed all preceding labs. For the purposes of this
 
 This Extract process captures data from the source database to send to OCI GoldenGate.
 
-1.  In the Oracle GoldenGate Marketplace Administration Service console, select **Overview** from the navigation menu (hamburger icon), and then click **Add Extract** (plus icon).
+1.  In the Oracle GoldenGate Marketplace Administration Service console, click **Add Extract** (plus icon).
 
-    ![Add Extract icon highlighted on Administration Service Overview page](images/02-02-ggs-add-extract.png " ")
+    ![Add Extract icon highlighted on Administration Service Overview page](images/01-01-ggs-add-extract.png " ")
 
-2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
+2.  The Add Extract panel consists of four pages. On the Extract Information page, complete the following fields, and then click **Next**:
 
-    ![Extract Type page with Integrated Extract highlighted](images/01-02-int-extract.png " ")
+    * For **Extract Type**, select **Integrated Extract**.
+    * For **Process Name**, enter a name for this Extract process, such as **UAEXT**.
 
-3.  For **Process Name**, enter a name for this Extract process, such as UAEXT.
+    ![Extract Information page](images/01-02-extract-info.png " ")
 
-4.  For **Trail Name**, enter a two-character name for the Trail file, such as E1.
+3. On the Extract Options page, complete the following fields, and then click **Next**:
 
-    ![Extract Options page](images/02-04-ggs-basic-info.png " ")
+    * For **Domain**, select **OracleGoldenGate** from the dropdown.
+    * For **Alias**, select the Credential Alias for the source Autonomous Transaction Processing database.
+    * For **Trail Name**, enter a two-character name for the Trail file, such as **E1**.
 
-5.  From the **Credential Domain** dropdown, select **OracleGoldenGate**, and then select the **Credential Alias** for the source ATP database.
+    ![Extract Options page](images/01-03-extract-opts.png " ")
 
-    ![Credential Domain and Credential Alias](images/02-05.png " ")
+4. On the Managed Options page, leave the fields as they are, and click **Next**.
 
-6.  Click **Next**.
+    ![Managed Options page](images/01-04-managed-opts.png " ")
 
-7.  In the Extract Parameters screen, add the following to the text area:
-
+5. In the Parameter File page, add a new line, paste the following to the text area, and then click **Create**:
     ```
     <copy>Table SRC_OCIGGLL.*;</copy>
     ```
 
-    ![Add Extract Parameters on the Parameter Files page](images/01-07-ext-params.png " ")
+    ![Add Extract Parameters on the Parameter Files page](images/01-05-param-file.png " ")
 
-8.  Click **Create**. You're returned to the Administration Service Overview page.
+6.  In the UAEXT **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
-9.  In the UAEXT **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
+    ![Select Start from Extract Action menu on the Extracts page](images/01-06a-ggs-start-extract.png " ")
 
-    ![Select Start from Extract Action menu on the Administration Service Overview page](images/02-12-ggs-start-extract.png " ")
+    The grey **Stopped** icon changes to a green **Running** checkmark when the  Extract starts successfully.
 
-    The yellow exclamation point icon changes to a green checkmark.
-
-    ![Extract icon](images/02-ggs-extract-started.png " ")
+    ![Extract icon](images/01-06b-extract-started.png " ")
 
 ## Task 2: Add and run a Distribution Path
 
 The Distribution Path initiates the process to send the Oracle GoldenGate trail file to OCI GoldenGate.
 
-1.  In the on-premises or Marketplace Oracle GoldenGate Administration Server console, click **Distribution Server**, and then click **Add Path** (plus icon).
+1.  In the on-premises or Marketplace Oracle GoldenGate Administration Server console, click **Distribution Server**, and then click **Add Distribution Path** (plus icon).
 
-    ![Click Add Path on the Distribution Service Overview page](images/02-01.png " ")
+    ![Click Add Path on the Distribution Service Overview page](images/02-01-add-dp.png " ")
 
-2.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, **OGGtoGGS**.
+2.  The Add Path panel consists of seven pages. On the Path Information page, for **Path Name**, enter **OGGtoGGS**, and then click **Next**.
 
-3.  For **Description**, describe the purpose of this Path.
+    ![Path information page](images/02-02-path-info.png " ")
 
-4.  Click **Source**, and then select the Extract created in STEP 1 above. For example, select **UAEXT**.
+3.  On the Source Options page, complete the following fields, and then click Next:
 
-5.  Click **Trail Name**, and then select the trail file created in STEP 1 above, to send to OCI GoldenGate. For example, select **E1**.
+    * For **Source Extract**, select **UAEXT** from the dropdown.
+    * For **Trail Name**, **E1** should automatically populate the field.
 
-6.  For **Generated Source URI**, click **Edit Source URI**, and then replace localhost (or the IP address) with the Internal FQDN of the on-premises or Marketplace Oracle GoldenGate instance.
+    ![Source Options page](images/02-03-source-info.png " ")
 
-    ![Replace localhost with Internal FQDN of compute image](images/02-07.png " ")
+4. On the Target Options page, complete the following fields, and then click **Next**:
 
-    >**Note:** You can copy the Internal FQDN from the Oracle GoldenGate Marketplace Compute instance in the OCI Console.
-
-    ![Example of how to copy Internal FQDN from compute instance details page](images/02-07-note.png " ")
-
-7.  For **Target Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
+    * For **Target Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
     >**Note:** You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).
 
-  ![Copy Internal FQDN from Marketplace Oracle GoldenGate instance details page](images/02-08-note.png " ")
+    ![Copy Console URL from OCI GoldenGate deployment page](images/02-04a-console-url.png " ")
 
-8.  For **Port Number**, enter 443.
+    * For **Port Number**, enter **443**.
+    * For **Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.
+    * For **Alias**, enter the alias name you created in Oracle GoldenGate. For example, **ogg2ggs**.
 
-9.  For **Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.
+    ![Target Options page](images/02-04b-target-opts.png " ")
 
-10. For **Target Domain**, enter the domain name you created in Oracle GoldenGate. For example, **GGSNetwork**.
+5. On the Advanced Options page, leave the fields as they are, and click **Next**.
 
-11. For **Target Alias**, enter the alias name you created in Oracle GoldenGate. For example, **ogg2ggs**.
+    ![Advanced Options page](images/02-05-adv-opts.png " ")
 
-    ![Add Path options for Distribution path](images/02-12.png " ")
+6. On the Filtering Options page, leave the fields as they are, and click **Next**.
 
-12. Click **Create Path**.
+    ![Filtering Options page](images/02-06-filt-opts.png " ")
 
-13. Return to the Distribution Server Overview page, and then select **Start** from the Path's **Action** menu.
+7. On the Managed Options page, leave the fields as they are, and click **Create**.
 
-    ![Select Start from the Distribution Path's Action menu](images/02-14.png " ")
+    ![Managed Options page](images/02-07-managed-opts.png " ")
 
-14. In the OCI GoldenGate Deployment Console, check the Receiver Service for the Receiver Path. It can take a few minutes before it appears.
+8. On the left hand navigation menu, click **Distribution Paths**.
 
-    ![Receiver Service Overview page showing the Receiver Path created as a result of creating the Distribution Path on the source deployment](images/02-15-rcvr.png " ")
+9. In the OGGtoGGS Action menu, select **Start**. In the Confirm Action dialog, click **OK**.
+
+    ![Select Start from the Distribution Path's Action menu](images/02-09a-start-dp.png " ")
+
+    The **Stopped** grey status icon becomes a **Running** green checkmark when the Distribution Path starts successfully.
+
+    ![Replicat status icon](images/02-09b-running-dp.png " ")
 
 In this lab, you created and ran a Path on your on-premises Oracle GoldenGate Distribution Server and sent a trail file from Oracle GoldenGate to OCI GoldenGate.
 
@@ -123,11 +128,11 @@ In this lab, you created and ran a Path on your on-premises Oracle GoldenGate Di
 
     ![Select Configration from the Administration Service navigation menu](images/03-01.png " ")
 
-2.  For TargetADW, click **Connect to Database**.
+2.  For TargetADW, click **Connect to Database**. If successful, you are directed to the Checkpoint page.
 
     ![Connect to TargetADW on the Configuration page](images/03-02.png " ")
 
-3.  Next to Checkpoint, click **Add Checkpoint**.
+3.  In the Checkpoint page, click **Add Checkpoint** (plus icon).
 
     ![Add Checkpoint icon highlighted](images/03-03.png " ")
 
@@ -143,42 +148,43 @@ This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
 1.  On the Administration Service Overivew page, click **Add Replicat** (plus icon).
 
-    ![Click Add Replicat on Administration Service Overview page](images/04-01.png " ")
+    ![Click Add Replicat on Administration Service Overview page](images/04-01-add-rep.png " ")
 
-2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
+2. The Add Replicat panel consists of four pages. On the Replication Information page, complete the following fields, and then click **Next**:
 
-    ![Select Nonintegration Replicat on the Replicat types page](images/04-02.png " ")
+    * For Replicat Type, select **Nonintegrated Replicat**.
+    * For Process Name, enter **REP**.
 
-3.  On the Replicate Options page, for **Process Name**, enter **Rep**.
+    ![Replicat Information page](images/04-02-rep-info.png " ")
 
-4.  For **Credential Domain**, select **OracleGoldenGate**.
+3. On the Replicat Options page, complete the following fields, and then click **Next**:
 
-5.  For **Credential Alias**, select **TargetADW**.
+    * For Name, enter **T1**.
+    * For Domain, select **OracleGoldenGate** from the dropdown.
+    * For Alias, select **TargetADW** from the dropdown.
+    * For Checkpoint Table, select **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"** from the dropdown.
 
-6.  For **Trail Name**, enter T1.
+    ![Replicat Options page](images/04-03-rep-opts.png " ")
 
-7.  From the **Checkpoint Table** dropdown, select **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**.
+4. On the Managed Options page, for Profile Name, select **Default** from the dropdown, and then click **Next**.
 
-8.  Under **Managed Options**, enable **Critical to deployment health**.
+    ![Managed Options page](images/04-04-managed-opts.png " ")
 
-    ![Enable Critical to deployment health option](images/04-08.png " ")
+5. On the Parameter File page, in the text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
 
-9.  Click **Next**.
+6. Click **Create**.
 
-10. In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
+    ![Parameter File page](images/04-06-param-file.png " ")
 
-    ![Modify parameters on the Parameter Files page](images/04-10.png " ")
+7. On the left hand navigation menu, click **Replicats**.
 
-11. Click **Create**.
+8. The REP Replicat appears. In the REP Action menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
-12. In the Rep Replicat **Action** menu, select **Start**.
+    ![Start Replicat](images/04-08a-start-rep.png " ")
 
-    ![Select Start from the Replicat Action menu on the Administration Service Overview page](images/04-11.png " ")
+    The **Stopped** grey status icon becomes a **Running** green checkmark when the Replicat starts successfully.
 
-    The yellow exclamation point icon changes to a green checkmark.  
-
-    ![Replicat status icon](images/04-12.png " ")
-
+    ![Replicat status icon](images/04-08b-running-rep.png " ")
 
 In this lab, you created an Extract, a Distribution Path, and a Replicat, and you verified that data is moving from Oracle GoldenGate to OCI GoldenGate. **Proceed to the next lab**.
 
@@ -191,4 +197,4 @@ In this lab, you created an Extract, a Distribution Path, and a Replicat, and yo
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, March 2023
+* **Last Updated By/Date** - Katherine Wardhana, December 2024
