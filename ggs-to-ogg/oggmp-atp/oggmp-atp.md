@@ -196,21 +196,23 @@ After you log in successfully, you're brought to the GoldenGate deployment conso
 
 7.  Log in to the Service Manager using the **oggadmin** credentials found in **/home/opc/ogg-credentials.json**.
 
-8.  In the Performance Metrics Service, under **Services**, click the port number (9012) associated with the Administration Server. The Administration Server opens in a new browser tab. If you're prompted to log in again, use the same oggadmin credentials.
+8. In the Service Manager console, under Deployment, click **Marketplace**.
 
-    ![Performance Metrics Service page](./images/04-08a-perf-metrics-service.png " ")
+    ![Service Manager console](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-06-service-mngr.png " ")
 
-    ![Services pages on the Service Manager](./images/04-08b-services.png " ")
+9. Under Marketplace, click **Administration Server**. The Administration Server opens in a new browser tab. If you're prompted to log in again, use the same oggadmin credentials.
 
-9.  In the Administration Server, open the navigation menu (hamburger icon), and then select **Path Connection**.
+    ![Marketplace page on the Service Manager](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-07-marketplace.png " ")
 
-    ![Click Path Connection in the Administration Server's navigation menu](./images/04-09-path-connection.png " ")
+10.  In the Administration Server, open the navigation menu (hamburger icon), and then select **DB Connections**.
 
-10.  Click **Add DB Connection**.
+    ![Click DB Connections in the Administration Server's navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-06.png " ")
 
-    ![Click Add Path Connection on the Path Connections page](./images/04-10-add-path-connection.png " ")
+11.  Click **Add DB Connection**.
 
-11. Enter the following information, and then click **Submit**:
+    ![Click Add Path Connection](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-09.png " ")
+
+12. Enter the following information, and then click **Submit**:
 
     * For **Credential Domain**, enter **OracleGoldenGate**.
     * For **Credential Alias**, enter **TargetADW**.
@@ -219,7 +221,7 @@ After you log in successfully, you're brought to the GoldenGate deployment conso
 
     ![Add a credential for atp_low](./images/04-11-submit-credential.png " ")
 
-12. To test the connection, click **Connect to database**. Your connection credentials are correct if you see Checkpoint and TRANDATA options appear. If incorrect, you should check the connection string and ggadmin password.
+13. To test the connection, click **Connect to database**. Your connection credentials are correct if you see Checkpoint and TRANDATA options appear. If incorrect, you should check the connection string and ggadmin password.
 
 In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target Autonomous Data Warehouse database. You may now **proceed to the next lab**.
 
