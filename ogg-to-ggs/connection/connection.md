@@ -41,7 +41,9 @@ To successfully complete this lab, you must have:
 
 [](include:03-add-credential.md)
 
-In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. **Proceed to the next lab**.
+In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. 
+
+**Proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance

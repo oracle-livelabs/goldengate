@@ -21,8 +21,8 @@
 
 5.  For **Certification Location**, select **Shared**, and then click **Submit**.
 
-    ![Example of uploading a certificate into the Add CA Certificate dialog window](./images/02-05-uploadcert.png " ")
+    ![Example of uploading a certificate into the Add CA Certificate dialog window](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/02-05-entercert.png " ")
 
     The certificate now appears in the Shared list.
 
-    ![New shared certificate added under CA Certificates](./images/02-06-certlist.png " ")
+    ![New shared certificate added under CA Certificates](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/02-06-uploadcert.png " ")
