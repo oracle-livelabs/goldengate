@@ -151,9 +151,32 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 1. Open a web browser within the environment, and enter the URL of the Administration Service: 
 
       https://north:9001
+
 2. Log in to the Administration Service using the credentials ggma/GGma_23ai.
-3. 
-## Task 4: Delete the Replication Environment
+3. From the left-navigation pane, expand the list of Extracts and select the EXTN Extract.
+4. Click the Statistics option to view the report. 
+
+## Task 4: Add DML to Source Database and Check the Target Database for Replicated Records
+
+To check if the transactions committed to the source database are catpured correctly by the Extract, you can run the script <code>source_dml_operations.sh</code>. 
+This script is located in <code>/home/oracle/scripts/UseCases/01_Reporting</code> folder. 
+
+Run this script as mentioned in the following steps to add DML to the DBNORTH database and check that Extract has captured DML operations:
+
+1. Navigate to the folder: <code>/home/oracle/scripts/UseCases/01_Reporting</code> 
+2. Run the script to add DML operations on the source database:
+   ```
+   <copy>./ source_dml_operations.sh</copy>
+   ```
+3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
+4. After you checked that the DML was captured on the source database, run the script <code>source_target_select.sh</code>. This script contains queries that allow you to check the data on the target database (DBSOUTH). 
+
+```
+<copy>./source_target_select.sh</copy>
+```
+This script displays the content of the DBSOUTH database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the source database DBNORTH.
+
+## Task 5: Delete the Replication Environment
 
 After you check the reports, you can delete the data replication environment using the . This is required for testing the other scripts. 
 
@@ -163,7 +186,7 @@ After you check the reports, you can delete the data replication environment usi
 
       ```
       <copy>
-         ./delete_replication_reporting.sh
+         ./ delete_replication_reporting.sh
       </copy>
       ```
    This script consists of the command to run the <code>delete_replication_reporting.oby</code> script. 

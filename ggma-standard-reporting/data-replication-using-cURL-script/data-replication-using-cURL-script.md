@@ -78,8 +78,38 @@ This lab assumes that you have completed the tasks in **initial-setup**
   
    ![Statistics report for all Oracle GoldenGate processes](./images/rest-api-curl_check_replication_reporting.png " ")
 
+## Task 3: Check the Standard Reports in Oracle GoldenGate Microservices Web Interface
 
-## Task 3: Delete the Data Replication Setup
+The statistical reports that you viewed in Task 2 can also be viewed from the web interface. Following are the steps to access these reports from the web interface:
+
+1. Open a web browser within the environment, and enter the URL of the Administration Service: 
+
+      https://north:9001
+
+2. Log in to the Administration Service using the credentials <b>ggma/GGma_23ai</b>.
+3. From the left-navigation pane, expand the list of Extracts and select the <b>EXTN</b> Extract.
+4. Click the <b>Statistics</b> option to view the report.
+
+## Task 4: Add DML to Source Database
+
+To check if the transactions committed to the source database are catpured correctly by the Extract, you can run the script <code>source_dml_operations.sh</code>. 
+This script is located in <code>/home/oracle/scripts/UseCases/01_Reporting</code> folder. 
+
+Run this script as mentioned in the following steps to add DML to the DBNORTH database and check that Extract has captured DML operations:
+
+1. Navigate to the folder: <code>/home/oracle/scripts/UseCases/01_Reporting</code> 
+2. Run the script to add DML operations on the source database:
+   ```
+   <copy>./ source_dml_operations.sh</copy>
+   ```
+3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
+4. After you checked that the DML was captured on the source database, run the script <code>source_target_select.sh</code>. This script contains queries that allow you to check the data on the target database (DBSOUTH). 
+
+```
+<copy>./source_target_select.sh</copy>
+```
+This script displays the content of the DBSOUTH database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the source database DBNORTH.
+## Task 5: Delete the Data Replication Setup
 
    It's essential to delete the setup to be able to test the same feature using the OBEY commands within the same environment. 
    
