@@ -24,9 +24,9 @@ To successfully complete this lab, you must have:
 
 ## Task 1A: Use Chrome to download the root certificate
 
-[](include:include:01a-chrome-root-certificate.md)
+[](include:01a-chrome-root-certificate.md)
 
-## Task 1B: Using FireFox to Download the Root Certificate
+## Task 1B: Using FireFox to download the root certificate
 
 [](include:01b-firefox-root-certificate.md)
 

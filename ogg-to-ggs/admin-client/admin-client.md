@@ -43,7 +43,7 @@ This lab assumes you successfully completed all preceding labs.
 
     ![SSH command in Cloud Shell](images/02-01-sshkey.png " ")
 
-2.  Change directories to **/u01/app/ogg/bin**, and then start the Admin Client:
+2.  Start the Admin Client:
 
     ```
     <copy>adminclient</copy>

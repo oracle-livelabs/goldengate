@@ -77,12 +77,17 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
     ![Path information page](images/02-02-path-info.png " ")
 
-3.  On the Source Options page, complete the following fields, and then click Next:
+3.  On the Source Options page, complete the following fields, and then click **Next**:
 
     * For **Source Extract**, select **UAEXT** from the dropdown.
     * For **Trail Name**, **E1** should automatically populate the field.
+    * For **Generated Target URI**, click Edit Target URI (pencil icon), enter the Internal FQDN instead of the Public IP.
 
-    ![Source Options page](images/02-03-source-info.png " ")
+    ![Source Options page](images/02-03a-source-info.png " ")
+
+    >**NOTE:** You can copy the Internal FQDN from the Instance details page.
+
+    ![Copy the Internal FQDN from the Instanced page](./images/02-03b-copy-internal-fqdn.png " ")
 
 4. On the Target Options page, complete the following fields, and then click **Next**:
 
