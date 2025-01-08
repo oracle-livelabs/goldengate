@@ -202,4 +202,4 @@ In this lab, you created an Extract, a Distribution Path, and a Replicat, and yo
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, December 2024
+* **Last Updated By/Date** - Katherine Wardhana, January 2025
