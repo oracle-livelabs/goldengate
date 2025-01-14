@@ -24,9 +24,9 @@ To successfully complete this lab, you must have:
 
 ## Task 1A: Use Chrome to download the root certificate
 
-[](include:include:01a-chrome-root-certificate.md)
+[](include:01a-chrome-root-certificate.md)
 
-## Task 1B: Using FireFox to Download the Root Certificate
+## Task 1B: Using FireFox to download the root certificate
 
 [](include:01b-firefox-root-certificate.md)
 
@@ -43,4 +43,4 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, December 2024
+* **Last Updated By/Date** - Katherine Wardhana, January 2025
