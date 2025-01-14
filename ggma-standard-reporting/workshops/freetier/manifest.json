@@ -28,13 +28,13 @@
      "filename": "../../initial-setup/initial-setup.md"
    },
    {
-      "title": "Lab 4: Set Up Data Replication Environment Using cURL Script",
-      "description": "Configure Data Replication Using the automation scripts containing cURL commands",
+      "title": "Lab 4: Set Up Data Replication Environment Using REST API",
+      "description": "Configure data replication using the automation scripts containing REST API cURL commands.",
       "filename": "../../data-replication-using-REST-API/data-replication-using-REST-API.md"
     },
     {
-      "title": "Lab 5: Set Up Data Replication Environment Using OBEY Scripts",
-      "description": "View the sample standard business reports from the Oracle GoldenGate console",
+      "title": "Lab 5: Set Up Data Replication Environment Using Admin Client",
+      "description": "Configure data replication using the automation scripts containing Admin Client OBEY scripts.",
       "filename": "../../data-replication-using-AdminClient/data-replication-using-AdminClient.md"
     },
     {
