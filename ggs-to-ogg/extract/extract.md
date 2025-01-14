@@ -116,9 +116,16 @@ The Target-Initiated Path initiates the process to pull the OCI GoldenGate trail
 
     ![Add Path Name](./images/03-04-path-desc.png " ")
 
-5. On the Target Options page, for **Trail Name**, enter a two-character name for the Trail file when it is received by Oracle GoldenGate. For example, **T1**, and then click **Next**.
+5. On the Target Options page, complete the following fields, and then click **Next**: 
 
-    ![Add Path Name](./images/03-05-target-opts.png " ")
+    * For **Trail Name**, enter a two-character name for the Trail file when it is received by Oracle GoldenGate. For example, **T1**.
+    * For **Generated Target URI**, click Edit Target URI (pencil icon), enter the Internal FQDN instead of the Public IP.
+
+    ![Add Path Name](./images/03-05a-target-opts.png " ")
+
+    >**NOTE:** You can copy the Internal FQDN from the Instance details page.
+
+    ![Copy the Internal FQDN from the Instanced page](./images/03-05b-copy-internal-fqdn.png " ")
 
 6. On the Advanced Options page, leave the fields as they are, and click **Next**.
 
@@ -251,4 +258,4 @@ In this lab, you created an Extract, a Receiver Path, and a Replicat, and you ve
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, December 2024
+* **Last Updated By/Date** - Katherine Wardhana, January 2025

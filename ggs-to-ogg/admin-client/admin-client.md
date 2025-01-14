@@ -41,7 +41,7 @@ This lab assumes you successfully completed all preceding labs.
     <copy>ssh -i <private-SSH-key> opc@<ip-address></copy>
     ```
 
-2.  Change directories to **/u01/app/ogg/bin**, and then start the Admin Client:
+2.  Start the Admin Client:
 
     ```
     <copy>adminclient</copy>
@@ -87,4 +87,4 @@ This lab assumes you successfully completed all preceding labs.
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2023
+* **Last Updated By/Date** - Katherine Wardhana, January 2025
