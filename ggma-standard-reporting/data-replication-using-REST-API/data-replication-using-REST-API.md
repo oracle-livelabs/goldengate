@@ -2,26 +2,30 @@
 
 ## Introduction
 
-This lab describes how to use the REST API service endpoints included in <code>add_replication_reporting_curl.sh</code> script to automatically set up an Oracle GoldenGate processes on the source (<code>depl_north</code>) and target (<code>depl_south</code>) deployments. 
+This lab describes how to use the REST API service endpoints included in `add_replication_reporting_curl.sh` script to automatically set up an Oracle GoldenGate processes on the source (<b>depl_north</b>) and target (<b>depl_south</b>) deployments. 
 
-The source deployment <code>depl_north</code> is connected to the <b>DBNORTH</b> PDB and the <b>depl_south</b> deployment is connected to the <b>DBSOUTH</b> PDB. The deployments are already created in the environment. 
+The source deployment `depl_north` is connected to the <b>DBNORTH</b> PDB and the `depl_south` deployment is connected to the <b>DBSOUTH</b> PDB. The deployments are already created in the environment. 
+
+Check the business reports using the <strong>`check_replication_reporting.oby`</strong> script. You can use the `source_dml_operations.sh` script to add records to the source database and view the Extract Statistics to confirm that the committed transactions were captured. Then you can run the `source_target_select.sh` script to replicate the changes on the target database. Delete the data replication environment using the <strong>`delete_replication_reporting_curl.sh`</strong>.
+
+The source deployment <strong>`depl_north`</strong> is connected to the <strong>`DBNORTH`</strong> PDB and the <strong>`depl_south`</strong> deployment is connected to the <strong>`DBSOUTH`</strong> PDB. The deployments are already created in the environment. 
 
 Estimated Time: 10 minutes
 
 ### Objectives
 In this lab, you will: 
 
-* Run the <code>add_replication_reporting_curl.sh script</code>, which would automatically perform the following tasks:
+* Run the `add_replication_reporting_curl.sh` script, which would automatically perform the following tasks:
 
    * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the Database instance
-   *	Add supplemental logging to the database schema hr (SCHEMATRANDATA) on the source PDB, <b>DBNORTH</b>
+   *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on the source PDB, <b>DBNORTH</b>
    *	Add heartbeat and checkpoint tables on the source and target PDBs.
    *	Add Extract on the source PDB, <b>DBNORTH</b>
    *	Set up the Extract parameter file
    *	Add Distribution Path from source to target systems
    *	Add Replicat on the target PDB, <b>DBSOUTH</b>
 * View the Standard Business Report based on sample data.
-* Delete the data replication environment using the <code>delete_replication_reporting_curl.sh</code> script.
+* Delete the data replication environment using the `delete_replication_reporting_curl.sh` script.
 
 
 ### Prerequisites
@@ -31,9 +35,9 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
 ## Task 1: Set Up Data Replication
 
-   Make sure you are in the /scripts/UseCases/01_Reporting/ directory and perform the following tasks:
+   Make sure you are in the `/scripts/UseCases/01_Reporting/` directory and perform the following tasks:
    
-   1. Move to the <code>REST-API</code> directory and list the content for this directory:
+   1. Move to the `REST-API` directory and list the content for this directory:
      
       ```
       <copy>
@@ -45,7 +49,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
        ![Contents of the REST-API directory](./images/rest-api_dir.png " ")
 
-   2. Run the <code>add_replication_reporting_curl.sh script</code> script:
+   2. Run the `add_replication_reporting_curl.sh` script:
 
        ```
        <copy>
@@ -58,7 +62,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
       After this script runs successfully, data replication begins between source and target.
    
-   In the next task, you will be able to test the sample report based on the transactions committed when the add_replication_reporting_curl.sh script runs.
+   In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_reporting_curl.sh` script runs.
          
          
     
@@ -66,7 +70,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
    To view the Standard Report based on sample data:
 
-   1. Run the check_replication_reporting.sh script
+   1. Run the `check_replication_reporting.sh` script
    
        ```
          <copy>
@@ -92,18 +96,18 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 
 ## Task 4: Add DML to Source Database
 
-To check if the transactions committed to the source database are catpured correctly by the Extract, you can run the script <code>source_dml_operations.sh</code>. 
-This script is located in <code>/home/oracle/scripts/UseCases/01_Reporting</code> folder. 
+To check if the transactions committed to the source database are catpured correctly by the Extract, you can run the script `source_dml_operations.sh`. 
+This script is located in `/home/oracle/scripts/UseCases/01_Reporting` folder. 
 
 Run this script as mentioned in the following steps to add DML to the DBNORTH database and check that Extract has captured DML operations:
 
-1. Navigate to the folder: <code>/home/oracle/scripts/UseCases/01_Reporting</code> 
+1. Navigate to the folder: `/home/oracle/scripts/UseCases/01_Reporting`
 2. Run the script to add DML operations on the source database:
    ```
    <copy>./ source_dml_operations.sh</copy>
    ```
 3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
-4. After you checked that the DML was captured on the source database, run the script <code>source_target_select.sh</code>. This script contains queries that allow you to check the data on the target database (DBSOUTH). 
+4. After you checked that the DML was captured on the source database, run the script `source_target_select.sh`. This script contains queries that allow you to check the data on the target database (DBSOUTH). 
 
 ```
 <copy>./source_target_select.sh</copy>
@@ -117,7 +121,7 @@ This script displays the content of the DBSOUTH database tables <b>hr.employees<
    
    To delete the setup:
 
-   1. Run the script <code>delete_replication_reporting_curl.sh</sh>
+   1. Run the script `delete_replication_reporting_curl.sh`
    
    ```
      <copy>
