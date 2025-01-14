@@ -1,8 +1,8 @@
-# Set Up Data Replication using cURL Scripts
+# Set Up Data Replication Using REST API Service Endpoints
 
 ## Introduction
 
-This lab describes how to use the <code>add_replication_reporting_curl.sh script</code> to automatically set up an Oracle GoldenGate processes on the source (<code>depl_north</code>) and target (<code>depl_south</code>) deployments. 
+This lab describes how to use the REST API service endpoints included in <code>add_replication_reporting_curl.sh</code> script to automatically set up an Oracle GoldenGate processes on the source (<code>depl_north</code>) and target (<code>depl_south</code>) deployments. 
 
 The source deployment <code>depl_north</code> is connected to the <b>DBNORTH</b> PDB and the <b>depl_south</b> deployment is connected to the <b>DBSOUTH</b> PDB. The deployments are already created in the environment. 
 
