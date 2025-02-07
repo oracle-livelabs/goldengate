@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Standard Business Reporting Using Oracle GoldenGate",
+  "workshoptitle": "Design Different Topologies with Oracle GoldenGate 23ai",
   "help": "livelabs-help-license_us@oracle.com",
   "tutorials": [
     {
@@ -28,15 +28,15 @@
      "filename": "../../initial-setup/initial-setup.md"
    },
    {
-    "title": "Lab 4: Set Up Data Replication Environment Using REST API",
-    "description": "Configure data replication using the automation scripts containing REST API cURL commands.",
-    "filename": "../../data-replication-using-REST-API/data-replication-using-REST-API.md"
-  },
-  {
-    "title": "Lab 5: Set Up Data Replication Environment Using Admin Client",
-    "description": "Configure data replication using the automation scripts containing Admin Client OBEY scripts.",
-    "filename": "../../data-replication-using-AdminClient/data-replication-using-AdminClient.md"
-  },
+      "title": "Lab 4: Set Up Data Replication Environment Using REST API",
+      "description": "Configure Data Replication Using the automation scripts containing cURL commands",
+      "filename": "../../data-replication-using-REST-API/data-replication-using-REST-API.md"
+    },
+    {
+      "title": "Lab 5: Set Up Data Replication Environment Using Admin Client",
+      "description": "View the sample standard business reports from the Oracle GoldenGate console",
+      "filename": "../../data-replication-using-AdminClient/data-replication-using-AdminClient.md"
+    },
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",

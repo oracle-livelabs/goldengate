@@ -11,15 +11,11 @@ The scripts allow you to use two approaches for configuring Oracle GoldenGate da
 Estimated Workshop Time: 2 hour
 
 
-### About Oracle GoldenGate Standard Reporting
+### About Oracle GoldenGate Topologies
 
-Oracle GoldenGate Microservices Architecture provides a RESTful interface to install, deploy, configure, monitor, and manage change data with near real-time data integration and replication.
+There are many different topologies in real world scenarios and various combinations of topologies used as per organization requirements. Oracle GoldenGate manages to bring similarities between these configurations, making administration easier irrespective of the topology.
 
-You can use various alternatives to configure Oracle GoldenGate: 
-
-*	The Admin Client CLI using OBEY commands
-
-*	The REST API cURL commands
+![The image shows the six different topologies implemented using Oracle GoldenGate data replication.](./images/topologies.png)
 
 
 ### Objectives
