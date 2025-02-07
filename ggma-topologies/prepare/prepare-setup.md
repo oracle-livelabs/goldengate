@@ -17,7 +17,7 @@ This lab assumes you have:
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 
-
+ll-orm-mkplc-freetier.zip
      
 2.  Save in the downloads folder.
 

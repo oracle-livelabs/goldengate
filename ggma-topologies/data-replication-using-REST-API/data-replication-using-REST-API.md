@@ -56,10 +56,6 @@ This lab assumes that you have completed the tasks in **initial-setup**
         ./add_replication_reporting_curl.sh
        </copy>
        ```
-      The output for this command looks similar to the following:
-
-      ![Output of the add_replication_reporting_curl.sh script](./images/rest-api_script_output.png)
-
       After this script runs successfully, data replication begins between source and target.
    
    In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_reporting_curl.sh` script runs.
