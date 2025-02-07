@@ -1,0 +1,21 @@
+{
+  "workshoptitle": "Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams",
+  "help": "livelabs-help-license_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Introduction to Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams",
+      "description": "Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams",
+      "filename": "../../ora-to-json/ora-to-json.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}

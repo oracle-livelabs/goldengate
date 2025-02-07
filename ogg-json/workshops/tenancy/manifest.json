@@ -1,0 +1,66 @@
+{
+  "workshoptitle": "Get Started with Oracle GoldenGate (MA) for Big Data",
+  "help": "livelabs-help-license_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Introduction to GoldenGate Microservices",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "Get a Free Trial",
+      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Lab 1: Prepare Setup",
+      "description": "How to download your ORM stack and update security rules for an existing VCN",
+      "filename": "../../prepare-setup/prepare-setup.md"
+    },
+    {
+      "title": "Lab 2: Environment Setup",
+      "description": "How to provision the workshop environment and connect to it",
+      "filename": "https://oracle-livelabs.github.io/common/labs/setup-compute-generic/setup-compute-novnc-ssh.md"
+    },
+    {
+      "title": "Lab 3: Initialize Environment",
+      "description": "This lab provides detailed guide to initialize the workshop environment",
+      "filename": "../../initial-setup/initial-setup.md"
+    },
+    {
+      "title": "Lab 4: Oracle to Kafka",
+      "description": "GGBD Oracle-to-Kafka",
+      "filename": "../../oracle-to-kafka/oracle-to-kafka.md"
+    },
+    {
+      "title": "Lab 5: Oracle to HDFS",
+      "description": "GGBD Oracle-to-hdfs",
+      "filename": "../../oracle-to-hdfs/oracle-to-hdfs.md"
+    },
+    {
+      "title": "Lab 6: Oracle to HBase",
+      "description": "GGBD Oracle-to-HBase",
+      "filename": "../../oracle-to-hbase/oracle-to-hbase.md"
+    },
+    {
+      "title": "Lab 7: Oracle to Cassandra",
+      "description": "GGBD Oracle-to-Cassandra",
+      "filename": "../../oracle-to-cassandra/oracle-to-cassandra.md"
+    },
+    {
+      "title": "Lab 8: Oracle to MongoDB",
+      "description": "GGBD Oracle to MongoDB",
+      "filename": "../../oracle-to-mongodb/oracle-to-mongodb.md"
+    },
+    {
+      "title": "Lab 9: GGMA Adminclient",
+      "description": "GGMA Adminclient",
+      "filename": "../../ggma-adminclient/ggma-adminclient.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}
