@@ -116,7 +116,7 @@ A Path Connection creates Credentials for the East Distribution Service to conne
 
     ![Path Connection list](./images/03-04-pc-list.png " ")
 
-## Task 4: Add a Distribution Path to West deployment
+## Task 4: Add a Distribution Path on East Deployment to Send Trails to West Deployment
 
 1. On the top navigation menu, click **Distribution Service**, and then click **Add Distribution Path** (plus icon). 
 

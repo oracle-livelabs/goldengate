@@ -12,13 +12,13 @@
 
     ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
 
-3.  The Create connection panel consists of two pages. On the General information page, for Name, enter **SourceATP** and optionally, a description.
+3.  The Create connection panel appears. For Name, enter **SourceATP** and optionally, a description.
 
 4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
 5.  From the a Type dropdown, select **Oracle Autonomous Database**.
 
-6. From the Database details dropdown, select **Select database**.
+6. For Database details, select **Select database**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
 
