@@ -86,4 +86,4 @@ Follow the steps below to connect the source Oracle Autonomous Transaction Proce
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, June 2024
+* **Last Updated By/Date** - Katherine Wardhana, February 2025

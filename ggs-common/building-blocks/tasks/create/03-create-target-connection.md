@@ -18,23 +18,21 @@ Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) i
 
 5.  From the a Type dropdown, select **Oracle Autonomous Database**.
 
-6.  Click **Next**.
+6.  From the Database details dropdown, select **Select database**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-06-create-connec-general-info.png " ")
 
-7. On the Connection details page, under Database details, select **Select database**.
+7. For **Database in &lt;compartment-name&gt;**, select **TargetADW-&lt;numbers&gt;** from the dropdown. 
 
-8. For **Database in &lt;compartment-name&gt;**, select **TargetADW-&lt;numbers&gt;** from the dropdown. 
+8. For Database username, enter `ggadmin`.
 
-9. For Database username, enter `ggadmin`.
+9. Enter the database's password in the Password field. Ensure that you record this password for later use.
 
-10. Enter the database's password in the Password field. Ensure that you record this password for later use.
+10. For Traffic routing method, select **Shared endpoint**.
 
-11. For Traffic routing method, select **Shared endpoint**.
+11. Click **Create**.
 
-12. Click **Create**.
-
-    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-13-create-connec-details.png)
+    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-11-create-connec-details.png)
 
     The source and target databases appear in the list of Connections. The connection becomes Active after a few minutes.
 
