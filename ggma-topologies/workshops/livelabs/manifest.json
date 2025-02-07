@@ -15,13 +15,13 @@
     {
       "title": "Lab 1: Create SSH keys using Oracle Cloud Shell",
       "description": "How to generate SSH keys using Oracle cloud shell",
-      "filename": "https://github.com/oracle-livelabs/common/blob/main/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell-sandbox.md"
+      "filename": "https://oracle-livelabs.github.io/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell-sandbox.md"
     },
 
     {
       "title": "Lab 2: Use noVNC remote desktop",
       "description": "How to get started with your workshop with a remote desktop session.",
-      "filename": "https://github.com/oracle-livelabs/common/blob/main/labs/remote-desktop/using-novnc-remote-desktop.md"
+      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     }, 
     
 
