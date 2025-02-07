@@ -1,10 +1,10 @@
-#  Replicate data from Oracle Database to Apache Cassandra
+#  Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams
 
 ## Introduction
 
-This lab will demonstrate how to  ***Replicate data from Oracle Database to Apache Cassandra*** using **Oracle GoldenGate 21c Microservices** and **Oracle GoldenGate (MA) for Big Data**. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
+This lab will demonstrate how to  ***Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams*** 
 
-In this lab, we will load data in the Oracle Database schema ***SOE***  of Pluggable Database ***PDB***. GG extract process ***EXTORA*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, path ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate (MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPCASS*** read the remote trail files, created the Cassandra tables, and wrote the data to those tables.
+In this lab, we will load data in the Oracle Database schema ***JSON_USER***  of Pluggable Database ***PDB***. GG extract process ***EXTSRC*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, **Data Stream** will consume the trail file ***et***.to **need to work **
 
 Estimated Time:  30 minutes
 
@@ -15,9 +15,9 @@ Estimated Time:  30 minutes
 ### Objectives
 In this lab you will learn:
 -  How to reset the GoldenGate configuration.
--  How to create an extract for the source database and a path to distribute the trail to target deployment.
--  How to configure the GoldenGate for Cassandra as a target.
--  How to validate the GoldenGate configuration for Cassandra as a target.
+-  How to create an extract for the source database 
+-  How to configure the Data Steams
+-  How to consume the Data Steams using AsynchAPI
 
 ### Prerequisites
 This lab assumes you have:
@@ -25,122 +25,121 @@ This lab assumes you have:
 - You have completed:
     - Lab: Initialize Environment
 
-## Task 1: Create JSON Relational Duality Views
-1.  Open a terminal and create a ***JSON table***.
+## Task 1: Create JSON relational duality views
+1.  Open a terminal and create a ***JSON table*** using below snipet.
 
-```
-<copy>sqlplus / as sysdba << EOF 
-ALTER SESSION 
-SET 
-  CONTAINER = PDB;
+    ```
+    <copy>sqlplus / as sysdba << EOF 
+    ALTER SESSION 
+    SET 
+      CONTAINER = PDB;
 
-CREATE TABLE JSON_USER.ATTENDEE (
-  ID NUMBER PRIMARY KEY, 
-  NAME VARCHAR2(100), 
-  COMPANY VARCHAR2(100)
-);
-CREATE TABLE JSON_USER.SESSIONSS (
-  SESSION_ID VARCHAR2(10) PRIMARY KEY, 
-  SESSION_NAME VARCHAR2(100), 
-  SESSION_TIME TIMESTAMP, 
-  ROOM VARCHAR2(50)
-);
-CREATE TABLE JSON_USER.ATTENDEE_SESSION (
-  ATTENDEE_ID NUMBER, 
-  SESSION_ID VARCHAR2(10), 
-  PRIMARY KEY (ATTENDEE_ID, SESSION_ID), 
-  FOREIGN KEY (ATTENDEE_ID) REFERENCES JSON_USER.ATTENDEE(ID), 
-  FOREIGN KEY (SESSION_ID) REFERENCES JSON_USER.SESSIONSS(SESSION_ID)
-);
-CREATE TABLE JSON_USER.SPEAKER (
-  ID NUMBER PRIMARY KEY, 
-  NAME VARCHAR2(100)
-);
-CREATE TABLE JSON_USER.SPEAKER_SESSION (
-  SPEAKER_ID NUMBER, 
-  SESSION_ID VARCHAR2(10), 
-  PRIMARY KEY (SPEAKER_ID, SESSION_ID), 
-  FOREIGN KEY (SPEAKER_ID) REFERENCES JSON_USER.SPEAKER(ID), 
-  FOREIGN KEY (SESSION_ID) REFERENCES JSON_USER.SESSIONSS(SESSION_ID)
-);
-EOF
+    CREATE TABLE JSON_USER.ATTENDEE (
+      ID NUMBER PRIMARY KEY, 
+      NAME VARCHAR2(100), 
+      COMPANY VARCHAR2(100)
+    );
+    CREATE TABLE JSON_USER.SESSIONSS (
+      SESSION_ID VARCHAR2(10) PRIMARY KEY, 
+      SESSION_NAME VARCHAR2(100), 
+      SESSION_TIME TIMESTAMP, 
+      ROOM VARCHAR2(50)
+    );
+    CREATE TABLE JSON_USER.ATTENDEE_SESSION (
+      ATTENDEE_ID NUMBER, 
+      SESSION_ID VARCHAR2(10), 
+      PRIMARY KEY (ATTENDEE_ID, SESSION_ID), 
+      FOREIGN KEY (ATTENDEE_ID) REFERENCES JSON_USER.ATTENDEE(ID), 
+      FOREIGN KEY (SESSION_ID) REFERENCES JSON_USER.SESSIONSS(SESSION_ID)
+    );
+    CREATE TABLE JSON_USER.SPEAKER (
+      ID NUMBER PRIMARY KEY, 
+      NAME VARCHAR2(100)
+    );
+    CREATE TABLE JSON_USER.SPEAKER_SESSION (
+      SPEAKER_ID NUMBER, 
+      SESSION_ID VARCHAR2(10), 
+      PRIMARY KEY (SPEAKER_ID, SESSION_ID), 
+      FOREIGN KEY (SPEAKER_ID) REFERENCES JSON_USER.SPEAKER(ID), 
+      FOREIGN KEY (SESSION_ID) REFERENCES JSON_USER.SESSIONSS(SESSION_ID)
+    );
+    EOF
 
-</copy>
-```
-  ![json-table-create-commad](./images/json-table-create-commad.png " ")
-  ![json-table-create-output](./images/json-table-create-output.png " ")
+    </copy>
+    ```
+    ![json-table-create-commad](./images/json-table-create-commad.png " ")
+    ![json-table-create-output](./images/json-table-create-output.png " ")
 
 
-## Task 2: JSON relational duality view 
-1.  Create a JSON relational duality view 
+2. Create a JSON relational duality view from the below snipet.
 
-```
-<copy>sqlplus / as sysdba << EOF 
-ALTER SESSION 
-SET 
-  CONTAINER = PDB;
-CREATE 
-or replace JSON RELATIONAL DUALITY VIEW JSON_USER.attendeeSchedule AS 
-SELECT 
-  JSON { '_id' : a.ID, 
-  'name' : a.NAME, 
-  'company' : a.COMPANY, 
-  'schedule' : json[ 
-select 
-  json{ 'ATTENDEE_ID' : ass.ATTENDEE_ID, 
-  'attendee_sess_id' : ass.session_id, 
-  unnest(
+    ```
+    <copy>sqlplus / as sysdba << EOF 
+    ALTER SESSION 
+    SET 
+      CONTAINER = PDB;
+    CREATE 
+    or replace JSON RELATIONAL DUALITY VIEW JSON_USER.attendeeSchedule AS 
+    SELECT 
+      JSON { '_id' : a.ID, 
+      'name' : a.NAME, 
+      'company' : a.COMPANY, 
+      'schedule' : json[ 
     select 
-      JSON { 'code' : s.SESSION_ID, 
-      'session_name' : s.SESSION_NAME, 
-      'time' : s.SESSION_TIME, 
-      'room' : s.ROOM, 
-      'speakers' : json[ 
-    select 
-      json{ 'speaker_sess_id' : ss.SESSION_ID, 
-      'speaker_session_speaker_id' : ss.SPEAKER_ID, 
+      json{ 'ATTENDEE_ID' : ass.ATTENDEE_ID, 
+      'attendee_sess_id' : ass.session_id, 
       unnest(
         select 
-          json{ 'speaker_id' : sp.id, 
-          'speaker_name' : sp.name} 
+          JSON { 'code' : s.SESSION_ID, 
+          'session_name' : s.SESSION_NAME, 
+          'time' : s.SESSION_TIME, 
+          'room' : s.ROOM, 
+          'speakers' : json[ 
+        select 
+          json{ 'speaker_sess_id' : ss.SESSION_ID, 
+          'speaker_session_speaker_id' : ss.SPEAKER_ID, 
+          unnest(
+            select 
+              json{ 'speaker_id' : sp.id, 
+              'speaker_name' : sp.name} 
+            from 
+              JSON_USER.speaker sp with insert 
+            update 
+              nocheck 
+            where 
+              sp.id = ss.speaker_id
+          ) } 
         from 
-          JSON_USER.speaker sp with insert 
+          JSON_USER.speaker_session ss with insert 
         update 
           nocheck 
         where 
-          sp.id = ss.speaker_id
+          ss.session_id = s.session_id]} 
+        from 
+          JSON_USER.sessionss s with insert 
+        update 
+          nocheck 
+        where 
+          s.SESSION_ID = ass.SESSION_ID
       ) } 
     from 
-      JSON_USER.speaker_session ss with insert 
+      JSON_USER.ATTENDEE_SESSION ass with insert 
     update 
       nocheck 
     where 
-      ss.session_id = s.session_id]} 
-    from 
-      JSON_USER.sessionss s with insert 
+      ass.ATTENDEE_ID = a.id ]} 
+    FROM 
+      JSON_USER.ATTENDEE a with insert 
     update 
-      nocheck 
-    where 
-      s.SESSION_ID = ass.SESSION_ID
-  ) } 
-from 
-  JSON_USER.ATTENDEE_SESSION ass with insert 
-update 
-  nocheck 
-where 
-  ass.ATTENDEE_ID = a.id ]} 
-FROM 
-  JSON_USER.ATTENDEE a with insert 
-update 
-  delete nocheck;
+      delete nocheck;
 
-EOF
+    EOF
 
-</copy>
-```
-  ![json-view-create-commad](./images/json-view-create-commad.png " ")
-  ![json-view-create-output](./images/json-view-create-output.png " ")
-## Task 3: Preparing the database for Oracle GoldenGate
+    </copy>
+    ```
+    ![json-view-create-commad](./images/json-view-create-commad.png " ")
+    ![json-view-create-output](./images/json-view-create-output.png " ")
+## Task 2: Preparing the database for Oracle GoldenGate
 
 1. Assigning privileges for Oracle GoldenGate for Oracle.
 
@@ -162,45 +161,108 @@ EOF
     </copy>
     ```
 
-![gg-user-grants](./images/gg-user-grants.png " ")
+  ![gg-user-grants](./images/gg-user-grants.png " ")
 
-2. On the welcome page, Click on the **Add Replicat** (***+*** plus icon) to get the replicat creation wizard.
+## Task 3: Enable table-level supplemental logging for JSON Relational Duality Views and/or JSON Collection
 
-    Replicat is a process that delivers data to a target database. It reads the trail file on the target database, reconstructs the DML or DDL operations, and applies them to the target database.
+1. Login to GoldenGate Administration Service page from the below URL by passing username as ***oggadmin*** and a password as ***oggadmin*** and Click **Sign In**.
 
-![add-extract](./images/add-extract.png " ")
-![add-trandata-info](./images/add-trandata-info.png " ")
-![add-trandata](./images/add-trandata.png " ")
-![extract-options](./images/extract-options.png " ")
-![managed-options](./images/managed-options.png " ")
+  <a href=”http://localhost:16001>http://localhost:16001</a>
 ![gg-login-page](./images/gg-login-page.png " ")
+
+2. On the welcome page, click on **DB Connections**, and connect to the source database ***sourcedb***.
+  ![dblogin-source](./images/dblogin-source.png " ")
+
+3. Click on the **Trandata** and then Click on the **Add TRANDATA** (***+*** plus icon) to get the add trandata wizard.
+  ![dblogin-add-trandata](./images/dblogin-add-trandata.png " ")
+
+4. On ***Trandata*** page, add schema trandata for the schema ***JSON_USER*** and choose the supplemental logging option as shown below and click ***Submit***.
+  ![add-trandata](./images/add-trandata.png " ")
+
+5. To validate the supplemental logging for the schema ***JSON_USER*** follow below the instructions.
+  - Select radio button as ***Schema***
+  - Type schema name as ***JSON_USER*** and press ***Enter*** on key board.
+  ![add-trandata-info](./images/add-trandata-info.png " ")
+
+## Task 4: Create an Extract and trail file in Oracle GoldenGate.
+1. Click on the ***Home*** button to land on the welcome page to start the extract creation.
+  ![switch to Welcome Page](./images/home-page.png " ")
+2. On welcome page, Click on the **Add Extract** (***+*** plus icon) to get the extract creation wizard.
+
+    Extract is a process that runs agains the source data source connection and extracts, or captures, data. Learn to add an Extract for Oracle Database, OCI Autonomous Databases, Oracle Exadata, and Amazon RDS for Oracle technologies.
+
+  ![add-extract](./images/add-extract.png " ")
+3. On extract information page, follow the below instruction.
+  - Choose radio button ***Integrated Extract*** as **Extract type**.
+  - Type the **Process Name** as ***EXTSRC***.
+  - Click ***Next*** to get the **Extract Options** tab.
+  ![extract-name](./images/extract-name.png " ")
+
+4. On the **Extract Options** tab, choose the source credential and extract trail as instructed below.
+- select **Domain** as ***OracleGoldenGate***
+- select **Alias** as ***sourcedb***
+- Type **Extract Trail Name** as ***et***
+- Click ***Next*** to get the **Extract Options** tab.
+![extract-options](./images/extract-options.png " ")
+
+5. On Managed Options, choose **Profile Name** as ***Default*** and click ***Next***.
+![managed-options](./images/managed-options.png " ")
+
+6. Extract has created successfully 
+
+7. Click ***Start*** button to start the extract.
 ![start-extract](./images/start-extract.png " ")
+
+8. Extract ***EXTSRC*** up and running.
 ![extract-running](./images/extract-running.png " ")
-![add-data-stream](./images/add-data-stream.png " ")
-![data-stream-info](./images/data-stream-info.png " ")
-![data-stream-source-options](./images/data-stream-source-options.png " ")
-![data-stream-filter-options](./images/data-stream-filter-options.png " ")
-![data-stream-created-successfully](./images/data-stream-created-successfully.png " ")
-![data-stream-running](./images/data-stream-running.png " ")
-![data-stream-yaml-copy](./images/data-stream-yaml-copy.png " ")
+
+## Task 5: Add a Data Stream from Oracle GoldenGate Distribution Service.
+1. Switch to **Distribution Service** to create a Data Streams.
+
+2. On welcome page, Click on the **Add Data Stream** (***+*** plus icon) to get the Data Streams creation wizard.
+  ![add-data-stream](./images/add-data-stream.png " ")
+3. On **Data Stream Information** tab, enter **Name** as ***JSON_DEMO*** and click ***Next***
+  ![data-stream-info](./images/data-stream-info.png " ")
+4. On **Source Options**,enter **Trail Name** as ***et*** and click ***Next*** 
+  ![data-stream-source-options](./images/data-stream-source-options.png " ")
+5.On **Filtering Options**, click on ***Create Data Stream***
+  ![data-stream-filter-options](./images/data-stream-filter-options.png " ")
+6. Data stream created successfully.
+  ![data-stream-created-successfully](./images/data-stream-created-successfully.png " ")
+  ![data-stream-running](./images/data-stream-running.png " ")
+
+## Task 6: Consume the Change Data from the Data Stream.
+1. Create a YAML file on a terminal to copy the YAML content of the Data Stream.
+```
+vi ~/websocket-client-template/demo/lab.yaml
+```
+
+![data-stream-yaml-copy.](./images/data-stream-yaml-copy-from-browser.png " ")
 ![data-stream-yaml-paste](./images/data-stream-yaml-paste.png " ")
+2.The YAML document can then be used to generate the client-side code using @asyncapi/generator
+```
+cd ~/websocket-client-template/
+ag demo/lab.yaml . -o output -p server=localhost -p authorization=basic 
+```
 ![asynch-command](./images/asynch-command.png " ")
+3. Go to the generated output folder, and install needed packages for client
+```
+cd ~/websocket-client-template/output
+npm install
+```
 ![asynch-output-npm](./images/asynch-output-npm.png " ")
+4. Insert change data to the document for testing.
 ![load-the-data](./images/load-the-data.png " ")
 ![load-the-data-execution-completed](./images/load-the-data-execution-completed.png " ")
+5. Open an Administration Service on browser to validata the change data capture on Extract ***EXTSRC*** 
 ![extract-stats](./images/extract-stats.png " ")
+6. Start the client on termminal by accessing username as ***oggadmin***,password as ***oggadmin*** and press ***enter***
+```
+node client.js
+
+```
 ![run-nodejs](./images/run-nodejs.png " ")
 ![json-data](./images/json-data.png " ")
-
-
-
-
-
-
-## Task 4: Validation of the GoldenGate configuration for Cassandra as target
-
-
-
 
 ## Summary
 To summarize, you loaded data in the Oracle Database ***SOE*** schema of Pluggable Database ***PDB***. The GG extract process ***EXTORA*** captured the changes from the Oracle Database and wrote them to the local trail file ***et***. From the Distribution Service, path ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate (MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPCASS*** will read the remote trail files, create the Cassandra tables, and write the data to Cassandra tables.

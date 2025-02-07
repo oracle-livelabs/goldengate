@@ -11,8 +11,6 @@ Oracle GoldenGate 23ai (23.6) supports following replication use-cases / scenari
 - Replication between Duality Views (Underlying Tables ) to Duality Views (Underlying Tables): Oracle GoldenGate allows replicating the underlying tables from Duality Views to Duality Views, without replicating the view. If supplemental logging is enabled for a JSON Duality Views, it generates extra redo on top of the existing relational table.
 Note: Replication from one Duality View to another is not supported.
 
-In this hands-on lab, we will load data in the Oracle Database schema ***SOE*** of Pluggable Database ***PDB***. GG extract process ***EXTORA*** will capture the changes from Oracle Database and write them to the local trail file ***et***. The Distribution Service ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate(MA) for Big Data Receiver Service as ***rt***. The replicat process will read the remote trail files ***rt*** and replicates to the desired target ***(Apache Kafka, Apache Hadoop, Apache HBase, Cassandra, and MongoDB)***.
-
 Estimated Workshop Time: 4 hours
 
 **Workshop  Microservices Architecture**
