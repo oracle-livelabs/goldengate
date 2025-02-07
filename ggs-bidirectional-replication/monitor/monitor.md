@@ -22,11 +22,26 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 ## Task 1: Use the Performance Metrics Server
 
-[](include:02-performance-metrics-server-23ai.md)
+1.  In the GoldenGate deployment console service menu bar, click **Performance Metrics Service**, and then click **Extracts**.
+
+    ![Performance Metrics Service page - EXT highlighted](./images/01-01-perf-metric-serv.png " ")
+
+    > **Note:** You can also view performance details for the Microservices, Distribution, and Receiver Service Paths, as well as any other processes created.
+
+2.  On the Extracts page, select the Extract (EXTA). 
+
+    ![Select Extract](./images/01-02-extract.png " ")
+
+3.  Click **Database Statistics**.
+
+    ![Database Statistics page](./images/01-03-db-stats.png " ")
+
+    Here, you can view the real time database statistics, such as Inserts, Updates, Deletes, and so on.
+
 
 ## Task 2: View GoldenGate Metrics in the Oracle Cloud console
 
-[](include:03-viewing-gg-metrics-console.md)
+[](include:03-viewing-gg-metrics-console-23ai.md)
 
 ## Learn More
 
@@ -36,4 +51,4 @@ In order to complete this lab, you should have completed the preceding lab and h
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, June 2024
+* **Last Updated By/Date** - Katherine Wardhana, February 2025
