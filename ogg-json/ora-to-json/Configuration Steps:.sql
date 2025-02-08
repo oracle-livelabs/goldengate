@@ -293,3 +293,17 @@ Insert into JSON_USER.ATTENDEESCHEDULE (DATA) values ('{"_id":6,"name":"Don","co
 commit;
 EOF
 
+
+
+
+https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/reference-json-dv-config-rest-api-sample.html#GUID-98F68B82-F252-4E52-A55C-87EDCA5E2EEF
+Sample Commands to Configure GoldenGate Data Streams for JSON Relational Duality Views
+
+https://blogs.oracle.com/dataintegration/post/oracle-goldengate-data-streams-and-json-duality
+
+https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/distribute-json-dv-ogg-data-streams.html#GUID-2B7A2E68-6430-44C1-A9BF-C5ED47B3543F
+Replicating Business Objects with Oracle JSON Relational Duality and GoldenGate Data Streams
+
+
+
+In this lab, we will load data in the Oracle Database schema ***JSON_USER***  of Pluggable Database ***PDB***. GG extract process ***EXTSRC*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, **Data Stream** created to consume the trail file ***et***. The YAML document used to generate the client-side code using @asyncapi/generator. 

@@ -4,7 +4,7 @@
 
 This lab will demonstrate how to  ***Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams*** 
 
-In this lab, we will load data in the Oracle Database schema ***JSON_USER***  of Pluggable Database ***PDB***. GG extract process ***EXTSRC*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, **Data Stream** will consume the trail file ***et***.to **need to work **
+In this lab, we will load data in the Oracle Database schema ***JSON_USER***  of Pluggable Database ***PDB***. GG extract process ***EXTSRC*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, **Data Stream** created to consume the trail file ***et***. The YAML document used to generate the client-side code using @asyncapi/generator. 
 
 Estimated Time:  30 minutes
 
@@ -14,7 +14,6 @@ Estimated Time:  30 minutes
 
 ### Objectives
 In this lab you will learn:
--  How to reset the GoldenGate configuration.
 -  How to create an extract for the source database 
 -  How to configure the Data Steams
 -  How to consume the Data Steams using AsynchAPI
@@ -166,9 +165,8 @@ This lab assumes you have:
 ## Task 3: Enable table-level supplemental logging for JSON Relational Duality Views and/or JSON Collection
 
 1. Login to GoldenGate Administration Service page from the below URL by passing username as ***oggadmin*** and a password as ***oggadmin*** and Click **Sign In**.
-
-  <a href=”http://localhost:16001>http://localhost:16001</a>
-![gg-login-page](./images/gg-login-page.png " ")
+  [http://localhost:16001](http://localhost:16001) 
+  ![gg-login-page](./images/gg-login-page.png " ")
 
 2. On the welcome page, click on **DB Connections**, and connect to the source database ***sourcedb***.
   ![dblogin-source](./images/dblogin-source.png " ")
@@ -199,22 +197,22 @@ This lab assumes you have:
   ![extract-name](./images/extract-name.png " ")
 
 4. On the **Extract Options** tab, choose the source credential and extract trail as instructed below.
-- select **Domain** as ***OracleGoldenGate***
-- select **Alias** as ***sourcedb***
-- Type **Extract Trail Name** as ***et***
-- Click ***Next*** to get the **Extract Options** tab.
-![extract-options](./images/extract-options.png " ")
+  - select **Domain** as ***<copy>OracleGoldenGate</copy>***
+  - select **Alias** as ***sourcedb***
+  - Type **Extract Trail Name** as ***et***
+  - Click ***Next*** to get the **Extract Options** tab.
+  ![extract-options](./images/extract-options.png " ")
 
 5. On Managed Options, choose **Profile Name** as ***Default*** and click ***Next***.
-![managed-options](./images/managed-options.png " ")
+  ![managed-options](./images/managed-options.png " ")
 
 6. Extract has created successfully 
 
 7. Click ***Start*** button to start the extract.
-![start-extract](./images/start-extract.png " ")
+  ![start-extract](./images/start-extract.png " ")
 
 8. Extract ***EXTSRC*** up and running.
-![extract-running](./images/extract-running.png " ")
+  ![extract-running](./images/extract-running.png " ")
 
 ## Task 5: Add a Data Stream from Oracle GoldenGate Distribution Service.
 1. Switch to **Distribution Service** to create a Data Streams.
@@ -227,53 +225,71 @@ This lab assumes you have:
   ![data-stream-source-options](./images/data-stream-source-options.png " ")
 5.On **Filtering Options**, click on ***Create Data Stream***
   ![data-stream-filter-options](./images/data-stream-filter-options.png " ")
-6. Data stream created successfully.
+6. You will be returned to the Distribution Service home page where the Data Stream ***JSON_DEMO*** is listed.
   ![data-stream-created-successfully](./images/data-stream-created-successfully.png " ")
   ![data-stream-running](./images/data-stream-running.png " ")
 
 ## Task 6: Consume the Change Data from the Data Stream.
 1. Create a YAML file on a terminal to copy the YAML content of the Data Stream.
-```
-vi ~/websocket-client-template/demo/lab.yaml
-```
-
-![data-stream-yaml-copy.](./images/data-stream-yaml-copy-from-browser.png " ")
-![data-stream-yaml-paste](./images/data-stream-yaml-paste.png " ")
+    ```
+    <copy>vi ~/websocket-client-template/demo/lab.yaml</copy>
+    ```
+    ![data-stream-yaml-copy.](./images/data-stream-yaml-copy-from-browser.png " ")
+    ![data-stream-yaml-paste](./images/data-stream-yaml-paste.png " ")
 2.The YAML document can then be used to generate the client-side code using @asyncapi/generator
-```
-cd ~/websocket-client-template/
-ag demo/lab.yaml . -o output -p server=localhost -p authorization=basic 
-```
-![asynch-command](./images/asynch-command.png " ")
+    ```
+    <copy>
+    cd ~/websocket-client-template/
+    sudo ag demo/lab.yaml . -o output -p server=localhost -p authorization=basic 
+    </copy>
+    ```
+    ![asynch-command](./images/asynch-command.png " ")
 3. Go to the generated output folder, and install needed packages for client
-```
-cd ~/websocket-client-template/output
-npm install
-```
-![asynch-output-npm](./images/asynch-output-npm.png " ")
+    ```
+    <copy>
+    cd ~/websocket-client-template/output
+    sudo npm install
+    </copy>
+    ```
+    ![asynch-output-npm](./images/asynch-output-npm.png " ")
 4. Insert change data to the document for testing.
-![load-the-data](./images/load-the-data.png " ")
-![load-the-data-execution-completed](./images/load-the-data-execution-completed.png " ")
+    ```
+    <copy>
+    sqlplus / as sysdba << EOF 
+    ALTER SESSION SET CONTAINER = PDB;
+    Insert into JSON_USER.ATTENDEESCHEDULE (DATA) values ('{"_id":4,"name":"Windy","company":"ACME Inc","schedule":[{"ATTENDEE_ID":4,"attendee_sess_id":"S004","code":"S004","session_name":"Database Optimization","time":"2024-09-15T09:00:00","room":"Room 104","speakers":[{"speaker_sess_id":"S004","speaker_session_speaker_id":104,"speaker_id":104,"speaker_name":"Jenny"}]}],"_metadata":{"etag":"DD5CA0676D00C68DC996124BBF81F612","asof":"00000000007B54D9"}}');
+    Insert into JSON_USER.ATTENDEESCHEDULE (DATA) values ('{"_id":5,"name":"Shawn","company":"WRIME AI","schedule":[{"ATTENDEE_ID":5,"attendee_sess_id":"S005","code":"S005","session_name":"Machine Learning in Databases","time":"2024-09-15T11:00:00","room":"Room 105","speakers":[{"speaker_sess_id":"S005","speaker_session_speaker_id":105,"speaker_id":105,"speaker_name":"Cetin"}]}],"_metadata":{"etag":"953321179FA5E16D26BB009D199EE3E1","asof":"00000000007B54D9"}}');
+    Insert into JSON_USER.ATTENDEESCHEDULE (DATA) values ('{"_id":6,"name":"Don","company":"RYTHM CORP","schedule":[{"ATTENDEE_ID":6,"attendee_sess_id":"S006","code":"S006","session_name":"Spatial graph Programming","time":"2024-09-16T09:00:00","room":"Room 106","speakers":[{"speaker_sess_id":"S006","speaker_session_speaker_id":106,"speaker_id":106,"speaker_name":"Ronald"}]}],"_metadata":{"etag":"B22F4BC1BC2FF28533180C0C1BFAA18F","asof":"00000000007B54D9"}}');
+    commit;
+    EOF
+    </copy>
+    ```
+    ![load-the-data](./images/load-the-data.png " ")
+    ![load-the-data-execution-completed](./images/load-the-data-execution-completed.png " ")
 5. Open an Administration Service on browser to validata the change data capture on Extract ***EXTSRC*** 
-![extract-stats](./images/extract-stats.png " ")
+  ![extract-stats](./images/extract-stats.png " ")
 6. Start the client on termminal by accessing username as ***oggadmin***,password as ***oggadmin*** and press ***enter***
-```
-node client.js
-
-```
-![run-nodejs](./images/run-nodejs.png " ")
-![json-data](./images/json-data.png " ")
+    ```
+    <copy>
+    node client.js
+    <copy/>
+    ```
+    ![run-nodejs](./images/run-nodejs.png " ")
+    ![json-data](./images/json-data.png " ")
 
 ## Summary
-To summarize, you loaded data in the Oracle Database ***SOE*** schema of Pluggable Database ***PDB***. The GG extract process ***EXTORA*** captured the changes from the Oracle Database and wrote them to the local trail file ***et***. From the Distribution Service, path ***SRC2TGT*** will route the trail file  ***et*** to target GoldenGate (MA) for Big Data Receiver Service as ***rt***. The replicat process ***REPCASS*** will read the remote trail files, create the Cassandra tables, and write the data to Cassandra tables.
+To summarize, you loaded data in the Oracle Database ***JSON_USER*** schema of Pluggable Database ***PDB***. The GG extract process ***EXTSRC*** captured the changes from the Oracle Database and wrote them to the local trail file ***et***. From the Distribution Service, Data Streams ***JSON_DEMO*** will consume the trail file  ***et***.
 
-You may now proceed to the next lab.
+You have completed the lab.
 
 ## Learn More
 
-* [Oracle GoldenGate for Big Data 21c ](https://docs.Oracle.com/en/middleware/goldengate/big-data/21.1/index.html)
-* [Using the Cassandra Handler ](https://docs.Oracle.com/en/middleware/goldengate/big-data/21.1/gadbd/using-cassandra-handler.html)
+* [Sample Commands to Configure GoldenGate Data Streams for JSON Relational Duality Views](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/reference-json-dv-config-rest-api-sample.html#GUID-98F68B82-F252-4E52-A55C-87EDCA5E2EEF)
+* [Replicating Business Objects with Oracle JSON Relational Duality and GoldenGate Data Streams](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/distribute-json-dv-ogg-data-streams.html#GUID-2B7A2E68-6430-44C1-A9BF-C5ED47B3543F)
+* [Oracle Blog](https://blogs.oracle.com/dataintegration/post/oracle-goldengate-data-streams-and-json-duality)
+
+
 ## Acknowledgements
-* **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
-* **Contributors** - Madhu Kumar S, Brian Elliott, Deniz Sendil, Meghana Banka, Rene Fontcha  
-* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, 9th August 2022
+* **Author** - Madhu Kumar S, Title, Group>
+* **Contributors** -  Madhu Kumar S, Deniz Sendil
+* **Last Updated By/Date** - Madhu Kumar S, February 2025>

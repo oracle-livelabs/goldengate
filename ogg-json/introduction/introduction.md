@@ -11,18 +11,17 @@ Oracle GoldenGate 23ai (23.6) supports following replication use-cases / scenari
 - Replication between Duality Views (Underlying Tables ) to Duality Views (Underlying Tables): Oracle GoldenGate allows replicating the underlying tables from Duality Views to Duality Views, without replicating the view. If supplemental logging is enabled for a JSON Duality Views, it generates extra redo on top of the existing relational table.
 Note: Replication from one Duality View to another is not supported.
 
+This lab covers the benefits of using Oracle JSON Relational Duality Views with GoldenGate Data Streams and provides the steps to configure GoldenGate Data Streams with Oracle JSON Relational Duality Views.
+
+
 Estimated Workshop Time: 4 hours
 
-**Workshop  Microservices Architecture**
+**Workshop Architecture to configure GoldenGate Data Streams and JSON Relational Duality Views***
     ![Architecture](./images/architecture.png " ")
 
 ### Objectives
 In this workshop, you will learn:
-- How to replicate from Oracle to Apache Kafka.
-- How to replicate from Oracle to Apache Hadoop cluster.
-- How to replicate from Oracle to Apache HBase.
-- How to replicate from Oracle to Apache Cassandra.
-- How to replicate from Oracle to MongoDB.
+- Configure GoldenGate Data Streams and JSON Relational Duality Views to Deliver Change Data
 
 
 ### Prerequisites
@@ -34,12 +33,12 @@ You may now proceed to the next lab.
 
 ## Learn More
 
-* [GoldenGate](https://www.oracle.com/middleware/data-integration/goldengate/")
-* [GoldenGate for Big Data](https://www.oracle.com/middleware/data-integration/goldengate/big-data/")
-* [GoldenGate Microservices Architecture (MA)](https://docs.oracle.com/en/middleware/goldengate/big-data/21.1/gadbd/getting-started-oracle-goldengate-microservices-big-data.html#GUID-248D5562-397F-4D10-9E95-CE9477012950)
+* [Oracle GoldenGate 23ai](https://docs.oracle.com/en/middleware/goldengate/core/23/index.html)
+* [Oracle GoldenGate Data Streams](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/distribute-oracle-goldengate-data-streams-service.html)
+
 
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
-* **Contributors** - Madhu Kumar S, Brian Elliott, Deniz Sendil
-* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, August 2022
+* **Contributors** - Madhu Kumar S , Deniz Sendil
+* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, Febuary 2025

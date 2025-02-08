@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams",
+    "workshoptitle": "The Title of the Workshop is Defined in the Manifest File",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -9,7 +9,7 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "The Introduction to replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams.",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
             "filename": "../../introduction/introduction.md"
         },
         {
@@ -27,8 +27,20 @@
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab 3: Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams",
-            "filename": "../../ora-to-json/ora-to-json.md"
+            "title": "Lab 3: Load Data into an Instance",
+            "filename": "../../data-load/data-load.md"
+        },
+        {
+            "title": "Lab 4: Query Data",
+            "filename": "../../query/query.md"
+        },
+        {
+            "title": "Lab 5: Tables in LiveLabs",
+            "filename": "../../tables/tables.md"
+        },
+        {
+            "title": "Lab 6: Variables in LiveLabs",
+            "filename": "../../variables/variables.md"
         },
         {
             "title": "Need Help?",
