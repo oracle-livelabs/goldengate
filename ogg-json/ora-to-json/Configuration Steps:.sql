@@ -307,3 +307,8 @@ Replicating Business Objects with Oracle JSON Relational Duality and GoldenGate 
 
 
 In this lab, we will load data in the Oracle Database schema ***JSON_USER***  of Pluggable Database ***PDB***. GG extract process ***EXTSRC*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, **Data Stream** created to consume the trail file ***et***. The YAML document used to generate the client-side code using @asyncapi/generator. 
+
+
+
+
+JSO

@@ -180,11 +180,11 @@ This lab assumes you have:
 5. To validate the supplemental logging for the schema ***JSON_USER*** follow below the instructions.
   - Select radio button as ***Schema***
   - Type schema name as ***JSON_USER*** and press ***Enter*** on key board.
-  ![add-trandata-info](./images/add-trandata-info.png " ")
+  ![add-trandata-info](./images/home-page.png " ")
 
 ## Task 4: Create an Extract and trail file in Oracle GoldenGate.
 1. Click on the ***Home*** button to land on the welcome page to start the extract creation.
-  ![switch to Welcome Page](./images/home-page.png " ")
+  ![switch to Welcome Page](./images/home-pageadd-trandata-info.png " ")
 2. On welcome page, Click on the **Add Extract** (***+*** plus icon) to get the extract creation wizard.
 
     Extract is a process that runs agains the source data source connection and extracts, or captures, data. Learn to add an Extract for Oracle Database, OCI Autonomous Databases, Oracle Exadata, and Amazon RDS for Oracle technologies.
