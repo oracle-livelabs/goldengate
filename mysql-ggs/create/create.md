@@ -72,7 +72,7 @@ To successfully complete this lab in your own tenancy:
 
 7. For Choose a deployment type, select **Data replication**.
 
-8. For Select a technology dropdown, select **Oracle Database**.
+8. For Select a technology dropdown, select **MySQL**.
 
     ![Completed Create GoldenGate Deployment fields](./images/01-08-create-deployment.png " ")
 
@@ -141,20 +141,22 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 8.  For License type, select **Bring Your Own License (BYOL)**.
 
-9. In an IAM-enabled tenancy, select a Credential Store. 
+9. For GoldenGate Instance Name, enter **ggsinstance**
+
+10. In an IAM-enabled tenancy, select a Credential Store. 
 
     * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 2.
     * If you select GoldenGate, complete the following steps.
 
-10. For Administrator Username, enter **oggadmin**.
+11. For Administrator Username, enter **oggadmin**.
 
-11. For Password secret select **LLSecret** from the dropdown.
+12. For Password secret select **LLSecret** from the dropdown.
 
   ![Example create deployment options](./images/02-11-create-deployment-gg-details.png " ")
 
-12.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
+13.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
-13. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**, and then click **Create**.
+14. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**, and then click **Create**.
 
   ![Create MySQLDeployment deployment](./images/02-13-create-deployment.png " ")
 
