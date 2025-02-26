@@ -15,8 +15,8 @@ An Extract is a process that extracts, or captures, data from a source database.
 In this lab, you will:
 * Create an Initial Load Extract
 * Create a Distribution Path for the Initial Load Extract
-* Create a Change Data Capture Extract
-* Create a Distribution Path for the Change Data Capture Extract
+* Create a Integrated Extract
+* Create a Distribution Path for the Integrated Extract
 
 ### Prerequisites
 
@@ -25,7 +25,7 @@ To successfully complete this lab, you need:
 * The oggadmin password for the source MySQL OCI GoldenGate deployment (Lab 1, Task 1, Step 15)
 * The oggadmin password for the target ADW OCI GoldenGate deployment (Lab 1, Task 2, Step 11)
 
-## Task 1: Create the Change Data Capture Extract
+## Task 1: Create the Integrated Extract
 
 1.  On the Deployments page, select the source MySQL deployment to view its details.
 
