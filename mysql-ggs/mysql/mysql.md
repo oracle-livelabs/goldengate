@@ -65,23 +65,26 @@ To successfully complete this lab, you need:
 
     ![Add Extract](./images/01-07-add-ext.png " ")
 
-8. In the Add Extract panel, on the Extract Information page, for **Extract Type**, select **Integrated Extract**.
+8. In the Add Extract panel, on the Extract Information page, complete the following fields, and then click **Next**: 
 
-9. For **Process Name**, enter `CDCEXT`, and then click **Next**.
+    * For **Extract Type**, select **Change Data Capture Extract**.
+    * For **Process Name**, enter `CDCEXT`.
 
-    ![Select Integrated Extract for Extract type](./images/01-09-integrated-ext.png " ")
+    ![Select Change Data Capture Extract for Extract type](./images/01-08-cdc-ext.png " ")
 
-10. On the Extract Options page, for Source Credentials **Domain**, select **OracleGoldenGate**, and for **Alias**, select **SourceATP**.
+9. On the Extract Options page, complete the following fields, and then click **Next**:  
 
-11. For Extract Trail **Name**, enter `C1`, and then click **Next**.
+    * For Extract Trail **Name**, enter `C1`.
+    * For Source Credentials **Domain**, select **OracleGoldenGate**.
+    * For Source Credentials **Alias**, select **SourceMySQL**.
 
-    ![Extract Options page](./images/01-11-ext-opts.png " ")
+    ![Extract Options page](./images/01-09-ext-opts.png " ")
 
-12. On the Managed Options page, leave the fields as they are, and then click **Next**.
+10. On the Managed Options page, leave the fields as they are, and then click **Next**.
 
-    ![Managed Options page](./images/01-12-man-opts.png " ")
+    ![Managed Options page](./images/01-10-man-opts.png " ")
 
-13. On the Parameter File page, in the text area, add a new line to the existing text, add the following, and then click **Create and Run**:
+11. On the Parameter File page, in the text area, add a new line to the existing text, add the following, and then click **Create and Run**:
 
     ```
     <copy>TABLE SRC_OCIGGLL.*;</copy>
@@ -89,7 +92,7 @@ To successfully complete this lab, you need:
 
     ![Verify Parameter File](./images/01-13a-remote-params.png " ")
 
-    You return to the Administration Service Overview page where you can observe the CDCEXT process starting.
+    You return to the Administration Service Overview page where you can observe the `CDCEXT` process starting.
 
     The status updates to Running.
 
@@ -103,11 +106,20 @@ To successfully complete this lab, you need:
 
     ![Click Add Extract on Administration Service Overview page](./images/02-02-add-extract.png " ")
 
-3.  In the Add Extract panel, on the Extract Information page, for **Extract Type**, select **Initial Load Extract**.
+3.  In the Add Extract panel, on the Extract Information page,  on the Extract Information page, complete the following fields, and then click **Next**: 
 
-4. For **Process Name**, enter `ILEXT`, and then click **Next**.
+    * For **Extract Type**, select **Initial Load Extract**.
+    * For **Process Name**, enter `ILEXT`.
 
-    ![Select Initial Load Extract for Extract type](./images/02-04-extract-info.png " ")
+    ![Select Initial Load Extract for Extract type](./images/02-03-extract-info.png " ")
+
+4. On the Extract Options page, complete the following fields, and then click **Next**:  
+
+    * For Extract Trail **Name**, enter `I1`.
+    * For Source Credentials **Domain**, select **OracleGoldenGate**.
+    * For Source Credentials **Alias**, select **SourceMySQL**.
+
+    ![Extract Options page](./images/02-04-ext-opts.png " ")
 
 5.  On the Parameter File page, in the text area, add a new line to the existing text, add the following, and then click **Create and Run**:
 
@@ -115,9 +127,9 @@ To successfully complete this lab, you need:
     <copy>TABLE SRC_OCIGGLL.*;</copy>
     ```
 
-![Parameter file page](./images/02-05-param-file.png " ")
+    ![Parameter file page](./images/02-05-param-file.png " ")
 
-    You return to the Administration Service Overview page where you can observe the ILEXT process starting.
+    You return to the Administration Service Overview page where you can observe the `ILEXT` process starting.
 
     The status updates to Running.
 
@@ -141,20 +153,20 @@ In this task, you create a user in the target deployment for the Distribution Pa
     ![Click Add New User on the Users page](./images/03-05-add-user.png " ")
 
 6.  Complete the fields as follows, and then click **Submit**:
-    * For **Aythenticated By**, select **Password**.
+    * For **Authenticated By**, select **Password**.
     * For **Role**, select **Operator**.
     * For **Username**, enter `ggsnet`.
     * Enter a password for this user, and then enter it again for verification.
 
     ![Enter details for the ggsnet user](./images/03-06-ggsnet.png " ")
 
-    The ggsnet user appears in the Users list.
+    The `ggsnet` user appears in the Users list.
 
 7.  In the source MySQL OCI GoldenGate deployment console, open the navigation menu and then click **DB Connections**.
 
 8.  On the DB Connections page, click **Add Credential** (plus icon).
 
-9.  Complete the fields as follows, and then click Submit:
+9.  Complete the fields as follows, and then click **Submit**:
     * For **Credential Domain**, enter `GGSNetwork`.
     * For **Credential Alias**, enter `dpuser`.
     * For **User ID**, enter `ggsnet`.
@@ -211,8 +223,6 @@ In this task, you create a user in the target deployment for the Distribution Pa
 
 4.  In the target ADW OCI GoldenGate deployment console (**adw_instance**), click **Receiver Service** to review the Receiver Path created as a result of creating the `ILDP` Distribution Path.
 
-    ![Receiver path created on target ADW deployment](./images/04-04-rcvr.png " ")
-
 ## Task 5: Create the Distribution Path for the Change Data Capture Extract
 
 1.  In the source MySQL OCI GoldenGate deployment console, click **Distribution Service**.
@@ -239,7 +249,7 @@ In this task, you create a user in the target deployment for the Distribution Pa
     ![Copy console URL from target deployment details page](./images/04-05a-console-url.png " ")
 
     * For **Port Number**, enter **443**.
-    * For **Trail Name**, enter `I1`.
+    * For **Trail Name**, enter `C1`.
     * For **Alias**, enter **dpuser**.
 
     ![Target Options page](./images/04-05b-target-opts.png " ")
@@ -259,8 +269,6 @@ In this task, you create a user in the target deployment for the Distribution Pa
     You return to the Distribution Service Overview page where you can review the path created.
 
 4.  In the target ADW OCI GoldenGate deployment console, click Receiver Service to review the Receiver Path created as a result of creating the `CDCDP` Distribution Path.
-
-    ![Target ADW Receiver paths](./images/05-04-rcvr.png " ")
 
 ## Learn more
 
