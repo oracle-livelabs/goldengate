@@ -31,14 +31,24 @@
      "filename": "../../initial-setup/initial-setup.md"
    },
    {
-      "title": "Lab 4: Set Up Data Replication Environment Using REST API",
+      "title": "Lab 4: Set Up Unidirectional Data Replication Environment Using REST API",
       "description": "Configure Data Replication Using the automation scripts containing cURL commands",
-      "filename": "../../data-replication-using-REST-API/data-replication-using-REST-API.md"
+      "filename": "../../Unidirectional-replication-using-REST-API/Unidirectional-data-replication-using-REST-API.md"
     },
     {
-      "title": "Lab 5: Set Up Data Replication Environment Using Admin Client",
+      "title": "Lab 5: Set Up Unidirectional Data Replication Environment Using Admin Client",
       "description": "View the sample standard business reports from the Oracle GoldenGate console",
-      "filename": "../../data-replication-using-AdminClient/data-replication-using-AdminClient.md"
+      "filename": "../../Unidirectional-replication-using-AdminClient/Unidirectional-data-replication-using-AdminClient.md"
+    },
+    {
+      "title": "Lab 6: Set Up Bidirectional Data Replication Environment Using REST-API",
+      "description": "View the sample standard business reports from the Oracle GoldenGate console",
+      "filename": "../../Bidirectional-replication-using-REST-API/bidirectional-data-replication-using-REST-API.md"
+    },
+    {
+      "title": "Lab 7: Set Up Bidirectional Data Replication Environment Using Admin Client",
+      "description": "View the sample standard business reports from the Oracle GoldenGate console",
+      "filename": "../../Bidirectional-replication-using-AdminClient/bidirectional-data-replication-using-AdminClient.md"
     },
     {
       "title": "Need Help?",

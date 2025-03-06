@@ -1,4 +1,4 @@
-# Set Up Data Replication Using REST API Service Endpoints
+# Set Up Unidirectional Data Replication Using REST API Service Endpoints
 
 ## Introduction
 

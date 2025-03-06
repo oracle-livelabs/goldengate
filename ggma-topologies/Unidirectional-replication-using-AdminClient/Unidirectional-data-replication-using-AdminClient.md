@@ -1,4 +1,4 @@
-# Set Up Data Replication Using the Admin Client
+# Set Up Unidirectional Data Replication Using the Admin Client
 
 
 ## Introduction
