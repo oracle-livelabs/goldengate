@@ -48,6 +48,16 @@
       "filename": "../../Bidirectional-replication-using-AdminClient/bidirectional-data-replication-using-AdminClient.md"
     },
     {
+      "title": "Lab 8: Set Up a Cascading Deployment Configuration Using REST-API",
+      "description": "View the sample standard business reports from the Oracle GoldenGate console",
+      "filename": "../../cascading-topology-uc-rest-api/cascading-topology-rest-api.md"
+    },
+    {
+      "title": "Lab 9: Set Up a Cascading Deployment Configuration Using Admin Client",
+      "description": "View the sample standard business reports from the Oracle GoldenGate console",
+      "filename": "../../cascading-topology-uc-admin-client/cascading-topology-admin-client.md"
+    },
+    {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
