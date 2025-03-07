@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create the required resources you'll use for Oracle Cloud Infrastructure (OCI) GoldenGate. We'll show you how to create a VCN and subnet, provision autonomous database instances, and load data into the databases.
+In this lab, you learn to create the required resources you'll use for Oracle Cloud Infrastructure (OCI) GoldenGate. You'll learn to create a VCN and subnet, provision an autonomous database instance, and load data into the database.
 
 Estimated time: 20 mins
 
@@ -13,130 +13,143 @@ Estimated time: 20 mins
 
 ### Prerequisites
 
-This lab assumes you have completed the following labs:
-* Sign Up for Free Tier/Login to Oracle Cloud
+To successfully complete this lab, you must:
+* Have completed the Get Started lab and sign up for Free Tier/Log in to Oracle Cloud.
+* For IAM-enabled tenancies, ensure that you [configure Identity domains for OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/mkmbs/#GUID-DD9C1BF8-69FE-4C9A-A2D1-74C73550ED65).
+* For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault). [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
 
-> **Note:** *You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
-
-In this section, you will provision a VCN and subnet, ATP and ADW instances, and load data to use with OCI GoldenGate.
-
-> **Note:** *This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
+> **Notes:** 
+* You may see differences in account details (eg: Compartment is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.
+* This workshop was designed to use Oracle Autonomous Database as the source. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.
 
 ## Task 1: Create a VCN and subnet
 
-1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
-
-	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
-
-2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
-
-	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-start-vcn-wizard.png " ")
-
-3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
-
-    ![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-03-vcn-wizard.png " ")
-
-4.  Enter a name for the VCN, select a compartment, and then click **Next**.
-
-    ![Enter VCN details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-04-vcn-details.png " ")
-
-5.  Verify the configuration, and then click **Create**.
-
-    ![Verify configuration details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-05-create-vcn.png " ")
-
-You can click View VCN Details and see both a Public and Private subnet were created.
+[](include:01-create-vcn-subnet.md)
 
 ## Task 2: Create an ATP instance
 
-1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
+[](include:02-create-atp-instance.md)
 
-	![Autonomous Transaction Processing in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/database-atp.png " ")
+## Task 3: Load the ATP schema and enable supplemental logging
 
-2.  On the **Autonomous Database &lt;compartment-name&gt;** page, click **Create Autonomous Database**.
+[](include:03-load-atp-schema.md)
 
-    ![Autonomous Database page](./images/02-02-create-adb.png " ")
+## Task 4: Create a deployment for Autonomous Transaction Processing
 
-3. For **Compartment** select a compartment from the dropdown. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **SourceATP** for **Display Name** and **Database Name**.
+1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-    ![Create Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-03-compartment.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
-4.  Under **Choose a workload type**, select **Transaction Processing**.
+2.  On the GoldenGate **Overview** page, click **Deployments**.
 
-    ![Workload type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-04-workload.png " ")
+    ![GoldenGate Overview page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
-5.  Under **Choose a deployment type**, select **Shared Infrastructure**.
+3.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
 
-    ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-deployment.png " ")
+4.  On the Deployments page, click **Create Deployment**.
 
-6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
+    ![Deployments page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-create-deployment.png "")
 
-7.  Add a password. Take note of the password, you will need it later in this lab.
+5.  In the Create Deployment panel, enter **ATPDeployment** for Name.
 
-    ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
+6.  From the Compartment dropdown, select a compartment.
 
-8.  Under **Choose a license type**, select **License Included**.
+7.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
-    ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
+8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
 
-9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
+    ![Completed Create GoldenGate Deployment fields](./images/01-09-create-atp-deployment-summary.png " ")
 
+9.  For License type, select **Bring Your Own License (BYOL)**.
 
-## Task 3: Load the ATP schema
+10.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
-1.  Click the following link to download the database schema.
+11. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
 
-    [Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/Archive.zip)
+12. Click **Next**.
 
-2.  Save `Archive.zip` to a download directory, and then unzip the file.
+    ![Completed Create GoldenGate Deployment fields](./images/01-13-create-atp-deployment-summary.png " ")
 
-3.  Back in the OCI Console, select your ATP instance from the Autonomous Databases page to view its details and access tools.
+13. For Choose a deployment type, select **Data replication**.
 
-    ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-03-atp.png " ") 
+14. For Select a technology dropdown, select **Oracle Database**.
 
-4.  Click **Open DB Actions**.
+15. For GoldenGate Instance Name, enter **ggsinstance**.
 
-    ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-04-dbdetails.png " ")
+16. In an IAM-enabled tenancy, select a Credential Store. 
 
-5.  If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
+    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 5.
+    * If you select GoldenGate, complete the following steps.
 
-    ![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
+17. For Administrator Username, enter **oggadmin**.
 
-6.  From the Database Actions menu, under **Development**, select **SQL**.
+18. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![Database Actions page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-06-db-actions.png " ")
+    ![GoldenGate details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-16-create-deployment-gg-details.png " ")
 
-7.  (Optional) Click **X** to close the Help dialog.
+19. In the Create secret panel, for Name, enter `LLsecret`.
 
-8.  Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** into the SQL Worksheet.
+20. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
 
-    ![Pasted script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-08-atp-sql.png " ")
+    > **NOTE**: The special characters must not be $, ^, or ?. 
 
-9.  Click **Run Script**. The Script Output tab displays confirmation messages.
+    ![Create Password secret](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-21-passwordsecret.png " ")
 
-10. Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SRC\_USER\_SEED\_DATA.sql** a new SQL Worksheet.
+21. Confirm the password, and then click **Create**.
 
-    ![Pasted schema script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-10-atp-schema.png " ")
+22. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 
-11. Click **Run Script**. The Script Output tab displays confirmation messages.
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, 4 and 5 while you wait for the deployment creation to complete.
 
-	>**Note:** *If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.*
+## Task 5: Create a deployment for Oracle Object Storage
 
-12. Close the SQL window and then open DB Actions from the database details page again.
+1.  On the Deployments page, click **Create Deployment**.
 
-13. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
+2.  In the Create Deployment panel, enter **OBJDeployment** for Name.
 
-    ![Displays the SRC\_OCIGGLL tables](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-11-verify.png " ")
+3.  From the Compartment dropdown, select a compartment. 
 
-14. To enable supplemental logging, run the following command:
+4.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
-    ```
-    <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
-    ```
+5.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
+
+    ![Completed Create GoldenGate Deployment fields](images/02-06-bigdata.png " ")
+
+6. For License type, select **Bring Your Own License (BYOL)**.
+
+7.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
+
+8. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
+
+9. Click **Next**.
+
+    ![Completed Create GoldenGate Deployment fields](images/02-10-bigdata.png " ")
+
+10. For Select a deployment type, select **Data replication**.
+
+11. From the Select a technology dropdown, select **Big Data**.
+
+12. In an IAM-enabled tenancy, select a Credential Store. 
+
+    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 3.
+    * If you select GoldenGate, complete the following steps.
+
+13. For GoldenGate instance name, enter **BDinstance**.
+
+14. For Administrator username, enter **oggadmin**.
+
+15. For Password secret, select **LLsecret**.
+
+15. Click **Create**.
+
+    ![Completed GoldenGate details](images/02-15-bigdata.png " ")
+
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
 **Proceed to the next lab.**
 
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated by** - Katherine Wardhana, March 2023
-- **PAR Expiration date** - February 2024
+- **Last Updated by** - Katherine Wardhana, May 2024
+- **PAR Expiration date** - February 2030

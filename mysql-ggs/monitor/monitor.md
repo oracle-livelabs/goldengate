@@ -30,31 +30,31 @@ In order to complete this lab, you should have completed the preceding labs.
 
 3.  Open the Oracle Cloud console navigation menu and navigate to **Identity & Security**, and then click **Bastion**.
 
-5.  On the **Bastions** page, select your Bastion to view its details.
+4.  On the **Bastions** page, select your Bastion to view its details.
 
-6.  Under **Sessions**, click **Create session**.
+5.  Under **Sessions**, click **Create session**.
 
     >**NOTE:** If you already have a session running for your SourceMySQL DB system, you can skip to step 14.
 
-7.  In the Create session panel, select **SSH port forwarding session** from the session type dropdown.
+6.  In the Create session panel, select **SSH port forwarding session** from the session type dropdown.
 
-8.  For **IP address**, paste the Private IP Address you copied from the SourceMySQL details page.
+7.  For **IP address**, paste the Private IP Address you copied from the SourceMySQL details page.
 
-9.  For **Port**, change the value to `3306`.
+8.  For **Port**, change the value to `3306`.
 
-10. For SSH key, you can either upload an existing SSH public key, or generate a new SSH key pair.
+8. For SSH key, you can either upload an existing SSH public key, or generate a new SSH key pair.
 
-11. Click **Create session**.
+10. Click **Create session**.
 
-12. After the session is Active, select Copy SSH command from the Action (ellipsis icon) menu.
+11. After the session is Active, select Copy SSH command from the Action (ellipsis icon) menu.
 
-13. Open Cloud Shell.
+12. Open Cloud Shell.
 
-14. After the cloud shell session is active, paste the SSH command from your bastion session. Ensure that you replace the `<privateKey` and `<localPort>` values.
+13. After the cloud shell session is active, paste the SSH command from your bastion session. Ensure that you replace the `<privateKey` and `<localPort>` values.
 
     >**NOTE:** If you generated a new SSH key pair in step 10, you must first upload your private key to Cloud Shell using the Cloud Shell Settings menu, and change the permission on the key (`chmod 600 <privateKey>`).
 
-15. Enter the following command to start MySQL Shell.
+14. Enter the following command to start MySQL Shell.
 
     >**NOTE:** If using a Bastion session, replace localhost with the private IP of the MySQL database.
 
@@ -62,7 +62,7 @@ In order to complete this lab, you should have completed the preceding labs.
     <copy>mysqlsh admin@localhost:3306 --sql</copy>
     ```
 
-4.  Enter the following inserts:
+15.  Enter the following inserts:
 
     ```
     <copy>use SRC_OCIGGLL;
@@ -79,23 +79,23 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 commit;</copy>
     ```
 
-5.  In the MySQLDeployment console, click the **Extract name (CDCEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+16.  In the MySQLDeployment console, click the **Extract name (CDCEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Extract Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/04-17-ext-stats.png " ")
 
-6.  Go back to the Overview screen, click the **Replicat name (RCDC)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+17.  Go back to the Overview screen, click the **Replicat name (RCDC)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Replicat Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-06-rep-statistics.png " ")
 
-7.  In the Oracle Cloud console, open Database actions from the TargetADW Database details page. 
+18.  In the Oracle Cloud console, open Database actions from the TargetADW Database details page. 
 
-8.  On the Database actions page, select **SQL**.
+19.  On the Database actions page, select **SQL**.
 
-9.  In the Navigator panel, from the Schema dropdown, select **SRCMIRROR_OCIGGLL**.
+20.  In the Navigator panel, from the Schema dropdown, select **SRCMIRROR_OCIGGLL**.
 
-10. In the list of tables, right-click **SRC_CITY** and then select **Open**.
+21. In the list of tables, right-click **SRC_CITY** and then select **Open**.
 
-11. In the SRCMIRROR_OCIGGLL.SRC_CITY view, click **Data**, and then verify that the 10 new entries inserted in Step 4 appear.
+22. In the SRCMIRROR\_OCIGGLL.SRC_CITY view, click **Data**, and then verify that the 10 new entries inserted in Step 4 appear.
 
 ## Task 2: Using the Performance Metrics Server
 
@@ -115,17 +115,29 @@ commit;</copy>
 
 ## Task 3: Viewing GoldenGate metrics in the Oracle Cloud console
 
-1.  On the OCI GoldenGate Deployments page, select **ADWDeployment**.
+1.  In the Oracle Cloud console navigation menu, select **Observability & Management**, then under **Monitoring**, select **Metrics Explorer**.
 
-2.  On the ADWDeployment details page, scroll down to the **Metrics** section.
+2.  On the Metrics Explorer page, in the **Query** section, set the following parameters, and then click **Update Chart**.
 
-    ![Metrics on Deployment Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05b-02-metrics.png)
+    * Compartment: Select your compartment
+    * Metric namespace: Select **oci_goldengate**
+    * Metric name: Select **ExtractLag**
+    * Dimension name: Select **deploymentName**
+    * Dimension value: Select **MySQLDeployment**
 
-3.  Review the **DeploymentInboundLag** and **DeploymentOutboundLag** charts.
+    ![Metrics query for MySQLDeployment](./images/03-02-query1.png " ")
+
+3.  Click **Add Query**, set the following parameters, and then click **Update Chart**.
+
+    * Compartment: Select your compartment
+    * Metric namespace: Select **oci_goldengate**
+    * Metric name: Select **ReplicatLag**
+    * Dimension name: Select **deploymentName**
+    * Dimension value: Select **ADWDeployment**
+
+    ![Metrics query for ADWDeployment](./images/03-03-query2.png " ")
 
 4.  Refresh your view after 5 minutes to see updated metrics.
-
-5.  You can repeat these steps for the MySQLDeployment.
 
 In this lab, you learned to monitor performance in the OCI GoldenGate deployment console and in the Oracle Cloud console.
 
@@ -137,19 +149,17 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 
 2.  On the **Configuration** screen, click **Tasks**, and then click **Add Purge Trail Task** (plus icon). The **Create a new Purge Trials task** form appears.
 
-    ![Create a new Purge Trails task on Tasks page](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-02-addtask.png " ")
+    ![Create a new Purge Trails task on Tasks page](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-02-add-purge-trails-23ai.png " ")
 
 3.  For **Operation Name**, enter a name.
 
 4.  For **Trail**, enter the name of a Trail file, and then click **Add** (plus icon). For example, in this workshop, our Extract Trail file is called `E1`.
 
-    ![Trail field highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-04-addtrail.png " ")
-
 5.  For **Keep Rule**, select **Number of Files**, and then enter `1`. This indicates that one Trail file will be kept, while all others are purged.
 
 6.  For **Purge Frequency**, select **Hours**, and then enter `1`. This indicates that this Purge task will run every hour.
 
-    ![Keep Rule and Purge Frequency fields highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-06-rules.png " ")
+    ![Keep Rule and Purge Frequency fields highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-06-purge-trails-task-23ai.png " ")
 
 7.  Click **Submit**.
 
@@ -164,4 +174,4 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, June 2023
+* **Last Updated By/Date** - Katherine Wardhana, February 2025

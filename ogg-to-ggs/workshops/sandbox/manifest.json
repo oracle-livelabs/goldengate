@@ -1,6 +1,22 @@
 {
     "workshoptitle": "Send changed data from Oracle GoldenGate to Oracle Cloud Infrastructure GoldenGate",
     "help": "livelabs-help-db_us@oracle.com",
+    "include": {
+        "00-select-compartment.md":"../../../ggs-common/building-blocks/tasks/create/00-select-compartment.md",
+        "01-create-source-connection.md":"../../../ggs-common/building-blocks/tasks/create/01-create-source-connection.md",
+        "02-unlock-source-ggadmin.md":"../../../ggs-common/building-blocks/tasks/create/02-unlock-source-ggadmin.md",
+        "03-create-target-connection.md":"../../../ggs-common/building-blocks/tasks/create/03-create-target-connection.md",
+        "04-deployment-details.md":"../../../ggs-common/building-blocks/tasks/create/04-deployment-details.md",
+        "05-assign-connection.md":"../../../ggs-common/building-blocks/tasks/create/05-assign-connection.md",
+        "01a-chrome-root-certificate.md":"../../../ggs-common/building-blocks/tasks/connection/01a-chrome-root-certificate.md",
+        "01b-firefox-root-certificate.md":"../../../ggs-common/building-blocks/tasks/connection/01b-firefox-root-certificate.md",
+        "02-upload-certificate.md":"../../../ggs-common/building-blocks/tasks/connection/02-upload-certificate.md",
+        "03-add-credential.md":"../../../ggs-common/building-blocks/tasks/connection/03-add-credential.md",
+        "01-launch-console.md":"../../../ggs-common/building-blocks/tasks/extract/01-launch-console-23ai.md",
+        "01-perform-inserts-source-db.md":"../../../ggs-common/building-blocks/tasks/monitor/01-perform-inserts-source-db.md",
+        "02-performance-metrics-server.md":"../../../ggs-common/building-blocks/tasks/monitor/02-performance-metrics-server.md",
+        "03-viewing-gg-metrics-console.md":"../../../ggs-common/building-blocks/tasks/monitor/03-viewing-gg-metrics-console.md"
+    },
     "tutorials": [
         {
             "title": "Introduction",

@@ -43,7 +43,7 @@ This lab assumes you successfully completed all preceding labs.
 
     ![SSH command in Cloud Shell](images/02-01-sshkey.png " ")
 
-2.  Change directories to **/u01/app/ogg/bin**, and then start the Admin Client:
+2.  Start the Admin Client:
 
     ```
     <copy>adminclient</copy>
@@ -56,7 +56,7 @@ This lab assumes you successfully completed all preceding labs.
     ```
       <copy>connect <OCI-GoldenGate-deployment-url> as <OCI-GoldenGate-user> password <OCI-GoldenGate-password> !</copy>
     ```
-    > **Note:** *The exclamation point (!) is required. Without it, the command fails and returns an error.*
+    > **Note:** The exclamation point (!) is required. Without it, the command fails and returns an error.
 
     ![Enter connect command into Cloud Shell as described in Step 3.](images/02-03-connect.png " ")
 
@@ -94,4 +94,4 @@ This lab assumes you successfully completed all preceding labs.
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2022
+* **Last Updated By/Date** - Katherine Wardhana, January 2025

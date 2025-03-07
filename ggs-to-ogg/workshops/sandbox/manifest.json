@@ -1,19 +1,35 @@
 {
-    "workshoptitle": "Send Data from Oracle Cloud Infrastructure GoldenGate to Oracle GoldenGate",
+    "workshoptitle": "Send data from Oracle Cloud Infrastructure GoldenGate to Oracle GoldenGate",
     "help": "livelabs-help-db_us@oracle.com",
+    "include": {
+        "00-select-compartment.md":"../../../ggs-common/building-blocks/tasks/create/00-select-compartment.md",
+        "01-create-source-connection.md":"../../../ggs-common/building-blocks/tasks/create/01-create-source-connection.md",
+        "02-unlock-source-ggadmin.md":"../../../ggs-common/building-blocks/tasks/create/02-unlock-source-ggadmin.md",
+        "03-create-target-connection.md":"../../../ggs-common/building-blocks/tasks/create/03-create-target-connection.md",
+        "04-deployment-details.md":"../../../ggs-common/building-blocks/tasks/create/04-deployment-details.md",
+        "05-assign-connection.md":"../../../ggs-common/building-blocks/tasks/create/05-assign-connection.md",
+        "01a-chrome-root-certificate.md":"../../../ggs-common/building-blocks/tasks/connection/01a-chrome-root-certificate.md",
+        "01b-firefox-root-certificate.md":"../../../ggs-common/building-blocks/tasks/connection/01b-firefox-root-certificate.md",
+        "02-upload-certificate.md":"../../../ggs-common/building-blocks/tasks/connection/02-upload-certificate.md",
+        "03-add-credential.md":"../../../ggs-common/building-blocks/tasks/connection/03-add-credential.md",
+        "01-launch-console.md":"../../../ggs-common/building-blocks/tasks/extract/01-launch-console.md",
+        "01-perform-inserts-source-db.md":"../../../ggs-common/building-blocks/tasks/monitor/01-perform-inserts-source-db.md",
+        "02-performance-metrics-server.md":"../../../ggs-common/building-blocks/tasks/monitor/02-performance-metrics-server.md",
+        "03-viewing-gg-metrics-console.md":"../../../ggs-common/building-blocks/tasks/monitor/03-viewing-gg-metrics-console.md"
+    },   
     "tutorials": [
         {
             "title": "Introduction",
             "filename": "../../introduction/introduction-gb.md"
         },
         {
-            "title": "Get Started",
+            "title": "Get started",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Create OCI GoldenGate Resources",
-            "description": "Create your OCI GoldenGate deployment and database registration",
-            "filename": "../../create/create-gb.md"
+            "title": "Lab 1: Create OCI GoldenGate resources",
+            "description": "Create your OCI GoldenGate deployment and connections",
+            "filename": "../../create/create.md"
         },
         {
             "title": "Lab 2: Connect Oracle GoldenGate to Autonomous Data Warehouse ",
@@ -22,17 +38,22 @@
             "filename": "../../oggmp-atp/oggmp-atp.md"
         },
         {
-            "title": "Lab 3: Create a Trusted Connection Between Oracle GoldenGate and OCI GoldenGate",
+            "title": "Lab 3: Create a trusted connection between Oracle GoldenGate and OCI GoldenGate",
             "description": "Use a self-signed certificate to create a trusted connection",
-            "filename": "../../connection/connection-gb.md"
+            "filename": "../../connection/connection.md"
         },
         {
-            "title": "Lab 4: Send the OCI GoldenGate Trail File to Oracle GoldenGate",
+            "title": "Lab 4: Send the OCI GoldenGate Trail file to Oracle GoldenGate",
             "description": "Create an Extract, Receiver Path, and Replicat",
             "filename": "../../extract/extract.md"
         },
         {
-            "title": "Lab 5: (Optional) Use the Admin Client to View Extract Statistics and Log Messages",
+            "title": "Lab 5: Monitor processes",
+            "description": "Verify all processes are running and sending data",
+            "filename": "../../monitor/monitor.md"
+        },
+        {
+            "title": "Lab 6: (Optional) Use Admin Client to view Extract statistics and Log messages",
             "description": "Connect to the Marketplace Oracle GoldenGate Admin Client",
             "filename": "../../admin-client/admin-client.md"
         },

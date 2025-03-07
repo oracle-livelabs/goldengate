@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Replicate data using Oracle GoldenGate Free 23c",
+    "workshoptitle": "Replicate data using Oracle GoldenGate Free 23ai",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
@@ -21,7 +21,7 @@
             "filename": "../../pipeline/pipeline.md"
         },
         {
-            "title": "Lab 3: Monitor Extracts and Replicats",
+            "title": "Lab 3: Explore the Microservices UI",
             "filename": "../../monitor/monitor.md"
         },
         {

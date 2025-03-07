@@ -6,6 +6,9 @@ This lab walks you through the steps to instantiate the target database using Or
 
 Estimated time: 15 minutes
 
+Watch the video below for a quick walk through of the lab.
+[Watch the video](videohub:1_253sko6i)
+
 ### About Replicats
 
 A Replicat is a process that delivers data to a target database.
@@ -25,27 +28,25 @@ In this lab, you will:
 
 Before importing data to the target database, create a credential in the target database to access the exported data file in Oracle Object Store.
 
-1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle Database**, and then click **Autonomous Data Warehouse**.
+1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle Database**, and then click **Autonomous Databases**.
 
-    ![Autonomous Data Warehouse in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/database-adw.png " ")
-
-2. In the list of Autonomous Data Warehouses, click **TargetADW**.
+2. In the list of Autonomous Databases, click **TargetADW**.
 
     ![Autonomous Data Warehouse page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-02-targetadw.png " ")
 
-3. On the **TargetADW Details** page, click **Database actions**.
+3. On the **TargetADW Details** page, click **Database actions**, and then select **SQL** from the dropdown.
 
     ![TargetADW Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
 
-4. Log in to Database Actions as ADMIN, and then click **SQL**.
+    > **Note:** (Optional) Close the SQL Help dialogs.
 
-5. Enter the following script and then click **Run Statement** to create a credential in ADW:
+4. Enter the following script and then click **Run Statement** to create a credential in ADW:
 
     ```
     <copy>BEGIN
     DBMS_CLOUD.CREATE_CREDENTIAL(
       credential_name => 'ADB_OBJECTSTORE',
-      username => '<user-name>',
+      username => '<identity-domain>/<user-name>',
       password => '<token>'
     );
     END;
@@ -56,7 +57,7 @@ Before importing data to the target database, create a credential in the target 
 
     ![Script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-05-sql-script.png " ")
 
-6.  Enter the following script and then click **Run Statement** to import data using ImpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI**: 
+5.  Enter the following script and then click **Run Statement** to import data using ImpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI**: 
 
     ```
     <copy>DECLARE
@@ -144,11 +145,11 @@ Before importing data to the target database, create a credential in the target 
 
     ![Run script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-06-sql-script.png " ")
 
-    > **Note:** Review the **DBMS Output** tab and ignore the error in Script Output if the Job successfully completed.
+    > **Note:** The Script Output displays what looks like an error, but it reports "Job has completed successfully." You can also review the **DBMS Output** tab to see the same message displayed.
 
 ## Task 2: Add and run the Replicat
 
-1.  On the OCI GoldenGate Deployment Console Home page, click **Add Replicat** (plus icon).
+1.  Return to the OCI GoldenGate Deployment Console Home page. On the Overview page, click **Add Replicat** (plus icon).
 
     ![GoldenGate Deployment Console Home page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-01-ggs-add-replicat.png)
 
@@ -164,7 +165,7 @@ Before importing data to the target database, create a credential in the target 
 
 6.  For **Trail Name**, enter E1.
 
-7.  For **Checkpoint Table**, select **"SRCMIRROR_OCIGGLL","CHECKTABLE"**.
+7.  For **Checkpoint Table**, select **"SRCMIRROR\_OCIGGLL","CHECKTABLE"**.
 
     ![Add Replicat - Basic Information](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-07-rep-options.png " ")
 
@@ -205,11 +206,11 @@ Before importing data to the target database, create a credential in the target 
     MAP SRC_OCIGGLL.*, TARGET SRCMIRROR_OCIGGLL.*;</copy>
     ```
 
-    ![Add Replicat - Parameter File](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-09-param-file.png " ")
-
     > **Note:** `DBOPTIONS ENABLE_INSTATIATION_FILTERING` enables CSN filtering on tables imported using Oracle Data Pump. For more information, see [DBOPTIONS Reference](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service/using&id=GWURF-GUID-BA8C0CED-D87F-4106-862E-4AD22D910160).
 
 10.  Click **Create**.
+
+    ![Add Replicat - Parameter File](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/02-09-param-file.png " ")
 
 11. In the REP Replicat **Action** menu, select **Start**.
 
@@ -224,4 +225,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, May 2023
+* **Last Updated By/Date** - Katherine Wardhana, October 2024

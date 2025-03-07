@@ -13,14 +13,27 @@ An Oracle GoldenGate Free connection contains the network connectivity informati
 ### Objectives
 
 In this lab, you will:
+* Login to the Oracle GoldenGate Free console 
 * Create the source and target connections
 
 
 ## Task 1: Log in to GoldenGate Free
 
-1.  In the GoldenGate Free welcome page, enter your username and password, and then click **Log in**.
+1. In your lab instructions, click **View Login Info**.
 
-    ![Login screen](./images/01-01-login.png " ")
+    ![View login info ](./images/01-01-login-info.png " ")
+
+2. On the Reservation Information page, under Terraform Values, copy the **OGG Public IP**.
+
+    ![Terraform values](./images/01-02-terraform.png " ")
+
+3. In a new browser window, enter `http://<OGG-PUBLIC-IP>` in the address bar. 
+
+    > **Note:** Oracle GoldenGate uses self-signed certificates. If you encounter a warning, ensure that you use `http://` or simply proceed past the warning message for this workshop.
+
+4. In the GoldenGate Free welcome page, enter **oggadmin** for your Username. For password, paste the **Global Password** from the Reservation Information. Click **Log in**. 
+
+    ![Login screen](./images/01-04-login.png " ")
 
 ## Task 2: Create the source connection
 
@@ -28,43 +41,43 @@ In this lab, you will:
 
     ![GoldenGate Free Home page](./images/02-01-create-connection.png " ")
 
-2.  The Create database connection configuration panel consists of six pages. On the General information page, for Name, enter **SourceDB** and optionally, a description.
+2.  The Create database connection configuration panel consists of six pages. On the General information page, for Database Connection Name, enter **sourceDB** and optionally, a description.
 
 3.  Click **Next**.
 
     ![General information page](./images/02-03-general-info.png " ")
 
-4.  On the Connection details page, under Connection details select **Source**.
+4.  On the Connection details page, for Connection role select **Source**.
 
 5.  For the Connection type dropdown, select **Basic**.
 
-6.  For Hostname, enter .
+6.  For Hostname, enter the **DB Free E Private IP** found in the Reservation Information.
 
 7.  For Port, enter **1521**.
 
-8. For Database type, select **Pluggable database in container database**.
+8. For Database type, select **Pluggable database (PDB) in Oracle Database 21c or above**.
 
-9.  For Container database dervice name (CDB), enter **ORCL**.
+9.  For Pluggable database service name (PDB), enter **Freepdb1**. 
 
 10.  Select **SYSDBA privileges available**.
 
     ![SYSDBA priviledges](./images/02-10-sysdba-priv.png " ")
 
-11. Under the Administrator Credentials pop up, insert your admin privilege username and password. Click **OK**.
+11. Once you click on the SYSDBA checkbox, an Administrator Credentials pop up will appear. For User with admin privilege, enter `sys`. For password, paste the **Global Password** from the Reservation Information. Click **OK**.
 
     ![Administrator credentials page](./images/02-11-admin-credentials.png " ")
 
-12. You are brought back to the Connection details page. Click **Next**.
+12. You're brought back to the Connection details page. Click **Next**.
 
     ![Connection details page](./images/02-12-connection-details.png " ")
 
-13. On the GoldenGate admin user page, enter your username, password, and select the **Add GoldenGate admin database user**. 
+13. On the GoldenGate admin user page, enter your username, **ggadmin**, password, and select **Add GoldenGate admin database user**. For password, paste the **Global Password** from the Reservation Information.
 
 14. Click **Next**.
 
     ![GoldenGate admin user page](./images/02-14-gg-admin-user.png " ")
 
-15. On the Configuration page, click **Run Analysis**.
+15. On the Configuration page, click **Run analysis**.
 
     ![Click run analysis](./images/02-15-run-analysis.png " ")
 
@@ -90,29 +103,29 @@ In this lab, you will:
 
 	![Create database connection](./images/03-01-create-connection.png " ")
 
-2.  The Create database connection configuration panel consists of six pages. On the General information page, for Name, enter **TargetDB** and optionally, a description.
+2.  The Create database connection configuration panel consists of six pages. On the General information page, for Database Connection Name, enter **targetDB** and optionally, a description.
 
 3.  Click **Next**.
 
     ![General information page](./images/03-03-general-info.png " ")
 
-4.  On the Connection details page, under Connection details select **Target**.
+4.  On the Connection details page, for Connection role select **Target**.
 
 5.  For the Connection type dropdown, select **Basic**.
 
-6.  For Hostname, enter **ORCL**.
+6.  For Hostname, enter the **DB Free W Private IP** found in the Reservation Information.
 
-7.  For Port, enter **1621**.
+7.  For Port, enter **1521**.
 
-8. For Database type, select **Pluggable database in container database**.
+8. For Database type, select **Pluggable database (PDB) in Oracle Database 21c or above**.
 
-9.  For Container database dervice name (CDB), enter .
+9.  For Pluggable database service name (PDB), enter **Freepdb1**.
 
-10.  Tick the SYSDBA priviledges available 
+10.  Select **SYSDBA privileges available**.
 
     ![SYSDBA priviledges](./images/03-10-sysdba-priv.png " ")
 
-11. Under the Administrator Credentials pop up, insert your admin privilege username and password. Click **OK**.
+11. Once you click on the SYSDBA checkbox, an Administrator Credentials pop up will appear. For User with admin privilege, enter `sys`. For password, paste the **Global Password** from the Reservation Information. Click **OK**.
 
     ![Administrator credentials page](./images/02-11-admin-credentials.png " ")
 
@@ -120,17 +133,17 @@ In this lab, you will:
 
     ![Connection details page](./images/03-12-connection-details.png " ")
 
-13. On the GoldenGate admin user page, enter your username, password, and tick the **Add GoldenGate admin database user**. 
+13. On the GoldenGate admin user page, enter your username, **ggadmin**, password, and select **Add GoldenGate admin database user**. For password, paste the **Global Password** from the Reservation Information.
 
 14. Click **Next**.
 
     ![GoldenGate admin user page](./images/02-14-gg-admin-user.png " ")
 
-15. On the Configuration page, click **Run Analysis**.
+15. On the Configuration page, click **Run analysis**.
 
     ![Click run analysis](./images/02-15-run-analysis.png " ")
 
-16. Review the script by scrolling through and reviewing it completely. Tick **I have reviewed the SQL script and am aware of the changes it will apply to my database**.
+16. Review the script by scrolling through and reviewing it completely. Select **I have reviewed the SQL script and am aware of the changes it will apply to my database**.
 
 17. Click **Run SQL**.
 
@@ -154,7 +167,7 @@ In this lab, you will:
 * [About the configuration script](https://docs-uat.us.oracle.com/en/middleware/goldengate/free/21/uggfe/create-database-connections.html#GUID-3C6691FA-2C40-445D-8A1A-A7B708085DD9)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Alex Lima, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, 
+* **Author** - Katherine Wardhana, User Assistance Developer
+* **Contributors** -  Alex Lima, Database Product Management & Jenny Chan, Consulting User Assistance Developer, Database User Assistance 
+* **Last Updated By/Date** - Katherine Wardhana, September 2023
 
