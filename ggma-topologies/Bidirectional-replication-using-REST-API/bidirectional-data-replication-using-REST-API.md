@@ -2,17 +2,19 @@
 
 ## Introduction
 
-This lab describes how to use the REST API service endpoints included in `add_replication_activeactive_curl.sh` script to automatically set up Oracle GoldenGate processes on the source (`depl_north`) and target (`depl_south`) deployments. 
+This lab describes how to use the REST API service endpoints included in `add_replication_activeactive_curl.sh` script to automatically set up Oracle GoldenGate processes on the `depl_north` and `depl_south` deployments. Considering that this is a bidirectional deployment configuration, both deployments send and receive data at the same time. 
 
-The source deployment `depl_north` is connected to the <b>DBNORTH</b> PDB and the `depl_south` deployment is connected to the <b>DBSOUTH</b> PDB. The deployments are already created in the environment. 
+The `depl_north` deployment is connected to the `<b>DBNORTH</b>` PDB and the `depl_south` deployment is connected to the `<b>DBSOUTH</b>` PDB. The deployments are already created in the environment. 
 
-Check if the bidirectional replication works correctly using the <strong>`check_replication_activeactive_curl.sh`</strong> script. You can use the `dbnorth_dml_operations.sh` and `dbsouth_dml_operations.sh` scripts to add records to the DBNORTH and DBSOUTH databases and view the Extract Statistics to confirm that the committed transactions were captured. 
+You will also be able to check if the bidirectional replication works correctly. Using the `dbnorth_dml_operations.sh` and `dbsouth_dml_operations.sh` scripts, you can add DML records to the `DBNORTH` and `DBSOUTH` databases, respectively. 
 
-To check on the bidirectional replication for an active active set up, you need to prevent data looping or data duplication while replicating data from DBNORTH to DBSOUTH and from DBSOUTH to DBNORTH. To check this for a bidirectional replication, run the `dbnorth_select.sh` script to replicate records from `DBNORTH` to `DBSOUTH` and then run the `dbsouth_select.sh` script to replicate records from `DBSOUTH` to `DBNORTH`.
+After adding records, you can view the Extract Statistics to confirm that the committed transactions were captured. The `check_replication_activeactive_curl.sh` script allows you to view the statistics for different Oracle GoldenGate processes.  
 
-After you have completed testing this scenario, using the REST API service endpoints, you must remove this replication setup so that you can test the same steps using the Admin Client. To delete this environment, use the <strong>`delete_replication_activeactive_curl.sh`</strong>.
+To check on the bidirectional replication for an active active set up, you need to prevent data looping or data duplication while replicating data from `DBNORTH` to `DBSOUTH` and from `DBSOUTH` to `DBNORTH`. To check that the bidirectional replication has happened successfully, run the `dbnorth_select.sh` script to view the INSERTS, UPDATES, DELETES records from `DBNORTH` to `DBSOUTH` and then run the `dbsouth_select.sh` script to view the INSERTS, UPDATES, and DELETES from from `DBSOUTH` to `DBNORTH`.
 
-The source deployment <strong>`depl_north`</strong> is connected to the <strong>`DBNORTH`</strong> PDB and the <strong>`depl_south`</strong> deployment is connected to the <strong>`DBSOUTH`</strong> PDB. The deployments are already created in the environment. 
+After you have completed testing this scenario, using the REST API service endpoints, you must remove this replication setup so that you can test the same steps using the Admin Client. To delete this environment, use the `delete_replication_activeactive_curl.sh`.
+
+The source deployment `depl_north` is connected to the `DBNORTH` PDB and the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
 
 Estimated Time: 10 minutes
 
