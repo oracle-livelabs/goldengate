@@ -2,11 +2,15 @@
 
 ## Introduction
 
-This lab describes how to use the REST API service endpoints included in `add_replication_reporting_curl.sh` script to automatically set up an Oracle GoldenGate processes on the source (`depl_north`) and target (`depl_south`) deployments. 
+This lab describes how to use the REST API service endpoints included in `add_replication_activeactive_curl.sh` script to automatically set up Oracle GoldenGate processes on the source (`depl_north`) and target (`depl_south`) deployments. 
 
 The source deployment `depl_north` is connected to the <b>DBNORTH</b> PDB and the `depl_south` deployment is connected to the <b>DBSOUTH</b> PDB. The deployments are already created in the environment. 
 
-Check the business reports using the <strong>`check_replication_reporting_curl.sh`</strong> script. You can use the `source_dml_operations.sh` script to add records to the source database and view the Extract Statistics to confirm that the committed transactions were captured. Then you can run the `source_target_select.sh` script to replicate the changes on the target database. Delete the data replication environment using the <strong>`delete_replication_reporting_curl.sh`</strong>.
+Check if the bidirectional replication works correctly using the <strong>`check_replication_activeactive_curl.sh`</strong> script. You can use the `dbnorth_dml_operations.sh` and `dbsouth_dml_operations.sh` scripts to add records to the DBNORTH and DBSOUTH databases and view the Extract Statistics to confirm that the committed transactions were captured. 
+
+To check on the bidirectional replication for an active active set up, you need to prevent data looping or data duplication while replicating data from DBNORTH to DBSOUTH and from DBSOUTH to DBNORTH. To check this for a bidirectional replication, run the `dbnorth_select.sh` script to replicate records from `DBNORTH` to `DBSOUTH` and then run the `dbsouth_select.sh` script to replicate records from `DBSOUTH` to `DBNORTH`.
+
+After you have completed testing this scenario, using the REST API service endpoints, you must remove this replication setup so that you can test the same steps using the Admin Client. To delete this environment, use the <strong>`delete_replication_activeactive_curl.sh`</strong>.
 
 The source deployment <strong>`depl_north`</strong> is connected to the <strong>`DBNORTH`</strong> PDB and the <strong>`depl_south`</strong> deployment is connected to the <strong>`DBSOUTH`</strong> PDB. The deployments are already created in the environment. 
 
@@ -15,17 +19,17 @@ Estimated Time: 10 minutes
 ### Objectives
 In this lab, you will: 
 
-* Run the `add_replication_reporting_curl.sh` script, which would automatically perform the following tasks:
+* Run the `add_replication_activeactive_curl.sh` script, which would automatically perform the following tasks:
 
-   * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the Database instance
+   * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the database instance
    *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on the source PDB, <b>DBNORTH</b>
    *	Add heartbeat and checkpoint tables on the source and target PDBs.
    *	Add Extract on the source PDB, <b>DBNORTH</b>
    *	Set up the Extract parameter file
    *	Add Distribution Path from source to target systems
    *	Add Replicat on the target PDB, <b>DBSOUTH</b>
-* View the Standard Business Report based on sample data.
-* Delete the data replication environment using the `delete_replication_reporting_curl.sh` script.
+* View the lag statistics and check for data duplication.
+* Delete the data replication environment using the `delete_replication_activeactive_curl.sh` script.
 
 
 ### Prerequisites
@@ -35,7 +39,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
 ## Task 1: Set Up Data Replication
 
-   Make sure you are in the `/scripts/UseCases/01_Reporting/` directory and perform the following tasks:
+   Make sure you are in the `/scripts/UseCases/02_Bidirectional/` directory and perform the following tasks:
    
    1. Move to the `REST-API` directory and list the content for this directory:
      
@@ -45,39 +49,48 @@ This lab assumes that you have completed the tasks in **initial-setup**
       ls-l
       </copy>
       ```
-      The components of the directory are listed as shown in the following image:
+      The components of the directory include:
 
-       ![Contents of the REST-API directory](./images/rest-api_dir.png " ")
+      * add_replication_activeactive_curl.sh
+      * check_replication_activeactive_curl.sh
+      * delete_replication_activeactive_curl.sh
 
-   2. Run the `add_replication_reporting_curl.sh` script:
+      Apart from this, you will be using some additional scripts, which are located in `/scripts/UseCases/02_Bidirectional`. These scripts are:
+
+      * dbnorth_dml_operations.sh
+      * dbsouth_dml_operations.sh
+      * dbnorth_select.sh
+      * dbsouth_select.sh
+      
+   2. Run the `add_replication_activeactive_curl.sh` script:
 
        ```
        <copy>
-        ./add_replication_reporting_curl.sh
+        ./add_replication_activeactive_curl.sh
        </copy>
        ```
       After this script runs successfully, data replication begins between source and target.
    
-   In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_reporting_curl.sh` script runs.
+   In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_curl.sh` script runs.
          
          
     
-## Task 2: View the Sample Standard Business Report
+## Task 2: View the Bidirectional Replicat Using Statistics for Oracle GoldenGate Processes
 
    To view the Standard Report based on sample data:
 
-   1. Run the `check_replication_reporting.sh` script
+   1. Run the `check_replication_activeactive_curl.sh` script
    
        ```
          <copy>
-            ./check_replication_reporting.sh
+            ./check_replication_activeactive_curl.sh
          </copy>
        ```
-  
-   2. You can view the report containing statistics for the committed transactions, as shown in the following image:
-  
-   ![Statistics report for all Oracle GoldenGate processes](./images/rest-api-curl_check_replication_reporting.png " ")
+      The output for this script shows various detiails. You can view these details to verify that the bidirectional replication is working.
 
+   2. Observe the Extract and Replicat statistics to see the INSERTS, UPDATES, and DELETES of records. If the replication occurred correctly, then the Replicat statistics would have same the same number of INSERTS, UPDATES, and DELETES, as the Extract statistics.
+  
+  
 ## Task 3: Check the Standard Reports in Oracle GoldenGate Microservices Web Interface
 
 The statistical reports that you viewed in Task 2 can also be viewed from the web interface. Following are the steps to access these reports from the web interface:
@@ -92,24 +105,34 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 
 ## Task 4: Add DML to Source Database
 
-To check if the transactions committed to the source database are catpured correctly by the Extract, you can run the script `source_dml_operations.sh`. 
-This script is located in `/home/oracle/scripts/UseCases/01_Reporting` folder. 
+Verify that the Extract processes on `DBNORTH` and `DBSOUTH` databases are working correctly. 
 
-Run this script as mentioned in the following steps to add DML to the DBNORTH database and check that Extract has captured DML operations:
+Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases and check that Extract has captured DML operations:
 
-1. Navigate to the folder: `/home/oracle/scripts/UseCases/01_Reporting`
-2. Run the script to add DML operations on the source database:
+1. Navigate to the folder: `/home/oracle/scripts/UseCases/02_Bidirectional`.
+
+2. Run the script to add DML operations on the `DBNORTH` database:
+
    ```
-   <copy>./ source_dml_operations.sh</copy>
+   <copy>./ dbnorth_dml_operations.sh</copy>
    ```
+3. Run the script to add DML operations on the `DBSOUTH` database:
+
+   ```
+   <copy>./ dbsouth_dml_operations.sh</copy>
+
+   ```
+
 3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
+
 4. After you checked that the DML was captured on the source database, run the script `source_target_select.sh`. This script contains queries that allow you to check the data on the target database (DBSOUTH). 
 
 ```
 <copy>./source_target_select.sh</copy>
 ```
 This script displays the content of the DBSOUTH database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the source database DBNORTH.
-## Task 5: Delete the Data Replication Setup
+
+## Task 5: Delete the Bidirectional Replication Setup
 
    It's essential to delete the setup to be able to test the same feature using the OBEY commands within the same environment. 
    
@@ -121,15 +144,13 @@ This script displays the content of the DBSOUTH database tables <b>hr.employees<
    
    ```
      <copy>
-      ./delete_replication_reporting_curl.sh  
+      ./delete_replication_activeactive_curl.sh  
      </copy>
    ```
    
    2. You can verify that the environment was deleted after you the following message on the screen:
    
-   ![Message displayed after the replication environment is deleted.](./images/rest-api_delete_reporting-curl.png " ")
-
-   After you delete the environment, you can use the script anytime to rebuild the environment or copy the script to apply in your own test environment.
+     After you delete the environment, you can use the script anytime to rebuild the environment or copy the script to apply in your own test environment.
 
    
 ## Learn More
