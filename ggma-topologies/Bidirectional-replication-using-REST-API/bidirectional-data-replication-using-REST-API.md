@@ -24,12 +24,12 @@ In this lab, you will:
 * Run the `add_replication_activeactive_curl.sh` script, which would automatically perform the following tasks:
 
    * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the database instance
-   *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on the source PDB, <b>DBNORTH</b>
-   *	Add heartbeat and checkpoint tables on the source and target PDBs.
-   *	Add Extract on the source PDB, <b>DBNORTH</b>
+   *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on `DBNORTH` and `DBSOUTH` PDBs
+   *	Add heartbeat and checkpoint tables on the both PDBs.
+   *	Add Extract on the `DBNORTH` and `DBSOUTH`
    *	Set up the Extract parameter file
-   *	Add Distribution Path from source to target systems
-   *	Add Replicat on the target PDB, <b>DBSOUTH</b>
+   *	Add Distribution Path from `DBNORTH` to `DBSOUTH` and then from `DBSOUTH` to `DBNORTH`
+   *	Add Replicat on the both PDBs, `DBNORTH` and `DBSOUTH`
 * View the lag statistics and check for data duplication.
 * Delete the data replication environment using the `delete_replication_activeactive_curl.sh` script.
 
@@ -39,7 +39,7 @@ In this lab, you will:
 This lab assumes that you have completed the tasks in **initial-setup**
 
 
-## Task 1: Set Up Data Replication
+## Task 1: Set Up Active Active Data Replication
 
    Make sure you are in the `/scripts/UseCases/02_Bidirectional/` directory and perform the following tasks:
    
@@ -74,38 +74,8 @@ This lab assumes that you have completed the tasks in **initial-setup**
       After this script runs successfully, data replication begins between source and target.
    
    In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_curl.sh` script runs.
-         
-         
-    
-## Task 2: View the Bidirectional Replicat Using Statistics for Oracle GoldenGate Processes
 
-   To view the Standard Report based on sample data:
-
-   1. Run the `check_replication_activeactive_curl.sh` script
-   
-       ```
-         <copy>
-            ./check_replication_activeactive_curl.sh
-         </copy>
-       ```
-      The output for this script shows various detiails. You can view these details to verify that the bidirectional replication is working.
-
-   2. Observe the Extract and Replicat statistics to see the INSERTS, UPDATES, and DELETES of records. If the replication occurred correctly, then the Replicat statistics would have same the same number of INSERTS, UPDATES, and DELETES, as the Extract statistics.
-  
-  
-## Task 3: Check the Standard Reports in Oracle GoldenGate Microservices Web Interface
-
-The statistical reports that you viewed in Task 2 can also be viewed from the web interface. Following are the steps to access these reports from the web interface:
-
-1. Open a web browser within the environment, and enter the URL of the Administration Service: 
-
-      https://north:9001
-
-2. Log in to the Administration Service using the credentials <b>ggma/GGma_23ai</b>.
-3. From the left-navigation pane, expand the list of Extracts and select the <b>EXTN</b> Extract.
-4. Click the <b>Statistics</b> option to view the report.
-
-## Task 4: Add DML to Source Database
+## Task 2: Add DML to DBNORTH and DBSOUTH PDBs 
 
 Verify that the Extract processes on `DBNORTH` and `DBSOUTH` databases are working correctly. 
 
@@ -138,7 +108,34 @@ This script displays the content of the `DBSOUTH` database tables <b>hr.employee
 ```
 <copy>./dbnorth_select.sh</copy>
 ```
-This script displays the content of the  `DBNORTH` database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the `DBNORTH` database.
+This script displays the content of the  `DBNORTH` database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the `DBNORTH` database.                  
+    
+## Task 3: Check the Statistics in Oracle GoldenGate Microservices Web Interface
+
+The statistical reports that you viewed in Task 2 can also be viewed from the web interface. Following are the steps to access these reports from the web interface:
+
+1. Open a web browser within the environment, and enter the URL of the Administration Service: 
+
+      https://north:9001
+
+2. Log in to the Administration Service using the credentials <b>ggma/GGma_23ai</b>.
+3. From the left-navigation pane, expand the list of Extracts and select the <b>EXTN</b> Extract.
+4. Click the <b>Statistics</b> option to view the report.
+
+## Task 4: View the Active Active Replicat Using Statistics for Oracle GoldenGate Processes
+
+   To view the Standard Report based on sample data:
+
+   1. Run the `check_replication_activeactive_curl.sh` script
+   
+       ```
+         <copy>
+            ./check_replication_activeactive_curl.sh
+         </copy>
+       ```
+      The output for this script shows various detiails. You can view these details to verify that the bidirectional replication is working.
+
+   2. Observe the Extract and Replicat statistics to see the INSERTS, UPDATES, and DELETES of records. If the replication occurred correctly, then the Replicat statistics would have same the same number of INSERTS, UPDATES, and DELETES, as the Extract statistics.
 
 ## Task 5: Delete the Bidirectional Replication Setup
 
