@@ -125,12 +125,18 @@ Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases an
 
 3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
 
-4. After you checked that the DML was captured on the source database, run the script `source_target_select.sh`. This script contains queries that allow you to check the data on the target database (DBSOUTH). 
+4. After you check that the DML has been captured on the DBNORTH database, run the script `dbnorth_select.sh`. This script contains queries that allow you to check the data on the `DBSOUTH` database.
+```
+<copy>./dbnorth_select.sh</copy>
+```
+This script displays the content of the `DBSOUTH` database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the `DBSOUTH` database.
+
+5. After you check that the DML has been captured on the DBSOUTH database, run the script `dbsouth_select.sh`. This script contains queries that allow you to check the data on the `DBNORTH` database.
 
 ```
-<copy>./source_target_select.sh</copy>
+<copy>./dbnorth_select.sh</copy>
 ```
-This script displays the content of the DBSOUTH database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the source database DBNORTH.
+This script displays the content of the  `DBNORTH` database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the `DBNORTH` database.
 
 ## Task 5: Delete the Bidirectional Replication Setup
 
