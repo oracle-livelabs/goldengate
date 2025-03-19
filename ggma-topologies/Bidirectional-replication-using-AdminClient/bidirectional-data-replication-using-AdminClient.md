@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab describes how to use the REST API service endpoints included in `add_replication_activeactive_curl.sh` script to automatically set up Oracle GoldenGate processes on the `depl_north` and `depl_south` deployments. Considering that this is a bidirectional deployment configuration, both deployments send and receive data at the same time. 
+This lab describes how to use the REST API service endpoints included in `add_replication_activeactive.oby` script to automatically set up Oracle GoldenGate processes on the `depl_north` and `depl_south` deployments. Considering that this is a bidirectional deployment configuration, both deployments send and receive data at the same time. 
 
-The `depl_north` deployment is connected to the `<b>DBNORTH</b>` PDB and the `depl_south` deployment is connected to the `<b>DBSOUTH</b>` PDB. The deployments are already created in the environment. 
+The `depl_north` deployment is connected to the `DBNORTH` PDB and the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
 
 You will also be able to check if the bidirectional replication works correctly. Using the `dbnorth_dml_operations.sh` and `dbsouth_dml_operations.sh` scripts, you can add DML records to the `DBNORTH` and `DBSOUTH` databases, respectively. 
 

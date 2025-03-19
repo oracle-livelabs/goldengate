@@ -3,11 +3,11 @@
 
 ## Introduction
 
-This lab describes how to use Admin Client to run OBEY scripts <strong>`add_replication_reporting.oby`</strong>, which would automate the set up of Oracle GoldenGate processes on the source (<strong>`depl_north`</strong>) and target (<strong>`depl_south`</strong>) deployments. 
+This lab describes how to use Admin Client to run OBEY scripts `add_replication_reporting.oby`, which would automate the set up of Oracle GoldenGate processes on the source (`depl_north`) and target (`depl_south`) deployments. 
 
-Check the business reports using the <strong>`check_replication_reporting.oby`</strong> script. You can use the `source_dml_operations.sh` script to add records to the source database and view the Extract Statistics to confirm that the committed transactions were captured. Then you can run the `source_target_select.sh` script to replicate the changes on the target database. Delete the data replication environment using the <strong>`delete_replication_reporting.oby`</strong>.
+Check the business reports using the `check_replication_reporting.oby` script. You can use the `source_dml_operations.sh` script to add records to the source database and view the Extract Statistics to confirm that the committed transactions were captured. Then you can run the `source_target_select.sh` script to replicate the changes on the target database. Delete the data replication environment using the `delete_replication_reporting.oby`.
 
-The source deployment <strong>`depl_north`</strong> is connected to the <strong>`DBNORTH`</strong> PDB and the <strong>`depl_south`</strong> deployment is connected to the <strong>`DBSOUTH`</strong> PDB. The deployments are already created in the environment. 
+The source deployment `depl_north` is connected to the `DBNORTH` PDB and the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
 
 Estimated Time: 10 minutes
 
@@ -18,12 +18,12 @@ In this lab, you will:
 * Run the <code>add_replication_reporting.oby </code> script, to automatically perform the following tasks:
 
    * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the Database instance
-   *	Add supplemental logging to the database schema hr (SCHEMATRANDATA) on the source PDB, <b>DBNORTH</b>
+   *	Add supplemental logging to the database schema hr (SCHEMATRANDATA) on the source PDB, `DBNORTH`
    *	Add heartbeat and checkpoint tables on the source and target PDBs.
-   *	Add Extract on the source PDB, <b>DBNORTH</b>
+   *	Add Extract on the source PDB, `DBNORTH`
    *	Set up the Extract parameter file
    *	Add Distribution Path from source to target systems
-   *	Add Replicat on the target PDB, <b>DBSOUTH</b>
+   *	Add Replicat on the target PDB, `DBSOUTH`
 * View the Standard Business Report based on sample data.
 * Delete the data replication environment using the <code>delete_replication_reporting.oby</code> script.
 
@@ -128,10 +128,32 @@ You need to run this script to copy the Extract and Replicat parameter files to 
       </copy>    
       ```
    
-    
-## Task 2: Check the Business Reports
+## Task 2: Add DML to Source Database and Check the Target Database for Replicated Records
 
-   The statistical reports for the committed transactions are available in the data replication environment. To check these reports, perform the following steps:
+To check if the transactions committed to the source database are catpured correctly by the Extract, you can run the script <code>source_dml_operations.sh</code>. 
+This script is located in <code>/home/oracle/scripts/UseCases/01_Reporting</code> folder. 
+
+Run this script as mentioned in the following steps to add DML to the DBNORTH database and check that Extract has captured DML operations:
+
+1. Navigate to the folder: <code>/home/oracle/scripts/UseCases/01_Reporting</code> 
+
+2. Run the script to add DML operations on the source database:
+   ```
+   <copy>./ source_dml_operations.sh</copy>
+   ```
+3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
+
+4. Run the script <code>source_target_select.sh</code> to check  the data on the target PDB `DBSOUTH`. This script contains queries to view the PDB records that were updated for the specific tables. 
+
+```
+<copy>./source_target_select.sh</copy>
+```
+The script output lists the `DBSOUTH` tables `hr.employees`. You should be able to view the updated table columns that were updated on the source PDB, `DBNORTH`. 
+
+
+## Task 3: Check the Business Reports
+
+   The statistical reports for the committed transactions are available in the data replication environment. You can also use the <code>./check_replication_reporting_adminclient.sh script</code> script to view the entire business report on the command line. To check these reports, perform the following steps:
 
    1. Run the <code>./check_replication_reporting_adminclient.sh script</code> to run the OBEY commands in the <code>check_replication_reporting_reporting.oby</code> script:
    
@@ -145,8 +167,7 @@ You need to run this script to copy the Extract and Replicat parameter files to 
 
    ![Output for check_replication_reporting_oby script](./images/check_repl_output.png " ")
 
-
-## Task 3: Check the Standard Reports in Oracle GoldenGate Microservices Web Interface
+## Task 4: Check the Standard Reports in Oracle GoldenGate Microservices Web Interface
 
 The statistical reports that you viewed in Task 2 can also be viewed from the web interface. Following are the steps to access these reports from the web interface:
 
@@ -157,26 +178,6 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 2. Log in to the Administration Service using the credentials ggma/GGma_23ai.
 3. From the left-navigation pane, expand the list of Extracts and select the EXTN Extract.
 4. Click the Statistics option to view the report. 
-
-## Task 4: Add DML to Source Database and Check the Target Database for Replicated Records
-
-To check if the transactions committed to the source database are catpured correctly by the Extract, you can run the script <code>source_dml_operations.sh</code>. 
-This script is located in <code>/home/oracle/scripts/UseCases/01_Reporting</code> folder. 
-
-Run this script as mentioned in the following steps to add DML to the DBNORTH database and check that Extract has captured DML operations:
-
-1. Navigate to the folder: <code>/home/oracle/scripts/UseCases/01_Reporting</code> 
-2. Run the script to add DML operations on the source database:
-   ```
-   <copy>./ source_dml_operations.sh</copy>
-   ```
-3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
-4. After you checked that the DML was captured on the source database, run the script <code>source_target_select.sh</code>. This script contains queries that allow you to check the data on the target database (DBSOUTH). 
-
-```
-<copy>./source_target_select.sh</copy>
-```
-This script displays the content of the DBSOUTH database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the source database DBNORTH.
 
 ## Task 5: Delete the Replication Environment
 
