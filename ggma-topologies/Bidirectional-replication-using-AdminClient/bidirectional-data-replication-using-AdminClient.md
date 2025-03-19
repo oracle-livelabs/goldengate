@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab describes how to use the REST API service endpoints included in `add_replication_activeactive.oby` script to automatically set up Oracle GoldenGate processes on the `depl_north` and `depl_south` deployments. Considering that this is a bidirectional deployment configuration, both deployments send and receive data at the same time. 
+This lab describes how to use the Admin Client commands wrapped in an OBEY file to automatically set up Oracle GoldenGate processes on the `depl_north` and `depl_south` deployments. Considering that this is a bidirectional deployment configuration, both deployments send and receive data at the same time. 
 
 The `depl_north` deployment is connected to the `DBNORTH` PDB and the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
 
-You will also be able to check if the bidirectional replication works correctly. Using the `dbnorth_dml_operations.sh` and `dbsouth_dml_operations.sh` scripts, you can add DML records to the `DBNORTH` and `DBSOUTH` databases, respectively. 
+You will also check if the bidirectional replication works correctly, using the `dbnorth_dml_operations.sh` and `dbsouth_dml_operations.sh` scripts. These scripts automatically add DML records to the `DBNORTH` and `DBSOUTH`, respectively. 
 
-After adding records, you can view the Extract Statistics to confirm that the committed transactions were captured. The `check_replication_activeactive_curl.sh` script allows you to view the statistics for different Oracle GoldenGate processes.  
+After adding records, you can view the Extract Statistics to confirm that the committed transactions were captured. The `check_replication_activeactive.oby` script allows you to view the statistics for different Oracle GoldenGate processes.  
 
 To check on the bidirectional replication for an active active set up, you need to prevent data looping or data duplication while replicating data from `DBNORTH` to `DBSOUTH` and from `DBSOUTH` to `DBNORTH`. To check that the bidirectional replication has happened successfully, run the `dbnorth_select.sh` script to view the INSERTS, UPDATES, DELETES records from `DBNORTH` to `DBSOUTH` and then run the `dbsouth_select.sh` script to view the INSERTS, UPDATES, and DELETES from from `DBSOUTH` to `DBNORTH`.
 
