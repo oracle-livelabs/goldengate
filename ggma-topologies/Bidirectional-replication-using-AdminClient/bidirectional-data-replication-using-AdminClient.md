@@ -4,24 +4,22 @@
 
 This lab describes how to use the Admin Client commands wrapped in an OBEY file to automatically set up Oracle GoldenGate processes on the `depl_north` and `depl_south` deployments. Considering that this is a bidirectional deployment configuration, both deployments send and receive data at the same time. 
 
-The `depl_north` deployment is connected to the `DBNORTH` PDB and the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
+While the `depl_north` deployment is connected to the `DBNORTH` PDB, the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
 
-You will also check if the bidirectional replication works correctly, using the `dbnorth_dml_operations.sh` and `dbsouth_dml_operations.sh` scripts. These scripts automatically add DML records to the `DBNORTH` and `DBSOUTH`, respectively. 
+You will also use the `dbnorth_dml_operations.sh` and `dbsouth_dml_operations.sh` scripts to automatically add DML records to the `DBNORTH` and `DBSOUTH` PDBs, respectively. 
 
 After adding records, you can view the Extract Statistics to confirm that the committed transactions were captured. The `check_replication_activeactive.oby` script allows you to view the statistics for different Oracle GoldenGate processes.  
 
-To check on the bidirectional replication for an active active set up, you need to prevent data looping or data duplication while replicating data from `DBNORTH` to `DBSOUTH` and from `DBSOUTH` to `DBNORTH`. To check that the bidirectional replication has happened successfully, run the `dbnorth_select.sh` script to view the INSERTS, UPDATES, DELETES records from `DBNORTH` to `DBSOUTH` and then run the `dbsouth_select.sh` script to view the INSERTS, UPDATES, and DELETES from from `DBSOUTH` to `DBNORTH`.
+To check if the bidirectional replication works correctly, you need to prevent data looping or data duplication while replicating data from `DBNORTH` to `DBSOUTH` and from `DBSOUTH` to `DBNORTH`. To check this, you will run the `dbnorth_select.sh` script to view the INSERTS, UPDATES, DELETES records from `DBNORTH` to `DBSOUTH` and then run the `dbsouth_select.sh` script to view the INSERTS, UPDATES, and DELETES from `DBSOUTH` to `DBNORTH`.
 
-After you have completed testing this scenario, using the REST API service endpoints, you must remove this replication setup so that you can test the same steps using the Admin Client. To delete this environment, use the `delete_replication_activeactive_curl.sh`.
-
-The source deployment `depl_north` is connected to the `DBNORTH` PDB and the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
+After you have completed testing this scenario, using the Admin Client, you must remove this replication setup so that you can test the same steps using the Admin Client. To delete this environment, use the `delete_replication_activeactive.sh`.
 
 Estimated Time: 10 minutes
 
 ### Objectives
 In this lab, you will: 
 
-* Run the `add_replication_activeactive_curl.sh` script, which would automatically perform the following tasks:
+* Run the `add_replication_activeactive.oby` script, which would automatically perform the following tasks:
 
    * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the database instance
    *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on `DBNORTH` and `DBSOUTH` PDBs
@@ -31,7 +29,7 @@ In this lab, you will:
    *	Add Distribution Path from `DBNORTH` to `DBSOUTH` and then from `DBSOUTH` to `DBNORTH`
    *	Add Replicat on the both PDBs, `DBNORTH` and `DBSOUTH`
 * View the lag statistics and check for data duplication.
-* Delete the data replication environment using the `delete_replication_activeactive_curl.sh` script.
+* Delete the data replication environment using the `delete_replication_activeactive.oby` script.
 
 
 ### Prerequisites
@@ -43,19 +41,22 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
    Make sure you are in the `/scripts/UseCases/02_Bidirectional/` directory and perform the following tasks:
    
-   1. Move to the `REST-API` directory and list the content for this directory:
+   1. Move to the `AdminClient` directory and list the content for this directory:
      
       ```
       <copy>
-      cd REST-API
+      cd AdminClient
       ls-l
       </copy>
       ```
       The components of the directory include:
 
-      * add_replication_activeactive_curl.sh
-      * check_replication_activeactive_curl.sh
-      * delete_replication_activeactive_curl.sh
+      * add_replication_activeactive.oby
+      * add_replication_ActiveActive_adminclient
+      * check_replication_ActiveActive.oby
+      * check_replication_activeactive_adminclient.sh
+      * delete_replication_ActiveActive.oby
+      * delete_replication_activeactive_adminclient.sh
 
       Apart from this, you will be using some additional scripts, which are located in `/scripts/UseCases/02_Bidirectional`. These scripts are:
 
@@ -64,16 +65,18 @@ This lab assumes that you have completed the tasks in **initial-setup**
       * dbnorth_select.sh
       * dbsouth_select.sh
       
-   2. Run the `add_replication_activeactive_curl.sh` script:
+   2. Edit the parameter files for Extract and Replicat processes using the EDIT PARAMS command. To do so
+
+   3. Run the `add_replication_ActiveActive.oby` script:
 
        ```
        <copy>
-        ./add_replication_activeactive_curl.sh
+        ./add_replication_ActiveActive.oby
        </copy>
        ```
-      After this script runs successfully, data replication begins between source and target.
-   
-   In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_curl.sh` script runs.
+      After this script runs successfully, data replication begins between thw `DBNORTH` and `DBSOUTH` PDBs.
+
+    In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive.oby` script runs.
 
 ## Task 2: Add DML to DBNORTH and DBSOUTH PDBs 
 
