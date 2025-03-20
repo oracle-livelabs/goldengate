@@ -60,10 +60,10 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
       Apart from this, you will be using some additional scripts, which are located in `/scripts/UseCases/02_Bidirectional`. These scripts are:
 
-      * dbnorth_dml_operations.sh
-      * dbsouth_dml_operations.sh
-      * dbnorth_select.sh
-      * dbsouth_select.sh
+      * `dbnorth_dml_operations.sh`
+      * `dbsouth_dml_operations.sh`
+      * `dbnorth_select.sh`
+      * `dbsouth_select.sh`
       
    2. Edit the parameter files for Extract and Replicat processes using the EDIT PARAMS command. To do so
 
@@ -89,12 +89,12 @@ Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases an
 2. Run the script to add DML operations on the `DBNORTH` database:
 
    ```
-   <copy>./ dbnorth_dml_operations.sh</copy>
+   <copy>./dbnorth_dml_operations.sh</copy>
    ```
 3. Run the script to add DML operations on the `DBSOUTH` database:
 
    ```
-   <copy>./ dbsouth_dml_operations.sh</copy>
+   <copy>./dbsouth_dml_operations.sh</copy>
 
    ```
 
