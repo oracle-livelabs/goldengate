@@ -65,7 +65,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
       * `dbnorth_select.sh`
       * `dbsouth_select.sh`
       
-   2. Edit the parameter files for Extract and Replicat processes using the EDIT PARAMS command. To do so
+   2. Edit the parameter files for Extract and Replicat processes using the EDIT PARAMS command. To do so 
 
    3. Run the `add_replication_ActiveActive.oby` script:
 
