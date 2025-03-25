@@ -9,6 +9,7 @@ The scripts allow you to use two approaches for configuring Oracle GoldenGate da
 
 •	Using Admin Client with OBEY Commands
 
+
 Estimated Workshop Time: 2 hour
 
 
