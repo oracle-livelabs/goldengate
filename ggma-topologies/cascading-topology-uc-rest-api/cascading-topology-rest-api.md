@@ -54,4 +54,8 @@ The objective of this tutorial is to:
 This lab assumes that you have completed the tasks in **initial-setup**.
 
 
-## Task 1: Set Up Active Active Data Replication
+## Task 1: Set Up Oracle GoldenGate Processes Across Multiple Deployments on Different Databases
+
+   To set up the Extract, Replicat, Distribution Path, and Receiver Path processes across deployments, follow these steps:
+
+   1. 
