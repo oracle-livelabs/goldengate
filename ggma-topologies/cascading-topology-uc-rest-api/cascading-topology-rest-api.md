@@ -5,7 +5,7 @@
 
 Oracle GoldenGate supports cascading synchronization, which means that Oracle GoldenGate propagates data changes from one database to a second transitional database, and then on to a third database.
 
-![The image shows the six different topologies implemented using Oracle GoldenGate data replication.](./images/cascading.png)
+![The image shows the Cascading topology.](./images/cascading.png)
 
 In a cascading configuration: 
 
