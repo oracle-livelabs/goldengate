@@ -25,10 +25,33 @@ For setting up replication across a Cascading topology, there are some preset co
 
 ![The initial source database, DBNORTH, replicates to the intermediate database, DBWEST, then the Extract from from DBWEST writes to the local trail and sends the data to DBSOUTH using a distribution path](./images/cascading_livelab_uc.png)
 
-, which are as follows:
+From this diagram, you can deduce the following: 
+
+* The `depl_north` deployment captures from `DBNORTH` and connects to the `depl_west` deployment on another intermediate host machine. 
+
+* The Replicat process on `depl_west`, replicates to the `DBWEST` database.  
+
+* The Extract process, EXTW, in `depl_west` captures the replicated data and writes it to the local trail.
+
+*  The DISTPATH process in `depl_west` deployment transfers the local trail to the `depl_south` deployment, where the Replicat process REPN,  replicates to `DBSOUTH` database. 
 
 
 
 Estimated Time: 10 minutes
 
 ### Objectives
+
+The objective of this tutorial is to:
+
+* Show the use of data replication in a cascading topology.
+
+* Run the automation scripts to set up the Oracle GoldenGate processes in `depl_north`, `depl_west`, and `depl_south` deployments. 
+
+* Test the output to show replication across the environment connected using a Cascading topology configuration.
+
+### Prerequisites
+
+This lab assumes that you have completed the tasks in **initial-setup**.
+
+
+## Task 1: Set Up Active Active Data Replication
