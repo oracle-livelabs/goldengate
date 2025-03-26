@@ -3,17 +3,18 @@
 ## Introduction
 The livelab environment set up includes the following:
 
-* A single database (free edition) with 2 PDBs.
+* 3 CDB databases (free edition) with 3 PDBs.
 * One Oracle GoldenGate installation setup.
-* The Service Manager manages two deployments: North and South.
+* The Service Manager manages three deployments: North, West, and South.
 * All services, including database, database listener, and Oracle GoldenGate instances, which start when you start the LiveLab environment and run the given scripts.
-* Scripts to set up complete data replication using cURL commands.
-* Scripts to set up complete data replication using OBEY commands.
+* Scripts to set up complete data replication for various topologies using cURL commands.
+* Scripts to set up complete data replication for various topologies using OBEY commands.
 
 *Estimated Time*:  10 minutes
 
 ### Objectives
-* Learn to use scripts to perform basic data replication configuration in Oracle GoldenGate 23ai with Oracle Database 23ai
+* Learn to use scripts to perform basic data replication configuration in Oracle GoldenGate 23ai with Oracle Database Free 23ai
+
 * Allow users to copy the scripts and use them to test various tasks in their own environments.
 
 ### Lab Configuration
@@ -37,8 +38,10 @@ The following table provides a snapshot of the available environment:
 |            |      |   Username/Password: sys/oracle4GG
 |PDB Name    | DBSOUTH | Login Details:  
 |            |       |   Username/Password: sys/oracle4GG
+|PDB Name    | DBWEST | PDB login details: Username/Password: sys/oracle4GG
 Database Connections| | For DBNORTH: Username/Password: ggadmin@dbnorth/ggadmin 
-|                   | | For DBSOUTH Username/Password: ggadmin@dbsouth/ggadmin
+|                   | | For DBSOUTH: Username/Password: ggadmin@dbsouth/ggadmin
+|                   | | For DBWEST: Username/Password: ggadmin@dbwest/ggadmin
 |Oracle GoldenGate | Service Manager | Port: 9000 
 | ||Login Credentials:
 | | | Username/Password: ggma/GGma_23ai
