@@ -3,9 +3,20 @@
 
 ## Introduction
 
-This lab describes how to use Admin Client to run OBEY scripts `add_replication_reporting.oby`, which would automate the set up of Oracle GoldenGate processes on the source (`depl_north`) and target (`depl_south`) deployments. 
+This lab describes how run OBEY scripts using the Admin Client to set up complete data replication processes across a unidirectional topology. 
 
-Check the business reports using the `check_replication_reporting.oby` script. You can use the `source_dml_operations.sh` script to add records to the source database and view the Extract Statistics to confirm that the committed transactions were captured. Then you can run the `source_target_select.sh` script to replicate the changes on the target database. Delete the data replication environment using the `delete_replication_reporting.oby`.
+The following diagram shows a standard unidirectional replication in Oracle GoldenGate. In the standard Oracle GoldenGate configuration, an Extract sends captured data using the Distribution Service over TCP/IP to a trail on the target system, where it is received by the Receiver Service and stored until processed by the Replicat.
+
+  ![MA Components and Replication Process](./images/data_replication.png " ")
+
+
+### Lab Configuration
+
+The `add_replication_reporting.oby` script automates the set up of Oracle GoldenGate processes on the source (`depl_north`) and target (`depl_south`) deployments.
+
+The `check_replication_reporting.oby` script automates tasks to check the business reports containing statistical data sorted for Daily, Weekly, and Monthly transactions. 
+
+The `source_dml_operations.sh` script is used to add records to the source database and view the Extract Statistics to confirm that the committed transactions were captured. Then you can run the `source_target_select.sh` script to replicate the changes on the target database. Delete the data replication environment using the `delete_replication_reporting.oby`.
 
 The source deployment `depl_north` is connected to the `DBNORTH` PDB and the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
 

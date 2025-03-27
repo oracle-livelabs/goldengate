@@ -2,6 +2,14 @@
 
 ## Introduction
 
+This lab describes how run cURL scripts from any REST-API client to set up complete data replication processes across a unidirectional topology. 
+
+The following diagram shows a standard unidirectional replication in Oracle GoldenGate. In the standard Oracle GoldenGate configuration, an Extract sends captured data using the Distribution Service over TCP/IP to a trail on the target system, where it is received by the Receiver Service and stored until processed by the Replicat.
+
+  ![MA Components and Replication Process](./images/data_replication.png " ")
+
+### Lab Configuration
+
 This lab describes how to use the REST API service endpoints included in `add_replication_reporting_curl.sh` script to automatically set up an Oracle GoldenGate processes on the source (`depl_north`) and target (`depl_south`) deployments. 
 
 The source deployment `depl_north` is connected to the <b>DBNORTH</b> PDB and the `depl_south` deployment is connected to the <b>DBSOUTH</b> PDB. The deployments are already created in the environment. 

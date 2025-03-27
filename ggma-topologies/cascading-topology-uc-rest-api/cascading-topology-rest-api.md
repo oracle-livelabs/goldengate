@@ -58,4 +58,6 @@ This lab assumes that you have completed the tasks in **initial-setup**.
 
    To set up the Extract, Replicat, Distribution Path, and Receiver Path processes across deployments, follow these steps:
 
-   1. 
+   1. Navigate to the `/scripts/UseCases/03_Cascading/REST-API` directory. You will see the script `
+
+   2. 

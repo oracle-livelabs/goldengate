@@ -17,13 +17,7 @@ The livelab environment set up includes the following:
 
 * Allow users to copy the scripts and use them to test various tasks in their own environments.
 
-### Lab Configuration
-
-This lab environment consists of 1 container database instance and two pluggable database instances. 
-
-The following diagram shows a standard unidirectional replication in Oracle GoldenGate. In the standard Oracle GoldenGate configuration, an Extract sends captured data using the Distribution Service over TCP/IP to a trail on the target system, where it is received by the Receiver Service and stored until processed by the Replicat.
-
-  ![MA Components and Replication Process](./images/data_replication.png " ")
+### Preset Configurations in the Environment
 
 The following table provides a snapshot of the available environment:
 
@@ -69,27 +63,32 @@ This lab contains the following tasks:
 
        ```
    2. Enter the option 1 to select the FREE database option. This loads the database environment with settings for the required environment variables, Oracle Database, and Oracle GoldenGate directories.
+
+   The following table lists the present environment variables for this tutorial:
+
+   | Directory Name   |     Location         |
+    --------------     | ----------------     |
+   | ORACLE_BASE      |  /opt/oracle         |
+   | ORACLE_HOME      | /opt/oracle/product/23ai/dbhomeFree                                |
+   | TNS_ADMIN        | ~/network/admin      |
+   | OGG_HOME         | /u01/app/oracle/product/23.0.0.0/gghome_1                         |
+   | Deployments      | /u01/app/oracle/deployments/{ServiceManager, depl_north, depl_south}                               |
+   | Certificates     | ~/certs              |
          
    
 ## Task 2: Understand the Directory Structure
 
-The directory structure lists the location of the important artifacts for Oracle Database and Oracle GoldenGate. 
+The directory structure lists the location of different automation scripts that would be used in this tutorial. 
 
-
-| Directory Name   |     Location         |
---------------     | ----------------     |
-| ORACLE_BASE      |  /opt/oracle         |
-| ORACLE_HOME      | /opt/oracle/product/23ai/dbhomeFree                                |
-| TNS_ADMIN        | ~/network/admin      |
-| OGG_HOME         | /u01/app/oracle/product/23.0.0.0/gghome_1                         |
-| Deployments      | /u01/app/oracle/deployments/{ServiceManager, depl_north, depl_south}                               |
-| Certificates     | ~/certs              |    
-
+   | Topology     |     REST-API Automation      |    Admin Client Automation
+   |-----------   |------------------------------|-------------------------
+   |Unidirectional |~\scripts\UseCases\01_Reportig\REST-API |~\scripts\UseCases\01_Reporting\AdminClient                  
+   |Bidirectional  |~\scripts\UseCases\02_Biidirectional\REST-API| ~\scripts\UseCases\02_BiDirectional\AdminClient                        
+   |Cascading      |~\scripts\UseCases\03_Cascading\REST-API | ~\scripts\UseCases\03_Cascading\AdminClient                        
 
 In this lab, you will be able to view the directories mentioned in this table:
 
 1. Run the command to list the directories:
-
        
        <copy>
        ls -l
@@ -97,17 +96,20 @@ In this lab, you will be able to view the directories mentioned in this table:
        </copy>
        
 
-2.  Move to the <code>scripts</code> directory 
+2.  Move to the <code>scripts/UseCases</code> directory 
 
        ```
        <copy>
-       cd scripts       
+       cd scripts/UseCases
+       ls       
        </copy>
 
        ```
-    You will be able to see the scripts that are going to be used in the labs for data replication and testing purposes. The <code>scripts</code> folder contains the sub-directory <code>01_Reporting</code>.
 
-3. Move to the <code>Reporting</code> directory. It contains the REST-API directory for cURL and the Admin Client directory for OBEY commands.
+       This displays the different topology use case directories that would be used in the upcoming labs.
+
+       
+    You will be able to see the scripts that are going to be used in the labs for data replication and testing purposes. The <code>scripts</code> folder contains the sub-directory <code>01_Reporting</code>.
 
 You may now **proceed to the next lab** to run cURL scripts to set up data replication and test for standard reporting.
 
