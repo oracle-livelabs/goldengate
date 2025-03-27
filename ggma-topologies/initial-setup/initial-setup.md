@@ -82,21 +82,15 @@ The directory structure lists the location of different automation scripts that 
 
    | Topology     |     REST-API Automation      |    Admin Client Automation
    |-----------   |------------------------------|-------------------------
-   |Unidirectional |~\scripts\UseCases\01_Reportig\REST-API |~\scripts\UseCases\01_Reporting\AdminClient                  
-   |Bidirectional  |~\scripts\UseCases\02_Biidirectional\REST-API| ~\scripts\UseCases\02_BiDirectional\AdminClient                        
+   |Unidirectional |~\scripts\UseCases\01_Reporting\REST-API |~\scripts\UseCases\01_Reporting\AdminClient                  
+   |Bidirectional  |~\scripts\UseCases\02_Bidirectional\REST-API| ~\scripts\UseCases\02_BiDirectional\AdminClient                        
    |Cascading      |~\scripts\UseCases\03_Cascading\REST-API | ~\scripts\UseCases\03_Cascading\AdminClient                        
 
-In this lab, you will be able to view the directories mentioned in this table:
+To view the directories mentioned in this table:
 
-1. Run the command to list the directories:
-       
-       <copy>
-       ls -l
-       
-       </copy>
-       
+1. From the home directory, run the `ls -l` command to view the subdirectories. The output displays the `scripts` directory.
 
-2.  Move to the <code>scripts/UseCases</code> directory 
+2.  Move to the <code>scripts/UseCases</code> directory
 
        ```
        <copy>
@@ -109,7 +103,7 @@ In this lab, you will be able to view the directories mentioned in this table:
        This displays the different topology use case directories that would be used in the upcoming labs, as shown in the following image.
       ![Location of automation scripts for different topology use cases](./images/dir_structure_topology.png)
 
-    You will be able to see the scripts that are going to be used in the labs for data replication and testing purposes. The <code>scripts</code> folder contains the sub-directory <code>01_Reporting</code>.
+    You will be able to see the scripts that are going to be used in the labs for data replication and testing purposes. The `scripts` folder contains the sub-directory `01_Reporting`.
 
 You may now **proceed to the next lab** to run cURL scripts to set up data replication and test for standard reporting.
 
@@ -121,4 +115,4 @@ You may now **proceed to the next lab** to run cURL scripts to set up data repli
 ## Acknowledgements
 * **Author** - Preeti Shukla
 * **Contributors** - Preeti Shukla, Volker Kuhr
-* **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, November 2024
+* **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, March 2025
