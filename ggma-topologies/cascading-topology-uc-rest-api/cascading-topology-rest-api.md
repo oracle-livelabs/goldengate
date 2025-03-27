@@ -58,6 +58,16 @@ This lab assumes that you have completed the tasks in **initial-setup**.
 
    To set up the Extract, Replicat, Distribution Path, and Receiver Path processes across deployments, follow these steps:
 
-   1. Navigate to the `/scripts/UseCases/03_Cascading/REST-API` directory. You will see the script `
+   1. Navigate to the `/scripts/UseCases/03_Cascading/REST-API` directory. You will see the script `add_replication_cascading_curl.sh`.
 
-   2. 
+   2. Run this script using the following command:
+
+   ```
+   .\add_replication_cascading_curl.sh`
+   
+   ```
+   This script automatically creates the Extract, Replicat, DISTPATH processes for all three deployments.
+
+   3. Now, let's test whether the processes are up and running in these deployments. 
+
+       a. Run the `
