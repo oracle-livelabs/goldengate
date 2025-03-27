@@ -106,9 +106,9 @@ In this lab, you will be able to view the directories mentioned in this table:
 
        ```
 
-       This displays the different topology use case directories that would be used in the upcoming labs.
+       This displays the different topology use case directories that would be used in the upcoming labs, as shown in the following image.
+      ![Location of automation scripts for different topology use cases](./images/dir_structure_topology.png)
 
-       
     You will be able to see the scripts that are going to be used in the labs for data replication and testing purposes. The <code>scripts</code> folder contains the sub-directory <code>01_Reporting</code>.
 
 You may now **proceed to the next lab** to run cURL scripts to set up data replication and test for standard reporting.
