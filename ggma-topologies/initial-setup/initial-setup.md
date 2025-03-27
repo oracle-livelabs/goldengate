@@ -67,7 +67,7 @@ This lab contains the following tasks:
    The following table lists the present environment variables for this tutorial:
 
    | Directory Name   |     Location         |
-    --------------     | ----------------     |
+   | --------------     | ----------------     |
    | ORACLE_BASE      |  /opt/oracle         |
    | ORACLE_HOME      | /opt/oracle/product/23ai/dbhomeFree                                |
    | TNS_ADMIN        | ~/network/admin      |
@@ -103,7 +103,7 @@ To view the directories mentioned in this table:
        This displays the different topology use case directories that would be used in the upcoming labs, as shown in the following image.
       ![Location of automation scripts for different topology use cases](./images/dir_structure_topology.png)
 
-    You will be able to see the scripts that are going to be used in the labs for data replication and testing purposes. The `scripts` folder contains the sub-directory `01_Reporting`.
+    You will be able to see the scripts that are going to be used in the labs for data replication and testing purposes.
 
 You may now **proceed to the next lab** to run cURL scripts to set up data replication and test for standard reporting.
 
