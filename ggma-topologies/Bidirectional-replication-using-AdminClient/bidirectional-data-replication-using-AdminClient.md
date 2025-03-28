@@ -8,18 +8,18 @@ While the `depl_north` deployment is connected to the `DBNORTH` PDB, the `depl_s
 
 You will also use the `dbnorth_dml_operations.sh` and `dbsouth_dml_operations.sh` scripts to automatically add DML records to the `DBNORTH` and `DBSOUTH` PDBs, respectively. 
 
-After adding records, you can view the Extract Statistics to confirm that the committed transactions were captured. The `check_replication_activeactive.oby` script allows you to view the statistics for different Oracle GoldenGate processes.  
+After adding records, you can view the Extract Statistics to confirm that the committed transactions were captured. The `check_replication_activeactive.sh` script allows you to view the statistics for different Oracle GoldenGate processes.  
 
 To check if the bidirectional replication works correctly, you need to prevent data looping or data duplication while replicating data from `DBNORTH` to `DBSOUTH` and from `DBSOUTH` to `DBNORTH`. To check this, you will run the `dbnorth_select.sh` script to view the INSERTS, UPDATES, DELETES records from `DBNORTH` to `DBSOUTH` and then run the `dbsouth_select.sh` script to view the INSERTS, UPDATES, and DELETES from `DBSOUTH` to `DBNORTH`.
 
-After you have completed testing this scenario, using the Admin Client, you must remove this replication setup so that you can test the same steps using the Admin Client. To delete this environment, use the `delete_replication_activeactive.sh`.
+After you have completed testing this scenario, using the Admin Client, you must remove this replication setup so that you can test the same steps using the Admin Client. To delete this environment, use the `delete_replication_activeactive_adminclient.sh`.
 
 Estimated Time: 10 minutes
 
 ### Objectives
 In this lab, you will: 
 
-* Run the `add_replication_activeactive.oby` script, which would automatically perform the following tasks:
+* Run the `add_replication_activeactive_adminclient.sh` script, which would automatically perform the following tasks:
 
    * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the database instance
    *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on `DBNORTH` and `DBSOUTH` PDBs
@@ -29,7 +29,7 @@ In this lab, you will:
    *	Add Distribution Path from `DBNORTH` to `DBSOUTH` and then from `DBSOUTH` to `DBNORTH`
    *	Add Replicat on the both PDBs, `DBNORTH` and `DBSOUTH`
 * View the lag statistics and check for data duplication.
-* Delete the data replication environment using the `delete_replication_activeactive.oby` script.
+* Delete the data replication environment using the `delete_replication_activeactive_adminclient.sh` script.
 
 
 ### Prerequisites
