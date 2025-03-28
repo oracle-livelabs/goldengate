@@ -260,5 +260,5 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 
 ## Acknowledgements
 * **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Volker Kuhr, Nick Wagner
-* **Last Updated By/Date** - Preeti Shukla, 2024
+* **Contributors** -  Volker Kuhr
+* **Last Updated By/Date** - Preeti Shukla, 2025
