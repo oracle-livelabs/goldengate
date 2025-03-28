@@ -40,7 +40,7 @@
     {
       "title": "Lab 6: Set Up Bidirectional Data Replication Environment Using REST-API",
       "description": "View the sample standard business reports from the Oracle GoldenGate console",
-      "filename": "../../Bidirectional-replication-using-AdminClient/bidirectional-data-replication-using-AdminClient.md"
+      "filename": "../../Bidirectional-replication-using-REST-API/bidirectional-data-replication-using-REST-API.md"
     },
     {
       "title": "Lab 7: Set Up Bidirectional Data Replication Environment Using Admin Client",
