@@ -127,6 +127,22 @@ This lab assumes that you have completed the tasks in **initial-setup**
       MAP hr.*, TARGET hr.*;
       </copy>
       ```
+      The Replicat parameter file for REPN.prm is as follows:
+
+      ```
+      <copy>
+
+      REPLICAT repn
+      USERIDALIAS ggsouth DOMAIN OracleGoldenGate
+
+      DDLOPTIONS REPORT
+      DDLERROR DEFAULT, DISCARD
+
+      REPORTCOUNT EVERY 10 MINUTES, RATE
+
+      REPERROR (DEFAULT, DISCARD)
+      MAP hr.*, TARGET hr.*;
+      </copy>
 
 
    3. Run the `add_replication_ActiveActive_adminclient.sh` script:
