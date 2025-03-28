@@ -70,4 +70,10 @@ This lab assumes that you have completed the tasks in **initial-setup**.
 
    3. Now, let's test whether the processes are up and running in these deployments. 
 
-       a. Run the `
+       a. From your REST API client, connect to the `depl_north` deployment.
+
+       b. Run the command to view the process information. You should be able to see the Extract process, `EXTN`, and Replicat process, `REPS`, in RUNNING state.
+
+       c. Run the command to view information about the DISTPATH process. You should be able to see the DPNS process in RUNNING state.
+
+       d. Apply the steps a to c, for the `depl_south` deployment. You should be able to see the Extract ()
