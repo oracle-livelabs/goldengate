@@ -67,7 +67,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
       
    2. Edit the parameter files for Extract and Replicat processes using the EDIT PARAMS command. To do so 
 
-   3. Run the `add_replication_ActiveActive.oby` script:
+   3. Run the `add_replication_ActiveActive_adminclient.sh` script:
 
        ```
        <copy>
@@ -76,7 +76,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
        ```
       After this script runs successfully, data replication begins between thw `DBNORTH` and `DBSOUTH` PDBs.
 
-    In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive.oby` script runs.
+    In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_adminclient.sh` script runs.
 
 ## Task 2: Add DML to DBNORTH and DBSOUTH PDBs 
 
@@ -129,11 +129,11 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 
    To view the Standard Report based on sample data:
 
-   1. Run the `check_replication_activeactive_curl.sh` script
+   1. Run the `check_replication_activeactive_adminclient.sh` script
    
        ```
          <copy>
-            ./check_replication_activeactive_curl.sh
+            ./check_replication_activeactive_adminclient.sh
          </copy>
        ```
       The output for this script shows various detiails. You can view these details to verify that the bidirectional replication is working.
@@ -148,17 +148,27 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
    
    To delete the setup:
 
-   1. Run the script `delete_replication_reporting_curl.sh`
+   1. Run the script `delete_replication_activeactive_adminclient.sh`
    
    ```
      <copy>
-      ./delete_replication_activeactive_curl.sh  
+      ./delete_replication_activeactive_adminclient.sh  
      </copy>
    ```
    
-   2. You can verify that the environment was deleted after you the following message on the screen:
+   2. You can verify that the environment was deleted by connecting to the deployments and running the `INFO ALL` command on `depl_north` and `depl_south` deployments.
+
+   ```
+   <copy>
+      adminclient
+      >connect https://north:9001 deployment depl_north as ggma password GGma_23ai !
+      >INFO ALL
+   </copy>
+
+   ```
+     These commands displays the message "No processes found", if the Extract, Replicat processes have been deleted successfully.
    
-     After you delete the environment, you can use the script anytime to rebuild the environment or copy the script to apply in your own test environment. 
+     After you delete the environment, you can use the script `add_replication_activeactive_adminclient.sh` again to rebuild the environment or copy the script to apply in your own test environment. 
 
 
 ## Learn More
