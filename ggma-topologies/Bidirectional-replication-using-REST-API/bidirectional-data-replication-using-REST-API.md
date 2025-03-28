@@ -53,16 +53,16 @@ This lab assumes that you have completed the tasks in **initial-setup**
       ```
       The components of the directory include:
 
-      * add_replication_activeactive_curl.sh
-      * check_replication_activeactive_curl.sh
-      * delete_replication_activeactive_curl.sh
+      * `add_replication_activeactive_curl.sh`
+      * `check_replication_activeactive_curl.sh`
+      * `delete_replication_activeactive_curl.sh`
 
       Apart from this, you will be using some additional scripts, which are located in `/scripts/UseCases/02_Bidirectional`. These scripts are:
 
-      * dbnorth_dml_operations.sh
-      * dbsouth_dml_operations.sh
-      * dbnorth_select.sh
-      * dbsouth_select.sh
+      * `dbnorth_dml_operations.sh`
+      * `dbsouth_dml_operations.sh`
+      * `dbnorth_select.sh`
+      * `dbsouth_select.sh`
       
    2. Run the `add_replication_activeactive_curl.sh` script:
 
@@ -86,20 +86,22 @@ Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases an
 2. Run the script to add DML operations on the `DBNORTH` database:
 
    ```
-   <copy>./ dbnorth_dml_operations.sh</copy>
+   <copy>./dbnorth_dml_operations.sh</copy>
    ```
 3. Run the script to add DML operations on the `DBSOUTH` database:
 
    ```
-   <copy>./ dbsouth_dml_operations.sh</copy>
+   <copy>./dbsouth_dml_operations.sh</copy>
 
    ```
 
 3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
 
 4. After you check that the DML has been captured on the DBNORTH database, run the script `dbnorth_select.sh`. This script contains queries that allow you to check the data on the `DBSOUTH` database.
+
 ```
 <copy>./dbnorth_select.sh</copy>
+
 ```
 This script displays the content of the `DBSOUTH` database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the `DBSOUTH` database.
 
@@ -154,8 +156,12 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
    ```
    
    2. You can verify that the environment was deleted after you the following message on the screen:
+
+      ```
+        No processes found.
+      ```
    
-     After you delete the environment, you can use the script anytime to rebuild the environment or copy the script to apply in your own test environment.
+     After you delete the environment, you can use the `add_replication_activeactive_curl.sh`script again to rebuild the environment or copy the script to apply in your own test environment.
 
    
 ## Learn More
@@ -167,5 +173,5 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 
 ## Acknowledgements
 * **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Volker Kuhr, Nick Wagner
-* **Last Updated By/Date** - Preeti Shukla, 2024
+* **Contributors** -  Volker Kuhr
+* **Last Updated By/Date** - Preeti Shukla, 2025
