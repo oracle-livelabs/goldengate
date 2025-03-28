@@ -143,6 +143,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
       REPERROR (DEFAULT, DISCARD)
       MAP hr.*, TARGET hr.*;
       </copy>
+      ```
 
 
    3. Run the `add_replication_ActiveActive_adminclient.sh` script:
