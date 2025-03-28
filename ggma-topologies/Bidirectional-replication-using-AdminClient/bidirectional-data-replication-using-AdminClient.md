@@ -51,12 +51,12 @@ This lab assumes that you have completed the tasks in **initial-setup**
       ```
       The components of the directory include:
 
-      * add_replication_activeactive.oby
-      * add_replication_ActiveActive_adminclient
-      * check_replication_ActiveActive.oby
-      * check_replication_activeactive_adminclient.sh
-      * delete_replication_ActiveActive.oby
-      * delete_replication_activeactive_adminclient.sh
+      * `add_replication_activeactive.oby`
+      * `add_replication_ActiveActive_adminclient`
+      * `check_replication_ActiveActive.oby`
+      * `check_replication_activeactive_adminclient.sh`
+      * `delete_replication_ActiveActive.oby`
+      * `delete_replication_activeactive_adminclient.sh`
 
       Apart from this, you will be using some additional scripts, which are located in `/scripts/UseCases/02_Bidirectional`. These scripts are:
 
@@ -65,13 +65,75 @@ This lab assumes that you have completed the tasks in **initial-setup**
       * `dbnorth_select.sh`
       * `dbsouth_select.sh`
       
-   2. Edit the parameter files for Extract and Replicat processes using the EDIT PARAMS command. To do so 
+   2. Edit the parameter files for Extract and Replicat processes using the EDIT PARAMS command.
+
+      For example, run the EDIT PARAMS command for EXTS process and copy the values from the EXTS.prm file, which is located in `/scripts/UseCases/02_Bidirectional` folder.
+
+      ```
+      <copy>
+         EDIT PARAMS EXTS
+      </copy>
+      ```
+      The Extract parameter file for EXTS.prm file is as follows:
+
+      ```
+      <copy>
+       EXTRACT exts
+       USERIDALIAS ggsouth
+       EXTTRAIL south/ea
+       TRANLOGOPTIONS EXCLUDETAG +
+       DDL INCLUDE MAPPED
+       DDLOPTIONS REPORT
+       REPORTCOUNT EVERY 10 MINUTES, RATE
+       WARNLONGTRANS 15MINUTES, CHECKINTERVAL 5MINUTES
+       TABLE hr.*;
+      </copy>
+      ```
+
+      You can update the other process files in the same manner. 
+
+      The Extract parameter file for EXTN.prm file is as follows:
+      
+      ```
+      <copy>
+       EXTRACT extn
+       USERIDALIAS ggnorth
+       EXTTRAIL north/ea
+       
+       TRANLOGOPTIONS EXCLUDETAG +
+      
+       DDL INCLUDE MAPPED
+       DDLOPTIONS REPORT
+
+       REPORTCOUNT EVERY 10 MINUTES, RATE
+       WARNLONGTRANS 15MINUTES, CHECKINTERVAL 5MINUTES
+
+       TABLE hr.*;
+      </copy>
+      ```
+      The Replicat parameter file for REPS.prm is as follows:
+
+      ```
+      <copy>
+      REPLICAT reps
+      USERIDALIAS ggnorth DOMAIN OracleGoldenGate
+
+      DDLOPTIONS REPORT
+      DDLERROR DEFAULT, DISCARD
+
+      REPORTCOUNT EVERY 10 MINUTES, RATE
+
+      REPERROR (DEFAULT, DISCARD)
+      MAP hr.*, TARGET hr.*;
+      </copy>
+      ```
+
 
    3. Run the `add_replication_ActiveActive_adminclient.sh` script:
 
        ```
        <copy>
-        ./add_replication_ActiveActive.oby
+        ./add_replication_ActiveActive_adminclient.sh
        </copy>
        ```
       After this script runs successfully, data replication begins between thw `DBNORTH` and `DBSOUTH` PDBs.
