@@ -41,10 +41,11 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
 ## Task 1: Set Up Active Active Data Replication
 
-   Before you begin the following tasks, make sure you have set the environment variables using the steps in **abcde**
-   Make sure you are in the `/scripts/UseCases/02_Bidirectional/` directory and perform the following tasks:
+   Before you begin the following tasks, make sure you have set the environment variables using the steps in [Task 1: Load the Oracle GoldenGate and Database Environment](/intial-setup/initial-setup.md).
    
-   1. Move to the `REST-API` directory and list the content for this directory:
+   Follow these steps to set up Oracle GoldenGate processes for bidirectional replication: 
+   
+   1. From the command prompt, navigate to the `/scripts/UseCases/02_Bidirectional/` directory and list the content of this directory:
      
       ```
       <copy>
@@ -88,6 +89,7 @@ Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases an
 
    ```
    <copy>./dbnorth_dml_operations.sh</copy>
+
    ```
 3. Run the script to add DML operations on the `DBSOUTH` database:
 
@@ -96,20 +98,28 @@ Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases an
 
    ```
 
-3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
+4. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
 
-4. After you check that the DML has been captured on the DBNORTH database, run the script `dbnorth_select.sh`. This script contains queries that allow you to check the data on the `DBSOUTH` database.
+5. After you check that the DML has been captured on the DBNORTH database, run the script `dbnorth_select.sh`. This script contains queries that allow you to check the data on the `DBSOUTH` database.
 
 ```
-<copy>./dbnorth_select.sh</copy>
+<copy>
+
+   ./dbnorth_select.sh
+
+</copy>
 
 ```
 This script displays the content of the `DBSOUTH` database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the `DBSOUTH` database.
 
-5. After you check that the DML has been captured on the DBSOUTH database, run the script `dbsouth_select.sh`. This script contains queries that allow you to check the data on the `DBNORTH` database.
+6. After you check that the DML has been captured on the DBSOUTH database, run the script `dbsouth_select.sh`. This script contains queries that allow you to check the data on the `DBNORTH` database.
 
 ```
-<copy>./dbnorth_select.sh</copy>
+<copy>
+
+   ./dbnorth_select.sh
+
+</copy>
 ```
 This script displays the content of the  `DBNORTH` database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the `DBNORTH` database.                  
     
@@ -125,7 +135,7 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 3. From the left-navigation pane, expand the list of Extracts and select the <b>EXTN</b> Extract.
 4. Click the <b>Statistics</b> option to view the report.
 
-## Task 4: View the Active Active Replicat Using Statistics for Oracle GoldenGate Processes
+## Task 4: View the Replicat Using Statistics for Oracle GoldenGate Processes
 
    To view the Standard Report based on sample data:
 
@@ -163,7 +173,7 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
         adminclient
         </copy>
       ```
-   2. Connect to the deployments, `depl_north` and `depl_south` using the connect command.
+   3. Connect to the deployments, `depl_north` and `depl_south` using the connect command.
       
       ```
         <copy>
@@ -178,7 +188,7 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
         </copy>
       ```
    
-   3. Run the `INFO ALL` and `INFO DISTPATH` commands to check if the processes have been removed from the deployment. 
+   4. Run the `INFO ALL` and `INFO DISTPATH` commands to check if the processes have been removed from the deployment. 
 
    You can verify that the environment was deleted if you get the following message on the screen:
 
