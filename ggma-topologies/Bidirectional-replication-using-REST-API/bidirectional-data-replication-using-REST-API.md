@@ -44,7 +44,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
 ## Task 1: Set Up Active Active Data Replication
 
-   Before you begin the following tasks, make sure you have set the environment variables using the steps in [Task 1: Load the Oracle GoldenGate and Database Environment](/initial-setup/initial-setup.md).
+   Before you begin the following tasks, make sure you have set the environment variables using the steps in [Task 1: Load the Oracle GoldenGate and Database Environment](/initial-setup/initial-setup.md#task-1-load-the-oracle-goldengate-and-database-environment).
    
    Follow these steps to set up Oracle GoldenGate processes for bidirectional replication: 
    
@@ -52,7 +52,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
      
       ```
       <copy>
-      cd REST-API
+        cd REST-API
       
       </copy>
       ```
@@ -70,39 +70,55 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
       ```
         <copy>
-        adminclient
+          adminclient
         </copy>
       ```
    3. Connect to the deployment, `depl_north` using the `CONNECT` command.
       
       ```
         <copy>
-         CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
+          CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
         </copy>
       ```
       
       ```
       <copy>
-      INFO ALL
-      </copy>
+         INFO ALL
+      </copy> 
+      ```
+      This command displays the Extract and Replicat proceses running on the `depl_north` deployment.
 
       ```
       <copy>
-      INFO DISTPATH ALL
+         INFO DISTPATH ALL
       </copy>
       ```
+      This command displays the DISTPATHS running on the `depl_north` deployment.
 
-   4. Connect to the deployment `depl_south` using the `CONNECT` command and then run the `INFO ALL` and `INFO DISTPATH ALL` commands to check if the processes have been added for the deployment.
+   4. Connect to the deployment `depl_south` using the `CONNECT` command and then run the `INFO ALL` and `INFO DISTPATH ALL` commands to check if the processes have been added for the deployment, similar to step 3.
 
       ```
         <copy>
          CONNECT https://south:9101 deployment depl_south as ggma password GGma_23ai ! 
+         
         </copy>
       ```
+      After connecting to the deployment, run the following commands:
 
+      ```
+        <copy>
+          INFO ALL
+        </copy>
+      ```
+      This command displays the Extract and Replicat proceses running on the `depl_south` deployment.
 
-
-
+      ```
+        <copy>
+          INFO DISTPATH ALL
+        </copy>
+      ```
+      This command displays the DISTPATHS running on the `depl_south` deployment.
+      
    
    In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_curl.sh` script runs.
 
