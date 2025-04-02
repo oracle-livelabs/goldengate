@@ -3,10 +3,13 @@
 ## Introduction
 
 This lab describes how to use the REST API service endpoints included in `add_replication_activeactive_curl.sh` script to automatically set up Oracle GoldenGate processes on the `depl_north` and `depl_south` deployments. Considering that this is a bidirectional deployment configuration, both deployments send and receive data at the same time. 
-
+   
+   >Note:
+   >This tutorial does not include the configuration for Auto CDR.
+   
 The `depl_north` deployment is connected to the `DBNORTH` PDB and the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
 
-You will also be able to check if the bidirectional replication works correctly. Using the `dbnorth_dml_operations.sh` and `dbsouth_dml_operations.sh` scripts, you can add DML records to the `DBNORTH` and `DBSOUTH` databases, respectively. 
+You will check if the bidirectional replication works correctly. Using the `dbnorth_dml_operations.sh` and `dbsouth_dml_operations.sh` scripts, you can add DML records to the `DBNORTH` and `DBSOUTH` databases, respectively. 
 
 After adding records, you can view the Extract Statistics to confirm that the committed transactions were captured. The `check_replication_activeactive_curl.sh` script allows you to view the statistics for different Oracle GoldenGate processes.  
 
@@ -23,13 +26,13 @@ In this lab, you will:
 
 * Run the `add_replication_activeactive_curl.sh` script, which would automatically perform the following tasks:
 
-   * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the database instance
-   *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on `DBNORTH` and `DBSOUTH` PDBs
-   *	Add heartbeat and checkpoint tables on the both PDBs.
-   *	Add Extract on the `DBNORTH` and `DBSOUTH`
-   *	Set up the Extract parameter file
-   *	Add Distribution Path from `DBNORTH` to `DBSOUTH` and then from `DBSOUTH` to `DBNORTH`
-   *	Add Replicat on the both PDBs, `DBNORTH` and `DBSOUTH`
+     * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the database instance
+     *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on `DBNORTH` and `DBSOUTH` PDBs
+     *	Add heartbeat and checkpoint tables on the both PDBs.
+     *	Add Extract on the `DBNORTH` and `DBSOUTH`
+     *	Set up the Extract parameter file
+     *	Add Distribution Path from `DBNORTH` to `DBSOUTH` and then from `DBSOUTH` to `DBNORTH`
+     *	Add Replicat on the both PDBs, `DBNORTH` and `DBSOUTH`
 * View the lag statistics and check for data duplication.
 * Delete the data replication environment using the `delete_replication_activeactive_curl.sh` script.
 
@@ -41,7 +44,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
 ## Task 1: Set Up Active Active Data Replication
 
-   Before you begin the following tasks, make sure you have set the environment variables using the steps in [Task 1: Load the Oracle GoldenGate and Database Environment](/intial-setup/initial-setup.md).
+   Before you begin the following tasks, make sure you have set the environment variables using the steps in [Task 1: Load the Oracle GoldenGate and Database Environment](/initial-setup/initial-setup.md#Task1:LoadtheOracleGoldenGateandDatabaseEnvironment).
    
    Follow these steps to set up Oracle GoldenGate processes for bidirectional replication: 
    
