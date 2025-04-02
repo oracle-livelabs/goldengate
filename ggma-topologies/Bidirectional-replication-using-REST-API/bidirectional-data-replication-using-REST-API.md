@@ -44,7 +44,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
 ## Task 1: Set Up Active Active Data Replication
 
-   Before you begin the following tasks, make sure you have set the environment variables using the steps in [Task 1: Load the Oracle GoldenGate and Database Environment](/initial-setup/initial-setup.md#Task1:LoadtheOracleGoldenGateandDatabaseEnvironment).
+   Before you begin the following tasks, make sure you have set the environment variables using the steps in [Task 1: Load the Oracle GoldenGate and Database Environment](/initial-setup/initial-setup.md).
    
    Follow these steps to set up Oracle GoldenGate processes for bidirectional replication: 
    
@@ -53,22 +53,10 @@ This lab assumes that you have completed the tasks in **initial-setup**
       ```
       <copy>
       cd REST-API
-      ls -l
+      
       </copy>
       ```
-      The components of the directory include:
-
-      * `add_replication_activeactive_curl.sh`
-      * `check_replication_activeactive_curl.sh`
-      * `delete_replication_activeactive_curl.sh`
-
-      Apart from this, you will be using some additional scripts, which are located in `/scripts/UseCases/02_Bidirectional`. These scripts are:
-
-      * `dbnorth_dml_operations.sh`
-      * `dbsouth_dml_operations.sh`
-      * `dbnorth_select.sh`
-      * `dbsouth_select.sh`
-      
+            
    2. Run the `add_replication_activeactive_curl.sh` script:
 
        ```
@@ -77,6 +65,44 @@ This lab assumes that you have completed the tasks in **initial-setup**
        </copy>
        ```
       After this script runs successfully, data replication begins between source and target.
+   
+    2. Start the Admin Client from the command prompt.
+
+      ```
+        <copy>
+        adminclient
+        </copy>
+      ```
+   3. Connect to the deployment, `depl_north` using the `CONNECT` command.
+      
+      ```
+        <copy>
+         CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
+        </copy>
+      ```
+      
+      ```
+      <copy>
+      INFO ALL
+      </copy>
+
+      ```
+      <copy>
+      INFO DISTPATH ALL
+      </copy>
+      ```
+
+   4. Connect to the deployment `depl_south` using the `CONNECT` command and then run the `INFO ALL` and `INFO DISTPATH ALL` commands to check if the processes have been added for the deployment.
+
+      ```
+        <copy>
+         CONNECT https://south:9101 deployment depl_south as ggma password GGma_23ai ! 
+        </copy>
+      ```
+
+
+
+
    
    In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_curl.sh` script runs.
 
