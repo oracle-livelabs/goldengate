@@ -58,7 +58,7 @@ This lab contains the following tasks:
     
        ```
        <copy>
-       source /usr/local/bin/.set-env-db.sh
+         source /usr/local/bin/.set-env-db.sh
        </copy>
 
        ```

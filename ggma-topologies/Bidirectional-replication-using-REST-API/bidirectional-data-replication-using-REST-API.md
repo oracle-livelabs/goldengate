@@ -41,6 +41,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
 ## Task 1: Set Up Active Active Data Replication
 
+   Before you begin the following tasks, make sure you have set the environment variables using the steps in **abcde**
    Make sure you are in the `/scripts/UseCases/02_Bidirectional/` directory and perform the following tasks:
    
    1. Move to the `REST-API` directory and list the content for this directory:
@@ -48,7 +49,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
       ```
       <copy>
       cd REST-API
-      ls-l
+      ls -l
       </copy>
       ```
       The components of the directory include:
@@ -155,13 +156,37 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
      </copy>
    ```
    
-   2. You can verify that the environment was deleted after you the following message on the screen:
+   2. Start the Admin Client from the command prompt.
+
+      ```
+        <copy>
+        adminclient
+        </copy>
+      ```
+   2. Connect to the deployments, `depl_north` and `depl_south` using the connect command.
+      
+      ```
+        <copy>
+         CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
+        </copy>
+      ```
+      and
+
+      ```
+        <copy>
+         CONNECT https://south:9101 deployment depl_south as ggma password GGma_23ai ! 
+        </copy>
+      ```
+   
+   3. Run the `INFO ALL` and `INFO DISTPATH` commands to check if the processes have been removed from the deployment. 
+
+   You can verify that the environment was deleted if you get the following message on the screen:
 
       ```
         No processes found.
       ```
    
-     After you delete the environment, you can use the `add_replication_activeactive_curl.sh`script again to rebuild the environment or copy the script to apply in your own test environment.
+     After you delete the environment, you can use the `add_replication_activeactive_curl.sh` script again to rebuild the environment or copy the script to apply in your own test environment.
 
    
 ## Learn More
