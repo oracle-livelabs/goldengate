@@ -39,22 +39,20 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes that you have completed the tasks in **initial-setup**
+This lab assumes that you have completed the tasks in [Task 1: Load the Oracle GoldenGate and Database Environment](../../initial-setup/initial-setup.md#task-1-load-the-oracle-goldengate-and-database-environment).
 
 
 ## Task 1: Set Up Active Active Data Replication
 
-   Before you begin the following tasks, make sure you have set the environment variables using the steps in [Task 1: Load the Oracle GoldenGate and Database Environment](../../initial-setup/initial-setup.md#task-1-load-the-oracle-goldengate-and-database-environment).
-   
-   Follow these steps to set up Oracle GoldenGate processes for bidirectional replication: 
+Follow these steps to set up Oracle GoldenGate processes for bidirectional replication: 
    
    1. From the command prompt, navigate to the `/scripts/UseCases/02_Bidirectional/` directory and list the content of this directory:
      
       ```
       <copy>
         
-        cd REST-API
-      
+        cd /scripts/UseCases/02_Bidirectional/REST-API
+        ls -l
       </copy>
       ```
             
@@ -67,14 +65,14 @@ This lab assumes that you have completed the tasks in **initial-setup**
        ```
       After this script runs successfully, data replication begins between source and target.
    
-    2. Start the Admin Client from the command prompt.
+    3. To check if the Orcle GoldenGate processes are running successfully, after running the script, start Admin Client from the command prompt.
 
       ```
         <copy>
           adminclient
         </copy>
       ```
-   3. Connect to the deployment, `depl_north` using the `CONNECT` command.
+    4. Connect to the deployment, `depl_north` using the `CONNECT` command.
       
       ```
         <copy>
@@ -96,7 +94,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
       ```
       This command displays the DISTPATHS running on the `depl_north` deployment.
 
-   4. Connect to the deployment `depl_south` using the `CONNECT` command and then run the `INFO ALL` and `INFO DISTPATH ALL` commands to check if the processes have been added for the deployment, similar to step 3.
+    5. Connect to the deployment `depl_south` using the `CONNECT` command and then run the `INFO ALL` and `INFO DISTPATH ALL` commands to check if the processes have been added for the deployment, similar to step 3.
 
       ```
         <copy>
@@ -134,7 +132,11 @@ Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases an
 2. Run the script to add DML operations on the `DBNORTH` database:
 
    ```
-   <copy>./dbnorth_dml_operations.sh</copy>
+   <copy>
+   
+   ./dbnorth_dml_operations.sh
+   
+   </copy>
 
    ```
 3. Run the script to add DML operations on the `DBSOUTH` database:

@@ -14,57 +14,42 @@ To check if the bidirectional replication works correctly, you need to prevent d
 
 After you have completed testing this scenario, using the Admin Client, you must remove this replication setup so that you can test the same steps using the Admin Client. To delete this environment, use the `delete_replication_activeactive_adminclient.sh`.
 
-Estimated Time: 10 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 In this lab, you will: 
 
 * Run the `add_replication_activeactive_adminclient.sh` script, which would automatically perform the following tasks:
 
-   * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the database instance
-   *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on `DBNORTH` and `DBSOUTH` PDBs
-   *	Add heartbeat and checkpoint tables on the both PDBs.
-   *	Add Extract on the `DBNORTH` and `DBSOUTH`
-   *	Set up the Extract parameter file
-   *	Add Distribution Path from `DBNORTH` to `DBSOUTH` and then from `DBSOUTH` to `DBNORTH`
-   *	Add Replicat on the both PDBs, `DBNORTH` and `DBSOUTH`
+      * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the database instance
+      *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on `DBNORTH` and `DBSOUTH` PDBs
+      *	Add heartbeat and checkpoint tables on the both PDBs.
+      *	Add Extract on the `DBNORTH` and `DBSOUTH`
+      *	Set up the Extract parameter file
+      *	Add Distribution Path from `DBNORTH` to `DBSOUTH` and then from `DBSOUTH` to `DBNORTH`
+      *	Add Replicat on the both PDBs, `DBNORTH` and `DBSOUTH`
 * View the lag statistics and check for data duplication.
 * Delete the data replication environment using the `delete_replication_activeactive_adminclient.sh` script.
 
 
-### Prerequisites
+## Prerequisites
 
-This lab assumes that you have completed the tasks in **initial-setup**
+This lab assumes that you have completed the tasks in [Task 1: Load the Oracle GoldenGate and Database Environment](/../initial-setup/initial-setup.md#task-1-load-the-oracle-goldengate-and-database-environment). 
 
 
 ## Task 1: Set Up Active Active Data Replication
-
-   Make sure you are in the `/scripts/UseCases/02_Bidirectional/` directory and perform the following tasks:
+ 
+Follow these steps to set up Oracle GoldenGate processes for bidirectional replication:   
    
-   1. Move to the `AdminClient` directory and list the content for this directory:
+   1. From the command prompt, navigate to the `/scripts/UseCases/02_Bidirectional/AdminClient` directory and list the content of this directory:
      
       ```
       <copy>
-      cd AdminClient
-      ls-l
+      cd /scripts/UseCases/02_Bidirectional/AdminClient
+      
       </copy>
       ```
-      The components of the directory include:
-
-      * `add_replication_activeactive.oby`
-      * `add_replication_ActiveActive_adminclient`
-      * `check_replication_ActiveActive.oby`
-      * `check_replication_activeactive_adminclient.sh`
-      * `delete_replication_ActiveActive.oby`
-      * `delete_replication_activeactive_adminclient.sh`
-
-      Apart from this, you will be using some additional scripts, which are located in `/scripts/UseCases/02_Bidirectional`. These scripts are:
-
-      * `dbnorth_dml_operations.sh`
-      * `dbsouth_dml_operations.sh`
-      * `dbnorth_select.sh`
-      * `dbsouth_select.sh`
-      
+                 
    2. Edit the parameter files for Extract and Replicat processes using the EDIT PARAMS command.
 
       For example, run the EDIT PARAMS command for EXTS process and copy the values from the EXTS.prm file, which is located in `/scripts/UseCases/02_Bidirectional` folder.
@@ -154,8 +139,61 @@ This lab assumes that you have completed the tasks in **initial-setup**
        </copy>
        ```
       After this script runs successfully, data replication begins between thw `DBNORTH` and `DBSOUTH` PDBs.
+   
+   4. To check if the Orcle GoldenGate processes are running successfully, after running the script, start Admin Client from the command prompt.
 
-    In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_adminclient.sh` script runs.
+      ```
+        <copy>
+          adminclient
+        </copy>
+      ```
+    5. Connect to the deployment, `depl_north` using the `CONNECT` command.
+      
+      ```
+        <copy>
+          CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
+        </copy>
+      ```
+      
+      ```
+      <copy>
+         INFO ALL
+      </copy> 
+      ```
+      This command displays the Extract and Replicat proceses running on the `depl_north` deployment.
+
+      ```
+      <copy>
+         INFO DISTPATH ALL
+      </copy>
+      ```
+      This command displays the DISTPATHS running on the `depl_north` deployment.
+
+    6. Connect to the deployment `depl_south` using the `CONNECT` command and then run the `INFO ALL` and `INFO DISTPATH ALL` commands to check if the processes have been added for the deployment, similar to step 3.
+
+      ```
+        <copy>
+         CONNECT https://south:9101 deployment depl_south as ggma password GGma_23ai ! 
+         
+        </copy>
+      ```
+      After connecting to the deployment, run the following commands:
+
+      ```
+        <copy>
+          INFO ALL
+        </copy>
+      ```
+      This command displays the Extract and Replicat proceses running on the `depl_south` deployment.
+
+      ```
+        <copy>
+          INFO DISTPATH ALL
+        </copy>
+      ```
+      This command displays the DISTPATHS running on the `depl_south` deployment.
+
+In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_adminclient.sh` script runs.
 
 ## Task 2: Add DML to DBNORTH and DBSOUTH PDBs 
 
