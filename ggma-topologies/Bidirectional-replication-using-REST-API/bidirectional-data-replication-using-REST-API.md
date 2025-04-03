@@ -44,7 +44,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
 ## Task 1: Set Up Active Active Data Replication
 
-   Before you begin the following tasks, make sure you have set the environment variables using the steps in [Task 1: Load the Oracle GoldenGate and Database Environment](/initial-setup/initial-setup.md#task-1-load-the-oracle-goldengate-and-database-environment).
+   Before you begin the following tasks, make sure you have set the environment variables using the steps in [Task 1: Load the Oracle GoldenGate and Database Environment](/../../initial-setup/initial-setup.md#task-1-load-the-oracle-goldengate-and-database-environment).
    
    Follow these steps to set up Oracle GoldenGate processes for bidirectional replication: 
    
@@ -52,6 +52,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
      
       ```
       <copy>
+        
         cd REST-API
       
       </copy>
