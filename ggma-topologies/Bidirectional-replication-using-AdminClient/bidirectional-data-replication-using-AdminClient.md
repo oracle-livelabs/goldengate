@@ -34,7 +34,7 @@ In this lab, you will:
 
 ## Prerequisites
 
-This lab assumes that you have completed the tasks in [Task 1: Load the Oracle GoldenGate and Database Environment](/../initial-setup/initial-setup.md#task-1-load-the-oracle-goldengate-and-database-environment). 
+This lab assumes that you have completed the tasks in [Task 1: Load the Oracle GoldenGate and Database Environment](/../../../../initial-setup/initial-setup.md#task-1-load-the-oracle-goldengate-and-database-environment). 
 
 
 ## Task 1: Set Up Active Active Data Replication
