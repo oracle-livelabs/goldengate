@@ -19,7 +19,7 @@ After you have completed testing this scenario, using the REST API service endpo
 
 The source deployment `depl_north` is connected to the `DBNORTH` PDB and the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
 
-Estimated Time: 10 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 In this lab, you will: 
@@ -44,7 +44,7 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
 ## Task 1: Set Up Active Active Data Replication
 
-   Before you begin the following tasks, make sure you have set the environment variables using the steps in [Task 1: Load the Oracle GoldenGate and Database Environment](/../../initial-setup/initial-setup.md#task-1-load-the-oracle-goldengate-and-database-environment).
+   Before you begin the following tasks, make sure you have set the environment variables using the steps in [Task 1: Load the Oracle GoldenGate and Database Environment](../../initial-setup/initial-setup.md#task-1-load-the-oracle-goldengate-and-database-environment).
    
    Follow these steps to set up Oracle GoldenGate processes for bidirectional replication: 
    
