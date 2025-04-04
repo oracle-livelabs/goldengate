@@ -2,46 +2,48 @@
 
 ## Introduction
 
-This lab describes how run cURL scripts from any REST-API client to set up complete data replication processes across a unidirectional topology. 
+   This lab describes how run cURL scripts from any REST-API client to set up complete data replication processes across a unidirectional topology. 
 
-The following diagram shows a standard unidirectional replication in Oracle GoldenGate. In the standard Oracle GoldenGate configuration, an Extract sends captured data using the Distribution Service over TCP/IP to a trail on the target system, where it is received by the Receiver Service and stored until processed by the Replicat.
+   The following diagram shows a standard unidirectional replication in Oracle GoldenGate. In the standard Oracle GoldenGate configuration, an Extract sends captured data using the Distribution Service over TCP/IP to a trail on the target system, where it is received by the Receiver Service and stored until processed by the Replicat.
 
   ![MA Components and Replication Process](./images/data_replication.png " ")
 
 ### Lab Configuration
 
-This lab describes how to use the REST API service endpoints included in `add_replication_reporting_curl.sh` script to automatically set up an Oracle GoldenGate processes on the source (`depl_north`) and target (`depl_south`) deployments. 
+   This lab describes how to use the REST API service endpoints included in `add_replication_reporting_curl.sh` script to automatically set up an Oracle GoldenGate processes on the source (`depl_north`) and target (`depl_south`) deployments. 
 
-The source deployment `depl_north` is connected to the <b>DBNORTH</b> PDB and the `depl_south` deployment is connected to the <b>DBSOUTH</b> PDB. The deployments are already created in the environment. 
+   The source deployment `depl_north` is connected to the <b>DBNORTH</b> PDB and the `depl_south` deployment is connected to the <b>DBSOUTH</b> PDB. The deployments are already created in the environment. 
 
-Check the business reports using the <strong>`check_replication_reporting_curl.sh`</strong> script. You can use the `source_dml_operations.sh` script to add records to the source database and view the Extract Statistics to confirm that the committed transactions were captured. Then you can run the `source_target_select.sh` script to replicate the changes on the target database. Delete the data replication environment using the <strong>`delete_replication_reporting_curl.sh`</strong>.
+   Check the business reports using the `check_replication_reporting_curl.sh` script. You can use the `source_dml_operations.sh` script to add records to the source database and view the Extract Statistics to confirm that the committed transactions were captured. Then you can run the `source_target_select.sh` script to replicate the changes on the target database. Delete the data replication environment using the `delete_replication_reporting_curl.sh`.
 
-The source deployment <strong>`depl_north`</strong> is connected to the <strong>`DBNORTH`</strong> PDB and the <strong>`depl_south`</strong> deployment is connected to the <strong>`DBSOUTH`</strong> PDB. The deployments are already created in the environment. 
+   The source deployment `depl_north` is connected to the `DBNORTH` PDB and the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
+
+
 
 Estimated Time: 10 minutes
 
 ### Objectives
-In this lab, you will: 
+   In this lab, you will: 
 
-* Run the `add_replication_reporting_curl.sh` script, which would automatically perform the following tasks:
+   * Run the `add_replication_reporting_curl.sh` script, which would automatically perform the following tasks:
 
-   * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the Database instance
-   *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on the source PDB, <b>DBNORTH</b>
-   *	Add heartbeat and checkpoint tables on the source and target PDBs.
-   *	Add Extract on the source PDB, <b>DBNORTH</b>
-   *	Set up the Extract parameter file
-   *	Add Distribution Path from source to target systems
-   *	Add Replicat on the target PDB, <b>DBSOUTH</b>
-* View the Standard Business Report based on sample data.
-* Delete the data replication environment using the `delete_replication_reporting_curl.sh` script.
+      * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the Database instance
+      *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on the source PDB, <b>DBNORTH</b>
+      *	Add heartbeat and checkpoint tables on the source and target PDBs.
+      *	Add Extract on the source PDB, <b>DBNORTH</b>
+      *	Set up the Extract parameter file
+      *	Add Distribution Path from source to target systems
+      *	Add Replicat on the target PDB, <b>DBSOUTH</b>
+   * View the Standard Business Report based on sample data.
+   * Delete the data replication environment using the `delete_replication_reporting_curl.sh` script.
 
 
 ### Prerequisites
 
-This lab assumes that you have completed the tasks in **initial-setup**
+   This lab assumes that you have completed the tasks in <b>Task 1: Load the Oracle GoldenGate and Database Environment</b> of <b>Lab 3: Initialize Environment</b>.
 
 
-## Task 1: Set Up Data Replication
+## Task 1: Set Up Unidirectional Data Replication
 
    Make sure you are in the `/scripts/UseCases/01_Reporting/` directory and perform the following tasks:
    
@@ -100,23 +102,34 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 
 ## Task 4: Add DML to Source Database
 
-To check if the transactions committed to the source database are catpured correctly by the Extract, you can run the script `source_dml_operations.sh`. 
-This script is located in `/home/oracle/scripts/UseCases/01_Reporting` folder. 
+   To check if the transactions committed to the source database are catpured correctly by the Extract, you can run the script `source_dml_operations.sh`. 
+   
+   This script is located in `/home/oracle/scripts/UseCases/01_Reporting` folder. 
 
-Run this script as mentioned in the following steps to add DML to the DBNORTH database and check that Extract has captured DML operations:
+   Run this script as mentioned in the following steps to add DML to the `DBNORTH` database and check that Extract has captured DML operations:
 
-1. Navigate to the folder: `/home/oracle/scripts/UseCases/01_Reporting`
-2. Run the script to add DML operations on the source database:
+   1. Navigate to the folder: `/home/oracle/scripts/UseCases/01_Reporting`
+   2. Run the script to add DML operations on the source database:
+   
    ```
-   <copy>./ source_dml_operations.sh</copy>
+   <copy>
+     ./ source_dml_operations.sh
+   
+   </copy>
+   
    ```
-3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
-4. After you checked that the DML was captured on the source database, run the script `source_target_select.sh`. This script contains queries that allow you to check the data on the target database (DBSOUTH). 
+   3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
+   4. After you checked that the DML was captured on the source database, run the script `source_target_select.sh`. This script contains queries that allow you to check the data on the target database (DBSOUTH). 
 
-```
-<copy>./source_target_select.sh</copy>
-```
-This script displays the content of the DBSOUTH database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the source database DBNORTH.
+    ```
+      <copy>
+        ./source_target_select.sh
+       
+      </copy>
+   
+   ```
+     This script displays the content of the DBSOUTH database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the source database DBNORTH.
+
 ## Task 5: Delete the Data Replication Setup
 
    It's essential to delete the setup to be able to test the same feature using the OBEY commands within the same environment. 
@@ -150,4 +163,4 @@ This script displays the content of the DBSOUTH database tables <b>hr.employees<
 ## Acknowledgements
 * **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Volker Kuhr, Nick Wagner
-* **Last Updated By/Date** - Preeti Shukla, 2024
+* **Last Updated By/Date** - Preeti Shukla, 2025

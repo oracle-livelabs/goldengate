@@ -12,11 +12,11 @@ The following diagram shows a standard unidirectional replication in Oracle Gold
 
 ### Lab Configuration
 
-The `add_replication_reporting.oby` script automates the set up of Oracle GoldenGate processes on the source (`depl_north`) and target (`depl_south`) deployments.
+The `add_replication_reporting_adminclient.sh` script automates the set up of Oracle GoldenGate processes on the source (`depl_north`) and target (`depl_south`) deployments.
 
-The `check_replication_reporting.oby` script automates tasks to check the business reports containing statistical data sorted for Daily, Weekly, and Monthly transactions. 
+The `check_replication_reporting_adminclient.sh` script automates tasks to check the business reports containing statistical data sorted for Daily, Weekly, and Monthly transactions. 
 
-The `source_dml_operations.sh` script is used to add records to the source database and view the Extract Statistics to confirm that the committed transactions were captured. Then you can run the `source_target_select.sh` script to replicate the changes on the target database. Delete the data replication environment using the `delete_replication_reporting.oby`.
+The `source_dml_operations.sh` script is used to add records to the source database and view the Extract Statistics to confirm that the committed transactions were captured. Then you can run the `source_target_select.sh` script to replicate the changes on the target database. Delete the data replication environment using the `delete_replication_reporting_adminclient.sh`.
 
 The source deployment `depl_north` is connected to the `DBNORTH` PDB and the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
 
@@ -26,24 +26,24 @@ Estimated Time: 10 minutes
 
 In this lab, you will:
 
-* Run the <code>add_replication_reporting.oby </code> script, to automatically perform the following tasks:
+* Run the `add_replication_reporting_adminclient.sh` script, to automatically perform the following tasks:
 
-   * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the Database instance
-   *	Add supplemental logging to the database schema hr (SCHEMATRANDATA) on the source PDB, `DBNORTH`
-   *	Add heartbeat and checkpoint tables on the source and target PDBs.
-   *	Add Extract on the source PDB, `DBNORTH`
-   *	Set up the Extract parameter file
-   *	Add Distribution Path from source to target systems
-   *	Add Replicat on the target PDB, `DBSOUTH`
+      * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the Database instance
+      *	Add supplemental logging to the database schema hr (SCHEMATRANDATA) on the source PDB, `DBNORTH`
+      *	Add heartbeat and checkpoint tables on the source and target PDBs.
+      *	Add Extract on the source PDB, `DBNORTH`
+      *	Set up the Extract parameter file
+      *	Add Distribution Path from source to target systems
+      *	Add Replicat on the target PDB, `DBSOUTH`
 * View the Standard Business Report based on sample data.
-* Delete the data replication environment using the <code>delete_replication_reporting.oby</code> script.
+* Delete the unidirectional data replication environment using the `delete_replication_reporting_adminclient.sh` script.
 
 
 ### Prerequisites
-This lab assumes that you have completed the tasks in **initial-setup**
+This lab assumes that you have completed the tasks in <b>Task 1: Load the Oracle GoldenGate and Database Environment</b> of <b>Lab 3: Initialize Environment</b>.
 
 
-## Task 1: Set Up Data Replication
+## Task 1: Set Up Unidirectional Data Replication
 
   Make sure you are in the <code>/scripts/UseCases/01_Reporting/</code> directory and perform the following tasks:
    
@@ -51,11 +51,11 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
        ![Files inside the AdminClient directory](./images/oby_scripts_list.png " ")
      
-   2. Run the <code>add_replication_reporting.sh</code> script:
+   2. Run the <code>add_replication_reporting_adminclient.sh</code> script:
       
        ```
          <copy>
-            ./add_replication_reporting.sh
+            ./add_replication_reporting_adminclient.sh
          </copy>
        ```
       
@@ -70,96 +70,46 @@ This lab assumes that you have completed the tasks in **initial-setup**
               echo "obey add_replication_reporting.oby" | adminclient
            </copy>
          ```
-You need to run this script to copy the Extract and Replicat parameter files to Oracle GoldenGate deployment's configuration directory and then run the <code>add_replication_reporting.oby</code> script to set up data replication. 
+      When you run this script, it copies the Extract and Replicat parameter files to Oracle GoldenGate deployment's configuration directory and then runs the `add_replication_reporting.oby` script to set up data replication.
 
-   The <code>add_replication_reporting.oby</code> script, which is inside the <code>add_replication_reporting_adminclient.sh</code> script, runs after the Extract and Replicat parameter files are copied to the Oracle GoldenGate deployment's <code>/etc/conf/ogg/</code> directory. After the script runs successfully, you will be able to see the Extract and Replicat processes in running state and also view the reports for the committed transactions.  
-
-      This script contains the following commands:
+      The <code>add_replication_reporting.oby</code> script, which is inside the <code>add_replication_reporting_adminclient.sh</code> script, runs after the Extract and Replicat parameter files are copied to the Oracle GoldenGate deployment's <code>/etc/conf/ogg/</code> directory. 
       
-      ```
-      <copy>
+      After the script runs successfully, you will be able to see the Extract and Replicat processes in running state and also view the reports for the committed transactions.  
 
-        --
-        -- Connect the GoldenGate Deployment    
-           depl_north
-
-        --
-        CONNECT https://north:9001 DEPLOYMENT 
-        depl_north AS ggma PASSWORD GGma_23ai !
-
-        ALTER CREDENTIALSTORE ADD USER ggadmin@dbnorth ALIAS ggnorth DOMAIN OracleGoldenGate PASSWORD ggadmin
-
-        INFO CREDENTIALSTORE
-
-        DBLOGIN USERIDALIAS ggnorth DOMAIN OracleGoldenGate
-
-        ADD SCHEMATRANDATA hr
-
-        ADD HEARTBEATTABLE
-
-        ADD EXTRACT extn INTEGRATED TRANLOG BEGIN NOW
-
-        REGISTER EXTRACT extn database
-
-        ADD EXTTRAIL north/ea, EXTRACT extn
-
-       START EXTRACT extn
-
-       ADD DISTPATH dpns SOURCE trail://north:9002/services/v2/sources?trail=north/ea TARGET wss://south:9103/services/v2/targets?trail=north/da !
-
-       START DISTPATH dpns
-
-       --
-       -- Connect the GoldenGate Deployment 
-          depl_south
-       --
-       CONNECT https://south:9101 DEPLOYMENT    
-       depl_south AS ggma PASSWORD GGma_23ai !
-      
-       ALTER CREDENTIALSTORE ADD USER ggadmin@dbsouth ALIAS ggsouth DOMAIN OracleGoldenGate PASSWORD ggadmin
-
-       INFO CREDENTIALSTORE
-
-       DBLOGIN USERIDALIAS ggsouth DOMAIN OracleGoldenGate
-      
-      ADD CHECKPOINTTABLE ggadmin.ggs_checkpointtable
-      
-      ADD HEARTBEATTABLE
-      
-      ADD REPLICAT repn, PARALLEL, EXTTRAIL north/da, CHECKPOINTTABLE ggadmin.ggs_checkpointtable 
-      
-      START REPLICAT repn
-      
-      INFO ALL
-      
-      INFO DISTPATH ALL
-      
-      DISCONNECT
-
-      </copy>    
-      ```
-   
+         
 ## Task 2: Add DML to Source Database and Check the Target Database for Replicated Records
 
-To check if the transactions committed to the source database are catpured correctly by the Extract, you can run the script <code>source_dml_operations.sh</code>. 
-This script is located in <code>/home/oracle/scripts/UseCases/01_Reporting</code> folder. 
+   To check if the transactions committed to the source database are catpured correctly by the Extract, you can run the script `source_dml_operations.sh`
+   
+   This script is located in `scripts/UseCases/01_Reporting` folder. 
 
-Run this script as mentioned in the following steps to add DML to the DBNORTH database and check that Extract has captured DML operations:
+   Run this script as mentioned in the following steps to add DML to the DBNORTH database and check that Extract has captured DML operations:
 
-1. Navigate to the folder: <code>/home/oracle/scripts/UseCases/01_Reporting</code> 
+   1. Navigate to the folder `/scripts/UseCases/01_Reporting`.
 
-2. Run the script to add DML operations on the source database:
-   ```
-   <copy>./ source_dml_operations.sh</copy>
-   ```
-3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
+   2. Run the script to add DML operations on the source database:
 
-4. Run the script <code>source_target_select.sh</code> to check  the data on the target PDB `DBSOUTH`. This script contains queries to view the PDB records that were updated for the specific tables. 
+      ```
+      <copy>
+   
+        ./ source_dml_operations.sh
+   
+      </copy>
+      
+      ```
+   3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
 
-```
-<copy>./source_target_select.sh</copy>
-```
-The script output lists the `DBSOUTH` tables `hr.employees`. You should be able to view the updated table columns that were updated on the source PDB, `DBNORTH`. 
+   4. Run the script <code>source_target_select.sh</code> to check  the data on the target PDB `DBSOUTH`. This script contains queries to view the PDB records that were updated for the specific tables. 
+
+    ```
+     <copy>
+
+        ./source_target_select.sh
+
+     </copy>
+
+    ```
+    The script output lists the `DBSOUTH` tables `hr.employees`. You should be able to view the updated table columns that were updated on the source PDB, `DBNORTH`. 
 
 
 ## Task 3: Check the Business Reports
@@ -180,23 +130,23 @@ The script output lists the `DBSOUTH` tables `hr.employees`. You should be able 
 
 ## Task 4: Check the Standard Reports in Oracle GoldenGate Microservices Web Interface
 
-The statistical reports that you viewed in Task 2 can also be viewed from the web interface. Following are the steps to access these reports from the web interface:
+   The statistical reports that you viewed in Task 2 can also be viewed from the web interface. Following are the steps to access these reports from the web interface:
 
-1. Open a web browser within the environment, and enter the URL of the Administration Service: 
+   1. Open a web browser within the environment, and enter the URL of the Administration Service: 
 
       https://north:9001
 
-2. Log in to the Administration Service using the credentials ggma/GGma_23ai.
-3. From the left-navigation pane, expand the list of Extracts and select the EXTN Extract.
-4. Click the Statistics option to view the report. 
+   2. Log in to the Administration Service using the credentials ggma/GGma_23ai.
+   3. From the left-navigation pane, expand the list of Extracts and select the EXTN Extract.
+   4. Click the Statistics option to view the report. 
 
 ## Task 5: Delete the Replication Environment
 
-After you check the reports, you can delete the data replication environment using the . This is required for testing the other scripts. 
+   After you check the reports, you can delete the data replication environment using the . This is required for testing the other scripts. 
 
-1. Make sure you are in the <code>/home/oracle/scripts/UseCases/01_Reporting/AdminClient</code> directory.
+   1. Make sure you are in the <code>/home/oracle/scripts/UseCases/01_Reporting/AdminClient</code> directory.
 
-2. Run the following commmand:
+   2. Run the following commmand:
 
       ```
       <copy>
@@ -214,9 +164,7 @@ After you check the reports, you can delete the data replication environment usi
          echo "obey delete_replication_reporting.oby" | adminclient
       </copy>
       ```
- After you run this script, the data replication environment is deleted.  
-
-  
+   After you run this script, the data replication environment is deleted.  
 
 
 ## Learn More
@@ -230,4 +178,4 @@ After you check the reports, you can delete the data replication environment usi
 ## Acknowledgements
 * **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Volker Kuhr, Nick Wagner
-* **Last Updated By/Date** - Preeti Shukla, 2024
+* **Last Updated By/Date** - Preeti Shukla, 2025

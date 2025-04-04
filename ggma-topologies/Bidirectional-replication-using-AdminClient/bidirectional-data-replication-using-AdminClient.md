@@ -32,9 +32,9 @@ In this lab, you will:
 * Delete the data replication environment using the `delete_replication_activeactive_adminclient.sh` script.
 
 
-## Prerequisites
+### Prerequisites
 
-This lab assumes that you have completed the tasks in [Task 1: Load the Oracle GoldenGate and Database Environment](/ggma-topologies/initial-setup/initial-setup.md#task-1-load-the-oracle-goldengate-and-database-environment). 
+This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>. 
 
 
 ## Task 1: Set Up Active Active Data Replication
