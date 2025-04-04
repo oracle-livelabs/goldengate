@@ -3,21 +3,26 @@
 ## Introduction
 The livelab environment set up includes the following:
 
-* 3 CDB databases (free edition) with 3 PDBs.
+* A single database (free edition) with 2 PDBs.
 * One Oracle GoldenGate installation setup.
-* The Service Manager manages three deployments: North, West, and South.
+* The Service Manager manages two deployments: North and South.
 * All services, including database, database listener, and Oracle GoldenGate instances, which start when you start the LiveLab environment and run the given scripts.
-* Scripts to set up complete data replication for various topologies using cURL commands.
-* Scripts to set up complete data replication for various topologies using OBEY commands.
+* Scripts to set up complete data replication using cURL commands.
+* Scripts to set up complete data replication using OBEY commands.
 
 *Estimated Time*:  10 minutes
 
 ### Objectives
-* Learn to use scripts to perform basic data replication configuration in Oracle GoldenGate 23ai with Oracle Database Free 23ai
-
+* Learn to use scripts to perform basic data replication configuration in Oracle GoldenGate 23ai with Oracle Database 23ai
 * Allow users to copy the scripts and use them to test various tasks in their own environments.
 
-### Preset Configurations in the Environment
+### Lab Configuration
+
+This lab environment consists of 1 container database instance and two pluggable database instances. 
+
+The following diagram shows a standard unidirectional replication in Oracle GoldenGate. In the standard Oracle GoldenGate configuration, an Extract sends captured data using the Distribution Service over TCP/IP to a trail on the target system, where it is received by the Receiver Service and stored until processed by the Replicat.
+
+  ![MA Components and Replication Process](./images/data_replication.png " ")
 
 The following table provides a snapshot of the available environment:
 
@@ -32,10 +37,8 @@ The following table provides a snapshot of the available environment:
 |            |      |   Username/Password: sys/oracle4GG
 |PDB Name    | DBSOUTH | Login Details:  
 |            |       |   Username/Password: sys/oracle4GG
-|PDB Name    | DBWEST | PDB login details: Username/Password: sys/oracle4GG
 Database Connections| | For DBNORTH: Username/Password: ggadmin@dbnorth/ggadmin 
-|                   | | For DBSOUTH: Username/Password: ggadmin@dbsouth/ggadmin
-|                   | | For DBWEST: Username/Password: ggadmin@dbwest/ggadmin
+|                   | | For DBSOUTH Username/Password: ggadmin@dbsouth/ggadmin
 |Oracle GoldenGate | Service Manager | Port: 9000 
 | ||Login Credentials:
 | | | Username/Password: ggma/GGma_23ai
@@ -58,52 +61,50 @@ This lab contains the following tasks:
     
        ```
        <copy>
-         source /usr/local/bin/.set-env-db.sh
+       source /usr/local/bin/.set-env-db.sh
        </copy>
 
        ```
    2. Enter the option 1 to select the FREE database option. This loads the database environment with settings for the required environment variables, Oracle Database, and Oracle GoldenGate directories.
-
-   The following table lists the present environment variables for this tutorial:
-
-   | Directory Name   |     Location         |
-   | --------------     | ----------------     |
-   | ORACLE_BASE      |  /opt/oracle         |
-   | ORACLE_HOME      | /opt/oracle/product/23ai/dbhomeFree                                |
-   | TNS_ADMIN        | ~/network/admin      |
-   | OGG_HOME         | /u01/app/oracle/product/23.0.0.0/gghome_1                         |
-   | Deployments      | /u01/app/oracle/deployments/{ServiceManager, depl_north, depl_south}                               |
-   | Certificates     | ~/certs              |
          
    
 ## Task 2: Understand the Directory Structure
 
-The directory structure lists the location of different automation scripts that would be used in this tutorial. 
+The directory structure lists the location of the important artifacts for Oracle Database and Oracle GoldenGate. 
 
-   | Topology     |     REST-API Automation      |    Admin Client Automation
-   |-----------   |------------------------------|-------------------------
-   |Unidirectional |~\scripts\UseCases\01_Reporting\REST-API |~\scripts\UseCases\01_Reporting\AdminClient                  
-   |Bidirectional  |~\scripts\UseCases\02_Bidirectional\REST-API| ~\scripts\UseCases\02_BiDirectional\AdminClient                        
-   |Cascading      |~\scripts\UseCases\03_Cascading\REST-API | ~\scripts\UseCases\03_Cascading\AdminClient                        
 
-To view the directories mentioned in this table:
+| Directory Name   |     Location         |
+--------------     | ----------------     |
+| ORACLE_BASE      |  /opt/oracle         |
+| ORACLE_HOME      | /opt/oracle/product/23ai/dbhomeFree                                |
+| TNS_ADMIN        | ~/network/admin      |
+| OGG_HOME         | /u01/app/oracle/product/23.0.0.0/gghome_1                         |
+| Deployments      | /u01/app/oracle/deployments/{ServiceManager, depl_north, depl_south}                               |
+| Certificates     | ~/certs              |    
 
-1. From the home directory, run the `ls -l` command to view the subdirectories. The output displays the `scripts` directory.
 
-2.  Move to the <code>scripts/UseCases</code> directory
+In this lab, you will be able to view the directories mentioned in this table:
+
+1. Run the command to list the directories:
+
+       
+       <copy>
+       ls -l
+       
+       </copy>
+       
+
+2.  Move to the <code>scripts</code> directory 
 
        ```
        <copy>
-       cd scripts/UseCases
-       ls       
+       cd scripts       
        </copy>
 
        ```
+    You will be able to see the scripts that are going to be used in the labs for data replication and testing purposes. The <code>scripts</code> folder contains the sub-directory <code>01_Reporting</code>.
 
-       This displays the different topology use case directories that would be used in the upcoming labs, as shown in the following image.
-      ![Location of automation scripts for different topology use cases](./images/dir_structure_topology.png)
-
-    You will be able to see the scripts that are going to be used in the labs for data replication and testing purposes.
+3. Move to the <code>Reporting</code> directory. It contains the REST-API directory for cURL and the Admin Client directory for OBEY commands.
 
 You may now **proceed to the next lab** to run cURL scripts to set up data replication and test for standard reporting.
 
@@ -115,4 +116,4 @@ You may now **proceed to the next lab** to run cURL scripts to set up data repli
 ## Acknowledgements
 * **Author** - Preeti Shukla
 * **Contributors** - Preeti Shukla, Volker Kuhr
-* **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, March 2025
+* **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, November 2024

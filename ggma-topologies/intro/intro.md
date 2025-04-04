@@ -5,10 +5,8 @@ The labs in this workshop are designed to test the standard reporting feature av
 
 The scripts allow you to use two approaches for configuring Oracle GoldenGate data replication and generate standard business reports:
 
-•	Using REST API with cURL Commands
-
-•	Using Admin Client with OBEY Commands
-
+•	Using cURL
+•	Using OBEY Commands from the Admin Client
 
 Estimated Workshop Time: 2 hour
 

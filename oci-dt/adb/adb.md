@@ -36,7 +36,51 @@ To successfully complete this lab, you must:
 
 ## Task 3: Load the ATP schema and enable supplemental logging
 
-[](include:03-load-atp-schema.md)
+1.  Download the database schema:
+
+    [scripts.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/goldengate-library/scripts.zip)
+
+2.  Save `scripts.zip` to a download directory, and then unzip the file.
+
+3.  Back in the Oracle Cloud console, select your ATP instance from the Autonomous Databases page to view its details and access tools.
+
+    ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-03-atp.png " ")
+
+4.  On the SourceATP Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions** directly, and then select **SQL** from the Database actions page.
+
+    ![ATP details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images//03-04-dbdetails.png)
+
+5.  If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
+
+    ![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
+
+6.  (Optional) Close the Help dialog.
+
+7.  Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** into the SQL Worksheet
+
+8.  Click **Run Script**. The Script Output tab displays confirmation messages.
+
+    ![Pasted script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-08-atp-sql.png " ")
+
+9. Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SRC\_USER\_SEED\_DATA.sql** a new SQL Worksheet.
+
+    ![Pasted schema script in SQL Worksheet](./images/03-09-atp-schema.png " ")
+
+10. Click **Run Script**. The Script Output tab displays confirmation messages.
+
+	> **Note:** If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.
+
+11. Close the SQL window and then reopen it from Database Actions again.
+
+12. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
+
+    ![Displays the SRC\_OCIGGLL tables](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-11-verify.png " ")
+
+13. To enable supplemental logging, run the following command:
+
+    ```
+    <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
+    ```
 
 ## Task 4: Create an ADW instance and user 
 
@@ -110,5 +154,5 @@ You may now **proceed to the next lab.**
 
 - **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** -  Jenny Chan, Consulting User Assistance Developer, Database 
-- **Last Updated by** - Katherine Wardhana, May 2024
-- **PAR Expiration date** - February, 2024
+- **Last Updated by** - Katherine Wardhana, February 2025
+- **PAR Expiration date** - February 2030

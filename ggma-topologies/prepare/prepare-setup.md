@@ -15,15 +15,13 @@ This lab assumes you have:
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 
-1.  Click on the link below to download the Resource Manager zip file you need to build your   
-    environment:
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 
     - [ll-orm-mkplc-freetier.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/aanun53DXeWdo-nDsbl8sVzOpKqZk0_bky6tNc_U_ZwG7Gb8aAGjVm9LpmNZYHZG/n/c4u04/b/livelabsfiles/o/goldengate-library/ll-orm-23aigg-topologies-freetier.zip)
-
-         
+     
 2.  Save in the downloads folder.
 
-    We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Task 3* to follow our recommendations. If you would rather use an existing VCN then proceed to the next task to update your existing VCN with the required Ingress rules.
+ We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Task 3* to follow our recommendations. If you would rather use an existing VCN then proceed to the next task to update your existing VCN with the required Ingress rules.
 
 ## Task 2: Adding security rules to an existing VCN
 

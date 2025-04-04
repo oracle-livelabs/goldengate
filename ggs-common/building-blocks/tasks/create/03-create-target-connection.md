@@ -12,13 +12,13 @@ Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) i
 
     ![Create Connection in GoldenGate menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-02-connections.png " ")
 
-3.  The Create connection panel consists of two pages. On the General information page, for Name, enter **TargetADW** and optionally, a description.
+3.  The Create connection panel appears. For Name, enter **TargetADW** and optionally, a description.
 
 4.  From the **Compartment** dropdown, select a compartment.
 
 5.  From the a Type dropdown, select **Oracle Autonomous Database**.
 
-6.  From the Database details dropdown, select **Select database**.
+6.  For Database details, select **Select database**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-06-create-connec-general-info.png " ")
 
