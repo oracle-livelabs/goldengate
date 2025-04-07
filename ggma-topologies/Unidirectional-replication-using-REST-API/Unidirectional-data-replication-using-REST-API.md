@@ -37,7 +37,7 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
 
    Make sure you are in the `/scripts/UseCases/01_Reporting/` directory and perform the following tasks:
    
-   1. Move to the `REST-API` directory and list the content for this directory:
+   1. Navigate to the `REST-API` directory and list the content for this directory:
      
       ```
       <copy>
