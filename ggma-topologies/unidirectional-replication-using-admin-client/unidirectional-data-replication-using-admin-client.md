@@ -192,7 +192,7 @@ After you check the reports, you can delete the data replication environment usi
 
 1. Navigate to the `/home/oracle/scripts/UseCases/01_Reporting/AdminClient` directory, if you are not already at this location.
 
-2. Run the following commmand:
+2. Run the script with following commmand:
 
       ```
       <copy>
@@ -210,7 +210,7 @@ After you check the reports, you can delete the data replication environment usi
          echo "obey delete_replication_reporting.oby" | adminclient
       </copy>
       ```
- After you run this script, the data replication environment is deleted.  
+    After you run this script, the data replication environment is deleted.  
 
   
 
