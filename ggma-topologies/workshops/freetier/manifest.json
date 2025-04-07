@@ -30,22 +30,22 @@
    {
       "title": "Lab 4: Set Up Unidirectional Data Replication Environment Using REST API",
       "description": "Configure data replication using the automation scripts containing REST API cURL commands.",
-      "filename": "../../Unidirectional-data-replication-using-REST-API/data-replication-using-REST-API.md"
+      "filename": "../../unidirectional-replication-using-rest-api/unidirectional-data-replication-using-rest-api.md"
     },
     {
       "title": "Lab 5: Set Up Unidirectional Data Replication Environment Using Admin Client",
       "description": "Configure data replication using the automation scripts containing Admin Client OBEY scripts.",
-      "filename": "../../Unidirectional-data-replication-using-AdminClient/data-replication-using-AdminClient.md"
+      "filename": "../../unidirectional-replication-using-admin-client/unidirectional-data-replication-using-admin-client.md"
     },
     {
       "title": "Lab 6: Set Up Bidirectional Data Replication Environment Using REST API",
       "description": "Configure data replication using the automation scripts containing REST API cURL commands.",
-      "filename": "../../Bidirectional-replication-using-REST-API/bidirectional-data-replication-using-REST-API.md"
+      "filename": "../../bidirectional-replication-using-rest-api/bidirectional-data-replication-using-rest-api.md"
     },
     {
       "title": "Lab 7: Set Up Bidirectional Data Replication Environment Using Admin Client",
       "description": "Configure data replication using the automation scripts containing Admin Client OBEY scripts.",
-      "filename": "../../Bidirectional-replication-using-AdminClient/bidirectional-data-replication-using-AdminClient.md"
+      "filename": "../../bidirectional-replication-using-admin-client/bidirectional-data-replication-using-admin-client.md"
     },
     {
       "title": "Need Help?",
