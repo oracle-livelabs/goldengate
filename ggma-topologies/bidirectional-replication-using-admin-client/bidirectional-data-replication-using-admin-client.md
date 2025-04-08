@@ -273,6 +273,8 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 
 4. Click the <b>Statistics</b> option to view the report.
 
+5. Repeat the steps 1 to 4 for the 
+
 ## Task 4: View the Active Active Replicat Using Statistics for Oracle GoldenGate Processes
 
    To view the Standard Report based on sample data:
