@@ -51,7 +51,7 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       ```
       <copy>
         
-        cd /scripts/UseCases/02_Bidirectional/REST-API
+        cd scripts/UseCases/02_BiDirectional/REST-API
         ls -l
       </copy>
       ```
@@ -118,18 +118,18 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       ```
       This command displays the DISTPATHS running on the `depl_south` deployment.
       
-   
-   In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_curl.sh` script runs.
+      In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_curl.sh` script runs.
 
 ## Task 2: Add DML to DBNORTH and DBSOUTH PDBs 
 
-Verify that the Extract processes on `DBNORTH` and `DBSOUTH` databases are working correctly. 
+In this task, you can verify that the Extract processes on `DBNORTH` and `DBSOUTH` databases are working correctly. The following steps will instruct you to run a script that will automatically perform an UPDATE operation on the PDBs. You can check the Extract and Replicat statistics to know monitor the UPDATE has been done successfully.  
 
 Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases and check that Extract has captured DML operations:
 
-1. Navigate to the folder: `/home/oracle/scripts/UseCases/02_Bidirectional`.
+1. Navigate back to the folder: `scripts/UseCases/02_BiDirectional`. 
+   It contains the shell scripts `./dbnorth_dml_operations.sh` and `./dbsouth_dml_operations.sh`, which can be used to perform DML UPDATE operations on `DBNORTH` and `DBSOUTH`. These UPDATE operations will then be captured by Extract processes on both PDBs and replicated.
 
-2. Run the script to add DML operations on the `DBNORTH` database:
+2. Run the following script to perform DML operations on the `DBNORTH` database:
 
    ```
    <copy>
@@ -139,16 +139,18 @@ Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases an
    </copy>
 
    ```
-3. Run the script to add DML operations on the `DBSOUTH` database:
+3. Run the following script to perform DML operations on the `DBSOUTH` database:
 
    ```
-   <copy>./dbsouth_dml_operations.sh</copy>
+   <copy>
+     
+      ./dbsouth_dml_operations.sh
+   
+   </copy>
 
    ```
 
-4. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
-
-5. After you check that the DML has been captured on the DBNORTH database, run the script `dbnorth_select.sh`. This script contains queries that allow you to check the data on the `DBSOUTH` database.
+4. Now, run the script `dbnorth_select.sh`. This script contains queries to check the data on the <b>hr.employees</b> table of the PDB, `DBNORTH` .
 
 ```
 <copy>
@@ -158,18 +160,19 @@ Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases an
 </copy>
 
 ```
-This script displays the content of the `DBSOUTH` database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the `DBSOUTH` database.
 
-6. After you check that the DML has been captured on the DBSOUTH database, run the script `dbsouth_select.sh`. This script contains queries that allow you to check the data on the `DBNORTH` database.
+You should be able to view the updated table columns in the table. 
+
+6. Run the script `dbsouth_select.sh` to check the data on the `DBSOUTH` database.
 
 ```
 <copy>
 
-   ./dbnorth_select.sh
+   ./dbsouth_select.sh
 
 </copy>
 ```
-This script displays the content of the  `DBNORTH` database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the `DBNORTH` database.                  
+This script displays the content of the  `DBSOUTH` database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the `DBSOUTH` database.                  
     
 ## Task 3: Check the Statistics in Oracle GoldenGate Microservices Web Interface
 
@@ -181,7 +184,9 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 
 2. Log in to the Administration Service using the credentials <b>ggma/GGma_23ai</b>.
 3. From the left-navigation pane, expand the list of Extracts and select the <b>EXTN</b> Extract.
-4. Click the <b>Statistics</b> option to view the report.
+4. Click the <b>Statistics</b> option to view the report. 
+   This statistical report shows you the number of updates done for the specified tables. 
+
 
 ## Task 4: View the Replicat Using Statistics for Oracle GoldenGate Processes
 
