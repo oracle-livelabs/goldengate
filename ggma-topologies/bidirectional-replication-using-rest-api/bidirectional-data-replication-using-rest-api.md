@@ -127,8 +127,9 @@ In this task, you can verify that the Extract processes on `DBNORTH` and `DBSOUT
 Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases and check that Extract has captured DML operations:
 
 1. Navigate back to the folder: `scripts/UseCases/02_BiDirectional`. 
-   It contains the shell scripts `./dbnorth_dml_operations.sh` and `./dbsouth_dml_operations.sh`, which can be used to perform DML UPDATE operations on `DBNORTH` and `DBSOUTH`. These UPDATE operations will then be captured by Extract processes on both PDBs and replicated.
-
+   
+   It contains the shell scripts `./dbnorth_dml_operations.sh` and `./dbsouth_dml_operations.sh`, which can be used to perform DML UPDATE operations on `DBNORTH` and `DBSOUTH`. These UPDATE operations will then be captured by Extract processes on both PDBs and replicated. 
+   
 2. Run the following script to perform DML operations on the `DBNORTH` database:
 
    ```
@@ -150,20 +151,20 @@ Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases an
 
    ```
 
-4. Now, run the script `dbnorth_select.sh`. This script contains queries to check the data on the <b>hr.employees</b> table of the PDB, `DBNORTH` .
+4. Now, run the script `dbnorth_select.sh`. This script contains queries to check the data on the <b>hr.employees</b> table of the PDB, `DBNORTH`.
 
-```
-<copy>
+   ```
+     <copy>
 
-   ./dbnorth_select.sh
+        ./dbnorth_select.sh
+     
+     </copy>
 
-</copy>
+   ```
 
-```
+  You should be able to view the updated table columns in the table. 
 
-You should be able to view the updated table columns in the table. 
-
-6. Run the script `dbsouth_select.sh` to check the data on the `DBSOUTH` database.
+5. Run the script `dbsouth_select.sh` to check the data on the `DBSOUTH` database.
 
 ```
 <copy>
@@ -183,7 +184,9 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
       https://north:9001
 
 2. Log in to the Administration Service using the credentials <b>ggma/GGma_23ai</b>.
+
 3. From the left-navigation pane, expand the list of Extracts and select the <b>EXTN</b> Extract.
+
 4. Click the <b>Statistics</b> option to view the report. 
    This statistical report shows you the number of updates done for the specified tables. 
 
@@ -205,51 +208,42 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 
 ## Task 5: Delete the Bidirectional Replication Setup
 
-   It's essential to delete the setup to be able to test the same feature using the OBEY commands within the same environment. 
+  It's essential to delete the setup to be able to test the same feature using the OBEY commands within the same environment. 
    
-   You can also use this script to test and delete data replication environments in your own test enviornment. 
+  You can also use this script to test and delete data replication environments in your own test enviornment. 
    
-   To delete the setup:
+  To delete the setup:
 
-   1. Run the script `delete_replication_reporting_curl.sh`
+  1. Run the script `delete_replication_activeactive_adminclient.sh`.
    
-   ```
-     <copy>
-      ./delete_replication_activeactive_curl.sh  
-     </copy>
-   ```
-   
-   2. Start the Admin Client from the command prompt.
-
       ```
         <copy>
-        adminclient
-        </copy>
-      ```
-   3. Connect to the deployments, `depl_north` and `depl_south` using the connect command.
-      
-      ```
-        <copy>
-         CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
-        </copy>
-      ```
-      and
-
-      ```
-        <copy>
-         CONNECT https://south:9101 deployment depl_south as ggma password GGma_23ai ! 
+          ./delete_replication_activeactive_adminclient.sh  
         </copy>
       ```
    
-   4. Run the `INFO ALL` and `INFO DISTPATH` commands to check if the processes have been removed from the deployment. 
-
-   You can verify that the environment was deleted if you get the following message on the screen:
+  2. You can verify that the environment was deleted by connecting to the deployment and running the `INFO ALL` command on `depl_north` deployment.
 
       ```
-        No processes found.
+        <copy>
+          adminclient
+          
+          INFO ALL
+        </copy>
+  
       ```
+      Now run the `CONNECT` command to connect to `depl_north`:
+
+      ```
+        <copy>
+          connect https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
+        </copy>
+
+   3. Run the `INFO ALL` command and `INFO DISTPATH ALL` commands after connecting to the deployment. These commands display the message `"No processes found"`, if the Extract, Replicat processes have been deleted successfully.
+
+   4. Repeat steps 2 and 3 for the `depl_south` deployment.
    
-     After you delete the environment, you can use the `add_replication_activeactive_curl.sh` script again to rebuild the environment or copy the script to apply in your own test environment.
+  After you delete the environment, you can use the `add_replication_activeactive_curl.sh` script again to rebuild the environment or copy the script to apply in your own test environment.
 
    
 ## Learn More

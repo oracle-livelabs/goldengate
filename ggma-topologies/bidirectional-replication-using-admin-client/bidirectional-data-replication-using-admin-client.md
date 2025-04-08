@@ -41,44 +41,58 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
  
 Follow these steps to set up Oracle GoldenGate processes for bidirectional replication:   
    
-   1. From the command prompt, navigate to the `/scripts/UseCases/02_Bidirectional/AdminClient` directory and list the content of this directory:
+   1. From the command prompt, navigate to the `scripts/UseCases/02_BiDirectional/AdminClient` directory and list the content of this directory:
      
       ```
       <copy>
-      cd /scripts/UseCases/02_Bidirectional/AdminClient
+      
+         cd scripts/UseCases/02_BiDirectional/AdminClient
       
       </copy>
       ```
                  
-   2. Edit the parameter files for Extract and Replicat processes using the EDIT PARAMS command.
+   2. Run the `add_replication_ActiveActive_adminclient.sh` script:
 
-      For example, run the EDIT PARAMS command for EXTS process and copy the values from the EXTS.prm file, which is located in `/scripts/UseCases/02_Bidirectional` folder.
+       ```
+       <copy>
+        
+        ./add_replication_ActiveActive_adminclient.sh
+       
+       </copy>
+       ```
+      This script creates the Extract and Replicat processes on `depl_north` and `depl_south` deployments. In the following steps, you will work with the Admin Client to edit the parameter files for the Extract and Replicat processes for `depl_north` and `depl_south` deployments. 
 
-      ```
-      <copy>
-         EDIT PARAMS EXTS
-      </copy>
-      ```
-      The Extract parameter file for EXTS.prm file is as follows:
-
-      ```
-      <copy>
-       EXTRACT exts
-       USERIDALIAS ggsouth
-       EXTTRAIL south/ea
-       TRANLOGOPTIONS EXCLUDETAG +
-       DDL INCLUDE MAPPED
-       DDLOPTIONS REPORT
-       REPORTCOUNT EVERY 10 MINUTES, RATE
-       WARNLONGTRANS 15MINUTES, CHECKINTERVAL 5MINUTES
-       TABLE hr.*;
-      </copy>
-      ```
-
-      You can update the other process files in the same manner. 
-
-      The Extract parameter file for EXTN.prm file is as follows:
+   3. Start the Admin Client from the command prompt.
       
+      ```
+      <copy>
+      
+         adminclient
+      
+      </copy>
+      ```
+      
+   3. Connect to the `depl_north` deployment to update the Extract (EXTN.prm) and Replicat (REPN.prm) parameter files.
+      
+      ```
+        <copy>
+          CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
+        </copy>
+      ```
+
+   4. Edit the parameter files for Extract (`EXTN`) and Replicat (`REPN`) processes using the EDIT PARAMS command.
+
+       ```
+      <copy>
+         
+         EDIT PARAMS EXTN
+      
+      </copy>
+      ```
+      You can copy the parameter file values from the following snippets. 
+      
+      The Extract parameter file `EXTN.prm` is as follows:
+
       ```
       <copy>
        EXTRACT extn
@@ -86,33 +100,18 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
        EXTTRAIL north/ea
        
        TRANLOGOPTIONS EXCLUDETAG +
-      
+       
        DDL INCLUDE MAPPED
        DDLOPTIONS REPORT
-
+       
        REPORTCOUNT EVERY 10 MINUTES, RATE
        WARNLONGTRANS 15MINUTES, CHECKINTERVAL 5MINUTES
-
+       
        TABLE hr.*;
       </copy>
       ```
-      The Replicat parameter file for REPS.prm is as follows:
 
-      ```
-      <copy>
-      REPLICAT reps
-      USERIDALIAS ggnorth DOMAIN OracleGoldenGate
-
-      DDLOPTIONS REPORT
-      DDLERROR DEFAULT, DISCARD
-
-      REPORTCOUNT EVERY 10 MINUTES, RATE
-
-      REPERROR (DEFAULT, DISCARD)
-      MAP hr.*, TARGET hr.*;
-      </copy>
-      ```
-      The Replicat parameter file for REPN.prm is as follows:
+      The Replicat parameter file `REPN.prm` is as follows:
 
       ```
       <copy>
@@ -130,69 +129,81 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       </copy>
       ```
 
+  5. Connect to the `depl_north` deployment to update the Extract (EXTS.prm) and Replicat (REPS.prm) parameter files.
+      
+      ```
+        <copy>
+          CONNECT https://south:9101 deployment depl_south as ggma password GGma_23ai ! 
+        </copy>
+      ```
 
-   3. Run the `add_replication_ActiveActive_adminclient.sh` script:
+  6. Edit the parameter files for Extract (`EXTS`) and Replicat (`REPS`) processes using the EDIT PARAMS command.
 
-       ```
-       <copy>
-        ./add_replication_ActiveActive_adminclient.sh
-       </copy>
-       ```
-      After this script runs successfully, data replication begins between thw `DBNORTH` and `DBSOUTH` PDBs.
+      ```
+      <copy>
+         
+         EDIT PARAMS EXTN
+      
+      </copy>
+      ```
+
+    You can copy the parameter file values from the following snippets. 
+     
+    The `EXTS.prm` Extract parameter file is as follows:
+      
+      ```
+      <copy>
+       EXTRACT exts
+       USERIDALIAS ggnorth
+       EXTTRAIL north/ea
+       
+       TRANLOGOPTIONS EXCLUDETAG +
+      
+       DDL INCLUDE MAPPED
+       DDLOPTIONS REPORT
+
+       REPORTCOUNT EVERY 10 MINUTES, RATE
+       WARNLONGTRANS 15MINUTES, CHECKINTERVAL 5MINUTES
+
+       TABLE hr.*;
+      </copy>
+      ```
+    The Replicat parameter file for REPS.prm is as follows:
+
+      ```
+      <copy>
+      REPLICAT reps
+      USERIDALIAS ggnorth DOMAIN OracleGoldenGate
+
+      DDLOPTIONS REPORT
+      DDLERROR DEFAULT, DISCARD
+
+      REPORTCOUNT EVERY 10 MINUTES, RATE
+
+      REPERROR (DEFAULT, DISCARD)
+      MAP hr.*, TARGET hr.*;
+      </copy>
+      ``` 
    
-   4. To check if the Orcle GoldenGate processes are running successfully, after running the script, start Admin Client from the command prompt.
-
-      ```
-        <copy>
-          adminclient
-        </copy>
-      ```
-    5. Connect to the deployment, `depl_north` using the `CONNECT` command.
-      
-      ```
-        <copy>
-          CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
-        </copy>
-      ```
-      
+   
+  7. To check if the Orcle GoldenGate processes are running successfully on both deployments, run the following commands on both the `depl_north` and `depl_south` deployments: 
+     
+     |Note: Connect to the deployment using the `CONNECT` command before running the `INFO ALL` and `INFO DISTPATH ALL` commands. 
+    
+    The following command displays the Extract and Replicat proceses running on the `depl_north` and  deployment, if you are connected to the `depl_north` deployment.
       ```
       <copy>
          INFO ALL
       </copy> 
       ```
-      This command displays the Extract and Replicat proceses running on the `depl_north` deployment.
-
+    The following command displays the DISTPATHS running on the `depl_north` deployment.
+    
       ```
       <copy>
          INFO DISTPATH ALL
       </copy>
       ```
-      This command displays the DISTPATHS running on the `depl_north` deployment.
-
-    6. Connect to the deployment `depl_south` using the `CONNECT` command and then run the `INFO ALL` and `INFO DISTPATH ALL` commands to check if the processes have been added for the deployment, similar to step 3.
-
-      ```
-        <copy>
-         CONNECT https://south:9101 deployment depl_south as ggma password GGma_23ai ! 
-         
-        </copy>
-      ```
-      After connecting to the deployment, run the following commands:
-
-      ```
-        <copy>
-          INFO ALL
-        </copy>
-      ```
-      This command displays the Extract and Replicat proceses running on the `depl_south` deployment.
-
-      ```
-        <copy>
-          INFO DISTPATH ALL
-        </copy>
-      ```
-      This command displays the DISTPATHS running on the `depl_south` deployment.
-
+    
 In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_adminclient.sh` script runs.
 
 ## Task 2: Add DML to DBNORTH and DBSOUTH PDBs 
@@ -201,34 +212,52 @@ Verify that the Extract processes on `DBNORTH` and `DBSOUTH` databases are worki
 
 Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases and check that Extract has captured DML operations:
 
-1. Navigate to the folder: `/home/oracle/scripts/UseCases/02_Bidirectional`.
+1. Navigate to the folder: `scripts/UseCases/02_BiDirectional`.
 
 2. Run the script to add DML operations on the `DBNORTH` database:
 
    ```
-   <copy>./dbnorth_dml_operations.sh</copy>
+   <copy>
+    
+     ./dbnorth_dml_operations.sh
+    
+    </copy>
+   
    ```
 3. Run the script to add DML operations on the `DBSOUTH` database:
 
    ```
-   <copy>./dbsouth_dml_operations.sh</copy>
-
+   <copy>
+   
+      ./dbsouth_dml_operations.sh
+   
+   </copy>
+   
    ```
 
-3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
+4. Now, run the script `dbnorth_select.sh`. This script contains queries to check the data on the <b>hr.employees</b> table of the PDB, `DBNORTH`.
 
-4. After you check that the DML has been captured on the DBNORTH database, run the script `dbnorth_select.sh`. This script contains queries that allow you to check the data on the `DBSOUTH` database.
-```
-<copy>./dbnorth_select.sh</copy>
-```
-This script displays the content of the `DBSOUTH` database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the `DBSOUTH` database.
+   ```
+     <copy>
 
-5. After you check that the DML has been captured on the DBSOUTH database, run the script `dbsouth_select.sh`. This script contains queries that allow you to check the data on the `DBNORTH` database.
+        ./dbnorth_select.sh
+     
+     </copy>
 
-```
-<copy>./dbnorth_select.sh</copy>
-```
-This script displays the content of the  `DBNORTH` database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the `DBNORTH` database.                  
+   ```
+  You should be able to view the updated table columns in the table. 
+
+5. Run the script `dbsouth_select.sh` to check the data on the `DBSOUTH` database.
+
+   ```
+     <copy>
+    
+       ./dbsouth_select.sh
+
+     </copy>
+   ```
+This script displays the content of the  `DBSOUTH` database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the `DBSOUTH` database.
+                  
     
 ## Task 3: Check the Statistics in Oracle GoldenGate Microservices Web Interface
 
@@ -236,10 +265,12 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 
 1. Open a web browser within the environment, and enter the URL of the Administration Service: 
 
-      https://north:9001
+   https://north:9001
 
 2. Log in to the Administration Service using the credentials <b>ggma/GGma_23ai</b>.
+
 3. From the left-navigation pane, expand the list of Extracts and select the <b>EXTN</b> Extract.
+
 4. Click the <b>Statistics</b> option to view the report.
 
 ## Task 4: View the Active Active Replicat Using Statistics for Oracle GoldenGate Processes
@@ -265,27 +296,36 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
    
    To delete the setup:
 
-   1. Run the script `delete_replication_activeactive_adminclient.sh`
+   1. Run the script `delete_replication_activeactive_adminclient.sh`.
    
-   ```
-     <copy>
-      ./delete_replication_activeactive_adminclient.sh  
-     </copy>
-   ```
+      ```
+        <copy>
+          ./delete_replication_activeactive_adminclient.sh  
+        </copy>
+      ```
    
-   2. You can verify that the environment was deleted by connecting to the deployments and running the `INFO ALL` command on `depl_north` and `depl_south` deployments.
+   2. You can verify that the environment was deleted by connecting to the deployment and running the `INFO ALL` command on `depl_north` deployment.
 
-   ```
-   <copy>
-      adminclient
-      >connect https://north:9001 deployment depl_north as ggma password GGma_23ai !
-      >INFO ALL
-   </copy>
+      ```
+        <copy>
+          adminclient
+          
+        </copy>
+      ```
+      Now run the `CONNECT` command to connect to `depl_north`:
 
-   ```
-     These commands displays the message "No processes found", if the Extract, Replicat processes have been deleted successfully.
+      ```
+       <copy>
+       
+       CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
+       
+       </copy>
+      ```
+    3. Run the `INFO ALL` command and `INFO DISTPATH ALL` commands after connecting to the deployment. These commands display the message `"No processes found"`, if the Extract, Replicat processes have been deleted successfully.
+
+    4. Repeat steps 2 and 3 for the `depl_south` deployment.
    
-     After you delete the environment, you can use the script `add_replication_activeactive_adminclient.sh` again to rebuild the environment or copy the script to apply in your own test environment. 
+   After you delete the environment, you can use the script `add_replication_activeactive_adminclient.sh` again to rebuild the environment or copy the script to apply in your own test environment. 
 
 
 ## Learn More
