@@ -27,13 +27,16 @@ For setting up replication across a Cascading topology, there are some preset co
 
 From this diagram, you can deduce the following: 
 
-* The `depl_north` deployment captures from `DBNORTH` and connects to the `depl_west` deployment on another intermediate host machine. 
+* In the `depl_north` deployment, the `EXTN` Extract captures from `DBNORTH` (source PDB) and writes it to the local trail.
 
-* The Replicat process on `depl_west`, replicates to the `DBWEST` database.  
+* In the `depl_south` deployment, the trail is sent to the 
+* The Replicat `REPS` process on `depl_west`, replicates to the `DBWEST` database.  
 
-* The Extract process, EXTW, in `depl_west` captures the replicated data and writes it to the local trail.
+* The Extract process, `EXTW`, in `depl_west` captures the replicated data and writes it to the local trail.
 
-*  The DISTPATH process in `depl_west` deployment transfers the local trail to the `depl_south` deployment, where the Replicat process REPN,  replicates to `DBSOUTH` database. 
+*  This trail is replicated to the target PDB, `DBWEST` using the Replicat process 
+
+*  
 
 
 
