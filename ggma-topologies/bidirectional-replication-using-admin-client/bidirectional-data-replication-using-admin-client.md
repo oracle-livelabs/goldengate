@@ -129,7 +129,7 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       </copy>
       ```
 
-  5. Connect to the `depl_north` deployment to update the Extract (EXTS.prm) and Replicat (REPS.prm) parameter files.
+  5. Connect to the `depl_south` deployment to update the Extract (EXTS.prm) and Replicat (REPS.prm) parameter files.
       
       ```
         <copy>
