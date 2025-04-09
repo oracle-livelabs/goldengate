@@ -29,7 +29,7 @@ From this diagram, you can deduce the following:
 
 * In the `depl_north` deployment, the `EXTN` Extract captures from `DBNORTH` (source PDB) and writes it to the local trail.
 
-* In the `depl_south` deployment, the trail is sent to the 
+* In the `depl_south` deployment, the `REPN` Replicat trail is sent to the 
 * The Replicat `REPS` process on `depl_west`, replicates to the `DBWEST` database.  
 
 * The Extract process, `EXTW`, in `depl_west` captures the replicated data and writes it to the local trail.
