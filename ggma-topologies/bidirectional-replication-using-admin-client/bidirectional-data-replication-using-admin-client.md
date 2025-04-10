@@ -129,12 +129,15 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       </copy>
       ```
 
-  5. Connect to the `depl_south` deployment to update the Extract (EXTS.prm) and Replicat (REPS.prm) parameter files.
+  5. Connect to the `depl_south` deployment to update the Extract (`EXTS.prm`) and Replicat (`REPS.prm`) parameter files.
       
       ```
         <copy>
+         
           CONNECT https://south:9101 deployment depl_south as ggma password GGma_23ai ! 
+        
         </copy>
+      
       ```
 
   6. Edit the parameter files for Extract (`EXTS`) and Replicat (`REPS`) processes using the EDIT PARAMS command.
