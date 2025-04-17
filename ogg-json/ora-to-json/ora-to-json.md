@@ -24,8 +24,8 @@ This lab assumes you have:
 - You have completed:
     - Lab: Initialize Environment
 
-## Task 1: Create JSON relational duality views
-1.  Open a terminal and create a ***JSON table*** using below snipet.
+## Task 1: Prepare the database for Oracle GoldenGate 
+1.  Open a terminal and enter the following command to create a **JSON table**:
 
     ```
     <copy>sqlplus / as sysdba << EOF 
@@ -70,7 +70,7 @@ This lab assumes you have:
     ![json-table-create-output](./images/json-table-create-output.png " ")
 
 
-2. Create a JSON relational duality view from the below snipet.
+2. Enter the following command to create a JSON relational duality view:
 
     ```
     <copy>sqlplus / as sysdba << EOF 
@@ -138,9 +138,8 @@ This lab assumes you have:
     ```
     ![json-view-create-commad](./images/json-view-create-commad.png " ")
     ![json-view-create-output](./images/json-view-create-output.png " ")
-## Task 2: Preparing the database for Oracle GoldenGate
 
-1. Assigning privileges for Oracle GoldenGate for Oracle.
+3. Enter the following command to assign privileges for Oracle GoldenGate:
 
 
     ```
@@ -162,81 +161,66 @@ This lab assumes you have:
 
   ![gg-user-grants](./images/gg-user-grants.png " ")
 
-## Task 3: Enable table-level supplemental logging for JSON Relational Duality Views and/or JSON Collection
+## Task 2: Enable table-level supplemental logging
 
-1. Login to GoldenGate Administration Service page from the below URL by passing username as ***oggadmin*** and a password as ***oggadmin*** and Click **Sign In**.
-  [http://localhost:16001](http://localhost:16001) 
+1. In a new browser window, open  [http://localhost:16001](http://localhost:16001). 
+2. On the GoldenGate Administration Service, enter **oggadmin** for Username and the password you provided when you created the deployment, and then click **Sign In**.
   ![gg-login-page](./images/gg-login-page.png " ")
 
-2. On the welcome page, click on **DB Connections**, and connect to the source database ***sourcedb***.
+3. Open the navigation menu and then click **DB Connections**.
+4. Click **Connect to database sourcedb**.
   ![dblogin-source](./images/dblogin-source.png " ")
 
-3. Click on the **Trandata** and then Click on the **Add TRANDATA** (***+*** plus icon) to get the add trandata wizard.
+5. Next to **TRANDATA Information**, click **Add TRANDATA** (plus icon)..
   ![dblogin-add-trandata](./images/dblogin-add-trandata.png " ")
 
-4. On ***Trandata*** page, add schema trandata for the schema ***JSON_USER*** and choose the supplemental logging option as shown below and click ***Submit***.
+6. On the Trandata page, complete the following fields, and then click Submit: 
+- For Schema Name, enter JSON_USER. 
+- Under Supplemental Logging Options, select Scheduling Columns and All Columns.
   ![add-trandata](./images/add-trandata.png " ")
-
-5. To validate the supplemental logging for the schema ***JSON_USER*** follow below the instructions.
-  - Select radio button as ***Schema***
-  - Type schema name as ***JSON_USER*** and press ***Enter*** on key board.
+“To verify, enter JSON_USER and then click Search.”
   ![add-trandata-info](./images/home-page.png " ")
 
-## Task 4: Create an Extract and trail file in Oracle GoldenGate.
-1. Click on the ***Home*** button to land on the welcome page to start the extract creation.
-  ![switch to Welcome Page](./images/home-pageadd-trandata-info.png " ")
-2. On welcome page, Click on the **Add Extract** (***+*** plus icon) to get the extract creation wizard.
 
-    Extract is a process that runs agains the source data source connection and extracts, or captures, data. Learn to add an Extract for Oracle Database, OCI Autonomous Databases, Oracle Exadata, and Amazon RDS for Oracle technologies.
-
+## Task 3: Create an Extract and trail file in Oracle GoldenGate.
+1. In the GoldenGate Deployment console, select **Administration Service**, and then on the Administration Service Home page, click **Add Extract** (plus icon).
   ![add-extract](./images/add-extract.png " ")
-3. On extract information page, follow the below instruction.
-  - Choose radio button ***Integrated Extract*** as **Extract type**.
-  - Type the **Process Name** as ***EXTSRC***.
-  - Click ***Next*** to get the **Extract Options** tab.
+2. The Add Extract panel consists of five pages. On the Extract Information page, complete the following fields, and then click Next:
+- For Extract Type, select Integrated Extract.
+- For Process Name, enter a name for this Extract process, such as EXTSRC.
   ![extract-name](./images/extract-name.png " ")
-
-4. On the **Extract Options** tab, choose the source credential and extract trail as instructed below.
-  - select **Domain** as ***<copy>OracleGoldenGate</copy>***
-  - select **Alias** as ***sourcedb***
-  - Type **Extract Trail Name** as ***et***
-  - Click ***Next*** to get the **Extract Options** tab.
+3. On the Extract Options page, complete the following fields, and then click Next:
+- For Domain, select OracleGoldenGate from the dropdown.
+- For Alias, select sourcedb from the dropdown.
+- For Trail Name, enter a two-character name for the Trail file, such as ET.
   ![extract-options](./images/extract-options.png " ")
-
-5. On Managed Options, choose **Profile Name** as ***Default*** and click ***Next***.
+4. On the Managed Options page, leave the fields as they are, and click Next. 
   ![managed-options](./images/managed-options.png " ")
-
-6. Extract has created successfully 
-
-7. Click ***Start*** button to start the extract.
+5. In the Parameter File page, click Create. 
+6. In the EXTSRC Action menu, select Start. In the Confirm Action dialog, click OK.
   ![start-extract](./images/start-extract.png " ")
-
-8. Extract ***EXTSRC*** up and running.
   ![extract-running](./images/extract-running.png " ")
 
-## Task 5: Add a Data Stream from Oracle GoldenGate Distribution Service.
-1. Switch to **Distribution Service** to create a Data Streams.
+## Task 4: Add a Data Stream.
 
-2. On welcome page, Click on the **Add Data Stream** (***+*** plus icon) to get the Data Streams creation wizard.
+1. In the GoldenGate Deployment console, select **Distribution Service**, and then on the Distribution Service Home page, click **Add Data Stream** (plus icon).
   ![add-data-stream](./images/add-data-stream.png " ")
-3. On **Data Stream Information** tab, enter **Name** as ***JSON_DEMO*** and click ***Next***
+2. The Add Data Stream panel consists of three pages. On the Data Stream Information page, for Name enter **JSON_DEMO**, and then click **Next**.
   ![data-stream-info](./images/data-stream-info.png " ")
-4. On **Source Options**,enter **Trail Name** as ***et*** and click ***Next*** 
+3. On the Source Options page, for **Trail Name** enter **et**, and then click **Next**.
   ![data-stream-source-options](./images/data-stream-source-options.png " ")
-5.On **Filtering Options**, click on ***Create Data Stream***
+4. On the Filtering Options page, click **Create Data Stream**. You return to the Distribution Service page, where you can find your newly created **JSON_DEMO** Data Stream after a few moments.
   ![data-stream-filter-options](./images/data-stream-filter-options.png " ")
-6. You will be returned to the Distribution Service home page where the Data Stream ***JSON_DEMO*** is listed.
   ![data-stream-created-successfully](./images/data-stream-created-successfully.png " ")
-  ![data-stream-running](./images/data-stream-running.png " ")
 
-## Task 6: Consume the Change Data from the Data Stream.
-1. Create a YAML file on a terminal to copy the YAML content of the Data Stream.
+## Task 5: Consume the Change Data from the Data Stream.
+1. Enter the following command to create a YAML file:
     ```
     <copy>vi ~/websocket-client-template/demo/lab.yaml</copy>
     ```
     ![data-stream-yaml-copy.](./images/data-stream-yaml-copy-from-browser.png " ")
     ![data-stream-yaml-paste](./images/data-stream-yaml-paste.png " ")
-2.The YAML document can then be used to generate the client-side code using @asyncapi/generator
+2. Enter the following command to generate the client-side code using @asyncapi/generator:
     ```
     <copy>
     cd ~/websocket-client-template/
@@ -244,7 +228,7 @@ This lab assumes you have:
     </copy>
     ```
     ![asynch-command](./images/asynch-command.png " ")
-3. Go to the generated output folder, and install needed packages for client
+3. Enter the following command to install a package:
     ```
     <copy>
     cd ~/websocket-client-template/output
@@ -252,7 +236,7 @@ This lab assumes you have:
     </copy>
     ```
     ![asynch-output-npm](./images/asynch-output-npm.png " ")
-4. Insert change data to the document for testing.
+4. Enter the following command to insert Change Data to the document:
     ```
     <copy>
     sqlplus / as sysdba << EOF 
@@ -266,9 +250,10 @@ This lab assumes you have:
     ```
     ![load-the-data](./images/load-the-data.png " ")
     ![load-the-data-execution-completed](./images/load-the-data-execution-completed.png " ")
-5. Open an Administration Service on browser to validata the change data capture on Extract ***EXTSRC*** 
+5. In the GoldenGate Deployment console, select **Administration Service**, then on the **EXTSRC** Extract page, click Statistics. Validate that each row displays 3 inserts. 
   ![extract-stats](./images/extract-stats.png " ")
-6. Start the client on termminal by accessing username as ***oggadmin***,password as ***oggadmin*** and press ***enter***
+6. Enter the following command on terminal to start the client:
+o	Note: Enter **oggadmin** for Username and the password you provided when you created the deployment.
     ```
     <copy>
     node client.js
