@@ -56,6 +56,14 @@ The objective of this tutorial is to:
 
 This lab assumes that you have completed the tasks in **initial-setup**.
 
+### Tip
+
+If you see the error ORA-00257 Archiver Error, then run the following script to remove redundant archive log files from the system and run the application seamlessly:
+
+1. Navigate to the `scripts/misc' directory.
+2. Run the `rman_delete_archivelog.sh` script. 
+
+After you run this script, you would be able to continue to run the scripts successfully.
 
 ## Task 1: Set Up Oracle GoldenGate Processes Across Multiple Deployments on Different Databases
 
