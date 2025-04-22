@@ -49,17 +49,31 @@ The objective of this tutorial is to:
 
 This lab assumes that you have completed the tasks in **initial-setup**.
 
-### Tip
-
-If you see the error ORA-00257 Archiver Error, then run the following script to remove redundant archive log files from the system and run the application seamlessly:
-
-1. Navigate to the `scripts/misc' directory.
-2. Run the `rman_delete_archivelog.sh` script. 
-
-After you run this script, you would be able to continue to run the scripts successfully.
-
 ## Task 1: Set Up Oracle GoldenGate Processes Across Multiple Deployments on Different Databases
 
    To set up the Extract, Replicat, Distribution Path, and Receiver Path processes across deployments, follow these steps:
 
    1. Navigate to the `scripts/UseCases/03_Cascading/AdminClient` directory. You will see the script `add_replication_cascading_admin-client.sh`.
+
+   2. Run this script using the following command:
+
+      ```
+        <copy>
+           ./add_replication_cascading_admin-client.sh
+   
+        </copy>
+      ```
+      This script automatically creates the Extract, Replicat, DISTPATH processes for all three deployments. The following processes are created on the `depl_north`, `depl_south`, and `depl_west` deployments:
+
+      * On `depl_north`:
+         * `EXTN` Extract process
+         * `DPNS` DISTPATH process
+      * On `depl_south`:
+         * `EXTS` Extract process
+         * `REPN` Replicat process
+         * `DPSW` DISTPATH
+      * On `depl_west`:
+        * `REPS` Replicat process 
+   3. Check that the processes are running successfully, using the following commands:
+
+      a.  

@@ -66,13 +66,13 @@ After you run this script, you would be able to continue to run the scripts succ
 
    2. Run this script using the following command:
 
-   ```
-    <copy>
-        ./add_replication_cascading_curl.sh`
+      ```
+        <copy>
+           ./add_replication_cascading_curl.sh
    
-    </copy>
-   ```
-   This script automatically creates the Extract, Replicat, DISTPATH processes for all three deployments.
+        </copy>
+      ```
+      This script automatically creates the Extract, Replicat, DISTPATH processes for all three deployments.
 
    3. Now, let's test whether the processes are up and running in these deployments. 
 
