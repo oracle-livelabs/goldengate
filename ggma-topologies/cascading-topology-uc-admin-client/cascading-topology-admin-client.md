@@ -76,4 +76,34 @@ This lab assumes that you have completed the tasks in **initial-setup**.
         * `REPS` Replicat process 
    3. Check that the processes are running successfully, using the following commands:
 
-      a.  
+      a. Connect to `depl_north` deployment:
+          
+          ```
+          <copy>
+            CONNECT https://north:9001 DEPLOYMENT depl_north AS ggma PASSWORD GGma_23ai !
+   
+          </copy>
+          ```
+         
+      b. Run the `INFO ALL` and `INFO DISTPATH ALL` commands: 
+         
+         ```
+        <copy>
+         INFO ALL   
+        </copy>
+        ```
+        Make sure that the `EXTN` process is in `RUNNING` state.
+
+        ```
+        <copy>
+           INFO DISTPATH ALL   
+        </copy>
+        ```
+        Make sure that the `DPNS` process is in `RUNNING` state.
+      
+## Task 2: Add DML to DBNORTH PDBs
+
+    
+
+      
+      
