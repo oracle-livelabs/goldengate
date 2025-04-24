@@ -17,7 +17,7 @@ This lab assumes you have:
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 
-    - [ll-orm-mkplc-freetier.zip](https://objectstorage.us-phoenix-1.oraclecloud.com/p/LqTpvMPmUffeMtv0lf9IKZigMORW3EDgZBkkNp2GWjCS8d50XZf63qyx2jGU0n37/n/paasdevgg/b/LiveLab_GoldenGate/o/LL_OGG2ai_Toplogy)
+    - [ll-orm-mkplc-freetier.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/aanun53DXeWdo-nDsbl8sVzOpKqZk0_bky6tNc_U_ZwG7Gb8aAGjVm9LpmNZYHZG/n/c4u04/b/livelabsfiles/o/goldengate-library/ll-orm-23aigg-topologies-freetier.zip)
      
 2.  Save in the downloads folder.
 

@@ -30,14 +30,14 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes that you have completed the tasks in **initial-setup**
+This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>.
 
 
 ## Task 1: Set Up Data Replication
 
    Make sure you are in the `/scripts/UseCases/01_Reporting/` directory and perform the following tasks:
    
-   1. Move to the `REST-API` directory and list the content for this directory:
+   1. Navigate to the `REST-API` directory and list the content for this directory:
      
       ```
       <copy>
@@ -68,11 +68,11 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
    1. Run the `check_replication_reporting.sh` script
    
-       ```
-         <copy>
-            ./check_replication_reporting.sh
-         </copy>
-       ```
+      ```
+       <copy>
+         ./check_replication_reporting.sh
+       </copy>
+      ```
   
    2. You can view the report containing statistics for the committed transactions, as shown in the following image:
   
@@ -80,35 +80,47 @@ This lab assumes that you have completed the tasks in **initial-setup**
 
 ## Task 3: Check the Standard Reports in Oracle GoldenGate Microservices Web Interface
 
-The statistical reports that you viewed in Task 2 can also be viewed from the web interface. Following are the steps to access these reports from the web interface:
+   The statistical reports that you viewed in Task 2 can also be viewed from the web interface. Following are the steps to access these reports from the web interface:
 
-1. Open a web browser within the environment, and enter the URL of the Administration Service: 
+   1. Open a web browser within the environment, and enter the URL of the Administration Service: 
 
-      https://north:9001
+     `https://north:9001`
 
-2. Log in to the Administration Service using the credentials <b>ggma/GGma_23ai</b>.
-3. From the left-navigation pane, expand the list of Extracts and select the <b>EXTN</b> Extract.
-4. Click the <b>Statistics</b> option to view the report.
+   2. Log in to the Administration Service using the credentials <b>ggma/GGma_23ai</b>.
+   3. From the left-navigation pane, expand the list of Extracts and select the <b>EXTN</b> Extract.
+   4. Click the <b>Statistics</b> option to view the report.
 
 ## Task 4: Add DML to Source Database
 
-To check if the transactions committed to the source database are catpured correctly by the Extract, you can run the script `source_dml_operations.sh`. 
-This script is located in `/home/oracle/scripts/UseCases/01_Reporting` folder. 
+   To check if the transactions committed to the source database are catpured correctly by the Extract, you can run the script `source_dml_operations.sh`. 
+   
+   This script is located in `/home/oracle/scripts/UseCases/01_Reporting` folder. 
 
-Run this script as mentioned in the following steps to add DML to the DBNORTH database and check that Extract has captured DML operations:
+   Run this script as mentioned in the following steps to add DML to the `DBNORTH` database and check that Extract has captured DML operations:
 
-1. Navigate to the folder: `/home/oracle/scripts/UseCases/01_Reporting`
-2. Run the script to add DML operations on the source database:
-   ```
-   <copy>./ source_dml_operations.sh</copy>
-   ```
-3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
-4. After you checked that the DML was captured on the source database, run the script `source_target_select.sh`. This script contains queries that allow you to check the data on the target database (DBSOUTH). 
+   1. Navigate to the folder: `/home/oracle/scripts/UseCases/01_Reporting`
+   
+   2. Run the script to add DML operations on the source database:
+      
+      ```
+      <copy>
+         ./ source_dml_operations.sh
+      
+      </copy>
+      ```
+   3. Check the Extract statistics to view that the DML operations was captured using the steps given in Task 3.
+   
+   4. After you checked that the DML was captured on the source database, run the script `source_target_select.sh`. This script contains queries that allow you to check the data on the target database (`DBSOUTH`). 
+   
+      ```
+        <copy>
+     
+          ./source_target_select.sh
+      
+        </copy>
+      ```
+   This script displays the content of the `DBSOUTH` database tables `hr.employees`. You should be able to view the updated table columns that were updated on the source database `DBNORTH`.
 
-```
-<copy>./source_target_select.sh</copy>
-```
-This script displays the content of the DBSOUTH database tables <b>hr.employees</b>. You should be able to view the updated table columns that were updated on the source database DBNORTH.
 ## Task 5: Delete the Data Replication Setup
 
    It's essential to delete the setup to be able to test the same feature using the OBEY commands within the same environment. 
@@ -119,17 +131,19 @@ This script displays the content of the DBSOUTH database tables <b>hr.employees<
 
    1. Run the script `delete_replication_reporting_curl.sh`
    
-   ```
-     <copy>
-      ./delete_replication_reporting_curl.sh  
-     </copy>
-   ```
+       ```
+        <copy>
+        
+          ./delete_replication_reporting_curl.sh  
+       
+        </copy>
+      ```
    
    2. You can verify that the environment was deleted after you the following message on the screen:
    
-   ![Message displayed after the replication environment is deleted.](./images/rest-api_delete_reporting-curl.png " ")
+     ![Message displayed after the replication environment is deleted.](./images/rest-api_delete_reporting-curl.png " ")
 
-   After you delete the environment, you can use the script anytime to rebuild the environment or copy the script to apply in your own test environment.
+     After you delete the environment, you can use the script anytime to rebuild the environment or copy the script to apply in your own test environment.
 
    
 ## Learn More
@@ -142,4 +156,4 @@ This script displays the content of the DBSOUTH database tables <b>hr.employees<
 ## Acknowledgements
 * **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Volker Kuhr, Nick Wagner
-* **Last Updated By/Date** - Preeti Shukla, 2024
+* **Last Updated By/Date** - Preeti Shukla, 2025
