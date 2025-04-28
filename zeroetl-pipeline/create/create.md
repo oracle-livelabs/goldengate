@@ -49,17 +49,15 @@ In this lab, you will:
 
 10. For Traffic routing method, select **Dedicated endpoint**.
 
-11. Click **Create**.
+11. For **Subnet in &lt;compartment-name&gt;**, select **&lt;USER&gt;-COMPARTMENT-SUBNET-PRIVATE** from the dropdown. 
 
-    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-11-create-connection-gg-details.png)
+12. Click **Create**.
+
+    ![Source Database details](./images/01-12-create-connec-details.png)
 
     The connection becomes Active after a few minutes. You can proceed with the next task while service creates the connection.
 
-## Task 2: Unlock the GGADMIN user and enable supplemental logging for the source database
-
-[](include:02-unlock-source-ggadmin.md)
-
-## Task 3: Create the target connection and unlock the GGADMIN user
+## Task 2: Create the target connection
 
 Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) instance.
 
@@ -87,13 +85,13 @@ Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) i
 
 10. For Traffic routing method, select **Dedicated endpoint**.
 
-11. Click **Create**.
+11. For **Subnet in &lt;compartment-name&gt;**, select **&lt;USER&gt;-COMPARTMENT-SUBNET-PRIVATE** from the dropdown. 
 
-    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-11-create-connec-details.png)
+12. Click **Create**.
+
+    ![Target Database details](./images/02-12-create-connec-details.png)
 
     The source and target databases appear in the list of Connections. The connection becomes Active after a few minutes.
-
-12. Repeat Task 3, steps 1-6, to unlock the GGADMIN user for the TargetADW database.
 
 You may now **proceed to the next lab.**
 

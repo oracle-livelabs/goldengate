@@ -88,7 +88,9 @@ In this lab, you will:
 
     ![Start pipeline dialog](./images/04-02-start-pipeline-dialog.png)
 
-    The pipeline becomes Active after a few minutes. 
+3. On the pipeline's details page, select **Initialization**. The Initialization steps displays the current status of the pipeline steps. For each step, you can select **View details** from its **Actions** menu and review corresponding messages.
+
+    ![Initialization](./images/04-03-initialization.png)
 
 
 You may now **proceed to the next lab.**
