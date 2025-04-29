@@ -78,28 +78,31 @@ This lab assumes that you have completed the tasks in **initial-setup**.
 
       a. Connect to `depl_north` deployment:
           
-          ```
-          <copy>
-            CONNECT https://north:9001 DEPLOYMENT depl_north AS ggma PASSWORD GGma_23ai !
+         
+         <copy>
+          
+          CONNECT https://north:9001 DEPLOYMENT depl_north AS ggma PASSWORD GGma_23ai !
    
-          </copy>
-          ```
+         </copy>
+          
+         
          
       b. Run the `INFO ALL` and `INFO DISTPATH ALL` commands: 
          
-         ```
-        <copy>
-         INFO ALL   
-        </copy>
-        ```
-        Make sure that the `EXTN` process is in `RUNNING` state.
+         
+          <copy>
+            INFO ALL   
+          </copy>
+         
+        
+      Make sure that the `EXTN` process is in `RUNNING` state.
 
-        ```
-        <copy>
+          
+         <copy>
            INFO DISTPATH ALL   
-        </copy>
-        ```
-        Make sure that the `DPNS` process is in `RUNNING` state.
+         </copy>
+          
+      Make sure that the `DPNS` process is in `RUNNING` state.
       
 ## Task 2: Add DML to DBNORTH PDBs
 
