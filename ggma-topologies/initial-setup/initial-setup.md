@@ -32,17 +32,18 @@ The following table provides a snapshot of the available environment:
 | PDB Name   | DBNORTH | PDB login details: 
 |            |      |   Username/Password: sys/oracle4GG
 | PDB Name   | DBSOUTH | Login Details:  
-|            |       |   Username/Password: sys/oracle4GG
-Database Connections| | For DBNORTH: Username/Password: ggadmin@dbnorth/ggadmin 
-|                   | | For DBSOUTH Username/Password: ggadmin@dbsouth/ggadmin
+|            |        |   Username/Password: sys/oracle4GG
+| PDB Name   | DBWEST | Login Details: Username/Password: sys/oracle4GG
+Database Connections| For DBNORTH | Username/Password: ggadmin@dbnorth/ggadmin 
+|                   | For DBSOUTH | Username/Password: ggadmin@dbsouth/ggadmin
+|                   | For DBWEST  | Username/Password: ggadmin@dbwest/ggadmin
 |Oracle GoldenGate | Service Manager | Port: 9000 
-| ||Login Credentials:
 | | | Username/Password: ggma/GGma_23ai
-|Oracle GoldenGate | Deployment Name: depl_north | Port: 9000 to 9004 <br> </br> Login details: ggma/GGma_23ai 
-| | Deployment Name: depl_south | Port: : 9100 to 9104 <br> </br> Login details: ggma/GGma_23ai
-|
+|Oracle GoldenGate | Deployment Name: depl_north | Port: 9000 to 9004 <br> </br> Username/Password: ggma/GGma_23ai 
+| | Deployment Name: depl_south | Port: : 9100 to 9104 <br> </br> Username/Password: ggma/GGma_23ai
+| | Deployment Name: depl_west | Port: 9201 to 9204 <br></br> Username/Password: ggma/GGma_23ai
 
-To set up unidirectional replication, the CDB contains DBNORTH (source) and DBSOUTH (target) pluggable databases.  
+
 
 ### Prerequisites
 This lab contains the following tasks:
