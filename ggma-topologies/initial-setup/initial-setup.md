@@ -3,9 +3,9 @@
 ## Introduction
 The livelab environment set up includes the following:
 
-* A single database (free edition) with 2 PDBs.
+* A single database (free edition) with 3 PDBs.
 * One Oracle GoldenGate installation setup.
-* The Service Manager manages two deployments: North and South.
+* The Service Manager manages  deployments: North and South.
 * All services, including database, database listener, and Oracle GoldenGate instances, which start when you start the LiveLab environment and run the given scripts.
 * Scripts to set up complete data replication using cURL commands.
 * Scripts to set up complete data replication using OBEY commands.
@@ -18,11 +18,7 @@ The livelab environment set up includes the following:
 
 ### Lab Configuration
 
-This lab environment consists of 1 container database instance and two pluggable database instances. 
-
-The following diagram shows a standard unidirectional replication in Oracle GoldenGate. In the standard Oracle GoldenGate configuration, an Extract sends captured data using the Distribution Service over TCP/IP to a trail on the target system, where it is received by the Receiver Service and stored until processed by the Replicat.
-
-  ![MA Components and Replication Process](./images/data_replication.png " ")
+This lab environment consists of 1 container database instance and three pluggable database instances. 
 
 The following table provides a snapshot of the available environment:
 
@@ -30,12 +26,12 @@ The following table provides a snapshot of the available environment:
  -----------| ------- | -------------
 | Server Names      | NORTH | north.livelabs.oraclevcn.com
 |                   | SOUTH | south.livelabs.oraclevcn.com
-| Database Type     | Oracle Database 23.5 Free Edition | Contains 1 CDB and 2 PDBs
+| Database Type | Oracle Database 23.5 Free Edition | Contains 1 CDB and 2 PDBs
 | CDB Name   | FREE | CDB login details: 
 |            |      |    Username/Password: sys/oracle4GG
 | PDB Name   | DBNORTH | PDB login details: 
 |            |      |   Username/Password: sys/oracle4GG
-|PDB Name    | DBSOUTH | Login Details:  
+| PDB Name   | DBSOUTH | Login Details:  
 |            |       |   Username/Password: sys/oracle4GG
 Database Connections| | For DBNORTH: Username/Password: ggadmin@dbnorth/ggadmin 
 |                   | | For DBSOUTH Username/Password: ggadmin@dbsouth/ggadmin
