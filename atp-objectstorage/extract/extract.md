@@ -49,17 +49,21 @@ On the Deployment Details page, you can:
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name and the password, and then click **Sign In**.
 
+    ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin-23ai.png " ")
+
     > **Note:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
 
-    ![GoldenGate Deployment Console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin.png " ")
+    ![View Login info](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02a-view-login-info.png " ")
+
+    ![Terraform values](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02b-terraform-values.png " ")
 
 After you log in, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
 
-## Task 3: Add transaction data
+## Task 3: Add Trandata Information
 
 > **Note:** Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.
 
-1.  Open the navigation menu and then click **Configuration**.
+1.  Open the navigation menu and then click **DB Connections**.
 
     ![Administration Service navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-01-nav-config.png " ")
 
@@ -69,17 +73,17 @@ After you log in, you're brought to the GoldenGate deployment console home page.
 
 3.  Next to **TRANDATA Information** click **Add TRANDATA** (plus icon).
 
-    ![Add TRANDATA](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-03-trandata.png " ")
+    ![Add TRANDATA](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-03-trandata-23ai.png " ")
 
 4.  For **Schema Name**, enter `SRC_OCIGGLL`, and then click **Submit**.
 
-    ![Schema Name field populated with SRC_OCIGGLL](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-04-schema-name.png " ")
+    ![Schema Name field populated with SRC_OCIGGLL](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-04-schema-name-23ai.png " ")
 
 5.  To verify, click **Search TRANDATA**, and then enter `SRC_OCIGGLL` into the Search field and click **Search**.
 
-    ![Search icon highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-05-search.png " ")
+    ![Search icon highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-05-search-23ai.png " ")
 
-    ![SRC_OCIGGLL entered in search field and search results returned](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-05-trandata.png " ")
+    ![SRC_OCIGGLL entered in search field and search results returned](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-05-trandata-23ai.png " ")
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
@@ -87,31 +91,28 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 1.  On the GoldenGate Deployment Console Home page, click **Add Extract** (plus icon).
 
-    ![Click Add Extract](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-01-ggs-add-extract.png " ")
+    ![Click Add Extract](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-01-extracts-23ai.png " ")
 
-2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
+2.  The Add Extract panel consists of five pages. On the Extract Information page, complete the following fields, and then click **Next**:
 
-    ![Add Extract page with Integrated Extract highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-02-int-extract.png " ")
+    * For **Extract Type**, select **Integrated Extract**.
+    * For **Process Name**, enter a name for this Extract process, such as UAEXT.
 
-3.  For **Process Name**, enter UAEXT.
+    ![Extract Information page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-03-int-extract-23ai.png " ")
 
-4.  For **Trail Name**, enter E1.
+3. On the Extract Options page, complete the following fields, and then click Next:
 
-    ![Add Extract - Basic Information](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-04-ggs-basic-info.png " ")
+    * For **Domain**, select **OracleGoldenGate** from the dropdown.
+    * For **Alias**, select the Credential Alias for the source Autonomous Transaction Processing database.
+    * For **Trail Name**, enter a two-character name for the Trail file, such as E1.
 
-5.  Under **Source Database Credential**, for **Credential Domain**, select **OracleGoldenGate**.
+    ![Extract Options page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-06-extract-options-23ai.png " ")
 
-6.  For **Credential Alias**, select the **SourceATP**.
+4. On the Managed Options page, enable **Critical to deployment health**, and then click **Next**.
 
-    ![Add Extract - Source Database Credential](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-06-ggs-src-db-credential.png " ")
+    ![Managed Options page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-07-dephealth-23ai.png " ")
 
-7.  Under Managed Options, enable **Critical to deployment health**.
-
-    ![Critical to deployment health highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-07-dephealth.png " ")
-
-8.  Click **Next**.
-
-9.  On the Parameter File page, in the text area, add a new line to the existing text and add the following:
+5. In the Parameter File page, add a new line, paste the following to the text area, and then click **Create and Run**:
 
     ```
     <copy>-- Capture DDL operations for listed schema tables
@@ -137,17 +138,9 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
     table SRC_OCIGGLL.*;</copy>
     ```
 
-    ![Extract Parameter File](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-09-params.png " ")
+    ![Parameter Options page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-08-paramfile.png " ")
 
-10. Click **Create**. You're returned to the OCI GoldenGate Deployment Console Home page.
-
-11. In the UAEXT **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
-
-    ![Start Extract](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-11-ggs-start-extract.png " ")
-
-    The yellow exclamation point icon changes to a green checkmark.
-
-    ![Extract started](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-11-ggs-extract-started.png " ")
+    ![Extract started](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-10-uaext-running.png " ")
 
 ## Task 5: Create a user on the target deployment
 
@@ -165,45 +158,41 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     > **Note:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
 
-5.  In the BDinstance deployment console, open the navigation menu, and then click **Administrator**.
+5.  In the BDinstance deployment console, open the navigation menu, and then click **User Administration**.
 
     ![BDinstance deployment console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-05-adminstrator.png " ")
 
 6.  On the Users page, click **Add New User** (plus icon).
 
-7.  For Username, enter `dpuser`.
+    ![Add new user](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/05-06-add-new-user-23ai.png " ")
 
-8.  For Role, select **Administrator**.
+7. In the Create new User panel, complete the following fields, and then click **Submit**:
 
-9.  For Password and Verify Password, enter a password, and take note of it.
+    * For the Authenticated By dropdown, select **Password**.
+    * For the **Role** dropdown, select **Administrator**.
+    * For **Username**, enter **dpuser**.
+    * For **Password**, paste the Global Password from the Reservation Information. Verify the password.
 
-10. Click **Submit**.
-
-    ![Users page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-10-newuser.png " ")
+    ![Create new User panel](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/05-07-create-new-user-23ai.png " ")
 
 ## Task 6: Create a credential on the source deployment for the dpuser
 
 >**Note**: Complete the following steps in the source **ATPDeployment** deployment console (ATPinstance).
 
-1.  In the source ATPinstance deployment console, click **Administration Service**, open the navigation menu, and then select **Configuration**.  
-
-    ![Administration Service navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-01-navmenu.png " ")
+1.  In the source ATPinstance deployment console, click **Administration Service**, open the navigation menu, and then select **DB Connections**.  
 
 2.  On the Credentials page, click Add Credential (plus icon).
 
-    ![Credentials page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-02-addcredential.png " ")
+    ![Credentials page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-02-add-credential-23ai.png " ")
 
-3.  For Credential Domain, enter `ggs2objstore`.
+3. In the Credentials panel, complete the following fields, and then click **Submit**:
 
-4.  For Credential Alias, enter `ocinetwork`.
+    * For Credential Domain, enter **ggs2objstore**.
+    * For Credential Alias, enter **ocinetwork**.
+    * For User ID, enter **dpuser**.
+    * For **Password**, enter a password. Verify the password.
 
-5.  For User ID, enter `dpuser`.
-
-6.  For Password and Verify Password, enter the password created in Task 2 Step 9.
-
-7.  Click **Submit**.
-
-    ![New credential](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-07-usercredentials.png " ")
+    ![Create new User panel](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-03-credentials-panel-23ai.png " ")
 
 ## Task 7: Add and run a Distribution Path in the source deployment console
 
@@ -213,33 +202,54 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
 1.  In the source ATPinstance deployment console, click **Distribution Service**, and then click **Add Path** (plus icon).
 
-    ![Distribution Service Overview](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-01-addpath.png " ")
+    ![Distribution Service Overview](images/07-01-addpath.png " ")
 
-2.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, `GGStoObjStore`.
+2. The Add Path panel consists of seven pages. On the Path Information page, for Name, enter **GGStoObjStore**, and then click **Next**.
 
-3.  (Optional) For **Description**, describe the purpose of this Path.
+    ![Distribution Service Overview](images/07-02-path-info.png " ")
 
-4.  Click **Source**, and then select the Extract created in STEP 1 above. For example, select **UAEXT**.
+3. On the Source Options page, complete the following fields, and then click **Next**:
 
-5.  Click **Trail Name**, and then select the trail file created in STEP 1 above, to send to OCI GoldenGate. For example, select **E1**.
+    * For Source Extract, select **UAEXT** from the dropdown.
+    * For Trail Name, **E1** should automatically populate the field.
 
-6.  For **Target Host**, enter the BDinstance hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
+    ![Source Options page](./images/07-03-source-opts.png " ")
 
-    >**Note:** You can copy the host from the browser address bar of target BDinstance deployment console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).
+4. On the Target Options page, complete the following fields, and then click **Next**:
 
-  ![Deployment details](./images/07-06-deployment-details.png " ")
+    * For Target Host, enter the BDinstance hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
+    
+    > **Note:** You can copy the host from the browser address bar of target BDinstance deployment console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).
 
-8.  For **Port Number**, enter `443`.
+    ![Deployment details](./images/07-04a-deployment-details.png " ")
 
-9.  For **Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.
+    * For Port Number, enter **443**.
+    * For Trail Name, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.
+    * For Alias, enter the alias name you created in Oracle GoldenGate. For example, **ocinetwork**.
 
-10. For **Target Domain**, enter the domain name you created in Oracle GoldenGate. For example, **ggs2objstore**.
+    ![Target Options page](images/07-04b-target-opts.png " ")
 
-11. For **Target Alias**, enter the alias name you created in Oracle GoldenGate. For example, **ocinetwork**.
+5. On the Advanced Options page, leave the fields as they are, and click **Next**.
 
-    ![Distribution path options](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-11-distpath.png " ")
+    ![Advanced Options page](images/07-05-adv-opts.png " ")
 
-12. Click **Create and Run**. The yellow exclamation mark icon becomes a green checkmark when the Distribution Path starts successfully.
+6. On the Filtering Options page, leave the fields as they are, and click **Next**.
+
+    ![Filtering Options page](images/07-06-filt-opts.png " ")
+
+7. On the Managed Options page, leave the fields as they are, and click **Create Path**.
+
+    ![Filtering Options page](images/07-07-managed-opts.png " ")
+
+8. On the left hand navigation menu, click **Distribution Paths**.
+
+9. In the GGStoObjStore **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
+
+    ![Start Distribution Path](images/07-09a-start-dp.png " ")
+
+    The **Stopped** grey status icon becomes a **Running** green checkmark when the Distribution Path starts successfully.
+
+    ![Running Distribution Path](images/07-09b-running-dp.png " ")
 
 ## Task 8: Verify Receiver Path creation
 
@@ -249,9 +259,9 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
 1.  In the target BDinstance deployment console, click **Receiver Service**.
 
-    ![Target deployment console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/05-01-bdinstance.png " ")
+2.  On the Receiver Service Path page, verify that the path you created in previous tasks.
 
-2.  On the Receiver Service Path page, verify that the graph shows the path you created in Task 4.
+    ![BDinstance Receiver Service](images/08-02-receiver-service.png " ")
 
 ## Task 9: Add and run a Replicat
 
@@ -263,36 +273,33 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
     ![BDinstance Administration Service](images/09-02-add-replicat.png " ")
 
-3.  On the Add Replicat page, under Replicat Type, select **Classic Replicat**, and then click **Next**.
+3.  On the Replicat Information page, complete the following fields, and then click **Next**:
 
-    ![Add Replicat](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-03-replicattype.png " ")
+    * For Replicat Type, select **Nonintegrated Replicat**
+    * For Process Name, enter **REP**.
 
-4.  On the the Replicat Options page, enter a `REP` for Name.
+    ![Replicat Information page](images/09-03-add-replicat.png " ")
 
-5.  For Trail Name, enter `T1`.
+4. On the Replicat Options page, complete the following fields, and then click **Next**:
 
-6.  For Target, select **OCI Object Storage**.
+    * For Replicat Trail Name, enter **T1**.
+    * For Domain, select **OCI Object Storage**.
+    * For Alias, select **TargetObjStore**.
+    * For Checkpoint Table, select "SRCMIRROR_OCIGGLL"."CHECKTABLE".
 
-7.  For Available Aliases, select **TargetObjStore**.
+    ![Replicat Options page](images/09-04-replicat-opts.png " ")
 
-8.  Click **Next**.
+5. On the Managed Options page, leave the fields as they are, and click **Next**.
 
-    ![Replicat Options](images/09-08-repoptions.png " ")
+    ![Managed Options page](images/09-05-managed-opts.png " ")
 
-9.  On the Parameter Files page, change `MAP *.*, TARGET *.*;` to `MAP SRC_OCIGGLL.*, TARGET *.*;` and then click **Next**.
+6. On the Parameter Files page, change `MAP *.*, TARGET *.*;` to `MAP SRC_OCIGGLL.*, TARGET *.*;`, and then click **Create and Run**.
 
-    ![Replicat Options](images/09-09-param-file.png " ")
+    ![Parameter Files page](images/09-06-param-file.png " ")
 
-10. On the Properties File page, locate `gg.eventhandler.oci.compartment`, and then replace the placeholder with your compartment's OCID.
+    The **Stopped** grey status icon becomes a **Running** green checkmark when the Distribution Path starts successfully.
 
-  >**NOTE:** If running this lab in a Sandbox environment, you can find your compartment OCID in the View Login Info panel. You can also copy the compartment OCID from the Compartments page in the Oracle Cloud console. Enter `Compartments` into the search bar, or locate **Compartments** in the Oracle Cloud console navigation menu under **Identity & Security**.
-
-11. Locate `gg.eventhandler.oci.bucketMappingTemplate`, and then replace the placeholder with a name for your target bucket.
-
-    ![Replicat Properties File](images/06-10-properties.png " ")
-
-12. Click **Create and Run**. The yellow exclamation mark changes to a green check when the Replicat process starts successfully.
-
+    ![Running Replicat](images/09-07-running-rep.png " ")
 
 In this lab, you:
 * Added transaction data to the source database
@@ -313,4 +320,4 @@ In this lab, you:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Deniz Sendil, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, April 2024
+* **Last Updated By/Date** - Katherine Wardhana, December 2024

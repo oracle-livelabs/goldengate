@@ -45,9 +45,9 @@ Before importing data to the target database, create a credential in the target 
     ```
     <copy>BEGIN
     DBMS_CLOUD.CREATE_CREDENTIAL(
-      credential_name => 'ADB_OBJECTSTORE',
-      username => '<user-name>',
-      password => '<token>'
+    credential_name => 'ADB_OBJECTSTORE',
+    username => '<identity-domain>/<user-name>',
+    password => '<token>'
     );
     END;
     </copy>
@@ -227,4 +227,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, June 2024
+* **Last Updated By/Date** - Katherine Wardhana, October 2024
