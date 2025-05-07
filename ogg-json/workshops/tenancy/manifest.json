@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams",
+    "workshoptitle": "Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -9,7 +9,7 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "The Introduction to replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams.",
+            "description": "The Introduction to replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams.",
             "filename": "../../introduction/introduction.md"
         },
         {
@@ -20,14 +20,15 @@
         {
             "title": "Lab 1: Provision an Instance",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../prepare-setup/prepare-setup.md"
+          },
+          {
+            "title": "Lab 2: Setp up the Environment",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 2",
             "filename": "../../provision/provision.md"
-        },
+          },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
-        },
-        {
-            "title": "Lab 3: Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams",
+            "title": "Lab 3: Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams",
             "filename": "../../ora-to-json/ora-to-json.md"
         },
         {

@@ -39,6 +39,6 @@ You may now proceed to the next lab.
 
 
 ## Acknowledgements
-* **Author** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team
-* **Contributors** - Madhu Kumar S , Deniz Sendil
-* **Last Updated By/Date** - Madhu Kumar S, AppDev and Integration, Bangalore Tech Team, Febuary 2025
+* **Author** - Madhu Kumar S, Senior Cloud Engineer,  NACE CES Delivery
+* **Contributors** -  Madhu Kumar S, Deniz Sendil, Katherine Wardhana
+* **Last Updated By/Date** - Madhu Kumar S, Senior Cloud Engineer,  NACE CES Delivery, May 2025

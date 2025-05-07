@@ -1,8 +1,8 @@
-#  Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams
+#  Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams
 
 ## Introduction
 
-This lab will demonstrate how to  ***Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams Data Streams*** 
+This lab will demonstrate how to  ***Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams*** 
 
 In this lab, we will load data in the Oracle Database schema ***JSON_USER***  of Pluggable Database ***PDB***. GG extract process ***EXTSRC*** will capture the changes from Oracle Database and write them to the local trail file ***et***. From the Distribution Service, **Data Stream** created to consume the trail file ***et***. The YAML document used to generate the client-side code using @asyncapi/generator. 
 
@@ -164,8 +164,10 @@ This lab assumes you have:
 ## Task 2: Enable table-level supplemental logging
 
 1. In a new browser window, open  [http://localhost:16001](http://localhost:16001). 
-2. On the GoldenGate Administration Service, enter **oggadmin** for Username and the password you provided when you created the deployment, and then click **Sign In**.
-  ![gg-login-page](./images/gg-login-page.png " ")
+2. On the GoldenGate Administration Service, enter **oggadmin** for Username and the password, and then click **Sign In**.
+    >**Note:** password will be saved in location ***/home/oracle/password.txt***.
+
+    ![gg-login-page](./images/gg-login-page.png " ")
 
 3. Open the navigation menu and then click **DB Connections**.
 4. Click **Connect to database sourcedb**.
@@ -178,26 +180,28 @@ This lab assumes you have:
 - For Schema Name, enter JSON_USER. 
 - Under Supplemental Logging Options, select Scheduling Columns and All Columns.
   ![add-trandata](./images/add-trandata.png " ")
-“To verify, enter JSON_USER and then click Search.”
-  ![add-trandata-info](./images/home-page.png " ")
+    >**Note:** “To verify, enter JSON_USER and then click Search.”
+
+    ![add-trandata-info](./images/home-page.png " ")
 
 
 ## Task 3: Create an Extract and trail file in Oracle GoldenGate.
 1. In the GoldenGate Deployment console, select **Administration Service**, and then on the Administration Service Home page, click **Add Extract** (plus icon).
   ![add-extract](./images/add-extract.png " ")
-2. The Add Extract panel consists of five pages. On the Extract Information page, complete the following fields, and then click Next:
-- For Extract Type, select Integrated Extract.
-- For Process Name, enter a name for this Extract process, such as EXTSRC.
-  ![extract-name](./images/extract-name.png " ")
-3. On the Extract Options page, complete the following fields, and then click Next:
-- For Domain, select OracleGoldenGate from the dropdown.
-- For Alias, select sourcedb from the dropdown.
-- For Trail Name, enter a two-character name for the Trail file, such as ET.
-  ![extract-options](./images/extract-options.png " ")
-4. On the Managed Options page, leave the fields as they are, and click Next. 
+2. The Add Extract panel consists of five pages. On the Extract Information page, complete the following fields, and then click **Next**:
+- For **Extract Type**, select **Integrated Extract**.
+- For **Process Name**, enter a name for this Extract process, such as **EXTSRC**.
+![extract-name](./images/extract-name.png " ")
+
+ 3. On the Extract Options page, complete the following fields, and then click **Next**:
+- For **Domain**, select OracleGoldenGate from the dropdown.
+- For **Alias**, select sourcedb from the dropdown.
+- For **Trail Name**, enter a two-character name for the Trail file, such as **ET**.
+![extract-options](./images/extract-options.png " ")
+4. On the Managed Options page, leave the fields as they are, and click **Next**. 
   ![managed-options](./images/managed-options.png " ")
-5. In the Parameter File page, click Create. 
-6. In the EXTSRC Action menu, select Start. In the Confirm Action dialog, click OK.
+5. In the Parameter File page, click **Create**. 
+6. In the **EXTSRC** Action menu, select **Start**. In the Confirm Action dialog, click **OK**.
   ![start-extract](./images/start-extract.png " ")
   ![extract-running](./images/extract-running.png " ")
 
@@ -253,7 +257,9 @@ This lab assumes you have:
 5. In the GoldenGate Deployment console, select **Administration Service**, then on the **EXTSRC** Extract page, click Statistics. Validate that each row displays 3 inserts. 
   ![extract-stats](./images/extract-stats.png " ")
 6. Enter the following command on terminal to start the client:
-o	Note: Enter **oggadmin** for Username and the password you provided when you created the deployment.
+  > **Note:**  Enter **oggadmin** for Username and the password 
+    password will be saved in location ***/home/oracle/password.txt***.
+
     ```
     <copy>
     node client.js
@@ -263,7 +269,7 @@ o	Note: Enter **oggadmin** for Username and the password you provided when you c
     ![json-data](./images/json-data.png " ")
 
 ## Summary
-To summarize, you loaded data in the Oracle Database ***JSON_USER*** schema of Pluggable Database ***PDB***. The GG extract process ***EXTSRC*** captured the changes from the Oracle Database and wrote them to the local trail file ***et***. From the Distribution Service, Data Streams ***JSON_DEMO*** will consume the trail file  ***et***.
+To summarize, you loaded data in the Oracle Database **JSON\_USER** schema of Pluggable Database **PDB**. The GG extract process **EXTSRC** captured the changes from the Oracle Database and wrote them to the local trail file **et**. From the Distribution Service, Data Streams ***JSON_DEMO*** will consume the trail file  ***et***.
 
 You have completed the lab.
 
@@ -275,6 +281,6 @@ You have completed the lab.
 
 
 ## Acknowledgements
-* **Author** - Madhu Kumar S, Title, Group>
-* **Contributors** -  Madhu Kumar S, Deniz Sendil
-* **Last Updated By/Date** - Madhu Kumar S, February 2025>
+* **Author** - Madhu Kumar S, Senior Cloud Engineer,  NACE CES Delivery
+* **Contributors** -  Madhu Kumar S, Deniz Sendil, Katherine Wardhana
+* **Last Updated By/Date** - Madhu Kumar S, Senior Cloud Engineer,  NACE CES Delivery, May 2025
