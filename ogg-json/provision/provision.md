@@ -28,7 +28,7 @@ Your options are:
 - Task 1B: Create Stack:  **Compute Only**
 
 ## Task 1A: Create Stack:  Compute + Networking
-1. Identify the ORM stack zip file downloaded in *Task 1*
+1. Identify the ORM stack zip file downloaded in *Lab Prepare Setup Task 1*
 2. Log in to Oracle Cloud account
 3. Open up the hamburger menu in the top left corner.  Click **Developer Services**, and choose **Resource Manager > Stacks**. Choose the compartment in which you would like to install the stack. Click **Create Stack**.
 
@@ -98,7 +98,7 @@ If you just completed Task 2A, please proceed to Task 3.  If you have an existin
 
   >**Note:** We recommend letting our stack create the VCN to reduce the potential for errors.
 
-1.  Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
+1.  Identify the ORM stack zip file downloaded in *Lab Prepare Setup Task 1*
 2.  Log in to Oracle Cloud
 3.  Open up the hamburger menu in the top left corner.  Click **Developer Services**, and choose **Resource Manager > Stacks**. Choose the compartment in which you would like to install the stack. Click **Create Stack**.
 

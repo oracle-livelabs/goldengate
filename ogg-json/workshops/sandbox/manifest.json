@@ -13,14 +13,13 @@
             "title": "Introduction",
             "description": "The Introduction to Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams.",
             "filename": "../../introduction/introduction.md"
-        },
-        {
-            "title": "Lab 1: Provision an Instance",
+        }, {
+            "title": "Lab 1: Prepare Setup",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../prepare-setup/prepare-setup.md"
           },
           {
-            "title": "Lab 2: Setp up the Environment",
+            "title": "Lab 2: Environment Setup",
             "description": "Labs that follow the introduction are numbered, starting with Lab 2",
             "filename": "../../provision/provision.md"
           },
