@@ -24,7 +24,7 @@
           {
             "title": "Lab 2: Environment Setup",
             "description": "Labs that follow the introduction are numbered, starting with Lab 2",
-            "filename": "../../provision/provision.md"
+            "filename": "../../environment-setup/environment-setup.md"
           },
         {
             "title": "Lab 3: Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams",
