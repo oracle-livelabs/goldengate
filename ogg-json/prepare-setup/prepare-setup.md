@@ -1,4 +1,4 @@
-# Prepare Setup
+# Lab 1: Environment Setup
 
 ## Introduction
 This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to set up the resource needed to run this workshop.
@@ -13,94 +13,79 @@ This lab will show you how to download the Oracle Resource Manager (ORM) stack z
 This lab assumes you have:
 - An Oracle Cloud account
 
-## Task 1: Download Oracle Resource Manager (ORM) stack zip file
+## Task 1: Download the ORM stack
 
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
+1.  Use the following link to download the ORM stack:
 
     - [ggma-datastreams-mkplc-freetier.zip]()
+
+## Task 1A: Create Stack:  Compute + Networking
+
+1. In the Oracle Cloud navigation menu, select **Developer Services**, and then **Stacks**.
+2. On the Stacks page, under **List scope**, select your compartment from the **Compartment** dropdown.
+3. Click **Create Stack**.
+
+  ![Select Stacks](./images/developer-resmgr-stacks.png " ")
+
+  ![Create Stack](./images/create-stack.png " ")
+
+4. The Create Stack panel consists of three pages. On the Stack information page, for Choose the origin of the Terraform configuration, select **My configuration**.
+
+5. For Stack configuration, select **.zip file**, click **Browse**, and select the **ggma-datastreams-mkplc-freetier.zip** file from your download directory.
+
+6. Click **Next**.
+  ![Select zip file](./images/select-zip.png " ")
+
+7. On the Configure variables page, for **Instance Count**, enter **1**.
+8. For **Select an availability domain**, select a domain from the dropdown.
+9. For **Need Remote Access via SSH**:
+
+    a. Unselect if you only want Remote Desktop access.
+
+    b. Select **Need Remote Access via SSH** and unselect **Auto Generate SSH Key Pair** to enable remote access via SSH protocol, then provide the SSH public key(s).
+
+    - i.  (Optional) For **SSH Public Key**, select **Paste SSH Keys**, and paste the SSH Key, or select  **Choose SSH Key Files**, click **Browse**, and upload an SSH Key File.'
+
+    >**Note:**  For more information on how to create an SSH Key, view [Generate SSH Key](https://oracle-livelabs.github.io/common/labs/generate-ssh-key/).
+
+    c. Select **Need Remote Access via SSH** and select **Auto Generate SSH Key Pair** to have the keys auto-generated for you during provisioning. If you select this option you will be provided with the private key post provisioning.
+
+    - i. Select **Use Flexible Instance Shape with Adjustable OCPU Count?**, if you plan to use an Instance Shape and not a Fixed Shape.
+
+        - For **Instance Shape**, select **VM.Standard.E4.Flex** from the dropdown.
+
+        - For **Select OCPUs Count per Instance**, enter **2**.
+    - ii.	Deselect **Use Flexible Instance Shape with Adjustable OCPU Count?**, if you plan to use a Fixed Shape and not an Instance Shape.
+
+        - For **Instance Shape**, select **VM.Standard.E2.2** from the dropdown.
+    
+10.	For Use Existing VPN?, keep the default and unselect. 
+11.	Click Next.
+12.	Select Run Apply, and then click Create.
+    
+    ![Enter main configurations](./images/stack-create.png " ")
     
 
- 2.  Save in your downloads folder.
+    Your stack is now creating and the Apply action is running to deploy your environment. The Job details page updates with your newly created Stack after a few moments, with the status Succeeded. Select the Application Information tab to view information such as your public IP address(es), instance name(s), and remote desktop URL.
 
- We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Task 3* to follow our recommendations. If you would rather use an existing VCN then proceed to the next task to update your existing VCN with the required Ingress rules.
 
-## Task 2: Adding security rules to an existing VCN
+## Task 2: Access the Graphical Remote Desktop
 
-This workshop requires a certain number of ports to be available, a requirement that can be met by using the default ORM stack execution that creates a dedicated VCN. In order to use an existing VCN/subnet, the following rules should be added to the security list.
+1.	Return to the **Stack Details** page, select a job, and select the **Application Information** tab.
+2.	Select **Copy** next to Remote Desktop, and paste the URL on a new tab.
+Note: If you see “Your connection is not private” or its variations, for the purposes of this lab, proceed to access the website.
+  ![Click Remote Desktop URL](./images/19c-remote-desktop.png " ")
 
-### **(1) Ingress Rules**
+  ![URL opens](./images/novnc-login-ssh.png " ")
 
-| Stateless         | Source Type | Source CIDR | IP Protocol | Source Port Range | Destination Port Range | Description                |
-| :---------------- | :---------: | :---------: | :---------: | :---------------: | :--------------------: | :------------------------- |
-| False (unchecked) |    CIDR     |  0.0.0.0/0  |     TCP     |        All        |           22           | SSH                        |
-| False (unchecked) |    CIDR     |  0.0.0.0/0  |     TCP     |        All        |           80           | Remote Desktop using noVNC |
-{: title="List of Required Network Security Rules (Ingress)"}
+  This should take you directly to your remote desktop in a single click.
 
-<!-- **Notes**: This next table is for reference and should be adapted for the workshop. If optional rules are needed as shown in the example below, then uncomment it and add those optional rules. The first entry is just for illustration and may not fit your workshop -->
+  ![Remote desktop displayed](./images/novnc-launch-get-started.png " ")
 
-<!--
-| Stateless         | Source Type | Source CIDR | IP Protocol | Source Port Range | Destination Port Range | Description                       |
-| :---------------- | :---------- | :---------: | :---------: | :---------------: | :--------------------: | :-------------------------------- |
-| False (unchecked) | CIDR        |  0.0.0.0/0  |     TCP     |        All        |          8080          | e.g. Remote access for web app #1 |
-| False (unchecked) | CIDR        |  0.0.0.0/0  |     TCP     |        All        |          443           | e.g. Remote access for web app #2 |
-{: title="List of Optional Network Security Rules (Ingress)"}
--->
 
-1.  Go to *Networking >> Virtual Cloud Networks*
-2.  Choose your network
-3.  Under Resources, select Security Lists
-4.  Click on Default Security Lists under the Create Security List button
-5.  Click *Add Ingress Rules* button
-6.  Create a rule for each entry in the *Ingress* table(s) above.  
-    - Stateless: Leave unchecked (Default)
-    - Source Type: CIDR
-    - Source CIDR: 0.0.0.0/0
-    - IP Protocol: TCP
-    - Source Port Range: All (Keep Default)
-    - Destination Port Range: *Select from the above table(s)*
-    - Description: *Select the corresponding description from the above table(s)*
-7. Click *+Another Ingress Rule* and repeat step [6] until a rule is created for each port listed in the *Ingress* tables
-8.  Click the Add Ingress Rules button
-
-### **(2) Egress Rules**
-
-| Stateless         | Source Type | Destination CIDR | IP Protocol | Source Port Range | Destination Port Range | Description           |
-| :---------------- | :---------: | :--------------: | :---------: | :---------------: | :--------------------: | :-------------------- |
-| False (unchecked) |    CIDR     |    0.0.0.0/0     |     TCP     |        All        |           80           | Outbound HTTP access  |
-| False (unchecked) |    CIDR     |    0.0.0.0/0     |     TCP     |        All        |          443           | Outbound HTTPS access |
-{: title="List of Required Network Security Rules (Egress)"}
-
-<!-- **Notes**: This next table is for reference and should be adapted for the workshop. If optional rules are needed as shown in the example below, then uncomment it and add those optional rules. The first entry is just for illustration and may not fit your workshop -->
-
-<!--
-| Stateless         | Source Type | Destination CIDR | IP Protocol | Source Port Range | Destination Port Range | Description                                        |
-| :---------------- | :---------- | :--------------: | :---------: | :---------------: | :--------------------: | :------------------------------------------------- |
-| False (unchecked) | CIDR        |    0.0.0.0/0     |     TCP     |        All        |          1521          | e.g. Remote oracle DB Listener anywhere            |
-| False (unchecked) | CIDR        | 130.129.10.45/32 |     TCP     |        All        |          1525          | e.g. Remote oracle DB Listener at IP 130.129.10.45 |
-{: title="List of Optional Network Security Rules (Egress)"}
--->
-
-1.  Select *Egress Rule* from the left pannel
-2.  Click Add Egress Rule button
-3.  Create a rule for each entry in the *Egress* table(s) above:  
-    - Stateless: Leave unchecked (Default)
-    - Source Type: CIDR
-    - Destination CIDR: 0.0.0.0/0
-    - IP Protocol: TCP
-    - Source Port Range: All (Keep Default)
-    - Destination Port Range: *Select from the above table(s)*
-    - Description: *Select the corresponding description from the above table(s)*
-4. Click *+Another Egress Rule* and repeat step [3] until a rule is created for each port listed in the *Egress* tables
-5.  Click the Add Egress Rules button
-
-## Task 3: Setup Compute   
-Using the details from the two Tasks above, proceed to the lab *Environment Setup* to set up your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
--  Create Stack:  *Compute + Networking*
--  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Task 2* above
-
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-* **Contributors** - Madhu Kumar S, Senior Cloud Engineer,  NACE CES Delivery
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2023
+* **Author** - Madhu Kumar S, Senior Cloud Engineer,  NACE CES Delivery
+* **Contributors** - Madhu Kumar S, Deniz Sendil, Katherine Wardhana,Jenny Chan
+* **Last Updated By/Date** - Madhu Kumar S, Senior Cloud Engineer,  NACE CES Delivery, May 2025

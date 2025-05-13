@@ -1,7 +1,8 @@
 # Environment Setup
 
 ## Introduction
-This lab will show you how to set up a Oracle Resource Manager (ORM) stack that will generate the Oracle Cloud objects needed to run your workshop.
+
+A stack is the collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. In this lab, you download the Oracle Resource Manager (ORM) stack you need to run this workshop.
 
 Estimated Time: 25 minutes
 
@@ -324,6 +325,6 @@ Modify your stack to use fixed shapes instead.
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-* **Contributors** - Marion Smith, Technical Program Manager, Arabella Yao, Database Product Manager
-* **Last Updated By/Date** - Kajal Singh, January 2025
+* **Author** - Madhu Kumar S, Senior Cloud Engineer,  NACE CES Delivery
+* **Contributors** - Madhu Kumar S, Deniz Sendil, Katherine Wardhana,Jenny Chan
+* **Last Updated By/Date** - Madhu Kumar S, Senior Cloud Engineer,  NACE CES Delivery, May 2025

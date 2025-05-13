@@ -6,13 +6,13 @@
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "Introduction to Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams.",
+      "description": "Introduction",
       "filename": "../../introduction/introduction.md"
     },
     {
       "title": "Get Started with noVNC Remote Desktop",
-      "description": "Using noVNC Remote Desktop",
-      "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+      "description": "Get Started with noVNC Remote Desktop",
+      "filename": "../../remote-desktop/remote-desktop.md"
     },
     {
       "title": "Lab 1: Prepare Setup",
@@ -20,12 +20,7 @@
       "filename": "../../prepare-setup/prepare-setup.md"
     },
     {
-      "title": "Lab 2: Environment Setup",
-      "description": "Labs that follow the introduction are numbered, starting with Lab 2",
-      "filename": "../../provision/provision.md"
-    },
-    {
-      "title": "Lab 3: Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams",
+      "title": "Lab 2: Replicate Business Objects",
       "filename": "../../ora-to-json/ora-to-json.md"
     },
     {
