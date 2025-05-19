@@ -105,7 +105,7 @@ This lab assumes that you have completed the tasks in **initial-setup**.
       Make sure that the `DPNS` process is in `RUNNING` state.
       
 ## Task 2: Add DML to DBNORTH PDBs
-
+   
     
 
       
