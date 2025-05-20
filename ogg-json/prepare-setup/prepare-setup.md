@@ -6,20 +6,18 @@ This lab will show you how to download the Oracle Resource Manager (ORM) stack z
 *Estimated Time:* 10 minutes
 
 ### Objectives
--   Download ORM stack
--   Configure an existing Virtual Cloud Network (VCN)
+In this lab, you: 
+- Download the ORM stack
+- Configure an existing Virtual Cloud Network (VCN)
+- Access the graphical remote desktop
 
-### Prerequisites
-This lab assumes you have:
-- An Oracle Cloud account
-
-## Task 1: Download the ORM stack
+## Task 1: Create the stack
 
 1.  Use the following link to download the ORM stack:
 
-    - [ggma-datastreams-mkplc-freetier.zip]()
+    - [ggma-datastreams-mkplc-freetier.zip](LiveLab will update the link to download the ZIP file)
 
-## Task 1A: Create Stack:  Compute + Networking
+## Task 2: Create Stack:  Compute + Networking
 
 1. In the Oracle Cloud navigation menu, select **Developer Services**, and then **Stacks**.
 2. On the Stacks page, under **List scope**, select your compartment from the **Compartment** dropdown.
@@ -40,13 +38,13 @@ This lab assumes you have:
 8. For **Select an availability domain**, select a domain from the dropdown.
 9. For **Need Remote Access via SSH**:
 
-    a. Unselect if you only want Remote Desktop access.
+    a. Deselect if you only want Remote Desktop access.
 
-    b. Select **Need Remote Access via SSH** and unselect **Auto Generate SSH Key Pair** to enable remote access via SSH protocol, then provide the SSH public key(s).
+    b. Select **Need Remote Access via SSH** and deselect **Auto Generate SSH Key Pair** to enable remote access via SSH protocol, then provide the SSH public key(s).
 
-    - i.  (Optional) For **SSH Public Key**, select **Paste SSH Keys**, and paste the SSH Key, or select  **Choose SSH Key Files**, click **Browse**, and upload an SSH Key File.'
+    - i. (Optional) For **SSH Public Key**, select **Paste SSH Keys**, and paste the SSH Key, or select  **Choose SSH Key Files**, click **Browse**, and upload an SSH Key File.
 
-    >**Note:**  For more information on how to create an SSH Key, view [Generate SSH Key](https://oracle-livelabs.github.io/common/labs/generate-ssh-key/).
+      >**Note:**  For more information on how to create an SSH Key, see [Generate SSH Key](https://oracle-livelabs.github.io/common/labs/generate-ssh-key/).
 
     c. Select **Need Remote Access via SSH** and select **Auto Generate SSH Key Pair** to have the keys auto-generated for you during provisioning. If you select this option you will be provided with the private key post provisioning.
 
@@ -59,9 +57,9 @@ This lab assumes you have:
 
         - For **Instance Shape**, select **VM.Standard.E2.2** from the dropdown.
     
-10.	For Use Existing VPN?, keep the default and unselect. 
-11.	Click Next.
-12.	Select Run Apply, and then click Create.
+10.	For **Use Existing VPN?**, keep the default and deselect. 
+11.	Click **Next**.
+12.	Select **Run Apply**, and then click **Create**.
     
     ![Enter main configurations](./images/stack-create.png " ")
     
@@ -71,9 +69,10 @@ This lab assumes you have:
 
 ## Task 2: Access the Graphical Remote Desktop
 
-1.	Return to the **Stack Details** page, select a job, and select the **Application Information** tab.
-2.	Select **Copy** next to Remote Desktop, and paste the URL on a new tab.
-Note: If you see “Your connection is not private” or its variations, for the purposes of this lab, proceed to access the website.
+1. Return to the **Stack Details** page, select a job, and select the **Application Information** tab.
+2. Select **Copy** next to Remote Desktop, and paste the URL on a new tab.
+    >**Note:** If you see “Your connection is not private” or its variations, for the purposes of this lab, proceed to access the website.
+
   ![Click Remote Desktop URL](./images/19c-remote-desktop.png " ")
 
   ![URL opens](./images/novnc-login-ssh.png " ")

@@ -17,14 +17,12 @@ Estimated Workshop Time: 4 hours
 **Workshop Architecture to configure GoldenGate Data Streams and JSON Relational Duality Views***
     ![Architecture](./images/architecture.png " ")
 
-### Objectives
-In this workshop, you will learn:
-- Configure GoldenGate Data Streams and JSON Relational Duality Views to Deliver Change Data
+### Objective
+In this workshop you learn configure GoldenGate Data Streams and JSON Relational Duality Views to deliver change data.
 
 
 ### Prerequisites
-This lab assumes you have:
-* An Oracle account
+To successfully complete this lab, you must have an Oracle Cloud account.
 
 
 You may now proceed to the next lab.

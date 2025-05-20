@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you load data into the Oracle Database Pluggable Database (PDB) schema JSON_USER . GoldenGate Extract process EXTSRC captures changes changes from Oracle Database and write them to the local trail file **et**. The Distribution Service, creates a Data Stream created to consume the trail file **et**.
+In this lab, you load data into the Oracle Database Pluggable Database (PDB) schema JSON_USER. The GoldenGate Extract process **EXTSRC** captures data changes from Oracle Database and writes them to the local trail file et. The Distribution Service then creates a Data Stream to consume the contents of the trail file **et.**
 
 Estimated Time:  30 minutes
 
@@ -11,16 +11,14 @@ Estimated Time:  30 minutes
  ![Architecture](./images/architecture.png " ")
 
 ### Objectives
-In this lab you will learn:
--  How to create an extract for the source database 
--  How to configure the Data Steams
--  How to consume the Data Steams using AsynchAPI
+In this lab, you:
+- Create an Extract for the source database
+- Configure Data Streams
+- Use AsychAPI to consume Data Streams 
+
 
 ### Prerequisites
-This lab assumes you have:
-- An Oracle Cloud account
-- You have completed:
-    - Lab: Initialize Environment
+To successfully complete this lab, you must have completed all preceding labs in this workshop.
 
 ## Task 1: Prepare the database for Oracle GoldenGate 
 1.  Open a terminal and enter the following command to create a **JSON table**:
@@ -65,6 +63,7 @@ This lab assumes you have:
     </copy>
     ```
     ![json-table-create-commad](./images/json-table-create-commad.png " ")
+    SQLPlus returns messages confirming the session was altered and tables were created.
     ![json-table-create-output](./images/json-table-create-output.png " ")
 
 
@@ -135,6 +134,7 @@ This lab assumes you have:
     </copy>
     ```
     ![json-view-create-commad](./images/json-view-create-commad.png " ")
+    SQLPlus returns messages confirming the session was altered and view was created.
     ![json-view-create-output](./images/json-view-create-output.png " ")
 
 3. Enter the following command to assign privileges for Oracle GoldenGate:
@@ -156,19 +156,19 @@ This lab assumes you have:
     EOF
     </copy>
     ```
-
+  SQLPlus returns messages confirming the session was altered and grants are assigned to user.
   ![gg-user-grants](./images/gg-user-grants.png " ")
 
 ## Task 2: Enable table-level supplemental logging
 
 1. In a new browser window, open  [http://localhost:16001](http://localhost:16001). 
 2. On the GoldenGate Administration Service, enter **oggadmin** for Username and the password, and then click **Sign In**.
-    >**Note:** password will be saved in location ***/home/oracle/password.txt***.
+    >**Note:** You can find the oggadmin password in the following location: ***/home/oracle/password.txt***.
 
     ![gg-login-page](./images/gg-login-page.png " ")
 
-3. Open the navigation menu and then click **DB Connections**.
-4. Click **Connect to database sourcedb**.
+3. In the left navigation menu, click **DB Connections**.
+4. On the DB Connections page, under Actions, click **Connect to database sourcedb**.
   ![dblogin-source](./images/dblogin-source.png " ")
 
 5. Next to **TRANDATA Information**, click **Add TRANDATA** (plus icon).
@@ -178,7 +178,7 @@ This lab assumes you have:
 - For Schema Name, enter JSON_USER. 
 - Under Supplemental Logging Options, select **Scheduling Columns** and **All Columns**.
   ![add-trandata](./images/add-trandata.png " ")
-    >**Note:** To verify, enter JSON_USER and then click Search.
+    >**Note:** To verify, enter JSON_USER and then click **Search**.
 
     ![add-trandata-info](./images/home-page.png " ")
 
@@ -275,8 +275,7 @@ This lab assumes you have:
 ![json-data](./images/json-data.png " ")
 
 ## Summary
-To summarize, you loaded data in the Oracle Database **JSON\_USER** schema of Pluggable Database **PDB**. The GG extract process **EXTSRC** captured the changes from the Oracle Database and wrote them to the local trail file **et**. From the Distribution Service, Data Streams **JSON_DEMO** will consume the trail file  ***et***.
-
+You successfully loaded data into the JSON\_USER schema of the Oracle Pluggable Database (PDB). The GoldenGate extract process **EXTSRC** captured changes from the Oracle Database and wrote them to the local trail file **et**. The Distribution Service created the JSON_DEMO Data Stream to consume data from the trail file **et**.
 You have completed the lab.
 
 ## Learn More
