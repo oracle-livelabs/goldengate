@@ -59,7 +59,8 @@ This lab assumes that you have completed the tasks in **initial-setup**.
 
       ```
         <copy>
-           ./add_replication_cascading_admin-client.sh
+           
+           ./add_replication_cascading_adminclient.sh
    
         </copy>
       ```
@@ -121,6 +122,8 @@ This lab assumes that you have completed the tasks in **initial-setup**.
    This scripts commits transactions to the `hr.employees` table on `DBNORTH`.
 
 ## Task 3: Check Replication from Source PDB (DBNORTH) to the Intermediate PDB (DBSOUTH)
+
+
 
     
 
