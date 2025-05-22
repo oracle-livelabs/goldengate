@@ -106,6 +106,22 @@ This lab assumes that you have completed the tasks in **initial-setup**.
       
 ## Task 2: Add DML to DBNORTH PDBs
    
+   Adding DML to the source PDB, DBNORTH, would allow you to test that the data is captured from DBNORTH. In the following steps, you will run the `source_dml_operations` script to perform DML transactions on DBNORTH:
+
+   1. Navigate to the `scripts/UseCases/03_Cascading` directory and run the `ls` command. You should be able to see the `source_dml_operations` script.
+
+   2. Run the `source_dml_operations` script:
+
+      ```
+         <copy>
+            ./source_dml_operations
+         </copy>
+      ```
+   
+   This scripts commits transactions to the `hr.employees` table on `DBNORTH`.
+
+## Task 3: Check Replication from Source PDB (DBNORTH) to the Intermediate PDB (DBSOUTH)
+
     
 
       

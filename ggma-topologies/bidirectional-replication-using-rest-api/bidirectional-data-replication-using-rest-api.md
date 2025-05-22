@@ -41,14 +41,6 @@ In this lab, you will:
 
 This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>. 
 
-### Tip
-
-If you see the error ORA-00257 Archiver Error, then run the following script to remove redundant archive log files from the system and run the application seamlessly:
-
-1. Navigate to the `scripts/misc' directory.
-2. Run the `rman_delete_archivelog.sh` script. 
-
-After you run this script, you would be able to continue to run the scripts successfully.
 
 ## Task 1: Set Up Active Active Data Replication
 
