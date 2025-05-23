@@ -119,9 +119,24 @@ This lab assumes that you have completed the tasks in **initial-setup**.
          </copy>
       ```
    
-   This scripts commits transactions to the `hr.employees` table on `DBNORTH`.
+     This scripts commits transactions to the `hr.employees` table on `DBNORTH`.
 
 ## Task 3: Check Replication from Source PDB (DBNORTH) to the Intermediate PDB (DBSOUTH)
+
+   In case of a cascading environment, a successful replication is one where the committed source transactions are replicated to the intermediate and then to the target data source, correctly. In this task, you will be able to check that the committed transactions in `DBNORTH` are replicated to `DBSOUTH`:
+
+   1. Navigate to the `scripts/UseCases/03_Cascading` directory and run the `ls` command. You should be able to see the `check_replication_cascading.sh` script.
+
+   2. Run this script:
+      
+      ```
+        <copy>
+           
+           ./check_replication_cascading.sh
+
+        </copy>
+
+   3.
 
 
 
