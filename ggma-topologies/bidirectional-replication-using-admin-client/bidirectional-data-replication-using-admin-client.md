@@ -72,7 +72,7 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       </copy>
       ```
       
-   3. Connect to the `depl_north` deployment to update the Extract (EXTN.prm) and Replicat (REPN.prm) parameter files.
+   3. Connect to the `depl_north` deployment to check that the parameter files, `EXTN` and `REPS` have been copied correctly.
       
       ```
         <copy>
@@ -80,7 +80,7 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
         </copy>
       ```
 
-   4. Edit the parameter files for Extract (`EXTN`) and Replicat (`REPN`) processes using the EDIT PARAMS command.
+   4. View the parameter files for Extract (`EXTN`) and Replicat (`REPN`) processes using the `EDIT PARAMS` command.
 
        ```
       <copy>
@@ -88,13 +88,13 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
          EDIT PARAMS EXTN
       
       </copy>
+
       ```
-      You can copy the parameter file values from the following snippets. 
-      
-      The Extract parameter file `EXTN.prm` is as follows:
+      The output should display the following:
 
       ```
       <copy>
+
        EXTRACT extn
        USERIDALIAS ggnorth
        EXTTRAIL north/ea
@@ -108,25 +108,29 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
        WARNLONGTRANS 15MINUTES, CHECKINTERVAL 5MINUTES
        
        TABLE hr.*;
+       
       </copy>
+    
       ```
-
-      The Replicat parameter file `REPN.prm` is as follows:
+   
+   5. Exit the editor and run the EDIT PARAMS command for the Replicat process `REPS`. The output should display the following:
 
       ```
       <copy>
-
-      REPLICAT repn
-      USERIDALIAS ggsouth DOMAIN OracleGoldenGate
-
-      DDLOPTIONS REPORT
-      DDLERROR DEFAULT, DISCARD
-
-      REPORTCOUNT EVERY 10 MINUTES, RATE
-
-      REPERROR (DEFAULT, DISCARD)
-      MAP hr.*, TARGET hr.*;
+      
+       REPLICAT reps
+       USERIDALIAS ggsouth DOMAIN OracleGoldenGate
+      
+       DDLOPTIONS REPORT
+       DDLERROR DEFAULT, DISCARD
+      
+       REPORTCOUNT EVERY 10 MINUTES, RATE
+      
+       REPERROR (DEFAULT, DISCARD)
+       MAP hr.*, TARGET hr.*;
+      
       </copy>
+      
       ```
 
   5. Connect to the `depl_south` deployment to update the Extract (`EXTS.prm`) and Replicat (`REPS.prm`) parameter files.
