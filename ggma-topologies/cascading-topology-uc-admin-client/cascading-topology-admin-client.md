@@ -136,7 +136,7 @@ This lab assumes that you have completed the tasks in **initial-setup**.
 
         </copy>
 
-   3.
+   3. 
 
 
 
