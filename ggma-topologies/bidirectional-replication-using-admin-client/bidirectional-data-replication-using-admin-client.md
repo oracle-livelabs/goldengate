@@ -33,6 +33,43 @@ In this lab, you will:
 
 This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>. 
 
+If you witness the error "ORA-65162: Password of the common database user has expired", then perform the following steps to increase the validity of the password:
+
+1. From the command prompt, log in to SQL Server:
+   
+   ```
+    <copy>
+
+      sqlplus / as sysdba
+   
+    </copy>
+
+2. On the SQL prompt, run the following commands to set the password validity for the :
+   
+   ```
+    <copy>
+      
+      alter session set container = DBNORTH;
+      create profile ggprofile limit password_life_time unlimitedd;
+      alter user ggadmin profile ggprofile;
+      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
+    
+    </copy>
+    
+   ```
+   Perform the same steps for `DBSOUTH`:
+
+   ```
+    <copy>
+      
+      alter session set container = DBSOUTH;
+      create profile ggprofile limit password_life_time unlimitedd;
+      alter user ggadmin profile ggprofile;
+      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
+    
+    </copy>
+    
+   ```
 
 ## Task 1: Set Up Active Active Data Replication
  

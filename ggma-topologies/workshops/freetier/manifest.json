@@ -48,16 +48,6 @@
       "filename": "../../bidirectional-replication-using-admin-client/bidirectional-data-replication-using-admin-client.md"
     },
     {
-      "title": "Lab 8: Set Up a Cascading Replication Topology Using REST API",
-      "description": "Configure data replication using the automation scripts containing REST API cURL scripts.",
-      "filename": "../../cascading-topology-uc-rest-api/cascading-topology-rest-api.md"
-    },
-    {
-      "title": "Lab 9: Set Up a Cascading Replication Topology Using Admin Client",
-      "description": "Configure data replication using the automation scripts containing Admin Client OBEY scripts.",
-      "filename": "../../cascading-topology-uc-admin-client/cascading-topology-admin-client.md"
-    },
-    {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
