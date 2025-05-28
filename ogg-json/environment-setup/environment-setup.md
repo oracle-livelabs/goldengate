@@ -13,22 +13,25 @@ Watch the video below for a walk-through of the Environment Setup lab.
 For more information about Terraform and Resource Manager, please see the appendix.
 
 ### Objectives
-- Create Stack: Compute + Networking (New VCN) or Compute only (Existing VCN)
-- Terraform Apply
+In this lab, you: 
+- Download the ORM stack
+- Configure an existing Virtual Cloud Network (VCN)
+- Access the graphical remote desktop
+
 
 ### Prerequisites
 This lab assumes you have:
 - An Oracle Cloud account
 - SSH Keys (optional)
 
-## Task 1: Create Stack: Choose a Path
+## Task 1: Create the stack
 Proceed to deploy your workshop environment using Oracle Resource Manager (ORM) stack.  
 
 Your options are:
 - Task 1A: Create Stack:  **Compute + Networking** *(recommended)*
 - Task 1B: Create Stack:  **Compute Only**
 
-## Task 1A: Create Stack:  Compute + Networking
+## Task 2: Create Stack:  Compute + Networking
 1. Identify the ORM stack zip file downloaded in *Lab Prepare Setup Task 1*
 2. Log in to Oracle Cloud account
 3. Open up the hamburger menu in the top left corner.  Click **Developer Services**, and choose **Resource Manager > Stacks**. Choose the compartment in which you would like to install the stack. Click **Create Stack**.

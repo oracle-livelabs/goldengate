@@ -1,7 +1,7 @@
 # Lab 1: Environment Setup
 
 ## Introduction
-This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to set up the resource needed to run this workshop.
+In this lab, you download the Oracle Resource Manager (ORM) stack zip file needed to set up the resource needed to run this workshop.
 
 *Estimated Time:* 10 minutes
 
@@ -17,26 +17,24 @@ In this lab, you:
 
     - [ggma-datastreams-mkplc-freetier.zip](LiveLab will update the link to download the ZIP file)
 
-## Task 2: Create Stack:  Compute + Networking
-
-1. In the Oracle Cloud navigation menu, select **Developer Services**, and then **Stacks**.
-2. On the Stacks page, under **List scope**, select your compartment from the **Compartment** dropdown.
-3. Click **Create Stack**.
+2. In the Oracle Cloud navigation menu, select **Developer Services**, and then **Stacks**.
+3. On the Stacks page, under **List scope**, select your compartment from the **Compartment** dropdown.
+4. Click **Create Stack**.
 
   ![Select Stacks](./images/developer-resmgr-stacks.png " ")
 
   ![Create Stack](./images/create-stack.png " ")
 
-4. The Create Stack panel consists of three pages. On the Stack information page, for Choose the origin of the Terraform configuration, select **My configuration**.
+5. The Create Stack panel consists of three pages. On the Stack information page, for Choose the origin of the Terraform configuration, select **My configuration**.
 
-5. For Stack configuration, select **.zip file**, click **Browse**, and select the **ggma-datastreams-mkplc-freetier.zip** file from your download directory.
+6. For Stack configuration, select **.zip file**, click **Browse**, and select the **ggma-datastreams-mkplc-freetier.zip** file from your download directory.
 
-6. Click **Next**.
+7. Click **Next**.
   ![Select zip file](./images/select-zip.png " ")
 
-7. On the Configure variables page, for **Instance Count**, enter **1**.
-8. For **Select an availability domain**, select a domain from the dropdown.
-9. For **Need Remote Access via SSH**:
+8. On the Configure variables page, for **Instance Count**, enter **1**.
+9. For **Select an availability domain**, select a domain from the dropdown.
+10. For **Need Remote Access via SSH**:
 
     a. Deselect if you only want Remote Desktop access.
 
@@ -57,9 +55,9 @@ In this lab, you:
 
         - For **Instance Shape**, select **VM.Standard.E2.2** from the dropdown.
     
-10.	For **Use Existing VPN?**, keep the default and deselect. 
-11.	Click **Next**.
-12.	Select **Run Apply**, and then click **Create**.
+11.	For **Use Existing VPN?**, keep the default and deselect. 
+12.	Click **Next**.
+13.	Select **Run Apply**, and then click **Create**.
     
     ![Enter main configurations](./images/stack-create.png " ")
     
@@ -67,7 +65,7 @@ In this lab, you:
     Your stack is now creating and the Apply action is running to deploy your environment. The Job details page updates with your newly created Stack after a few moments, with the status Succeeded. Select the Application Information tab to view information such as your public IP address(es), instance name(s), and remote desktop URL.
 
 
-## Task 2: Access the Graphical Remote Desktop
+## Task 3: Access the Graphical Remote Desktop
 
 1. Return to the **Stack Details** page, select a job, and select the **Application Information** tab.
 2. Select **Copy** next to Remote Desktop, and paste the URL on a new tab.

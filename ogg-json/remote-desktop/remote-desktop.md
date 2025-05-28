@@ -31,7 +31,7 @@ To successfully complete this lab, you should have provisioned a VM instance con
 3. To view the applications already installed, in the noVNC toolbar, click **Activities.**
 
     ![Click Activities](./images/click-activities.png " ")
-    The Activities bar displays icons of applications already installed
+    The Activities bar displays icons of applications already installed.
     ![Open full screen](./images/see-activities.png " ")
 
 ## Task 2: Enable Copy/Paste from Local to Remote Desktop
@@ -41,7 +41,7 @@ As you run through this lab, you may need to copy text from your *local PC/Mac* 
 
     ![Click clipboard](./images/novnc-clipboard-1.png " ")
 
-2. Copy text from your local machine, and then paste it into the Clipboard in noVNC
+2. Copy text from your local machine, and then paste it into the Clipboard in noVNC.
 
     ![Copy text](./images/novnc-clipboard-2.png " ")
 
@@ -54,7 +54,7 @@ To optimize your workshop experience, it’s recommended that you open the works
 
     ![Get Started with your Workshop](./images/novnc-launch-get-started-1.png " ")
 
-2. In the Activities bar, double-click **Get Started with your Workshop**. This opens a web browser window with your workshop instructions. Depending on the workshop, you may also have additional tabs for other relevant applications.
+2. In the Activities bar, double-click **Get Started with your Workshop**. A web browser opens with your workshop instructions. Depending on the workshop, you may also have additional tabs for other relevant applications.
 
     ![Workshop guide and sample webapp](./images/novnc-launch-get-started-2.png " ")
 
@@ -70,7 +70,7 @@ You must have an RSA-type SSH key-pair available on the local system from which 
 
 1. Open the remote clipboard on the remote desktop as shown in *Task 2* and launch a terminal session.
 
-2. Click on the Activities button, then on Terminal Icon.
+2. Click Activities, then Terminal.
 
     ![Update authorized keys](./images/novnc-copy-pub-key-5.png " ")
 
@@ -116,7 +116,7 @@ You must have an RSA-type SSH key-pair available on the local system from which 
     </copy>
     ```
 
-    e.g.
+    for example:
     ```text
     <copy>
     ssh -i /home/appuser1/.ssh/livelabs_rsa_priv oracle@150.xxx.xxx.xxx
