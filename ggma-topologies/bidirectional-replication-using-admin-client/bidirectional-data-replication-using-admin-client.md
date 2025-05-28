@@ -8,7 +8,7 @@ This lab describes how to use the Admin Client commands wrapped in an OBEY file 
 
 While the `depl_north` deployment is connected to the `DBNORTH` PDB, the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
 
-![DBNORTH and DBSOUTH PDBs replicate simultaneiously to each other in an active-active bidirectional replication](./images/bidirectional_data_replication_hub_based.png)
+![DBNORTH and DBSOUTH PDBs replicate simultaneously to each other in an active-active bidirectional replication](./images/bidirectional_data_replication_hub_based.png)
 
 
 Estimated Time: 20 minutes
@@ -110,8 +110,11 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       
       ```
         <copy>
-          CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
+
+        CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
+        
         </copy>
+      
       ```
 
    4. View the parameter files for Extract (`EXTN`) and Replicat (`REPN`) processes using the `EDIT PARAMS` command.
@@ -188,12 +191,11 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       </copy>
       ```
 
-    You can copy the parameter file values from the following snippets. 
-     
-    The `EXTS.prm` Extract parameter file is as follows:
+   You can copy the parameter file values from the following snippets. The `EXTS.prm` Extract parameter file is as follows:
       
       ```
       <copy>
+       
        EXTRACT exts
        USERIDALIAS ggnorth
        EXTTRAIL north/ea
@@ -202,48 +204,60 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       
        DDL INCLUDE MAPPED
        DDLOPTIONS REPORT
-
+       
        REPORTCOUNT EVERY 10 MINUTES, RATE
        WARNLONGTRANS 15MINUTES, CHECKINTERVAL 5MINUTES
 
        TABLE hr.*;
+       
       </copy>
+      
       ```
-    The Replicat parameter file for REPS.prm is as follows:
+   The Replicat parameter file for REPS.prm is as follows:
 
       ```
       <copy>
+      
       REPLICAT reps
       USERIDALIAS ggnorth DOMAIN OracleGoldenGate
-
+      
       DDLOPTIONS REPORT
       DDLERROR DEFAULT, DISCARD
-
+      
       REPORTCOUNT EVERY 10 MINUTES, RATE
-
+      
       REPERROR (DEFAULT, DISCARD)
       MAP hr.*, TARGET hr.*;
+      
       </copy>
-      ``` 
+    
+     ``` 
    
    
   7. To check if the Orcle GoldenGate processes are running successfully on both deployments, run the following commands on both the `depl_north` and `depl_south` deployments: 
      
-     |Note: Connect to the deployment using the `CONNECT` command before running the `INFO ALL` and `INFO DISTPATH ALL` commands. 
+<b>Note:</b> Connect to the deployment using the `CONNECT` command before running the `INFO ALL` and `INFO DISTPATH ALL` commands.
     
-    The following command displays the Extract and Replicat proceses running on the `depl_north` and  deployment, if you are connected to the `depl_north` deployment.
-      ```
-      <copy>
-         INFO ALL
-      </copy> 
-      ```
-    The following command displays the DISTPATHS running on the `depl_north` deployment.
+The following command displays the Extract and Replicat proceses running on the `depl_north` and  deployment, if you are connected to the `depl_north` deployment.
+      
+    ```
+     <copy>
+       
+       INFO ALL
+      
+     </copy> 
+      
+    ```
+ The following command displays the DISTPATHS running on the `depl_north` deployment.
     
-      ```
-      <copy>
-         INFO DISTPATH ALL
-      </copy>
-      ```
+    ```
+     <copy>
+      
+        INFO DISTPATH ALL
+      
+     </copy>
+      
+    ```
     
 In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_adminclient.sh` script runs.
 
@@ -262,7 +276,7 @@ Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases an
    ```
    <copy>
     
-     ./dbnorth_dml_operations.sh
+      ./dbnorth_dml_operations.sh
     
     </copy>
    
@@ -329,9 +343,13 @@ To view the Standard Report based on sample data:
    
        ```
          <copy>
+         
             ./check_replication_activeactive_adminclient.sh
+         
          </copy>
+       
        ```
+      
       The output for this script shows various detiails. You can view these details to verify that the bidirectional replication is working.
 
    2. Observe the Extract and Replicat statistics to see the INSERTS, UPDATES, and DELETES of records. If the replication occurred correctly, then the Replicat statistics would have same the same number of INSERTS, UPDATES, and DELETES, as the Extract statistics.
@@ -348,14 +366,18 @@ To view the Standard Report based on sample data:
    
       ```
         <copy>
-          ./delete_replication_activeactive_adminclient.sh  
+       
+           ./delete_replication_activeactive_adminclient.sh  
+       
         </copy>
+      
       ```
    
    2. You can verify that the environment was deleted by connecting to the deployment and running the `INFO ALL` command on `depl_north` deployment.
 
       ```
         <copy>
+        
           adminclient
           
         </copy>
@@ -365,13 +387,14 @@ To view the Standard Report based on sample data:
       ```
        <copy>
        
-       CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
+          CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
        
        </copy>
+     
       ```
-    3. Run the `INFO ALL` command and `INFO DISTPATH ALL` commands after connecting to the deployment. These commands display the message `"No processes found"`, if the Extract, Replicat processes have been deleted successfully.
+   3. Run the `INFO ALL` command and `INFO DISTPATH ALL` commands after connecting to the deployment. These commands display the message `"No processes found"`, if the Extract, Replicat processes have been deleted successfully.
 
-    4. Repeat steps 2 and 3 for the `depl_south` deployment.
+   4. Repeat steps 2 and 3 for the `depl_south` deployment.
    
    After you delete the environment, you can use the script `add_replication_activeactive_adminclient.sh` again to rebuild the environment or copy the script to apply in your own test environment. 
 
@@ -380,6 +403,7 @@ To view the Standard Report based on sample data:
 
 * [Oracle GoldenGate Microservices REST APIs](https://docs.oracle.com/en/middleware/goldengate/core/23/oggra/)
 * [Command Line Reference Guide](https://docs.oracle.com/en/middleware/goldengate/core/23/gclir/index.html)
+*[Oracle GoldenGate Microservices Architecture Solutions](https://docs.oracle.com/en/middleware/goldengate/core/23/ggsol/)
 
 
 

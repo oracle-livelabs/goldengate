@@ -34,6 +34,45 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>.
 
+If you witness the error "ORA-65162: Password of the common database user has expired", then perform the following steps to increase the validity of the password:
+
+1. From the command prompt, log in to SQL Server:
+   
+   ```
+    <copy>
+
+      sqlplus / as sysdba
+   
+    </copy>
+   
+   ```
+
+2. On the SQL prompt, run the following commands to set the password validity for the :
+   
+   ```
+    <copy>
+      
+      alter session set container = DBNORTH;
+      create profile ggprofile limit password_life_time unlimitedd;
+      alter user ggadmin profile ggprofile;
+      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
+    
+    </copy>
+    
+   ```
+   Perform the same steps for `DBSOUTH`:
+
+   ```
+    <copy>
+      
+      alter session set container = DBSOUTH;
+      create profile ggprofile limit password_life_time unlimitedd;
+      alter user ggadmin profile ggprofile;
+      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
+    
+    </copy>
+    
+   ```
 
 ## Task 1: Set Up Data Replication
 
@@ -67,97 +106,34 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
            
            </copy>
          
-         ```
-      You need to run this script to copy the Extract and Replicat parameter files to Oracle GoldenGate deployment's configuration directory and then run the `add_replication_reporting.oby` script to set up data replication. 
+          ```
 
-      |Note: The `add_replication_reporting.oby` script, which is inside the `add_replication_reporting_adminclient.sh` script, runs after the Extract and Replicat parameter files are copied to the Oracle GoldenGate deployment's `/etc/conf/ogg/` directory. After the script runs successfully, you will be able to see the Extract and Replicat processes in running state and also view the reports for the committed transactions.|  
+   You need to run this script to copy the Extract and Replicat parameter files to Oracle GoldenGate deployment's configuration directory and then run the `add_replication_reporting.oby` script to set up data replication. 
 
-      This script contains the following commands:
-      
-       ```
-        <copy>
+   <b>Note</b>: The `add_replication_reporting.oby` script, which is inside the `add_replication_reporting_adminclient.sh` script, runs after the Extract and Replicat parameter files are copied to the Oracle GoldenGate deployment's `/etc/conf/ogg/` directory. After the script runs successfully, you will be able to see the Extract and Replicat processes in running state and also view the reports for the committed transactions.
 
-        --
-        -- Connect the GoldenGate Deployment    
-           depl_north
-
-        --
-        CONNECT https://north:9001 DEPLOYMENT 
-        depl_north AS ggma PASSWORD GGma_23ai !
-
-        ALTER CREDENTIALSTORE ADD USER ggadmin@dbnorth ALIAS ggnorth DOMAIN OracleGoldenGate PASSWORD ggadmin
-
-        INFO CREDENTIALSTORE
-
-        DBLOGIN USERIDALIAS ggnorth DOMAIN OracleGoldenGate
-
-        ADD SCHEMATRANDATA hr
-
-        ADD HEARTBEATTABLE
-
-        ADD EXTRACT extn INTEGRATED TRANLOG BEGIN NOW
-
-        REGISTER EXTRACT extn database
-
-        ADD EXTTRAIL north/ea, EXTRACT extn
-
-       START EXTRACT extn
-
-       ADD DISTPATH dpns SOURCE trail://north:9002/services/v2/sources?trail=north/ea TARGET wss://south:9103/services/v2/targets?trail=north/da !
-
-       START DISTPATH dpns
-
-       --
-       -- Connect the GoldenGate Deployment 
-          depl_south
-       --
-       CONNECT https://south:9101 DEPLOYMENT    
-       depl_south AS ggma PASSWORD GGma_23ai !
-      
-       ALTER CREDENTIALSTORE ADD USER ggadmin@dbsouth ALIAS ggsouth DOMAIN OracleGoldenGate PASSWORD ggadmin
-
-       INFO CREDENTIALSTORE
-
-       DBLOGIN USERIDALIAS ggsouth DOMAIN OracleGoldenGate
-      
-      ADD CHECKPOINTTABLE ggadmin.ggs_checkpointtable
-      
-      ADD HEARTBEATTABLE
-      
-      ADD REPLICAT repn, PARALLEL, EXTTRAIL north/da, CHECKPOINTTABLE ggadmin.ggs_checkpointtable 
-      
-      START REPLICAT repn
-      
-      INFO ALL
-      
-      INFO DISTPATH ALL
-      
-      DISCONNECT
-
-      </copy>    
-      
-      ```
-   
-    
 ## Task 2: Check the Business Reports
 
-   The statistical reports for the committed transactions are available in the data replication environment. To check these reports, perform the following steps:
+The statistical reports for the committed transactions are available in the data replication environment. To check these reports, perform the following steps:
 
-   1. Run the `./check_replication_reporting_adminclient.sh` script to check the report generated for the committed transactions. 
+1. Run the `./check_replication_reporting_adminclient.sh` script to check the report generated for the committed transactions. 
    
-       ```
-         <copy>
+   ```
+     <copy>
 
-            ./check_replication_reporting_adminclient.sh
+       ./check_replication_reporting_adminclient.sh
          
-         </copy>
+     </copy>
        
-       ```
-  
+   ```
+   
    The output of the report is shown in the following image:
-
+   
+   
+   
    ![Output for check_replication_reporting_oby script](./images/check_repl_output.png " ")
 
+2. Observe the Extract and Replicat statistics to see the INSERTS, UPDATES, and DELETES of records. If the replication occurred correctly, then the Replicat statistics would have same the same number of INSERTS, UPDATES, and DELETES, as the Extract statistics.
 
 ## Task 3: Check the Standard Reports in Oracle GoldenGate Microservices Web Interface
 
@@ -168,8 +144,8 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
       https://north:9001
 
 2. Log in to the Administration Service using the credentials ggma/GGma_23ai.
-3. From the left-navigation pane, expand the list of Extracts and select the EXTN Extract.
-4. Click the Statistics option to view the report. 
+3. From the left-navigation pane, expand the list of Extracts and select the `EXTN` Extract.
+4. Click the <b>Statistics</b> option to view the report. 
 
 ## Task 4: Add DML to Source Database and Check the Target Database for Replicated Records
 
@@ -238,6 +214,7 @@ After you check the reports, you can delete the data replication environment usi
 
 * [Oracle GoldenGate Microservices REST APIs](https://docs.oracle.com/en/middleware/goldengate/core/23/oggra/)
 * [Command Line Reference Guide](https://docs.oracle.com/en/middleware/goldengate/core/23/gclir/index.html)
+*[Oracle GoldenGate Microservices Architecture Solutions](https://docs.oracle.com/en/middleware/goldengate/core/23/ggsol/)
 
 
 
