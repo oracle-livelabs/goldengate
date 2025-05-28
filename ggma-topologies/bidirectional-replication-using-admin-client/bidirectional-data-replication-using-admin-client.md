@@ -8,20 +8,15 @@ This lab describes how to use the Admin Client commands wrapped in an OBEY file 
 
 While the `depl_north` deployment is connected to the `DBNORTH` PDB, the `depl_south` deployment is connected to the `DBSOUTH` PDB. The deployments are already created in the environment. 
 
-You will also use the `dbnorth_dml_operations.sh` and `dbsouth_dml_operations.sh` scripts to automatically add DML records to the `DBNORTH` and `DBSOUTH` PDBs, respectively. 
+![DBNORTH and DBSOUTH PDBs replicate simultaneiously to each other in an active-active bidirectional replication](./images/bidirectional_data_replication_hub_based.png)
 
-After adding records, you can view the Extract Statistics to confirm that the committed transactions were captured. The `check_replication_activeactive.sh` script allows you to view the statistics for different Oracle GoldenGate processes.  
-
-To check if the bidirectional replication works correctly, you need to prevent data looping or data duplication while replicating data from `DBNORTH` to `DBSOUTH` and from `DBSOUTH` to `DBNORTH`. To check this, you will run the `dbnorth_select.sh` script to view the INSERTS, UPDATES, DELETES records from `DBNORTH` to `DBSOUTH` and then run the `dbsouth_select.sh` script to view the INSERTS, UPDATES, and DELETES from `DBSOUTH` to `DBNORTH`.
-
-After you have completed testing this scenario, using the Admin Client, you must remove this replication setup so that you can test the same steps using the Admin Client. To delete this environment, use the `delete_replication_activeactive_adminclient.sh`.
 
 Estimated Time: 20 minutes
 
 ### Objectives
 In this lab, you will: 
 
-* Run the `add_replication_activeactive_adminclient.sh` script, which would automatically perform the following tasks:
+* Run the `add_replication_ActiveActive_adminclient.sh` script, which would automatically perform the following tasks:
 
       * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the database instance
       *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on `DBNORTH` and `DBSOUTH` PDBs
@@ -31,7 +26,7 @@ In this lab, you will:
       *	Add Distribution Path from `DBNORTH` to `DBSOUTH` and then from `DBSOUTH` to `DBNORTH`
       *	Add Replicat on the both PDBs, `DBNORTH` and `DBSOUTH`
 * View the lag statistics and check for data duplication.
-* Delete the data replication environment using the `delete_replication_activeactive_adminclient.sh` script.
+* Delete the data replication environment using the `delete_replication_ActiveActive_adminclient.sh` script.
 
 
 ### Prerequisites
@@ -215,7 +210,9 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
     
 In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_adminclient.sh` script runs.
 
-## Task 2: Add DML to DBNORTH and DBSOUTH PDBs 
+## Task 2: Add DML to DBNORTH and DBSOUTH PDBs and Check the PDBs for Committed Transactions
+
+In this task, you will use the `dbnorth_dml_operations.sh` and `dbsouth_dml_operations.sh` scripts to automatically add DML records to the `DBNORTH` and `DBSOUTH` PDBs, respectively. 
 
 Verify that the Extract processes on `DBNORTH` and `DBSOUTH` databases are working correctly. 
 
@@ -243,8 +240,9 @@ Run the following scripts to add DML to the `DBNORTH` and `DBSOUTH` databases an
    </copy>
    
    ```
+  To check if the bidirectional replication works correctly, you need to prevent data looping or data duplication while replicating data from `DBNORTH` to `DBSOUTH` and from `DBSOUTH` to `DBNORTH`. To check this, you will run the `dbnorth_select.sh` script to view the INSERTS, UPDATES, DELETES records from `DBNORTH` to `DBSOUTH` and then run the `dbsouth_select.sh` script to view the INSERTS, UPDATES, and DELETES from `DBSOUTH` to `DBNORTH`.
 
-4. Now, run the script `dbnorth_select.sh`. This script contains queries to check the data on the <b>hr.employees</b> table of the PDB, `DBNORTH`.
+4. Run the script `dbnorth_select.sh`. This script contains queries to check the data on the <b>hr.employees</b> table of the PDB, `DBNORTH`.
 
    ```
      <copy>
@@ -286,7 +284,9 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 
 ## Task 4: View the Active Active Replicat Using Statistics for Oracle GoldenGate Processes
 
-   To view the Standard Report based on sample data:
+After adding records, you can view the Extract Statistics to confirm that the committed transactions were captured. The `check_replication_activeactive.sh` script allows you to view the statistics for different Oracle GoldenGate processes.  
+
+To view the Standard Report based on sample data:
 
    1. Run the `check_replication_activeactive_adminclient.sh` script
    
@@ -301,9 +301,9 @@ The statistical reports that you viewed in Task 2 can also be viewed from the we
 
 ## Task 5: Delete the Bidirectional Replication Setup
 
-   It's essential to delete the setup to be able to test the same feature using the OBEY commands within the same environment. 
+   After testing the active-active bidirectional scenario, you must remove this replication setup so that you can test other topologies and environments available in this system. 
    
-   You can also use this script to test and delete data replication environments in your own test enviornment. 
+   To delete this environment, use the `delete_replication_activeactive_adminclient.sh`. You can also use this script to test and delete data replication environments in your own test enviornment. 
    
    To delete the setup:
 
