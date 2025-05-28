@@ -65,7 +65,7 @@ In this lab, you:
     Your stack is now creating and the Apply action is running to deploy your environment. The Job details page updates with your newly created Stack after a few moments, with the status Succeeded. Select the Application Information tab to view information such as your public IP address(es), instance name(s), and remote desktop URL.
 
 
-## Task 3: Access the Graphical Remote Desktop
+## Task 2: Access the Graphical Remote Desktop
 
 1. Return to the **Stack Details** page, select a job, and select the **Application Information** tab.
 2. Select **Copy** next to Remote Desktop, and paste the URL on a new tab.
