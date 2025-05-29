@@ -47,7 +47,7 @@ If you witness the error "ORA-65162: Password of the common database user has ex
 
 2. On the SQL prompt, run the following commands to set the password validity for the :
    
-   ```
+  ```
     <copy>
       
       alter session set container = DBNORTH;
@@ -57,8 +57,9 @@ If you witness the error "ORA-65162: Password of the common database user has ex
     
     </copy>
     
-   ```
-   Perform the same steps for `DBSOUTH`:
+  ```
+  
+  Perform the same steps for `DBSOUTH`:
 
    ```
     <copy>
@@ -306,7 +307,7 @@ To view the Standard Report based on sample data:
 
 * [Oracle GoldenGate Microservices REST APIs](https://docs.oracle.com/en/middleware/goldengate/core/23/oggra/)
 * [Command Line Reference Guide](https://docs.oracle.com/en/middleware/goldengate/core/23/gclir/index.html)
-*[Oracle GoldenGate Microservices Architecture Solutions](https://docs.oracle.com/en/middleware/goldengate/core/23/ggsol/)
+* [Oracle GoldenGate Microservices Architecture Solutions](https://docs.oracle.com/en/middleware/goldengate/core/23/ggsol/)
 
 
 
