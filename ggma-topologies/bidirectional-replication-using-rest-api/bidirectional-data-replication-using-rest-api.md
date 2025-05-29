@@ -167,7 +167,7 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       ```
    This command displays the DISTPATHS running on the `depl_south` deployment.
       
-   In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_ActiveActive_curl.sh` script runs.
+   In the next task, you will be able to commit DML transactions to the PDBs.
 
 ## Task 2: Add DML to DBNORTH and DBSOUTH PDBs and Check the PDBs for Committed Transactions
 
