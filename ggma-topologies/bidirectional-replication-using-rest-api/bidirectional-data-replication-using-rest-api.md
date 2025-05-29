@@ -42,6 +42,8 @@ If you witness the error "ORA-65162: Password of the common database user has ex
       sqlplus / as sysdba
    
     </copy>
+  
+  ```
 
 2. On the SQL prompt, run the following commands to set the password validity for the :
    
@@ -249,11 +251,11 @@ After adding records, you can view the Extract Statistics to confirm that the co
 
 To view the Standard Report based on sample data:
 
-   1. Run the `check_replication_activeactive_curl.sh` script
+   1. Run the `check_replication_ActiveActive_curl.sh` script
    
        ```
          <copy>
-            ./check_replication_activeactive_curl.sh
+            ./check_replication_ActiveActive_curl.sh
          </copy>
        ```
       The output for this script shows various detiails. You can view these details to verify that the bidirectional replication is working.
@@ -268,7 +270,7 @@ To view the Standard Report based on sample data:
    
   To delete the setup:
 
-  1. Run the script `delete_replication_activeactive_adminclient.sh`.
+  1. Run the script `delete_replication_ActiveActive_adminclient.sh`.
    
       ```
         <copy>
@@ -294,7 +296,7 @@ To view the Standard Report based on sample data:
 
   4. Repeat steps 2 and 3 for the `depl_south` deployment.
    
-  After you delete the environment, you can use the `add_replication_activeactive_curl.sh` script again to rebuild the environment or copy the script to apply in your own test environment.
+  After you delete the environment, you can use the `add_replication_ActiveActive_curl.sh` script again to rebuild the environment or copy the script to apply in your own test environment.
 
    
 ## Learn More

@@ -119,7 +119,7 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       
       ```
 
-   4. View the parameter files for Extract (`EXTN`) and Replicat (`REPN`) processes using the `EDIT PARAMS` command.
+   4. View the parameter file for Extract (`EXTN`) using the `EDIT PARAMS` command.
 
        ```
       <copy>
@@ -172,7 +172,7 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       
       ```
 
-  5. Connect to the `depl_south` deployment to update the Extract (`EXTS.prm`) and Replicat (`REPS.prm`) parameter files.
+  5. Connect to the `depl_south` deployment to update the Extract (`EXTS.prm`) and Replicat (`REPN.prm`) parameter files.
       
       ```
         <copy>
@@ -183,7 +183,7 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       
       ```
 
-  6. Edit the parameter files for Extract (`EXTS`) and Replicat (`REPS`) processes using the EDIT PARAMS command.
+  6. View the parameter files for Extract (`EXTS`) and Replicat (`REPN`) processes using the EDIT PARAMS command.
 
       ```
       <copy>
@@ -193,7 +193,9 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       </copy>
       ```
 
-   You can copy the parameter file values from the following snippets. The `EXTS.prm` Extract parameter file is as follows:
+   You can copy the parameter file values from the following snippets. 
+   
+   The `EXTS.prm` Extract parameter file is as follows:
       
       ```
       <copy>
@@ -215,7 +217,7 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       </copy>
       
       ```
-   The Replicat parameter file for REPS.prm is as follows:
+   The Replicat parameter file for REPN.prm is as follows:
 
       ```
       <copy>
@@ -238,9 +240,9 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
    
   7. To check if the Orcle GoldenGate processes are running successfully on both deployments, run the following commands on both the `depl_north` and `depl_south` deployments: 
      
-<b>Note:</b> Connect to the deployment using the `CONNECT` command before running the `INFO ALL` and `INFO DISTPATH ALL` commands.
+  <b>Note:</b> Connect to the deployment using the `CONNECT` command before running the `INFO ALL` and `INFO DISTPATH ALL` commands.
     
-The following command displays the Extract and Replicat proceses running on the `depl_north` and  deployment, if you are connected to the `depl_north` deployment.
+  The following command displays the Extract and Replicat proceses running on the `depl_north` deployment, if you are connected to the `depl_north` deployment.
       
     ```
      <copy>
@@ -261,7 +263,7 @@ The following command displays the Extract and Replicat proceses running on the 
       
     ```
     
-In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_activeactive_adminclient.sh` script runs.
+In the next task, you will be able to add DML transactions to `DBNORTH` and `DBSOUTH` PDBs.
 
 ## Task 2: Add DML to DBNORTH and DBSOUTH PDBs and Check the PDBs for Committed Transactions
 
@@ -341,7 +343,7 @@ After adding records, you can view the Extract Statistics to confirm that the co
 
 To view the Standard Report based on sample data:
 
-   1. Run the `check_replication_activeactive_adminclient.sh` script
+   1. Run the `check_replication_ActiveActive_adminclient.sh` script
    
        ```
          <copy>
@@ -360,16 +362,16 @@ To view the Standard Report based on sample data:
 
    After testing the active-active bidirectional scenario, you must remove this replication setup so that you can test other topologies and environments available in this system. 
    
-   To delete this environment, use the `delete_replication_activeactive_adminclient.sh`. You can also use this script to test and delete data replication environments in your own test enviornment. 
+   To delete this environment, use the `delete_replication_ActiveActive_adminclient.sh`. You can also use this script to test and delete data replication environments in your own test enviornment. 
    
    To delete the setup:
 
-   1. Run the script `delete_replication_activeactive_adminclient.sh`.
+   1. Run the script `delete_replication_ActiveActive_adminclient.sh`.
    
       ```
         <copy>
        
-           ./delete_replication_activeactive_adminclient.sh  
+           ./delete_replication_ActiveActive_adminclient.sh  
        
         </copy>
       
@@ -398,7 +400,7 @@ To view the Standard Report based on sample data:
 
    4. Repeat steps 2 and 3 for the `depl_south` deployment.
    
-   After you delete the environment, you can use the script `add_replication_activeactive_adminclient.sh` again to rebuild the environment or copy the script to apply in your own test environment. 
+   After you delete the environment, you can use the script `add_replication_ActiveActive_adminclient.sh` again to rebuild the environment or copy the script to apply in your own test environment. 
 
 
 ## Learn More
