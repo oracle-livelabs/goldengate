@@ -82,12 +82,12 @@ If you witness the error "ORA-65162: Password of the common database user has ex
 
        ![Files inside the AdminClient directory](./images/oby_scripts_list.png " ")
      
-   2. Run the `add_replication_reporting.sh` script:
+   2. Run the `add_replication_reporting_adminclient.sh` script:
       
        ```
          <copy>
       
-            ./add_replication_reporting.sh
+            ./add_replication_reporting_adminclient.sh
       
          </copy>
       
@@ -108,7 +108,7 @@ If you witness the error "ORA-65162: Password of the common database user has ex
          
           ```
 
-   You need to run this script to copy the Extract and Replicat parameter files to Oracle GoldenGate deployment's configuration directory and then run the `add_replication_reporting.oby` script to set up data replication. 
+   This script copies the Extract and Replicat parameter files to Oracle GoldenGate deployment's configuration directory and then runs the `add_replication_reporting.oby` script to set up data replication. 
 
    <b>Note</b>: The `add_replication_reporting.oby` script, which is inside the `add_replication_reporting_adminclient.sh` script, runs after the Extract and Replicat parameter files are copied to the Oracle GoldenGate deployment's `/etc/conf/ogg/` directory. After the script runs successfully, you will be able to see the Extract and Replicat processes in running state and also view the reports for the committed transactions.
 
@@ -191,7 +191,7 @@ After you check the reports, you can delete the data replication environment usi
 
       ```
       <copy>
-         ./ delete_replication_reporting.sh
+         ./delete_replication_reporting_adminclient.sh
       </copy>
       ```
    This script consists of the command to run the <code>delete_replication_reporting.oby</code> script. 

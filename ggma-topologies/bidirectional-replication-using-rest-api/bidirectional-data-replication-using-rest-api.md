@@ -15,7 +15,7 @@ Estimated Time: 20 minutes
 ### Objectives
 In this lab, you will: 
 
-* Run the `add_replication_activeactive_curl.sh` script, which would automatically perform the following tasks:
+* Run the `add_replication_ActiveActive_curl.sh` script, which would automatically perform the following tasks:
 
      * Add USERIDALIAS for the PDBs, DBNORTH and DBSOUTH on the CDB to connect to the database instance
      *	Add supplemental logging to the database schema `hr` (SCHEMATRANDATA) on `DBNORTH` and `DBSOUTH` PDBs
