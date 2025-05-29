@@ -169,7 +169,7 @@ Follow these steps to set up Oracle GoldenGate processes for bidirectional repli
       
    In the next task, you will be able to test the sample report based on the transactions committed when the `add_replication_ActiveActive_curl.sh` script runs.
 
-## Task 2: Add DML to DBNORTH and DBSOUTH PDBs 
+## Task 2: Add DML to DBNORTH and DBSOUTH PDBs and Check the PDBs for Committed Transactions
 
 In this task, you can verify that the Extract processes on `DBNORTH` and `DBSOUTH` databases are working correctly. The following steps will instruct you to run a script that will automatically perform an UPDATE operation on the PDBs. You can check the Extract and Replicat statistics to know monitor the UPDATE has been done successfully.  
 
@@ -247,7 +247,7 @@ This statistical report shows you the number of updates done for the specified t
 
 ## Task 4: View the Replicat Using Statistics for Oracle GoldenGate Processes
 
-After adding records, you can view the Extract Statistics to confirm that the committed transactions were captured. The `check_replication_activeactive.sh` script allows you to view the statistics for different Oracle GoldenGate processes.
+After adding records, you can view the Extract Statistics to confirm that the committed transactions were captured. The `check_replication_ActiveActive.sh` script allows you to view the statistics for different Oracle GoldenGate processes.
 
 To view the Standard Report based on sample data:
 
@@ -255,8 +255,11 @@ To view the Standard Report based on sample data:
    
        ```
          <copy>
+          
             ./check_replication_ActiveActive_curl.sh
+         
          </copy>
+       
        ```
       The output for this script shows various detiails. You can view these details to verify that the bidirectional replication is working.
 
@@ -270,12 +273,12 @@ To view the Standard Report based on sample data:
    
   To delete the setup:
 
-  1. Run the script `delete_replication_ActiveActive_adminclient.sh`.
+  1. Run the script `delete_replication_ActiveActive_curl.sh`.
    
       ```
         <copy>
       
-          ./delete_replication_activeactive_adminclient.sh  
+          ./delete_replication_ActiveActive_curl.sh  
       
         </copy>
       
