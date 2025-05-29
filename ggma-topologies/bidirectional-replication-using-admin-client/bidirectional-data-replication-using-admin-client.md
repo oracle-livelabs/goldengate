@@ -43,6 +43,8 @@ If you witness the error "ORA-65162: Password of the common database user has ex
       sqlplus / as sysdba
    
     </copy>
+   
+   ```
 
 2. On the SQL prompt, run the following commands to set the password validity for the :
    
