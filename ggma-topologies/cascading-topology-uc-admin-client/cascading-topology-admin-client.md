@@ -25,13 +25,11 @@ For setting up replication across a Cascading topology, there are some preset co
 
 From this diagram, you can deduce the following: 
 
-* The `depl_north` deployment captures from `DBNORTH` and connects to the `depl_west` deployment on another intermediate host machine. 
+* The `depl_north` deployment captures from `DBNORTH` and connects to the `depl_south` deployment on another intermediate host machine. 
 
-* The Replicat process on `depl_west`, replicates to the `DBWEST` database.  
+* The Replicat process on `depl_south`, replicates to the `DBSOUTH` database.  
 
-* The Extract process, EXTW, in `depl_west` captures the replicated data and writes it to the local trail.
-
-*  The DISTPATH process in `depl_west` deployment transfers the local trail to the `depl_south` deployment, where the Replicat process REPN,  replicates to `DBSOUTH` database. 
+* The Extract process, EXTS, in `depl_south` captures the replicated data and writes it to the local trail and transfer to the Replicat `REPS` on the `depl_west` deployment.
 
 
 
@@ -51,9 +49,98 @@ The objective of this tutorial is to:
 
 This lab assumes that you have completed the tasks in **initial-setup**.
 
-
 ## Task 1: Set Up Oracle GoldenGate Processes Across Multiple Deployments on Different Databases
 
    To set up the Extract, Replicat, Distribution Path, and Receiver Path processes across deployments, follow these steps:
 
-   1. 
+   1. Navigate to the `scripts/UseCases/03_Cascading/AdminClient` directory. You will see the script `add_replication_cascading_admin-client.sh`.
+
+   2. Run this script using the following command:
+
+      ```
+        <copy>
+           
+           ./add_replication_cascading_adminclient.sh
+   
+        </copy>
+      ```
+      This script automatically creates the Extract, Replicat, DISTPATH processes for all three deployments. The following processes are created on the `depl_north`, `depl_south`, and `depl_west` deployments:
+
+      * On `depl_north`:
+         * `EXTN` Extract process
+         * `DPNS` DISTPATH process
+      * On `depl_south`:
+         * `EXTS` Extract process
+         * `REPN` Replicat process
+         * `DPSW` DISTPATH
+      * On `depl_west`:
+        * `REPS` Replicat process 
+   3. Check that the processes are running successfully, using the following commands:
+
+      a. Connect to `depl_north` deployment:
+          
+         
+         <copy>
+          
+          CONNECT https://north:9001 DEPLOYMENT depl_north AS ggma PASSWORD GGma_23ai !
+   
+         </copy>
+          
+         
+         
+      b. Run the `INFO ALL` and `INFO DISTPATH ALL` commands: 
+         
+         
+          <copy>
+            INFO ALL   
+          </copy>
+         
+        
+      Make sure that the `EXTN` process is in `RUNNING` state.
+
+          
+         <copy>
+           INFO DISTPATH ALL   
+         </copy>
+          
+      Make sure that the `DPNS` process is in `RUNNING` state.
+      
+## Task 2: Add DML to DBNORTH PDBs
+   
+   Adding DML to the source PDB, DBNORTH, would allow you to test that the data is captured from DBNORTH. In the following steps, you will run the `source_dml_operations` script to perform DML transactions on DBNORTH:
+
+   1. Navigate to the `scripts/UseCases/03_Cascading` directory and run the `ls` command. You should be able to see the `source_dml_operations` script.
+
+   2. Run the `source_dml_operations` script:
+
+      ```
+         <copy>
+            ./source_dml_operations
+         </copy>
+      ```
+   
+     This scripts commits transactions to the `hr.employees` table on `DBNORTH`.
+
+## Task 3: Check Replication from Source PDB (DBNORTH) to the Intermediate PDB (DBSOUTH)
+
+   In case of a cascading environment, a successful replication is one where the committed source transactions are replicated to the intermediate and then to the target data source, correctly. In this task, you will be able to check that the committed transactions in `DBNORTH` are replicated to `DBSOUTH`:
+
+   1. Navigate to the `scripts/UseCases/03_Cascading` directory and run the `ls` command. You should be able to see the `check_replication_cascading.sh` script.
+
+   2. Run this script:
+      
+      ```
+        <copy>
+           
+           ./check_replication_cascading.sh
+
+        </copy>
+
+   3. 
+
+
+
+    
+
+      
+      

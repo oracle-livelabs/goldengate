@@ -13,9 +13,7 @@ In a typical cascading configuration:
 
 * On the second host system, Replicat applies the data to the local database or PDB.
 
-* Another Extract on that same system captures the data from the local database and writes it to a local trail.
-
-* A distribution path (DISTPATH) sends the data to a remote trail on the final system in the cascade, where it is applied to the local database or PDB by another Replicat.
+* Another Extract on that same system captures the data from the local database and writes it to a local trail, which then gets replicated to the target database by the Replicat process on the target deployment.
 
 This configuration can be used to perform data filtering and conversion if the character sets on all systems are identical. If character sets differ, then a data pump cannot perform conversion between character sets, and you must configure Replicat to perform the conversion and transformation on the target.
 
@@ -27,13 +25,11 @@ For setting up replication across a Cascading topology, there are some preset co
 
 From this diagram, you can deduce the following: 
 
-* The `depl_north` deployment captures from `DBNORTH` and connects to the `depl_west` deployment on another intermediate host machine. 
+* The `depl_north` deployment captures from `DBNORTH` and connects to the `depl_south` deployment on another intermediate host machine. 
 
-* The Replicat process on `depl_west`, replicates to the `DBWEST` database.  
+* The Replicat process on `depl_south`, replicates to the `DBSOUTH` database.  
 
-* The Extract process, EXTW, in `depl_west` captures the replicated data and writes it to the local trail.
-
-*  The DISTPATH process in `depl_west` deployment transfers the local trail to the `depl_south` deployment, where the Replicat process REPN,  replicates to `DBSOUTH` database. 
+* The Extract process, EXTS, in `depl_south` captures the replicated data and writes it to the local trail and transfer to the Replicat `REPS` on the `depl_west` deployment.  
 
 
 
@@ -45,7 +41,7 @@ The objective of this tutorial is to:
 
 * Show the use of data replication in a cascading topology.
 
-* Run the automation scripts to set up the Oracle GoldenGate processes in `depl_north`, `depl_west`, and `depl_south` deployments. 
+* Run the automation scripts to set up the Oracle GoldenGate processes in `depl_north`, `depl_south`, and `depl_west` deployments. 
 
 * Test the output to show replication across the environment connected using a Cascading topology configuration.
 
@@ -53,24 +49,34 @@ The objective of this tutorial is to:
 
 This lab assumes that you have completed the tasks in **initial-setup**.
 
+### Tip
 
-## Task 1: Set Up Oracle GoldenGate Processes Across Multiple Deployments on Different Databases
+If you see the error ORA-00257 Archiver Error, then run the following script to remove redundant archive log files from the system and run the application seamlessly:
+
+1. Navigate to the `scripts/misc' directory.
+2. Run the `rman_delete_archivelog.sh` script. 
+
+After you run this script, you would be able to continue to run the scripts successfully.
+
+## Task 1: Set Up Oracle GoldenGate Processes Across Multiple Deployments on Different PDBs
 
    To set up the Extract, Replicat, Distribution Path, and Receiver Path processes across deployments, follow these steps:
 
-   1. Navigate to the `/scripts/UseCases/03_Cascading/REST-API` directory. You will see the script `add_replication_cascading_curl.sh`.
+   1. Navigate to the `scripts/UseCases/03_Cascading/REST-API` directory. You will see the script `add_replication_cascading_curl.sh`.
 
    2. Run this script using the following command:
 
-   ```
-   .\add_replication_cascading_curl.sh`
+      ```
+        <copy>
+           ./add_replication_cascading_curl.sh
    
-   ```
-   This script automatically creates the Extract, Replicat, DISTPATH processes for all three deployments.
+        </copy>
+      ```
+      This script automatically creates the Extract, Replicat, DISTPATH processes for all three deployments.
 
    3. Now, let's test whether the processes are up and running in these deployments. 
 
-       a. From your REST API client, connect to the `depl_north` deployment.
+       a. 
 
        b. Run the command to view the process information. You should be able to see the Extract process, `EXTN`, and Replicat process, `REPS`, in RUNNING state.
 
