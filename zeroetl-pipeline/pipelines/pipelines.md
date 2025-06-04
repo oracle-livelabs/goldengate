@@ -39,13 +39,17 @@ In this lab, you will:
 
 1. In the Pipelines page, select the pipeline.
 
+2. On the Pipeline details page, click **Mapping Rules**.
+
 2. On the pipeline details page, under the Resources menu, click **Mapping Rules**.
 
-3. Click **Add**.
+3. Click **Preview**.
 
     ![Pipeline details](./images/02-03-pipeline-details.png)
 
-4. In the Add mapping rules dialog, from the Type dropdown, select **Include/Exclude**. For Source, enter x. For Target, enter. Click **Add mapping rules**.
+4. In the Preview mapping dialog, expand the **SRC_OCIGLL** source schema and review the list of schemas and tables that are going to be replicated. Select **Cancel** to close the dialog.
+
+    ![Preview mapping](./images/02-04-preview-mapping.png)
 
 ## Task 3: Enable logging
 
@@ -55,7 +59,7 @@ In this lab, you will:
 
     ![Enable log](./images/03-02-click-enable-log.png)
 
-3. In the Enable log dialog, for Log name, enter **critical-events**.
+3. In the Enable log dialog, for Log name, enter **critical-group**.
 
 4. From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
@@ -77,10 +81,13 @@ In this lab, you will:
 
     ![Enable critical event log](./images/03-10-enable-crit-ev-log-group.png)
 
+    The critical event log appear in the list of Logs. The log becomes Active after a few minutes.
+
+    ![Active critical event log](./images/03-11-active-crit-ev-log-group.png)
 
 ## Task 4: Start the pipeline
 
-1. In the pipelines details page, click **Start**.
+1. In the pipelines details page, expand the **Actions** menu, and then click **Start**.
 
     ![Start pipeline](./images/04-01-start-pipeline.png)
 

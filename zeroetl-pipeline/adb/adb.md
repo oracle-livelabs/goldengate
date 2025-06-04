@@ -51,14 +51,10 @@ To successfully complete this lab, you must:
 
 15. Log out of Database actions.
 
-## Task 5: Create a deployment
-
-[](include:05-create-deployment.md)
-
 You may now **proceed to the next lab.**
 
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated by** - Katherine Wardhana, May 2024
+- **Last Updated by** - Katherine Wardhana, June 2025
 - **PAR Expiration date** - February 2030
