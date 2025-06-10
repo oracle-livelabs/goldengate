@@ -102,6 +102,14 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 8.  Enter the following into the Worksheet, and then click **Run Statement**.
 
     ```
+    <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
+    ```
+
+    ![Script Output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-08-sql-script-return.png " ")
+
+9.  Replace the supplemental logging script with the following statemet, and then click **Run Statement**:
+
+    ```
     <copy>GRANT DWROLE TO GGADMIN;
     GRANT DATAPUMP_CLOUD_EXP TO GGADMIN;
     GRANT DATAPUMP_CLOUD_IMP TO GGADMIN;
@@ -155,7 +163,7 @@ Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) i
 
     The source and target databases appear in the list of Connections. The connection becomes Active after a few minutes.
 
-14. Repeat Task 2, steps 1-8, to unlock the GGADMIN user and run the SQL script for the TargetADW database.
+14. Repeat Task 2, steps 1-9, to unlock the GGADMIN user and run the SQL script for the TargetADW database.
 
 You may now **proceed to the next lab.**
 

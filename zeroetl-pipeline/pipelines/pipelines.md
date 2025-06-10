@@ -25,7 +25,7 @@ In this lab, you will:
 
 2.  The Create ZeroETL Mirror pipeline panel appears. For Name, enter **test-pipeline** and optionally, a description.
 
-3.  For Choose a license tyoe, select **Bring Your Own License (BYOL)**.
+3.  For Choose a license tyoe, select **Licenses included**.
 
 4.  For Source connection, select **SourceATP** from the dropdown.
 
@@ -41,8 +41,6 @@ In this lab, you will:
 
 2. On the Pipeline details page, click **Mapping Rules**.
 
-2. On the pipeline details page, under the Resources menu, click **Mapping Rules**.
-
 3. Click **Preview**.
 
     ![Pipeline details](./images/02-03-pipeline-details.png)
@@ -53,7 +51,7 @@ In this lab, you will:
 
 ## Task 3: Enable logging
 
-1. On the pipeline details page, under the Resources menu, click **Logs**.
+1. On the pipeline details page, click **Logs**.
 
 2. In the Logs list, click the three dots icon for your object, and then select **Enable log**.
 
