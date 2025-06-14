@@ -15,7 +15,7 @@ In this lab, you:
 
 1.  Use the following link to download the ORM stack:
 
-    - [ggma-datastreams-mkplc-freetier.zip](LiveLab will update the link to download the ZIP file)
+    [ggma-datastreams-mkplc-freetier.zip](./files/ggma-datastreams-mkplc-freetier.zip)
 
 2. In the Oracle Cloud navigation menu, select **Developer Services**, and then **Stacks**.
 3. On the Stacks page, under **List scope**, select your compartment from the **Compartment** dropdown.

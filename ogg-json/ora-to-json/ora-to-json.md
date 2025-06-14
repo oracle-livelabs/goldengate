@@ -175,7 +175,7 @@ To successfully complete this lab, you must have completed all preceding labs in
   ![dblogin-add-trandata](./images/dblogin-add-trandata.png " ")
 
 6. On the Trandata page, complete the following fields, and then click **Submit**: 
-- For Schema Name, enter JSON_USER. 
+- For Schema Name, enter **JSON_USER**. 
 - Under Supplemental Logging Options, select **Scheduling Columns** and **All Columns**.
   ![add-trandata](./images/add-trandata.png " ")
     >**Note:** To verify, enter JSON_USER and then click **Search**.
@@ -199,15 +199,18 @@ To successfully complete this lab, you must have completed all preceding labs in
 
     - For **Domain**, select **OracleGoldenGate** from the dropdown.
     - For **Alias**, select **sourcedb** from the dropdown.
-    - For **Trail Name**, enter a two-character name for the Trail file, such as **ET**.
+    - For **Trail Name**, enter a two-character name for the Trail file, such as **et**.
 
   ![extract-options](./images/extract-options.png" ")
 
 4. On the Managed Options page, leave the fields as they are, and click **Next**.
   ![managed-options](./images/managed-options.png " ")
 
-5. In the Parameter File page, click **Create**. 
-
+5. On the Parameter File page, add a new line to the existing text in the text area. Copy and paste the following, then click **Create**.
+    ```
+    <copy>TABLE JSON_USER.*;</copy>
+    ``` 
+  ![gg-parameter](./images/parameter-file.png " ")
 6. In the **EXTSRC** Action menu, select **Start**. In the Confirm Action dialog, click **OK**.
   ![start-extract](./images/start-extract.png " ")
   ![extract-running](./images/extract-running.png " ")
@@ -228,7 +231,8 @@ To successfully complete this lab, you must have completed all preceding labs in
 ## Task 5: Consume the Change Data from the Data Stream
 1. Enter the following command to create a YAML file:
     ```
-    <copy>vi ~/websocket-client-template/demo/lab.yaml</copy>
+    <copy>rm ~/websocket-client-template/demo/lab.yaml
+    vi ~/websocket-client-template/demo/lab.yaml</copy>
     ```
     ![data-stream-yaml-copy.](./images/data-stream-yaml-copy-from-browser.png " ")
     ![data-stream-yaml-paste](./images/data-stream-yaml-paste.png " ")
