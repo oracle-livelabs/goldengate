@@ -39,7 +39,7 @@ This lab assumes you have:
 
     In the previous step you already logged in to this console.
 
-2. Select the **oracledb** Deployment menu in the left navigation bar
+2. Select **oracledb** in the Deployments menu in the left navigation bar
 
     ![select oracle deployment](./images/gg-oracle-services23.png " ")
 
@@ -77,7 +77,7 @@ This lab assumes you have:
 
     You can see the login takes place, and the section *TRANDATA* appears on the screen.
 
-    **Troubleshooting**: In case you get an error when testing the connection to the database, double-check your listener configuration is set up correctly, as already explained in the *Discover the Environment section*:
+    **Troubleshooting**: In case you get an error when testing the connection to the database, double-check that your listener configuration is set up correctly, as already explained in the *Discover the Environment section*:
 
     - In the terminal window, connect to the database as system: ```sqlplus system/Welcome#123 as sysdba```
     - configure the listener: ```alter system set LOCAL_LISTENER='' scope=both;```
@@ -221,14 +221,14 @@ Before we start the actual configuration we'll check the port on which the oggda
 8. Enter the **Target Options**:
 
     - *Target protocol*: **ogg**
-    - *Target Type*: **Receive Service**
+    - *Target Type*: **Receiver Service**
     - *Target*: **localhost**
     - *Port Number*: **10403**
     - *Trail Name*: **rt**
 
     Leave the other parameters as the default values provided and click **Next**
 
-    ![Configure distributed](./images/distri-target23.png " ")
+    ![Configure distributed](./images/distri-target23a.png " ")
 
 9. Leave the parameters on the following screens as is
 
@@ -245,7 +245,7 @@ Before we start the actual configuration we'll check the port on which the oggda
 
 Congratulations, you configured the **Distribution** service to send out the transactions remotely
 
-## Task 4 : Check the Receive service on the oggdaa Deployment
+## Task 4 : Check the Receiver service on the oggdaa Deployment
 
 Because you already configured the Distribution service specifying another GoldenGate environment Receiver service as a target, the receiving end will be configured by default.
 
@@ -259,7 +259,7 @@ We'll simply check if this configuration is visible on the receiving end of the 
 
     ![oggdaa deployment services](./images/oggdaa-rec.png " ")
 
-4. You can see that the same configuration we already configured in the Distribution service of the **oracledb** deployment is also visible here in the **oggdaa** deployment Receive service:
+4. You can see that the same configuration we already configured in the Distribution service of the **oracledb** deployment is also visible here in the **oggdaa** deployment Receiver service:
 
     ![Receiver service config](./images/oggdaa-rec2.png " ")
 

@@ -92,7 +92,7 @@ To simulate an active application interacting with a database, we'll be using a 
 
       ```bash
       <copy>
-      sh monitor_oracle.sh
+      sh monitor_oracledb.sh
       </copy>
       ```
 

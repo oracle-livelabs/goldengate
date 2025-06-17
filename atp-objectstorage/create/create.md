@@ -89,15 +89,15 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
     ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
 
-4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **SourceATP** and optionally, a description.
+4.  The Create connection panel appears. For Name, enter **SourceATP** and optionally, a description.
 
-5.  From the Type dropdown, select **Oracle Autonomous Database**.
+5. For **Compartment**, select the compartment in which to create this connection.
 
-6.  Click **Next**.
+6.  From the Type dropdown, select **Oracle Autonomous Database**.
+
+7. For Database details, select **Select database**.
 
     ![Create connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
-
-7. On the Connection details page, under Database details, select **Select database**.
 
 8.  For **Database in &lt;compartment-name&gt;**, select **SourceATP-&lt;numbers&gt;** from the dropdown. 
 
@@ -109,7 +109,7 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
 12. Click **Create**.
 
-    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-13-create-connection-gg-details.png)
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-11-create-connection-gg-details.png)
 
     The connection becomes Active after a few minutes.
 
@@ -175,15 +175,17 @@ You can leave the source database SQL window open for use in a later lab.
 
 2.  Click **Connections** and then **Create Connection**.
 
-3.  In the Create Connection panel, enter **TargetObjStore** for Name.
+3.  The Create connection panel appears. For Name, enter **TargetObjStore**.
 
-4.  From the Type dropdown, select **OCI Object Storage**.
+4. For **Compartment**, select the compartment in which to create this connection.
 
-5.  Click **Next**.
-
-    ![Create connection details](images/05-05-create-connection.png " ")
+5.  From the Type dropdown, select **OCI Object Storage**.
 
 6.  From the Region dropdown, select your region.
+
+    ![GoldenGate in the Oracle Cloud console navigation menu](./images/05-06-objstorageconnection.png " ")
+
+7. For User, select **User current user**.
 
 7.  For Private key configuration, drag-and-drop the private key (.pem) or select it from your local machine.
 
@@ -235,17 +237,15 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 
     ![Create connection](./images/07-01-create-connection.png " ")
 
-2.  In the Create connection panel, enter a **Name** and optionally, a description.
+2.  The Create connection panel appears. Enter a **Name** and optionally, a description.
 
 3.  For **Compartment**, select the compartment in which to create this connection.
 
 4.  From the **Type** dropdown, under Generic, select **GoldenGate**.
 
-5.  Click **Next**.
+5.  For **GoldenGate deployment**, select **Select GoldenGate deployment**.
 
-    ![Create connection details](./images/07-05-create-connection.png " ")
-
-6.  For Deployment, select the Big Data deployment from the dropdown.
+6. For **Deployment in &lt;compartment-name&gt;**, select **OBJDeployment** from the dropdown. 
 
 7.  For Username, enter `oggadmin`.
 
@@ -277,4 +277,4 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, June 2024
+* **Last Updated By/Date** - Katherine Wardhana, February 2025
