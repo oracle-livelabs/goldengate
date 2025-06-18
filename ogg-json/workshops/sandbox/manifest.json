@@ -1,6 +1,6 @@
 {
     "workshoptitle": "Replicate Business Objects with Oracle JSON Relational Duality Views and GoldenGate Data Streams",
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "help": "livelabs-help-db_us@oracle.com",
     "variables": ["../../variables/variables.json",
         "../../variables/variables-in-another-file.json"],
     "tutorials": [
