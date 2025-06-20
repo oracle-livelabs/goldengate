@@ -8,15 +8,15 @@
 
 	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/networking-vcn.png " ")
 
-2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
+2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Actions**, and then select **Start VCN Wizard** from the dropdown.
 
 	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-start-vcn-wizard.png " ")
 
-3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
+3.  In the Start VCN Wizard panel, select **Create VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
     ![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-03-vcn-wizard.png " ")
 
-4.  Enter a name for the VCN, select a compartment, and then click **Next**.
+4.  In the Create VCN with internet connectivity panel, on the Configuration page, enter a name for the VCN, select a compartment, and then click **Next**.
 
     ![Enter VCN details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-04-vcn-details.png " ")
 
