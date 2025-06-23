@@ -143,15 +143,15 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 
 ## Task 4: Create a Purge task
 
-1.  In the MySQLDeployment console, open the navigation menu (hamburger icon), and then click **Configuration**.
+1.  In the MySQLDeployment console, from the navigation menu, click **Tasks**, and then click **Purge Trail**.
 
-    ![OCI GoldenGate Deployment Console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-01-navmenu.png " ")
+    ![OCI GoldenGate Deployment Console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-01-admin-tasks " ")
 
-2.  On the **Configuration** screen, click **Tasks**, and then click **Add Purge Trail Task** (plus icon). The **Create a new Purge Trials task** form appears.
+2.  On the **Purge Trails Tasks** screen, click **Add Purge Trail Task** (plus icon). The **Create a new Purge Trials task** form appears.
 
     ![Create a new Purge Trails task on Tasks page](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-02-add-purge-trails-23ai.png " ")
 
-3.  For **Operation Name**, enter a name.
+3.  For **Name**, enter a name.
 
 4.  For **Trail**, enter the name of a Trail file, and then click **Add** (plus icon). For example, in this workshop, our Extract Trail file is called `E1`.
 
@@ -159,9 +159,9 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 
 6.  For **Purge Frequency**, select **Hours**, and then enter `1`. This indicates that this Purge task will run every hour.
 
-    ![Keep Rule and Purge Frequency fields highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-06-purge-trails-task-23ai.png " ")
-
 7.  Click **Submit**.
+
+    ![Keep Rule and Purge Frequency fields highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-06-purge-trails-task-23ai.png " ")
 
 **Proceed to the next lab.**
 
@@ -174,4 +174,4 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, February 2025
+* **Last Updated By/Date** - Katherine Wardhana, June 2025

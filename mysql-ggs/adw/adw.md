@@ -91,7 +91,7 @@ Click **Administration Service** to return to the Overview page.
 
 2. The Add Replicat panel consists of four pages. On the Replicat Information page, complete the following fields, and then click **Next**:
 
-    * For **Replicat Type**, select **Nonintegrated Replicat**.
+    * For **Replicat Type**, select **Classic Replicat**.
     * For **Process Name**, enter a name for this process. For example, `RCDC`.
 
 3. On the Replicat Options page, complete the following fields, and then click **Next**:

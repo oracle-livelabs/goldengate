@@ -223,52 +223,7 @@ In this task, you create a user in the target deployment for the Distribution Pa
 
 4.  In the target ADW OCI GoldenGate deployment console (**adw_instance**), click **Receiver Service** to review the Receiver Path created as a result of creating the `ILDP` Distribution Path.
 
-## Task 5: Create the Distribution Path for the Change Data Capture Extract
-
-1.  In the source MySQL OCI GoldenGate deployment console, click **Distribution Service**.
-
-2.  On the Distribution Service Overview page, click **Add Path** (plus icon).
-
-    ![Click Add Path in source deployment Distribution Service](./images/05-02-add-path.png " ")
-
-3. The Add Path panel consists of seven pages. On the Path Information page, for **Name**, enter `CDCDP`, and then click **Next**.
-
-  ![Path Information page](./images/05-03-path-info.png " ")
-
-4. On the Source Options page, complete the following fields, and then click **Next**:
-
-    * For **Source Extract**, select **CDCEXT** from the dropdown.
-    * For **Trail Name**, `C1` should automatically populate the field.
-
-  ![Source Options page](./images/04-04-source-opts.png " ")
-
-5. On the Target Options page, complete the following fields, and then click **Next**:
-
-    * For **Target Host**, enter the target ADW OCI GoldenGate deployment console URL, without the https:// or any trailing slashes. You can copy the console URL from the ADWDeployment details page.
-
-    ![Copy console URL from target deployment details page](./images/04-05a-console-url.png " ")
-
-    * For **Port Number**, enter **443**.
-    * For **Trail Name**, enter `C1`.
-    * For **Alias**, enter **dpuser**.
-
-    ![Target Options page](./images/04-05b-target-opts.png " ")
-
-6. On the Advanced Options page, leave the fields as they are, and click **Next**.
-
-    ![Advanced Options page](./images/04-06-adv-opts.png " ")
-
-7. On the Filtering Options page, leave the fields as they are, and click **Next**.
-
-    ![Filtering Options page](./images/04-07-filt-opts.png " ")
-
-8. On the Managed Options page, leave the fields as they are, and click **Create Path and Run**.
-
-    ![Managed Options page](./images/04-08-man-opts.png " ")
-
-    You return to the Distribution Service Overview page where you can review the path created.
-
-4.  In the target ADW OCI GoldenGate deployment console, click Receiver Service to review the Receiver Path created as a result of creating the `CDCDP` Distribution Path.
+You may now **proceed to the next lab.**
 
 ## Learn more
 
