@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create the resources required to complete this workshop. You'll learn to create a VCN and subnet, a bastion, provision MySQL Heatwave and autonomous database instances, and load data into the databases.
+This lab walks you through the steps to create the resources required to complete this workshop. You'll learn to create a VCN and subnet, a bastion, provision MySQL HeatWave and Autonomous Database instances, and load data into the databases.
 
 Estimated time: 30 mins
 
@@ -27,7 +27,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/networking-vcn.png " ")
 
-2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, select the **Actions** menu, and then click **Start VCN Wizard**.
+2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, from the **Actions** menu, select **Start VCN Wizard**.
 
 	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-start-vcn-wizard.png " ")
 
@@ -73,9 +73,9 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 ## Task 2: Create a MySQL Heatwave System
 
-1.  In the Oracle Cloud console navigation menu, click **Databases**, and then click **MySQL**.
+1.  In the Oracle Cloud console navigation menu, click **Databases**, and then under HeatWave MySQL, select **DB Systems**.
 
- 	![Click MySQL under Databases in the Oracle Cloud console navigation menu](./images/02-01-mysql.png)
+	![Click MySQL under Databases in the Oracle Cloud console navigation menu](./images/02-01-mysql.png " ")
 
 2.  On the MySQL DB Systems page, click **Create DB System**.
 
@@ -164,7 +164,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 If working within the same Home region for OCI GoldenGate and MySQL Heatwave, then you can use CloudShell to connect to the private network.
 
-1.  After your OCI MySQL DB system becomes active, click **Developer tools** in the Oracle Cloud console global header, and then select **Cloud Shell**.
+1.  After your HeatWave DB system becomes active, click **Developer tools** in the Oracle Cloud console global header, and then select **Cloud Shell**.
 
 	![Open CloudShell](./images/03b-01-open-cloudshell.png " ")
 
@@ -172,7 +172,7 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 	![CloudShell Network](./images/03b-02-cloudshell.png " ")
 
-3.  Select the VCN and Subnet your OCI MySQL DB system uses, and then click **Use as active network**.
+3.  Select the VCN and Subnet your HeatWave DB system uses, and then click **Use as active network**.
 
 4.  After CloudShell is connected to the private network, enter the following command to connect to the MySQL database:
 
@@ -182,7 +182,7 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 5.  Proceed to Task 4, Step 7.
 
-## Task 4: Load data into the MySQL DB System
+## Task 4: Load data into the HeatWave DB system
 
 1.  In the Oracle Cloud console global header, click **Developer tools**, and then select **Cloud Shell**. Cloud Shell opens in a panel at the bottom of the console.
 

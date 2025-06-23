@@ -37,12 +37,6 @@ To successfully complete this lab, you need:
 
     ![GoldenGate deployment console sign in](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin-23ai.png " ")
 
-    > **NOTE:** If using the LiveLab Sandbox environment, copy the OCI GoldenGate Admin Password from the Terraform output section of **View Login Info**.
-
-    ![View Login info](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02a-view-login-info.png " ")
-
-    ![Terraform values](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02b-terraform-values.png " ")
-
     After you log in successfully, you're brought to the GoldenGate 23ai deployment console home page. Here, you can access the GoldenGate Administration, Distribution and Receiver Services, Performance Metrics Service, as well as add Extracts and Replicats for your data replication tasks.
 
     ![GoldenGate 23ai deployment console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-03-webui-23ai.png " ")
@@ -134,7 +128,7 @@ To successfully complete this lab, you need:
     The status updates to Running.
 
 ## Task 3: Create an OCI GoldenGate user for the Distribution Paths
-In this task, you create a user in the target deployment for the Distribution Paths to use to send data.
+In this task, you create a user in the **target deployment** for the Distribution Paths to use to send data.
 
 1.  In the Oracle Cloud console, on the **Deployments** page, select the target Autonomous Data Warehouse deployment to view its details.
 
@@ -143,8 +137,6 @@ In this task, you create a user in the target deployment for the Distribution Pa
 3.  On the OCI GoldenGate deployment console sign in page, enter `oggadmin` for User Name, enter the password, and then click **Sign In**.
 
     ![GoldenGate deployment console sign in](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin-23ai.png " ")
-
-    > **NOTE:** If using the LiveLab Sandbox environment, copy the OCI GoldenGate Admin Password from the Terraform output section of **View Login Info**.
 
 4.  Open the navigation menu, and then click **User Administration**.
 
@@ -177,6 +169,7 @@ In this task, you create a user in the target deployment for the Distribution Pa
     The credential appears in the Credentials list.
 
 ## Task 4: Create the Distribution Path for the Initial Load Extract
+In the **source deployment**, create the Distribution Path to send data to the target.
 
 1.  In the source MySQL OCI GoldenGate deployment console, click **Distribution Service**.
 
@@ -197,7 +190,7 @@ In this task, you create a user in the target deployment for the Distribution Pa
 
 5. On the Target Options page, complete the following fields, and then click **Next**:
 
-    * For **Target Host**, enter the target ADW OCI GoldenGate deployment console URL, without the https:// or any trailing slashes. You can copy the console URL from the ADWDeployment details page.
+    * For **Target Host**, enter the target ADW OCI GoldenGate deployment console URL. You can copy the console URL from the ADWDeployment details page, but ensure you remove the https:// and any trailing slashes.
 
     ![Copy console URL from target deployment details page](./images/04-05a-console-url.png " ")
 
@@ -234,4 +227,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardgaba, February 2025
+* **Last Updated By/Date** - Katherine Wardhana, June 2025

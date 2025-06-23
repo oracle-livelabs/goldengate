@@ -27,14 +27,14 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
 To successfully complete this lab in your own tenancy:
 * For IAM-enabled tenancies, ensure that you [configure Identity domains for OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/mkmbs/#GUID-DD9C1BF8-69FE-4C9A-A2D1-74C73550ED65).
-* For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault). [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
+* For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault). [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm). [Learn more about managing secrets](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingsecrets.htm).
 * Add an API key in your profile settings to be used in Task 3:
 
-1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **User settings**.
+1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select your profile username.
 
     ![Oracle Cloud console User menu](images/00-01-profile.png " ")
 
-2.  On the user details page, click **Tokens and keys**.
+2.  On the user details page navigation menu, click **Tokens and keys**.
 
 3.  Click **Add API Key**.
 
@@ -142,7 +142,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 You're brought to the deployment details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-## Task 3: Create a connection to the source MySQL database
+## Task 3: Create a connection to the source HeatWave database
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
 
@@ -170,7 +170,7 @@ You're brought to the deployment details page. It takes a few minutes for the de
 
 10.  For Database username, enter `ggadmin`.
 
-11. Select a **Compartment** from the dropdown. For Database user password secret select **LLSecret** from the dropdown.
+11. Select a **Compartment** from the dropdown. Select a password secret from the dropdown.
 
 12. For **Security protocol**, select **Plain** from the dropdown.
 
@@ -182,7 +182,7 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
 ## Task 4: Create a connection to the target Autonomous Data Warehouse
 
-1.  On the Connections page, click **Create Connection**
+1.  On the Connections page, click **Create Connection**.
 
 2. The Create connection panel appears. For Name, enter **TargetADW** and optionally, a description.
 
@@ -198,11 +198,15 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
 7. For Database username, enter `ggadmin`.
 
-8. Select a **Compartment** from the dropdown. For Database user password secret select **LLSecret** from the dropdown.
+8. Select a **Compartment** from the dropdown. Select a password secret from the dropdown.
 
-9. Click **Create**.
+    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-09-create-connec-details.png)
 
-    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-11-create-connec-details.png)
+9. Click **Advanced options**, and then click **Network connectivity**. Under Traffice routing method, select **Shared endpoint**.
+
+10. Click **Create**.
+
+    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-11-network-connect.png)
 
 The connection becomes Active after a few minutes.
 

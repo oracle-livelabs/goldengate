@@ -14,7 +14,7 @@
 
 3.  The Create connection panel appears. For Name, enter **SourceATP** and optionally, a description.
 
-4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
+4.  From the **Compartment** dropdown, select a compartment.
 
 5.  From the a Type dropdown, select **Oracle Autonomous Database**.
 
@@ -22,18 +22,20 @@
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
 
-7.  For **Database in &lt;compartment-name&gt;**, select **SourceATP-&lt;numbers&gt;** from the dropdown. 
+7.  Select a **Compartment** from the dropdown, and then select **SourceATP-&lt;numbers&gt;** from the dropdown. 
 
 8.  For Database username, enter `ggadmin`.
 
-9.  Enter the database's password in the Password field. Take note of the password.
+9.  Select a **Compartment** from the dropdown, and then select a Database user password secret from the dropdown.
 
     > **NOTE:** This password will be used to unlock `GGADMIN` in a later task.
 
-10. For Traffic routing method, select **Shared endpoint**.
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-09-create-connection-gg-details.png)
+
+10. Click **Advanced options**, and then click **Network connectivity**. Under Traffice routing method, select **Shared endpoint**.
 
 11. Click **Create**.
 
-    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-11-create-connection-gg-details.png)
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-11-network-connect.png)
 
     The connection becomes Active after a few minutes. You can proceed with the next task while service creates the connection.
