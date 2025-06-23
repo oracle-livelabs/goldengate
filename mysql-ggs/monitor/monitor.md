@@ -145,7 +145,7 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 
 1.  In the MySQLDeployment console, from the navigation menu, click **Tasks**, and then click **Purge Trail**.
 
-    ![OCI GoldenGate Deployment Console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-01-admin-tasks " ")
+    ![OCI GoldenGate Deployment Console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-01-admin-tasks.png " ")
 
 2.  On the **Purge Trails Tasks** screen, click **Add Purge Trail Task** (plus icon). The **Create a new Purge Trials task** form appears.
 
