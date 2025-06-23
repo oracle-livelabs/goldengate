@@ -33,7 +33,7 @@ In this lab, you will:
 
     ![GoldenGate Overview - Deployments](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
 
-3. On the Deployments page, under **List scope**, select your compartment from the **Compartment** dropdown.
+3. On the Deployments page, select your compartment from the **Compartment** dropdown.
 
     > **NOTE**: If you're using the LiveLab Sandbox environment, you can find your compartment number in the Reservation Information panel (View Login Info) of the workshop instructions.
 
@@ -82,4 +82,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, July 2024
+* **Last Updated By/Date** - Katherine Wardhana, June 2025

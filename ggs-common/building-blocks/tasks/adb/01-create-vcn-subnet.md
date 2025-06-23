@@ -8,7 +8,7 @@
 
 	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/networking-vcn.png " ")
 
-2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Actions**, and then select **Start VCN Wizard** from the dropdown.
+2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, from the **Actions** menu, select **Start VCN Wizard**.
 
 	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-start-vcn-wizard.png " ")
 
