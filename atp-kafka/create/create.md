@@ -32,7 +32,7 @@ This lab assumes that you completed all preceding labs.
 
 1.  In the Oracle Cloud console, open the **navigation menu,** navigate to **Oracle Database**, and select **GoldenGate**.
 
-    ![GoldenGate in the Oracle Cloud navigation menu](images/01-01-database-goldengate.png " ")
+    ![GoldenGate in the Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
 2.  On the GoldenGate **Overview** page, click **Create deployment**.
 
@@ -42,54 +42,50 @@ This lab assumes that you completed all preceding labs.
 
 4.  In the Create Deployment panel, enter **SourceDeployment** for Name.
 
-5.  From the Compartment dropdown, select **LiveLabCompartment**.
+5.  From the Compartment dropdown, select a compartment.
 
-6.  Select **Development or testing**. The OCPU count autopopulates based on your selection.
+6. For Choose a deployment type, select **Data replication**.
 
-7.  For Subnet, select a subnet. If you're using the workshop environment, select **LiveLabWebSubnet**.
+7. For Select a technology dropdown, select **Oracle Database** from the dropdown.
 
-8.  For License type, select **Bring Your Own License (BYOL)**.
+    ![Completed Create GoldenGate Deployment fields](images/01-07-create-deployment-general-info.png " ")
 
-9. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
+8. Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
-10. Click **Next**.
+    ![Completed Create GoldenGate Deployment fields](images/01-08-create-deployment-general-info.png " ")
 
-    ![Completed Create GoldenGate Deployment fields](images/01-09-create-deployment-general-info.png " ")
+9. For Subnet, select a subnet. If you're using the workshop environment, select **LiveLabWebSubnet**. If located in a different compartment, use the dropdown to change compartments. 
 
-11. For deployment type, select **Data replication**.
+10. For GoldenGate instance name, enter **ggsource**. Take note of the instance name. This helps you identify the source as you switch between deployment consoles. 
 
-12. From a Select a technology dropdown, select **Oracle Database**.
-
-13. For GoldenGate instance name, enter **ggsource**. Take note of the instance name. This helps you identify the source as you switch between deployment consoles. 
-
-14. In an IAM-enabled tenancy, select a Credential Store.
+11. In an IAM-enabled tenancy, select a Credential Store.
 
     * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 2.
     * If you select **GoldenGate**, complete the following steps.
 
-15. For Administrator username, enter **oggadmin**.
+12. For Administrator username, enter **oggadmin**.
 
-16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
+13. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
     ![Completed Create GoldenGate Deployment fields](./images/01-16-passwordsecret.png " ")
 
-17. In the Create Secret panel, for Name, enter **LLsecret**.
+14. In the Create Secret panel, for Name, enter **LLsecret**.
 
-18. From the Compartment dropdown, select **LiveLabCompartment**.
+15. From the Compartment dropdown, select **LiveLabCompartment**.
 
-19. From the Vault dropdown, select your vault.
+16. From the Vault dropdown, select your vault.
 
-20. From the Encryption key dropdown, select your encryption key.
+17. From the Encryption key dropdown, select your encryption key.
 
-21. For User Password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+18. For User Password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
 
     > **Note:** The special characters must not be $, ^, or ?.
 
-22. Click **Create**.
+19. Click **Create**.
 
     ![Completed Create GoldenGate Deployment fields](./images/01-22-password-secret.png " ")
 
-23. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
+20. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 3 and 4 while you wait for the deployment creation to complete.
     ![Deployment creation completed](./images/01-23-deployment-active-status.png " ")

@@ -8,7 +8,7 @@
 
     ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-breadcrumb-deployment.png " ")
 
-2.  Click **Connections** and then click **Create Connection**.
+2.  Click **Connections**, and then click **Create Connection**.
 
     ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
 
@@ -32,7 +32,7 @@
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-09-create-connection-gg-details.png)
 
-10. Click **Advanced options**, and then click **Network connectivity**. Under Traffice routing method, select **Shared endpoint**.
+10. Click **Advanced options**, and then click **Network connectivity**. Under Traffic routing method, select **Shared endpoint**.
 
 11. Click **Create**.
 
