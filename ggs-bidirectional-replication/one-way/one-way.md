@@ -313,7 +313,7 @@ Before importing data to the target database, create a credential in the target 
 
 3. On the **TargetADW Details** page, from the **Database actions** dropdown, select **SQL**.
 
-    ![TargetADW Details page](../../../ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
+    ![TargetADW Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
 
 4. If prompted, log in to Database Actions as ADMIN, and then click **SQL**.
 
