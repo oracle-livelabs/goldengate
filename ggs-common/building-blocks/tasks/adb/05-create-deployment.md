@@ -34,9 +34,9 @@
 
 9. Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
-    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
-
 10.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
+
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
 11. For License type, select **Bring Your Own License (BYOL)**.
 
