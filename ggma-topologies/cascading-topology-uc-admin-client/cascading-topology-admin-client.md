@@ -122,6 +122,7 @@ If you witness the error "ORA-65162: Password of the common database user has ex
    
         </copy>
       ```
+
       This script automatically creates the Extract, Replicat, DISTPATH processes for all three deployments. The following processes are created on the `depl_north`, `depl_south`, and `depl_west` deployments:
 
       * On `depl_north`:
@@ -134,7 +135,31 @@ If you witness the error "ORA-65162: Password of the common database user has ex
       * On `depl_west`:
         * `REPS` Replicat process 
    
-   3. Check that the processes are running successfully, using the following commands:
+   3. Run the adminclient, using the command `adminclient`. 
+   
+   4. Check that all three deployments are running by accessing the Service Manager:
+      
+      a. Connect to Service Manager from the `depl_north` deployment:
+
+         <copy>
+           
+           connect https://north:9000 deployment depl_north as ggma password GGma_23ai !
+
+         </copy>
+      
+      b. Run the following command to know the status of all the deployments:
+
+         <copy>
+           
+           status deployment *
+
+         </copy>
+
+         The output should be similar to the following:
+
+         ![Check the status of the deployment by running the status deployment command. The output of this command displayed in this image](./images/cascade_checkdeplstatus.png)
+
+   5. Check that the processes are running successfully for each deployment, using the following commands:
 
       a. Connect to `depl_north` deployment and check that the processes are running:
           
@@ -149,8 +174,7 @@ If you witness the error "ORA-65162: Password of the common database user has ex
           
           INFO DISTPATH ALL
         </copy>
-          
-         
+                 
          
       b. Check the parameter file for the Extract, EXTN. In case, it is not set up, then create the EXTN.prm file using the EDIT PARAMS command: 
          
@@ -160,7 +184,7 @@ If you witness the error "ORA-65162: Password of the common database user has ex
           </copy>
          
         
-      Enter the parameters for `EXTN` parameter file:
+         Enter the parameters for `EXTN` parameter file:
 
          <copy>
       
@@ -193,7 +217,7 @@ If you witness the error "ORA-65162: Password of the common database user has ex
 
         </copy>
       
-      d. Check the parameter file for the Replicat `REPN` and Extract `EXTS` are set up. In case, it is not set up, then create the EXTN.prm file using the EDIT PARAMS command: 
+      d. Check the parameter file for the Replicat `REPN` and Extract `EXTS` are set up. In case, it is not set up, then create the `EXTS.prm` file using the `EDIT PARAMS` command: 
          
          
           <copy>
@@ -220,7 +244,7 @@ If you witness the error "ORA-65162: Password of the common database user has ex
                      
          </copy>
       
-      Enter the parameters for the `REPN` parameter file after running the `EDIT PARAMS REPN.prm` command:
+      Run the `EDIT PARAMS REPN.prm` command and enter the parameters for the `REPN` parameter file:
 
          <copy>
          
@@ -237,7 +261,22 @@ If you witness the error "ORA-65162: Password of the common database user has ex
          
         </copy>
 
-   e. Check the parameter file for the Replicat `REPS` is set up. In case, it is not set up, then create the `REPS.prm` file using the `EDIT PARAMS REPS.prm` command:
+   e.  Connect to `depl_west` deployment and check that the processes are running:
+          
+         
+         <copy>
+          
+          CONNECT https://west:9201 DEPLOYMENT depl_west AS ggma PASSWORD GGma_23ai !
+
+          DBLOGIN USERIDALIAS ggwest
+
+          INFO ALL
+          
+          INFO DISTPATH ALL
+
+         </copy>
+
+   f. Check the parameter file for the Replicat `REPS` is set up. In case, it is not set up, then create the `REPS.prm` file using the `EDIT PARAMS REPS.prm` command:
        
        <copy>
          REPLICAT reps
@@ -264,14 +303,16 @@ If you witness the error "ORA-65162: Password of the common database user has ex
 
       ```
          <copy>
+            
             ./source_dml_operations
+
          </copy>
       
       ``` 
   
       This script commits transactions to the `hr.employees` table on `DBNORTH`.
 
-## Task 3: Add DML to DBNORTH and Check Committed Transactions on Intermediate (DBSOUTH) and Final (DBWEST) PDBs 
+## Task 3: Check Committed Transactions on Intermediate (DBSOUTH) and Final (DBWEST) PDBs 
 
    In case of a cascading environment, a successful replication is one where the committed source transactions are replicated to the intermediate and then to the target data source, correctly. In this task, you will be able to check that the committed transactions in `DBNORTH` are replicated to `DBSOUTH`:
 
@@ -290,7 +331,9 @@ If you witness the error "ORA-65162: Password of the common database user has ex
    This script shows the statistical details of the DML operations, similar to the following:
 
 
-![A sample statistical output that shows different DML and other operations performed in the PDBs](./images/chkcascascadeoutput.png)
+   ![A sample statistical output that shows different DML and other operations performed in the PDBs](./images/chkcascascadeoutput.png)
+   
+   As you can see in the output, the transactions were captured from `DBNORTH` and replicated to `DBSOUTH` and then to `DBWEST`.
 
 ## Task 4: Delete the Data Replication Environment
 
