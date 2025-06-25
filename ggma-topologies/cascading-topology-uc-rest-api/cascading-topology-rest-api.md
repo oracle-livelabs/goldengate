@@ -1,4 +1,4 @@
-# Configure a Cascading Replication Topology Using REST API  
+# Set Up a Cascading Replication Environment Using REST API  
 
 
 ## Introduction
@@ -14,6 +14,8 @@ In a typical cascading configuration:
 * On the second host system, Replicat applies the data to the local database or PDB.
 
 * Another Extract on that same system captures the data from the local database and writes it to a local trail, which then gets replicated to the target database by the Replicat process on the target deployment.
+
+* A distribution path (DISTPATH) sends the data to a remote trail on the final system in the cascade, where it is applied to the local database or PDB by another Replicat.
 
 This configuration can be used to perform data filtering and conversion if the character sets on all systems are identical. If character sets differ, then a data pump cannot perform conversion between character sets, and you must configure Replicat to perform the conversion and transformation on the target.
 
