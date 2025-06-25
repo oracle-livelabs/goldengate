@@ -134,13 +134,58 @@ This lab assumes that you have completed the tasks in **initial-setup**.
         <copy>
            
            ./check_replication_cascading.sh
-
+      
         </copy>
+      ```
 
    This script shows the statistical details of the DML operations, similar to the following:
-    
-   ![A sample statistical output that shows different DML and other operations performed in the PDBS](./images/chkcascascadeoutput.png)
 
+    
+![A sample statistical output that shows different DML and other operations performed in the PDBs](./images/chkcascascadeoutput.png)
+
+## Task 4: Delete the Data Replication Environment
+
+After testing the cascading data replication scenario, remove this replication setup so that you can test other topologies and environments available in this system. 
+   
+   To delete this environment, use the `delete_replication_cascading_adminclient.sh`. You can also use this script to test and delete data replication environments in your own test enviornment. 
+   
+   To delete the setup:
+
+   1. Run the script `delete_replication_cascading_adminclient.sh`.
+   
+      ```
+        <copy>
+       
+           ./delete_replication_cascading_adminclient.sh  
+       
+        </copy>
+      
+      ```
+   
+   2. You can verify that the environment was deleted by connecting to the deployment and running the `INFO ALL` command on `depl_north` deployment.
+
+      ```
+        <copy>
+        
+          adminclient
+          
+        </copy>
+      ```
+      Now run the `CONNECT` command to connect to `depl_north`:
+
+      ```
+       <copy>
+       
+          CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
+       
+       </copy>
+     
+      ```
+   3. Run the `INFO ALL` command and `INFO DISTPATH ALL` commands after connecting to the deployment. These commands display the message `"No processes found"`, if the Extract, Replicat processes have been deleted successfully.
+
+   4. Repeat steps 2 and 3 for the `depl_south` and `depl_west` deployments.
+   
+   After you delete the environment, you can use the script `add_replication_ActiveActive_adminclient.sh` again to rebuild the environment or copy the script to apply in your own test environment.
 
 
 
