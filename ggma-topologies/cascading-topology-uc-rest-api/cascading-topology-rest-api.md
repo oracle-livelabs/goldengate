@@ -348,3 +348,17 @@ To delete the setup:
 4. Repeat steps 2 and 3 for the `depl_south` and `depl_west` deployments.
        
 After you delete the environment, you can use the script `add_replication_cascading_adminclient.sh` again to rebuild the environment or copy the script to apply in your own test environment.
+
+## Learn More
+
+* [Oracle GoldenGate Microservices REST APIs](https://docs.oracle.com/en/middleware/goldengate/core/23/oggra/)
+* [Command Line Reference Guide](https://docs.oracle.com/en/middleware/goldengate/core/23/gclir/index.html)
+* [Oracle GoldenGate Solutions Guide](https://docs.oracle.com/en/middleware/goldengate/core/23/ggsol/index.html)
+
+
+
+
+## Acknowledgements
+* **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Volker Kuhr
+* **Last Updated By/Date** - Preeti Shukla, 2025
