@@ -50,62 +50,6 @@ The objective of this tutorial is to:
 
 This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>. 
 
-If you witness the error "ORA-65162: Password of the common database user has expired", then perform the following steps to increase the validity of the password:
-
-1. From the command prompt, log in to SQL Server:
-   
-   ```
-    <copy>
-
-      sqlplus / as sysdba
-   
-    </copy>
-   
-   ```
-
-2. On the SQL prompt, run the following commands to set the password validity for the PDBs:
-   
-   `DBNORTH`
-
-   ```
-    <copy>
-      
-      alter session set container = DBNORTH;
-      create profile ggprofile limit password_life_time unlimitedd;
-      alter user ggadmin profile ggprofile;
-      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
-    
-    </copy>
-         
-   ```
-
-   `DBSOUTH`
-
-   ```
-    <copy>
-      
-      alter session set container = DBSOUTH;
-      create profile ggprofile limit password_life_time unlimitedd;
-      alter user ggadmin profile ggprofile;
-      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
-    
-    </copy>
-    
-   ```
-   
-   `DBWEST`
-   
-   ```
-    <copy>
-      
-      alter session set container = DBWEST;
-      create profile ggprofile limit password_life_time unlimitedd;
-      alter user ggadmin profile ggprofile;
-      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
-    
-    </copy>
-    
-   ```
    
 ## Task 1: Set Up Oracle GoldenGate Processes Across Multiple Deployments on Different Databases
 
@@ -312,6 +256,8 @@ If you witness the error "ORA-65162: Password of the common database user has ex
   
       This script commits transactions to the `hr.employees` table on `DBNORTH`.
 
+   <b>NOTE</b>: If you get the error "ORA-65162: Password of the common database user has expired", then run <b>Task 3 Prevent the Database Password from Expiring</b> from the <b>Initialize Environment</b> lab.
+
 ## Task 3: Check Committed Transactions on Intermediate (DBSOUTH) and Final (DBWEST) PDBs 
 
    In case of a cascading environment, a successful replication is one where the committed source transactions are replicated to the intermediate and then to the target data source, correctly. In this task, you will be able to check that the committed transactions in `DBNORTH` are replicated to `DBSOUTH`:
@@ -333,17 +279,17 @@ If you witness the error "ORA-65162: Password of the common database user has ex
 
    ![A sample statistical output that shows different DML and other operations performed in the PDBs](./images/chkcascascadeoutput.png)
    
-   As you can see in the output, the transactions were captured from `DBNORTH` and replicated to `DBSOUTH` and then to `DBWEST`.
+   As you can see in the output, the transactions were captured from `DBNORTH` and replicated to `DBSOUTH` and then to `DBWEST`. 
 
 ## Task 4: Delete the Data Replication Environment
 
 After testing the cascading data replication scenario, remove this replication setup so that you can test other topologies and environments available in this system. 
    
-   To delete this environment, use the `delete_replication_cascading_adminclient.sh`. You can also use this script to test and delete data replication environments in your own test enviornment. 
+To delete this environment, use the `delete_replication_cascading_adminclient.sh`. You can also use this script to test and delete data replication environments in your own test enviornment. 
    
-   To delete the setup:
+To delete the setup:
 
-   1. Run the script `delete_replication_cascading_adminclient.sh`.
+1. Run the script `delete_replication_cascading_adminclient.sh`.
    
       ```
         <copy>
@@ -354,7 +300,7 @@ After testing the cascading data replication scenario, remove this replication s
       
       ```
    
-   2. You can verify that the environment was deleted by connecting to the deployment and running the `INFO ALL` command on `depl_north` deployment.
+2. You can verify that the environment was deleted by connecting to the deployment and running the `INFO ALL` command on `depl_north` deployment.
 
       ```
         <copy>
@@ -363,7 +309,8 @@ After testing the cascading data replication scenario, remove this replication s
           
         </copy>
       ```
-      Now run the `CONNECT` command to connect to `depl_north`:
+      
+Now, run the `CONNECT` command to connect to `depl_north`:
 
       ```
        <copy>
@@ -373,11 +320,11 @@ After testing the cascading data replication scenario, remove this replication s
        </copy>
      
       ```
-   3. Run the `INFO ALL` command and `INFO DISTPATH ALL` commands after connecting to the deployment. These commands display the message `"No processes found"`, if the Extract, Replicat processes have been deleted successfully.
+3. Run the `INFO ALL` command and `INFO DISTPATH ALL` commands after connecting to the deployment. These commands display the message `"No processes found"`, if the Extract, Replicat processes have been deleted successfully.
 
-   4. Repeat steps 2 and 3 for the `depl_south` and `depl_west` deployments.
+4. Repeat steps 2 and 3 for the `depl_south` and `depl_west` deployments.
    
-   After you delete the environment, you can use the script `add_replication_ActiveActive_adminclient.sh` again to rebuild the environment or copy the script to apply in your own test environment.
+After you delete the environment, you can use the script `add_replication_cascading_curl.sh` again to rebuild the environment or copy the script to apply in your own test environment.
 
 
 

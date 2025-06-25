@@ -26,7 +26,8 @@ The following table provides a snapshot of the available environment:
  -----------| ------- | -------------
 | Server Names      | NORTH | north.livelabs.oraclevcn.com
 |                   | SOUTH | south.livelabs.oraclevcn.com
-| Database Type | Oracle Database 23.5 Free Edition | Contains 1 CDB and 2 PDBs
+|                   | WEST  | west.livelabs.oraclevcn.com
+| Database Type | Oracle Database 23.5 Free Edition | Contains 1 CDB and 3 PDBs
 | CDB Name   | FREE | CDB login details: 
 |            |      |    Username/Password: sys/oracle4GG
 | PDB Name   | DBNORTH | PDB login details: 
@@ -58,7 +59,7 @@ This lab contains the following tasks:
     
        ```
        <copy>
-       source /usr/local/bin/.set-env-db.sh
+        source /usr/local/bin/.set-env-db.sh
        </copy>
 
        ```
@@ -105,6 +106,73 @@ In this lab, you will be able to view the directories mentioned in this table:
 
 You may now **proceed to the next lab** to run cURL scripts to set up data replication and test for standard reporting.
 
+## Task 3: Prevent the Database Password from Expiring
+
+You may witness the error "ORA-65162: Password of the common database user has expired", while accessing the PDBs for various tasks during the labs. To avoid the password from expiring, perform the following steps to increase the validity of the password:
+
+1. From the terminal, load the environment variables using the command: 
+   
+   <copy>
+     
+     source /usr/local/bin/.set-env-db.sh
+
+   </copy>
+
+2. From the command prompt, log in to SQL Server:
+   
+   ```
+    <copy>
+
+      sqlplus / as sysdba
+   
+    </copy>
+   
+   ```
+
+2. On the SQL prompt, run the following commands to set the password validity for the PDBs:
+   
+   `DBNORTH`
+
+   ```
+    <copy>
+      
+      alter session set container = DBNORTH;
+      create profile ggprofile limit password_life_time unlimitedd;
+      alter user ggadmin profile ggprofile;
+      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
+    
+    </copy>
+         
+   ```
+
+   `DBSOUTH`
+
+   ```
+    <copy>
+      
+      alter session set container = DBSOUTH;
+      create profile ggprofile limit password_life_time unlimitedd;
+      alter user ggadmin profile ggprofile;
+      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
+    
+    </copy>
+    
+   ```
+   
+   `DBWEST`
+   
+   ```
+    <copy>
+      
+      alter session set container = DBWEST;
+      create profile ggprofile limit password_life_time unlimitedd;
+      alter user ggadmin profile ggprofile;
+      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
+    
+    </copy>
+    
+   ```
+
 ## Learn More
 
 * [Oracle GoldenGate Microservices REST APIs](https://docs.oracle.com/en/middleware/goldengate/core/23/oggra/)
@@ -113,4 +181,4 @@ You may now **proceed to the next lab** to run cURL scripts to set up data repli
 ## Acknowledgements
 * **Author** - Preeti Shukla
 * **Contributors** - Preeti Shukla, Volker Kuhr
-* **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, November 2024
+* **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, June 2025
