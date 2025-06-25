@@ -53,7 +53,7 @@ This lab assumes that you have completed the tasks in **initial-setup**.
 
    To set up the Extract, Replicat, Distribution Path, and Receiver Path processes across deployments, follow these steps:
 
-   1. Navigate to the `scripts/UseCases/03_Cascading/AdminClient` directory. You will see the script `add_replication_cascading_admin-client.sh`.
+   1. Navigate to the `scripts/UseCases/03_Cascading/AdminClient` directory. You will see the script `add_replication_cascading_adminclient.sh`.
 
    2. Run this script using the following command:
 
@@ -122,7 +122,7 @@ This lab assumes that you have completed the tasks in **initial-setup**.
   
       This script commits transactions to the `hr.employees` table on `DBNORTH`.
 
-## Task 3: Check Replication from Source PDB (DBNORTH) to the Intermediate PDB (DBSOUTH)
+## Task 3: Add DML to DBNORTH and Check Committed Transactions on Intermediate (DBSOUTH) and Final (DBWEST) PDBs 
 
    In case of a cascading environment, a successful replication is one where the committed source transactions are replicated to the intermediate and then to the target data source, correctly. In this task, you will be able to check that the committed transactions in `DBNORTH` are replicated to `DBSOUTH`:
 
@@ -137,7 +137,11 @@ This lab assumes that you have completed the tasks in **initial-setup**.
 
         </copy>
 
-   3. 
+   This script shows the statistical details of the DML operations, similar to the following:
+    
+   ![A sample statistical output that shows different DML and other operations performed in the PDBS](./images/chkcascascadeoutput.png)
+
+
 
 
 
