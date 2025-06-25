@@ -45,10 +45,68 @@ The objective of this tutorial is to:
 
 * Test the output to show replication across the environment connected using a Cascading topology configuration.
 
+
 ### Prerequisites
 
-This lab assumes that you have completed the tasks in **initial-setup**.
+This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>. 
 
+If you witness the error "ORA-65162: Password of the common database user has expired", then perform the following steps to increase the validity of the password:
+
+1. From the command prompt, log in to SQL Server:
+   
+   ```
+    <copy>
+
+      sqlplus / as sysdba
+   
+    </copy>
+   
+   ```
+
+2. On the SQL prompt, run the following commands to set the password validity for the PDBs:
+   
+   `DBNORTH`
+
+   ```
+    <copy>
+      
+      alter session set container = DBNORTH;
+      create profile ggprofile limit password_life_time unlimitedd;
+      alter user ggadmin profile ggprofile;
+      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
+    
+    </copy>
+         
+   ```
+
+   `DBSOUTH`
+
+   ```
+    <copy>
+      
+      alter session set container = DBSOUTH;
+      create profile ggprofile limit password_life_time unlimitedd;
+      alter user ggadmin profile ggprofile;
+      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
+    
+    </copy>
+    
+   ```
+   
+   `DBWEST`
+   
+   ```
+    <copy>
+      
+      alter session set container = DBWEST;
+      create profile ggprofile limit password_life_time unlimitedd;
+      alter user ggadmin profile ggprofile;
+      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
+    
+    </copy>
+    
+   ```
+   
 ## Task 1: Set Up Oracle GoldenGate Processes Across Multiple Deployments on Different Databases
 
    To set up the Extract, Replicat, Distribution Path, and Receiver Path processes across deployments, follow these steps:
@@ -75,16 +133,20 @@ This lab assumes that you have completed the tasks in **initial-setup**.
          * `DPSW` DISTPATH
       * On `depl_west`:
         * `REPS` Replicat process 
+   
    3. Check that the processes are running successfully, using the following commands:
 
-      a. Connect to `depl_north` deployment:
+      a. Connect to `depl_north` deployment and check that the processes are running:
           
          
          <copy>
           
           CONNECT https://north:9001 DEPLOYMENT depl_north AS ggma PASSWORD GGma_23ai !
-   
-         </copy>
+
+          INFO ALL
+          
+          INFO DISTPATH ALL
+        </copy>
           
          
          
@@ -100,10 +162,12 @@ This lab assumes that you have completed the tasks in **initial-setup**.
 
           
          <copy>
-           INFO DISTPATH ALL   
+             
          </copy>
           
       Make sure that the `DPNS` process is in `RUNNING` state.
+
+
       
 ## Task 2: Add DML to DBNORTH PDBs
    
@@ -140,7 +204,6 @@ This lab assumes that you have completed the tasks in **initial-setup**.
 
    This script shows the statistical details of the DML operations, similar to the following:
 
-    
 ![A sample statistical output that shows different DML and other operations performed in the PDBs](./images/chkcascascadeoutput.png)
 
 ## Task 4: Delete the Data Replication Environment
