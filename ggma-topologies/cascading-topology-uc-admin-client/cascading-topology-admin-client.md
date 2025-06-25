@@ -117,9 +117,10 @@ This lab assumes that you have completed the tasks in **initial-setup**.
          <copy>
             ./source_dml_operations
          </copy>
-      ```
-   
-     This scripts commits transactions to the `hr.employees` table on `DBNORTH`.
+      
+      ``` 
+  
+      This script commits transactions to the `hr.employees` table on `DBNORTH`.
 
 ## Task 3: Check Replication from Source PDB (DBNORTH) to the Intermediate PDB (DBSOUTH)
 
