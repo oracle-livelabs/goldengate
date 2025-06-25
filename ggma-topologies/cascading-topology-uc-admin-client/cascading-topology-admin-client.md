@@ -143,6 +143,8 @@ If you witness the error "ORA-65162: Password of the common database user has ex
           
           CONNECT https://north:9001 DEPLOYMENT depl_north AS ggma PASSWORD GGma_23ai !
 
+          DBLOGIN USERIDALIAS ggnorth
+
           INFO ALL
           
           INFO DISTPATH ALL
@@ -150,23 +152,106 @@ If you witness the error "ORA-65162: Password of the common database user has ex
           
          
          
-      b. Run the `INFO ALL` and `INFO DISTPATH ALL` commands: 
+      b. Check the parameter file for the Extract, EXTN. In case, it is not set up, then create the EXTN.prm file using the EDIT PARAMS command: 
          
          
           <copy>
-            INFO ALL   
+            EDIT PARAMS EXTN.prm   
           </copy>
          
         
-      Make sure that the `EXTN` process is in `RUNNING` state.
+      Enter the parameters for `EXTN` parameter file:
 
-          
          <copy>
+      
+            EXTRACT extn
+            USERIDALIAS ggnorth
+            EXTTRAIL north/ea
+            
+            DDL INCLUDE MAPPED
+            DDLOPTIONS REPORT
+            
+            REPORTCOUNT EVERY 10 MINUTES, RATE
+            WARNLONGTRANS 15MINUTES, CHECKINTERVAL 5MINUTES
+            
+            TABLE hr.*;
              
          </copy>
           
-      Make sure that the `DPNS` process is in `RUNNING` state.
+      c. Connect to `depl_south` deployment and check that the processes are running:
+          
+         
+         <copy>
+          
+          CONNECT https://south:9101 DEPLOYMENT depl_south AS ggma PASSWORD GGma_23ai !
 
+          DBLOGIN USERIDALIAS ggsouth
+
+          INFO ALL
+          
+          INFO DISTPATH ALL
+
+        </copy>
+      
+      d. Check the parameter file for the Replicat `REPN` and Extract `EXTS` are set up. In case, it is not set up, then create the EXTN.prm file using the EDIT PARAMS command: 
+         
+         
+          <copy>
+            EDIT PARAMS EXTS.prm   
+          </copy>
+         
+        
+      Enter the parameters for `EXTS` parameter file:
+
+         <copy>
+      
+            EXTRACT exts
+            USERIDALIAS ggsouth
+            EXTTRAIL south/ea
+            
+            DDL INCLUDE MAPPED
+            DDLOPTIONS INCLUDETAG 00
+            DDLOPTIONS REPORT
+            
+            REPORTCOUNT EVERY 10 MINUTES, RATE
+            WARNLONGTRANS 15MINUTES, CHECKINTERVAL 5MINUTES
+             
+            TABLE hr.*;
+                     
+         </copy>
+      
+      Enter the parameters for the `REPN` parameter file after running the `EDIT PARAMS REPN.prm` command:
+
+         <copy>
+         
+          REPLICAT repn
+          USERIDALIAS ggsouth DOMAIN OracleGoldenGate
+          
+          DDLOPTIONS REPORT
+          DDLERROR DEFAULT, DISCARD
+         
+          REPORTCOUNT EVERY 10 MINUTES, RATE
+          
+          REPERROR (DEFAULT, DISCARD)
+          MAP hr.*, TARGET hr.*;
+         
+        </copy>
+
+   e. Check the parameter file for the Replicat `REPS` is set up. In case, it is not set up, then create the `REPS.prm` file using the `EDIT PARAMS REPS.prm` command:
+       
+       <copy>
+         REPLICAT reps
+         USERIDALIAS ggwest DOMAIN OracleGoldenGate
+         
+         DDLOPTIONS REPORT
+         DDLERROR DEFAULT, DISCARD
+         
+         REPORTCOUNT EVERY 10 MINUTES, RATE
+         
+         REPERROR (DEFAULT, DISCARD)
+         MAP hr.*, TARGET hr.*;
+
+       </copy>
 
       
 ## Task 2: Add DML to DBNORTH PDBs
@@ -203,6 +288,7 @@ If you witness the error "ORA-65162: Password of the common database user has ex
       ```
 
    This script shows the statistical details of the DML operations, similar to the following:
+
 
 ![A sample statistical output that shows different DML and other operations performed in the PDBs](./images/chkcascascadeoutput.png)
 
