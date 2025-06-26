@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create the resources required to complete this workshop. You'll learn to create a VCN and subnet, a bastion, provision MySQL Heatwave and autonomous database instances, and load data into the databases.
+This lab walks you through the steps to create the resources required to complete this workshop. You'll learn to create a VCN and subnet, a bastion, provision MySQL HeatWave and Autonomous Database instances, and load data into the databases.
 
 Estimated time: 30 mins
 
@@ -25,13 +25,13 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
+	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/networking-vcn.png " ")
 
-2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
+2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, from the **Actions** menu, select **Start VCN Wizard**.
 
 	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-start-vcn-wizard.png " ")
 
-3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
+3.  In the Start VCN Wizard dialog, select **Create VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
     ![Start VCN Wizard dialog](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-03-vcn-wizard.png " ")
 
@@ -45,33 +45,43 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 6.  Click **View VCN Details** and see both a Public and Private subnet were created.
 
-7.  Select the **Public** subnet, and then select the **Default Security List**.
+7.  Select the **Public** subnet, and then on the navigation menu, click **Security**.
 
-8.  Click **Add Ingress Rules**.
+8.  Click **Add Security List**.
 
-9.  In the **Add Ingress Rules** panel, select **CIDR** for **Source Type**.
+	![Add Security List](./images/01-08-add-security-list.png " ")
 
-10. Enter `0.0.0.0/0` for **Source CIDR**.
+9.  In the **Create Security List** panel, enter a name.
+
+10. For **Create in Compartment**, select a compartment.
+
+11. Click **+ Another Ingress Rule**.
+
+	![Add Another Ingress Rule](./images/01-11-add-ingress-rule.png " ")
+
+12. For **Source Type**, select **CIDR**.
+
+10. For **Source CIDR**, enter `0.0.0.0/0`.
 
 11. For IP Protocol, select **TCP**.
 
 12. For Destination Port Range, enter `3306`.
 
-13. For Description, enter `For MySQL access`, and then click **Add Ingress Rules**.
+13. For Description, enter `For MySQL access`, and then click **Create Security List**.
 
 	![Add Ingress Rules](./images/01-13-add-ingress-rules.png " ")
 
 ## Task 2: Create a MySQL Heatwave System
 
-1.  In the Oracle Cloud console navigation menu, click **Databases**, and then click **MySQL**.
+1.  In the Oracle Cloud console navigation menu, click **Databases**, and then under HeatWave MySQL, select **DB Systems**.
 
- 	![Click MySQL under Databases in the Oracle Cloud console navigation menu](./images/02-01-mysql.png)
+	![Click MySQL under Databases in the Oracle Cloud console navigation menu](./images/02-01-mysql.png " ")
 
 2.  On the MySQL DB Systems page, click **Create DB System**.
 
 	![Click Create DB System](./images/02-02-create-dbsystem.png " ")
 
-3. On the Create DB system page, under **Provide DB System** information, select **Development or testing**
+3. On the Create DB system page, select **Development or testing**
 
 4.  For **Create in Compartment**, select a compartment in which to create the MySQL DB system.
 
@@ -79,27 +89,29 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 6.  (Optional) For Description, enter a description for the MySQL DB system.
 
-7.  Select **Standalone**.
-
 	![Example MySQL DB System options](./images/02-06-create-dbsys-1.png " ")
 
-8.  Under **Create Administrator credentials**, for Username, enter `ggadmin`, and then enter a password for the admin user. Take note of this password.
+7.  Under **Create administrator credentials**, for Username, enter `ggadmin`, and then enter a password for the admin user. Take note of this password.
 
-	![Example MySQL DB System options](./images/02-08-create-dbsys-2.png " ")
+8.  Select **Standalone**.
 
 9.  Under **Configure networking**, select the **VCN** and **Subnet** created in Task 1.
 
-10.  Under **Configure placement**, select an Availability Domain.
+10.  Click **Create**.
 
-11. Click **Create**.
-
-	![Example MySQL DB System options](./images/02-11-create-dbsys-3.png " ")
+	![Example MySQL DB System options](./images/02-10-create-dbsys-2.png " ")
 
 	You're returned to the DB Systems page where the MySQL DB System you created appears. It will take a few minutes for the system to become Active.
 
-12. On the DB System details page, in the **Endpoint** section of the **DB System information**, copy the **Private IP Address**.
+11. On the DB System details page, under Resources, select **Endpoints**. 
 
-	![Copy the Private IP](./images/02-12-private-ip.png " ")
+12. In the Endpoints section, select the listed endpoint.
+
+	![Copy the Private IP](./images/02-12-endpoint.png " ")
+
+13. On the DB system details endpoint page, under **Primary DB system endpoint information**, copy the **Private IP Address** onto an external document.
+
+	![Copy the Private IP](./images/02-13-private-ip.png " ")
 
 ## Task 3A: Create a bastion and session
 
@@ -117,11 +129,11 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 4.  Under **Configure networking**, select the VCN and subnet in which your MySQL DB system resides.
 
-5.  For **CIDR block allowlist**, enter `0.0.0.0/0` and then select **0.0.0.0/0 (New)** in the dropdown menu to add it.
-
-	![CIDR block allowlist](./images/03-05-cidr.png " ")
+5.  For **CIDR block allowlist**, enter `0.0.0.0/0` and then select **Add to list** in the dropdown menu to add it.
 
 6.  Click **Create bastion**. The bastion appears in the Bastion list and takes a few minutes to become Active.
+
+	![CIDR block allowlist](./images/03-05-cidr.png " ")
 
 7.  After the bastion is Active, select it to view its details.
 
@@ -152,7 +164,7 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 If working within the same Home region for OCI GoldenGate and MySQL Heatwave, then you can use CloudShell to connect to the private network.
 
-1.  After your OCI MySQL DB system becomes active, click **Developer tools** in the Oracle Cloud console global header, and then select **Cloud Shell**.
+1.  After your HeatWave DB system becomes active, click **Developer tools** in the Oracle Cloud console global header, and then select **Cloud Shell**.
 
 	![Open CloudShell](./images/03b-01-open-cloudshell.png " ")
 
@@ -160,7 +172,7 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 	![CloudShell Network](./images/03b-02-cloudshell.png " ")
 
-3.  Select the VCN and Subnet your OCI MySQL DB system uses, and then click **Use as active network**.
+3.  Select the VCN and Subnet your HeatWave DB system uses, and then click **Use as active network**.
 
 4.  After CloudShell is connected to the private network, enter the following command to connect to the MySQL database:
 
@@ -170,7 +182,7 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 5.  Proceed to Task 4, Step 7.
 
-## Task 4: Load data into the MySQL DB System
+## Task 4: Load data into the HeatWave DB system
 
 1.  In the Oracle Cloud console global header, click **Developer tools**, and then select **Cloud Shell**. Cloud Shell opens in a panel at the bottom of the console.
 
@@ -207,7 +219,7 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 ## Task 5: Create an ADW instance
 
-1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Database**.
 
 	![Autonomous Data Warehouse in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/database-adw.png " ")
 
@@ -215,35 +227,25 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
   ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-create-adb.png " ")
 
-3.  On the Create Autonomous Database page, select a **Compartment** from the dropdown.
+3.  On the Create Autonomous Database page, enter **TargetADW** for **Display Name** and **Database Name**.
 
-4.  Enter **TargetADW** for **Display Name** and **Database Name**.
-
-	![TargetADW database name](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/05-04-compartment.png " ")
+4.  Select a **Compartment** from the dropdown.
 
 5.  Under **Choose a workload type**, select **Data Warehouse**.
 
-6.  Under **Choose a deployment type**, select **Serverless**.
+	![TargetADW database name](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-deployment-dw.png " ")
 
-    ![Workload and deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-deployment-dw.png " ")
+6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
 
-7.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
+7.  Add a password. Take note of the password, you will need it later in this lab.
 
-8.  Add a password. Take note of the password, you will need it later in this lab.
+8. Under **Access type**, select **Secure access from everywhere**.
 
-    ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
+9.  Select **Require mutual TLS (mTLS) authentication**.
 
-9. Under **Access type**, select **Secure access from everywhere**.
+10.  Click **Create**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
-10.  Select **Require mutual TLS (mTLS) authentication**.
-
-    ![Choose network access options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-09-choose-network-access.png " ")
-
-11.  For **Choose license and Oracle Database edition**, use the default selection.
-
-    ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-license.png " ")
-
-12.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
+	![Create TargetADW database](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-07-pw.png " ")
 
 ## Task 6: Unlock the GGADMIN user and load the sample schema
 
@@ -295,5 +297,5 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
 - **Contributor** - Julien Testut, Database Product Management
-- **Last Updated by** - Katherine Wardhana, May 2024
+- **Last Updated by** - Katherine Wardhana, June 2025
 - **PAR Expiration date** - February 2030

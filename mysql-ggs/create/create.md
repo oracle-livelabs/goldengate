@@ -27,20 +27,20 @@ This lab assumes you completed the environment set up lab, if you're running thi
 
 To successfully complete this lab in your own tenancy:
 * For IAM-enabled tenancies, ensure that you [configure Identity domains for OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/mkmbs/#GUID-DD9C1BF8-69FE-4C9A-A2D1-74C73550ED65).
-* For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault). [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
+* For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault). [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm). [Learn more about managing secrets](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingsecrets.htm).
 * Add an API key in your profile settings to be used in Task 3:
 
-1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **User settings**.
+1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select your profile username.
 
     ![Oracle Cloud console User menu](images/00-01-profile.png " ")
 
-2.  On the user details page, under **Resources**, click **API Keys**.
+2.  On the user details page navigation menu, click **Tokens and keys**.
 
 3.  Click **Add API Key**.
 
     ![Resources on User details page](images/00-03-apikey.png " ")
 
-4.  In the Add API Key dialog, click **Download Private Key** to download the key, and then click **Add**.
+4.  In the Add API Key dialog, select **Generate API key pair**, click **Download Private Key** to download the key, and then click **Add**.
 
     ![Download Private key](images/00-04-privatekey.png " ")
 
@@ -80,42 +80,25 @@ To successfully complete this lab in your own tenancy:
 
     ![Completed Create GoldenGate Deployment fields](./images/01-09-create-deployment.png " ")
 
-10. For **Subnet**, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
+10. Select a **Compartment** from the dropdown. For **Subnet**, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
 11.  For License type, select **Bring Your Own License (BYOL)**.
 
 12. For GoldenGate Instance Name, enter **ggsinstance**
 
-13. In an IAM-enabled tenancy, select a Credential Store. 
+13. For Administrator Username, enter **oggadmin**.
 
-    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 2.
-    * If you select GoldenGate, complete the following steps.
+14. Select a **Compartment** from the dropdown. For **Password secret**, select a password secret from the dropdown.
 
-14. For Administrator Username, enter **oggadmin**.
+  ![Example create deployment options](./images/01-14-create-deployment-gg-details.png " ")
 
-15. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
+15. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
-  ![Example create deployment options](./images/01-15-create-deployment-gg-details.png " ")
+16. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
 
-16. In the Create secret panel, enter `LLsecret`. 
+17. Click **Create**.
 
-17. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
-
-    > **NOTE**: The special characters must not be $, ^, or ?
-
-18. Confirm the password, and then click **Create**.
-
-  ![Example create deployment options](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-21-passwordsecret.png " ") 
-
-19. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected.
-
-20.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
-
-21. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
-
-22. and then click **Create**.
-
-  ![Create MySQLDeployment deployment](./images/01-22-create-deployment.png " ")
+  ![Create MySQLDeployment deployment](./images/01-17-create-deployment.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, and 4 while you wait for the deployment creation to complete.
 
@@ -143,34 +126,27 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 9. For GoldenGate Instance Name, enter **ggsinstance**
 
-10. In an IAM-enabled tenancy, select a Credential Store. 
-
-    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 2.
-    * If you select GoldenGate, complete the following steps.
-
 11. For Administrator Username, enter **oggadmin**.
 
-12. For Password secret select **LLSecret** from the dropdown.
+12. Select a **Compartment** from the dropdown. For Password secret select **LLSecret** from the dropdown.
 
-  ![Example create deployment options](./images/02-11-create-deployment-gg-details.png " ")
+  ![Example create deployment options](./images/01-14-create-deployment-gg-details.png " ")
 
-13.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
+13. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
-14. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**, and then click **Create**.
+14. For Load balancer subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PUBLIC**.
 
-  ![Create MySQLDeployment deployment](./images/02-13-create-deployment.png " ")
+15. Click **Create**.
+
+  ![Create MySQLDeployment deployment](./images/01-17-create-deployment.png " ")
 
 You're brought to the deployment details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-## Task 3: Create a connection to the source MySQL database
+## Task 3: Create a connection to the source HeatWave database
 
 1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
 
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](./images/03-01-breadcrumb.png " ")
-
 2.  In the GoldenGate menu, click **Connections**.
-
-    ![Connections in GoldenGate menu](./images/03-02-connections.png " ")
 
 3.  Click **Create Connection**.
 
@@ -182,11 +158,11 @@ You're brought to the deployment details page. It takes a few minutes for the de
 
 6. From the Type dropdown, select **Heatwave on OCI**.
 
+    ![Create a MySQL connection - General Information](./images/03-06-mysql-conn.png " ")
+
 7. Under **Database details**, choose **Select MySQL database system**.
 
-8. Select the source MySQL Database system (SourceMySQL) from the Database system dropdown.
-
-    ![Create a MySQL connection - General Information](./images/03-08-mysql-conn.png " ")
+8. Select a **Compartment** from the dropdown. Select the source MySQL Database system (SourceMySQL) from the Database system dropdown.
 
 9.  For Database name, enter `SRC_OCIGGLL`.
 
@@ -194,7 +170,7 @@ You're brought to the deployment details page. It takes a few minutes for the de
 
 10.  For Database username, enter `ggadmin`.
 
-11. For Database user password, enter the password for the `ggadmin` user in the Password field.
+11. Select a **Compartment** from the dropdown. Select a password secret from the dropdown.
 
 12. For **Security protocol**, select **Plain** from the dropdown.
 
@@ -206,7 +182,7 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
 ## Task 4: Create a connection to the target Autonomous Data Warehouse
 
-1.  On the Connections page, click **Create Connection**
+1.  On the Connections page, click **Create Connection**.
 
 2. The Create connection panel appears. For Name, enter **TargetADW** and optionally, a description.
 
@@ -218,17 +194,19 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-06-create-connec-general-info.png " ")
 
-6. For **Database in &lt;compartment-name&gt;**, select **TargetADW-&lt;numbers&gt;** from the dropdown. 
+6. Select a **Compartment** from the dropdown. For **Database in &lt;compartment-name&gt;**, select **TargetADW-&lt;numbers&gt;** from the dropdown. 
 
 7. For Database username, enter `ggadmin`.
 
-8. Enter the database's password in the Password field. Ensure that you record this password for later use.
+8. Select a **Compartment** from the dropdown. Select a password secret from the dropdown.
 
-9. For Traffic routing method, select **Shared endpoint**.
+    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-09-create-connec-details.png)
+
+9. Click **Advanced options**, and then click **Network connectivity**. Under Traffice routing method, select **Shared endpoint**.
 
 10. Click **Create**.
 
-    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-11-create-connec-details.png)
+    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-11-network-connect.png)
 
 The connection becomes Active after a few minutes.
 
@@ -240,25 +218,23 @@ After your deployments and connections are active, you can assign the connection
 
 2.  Select **MySQLDeployment** to view its details.
 
-3.  On the MySQLDeployment details page, under Resources, click **Assigned connections**.
-
-    ![Deployment details page](./images/05-03-assigned-connections.png " ")
+3.  On the MySQLDeployment details page, click **Assigned connections**.
 
 4.  Under Assigned connections, click **Assign connection**.
 
-    ![Assigned connections](./images/05-04-assignconnection.png " ")
+    ![Assigned connections](./images/05-04-assign-conn.png " ")
 
 5.  In the Assign connection dialog, from the **Connection** dropdown, select **SourceMySQL**, and then click **Assign connection**.
 
-    ![Assign connection dialog](./images/05-05-assign-connection.png " ")
+    ![Assign connection dialog](./images/05-05-assign-conn-sourcemysql.png " ")
 
     The connection appears in the Assigned Connections list.
 
-6.  Use the breadcrumb to return to the Deployments page.
-
-    ![Deployment details breadcrumb](./images/05-06-breadcrumb.png " ")
+6.  Return to the Deployments page.
 
 7.  Repeat steps 2 to 6 to assign the **TargetADW** connection to the **ADWDeployment**.
+
+    ![Assign connection TargetADW](./images/05-07-assign-conn-targetadw.png " ")
 
 ## Task 6: (Optional) Create a GoldenGate connection
 
@@ -272,21 +248,23 @@ Create a GoldenGate connection if your ADW deployment doesn't have a public endp
 
 4.  For **Type**, select **GoldenGate**.
 
-5.  Click **Next**.
+5.  Under **GoldenGate deployment**, choose **Select GoldenGate deployment**.
 
 6.  For Deployment, select **ADWDeployment**.
 
 7.  For Database username, enter `ggadmin`.
 
-8.  Enter the database's password in the Password field. Take note of the password.
+8.  For Database user password secret, select the same password secret used earlier.
 
 9. Click **Create**.
 
-11. After the connection is active, on its details page, under **Resources**, click **Assigned deployments**.
+    ![Create GoldenGate connection](./images/06-09-create-gg-conn.png " ")
 
-12. Click **Assign deployment**.
+10. After the connection is active, on its details page, under **Resources**, click **Assigned deployments**.
 
-13. In the Assign deployment dialog, select the source **MySQLDeployment**, and then click **Assign deployment**.
+11. Click **Assign deployment**.
+
+12. In the Assign deployment dialog, select the source **MySQLDeployment**, and then click **Assign deployment**.
 
 **Proceed to the next lab**.
 
@@ -300,5 +278,5 @@ Create a GoldenGate connection if your ADW deployment doesn't have a public endp
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, February 2025
+* **Last Updated By/Date** - Katherine Wardhana, June 2025
 * **PAR Expiration** - February 2030
