@@ -15,8 +15,6 @@ In a typical cascading configuration:
 
 * Another Extract on that same system captures the data from the local database and writes it to a local trail, which then gets replicated to the target database by the Replicat process on the target deployment.
 
-* A distribution path (DISTPATH) sends the data to a remote trail on the final system in the cascade, where it is applied to the local database or PDB by another Replicat.
-
 This configuration can be used to perform data filtering and conversion if the character sets on all systems are identical. If character sets differ, then a data pump cannot perform conversion between character sets, and you must configure Replicat to perform the conversion and transformation on the target.
 
 ### Cascading Configuration in this Lab
@@ -28,11 +26,9 @@ For setting up replication across a Cascading topology, there are some preset co
 From this diagram, you can deduce the following: 
 
 * The `depl_north` deployment captures from `DBNORTH` and connects to the `depl_south` deployment on another intermediate host machine. 
-
 * The Replicat process on `depl_south`, replicates to the `DBSOUTH` database.  
-
+* The Replicat process on `depl_south`, replicates to the `DBSOUTH` database.  
 * The Extract process, EXTS, in `depl_south` captures the replicated data and writes it to the local trail and transfer to the Replicat `REPS` on the `depl_west` deployment.  
-
 
 
 Estimated Time: 10 minutes
@@ -51,6 +47,14 @@ The objective of this tutorial is to:
 
 This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>. 
 
+### Tip
+
+If you see the error ORA-00257 Archiver Error, then run the following script to remove redundant archive log files from the system and run the application seamlessly:
+
+1. Navigate to the `scripts/misc' directory.
+2. Run the `rman_delete_archivelog.sh` script. 
+
+After you run this script, you would be able to continue to run the scripts successfully.
 
 ## Task 1: Set Up Oracle GoldenGate Processes Across Multiple Deployments on Different PDBs
 
@@ -65,8 +69,7 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
            ./add_replication_cascading_curl.sh
    
         </copy>
-      ```
-      
+      ```  
    
      This script automatically creates the Extract, Replicat, DISTPATH processes for all three deployments. The following processes are created on the `depl_north`, `depl_south`, and `depl_west` deployments:
    
@@ -80,9 +83,9 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
          * On `depl_west`:
            * `REPS` Replicat process 
       
-      3. Run the Admin Client using the command `adminclient`. 
+    3. Run the Admin Client using the command `adminclient`. 
       
-      4. Check that all three deployments are running by accessing the Service Manager:
+    4. Check that all three deployments are running by accessing the Service Manager:
          
          a. Connect to Service Manager from the `depl_north` deployment:
    

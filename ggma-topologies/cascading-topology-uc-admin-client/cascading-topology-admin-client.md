@@ -1,5 +1,6 @@
 # Set Up a Cascading Replication Environment Using Admin Client
 
+
 ## Introduction
 Oracle GoldenGate supports cascading synchronization, which means that Oracle GoldenGate propagates data changes from one database to a second transitional database, and then on to a third database.
 
@@ -26,12 +27,8 @@ For setting up replication across a Cascading topology, there are some preset co
 From this diagram, you can deduce the following: 
 
 * The `depl_north` deployment captures from `DBNORTH` and connects to the `depl_south` deployment on another intermediate host machine. 
-
 * The Replicat process on `depl_south`, replicates to the `DBSOUTH` database.  
-
 * The Extract process, EXTS, in `depl_south` captures the replicated data and writes it to the local trail and transfer to the Replicat `REPS` on the `depl_west` deployment.
-
-
 
 Estimated Time: 10 minutes
 
@@ -50,12 +47,13 @@ The objective of this tutorial is to:
 
 This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>. 
 
-   
+
 ## Task 1: Set Up Oracle GoldenGate Processes Across Multiple Deployments on Different Databases
 
    To set up the Extract, Replicat, Distribution Path, and Receiver Path processes across deployments, follow these steps:
 
-   1. Navigate to the `scripts/UseCases/03_Cascading/AdminClient` directory. You will see the script `add_replication_cascading_adminclient.sh`.
+
+   1. Navigate to the `scripts/UseCases/03_Cascading/AdminClient` directory. You will see the script `add_replication_cascading_admin-client.sh`.
 
    2. Run this script using the following command:
 
@@ -66,7 +64,6 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
    
         </copy>
       ```
-
       This script automatically creates the Extract, Replicat, DISTPATH processes for all three deployments. The following processes are created on the `depl_north`, `depl_south`, and `depl_west` deployments:
 
       * On `depl_north`:
@@ -78,6 +75,7 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
          * `DPSW` DISTPATH
       * On `depl_west`:
         * `REPS` Replicat process 
+
    
    3. Run the adminclient, using the command `adminclient`. 
    
@@ -105,8 +103,7 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
 
    5. Check that the processes are running successfully for each deployment, using the following commands:
 
-      a. Connect to `depl_north` deployment and check that the processes are running:
-          
+      a. Connect to `depl_north` deployment and check that the processes are running.      
          
          <copy>
           
@@ -235,6 +232,23 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
          MAP hr.*, TARGET hr.*;
 
        </copy>
+         
+      b. Run the `INFO ALL` and `INFO DISTPATH ALL` commands: 
+         
+         
+          <copy>
+            INFO ALL   
+          </copy>
+         
+        
+      Make sure that the `EXTN` process is in `RUNNING` state.
+
+          
+         <copy>
+           INFO DISTPATH ALL   
+         </copy>
+          
+      Make sure that the `DPNS` process is in `RUNNING` state.
 
       
 ## Task 2: Add DML to DBNORTH PDBs
@@ -258,7 +272,8 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
 
    <b>NOTE</b>: If you get the error "ORA-65162: Password of the common database user has expired", then run <b>Task 3 Prevent the Database Password from Expiring</b> from the <b>Initialize Environment</b> lab.
 
-## Task 3: Check Committed Transactions on Intermediate (DBSOUTH) and Final (DBWEST) PDBs 
+
+## Task 3: Check Replication from Source PDB (DBNORTH) to the Intermediate PDB (DBSOUTH)
 
    In case of a cascading environment, a successful replication is one where the committed source transactions are replicated to the intermediate and then to the target data source, correctly. In this task, you will be able to check that the committed transactions in `DBNORTH` are replicated to `DBSOUTH`:
 
