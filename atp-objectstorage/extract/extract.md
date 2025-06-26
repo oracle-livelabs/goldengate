@@ -20,28 +20,7 @@ In this lab, you learn to:
 * Add and run a Distribution path
 * Add and run a Replicat
 
-
-## Task 1: Review the Deployment details
-
-1. In the Oracle Cloud console, open the navigation menu, click **Oracle Database**, and then click **GoldenGate**.
-
-2. Click **Deployments**.
-
-3. On the Deployments page, select **ATPDeployment** to view its details.
-
-On the Deployment Details page, you can:
-
-* Review the deployment's status
-* Launch the GoldenGate service deployment console
-* Edit the deployment's name or description
-* Stop and start the deployment
-* Move the deployment to a different compartment
-* Review the deployment resource information
-* Add tags
-
-    ![Deployment Details page](./images/01-03-atp-deployment-details.png " ")
-
-## Task 2: Launch the GoldenGate Deployment Console
+## Task 1: Launch the GoldenGate Deployment Console
 
 1. On the **ATPDeployment** details page, click **Launch Console**.
 
@@ -59,7 +38,7 @@ On the Deployment Details page, you can:
 
 After you log in, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
 
-## Task 3: Add Trandata Information
+## Task 2: Add Trandata Information
 
 > **Note:** Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.
 
@@ -87,7 +66,7 @@ After you log in, you're brought to the GoldenGate deployment console home page.
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
-## Task 4: Add and run an Extract
+## Task 3: Add and run an Extract
 
 1.  On the GoldenGate Deployment Console Home page, click **Add Extract** (plus icon).
 
@@ -142,7 +121,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Extract started](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-10-uaext-running.png " ")
 
-## Task 5: Create a user on the target deployment
+## Task 4: Create a user on the target deployment
 
 >**Note**: Complete the following steps in the target **OBJDeployment**'s deployment console (BDinstance).
 
@@ -175,7 +154,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Create new User panel](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/05-07-create-new-user-23ai.png " ")
 
-## Task 6: Create a credential on the source deployment for the dpuser
+## Task 5: Create a credential on the source deployment for the dpuser
 
 >**Note**: Complete the following steps in the source **ATPDeployment** deployment console (ATPinstance).
 
@@ -194,7 +173,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Create new User panel](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-03-credentials-panel-23ai.png " ")
 
-## Task 7: Add and run a Distribution Path in the source deployment console
+## Task 6: Add and run a Distribution Path in the source deployment console
 
 >**Note**: Complete the following steps in the source **ATPDeployment** deployment console (ATPinstance).
 
@@ -251,7 +230,7 @@ The Distribution Path initiates the process to send the GoldenGate trail file to
 
     ![Running Distribution Path](images/07-09b-running-dp.png " ")
 
-## Task 8: Verify Receiver Path creation
+## Task 7: Verify Receiver Path creation
 
 The Distribution path on the source ATPinstance creates a Receiver path on the target BDinstance.
 
@@ -263,7 +242,7 @@ The Distribution path on the source ATPinstance creates a Receiver path on the t
 
     ![BDinstance Receiver Service](images/08-02-receiver-service.png " ")
 
-## Task 9: Add and run a Replicat
+## Task 8: Add and run a Replicat
 
 >**Note**: Complete the following steps in the **OBJDeployment** deployment console (BDinstance).
 
@@ -320,4 +299,4 @@ In this lab, you:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Deniz Sendil, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, December 2024
+* **Last Updated By/Date** - Katherine Wardhana, June 2025

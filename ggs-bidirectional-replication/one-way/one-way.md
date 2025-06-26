@@ -196,7 +196,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
     ![Profile menu](./images/05-06-profile.png " ")
 
-7.  On the User Details page, under **Resources**, click **Auth Tokens**, and then click **Generate Token**.
+7.  On the User Details page, click **Tokens and keys**, and then click **Generate Token**.
 
     ![Resources on User Details page](./images/05-07-auth-token.png " ")
 
