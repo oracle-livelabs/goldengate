@@ -45,7 +45,7 @@ To successfully complete this lab in your own tenancy:
 
 > **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
-## Task 1: Review the deployment
+## Task 1: Review the deployments
 
 1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
 
@@ -97,7 +97,7 @@ Follow the steps below to create a connection for the source Oracle Autonomous T
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-09-create-connection-gg-details.png)
 
-9. Click **Advanced options**, and then click **Network connectivity**. Under Traffice routing method, select **Shared endpoint**.
+9. Click **Advanced options**, and then click **Network connectivity**. Under Traffic routing method, select **Shared endpoint**.
 
 10. Click **Create**.
 

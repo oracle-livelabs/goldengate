@@ -120,13 +120,62 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 9. For GoldenGate Instance Name, enter **BDinstance**.
 
+10. Select a **Credential store**:
+
+    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to the next lab (skip the following steps).
+    * If you select **GoldenGate**, complete the following steps.
+
+11. For Administrator Username, enter **oggadmin**.
+
+12. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
+
+    ![GoldenGate details](./images/05-12-create-pw-secret.png " ")
+
+13. In the Create secret panel, enter `LLsecret`.
+
+14. For User password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+
+    > **NOTE**: The special characters must not be $, ^, or ?. 
+
+15. Confirm the password, and then click **Create**.
+
+    ![Create Password secret](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-21-passwordsecret.png " ")
+
+16. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
+
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
+
+## Task 6: Create a deployment for Oracle Database
+
+1.  On the Deployments page, click **Create Deployment**.
+
+2.  In the Create Deployment panel, enter **ATPDeployment** for Name.
+
+3.  From the Compartment dropdown, select a compartment. 
+
+4. For Choose a deployment type, select **Data replication**.
+
+5. For Select a technology dropdown, select **Oracle Database** from the dropdown.
+
+    ![Completed Create GoldenGate Deployment fields](images/06-01-atpdeployment.png " ")
+
+6. Select **Development or testing**. The OCPU count is autopopulated based on your selection.
+
+    ![Completed Create GoldenGate Deployment fields](./images/01-09-dev-or-test.png " ")
+
+7. For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**. If located in a different compartment, use the dropdown to change compartments.
+
+8. For License type, select **Bring Your Own License (BYOL)**.
+
+9. For GoldenGate Instance Name, enter **gginstance**.
+
 10. For Administrator Username, enter **oggadmin**.
 
-11. For Password secret, select **LLsecret**.
+11. For Password secret, select **LLSecret**.
 
 12. Click **Create**.
 
-    ![Completed GoldenGate details](images/02-12-bigdata.png " ")
+    ![Completed GoldenGate details](images/06-12-atpdeployment.png " ")
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
@@ -135,5 +184,5 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated by** - Katherine Wardhana, May 2025
+- **Last Updated by** - Katherine Wardhana, June 2025
 - **PAR Expiration date** - February 2030

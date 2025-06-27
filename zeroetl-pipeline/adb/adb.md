@@ -55,6 +55,7 @@ You may now **proceed to the next lab.**
 
 ## Acknowledgements
 
-- **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated by** - Katherine Wardhana, June 2025
-- **PAR Expiration date** - February 2030
+* **Author** - Katherine Wardhana, User Assistance Developer, Database User Assistance
+* **Contributors** -  Julien Testut, Database Product Management
+* **Last Updated by** - Katherine Wardhana, June 2025
+* **PAR Expiration date** - February 2030

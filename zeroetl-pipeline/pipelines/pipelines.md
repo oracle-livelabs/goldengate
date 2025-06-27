@@ -25,7 +25,7 @@ In this lab, you will:
 
 2.  The Create ZeroETL Mirror pipeline panel appears. For Name, enter **test-pipeline** and optionally, a description.
 
-3.  For Choose a license tyoe, select **Licenses included**.
+3.  For Choose a license type, select **Licenses included**.
 
 4.  For Source connection, select **SourceATP** from the dropdown.
 
@@ -39,13 +39,13 @@ In this lab, you will:
 
 1. In the Pipelines page, select the pipeline.
 
-2. On the Pipeline details page, click **Mapping Rules**.
+2. On the Pipeline details page, click **Mapping rules**.
 
 3. Click **Preview**.
 
     ![Pipeline details](./images/02-03-pipeline-details.png)
 
-4. In the Preview mapping dialog, expand the **SRC_OCIGLL** source schema and review the list of schemas and tables that are going to be replicated. Select **Cancel** to close the dialog.
+4. In the Preview mapping dialog, expand the **SRC_OCIGGLL** source schema and review the list of schemas and tables that are going to be replicated. Select **Cancel** to close the dialog.
 
     ![Preview mapping](./images/02-04-preview-mapping.png)
 
@@ -93,12 +93,13 @@ In this lab, you will:
 
     ![Start pipeline dialog](./images/04-02-start-pipeline-dialog.png)
 
-3. On the pipeline's details page, select **Initialization**. The Initialization steps displays the current status of the pipeline steps. For each step, you can select **View details** from its **Actions** menu and review corresponding messages.
+3. On the pipeline's details page, click **Initialization**. The Initialization steps displays the current status of the pipeline steps. For each step, you can select **View details** from its **Actions** menu and review corresponding messages.
 
     ![Initialization](./images/04-03-initialization.png)
 
+4. On the pipeline's details page, click **Runtime**. 
 
-You may now **proceed to the next lab.**
+5. 
 
 ## Learn more
 
