@@ -32,7 +32,7 @@ Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) i
 
     ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-09-create-connec-details.png)
 
-10. Click **Advanced options**, and then click **Network connectivity**. Under Traffice routing method, select **Shared endpoint**.
+10. Click **Advanced options**, and then click **Network connectivity**. Under Traffic routing method, select **Shared endpoint**.
 
 11. Click **Create**.
 
