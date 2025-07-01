@@ -174,4 +174,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, June 2025
+* **Last Updated By/Date** - Katherine Wardhana, July 2025

@@ -41,21 +41,21 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
     > **NOTE**: If using OCI IAM, you must click **Allow** when prompted to give the application access to `get_groups`.
 
-    ![OCI GoldenGate Deployment Console Sign In](images/01-04-login-page.png " ")
+    ![OCI GoldenGate Deployment Console Sign In](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin-23ai.png " ")
 
     You're brought to the OCI GoldenGate Deployment Console Home page after successfully signing in.
 
 > **Note:** Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.
 
-5.  Open the navigation menu and then click **Configuration**.
-
-    ![Administration Service navigation menu](images/01-05-navigation-menu.png " ")
+5.  Open the navigation menu and then click **DB Connections**.
 
 6.  Click **Connect to database SourceATP**.
 
     ![Credentials list with Connect to database SourceATP highlighted](images/01-06-source-connect.png " ")
 
-7.  Next to **TRANDATA Information** click **Add TRANDATA** (plus icon).
+7. In the navigation menu, under SourceATP, click **Trandata**.
+
+8. On the **TRANDATA Information** page, click **Add TRANDATA** (plus icon).
 
     ![Add TRANDATA](images/01-07-add-trandata.png " ")
 
@@ -67,38 +67,36 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
     ![Search icon highlighted](images/01-09a-search-schema-trandata.png " ")
 
-    ![SRC_OCIGGLL entered in search field and search results returned](images/01-09b-search-schema-trandata-result.png " ")
-
-
-To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
+To return to the GoldenGate Deployment Console Home page, click **Home** in the left navigation.
 
 ## Task 2: Add and Run an Extract
 
-1.  On the GoldenGate Deployment Console Home page, click **Add Extract** (plus icon).
+1.  In the navigation menu, click **Extracts**.
 
-    ![Click Add Extract](images/02-01-add-extract.png " ")
+2. On the Extracts page, click **Add Extract** (plus icon).
 
-2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
+    ![Click Add Extract](images/02-02-add-extract.png " ")
 
-    ![Add Extract page with Integrated Extract highlighted](images/02-02-select-integratre-extract.png " ")
+3.  The Add Extract panel consists of five pages. On the Extract information page, complete the following fields, and then click **Next**: 
 
-3.  For **Process Name**, enter `EXTATP`.
+    * For Extract Type, select **Integrated Extract**.
+    * For Process Name, enter `EXTATP`.
 
-4.  For **Trail Name**, enter `AE`.
+    ![Add Extract page with Integrated Extract highlighted](images/02-03-select-integratre-extract.png " ")
 
-5.  Under **Source Database Credential**, for **Credential Domain**, select **OracleGoldenGate**.
+4. On the Extract Options page, complete the following fields, and then click **Next**:
 
-6.  For **Credential Alias**, select the **ATP_Source**.
+    * For Domain, select **OracleGoldenGate** from the dropdown.
+    * For Alias, select **SourceATP** from the dropdown.
+    * For Name, enter `AE`.
 
-    ![Add Extract - Source Database Credential](images/02-06-credential-store-select.png " ")
+    ![Extract Options page](images/02-04-ext-opts.png " ")
 
-7.  Under Managed Options, enable **Critical to deployment health**.
+5. On the Managed Options page, enable **Critical to deployment health**, and then click **Next**.
 
-8.  Click **Next**.
+    ![Managed Options page](images/02-05-man-opts.png " ")
 
-    ![Critical to deployment health highlighted](images/02-08-critical-to-deployment-health.png " ")
-
-9.  On the Parameter File page, in the text area, add a new line to the existing text and add the following:
+6.  On the Parameter File page, in the text area, add a new line to the existing text and add the following:
 
     ```
     <copy>-- Capture DDL operations for listed schema tables
@@ -124,21 +122,19 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
     table SRC_OCIGGLL.*;</copy>
     ```
 
-    ![Extract create and run](images/02-09-extract-create-and-run.png " ")
+7. Click **Create**. You returned to the OCI GoldenGate Deployment Console Home page.
 
-10. Click **Create**. You're returned to the OCI GoldenGate Deployment Console Home page.
+    ![Extract create and run](images/02-07-extract-create.png " ")
 
-11. In the EXTATP **Actions** menu, select **Start**. In the Confirm Action dialog, click **OK**.
+8. The EXTATP Extract appears. In the EXTATP Action menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
-    ![Start Extract](images/02-11a-start-extract.png)
+    ![Start Extract](images/02-08a-start-extract.png)
 
-    The yellow exclamation point icon changes to a green checkmark.
+    The grey exclamation point icon changes to a green checkmark.
 
-    ![Extract started](images/02-11b-green-extract-status.png)
-
+    ![Extract started](images/02-08b-green-extract-status.png)
 
 You may now **proceed to the next lab**.
-
 
 ## Learn more
 
@@ -149,5 +145,5 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, Senior Solution Engineer, AppDev and Integration
-* **Contributors** -  Denis Sendil, Database Product Management; Jenny Chan, Consulting User Assistance Developer, Database User Assistance; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, User Assistance Developer, December 2023
+* **Contributors** -  Deniz Sendil, Database Product Management; Jenny Chan, Consulting User Assistance Developer, Database User Assistance; Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Katherine Wardhana, User Assistance Developer, July 2025
