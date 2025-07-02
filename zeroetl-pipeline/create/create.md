@@ -107,7 +107,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![Script Output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-08-sql-script-return.png " ")
 
-9.  Replace the supplemental logging script with the following statemet, and then click **Run Statement**:
+9.  Replace the supplemental logging script with the following statement, and then click **Run Statement**:
 
     ```
     <copy>GRANT DWROLE TO GGADMIN;
