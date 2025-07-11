@@ -1,0 +1,356 @@
+# Set Up a One to Many Replication Environment Using Admin Client
+
+
+## Introduction
+Test
+
+![This image shows the Cascading topology.](./images/cascading.png)
+
+Test
+
+* test
+
+
+
+### One to Many Configuration in this Lab
+
+Test.  
+
+![The initial source database, DBNORTH, replicates to the intermediate database, DBWEST, then the Extract from from DBWEST writes to the local trail and sends the data to DBSOUTH using a distribution path](./images/cascading_livelab_uc.png)
+
+From this diagram, you can deduce the following: 
+
+* The `depl_north` deployment captures from `DBNORTH` and connects to the `depl_south` deployment on another intermediate host machine. 
+* The Replicat process on `depl_south`, replicates to the `DBSOUTH` database.  
+* The Extract process, EXTS, in `depl_south` captures the replicated data and writes it to the local trail and transfer to the Replicat `REPS` on the `depl_west` deployment.
+
+Estimated Time: 10 minutes
+
+### Objectives
+
+The objective of this tutorial is to:
+
+* Show the use of data replication in a cascading topology.
+
+* Run the automation scripts to set up the Oracle GoldenGate processes in `depl_north`, `depl_west`, and `depl_south` deployments. 
+
+* Test the output to show replication across the environment connected using a Cascading topology configuration.
+
+
+### Prerequisites
+
+This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>. 
+
+
+## Task 1: Set Up Oracle GoldenGate Processes Across Multiple Deployments on Different Databases
+
+   To set up the Extract, Replicat, Distribution Path, and Receiver Path processes across deployments, follow these steps:
+
+
+   1. Navigate to the `scripts/UseCases/03_Cascading/AdminClient` directory. You will see the script `add_replication_cascading_admin-client.sh`.
+
+   2. Run this script using the following command:
+
+      ```
+        <copy>
+           
+           ./add_replication_cascading_adminclient.sh
+   
+        </copy>
+      ```
+      This script automatically creates the Extract, Replicat, DISTPATH processes for all three deployments. The following processes are created on the `depl_north`, `depl_south`, and `depl_west` deployments:
+
+      * On `depl_north`:
+         * `EXTN` Extract process
+         * `DPNS` DISTPATH process
+      * On `depl_south`:
+         * `EXTS` Extract process
+         * `REPN` Replicat process
+         * `DPSW` DISTPATH
+      * On `depl_west`:
+        * `REPS` Replicat process 
+
+   
+   3. Run the adminclient, using the command `adminclient`. 
+   
+   4. Check that all three deployments are running by accessing the Service Manager:
+      
+      a. Connect to Service Manager from the `depl_north` deployment:
+
+         <copy>
+           
+           connect https://north:9000 deployment depl_north as ggma password GGma_23ai !
+
+         </copy>
+      
+      b. Run the following command to know the status of all the deployments:
+
+         <copy>
+           
+           status deployment *
+
+         </copy>
+
+         The output should be similar to the following:
+
+         ![Check the status of the deployment by running the status deployment command. The output of this command displayed in this image](./images/cascade_checkdeplstatus.png)
+
+   5. Check that the processes are running successfully for each deployment, using the following commands:
+
+      a. Connect to `depl_north` deployment and check that the processes are running.      
+         
+         <copy>
+          
+          CONNECT https://north:9001 DEPLOYMENT depl_north AS ggma PASSWORD GGma_23ai !
+
+          DBLOGIN USERIDALIAS ggnorth
+
+          INFO ALL
+          
+          INFO DISTPATH ALL
+        </copy>
+                 
+         
+      b. Check the parameter file for the Extract, EXTN. In case, it is not set up, then create the EXTN.prm file using the EDIT PARAMS command: 
+         
+         
+          <copy>
+            EDIT PARAMS EXTN.prm   
+          </copy>
+         
+        
+         Enter the parameters for `EXTN` parameter file:
+
+         <copy>
+      
+            EXTRACT extn
+            USERIDALIAS ggnorth
+            EXTTRAIL north/ea
+            
+            DDL INCLUDE MAPPED
+            DDLOPTIONS REPORT
+            
+            REPORTCOUNT EVERY 10 MINUTES, RATE
+            WARNLONGTRANS 15MINUTES, CHECKINTERVAL 5MINUTES
+            
+            TABLE hr.*;
+             
+         </copy>
+          
+      c. Connect to `depl_south` deployment and check that the processes are running:
+          
+         
+         <copy>
+          
+          CONNECT https://south:9101 DEPLOYMENT depl_south AS ggma PASSWORD GGma_23ai !
+
+          DBLOGIN USERIDALIAS ggsouth
+
+          INFO ALL
+          
+          INFO DISTPATH ALL
+
+        </copy>
+      
+      d. Check the parameter file for the Replicat `REPN` and Extract `EXTS` are set up. In case, it is not set up, then create the `EXTS.prm` file using the `EDIT PARAMS` command: 
+         
+         
+          <copy>
+            EDIT PARAMS EXTS.prm   
+          </copy>
+         
+        
+      Enter the parameters for `EXTS` parameter file:
+
+         <copy>
+      
+            EXTRACT exts
+            USERIDALIAS ggsouth
+            EXTTRAIL south/ea
+            
+            DDL INCLUDE MAPPED
+            DDLOPTIONS INCLUDETAG 00
+            DDLOPTIONS REPORT
+            
+            REPORTCOUNT EVERY 10 MINUTES, RATE
+            WARNLONGTRANS 15MINUTES, CHECKINTERVAL 5MINUTES
+             
+            TABLE hr.*;
+                     
+         </copy>
+      
+      Run the `EDIT PARAMS REPN.prm` command and enter the parameters for the `REPN` parameter file:
+
+         <copy>
+         
+          REPLICAT repn
+          USERIDALIAS ggsouth DOMAIN OracleGoldenGate
+          
+          DDLOPTIONS REPORT
+          DDLERROR DEFAULT, DISCARD
+         
+          REPORTCOUNT EVERY 10 MINUTES, RATE
+          
+          REPERROR (DEFAULT, DISCARD)
+          MAP hr.*, TARGET hr.*;
+         
+        </copy>
+
+   e.  Connect to `depl_west` deployment and check that the processes are running:
+          
+         
+         <copy>
+          
+          CONNECT https://west:9201 DEPLOYMENT depl_west AS ggma PASSWORD GGma_23ai !
+
+          DBLOGIN USERIDALIAS ggwest
+
+          INFO ALL
+          
+          INFO DISTPATH ALL
+
+         </copy>
+
+   f. Check the parameter file for the Replicat `REPS` is set up. In case, it is not set up, then create the `REPS.prm` file using the `EDIT PARAMS REPS.prm` command:
+       
+       <copy>
+         REPLICAT reps
+         USERIDALIAS ggwest DOMAIN OracleGoldenGate
+         
+         DDLOPTIONS REPORT
+         DDLERROR DEFAULT, DISCARD
+         
+         REPORTCOUNT EVERY 10 MINUTES, RATE
+         
+         REPERROR (DEFAULT, DISCARD)
+         MAP hr.*, TARGET hr.*;
+
+       </copy>
+         
+      b. Run the `INFO ALL` and `INFO DISTPATH ALL` commands: 
+         
+         
+          <copy>
+            INFO ALL   
+          </copy>
+         
+        
+      Make sure that the `EXTN` process is in `RUNNING` state.
+
+          
+         <copy>
+           INFO DISTPATH ALL   
+         </copy>
+          
+      Make sure that the `DPNS` process is in `RUNNING` state.
+
+      
+## Task 2: Add DML to DBNORTH PDBs
+   
+   Adding DML to the source PDB, DBNORTH, would allow you to test that the data is captured from DBNORTH. In the following steps, you will run the `source_dml_operations` script to perform DML transactions on DBNORTH:
+
+   1. Navigate to the `scripts/UseCases/03_Cascading` directory and run the `ls` command. You should be able to see the `source_dml_operations` script.
+
+   2. Run the `source_dml_operations` script:
+
+      ```
+         <copy>
+            
+            ./source_dml_operations
+
+         </copy>
+      
+      ``` 
+  
+      This script commits transactions to the `hr.employees` table on `DBNORTH`.
+
+   <b>NOTE</b>: If you get the error "ORA-65162: Password of the common database user has expired", then run <b>Task 3 Prevent the Database Password from Expiring</b> from the <b>Initialize Environment</b> lab.
+
+
+## Task 3: Check Replication from Source PDB (DBNORTH) to the Intermediate PDB (DBSOUTH)
+
+   In case of a cascading environment, a successful replication is one where the committed source transactions are replicated to the intermediate and then to the target data source, correctly. In this task, you will be able to check that the committed transactions in `DBNORTH` are replicated to `DBSOUTH`:
+
+   1. Navigate to the `scripts/UseCases/03_Cascading` directory and run the `ls` command. You should be able to see the `check_replication_cascading.sh` script.
+
+   2. Run this script:
+      
+      ```
+        <copy>
+           
+           ./check_replication_cascading.sh
+      
+        </copy>
+      ```
+
+   This script shows the statistical details of the DML operations, similar to the following:
+
+
+   ![A sample statistical output that shows different DML and other operations performed in the PDBs](./images/chkcascascadeoutput.png)
+   
+   As you can see in the output, the transactions were captured from `DBNORTH` and replicated to `DBSOUTH` and then to `DBWEST`. 
+
+## Task 4: Delete the Data Replication Environment
+
+After testing the cascading data replication scenario, remove this replication setup so that you can test other topologies and environments available in this system. 
+   
+To delete this environment, use the `delete_replication_cascading_adminclient.sh`. You can also use this script to test and delete data replication environments in your own test enviornment. 
+   
+To delete the setup:
+
+1. Run the script `delete_replication_cascading_adminclient.sh`.
+   
+      ```
+        <copy>
+       
+           ./delete_replication_cascading_adminclient.sh  
+       
+        </copy>
+      
+      ```
+   
+2. You can verify that the environment was deleted by connecting to the deployment and running the `INFO ALL` command on `depl_north` deployment.
+
+      ```
+        <copy>
+        
+          adminclient
+          
+        </copy>
+      ```
+      
+Now, run the `CONNECT` command to connect to `depl_north`:
+
+      ```
+       <copy>
+       
+          CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
+       
+       </copy>
+     
+      ```
+3. Run the `INFO ALL` command and `INFO DISTPATH ALL` commands after connecting to the deployment. These commands display the message `"No processes found"`, if the Extract, Replicat processes have been deleted successfully.
+
+4. Repeat steps 2 and 3 for the `depl_south` and `depl_west` deployments.
+   
+After you delete the environment, you can use the script `add_replication_cascading_curl.sh` again to rebuild the environment or copy the script to apply in your own test environment.
+
+## Learn More
+
+* [Oracle GoldenGate Microservices REST APIs](https://docs.oracle.com/en/middleware/goldengate/core/23/oggra/)
+* [Command Line Reference Guide](https://docs.oracle.com/en/middleware/goldengate/core/23/gclir/index.html)
+* [Oracle GoldenGate Solutions Guide](https://docs.oracle.com/en/middleware/goldengate/core/23/ggsol/index.html)
+
+
+
+
+## Acknowledgements
+* **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Volker Kuhr
+* **Last Updated By/Date** - Preeti Shukla, 2025
+
+
+    
+
+      
+      
