@@ -261,8 +261,8 @@ After you log in successfully, you're brought to the Oracle Data Transforms home
 
 27. Repeat steps 25 and 26 for the following columns:
     * For **DEAR**, enter `CASE WHEN SRC_CUSTOMER.DEAR = 0 THEN 'Mr' WHEN SRC_CUSTOMER.DEAR = 1 THEN 'Mrs' ELSE 'Ms' END` into the expression field.
-    * For **CUST\_NAME**, enter `SRC_CUSTOMER.FIRST\_NAME || ' ' || UPPER(SRC_CUSTOMER.LAST\_NAME)` into the expression field.
-    * For **SALES\_PERS**, enter `SRC_SALES_PERSON.FIRST\_NAME || ' ' ||UPPER(SRC_SALES_PERSON.LAST_NAME)` into the expression field.
+    * For **CUST\_NAME**, enter `SRC_CUSTOMER.FIRST_NAME || ' ' || UPPER(SRC_CUSTOMER.LAST_NAME)` into the expression field.
+    * For **SALES\_PERS**, enter `SRC_SALES_PERSON.FIRST_NAME || ' ' ||UPPER(SRC_SALES_PERSON.LAST_NAME)` into the expression field.
     * For **CRE\_DATE** name, enter `SYSDATE` into the expression field.
     * For **UPD\_DATE** name, enter `SYSDATE` into the expression field.
 
