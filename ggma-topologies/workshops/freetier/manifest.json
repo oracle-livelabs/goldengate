@@ -48,24 +48,24 @@
       "filename": "../../bidirectional-replication-using-admin-client/bidirectional-data-replication-using-admin-client.md"
     },
     {
-      "title": "Lab 8: Set Up Cascading Data Replication Environment Using REST API",
+      "title": "Lab 8: Set Up Cascaded Data Replication Environment Using REST API",
       "description": "Configure a cascading data replication environment using the automation scripts containing REST API cURL commands.",
       "filename": "../../cascading-topology-uc-rest-api/cascading-topology-rest-api.md"
     },
     {
-      "title": "Lab 9: Set Up Cascading Data Replication Environment Using Admin Client",
+      "title": "Lab 9: Set Up Cascaded Data Replication Environment Using Admin Client",
       "description": "Configure a cascading data replication using the automation scripts containing Admin Client OBEY scripts.",
       "filename": "../../onetomany-topology-uc-admin-client/onetomany-topology-admin-client.md"
     },
     {
-      "title": "Lab 10: Set Up Cascading Data Replication Environment Using REST API",
-      "description": "Configure a cascading data replication environment using the automation scripts containing REST API cURL commands.",
+      "title": "Lab 10: Set Up Data Replication for a Distributed Environment Using REST API",
+      "description": "Replicate data in a data distributed or broadcast environment using the automation scripts containing REST API cURL commands.",
       "filename": "../../onetomany-topology-uc-rest-api/onetomany-topology-rest-api.md"
     },
     {
-      "title": "Lab 11: Set Up Cascading Data Replication Environment Using Admin Client",
-      "description": "Configure a cascading data replication using the automation scripts containing Admin Client OBEY scripts.",
-      "filename": "../../cascading-topology-uc-admin-client/cascading-topology-admin-client.md"
+      "title": "Lab 11: Set Up Data Replication for a Distributed Environment Using Admin Client",
+      "description": "Replicate data in a data distributed or broadcast environment using the automation scripts containing Admin Client OBEY scripts.",
+      "filename": "../../onetomany-topology-uc-admin-client/onetomany-topology-admin-client.md"
     },
     {
       "title": "Need Help?",
