@@ -1,7 +1,7 @@
 # Connect and prepare databases
 ## Introduction
 
-This lab walks you through the steps to launch the Oracle GoldenGate 23ai Microservices WebUI, create connections to the source (West) and target (East) databases, enable supplemental logging (Trandata) to the source database, add a Checkpoint table to the target database, and add Heartbeat tables to both.
+This lab guides you step by step through launching the Oracle GoldenGate 23ai Microservices WebUI, creating connections to the source (West) and target (East) databases, enable supplemental logging (Trandata) to the source database, create a Checkpoint table to the target database, and configuring Heartbeat tables on both databases.
 
 Estimated time: 20 minutes
 
@@ -9,11 +9,11 @@ Estimated time: 20 minutes
 
 ### About DB Connections
 
-DB Connections is where you create database login credentials that allow you to connect to a database and manage Checkpoint tables, supplemental logging (TRANDATA), and Heartbeat tables.
+DB Connections allow you to create and manage the login credentials needed to connect to your databases and manage Checkpoint tables, supplemental logging (TRANDATA), and Heartbeat tables.
 
 ### About Checkpoint table and Trandata
 
-A Checkpoint table is created in the target database to add fault tolerance to a Replicat process. Trandata enables the unconditional logging of the primary key and the conditional supplemental logging of all unique and foreign keys of the specified table and is required on a source database.
+A Checkpoint table is created in the target database to provide fault tolerance for the Replicat process. Trandata enables the unconditional logging of primary keys and the conditional supplemental logging of all unique and foreign keys for the specified table. Adding Trandata is required for the source database.
 
 ### Objectives
 

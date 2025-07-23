@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-Experience the enhanced Oracle GoldenGate 23ai Microservices, featuring an updated user interface and new capabilities that simplify the creation of real-time data pipelines. Participate in this practical lab where you will set up replication from one Oracle Database to another, enabling asynchronous APIs, interact with the REST API, and perform a patch upgrade.
+Experience the enhanced Oracle GoldenGate 23ai Microservices, featuring an updated user interface and new capabilities that simplify the creation of real-time data pipelines. In this hands-on lab, you'll set up replication between two Oracle Databases, enabling asynchronous APIs, interact with the REST API, and perform a patch upgrade.
 
 This workshop guides you through building a fast pipeline to replicate data between two Oracle cloud databases using the Oracle GoldenGate 23ai Microservices WebUI.
 
