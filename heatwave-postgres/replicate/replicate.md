@@ -93,41 +93,7 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
     ![Running Extract](./images/01-15-running-ext.png " ")
 
-## Task 2: Create a GoldenGate connection
-
-The Oracle GoldenGate connection type lets you to connect to other Oracle GoldenGate deployments. Create a connection to the Oracle GoldenGate deployment that initiates enable connectivity between deployments.
-
-1.  On the Connections page, click **Create Connections**.
-
-2.  In the Create Connection panel, for Name, enter `GGSPGtoMySQL`.
-
-3. From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
-
-4. From the Type dropdown, select **GoldenGate**.
-
-5. Under **Database details**, choose **Select GoldenGate deployment**.
-
-6. Select a **Compartment** from the dropdown. Select the MySQL Deployment (`MySQLDeployment`) from the Deployment dropdown.
-
-7.  For Database username, enter `oggadmin`.
-
-8. Select a **Compartment** from the dropdown. For Database user password secret select **LLSecret** from the dropdown.
-
-9. Click **Create**.
-
-    ![GoldenGate create connection page](./images/02-09-create-gg-conn.png " ")
-
-10. After the connection is active, on its details page, click **Assigned deployments**.
-
-11.	Click **Assign deployment**.
-
-12.	In the Assign deployment dialog, select the source OCIPGDeployment Deployment, and then click **Assign deployment**.
-
-    ![Assign deployment PostgreSQL](./images/02-13-assign-dep-postgresql.png " ")
-
-Return to the Connections page.
-
-## Task 3: Create an OCI GoldenGate user for the Distribution Paths
+## Task 2: Create an OCI GoldenGate user for the Distribution Paths
 
 1. In the Oracle Cloud console, on the Deployments page, select the target MySQL deployment to view its details.
 
@@ -172,7 +138,7 @@ Return to the Connections page.
 
     The credential appears in the Credentials list.
 
-## Task 4: Create the Distribution Path for the Initial Load Extract
+## Task 3: Create the Distribution Path for the Initial Load Extract
 
 1.  In the PostgreSQL OCI GoldenGate deployment console, click **Distribution Service**.
 
@@ -197,9 +163,10 @@ Return to the Connections page.
     * Enable **Reverse proxy enabled**.
     * For **Target Host** , enter the target MySQL OCI GoldenGate deployment console URL, without the https:// or any trailing slashes. You can copy the console URL from the MySQL Deployment details page.
     * For **Deployment Name**, enter **gginstance**.
-    * For **Port Number**, enter **443**.
     * For **Trail Name**, enter  **MY**. 
     * For **Alias**, enter **dpuser**.
+
+    ![Target Options page](./images/04-05-target-opts.png " ")
 
 6. On the Advanced Options page, leave the fields with default values, and click **Next**.
 
@@ -217,7 +184,7 @@ Return to the Connections page.
 
 9. In the target MySQL OCI GoldenGate deployment console, click **Receiver Service** to review the Receiver Path created as a result of creating the **PGCDCDP** Distribution Path.
 
-## Task 5: Add and run the Replicat (MySQL deployment)
+## Task 4: Add and run the Replicat (MySQL deployment)
 
 1.	In the navigation menu, click **DB Connections**.
 
@@ -267,7 +234,7 @@ Return to the Connections page.
 
     ![Parameter File page](./images/05-11-param-file.png " ")
 
-## Task 6: Perform Inserts into the PostgreSQL database
+## Task 5: Perform Inserts into the PostgreSQL database
 
 1. In the Oracle Cloud console navigation menu, click **Databases**, and then click **DB Systems** under PostgreSQL.
 
@@ -321,4 +288,4 @@ You have completed this lab.
 ## Acknowledgements
 - **Author** - Katherine Wardhana, User Assistance Developer
 - **Contributors** -  Shrinidhi Kulkarni, GoldenGate Product Manager
-- **Last Updated by** - Katherine Wardhana, June 2025
+- **Last Updated by** - Katherine Wardhana, August 2025

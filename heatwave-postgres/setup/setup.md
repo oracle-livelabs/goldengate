@@ -188,6 +188,11 @@ If you're working within the same Home region for OCI GoldenGate and MySQL Heatw
 
 		<copy>mysqlsh admin@<mysql-db-privateIP>:3306 --sql</copy>
 
+	Verify following binary log startup options and system variables are configured correctly on Heatwave MysQL required by Oracle GoldenGate for MySQL.
+
+	![Binary log startup options](./images/03b-4-binary-log.png " ")
+
+
 ## Task 4: Load data into the MySQL DB System
 
 1. Download and run the sample data script.
