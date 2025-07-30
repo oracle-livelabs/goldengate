@@ -114,5 +114,5 @@ You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
-* **Contributors** -  Mack Bell, Senior Principal Product Manager & Alex Lima, Database Product Management
+* **Contributors** - Mack Bell, Senior Principal Product Manager & Alex Lima, Database Product Management
 * **Last Updated By/Date** - Katherine Wardhana, August 2025

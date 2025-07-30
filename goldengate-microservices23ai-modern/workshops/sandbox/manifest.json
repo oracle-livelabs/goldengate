@@ -25,24 +25,29 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
-            "title": "Lab 1: Create the OCI GoldenGate resources",
-            "filename": "../../create/create.md"
+            "title": "Lab 1: Get Started",
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "../../get-started/get-started.md"
         },
         {
-            "title": "Lab 2: Create the Extract process and use Oracle Data Pump to export data",
-            "filename": "../../extract/extract.md"
+            "title": "Lab 2: Connect and prepare databases",
+            "filename": "../../prepare-consoles/prepare-consoles.md"
         },
         {
-            "title": "Lab 3: Use Oracle Data Pump to import data and create the Replicat",
-            "filename": "../../extracts-replicats/extracts-replicats.md"
+            "title": "Lab 3: Replicate data from West to East",
+            "filename": "../../east-replicate/east-replicate.md"
         },
         {
-            "title": "Lab 4: Monitor Extracts and Replicats",
-            "filename": "../../monitor/monitor.md"
+            "title": "Lab 4: Issuing Oracle GoldenGate commands using the REST API",
+            "filename": "../../rest-api/rest-api.md"
         },
         {
-            "title": "Lab 5: Purge unused Trail files",
-            "filename": "../../purge/purge.md"
+            "title": "Lab 5: Create an AsyncAPI Workflow",
+            "filename": "../../asyncapi/asyncapi.md"
+        },
+        {
+            "title": "Lab 6: Patching Oracle GoldenGate",
+            "filename": "../../patching/patching.md"
         },
         {
             "title": "Need Help?",

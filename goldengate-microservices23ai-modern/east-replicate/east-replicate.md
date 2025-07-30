@@ -24,7 +24,23 @@ In this lab, you will:
 
 ## Task 1:  Determine Current SCN from West database
 
-Need content from Alex
+1. In the VCN Terminal, enter the following command to view the menu options:
+
+    ```
+    <copy>menu</copy>
+    ```
+
+2. When prompted to enter your choice, enter `1` to access the Oracle DB 19c Home Environment.
+
+    ![Access Oracle DB 19c Home Environment](./images/01-02-oracle-db-19c.png " ")
+
+3. Enter the following command to interact with the Oracle Database :
+
+    ```
+    <copy>sqlplus "oggadmin/Welcome##123@localhost:1521/west" @get_current_scn.sql</copy>
+    ```
+
+    ![Terminal interact with Oracle Database](./images/01-03-oracle-db.png " ")
 
 ## Task 2: Create an Initial Load Extract for the West database
 
@@ -184,6 +200,8 @@ In this task, you will create a change data Extract to read new transactions fro
 
 1. I have a few questions....
 
+You may now **proceed to the next lab**.
+
 ## Learn more
 
 * [Before Adding Extract and Replicat Processes](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/configure-ogg-adding-extract-and-replicat.html#GUID-C1044A4D-945E-4080-B79C-74FA9D004143)
@@ -194,5 +212,5 @@ In this task, you will create a change data Extract to read new transactions fro
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
-* **Contributors** -  Alex Lima, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, August 2024
+* **Contributors** - Mack Bell, Senior Principal Product Manager & Alex Lima, Database Product Management
+* **Last Updated By/Date** - Katherine Wardhana, August 2025
