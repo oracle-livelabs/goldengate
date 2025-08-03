@@ -77,7 +77,7 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
         * `REPS` Replicat process 
 
    
-   3. Run the adminclient, using the command `adminclient`. 
+   3. Run the Admin Client, using the command `adminclient`. 
    
    4. Check that all three deployments are running by accessing the Service Manager:
       
@@ -90,18 +90,21 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
          </copy>
       
       b. Run the following command to know the status of all the deployments:
-
+         
+      ```
          <copy>
            
            status deployment *
 
          </copy>
-
+         
+      ```
+         
          The output should be similar to the following:
 
-         ![Check the status of the deployment by running the status deployment command. The output of this command displayed in this image](./images/cascade_checkdeplstatus.png)
+![Check the status of the deployment by running the status deployment command. The output of this command displayed in this image](./images/cascade_checkdeplstatus.png)
 
-   5. Check that the processes are running successfully for each deployment, using the following commands:
+5. Check that the processes are running successfully for each deployment, using the following commands:
 
       a. Connect to `depl_north` deployment and check that the processes are running.      
          
