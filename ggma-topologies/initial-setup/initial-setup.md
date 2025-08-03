@@ -137,8 +137,9 @@ You may witness the error "ORA-65162: Password of the common database user has e
     <copy>
       
       alter session set container = DBNORTH;
-      create profile ggprofile limit password_life_time unlimitedd;
+      create profile ggprofile limit password_life_time unlimited;
       alter user ggadmin profile ggprofile;
+      
       select username, expiry_date from DBA_USERS where username = 'GGADMIN';
     
     </copy>
@@ -167,6 +168,7 @@ You may witness the error "ORA-65162: Password of the common database user has e
       alter session set container = DBWEST;
       create profile ggprofile limit password_life_time unlimitedd;
       alter user ggadmin profile ggprofile;
+      
       select username, expiry_date from DBA_USERS where username = 'GGADMIN';
     
     </copy>

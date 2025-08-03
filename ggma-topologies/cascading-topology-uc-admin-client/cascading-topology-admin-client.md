@@ -100,36 +100,40 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
          
       ```
          
-         The output should be similar to the following:
+   The output should be similar to the following:
 
 ![Check the status of the deployment by running the status deployment command. The output of this command displayed in this image](./images/cascade_checkdeplstatus.png)
 
 5. Check that the processes are running successfully for each deployment, using the following commands:
 
       a. Connect to `depl_north` deployment and check that the processes are running.      
-         
-         <copy>
-          
-          CONNECT https://north:9001 DEPLOYMENT depl_north AS ggma PASSWORD GGma_23ai !
 
-          DBLOGIN USERIDALIAS ggnorth
-
-          INFO ALL
+        ``` 
+          <copy>
           
-          INFO DISTPATH ALL
-        </copy>
-                 
+            CONNECT https://north:9001 DEPLOYMENT depl_north AS ggma PASSWORD GGma_23ai !
+            
+            DBLOGIN USERIDALIAS ggnorth
+            
+            INFO ALL
+            
+            INFO DISTPATH ALL
+          </copy>
+        
+        ```         
          
       b. Check the parameter file for the Extract, EXTN. In case, it is not set up, then create the EXTN.prm file using the EDIT PARAMS command: 
          
-         
+        ``` 
           <copy>
             EDIT PARAMS EXTN.prm   
           </copy>
-         
         
-         Enter the parameters for `EXTN` parameter file:
+        ``` 
+        
+      Enter the parameters for `EXTN` parameter file:
 
+       ```  
          <copy>
       
             EXTRACT extn
@@ -145,33 +149,36 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
             TABLE hr.*;
              
          </copy>
-          
+        
+       ```  
       c. Connect to `depl_south` deployment and check that the processes are running:
           
-         
+        ``` 
          <copy>
           
-          CONNECT https://south:9101 DEPLOYMENT depl_south AS ggma PASSWORD GGma_23ai !
-
-          DBLOGIN USERIDALIAS ggsouth
-
-          INFO ALL
-          
-          INFO DISTPATH ALL
-
-        </copy>
-      
+            CONNECT https://south:9101 DEPLOYMENT depl_south AS ggma PASSWORD GGma_23ai !
+            DBLOGIN USERIDALIAS ggsouth
+            INFO ALL
+            INFO DISTPATH ALL
+       
+         </copy>
+        
+        ```
       d. Check the parameter file for the Replicat `REPN` and Extract `EXTS` are set up. In case, it is not set up, then create the `EXTS.prm` file using the `EDIT PARAMS` command: 
          
-         
+        ``` 
           <copy>
+        
             EDIT PARAMS EXTS.prm   
+        
           </copy>
-         
+      
+        ``` 
         
       Enter the parameters for `EXTS` parameter file:
-
-         <copy>
+        
+        ```
+          <copy>
       
             EXTRACT exts
             USERIDALIAS ggsouth
@@ -186,10 +193,12 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
              
             TABLE hr.*;
                      
-         </copy>
-      
+          </copy>
+         
+         ```
       Run the `EDIT PARAMS REPN.prm` command and enter the parameters for the `REPN` parameter file:
-
+      
+        ```
          <copy>
          
           REPLICAT repn
@@ -203,12 +212,14 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
           REPERROR (DEFAULT, DISCARD)
           MAP hr.*, TARGET hr.*;
          
-        </copy>
-
+         </copy>
+        
+        ```
+    
    e.  Connect to `depl_west` deployment and check that the processes are running:
           
-         
-         <copy>
+       ```  
+        <copy>
           
           CONNECT https://west:9201 DEPLOYMENT depl_west AS ggma PASSWORD GGma_23ai !
 
@@ -218,45 +229,56 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
           
           INFO DISTPATH ALL
 
-         </copy>
-
+        </copy>
+        
+       ```
    f. Check the parameter file for the Replicat `REPS` is set up. In case, it is not set up, then create the `REPS.prm` file using the `EDIT PARAMS REPS.prm` command:
        
-       <copy>
-         REPLICAT reps
-         USERIDALIAS ggwest DOMAIN OracleGoldenGate
+       ```  
+         <copy>
          
-         DDLOPTIONS REPORT
-         DDLERROR DEFAULT, DISCARD
+           REPLICAT reps
+           USERIDALIAS ggwest DOMAIN OracleGoldenGate
          
-         REPORTCOUNT EVERY 10 MINUTES, RATE
+           DDLOPTIONS REPORT
+           DDLERROR DEFAULT, DISCARD
          
-         REPERROR (DEFAULT, DISCARD)
-         MAP hr.*, TARGET hr.*;
-
-       </copy>
+           REPORTCOUNT EVERY 10 MINUTES, RATE
          
+           REPERROR (DEFAULT, DISCARD)
+           MAP hr.*, TARGET hr.*;
+      
+         </copy> 
+       
+       ```   
       b. Run the `INFO ALL` and `INFO DISTPATH ALL` commands: 
          
+          ```    
+           <copy>
+           
+             INFO ALL   
+          
+           </copy>
          
-          <copy>
-            INFO ALL   
-          </copy>
-         
+          ``` 
         
-      Make sure that the `EXTN` process is in `RUNNING` state.
-
-          
+       Make sure that the `EXTN` process is in `RUNNING` state.
+        
+        
+        ```  
          <copy>
+        
            INFO DISTPATH ALL   
+        
          </copy>
-          
-      Make sure that the `DPNS` process is in `RUNNING` state.
+        
+        ```  
+       Make sure that the `DPNS` process is in `RUNNING` state.
 
       
 ## Task 2: Add DML to DBNORTH PDBs
    
-   Adding DML to the source PDB, DBNORTH, would allow you to test that the data is captured from DBNORTH. In the following steps, you will run the `source_dml_operations` script to perform DML transactions on DBNORTH:
+   Adding DML to the source PDB, `DBNORTH`, would allow you to test that the data is captured from `DBNORTH`. In the following steps, you will run the `source_dml_operations` script to perform DML transactions on `DBNORTH`:
 
    1. Navigate to the `scripts/UseCases/03_Cascading` directory and run the `ls` command. You should be able to see the `source_dml_operations` script.
 
@@ -270,7 +292,7 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
          </copy>
       
       ``` 
-  
+      
       This script commits transactions to the `hr.employees` table on `DBNORTH`.
 
    <b>NOTE</b>: If you get the error "ORA-65162: Password of the common database user has expired", then run <b>Task 3 Prevent the Database Password from Expiring</b> from the <b>Initialize Environment</b> lab.
@@ -328,21 +350,18 @@ To delete the setup:
         </copy>
       ```
       
-Now, run the `CONNECT` command to connect to `depl_north`:
-
-      ```
-       <copy>
-       
-          CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai ! 
-       
-       </copy>
+   Now, run the `CONNECT` command to connect to `depl_north`:
+   
+    ```
+      <copy>CONNECT https://north:9001 deployment depl_north as ggma password GGma_23ai !</copy>
+    
+    ```
      
-      ```
 3. Run the `INFO ALL` command and `INFO DISTPATH ALL` commands after connecting to the deployment. These commands display the message `"No processes found"`, if the Extract, Replicat processes have been deleted successfully.
 
 4. Repeat steps 2 and 3 for the `depl_south` and `depl_west` deployments.
    
-After you delete the environment, you can use the script `add_replication_cascading_curl.sh` again to rebuild the environment or copy the script to apply in your own test environment.
+After you delete the environment, you can use the script `add_replication_cascading_adminclient.sh` again to rebuild the environment or copy the script to apply in your own test environment.
 
 ## Learn More
 
