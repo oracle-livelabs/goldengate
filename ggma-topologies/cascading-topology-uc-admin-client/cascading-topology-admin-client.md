@@ -85,7 +85,7 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
 
          <copy>
            
-           connect https://north:9000 deployment depl_north as ggma password GGma_23ai !
+           CONNECT https://north:9000 deployment depl_north as ggma password GGma_23ai !
 
          </copy>
       
@@ -94,7 +94,7 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
       ```
          <copy>
            
-           status deployment *
+           STATUS DEPLOYMENT *
 
          </copy>
          
@@ -108,7 +108,7 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
 
       a. Connect to `depl_north` deployment and check that the processes are running.      
 
-        ``` 
+          
           <copy>
           
             CONNECT https://north:9001 DEPLOYMENT depl_north AS ggma PASSWORD GGma_23ai !
@@ -120,16 +120,14 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
             INFO DISTPATH ALL
           </copy>
         
-        ```         
+                  
          
       b. Check the parameter file for the Extract, EXTN. In case, it is not set up, then create the EXTN.prm file using the EDIT PARAMS command: 
          
-        ``` 
-          <copy>
-            EDIT PARAMS EXTN.prm   
-          </copy>
+         
+          <copy>EDIT PARAMS EXTN.prm</copy>
         
-        ``` 
+         
         
       Enter the parameters for `EXTN` parameter file:
 
@@ -153,7 +151,7 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
        ```  
       c. Connect to `depl_south` deployment and check that the processes are running:
           
-        ``` 
+         
          <copy>
           
             CONNECT https://south:9101 DEPLOYMENT depl_south AS ggma PASSWORD GGma_23ai !
@@ -163,21 +161,21 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
        
          </copy>
         
-        ```
+        
       d. Check the parameter file for the Replicat `REPN` and Extract `EXTS` are set up. In case, it is not set up, then create the `EXTS.prm` file using the `EDIT PARAMS` command: 
          
-        ``` 
-          <copy>
+         
+        <copy>
         
-            EDIT PARAMS EXTS.prm   
+          EDIT PARAMS EXTS.prm   
         
-          </copy>
+        </copy>
       
-        ``` 
+         
         
       Enter the parameters for `EXTS` parameter file:
         
-        ```
+        
           <copy>
       
             EXTRACT exts
@@ -195,10 +193,10 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
                      
           </copy>
          
-         ```
+         
       Run the `EDIT PARAMS REPN.prm` command and enter the parameters for the `REPN` parameter file:
       
-        ```
+        
          <copy>
          
           REPLICAT repn
@@ -214,11 +212,11 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
          
          </copy>
         
-        ```
+        
     
    e.  Connect to `depl_west` deployment and check that the processes are running:
           
-       ```  
+         
         <copy>
           
           CONNECT https://west:9201 DEPLOYMENT depl_west AS ggma PASSWORD GGma_23ai !
@@ -231,10 +229,10 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
 
         </copy>
         
-       ```
+       
    f. Check the parameter file for the Replicat `REPS` is set up. In case, it is not set up, then create the `REPS.prm` file using the `EDIT PARAMS REPS.prm` command:
        
-       ```  
+         
          <copy>
          
            REPLICAT reps
@@ -250,29 +248,29 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
       
          </copy> 
        
-       ```   
+          
       b. Run the `INFO ALL` and `INFO DISTPATH ALL` commands: 
          
-          ```    
-           <copy>
+              
+         <copy>
            
              INFO ALL   
           
-           </copy>
+         </copy>
          
-          ``` 
+          
         
        Make sure that the `EXTN` process is in `RUNNING` state.
         
         
-        ```  
+          
          <copy>
         
            INFO DISTPATH ALL   
         
          </copy>
         
-        ```  
+          
        Make sure that the `DPNS` process is in `RUNNING` state.
 
       
