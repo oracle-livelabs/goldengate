@@ -4,6 +4,9 @@
 
 Oracle GoldenGate 23ai runs on the Microservices Architecture and allows management and monitoring via three interfaces: the WebUI, the command line interface (Admin Client), and via the REST API. The REST API provides an excellent method for Engineering and DevOps teams to use scriptable REST calls to connect to the GoldenGate services and its processes.
 
+
+   ![Rest API management](./images/rest-api-manage.png " ")
+
 Estimated time: 20 minutes
 
 ### Objectives

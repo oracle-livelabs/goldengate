@@ -17,6 +17,7 @@ As for Replicats, for the Oracle Database there are numerous options each with t
 ### Objectives
 
 In this lab, you will:
+* Query the West database to determine the positioning SCN for both the Initial Load Extract and the Change Data Extract
 * Create an Initial Load Extract for the West database that selects records from the HR tables up to a given SCN
 * Create a Parallel Replicat to deliver the initial load data to the East database
 * Create a change data Integrated Extract for the West database and position it to start capturing data after the given SCN
@@ -107,7 +108,27 @@ This task creates a Parallel Replicat that will deliver the Initial Load records
 
 6. Click **Create and Run**.
 
-    ![Parameter File page](./images/03-06-param-file.png " ")
+    ![Parameter File page](./images/03-06a-param-file.png " ")
+
+    The status updates to Running.
+
+    ![RINIT Extract running](./images/03-06b-running-ext.png " ")
+
+7. In the navigation menu, click **Extracts** and verify that the **EINIT** Extract has updated to a **Stopped** status. Ensure that the Initial Load Replicat has processed all records captured by the Extract.
+
+    > **Note:** The Initial Load Extract will stop automatically once it has completed. However, the Initial Load Replicat will continue to run.
+
+    ![RINIT Extract stopped](./images/03-07-stopped-ext.png " ")
+
+8. In the navigation menu, click **Replicats**, expand the **RINIT** Replicat, and select **Checkpoint**. 
+
+    Note the value of the Offset in the row **Current**, and then click **Refresh**. If the Replicat has finished processing all rows from the trail, the **Offset** value will remain unchanged after several refreshes. This typically indicates that the initial load process is complete.
+
+    ![Replicat Checkpoint](./images/03-08-rep-checkpoint.png " ")
+
+9. Return to the **Replicats** page, and **Pause** the **RINIT** Replicat.
+
+    ![Pause Replicat](./images/03-09-pause-rep.png " ")
 
 ## Task 4: Create a Change Data Extract for the West database
 

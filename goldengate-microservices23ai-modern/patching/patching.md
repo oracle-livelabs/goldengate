@@ -6,6 +6,8 @@ Installing patches is critical to the continued functionality and support of Ora
 
 Patching Oracle GoldenGate has never been easier when using the Microservices Architecture.   An out-of-place patching protocol can be followed that allows GoldenGate administrators to install a complete patched version side by side with the previous installation, and then easily switch the GoldenGate Deployment(s) and Service Manager to the new GoldenGate Home.
 
+   ![Patch GoldenGatE](./images/patch-gg.png " ")
+
 Estimated time: 20 minutes
 
 ### Objectives
@@ -79,7 +81,7 @@ In this lab, a complete patched version of Oracle GoldenGate 23.8 has been insta
 
     ![Start HUB_23ai deployment again](./images/03-12-start-dep-again.png " ")
 
-13. After the **HUB_23ai** deployment status updates to **Running**, expand the **Deployments** navigation menu, and select the **HUB_23ai** deployment.
+13. After the HUB 23ai deployment status updates to **Running**, expand the **Deployments** navigation menu, and select the **HUB_23ai** deployment.
 
 14. In the **HUB_23ai** Services page, select **Administration Service**.
 
