@@ -2,17 +2,16 @@
 
 ## Introduction
 
-Oracle GoldenGate 23ai runs on the Microservices Architecture and allows management and monitoring via three interfaces: the WebUI, the command line interface (Admin Client), and via the REST API. The REST API provides an excellent method for Engineering and DevOps teams to use scriptable REST calls to connect to the GoldenGate services and its processes.
-
+Oracle GoldenGate 23ai is built on the Microservices Architecture and supports management and monitoring via three interfaces: the WebUI, the command-line interface (Admin Client), and the REST API. The REST API provides an excellent method for Engineering and DevOps teams to use scriptable REST calls to connect to the GoldenGate services and its processes.
 
    ![Rest API management](./images/rest-api-manage.png " ")
 
-Estimated time: 20 minutes
+Estimated time: 10 minutes
 
 ### Objectives
 
 In this lab, you will:
-* do we have objectives?
+* Learn how interact with the GoldenGate REST API by issuing `curl` commands
 
 ## Task 1: Enter `curl` commands in Terminal
 
@@ -21,6 +20,8 @@ At this stage in the lab, you’ve used the Oracle GoldenGate WebUI to create pr
 1. Select **Activities** from the upper left of the console and then choose the **Terminal** icon at the bottom center.
 
 2. When you open the Terminal, a preset terminal is presented which has four options to choose. Enter option `2`.
+
+    ![Menu options on Terminal](./images/01-02-menu-terminal.png " ")
 
 3. Enter the following into the command line one by one:
 
@@ -110,7 +111,7 @@ At this stage in the lab, you’ve used the Oracle GoldenGate WebUI to create pr
         "arguments": "HOURLY"
     }'</copy>
     ```
-4. Next, enter the following curl command to create a new database connection using the REST API, then open the browser to view the new connection:
+4. Next, enter the following `curl` command to create a new database connection using the REST API, then open the browser to view the new connection:
 
     ```
     <copy># Create a database connection (This is the only change example)

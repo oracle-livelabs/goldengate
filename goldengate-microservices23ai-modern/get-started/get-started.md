@@ -1,52 +1,35 @@
-# Get started - LiveLabs login
+# Get started - Hands-On Lab
 ## Introduction
 
-Welcome to your LiveLabs Sandbox environment. In order to start your workshop, you need to login to our LiveLabs Sandbox.
+To begin the workshop, you’ll need to connect to a virtual system that has been assigned specifically to you. This connection will be established through your web browser using a VNC (Virtual Network Computing) session to access your remote lab environment.
 
-In this lab, we are going to show you where you can find the login information and how to log in to the LiveLabs Sandbox.
+We’ll guide you step-by-step on where to find your connection details and how to connect to your system.
 
 Estimated Time: 5 minutes
 
 ### Objectives
 
-* View login information to LiveLabs Sandbox
-* Login to LiveLabs Sandbox
+* We’ll guide you step-by-step on where to find your connection information details and how to connect to your system.
 
-## Task 1: View Login Information
+## Task 1: Database Connectivity and Preparation
 
-1. To create a reservation, click **Start**, and then **Run on LiveLabs Sandbox**.
+1. Locate the connection URL for your assigned environment, then open it in your web browser to access the system.
 
-    ![Run on sandbox](./images/01-01-run-sandbox.png " ")
+2. After the VNC connection is established and the desktop appears, click the **Activities** button in the top-left of the screen.
 
-2. To confirm the reservation, you must consent to receive emails from LiveLabs. More than that, you can select the time when to start the workshop.
+    ![Click Activities on VCN](./images/01-02-activities.png " ")
 
-    ![Submit the reservation](./images/01-02-submit-res.png " ")
+3. Select the **Terminal** icon to open a new Terminal session.
 
-3. You'll receive emails updating you on the status of your reservation, including one notifying you that your environment is ready to use.
+    ![Open Terminal](./images/01-03-open-terminal.png " ")
 
-    ![Rservation email](./images/01-03-res-email.png " ")
+4. A preset script has been loaded in the Terminal to configure the correct environment for this workshop. Enter option `2`, to select Oracle GoldenGate 23.7 as a Home Environment, then press **Enter** to begin.
 
-4. Log in to LiveLabs. Click your username, and then **My Reservations**. On the My Reservations page, click **Launch Workshop** for the environment you want to use.
+    ![Select Oracle Home Environment](./images/01-04-home-environment.png " ")
 
-    ![My reservations](./images/01-04-my-res.png " ")
+5. This will launch the step-by-step instructions for this Hands-on Lab, along with a browser window with tabs for he Oracle GoldenGate Service Manager and Admin Service pages.
 
-5. In your lab instructions, click **View Login Info**.
-
-    ![View login info](./images/01-05-view-login-info.png " ")
-
-6. On the Reservation Information page, under Terraform Values, click on the **OGG East URL** link to access the Oracle GoldenGate East 23ai Microservices WebUI console.
-
-    ![Terraform Values](./images/01-06-terraform-values.png " ")
-
-    > **NOTE:** If you see “Your connection is not private” or its variations, for the purposes of this lab, proceed to access the website.
-
-7.  To log in to the Oracle GoldenGate East 23ai Microservices WebUI console, enter **oggadmin** for Username and paste the **Global Password** from the Reservation Information for Password, and then click **Sign In**. 
-
-    > **NOTE:** If using the LiveLab Sandbox environment, copy the deployment password from the Terraform output section of **View Login Info**.
-
-    ![GoldenGate deployment console sign in](./images/01-07-console-login.png " ")
-
-    After you log in successfully, you're brought to the Oracle GoldenGate 23ai deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
+    ![Tabs open to access lab instructions](./images/01-05-lab-instructions.png " ")
 
 You may now **proceed to the next lab.**
 

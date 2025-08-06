@@ -8,12 +8,12 @@
             "filename": "../../introduction/gb-intro.md"
         },
         {
-            "title": "Lab 1: Get Started",
-            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "title": "Lab 1: Connect to the Lab Environment",
+            "description": "Prerequisites to connection to the lab environment.",
             "filename": "../../get-started/get-started.md"
         },
         {
-            "title": "Lab 2: Connect and prepare databases",
+            "title": "Lab 2: Database Connectivity and Preparation",
             "filename": "../../prepare-consoles/prepare-consoles.md"
         },
         {

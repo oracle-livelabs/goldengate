@@ -5,7 +5,7 @@ This lab guides you step by step through launching the Oracle GoldenGate 23ai Mi
 
 Estimated time: 20 minutes
 
-   ![Create database connections](./images/create-db.png " ")
+   ![Create database connections](./images/prepare-db.png " ")
 
 ### About DB Connections
 
@@ -14,6 +14,10 @@ DB Connections allow you to create and manage the login credentials needed to co
 ### About Checkpoint table and Trandata
 
 A Checkpoint table is created in the target database to provide fault tolerance for the Replicat process. Trandata enables the unconditional logging of primary keys and the conditional supplemental logging of all unique and foreign keys for the specified table. Adding Trandata is required for the source database.
+
+### About the Heartbeat tables
+
+Heartbeat tables are used to monitor lag throughout the data replication cycle. Automatic heartbeats are sent by each source database, which update records in both the heartbeat seed table and the heartbeat table, and constructing a heartbeat history record.
 
 ### Objectives
 
@@ -25,24 +29,30 @@ In this lab, you will:
 
 ## Task 1: Add DB Connection to East database
 
-1. In the navigation menu and click **DB Connections**.
+1. In your VNC environment, select the **Admin Service Sign In** tab. Enter **oggadmin** for Username, enter **x** for Password, and click **Sign In**.
 
-    ![Administration Service navigation menu](./images/01-01-add-db-connec.png " ")
+    > **Note**: If prompted by your browser to save the username and password, decline the offer. Storing these credentials may lead to incorrect autofill entries in later lab steps. 
 
-2. Click **Add DB Connection** (plus icon).
+    ![GoldenGate deployment console sign in](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin-23ai.png " ")
 
-    ![Add DB Connection](./images/01-02-add-db-connec.png " ")
+2. After you've logged in, select **DB Connections** from the navigation menu.
 
-3. A Credentials panel will appear, complete the following fields, and then click **Submit**:
+    ![Administration Service navigation menu](./images/01-02-add-db-connec.png " ")
+
+3. Click **Add DB Connection** (plus icon).
+
+    ![Add DB Connection](./images/01-03-add-db-connec.png " ")
+
+4. A Credentials panel will appear, complete the following fields, and then click **Submit**:
     * For Credential Alias, enter **EAST**.
     * For User ID, enter **ggadmin@localhost:1521/East**. 
-    * For Password, paste the **Global Password** from the Reservation Information. Verify the password. 
+    * For Password, enter **x**. Verify the password. 
 
-    ![Credentials panel](./images/01-03-credentials.png " ")
+    ![Credentials panel](./images/01-04-credentials.png " ")
 
-4. Click **Connect to database**. If successful, you are directed to the Checkpoint page. 
+5. Click **Connect to database**. If successful, you are directed to the Checkpoint page. 
 
-    ![Connect to database](./images/01-04-connect-to-db.png " ")
+    ![Connect to database](./images/01-05-connect-to-db.png " ")
 
 ## Task 2: Add a Checkpoint table and Heartbeat table
 
@@ -79,7 +89,7 @@ In this lab, you will:
 2. A Credentials panel will appear, complete the following fields, and then click **Submit**:
     * For Credential Alias, enter **WEST**.
     * For User ID, enter **ggadmin@localhost:1521/West**. 
-    * For Password, paste the **Global Password** from the Reservation Information. Verify the password.
+    * For Password, enter **x**. Verify the password.
 
     ![Credentials panel](./images/03-02-credentials-west.png " ")
 
