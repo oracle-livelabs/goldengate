@@ -1,4 +1,4 @@
-# Connection Instructions - Hands-On Lab
+# Get Started - Hands-On Lab
 ## Introduction
 
 Welcome to the **GoldenGate 23ai Microservices for Modern Real-Time Data Fabric Solutions** Hands-on Lab! To begin the workshop, you’ll need to connect to a virtual system that has been assigned specifically to you. This connection will be established through your web browser using a VNC (Virtual Network Computing) session to access your remote lab environment.

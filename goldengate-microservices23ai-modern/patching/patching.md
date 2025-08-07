@@ -1,4 +1,4 @@
-# Patching Oracle GoldenGate
+# Patch Oracle GoldenGate
 
 ## Introduction
 

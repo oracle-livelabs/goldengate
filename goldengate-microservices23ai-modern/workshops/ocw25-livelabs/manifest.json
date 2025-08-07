@@ -8,28 +8,28 @@
             "filename": "../../introduction/gb-intro.md"
         },
         {
-            "title": "Lab 1: Connect to the Lab Environment",
+            "title": "Get Started",
             "description": "Prerequisites to connection to the lab environment.",
             "filename": "../../get-started/get-started.md"
         },
         {
-            "title": "Lab 2: Database Connectivity and Preparation",
+            "title": "Lab 1: Connect and prepare databases",
             "filename": "../../prepare-consoles/prepare-consoles.md"
         },
         {
-            "title": "Lab 3: Replicate data from West to East",
+            "title": "Lab 2: Replicate data from West to East",
             "filename": "../../east-replicate/east-replicate.md"
         },
         {
-            "title": "Lab 4: Issuing Oracle GoldenGate commands using the REST API",
+            "title": "Lab 3: Use Oracle GoldenGate REST API commands",
             "filename": "../../rest-api/rest-api.md"
         },
         {
-            "title": "Lab 5: Create an AsyncAPI Workflow",
+            "title": "Lab 4: Create an AsyncAPI Workflow",
             "filename": "../../asyncapi/asyncapi.md"
         },
         {
-            "title": "Lab 6: Patching Oracle GoldenGate",
+            "title": "Lab 5: Patch Oracle GoldenGate",
             "filename": "../../patching/patching.md"
         },
         {

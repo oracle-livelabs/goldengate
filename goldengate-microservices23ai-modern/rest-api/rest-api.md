@@ -1,4 +1,4 @@
-# Issuing Oracle GoldenGate commands using the REST API
+# Use Oracle GoldenGate REST API commands
 
 ## Introduction
 
