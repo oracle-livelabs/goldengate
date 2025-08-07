@@ -19,6 +19,11 @@ In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
 * Create the source and target connections
 
+### Prerequisites
+
+To successfully complete this lab, you must:
+* Review [Minimum recommended policies](https://docs.oracle.com/en/cloud/paas/goldengate-service/rmrrr/#GUID-3E101995-8630-4D58-93DF-0AE94041B031).
+
 ## Task 1: Create the source connection
 
 1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.

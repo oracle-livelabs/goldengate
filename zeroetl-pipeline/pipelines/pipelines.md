@@ -17,6 +17,11 @@ In this lab, you will:
 * Enable logging
 * Start the pipeline
 
+### Prerequisites
+
+To successfully complete this lab, you must:
+* This lab assumes that you completed all preceding labs
+
 ## Task 1: Create the pipeline
 
 1. Click **Pipelines** and then click **Create pipeline**.
