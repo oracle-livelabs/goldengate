@@ -25,19 +25,22 @@ At this stage in the lab, you’ve used the Oracle GoldenGate WebUI to create pr
 
 3. Enter the following into the command line one by one:
 
+    * Service Status: The “status” field of the output shows the current status of the services.
     ```
-    <copy># Service Status
-    curl --location 'http://localhost:9011/services/v2/deployments/HUB_23ai/services' \
+    <copy>curl --location 'http://localhost:9011/services/v2/deployments/HUB_23ai/services' \
     --netrc-file ~/.ogg_netrc.sh | jq .response </copy>
     ```
+    ![Service Status](./images/01-03a-service-status.png " ")
+    
+    * Deployment Information:  Shows status and path information for the deployment.
     ```
-    <copy># Deployment Information
-    curl --location 'http://localhost:9011/services/v2/deployments/HUB_23ai' \
+    <copy>curl --location 'http://localhost:9011/services/v2/deployments/HUB_23ai' \
     --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
     ```
+
+    * Extract Information: Shows the configuration information for the given Extract.
     ```
-    <copy># Extract Information
-    curl --location --request GET 'http://localhost:9012/services/v2/extracts/EWEST' \
+    <copy>curl --location --request GET 'http://localhost:9012/services/v2/extracts/EWEST' \
     --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
     ```
     ```
@@ -122,7 +125,46 @@ At this stage in the lab, you’ve used the Oracle GoldenGate WebUI to create pr
         "password": "Welcome##123"
     }'</copy>
     ```
-5. 
+
+## Task 2: Make REST Calls to Create New Objects
+
+In this task, we will use the REST API to issue `curl` commands to create objects that can then be viewed from the WebUI.
+
+1. Enter the following `curl` command to create a new database connection using the REST API, then open the Administration Service browser tab to view the new connection. You may have to refresh the DB Connections to see the new entry:
+
+    ```
+    <copy>curl --location --request POST 'http://localhost:9012/services/v2/credentials/OracleGoldenGate/WestDB' \
+        --netrc-file ~/.ogg_netrc.sh \
+        --data-raw '{
+            "userid": "ggadmin@localhost:1521/west",
+            "password": "Welcome##123"
+        }' | jq</copy>
+    ```
+
+    ![Create a new DB Connection using the REST API](./images/02-01a-create-db-connec-rest-api.png " ")
+
+    ![New WestDB DB Connection](./images/02-01b-new-db-connec.png " ")
+
+2. Enter the following command to delete the database connection you just created:
+
+    ```
+    <copy>curl --location --request DELETE
+    'http://localhost:9012/services/v2/credentials/OracleGoldenGate/WestDB' \
+        --netrc-file ~/.ogg_netrc.sh | jq 'del(.links)'</copy>
+    ```
+
+    ![Delete DB Connection using the REST API](./images/02-02-delete-db-connec.png " ")
+
+3. Enter the following command to view the connection that has been deleted and view the remaining DB Connections:
+
+    ```
+    <copy>curl -s --location 
+    'http://localhost:9012/services/v2/credentials/OracleGoldenGate' \
+        --netrc-file ~/.ogg_netrc.sh \
+    | jq 'del(.links) | .response.items |= map(del(.links))' </copy>
+    ```
+
+    ![View DB Connection using the REST API](./images/02-03-view-db-connecs.png " ")
 
 You may now **proceed to the next lab**.
 

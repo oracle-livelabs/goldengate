@@ -1,7 +1,7 @@
-# Get started - Hands-On Lab
+# Connection Instructions - Hands-On Lab
 ## Introduction
 
-To begin the workshop, you’ll need to connect to a virtual system that has been assigned specifically to you. This connection will be established through your web browser using a VNC (Virtual Network Computing) session to access your remote lab environment.
+Welcome to the **GoldenGate 23ai Microservices for Modern Real-Time Data Fabric Solutions** Hands-on Lab! To begin the workshop, you’ll need to connect to a virtual system that has been assigned specifically to you. This connection will be established through your web browser using a VNC (Virtual Network Computing) session to access your remote lab environment.
 
 We’ll guide you step-by-step on where to find your connection details and how to connect to your system.
 
@@ -9,9 +9,9 @@ Estimated Time: 5 minutes
 
 ### Objectives
 
-* We’ll guide you step-by-step on where to find your connection information details and how to connect to your system.
+* Obtain connection information to your lab environment
 
-## Task 1: Database Connectivity and Preparation
+## Task 1: Connect to the Lab Environment
 
 1. Locate the connection URL for your assigned environment, then open it in your web browser to access the system.
 

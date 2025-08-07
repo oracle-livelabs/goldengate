@@ -33,17 +33,21 @@ In this lab, you will:
 
 In this task, you will use `sqlplus` to connect to the West database and retrieve the current database SCN. This SCN will serve two purposes: it will be supplied to the Initial Load Extract to capture all records up to and including that SCN, and it will also be used to position the Change Data Extract to begin capturing active DML operations from that SCN onward.
 
-1. In the VCN Terminal, enter the following command to view the menu options:
+1. Select **Activities** from the upper left of the console and then select the **Terminal** icon at the bottom center.
+
+    ![Open terminal](./images/01-01-open-terminal.png " ")
+
+2. In the VCN Terminal, enter the following command to view the menu options:
 
     ```
     <copy>menu</copy>
     ```
 
-2. When prompted to enter your choice, enter `1` to access the Oracle DB 19c Home Environment.
+3. When prompted to enter your choice, enter `1` to access the Oracle DB 19c Home Environment.
 
-    ![Access Oracle DB 19c Home Environment](./images/01-02-oracle-db-19c.png " ")
+    ![Access Oracle DB 19c Home Environment](./images/01-03-oracle-db-19c.png " ")
 
-3. Enter the following command to interact with the Oracle Database:
+4. Enter the following command to interact with the Oracle Database:
 
     ```
     <copy>sqlplus "oggadmin/Welcome##123@localhost:1521/west" @get_current_scn.sql</copy>
@@ -51,9 +55,9 @@ In this task, you will use `sqlplus` to connect to the West database and retriev
 
     Make sure to record the value of the current database, as it will be required for upcoming tasks.
 
-    ![Terminal interact with Oracle Database](./images/01-03-oracle-db.png " ")
+    ![Terminal interact with Oracle Database](./images/01-04-oracle-db.png " ")
 
-4. Enter `exit` to close the Terminal.
+5. Enter `exit` to close the Terminal.
 
 ## Task 2: Create an Initial Load Extract for the West database
 

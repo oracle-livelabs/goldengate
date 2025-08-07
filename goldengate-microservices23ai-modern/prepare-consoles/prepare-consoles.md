@@ -105,13 +105,25 @@ The West database will be used as the source database and no Checkpoint table is
 
     ![Add Trandata](./images/04-01-add-trandata.png " ")
 
-2. For Schema Name, enter **HR**.  Leave the other fields as they are and then click **Submit**.
+2. For Schema Name, enter **HR**.  Leave the other fields as they are, and then click **Submit**.
 
     ![Trandata panel](./images/04-02-trandata.png " ")
 
 3. To verify, enter **HR** into the Search field and click **Search**. The HR schema appears in the search results.
 
     ![Search Trandata](./images/04-03-search-trandata.png " ")
+
+4. In the navigation menu, click **Heartbeat**. Click **Add Heartbeat** (plus icon).
+
+    ![Select Add Heartbeat Table](./images/04-04-add-heartbeat.png " ")
+
+5. An Add Heartbeat Table panel appears. Keep the fields as they are, and then click **Submit**.
+
+    ![Submit Heartbeat Table](./images/04-05a-submit-heartbeat.png " ")
+
+    The Heartbeat page refreshes with the new settings.
+
+    ![Refreshed Heartbeat page](./images/04-05b-refreshed-heartbeat.png " ")
 
 You may now **proceed to the next lab.**
 

@@ -2,14 +2,20 @@
 
 ## Introduction
 
-do we have an intro?
+GoldenGate Data Streams is a REST interface for your JSON-formatted data events, leveraging AsyncAPI to enable efficient subscription to data streams through a Publish/Subscribe model.
 
-Estimated time: 20 minutes
+With GoldenGate 23ai, you can create Data Streams and subscribe to these streams from your clients. GoldenGate Data Streams is a language-agnostic solution, allowing seamless integration with client applications regardless of the programming language or platform.
+
+For a deeper understanding of GoldenGate Data Streams and its AsyncAPI-based architecture, explore our [architectural overview](https://www.youtube.com/watch?v=CGLlxYy66LY).
+
+   ![GoldenGate Data Streams with AsyncAPI ](./images/gg-ds-asyncapi.png " ")
+
+Estimated time: 10 minutes
 
 ### Objectives
 
 In this lab, you will:
-* do we have objectives?
+* Create a publication with Oracle GoldenGate Data Streams and a subscription using the AsyncAPI framework.
 
 ## Task 1: Create the Publisher Stream
 
@@ -62,6 +68,7 @@ In this lab, you will:
     ```
     <copy>python3 asyncapi_consumer.py</copy>
     ```
+
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
