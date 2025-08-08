@@ -7,18 +7,6 @@ Estimated time: 20 minutes
 
    ![Create database connections](./images/prepare-db.png " ")
 
-### About DB Connections
-
-DB Connections allow you to create and manage the login credentials needed to connect to your databases and manage Checkpoint tables, supplemental logging (TRANDATA), and Heartbeat tables.
-
-### About Checkpoint table and Trandata
-
-A Checkpoint table is created in the target database to provide fault tolerance for the Replicat process. Trandata enables the unconditional logging of primary keys and the conditional supplemental logging of all unique and foreign keys for the specified table. Adding Trandata is required for the source database.
-
-### About the Heartbeat tables
-
-Heartbeat tables are used to monitor lag throughout the data replication cycle. Automatic heartbeats are sent by each source database, which update records in both the heartbeat seed table and the heartbeat table, and constructing a heartbeat history record.
-
 ### Objectives
 
 In this lab, you will:
@@ -28,6 +16,10 @@ In this lab, you will:
 * Add a checkpoint table and the heartbeat tables to the East database
 
 ## Task 1: Add DB Connection to East database
+
+### About DB Connections
+
+DB Connections allow you to create and manage the login credentials needed to connect to your databases and manage Checkpoint tables, supplemental logging (TRANDATA), and Heartbeat tables.
 
 1. In your VNC environment, select the **Admin Service Sign In** tab. Enter **oggadmin** for Username, enter **x** for Password, and click **Sign In**.
 
@@ -55,6 +47,10 @@ In this lab, you will:
     ![Connect to database](./images/01-05-connect-to-db.png " ")
 
 ## Task 2: Add a Checkpoint table and Heartbeat table
+
+### About Checkpoint table and Trandata
+
+A Checkpoint table is created in the target database to provide fault tolerance for the Replicat process. Trandata enables the unconditional logging of primary keys and the conditional supplemental logging of all unique and foreign keys for the specified table. Adding Trandata is required for the source database.
 
 1. In the navigation menu, click **Checkpoint**. In the Checkpoint page, click **Add Checkpoint** (plus icon).
 

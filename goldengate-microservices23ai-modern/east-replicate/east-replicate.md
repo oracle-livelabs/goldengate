@@ -10,16 +10,6 @@ Estimated time: 20 minutes
 
    ![Replication from East to West](./images/rep-east-west-dp.png " ")
 
-### About Extracts and Replicats
-
-An Extract is a process that captures data from a source database. A Replicat is responsible for delivering that data to a target database. 
-
-There are two primary types of Extracts for the Oracle Database: 
-* Initial Load Extract, which selects records directly from the base tables.
-* Integrated Extract, which captures change data from the redo logs.
-
-As for Replicats, Oracle offers numerous options, each with their own advantages depending on the use case. In this, lab we will use a Parallel Replicat for both the Initial Load Replicat and the Change Data Replicat.
-
 ### Objectives
 
 In this lab, you will:
@@ -50,18 +40,26 @@ In this task, you will use `sqlplus` to connect to the West database and retriev
 4. Enter the following command to interact with the Oracle Database:
 
     ```
-    <copy>sqlplus "oggadmin/Welcome##123@localhost:1521/west" @get_current_scn.sql</copy>
+    <copy>sqlplus "ggadmin/Welcome##123@localhost:1521/west" @get_current_scn.sql</copy>
     ```
 
     Make sure to record the value of the current database, as it will be required for upcoming tasks.
 
     ![Terminal interact with Oracle Database](./images/01-04-oracle-db.png " ")
 
-5. Enter `exit` to close the Terminal.
-
 ## Task 2: Create an Initial Load Extract for the West database
 
 In this task, you will create an Initial Load Extract (EINIT) that reads records from the **HR** tables in the West database, up to the SCN identified in Task 1. The records are then written to a series of files (EXTFILE), which will then be read by a Replicat (RINIT) and inserted into the target East database, completing the initial load process.
+
+### About Extracts and Replicats
+
+An Extract is a process that captures data from a source database. A Replicat is responsible for delivering that data to a target database. 
+
+There are two primary types of Extracts for the Oracle Database: 
+* Initial Load Extract, which selects records directly from the base tables.
+* Integrated Extract, which captures change data from the redo logs.
+
+As for Replicats, Oracle offers numerous options, each with their own advantages depending on the use case. In this, lab we will use a Parallel Replicat for both the Initial Load Replicat and the Change Data Replicat.
 
 1. In the navigation menu, click **Extracts**. Click **Add Extract** (plus icon). 
 
@@ -179,6 +177,8 @@ In this task, you will create a change data Extract to read new transactions fro
     ```
 
 6. Click **Create**.
+
+    > **NOTE:** Do **not** click **Create and Run**.
 
     ![Parameter File page](./images/04-06-param-file.png " ")
 

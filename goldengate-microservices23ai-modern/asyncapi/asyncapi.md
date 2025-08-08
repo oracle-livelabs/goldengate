@@ -2,11 +2,9 @@
 
 ## Introduction
 
-GoldenGate Data Streams is a REST interface for your JSON-formatted data events, leveraging AsyncAPI to enable efficient subscription to data streams through a Publish/Subscribe model.
+GoldenGate Data Streams provides a REST-based, language-agnostic streaming interface that enables any client application, regardless of programming language or platform, to subscribe to real-time change data. With GoldenGate 23ai, you can easily create a data stream from your database capture process, then build subscriber applications that consume, display, and process change events in JSON events.
 
-With GoldenGate 23ai, you can create Data Streams and subscribe to these streams from your clients. GoldenGate Data Streams is a language-agnostic solution, allowing seamless integration with client applications regardless of the programming language or platform.
-
-For a deeper understanding of GoldenGate Data Streams and its AsyncAPI-based architecture, explore our [architectural overview](https://www.youtube.com/watch?v=CGLlxYy66LY).
+In this lab, you'll use Oracle GoldenGate Data Streams to capture change events directly from an Oracle Database and deliver them as JSON-formatted messages over a Publish/Subscribe (Pub/Sub) interface defined by AsyncAPI.
 
    ![GoldenGate Data Streams with AsyncAPI ](./images/gg-ds-asyncapi.png " ")
 
@@ -15,7 +13,10 @@ Estimated time: 10 minutes
 ### Objectives
 
 In this lab, you will:
-* Create a publication with Oracle GoldenGate Data Streams and a subscription using the AsyncAPI framework.
+* Create a GoldenGate Data Stream from a running database capture.
+* Implement a web-based subscriber tool to connect to the stream via WebSocket.
+* Visualize and simulate real-time JSON event consumption in a browser.
+
 
 ## Task 1: Create the Publisher Stream
 
@@ -47,13 +48,13 @@ In this lab, you will:
 
     ![Terminal](./images/02-01-terminal-home-enviro.png " ")
 
-2. Enter the following into the command prompt:
+2. Enter the following command prompt to send the output to a webpage, allowing you to view real-time change events as they occur live:
 
     ```
     <copy>nohup streamlit run ~/asyncapi_web_consumer.py > asyncapi_web_consumer.log 2>&1 &</copy>
     ```
 
-3. Open the Chrome Browser at [http://localhost:8501](hhttp://localhost:8501).
+3. Open the Chrome Browser at [http://localhost:8501](http://localhost:8501).
 
     ![Open Chrome Browser](./images/02-03-local-host.png " ")
 

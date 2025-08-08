@@ -13,10 +13,7 @@ Estimated time: 20 minutes
 ### Objectives
 
 In this lab, you will:
-* Create an Initial Load Extract for the West database that selects records from the HR tables up to a given SCN
-* Create a Parallel Replicat to deliver the initial load data to the East database
-* Create a change data Integrated Extract for the West database and position it to start capturing data after the given SCN
-* Create a second Parallel Replicat process to deliver the change data to the East database
+* Patch Oracle GoldenGate 23.7 to Oracle GoldenGate 23.8
 
 ## Task 1: Install Oracle GoldenGate 23.8
 
@@ -25,7 +22,7 @@ In this lab, a complete patched version of Oracle GoldenGate 23.8 has been insta
 
 ## Task 2: Stop the GoldenGate processes
 
-1. In the navigation menu, click **Extracts**.
+1. In order to patch the current GoldenGate 23.7 environment, it is necessary to stop all running GoldenGate processes. In the navigation menu, click **Extracts**.
 
 2. Click **Pause** for the EWEST Extract. To patch the current GoldenGate 23.7 environment, you must first stop running all GoldenGate processes.  
 
@@ -89,7 +86,7 @@ In this lab, a complete patched version of Oracle GoldenGate 23.8 has been insta
 
 15. If prompted, log in using oggadmin as the Username and x as Password.
 
-16. In the Adminstration Seevice Home page, there should be a running Extract and a running Replicat.  These are the Change Data processes and they restarted automatically with the default restart profile during creation.
+16. Once connected you can restart the **EWEST** Extract and the **REAST** Replicat.  
 
     ![Administration Service page with a running Extract and Replicat](./images/03-16-admin-service-home.png " ")
 

@@ -4,6 +4,8 @@
 
 Oracle GoldenGate 23ai is built on the Microservices Architecture and supports management and monitoring via three interfaces: the WebUI, the command-line interface (Admin Client), and the REST API. The REST API provides an excellent method for Engineering and DevOps teams to use scriptable REST calls to connect to the GoldenGate services and its processes.
 
+The examples in this lab are only a small set of available REST calls.  The complete list of documented calls are available, [here](https://docs.oracle.com/en/middleware/goldengate/core/23/oggra/).
+
    ![Rest API management](./images/rest-api-manage.png " ")
 
 Estimated time: 10 minutes
@@ -11,9 +13,9 @@ Estimated time: 10 minutes
 ### Objectives
 
 In this lab, you will:
-* Learn how interact with the GoldenGate REST API by issuing `curl` commands
+* Use sample REST calls to monitor and create processes within your GoldenGate deployment.
 
-## Task 1: Enter `curl` commands in Terminal
+## Task 1: Make REST Calls to View Status Information
 
 At this stage in the lab, you’ve used the Oracle GoldenGate WebUI to create processes and review their status and related information. For this lab, we'll demonstrate how to use the REST API to issue `curl` commands that interact directly with GoldenGate services. You'll query the status of existing processes and create a new database connection, then verify your changes visually in the WebUI.
 
@@ -23,107 +25,74 @@ At this stage in the lab, you’ve used the Oracle GoldenGate WebUI to create pr
 
     ![Menu options on Terminal](./images/01-02-menu-terminal.png " ")
 
-3. Enter the following into the command line one by one:
+3. The following `curl` commands will provide status information, process lag, table statistics, and other relevant data. Enter each command into the terminal one by one:
 
     * Service Status: The “status” field of the output shows the current status of the services.
     ```
-    <copy>curl --location 'http://localhost:9011/services/v2/deployments/HUB_23ai/services' \
-    --netrc-file ~/.ogg_netrc.sh | jq .response </copy>
+    <copy>curl --location
+    'http://localhost:9011/services/v2/deployments/HUB_23ai/services' \
+        --netrc-file ~/.ogg_netrc.sh | jq '.response.items |= map(del(.links))'</copy>
     ```
     ![Service Status](./images/01-03a-service-status.png " ")
     
-    * Deployment Information:  Shows status and path information for the deployment.
+    * Deployment Information: Shows the status and path information of the deployment.
     ```
-    <copy>curl --location 'http://localhost:9011/services/v2/deployments/HUB_23ai' \
-    --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
+    <copy>curl --location 
+    'http://localhost:9011/services/v2/deployments/HUB_23ai' \
+        --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
     ```
 
-    * Extract Information: Shows the configuration information for the given Extract.
+    * Extract Information: Shows the Extract's configuration information.
     ```
-    <copy>curl --location --request GET 'http://localhost:9012/services/v2/extracts/EWEST' \
-    --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
+    <copy>curl --location --request GET
+    'http://localhost:9012/services/v2/extracts/EWEST' \
+        --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
     ```
+    *  Extract Status: Shows the status and lag information of the Extract.
     ```
-    <copy># Extract Status
-    curl –location 'http://localhost:9012/services/v2/extracts/EWEST/info/status' \
-    --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
+    <copy>curl –location
+    'http://localhost:9012/services/v2/extracts/EWEST/info/status' \
+        --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
     ```
+    *  Extract Checkpoint: Shows the current checkpoint details of the Extract.
     ```
-    <copy># Extract Checkpoint
-    curl –location 'http://localhost:9012/services/v2/extracts/EWEST/info/checkpoints' \
-    --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
+    <copy>curl –location
+    'http://localhost:9012/services/v2/extracts/EWEST/info/checkpoints' \
+        --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
     ```
+    * GGSERR Log File View: To view the contents of the GGSERR log file.
     ```
-    <copy># View ggserr.log file 
-    curl –location 'http://localhost:9012/services/v2/messages' \
-    --netrc-file ~/.ogg_netrc.sh | jq .response | tail -300</copy>
+    <copy>curl –location
+    'http://localhost:9012/services/v2/messages' \
+        --netrc-file ~/.ogg_netrc.sh | jq .response | tail -300</copy>
     ```
+    * Replicat Status: Shows the status and lag information of the given Replicat. 
     ```
-    <copy># View List of Extract Report Files
-    curl --location 'http://localhost:9012/services/v2/extracts/EWEST/info/reports' \
-    --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
+    <copy>curl --location
+    'http://localhost:9012/services/v2/replicats/REAST/info/status' \
+        --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
     ```
+    * Table Statistics: View the row statistics of the process since it last started.
     ```
-    <copy># View the current Extract report file
-    curl --location 'http://localhost:9012/services/v2/extracts/EWEST/info/reports/EWEST.rpt' \
-    --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
-    ```
-    ```
-    <copy># LAG ALL
-    curl --location --request POST 'http://localhost:9012/services/v2/commands/execute' \
-    --header 'Content-Type: application/json' \
-    --netrc-file ~/.ogg_netrc.sh \
-    --data '{
-        "name":"report",
-        "reportType":"lag",
-        "thresholds":[
-            {
-                "type":"info",
-                "units":"seconds",
-                "value":0
-            },
-            {
-                "type":"critical",
-                "units":"seconds",
-                "value":5
-            }
-        ]
-    }' | jq .response</copy>
-    ```
-    ```
-    <copy># Replicat Information
-    curl --location --request GET 'http://localhost:9012/services/v2/replicats/REAST' \
-    --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
-    ```
-    ```
-    <copy># Replicat status
-    curl --location 'http://localhost:9012/services/v2/replicats/REAST/info/status' \
-    --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
-    ```
-    ```
-    <copy># View Replicat current Report File
-    curl --location 'http://localhost:9012/services/v2/replicats/REAST/info/reports/REAST.rpt' \
-    --netrc-file ~/.ogg_netrc.sh | jq .response</copy>
-    ```
-    ```
-    <copy># Check the statistics
-    curl --location --request POST 'http://localhost:9012/services/v2/extracts/EWEST/command' \
-    --netrc-file ~/.ogg_netrc.sh \
-    --data '{
-        "command": "STATS",
-        "arguments": "HOURLY"
-    }'</copy>
-    ```
-4. Next, enter the following `curl` command to create a new database connection using the REST API, then open the browser to view the new connection:
-
-    ```
-    <copy># Create a database connection (This is the only change example)
-    curl --location --request POST 'http://localhost:9012/services/v2/credentials/OracleGoldenGate/WestDB' \
-    --netrc-file ~/.ogg_netrc.sh \
-    --data-raw '{
-        "userid": "ggadmin@localhost:1521/west",
-        "password": "Welcome##123"
-    }'</copy>
+    <copy>curl -s --location --request POST
+    'http://localhost:9012/services/v2/extracts/EWEST/command' \
+        --netrc-file ~/.ogg_netrc.sh \
+        --data '{"command": "STATS", "arguments": "HOURLY"}' \
+    | jq '
+        .response.replyData.stats[]
+        | select(.sourceTable? != null and (.operations | type == "array"))
+        | {
+            sourceTable: .sourceTable,
+            targetTable: .targetTable,
+            since: .since,
+            insert:     ([.operations[] | select(.operation == "insert")          | .count] | add // 0),
+            update:     ([.operations[] | select(.operation == "update")          | .count] | add // 0),
+            delete:     ([.operations[] | select(.operation == "delete")          | .count] | add // 0),
+            upsert:     ([.operations[] | select(.operation == "upsert")          | .count] | add // 0),
+            discard:    ([.operations[] | select(.operation == "discard")         | .count] | add // 0),
+            operations: ([.operations[] | select(.operation == "operations")      | .count] | add // 0),
+            metadata:   ([.operations[] | select(.operation == "metadataRecords") | .count] | add // 0)
+        }'</copy>
     ```
 
 ## Task 2: Make REST Calls to Create New Objects
