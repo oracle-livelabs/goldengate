@@ -140,9 +140,9 @@ This task creates a Parallel Replicat that will deliver the Initial Load records
 
     ![Replicat Checkpoint](./images/03-08-rep-checkpoint.png " ")
 
-9. Return to the **Replicats** page, and **Pause** the **RINIT** Replicat.
+9. Return to the **Replicats** page, and **Stop** the **RINIT** Replicat.
 
-    ![Pause Replicat](./images/03-09-pause-rep.png " ")
+    ![Stop Replicat](./images/03-09-pause-rep.png " ")
 
 ## Task 4: Create a Change Data Extract for the West database
 

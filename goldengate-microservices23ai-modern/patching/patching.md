@@ -24,15 +24,15 @@ In this lab, a complete patched version of Oracle GoldenGate 23.8 has been insta
 
 1. In order to patch the current GoldenGate 23.7 environment, it is necessary to stop all running GoldenGate processes. In the navigation menu, click **Extracts**.
 
-2. Click **Pause** for the EWEST Extract. To patch the current GoldenGate 23.7 environment, you must first stop running all GoldenGate processes.  
+2. Click **Stop** for the EWEST Extract. To patch the current GoldenGate 23.7 environment, you must first stop running all GoldenGate processes.  
 
-    ![Pause Extract](./images/02-02-pause-extract.png " ")
+    ![Stop Extract](./images/02-02-pause-extract.png " ")
 
 3. In the navigation menu, click **Replicats**.
 
-4. Click **Pause** for the REAST Replicat.  
+4. Click **Stop** for the REAST Replicat.  
 
-    ![Pause Replicat](./images/02-04-pause-extract.png " ")
+    ![Stop Replicat](./images/02-04-pause-extract.png " ")
 
 ## Task 3: Switch Deployments to the new GoldenGate 23.8 version
 
@@ -62,9 +62,9 @@ In this lab, a complete patched version of Oracle GoldenGate 23.8 has been insta
 
 8. In the navigation menu, click **Home**.
 
-9. In the **HUB_23ai** deployment Action menu, select **Pause**.
+9. In the **HUB_23ai** deployment Action menu, select **Stop**.
 
-    ![Pause Deployment](./images/03-09-pause-deployment.png " ")
+    ![Stop Deployment](./images/03-09-pause-deployment.png " ")
 
 10. After the **HUB_23ai** deployment status changes to **Stopped**, in the Service Manager deployment Action menu, click **Restart**.
 
