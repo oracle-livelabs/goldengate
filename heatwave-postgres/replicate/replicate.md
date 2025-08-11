@@ -197,9 +197,10 @@ Return to the Connections page.
     * Enable **Reverse proxy enabled**.
     * For **Target Host** , enter the target MySQL OCI GoldenGate deployment console URL, without the https:// or any trailing slashes. You can copy the console URL from the MySQL Deployment details page.
     * For **Deployment Name**, enter **gginstance**.
-    * For **Port Number**, enter **443**.
     * For **Trail Name**, enter  **MY**. 
     * For **Alias**, enter **dpuser**.
+
+    ![Target Options page](./images/04-05-target-opts.png " ")
 
 6. On the Advanced Options page, leave the fields with default values, and click **Next**.
 
@@ -321,4 +322,4 @@ You have completed this lab.
 ## Acknowledgements
 - **Author** - Katherine Wardhana, User Assistance Developer
 - **Contributors** -  Shrinidhi Kulkarni, GoldenGate Product Manager
-- **Last Updated by** - Katherine Wardhana, June 2025
+- **Last Updated by** - Katherine Wardhana, August 2025
