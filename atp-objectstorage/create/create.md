@@ -27,17 +27,17 @@ To successfully complete this lab in your own tenancy:
 * For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault). [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
 * Add an API key in your profile settings to be used in Task 3:
 
-1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **User settings**.
+1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select your profile username.
 
     ![Oracle Cloud console User menu](images/00-01-profile.png " ")
 
-2.  On the user details page, under **Resources**, click **API Keys**.
+2.  On the user details page navigation menu, click **API Keys**.
 
 3.  Click **Add API Key**.
 
     ![Resources on User details page](images/00-03-apikey.png " ")
 
-4.  In the Add API Key dialog, click **Download Private Key** to download the key, and then click **Add**.
+4.  In the Add API Key dialog, select **Generate API key pair**, click **Download Private Key** to download the key, and then click **Add**.
 
     ![Download Private key](images/00-04-privatekey.png " ")
 
@@ -45,11 +45,7 @@ To successfully complete this lab in your own tenancy:
 
 > **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
-## Task 1: Select the compartment
-
-[](include:00-select-compartment.md)
-
-## Task 2: Review the deployment
+## Task 1: Review the deployments
 
 1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
 
@@ -73,51 +69,47 @@ You can perform the following actions on the deployment details page:
 
     ![Deployment Details](./images/03-03-deployment-details.png)
 
-## Task 3: Create an Autonomous Database connection
+## Task 2: Create an Autonomous Database connection
 
 Follow the steps below to create a connection for the source Oracle Autonomous Transaction Processing \(ATP\) Database.
 
-1.  Use the Oracle Cloud Console breadcrumb to navigate back to the GoldenGate page.
-
-    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](images/03-01-breadcrumb.png " ")
-
-2.  Click **Connections**.
-
-    ![Connections in GoldenGate menu](images/03-02-goldengatemenu.png " ")
-
-3.  Click **Create Connection**.
+1.  Open the navigation menu. Click **Connections**, and then click **Create Connection**.
 
     ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
 
-4.  The Create connection panel consists of two pages. On the General information page, for Name, enter **SourceATP** and optionally, a description.
+2.  The Create connection panel appears. For Name, enter **SourceATP** and optionally, a description.
 
-5.  From the Type dropdown, select **Oracle Autonomous Database**.
+3. For **Compartment**, select the compartment in which to create this connection.
 
-6.  Click **Next**.
+4.  From the a Type dropdown, select **Oracle Autonomous Database**.
 
-    ![Create connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
+5. For Database details, select **Select database**.
 
-7. On the Connection details page, under Database details, select **Select database**.
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
 
-8.  For **Database in &lt;compartment-name&gt;**, select **SourceATP-&lt;numbers&gt;** from the dropdown. 
+6.  Select a **Compartment** from the dropdown, and then select **SourceATP-&lt;numbers&gt;** from the dropdown. 
 
-9. For Database username, enter `ggadmin`.
+7.  For Database username, enter `ggadmin`.
 
-10.  Enter the database's password in the Password field. Take note of the password.
+8.  Select a **Compartment** from the dropdown, and then select a Database user password secret from the dropdown.
 
-11. For Traffic routing method, select **Shared endpoint**.
+    > **NOTE:** This password will be used to unlock `GGADMIN` in a later task.
 
-12. Click **Create**.
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-09-create-connection-gg-details.png)
 
-    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-13-create-connection-gg-details.png)
+9. Click **Advanced options**, and then click **Network connectivity**. Under Traffic routing method, select **Shared endpoint**.
 
-    The connection becomes Active after a few minutes.
+10. Click **Create**.
 
-## Task 4: Unlock the GGADMIN user and check support mode for the source database
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-11-network-connect.png)
+
+    The connection becomes Active after a few minutes. You can proceed with the next task while service creates the connection.
+
+## Task 3: Unlock the GGADMIN user and check support mode for the source database
 
 Oracle Autonomous Databases come with a GGADMIN user that is locked by default. The following steps guide you through how to unlock the GGADMIN user.
 
-1.  From the Oracle Cloud Console **Navigation Menu** (hamburger icon), click **Oracle Database**, and then select **Autonomous Transaction Processing**.
+1.  From the Oracle Cloud Console navigation menu, click **Oracle Database**, and then select **Autonomous Database**.
 
 	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-01-auto-db.png " ")
 
@@ -167,7 +159,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 You can leave the source database SQL window open for use in a later lab.
 
-## Task 5: Create a connection for Oracle Object Storage
+## Task 4: Create a connection for Oracle Object Storage
 
 1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate. Open the Oracle Cloud console navigation menu, click **Oracle Database**, and then **GoldenGate**.
 
@@ -175,31 +167,35 @@ You can leave the source database SQL window open for use in a later lab.
 
 2.  Click **Connections** and then **Create Connection**.
 
-3.  In the Create Connection panel, enter **TargetObjStore** for Name.
+3.  The Create connection panel appears. For Name, enter **TargetObjStore**.
 
-4.  From the Type dropdown, select **OCI Object Storage**.
+4. For **Compartment**, select the compartment in which to create this connection.
 
-5.  Click **Next**.
-
-    ![Create connection details](images/05-05-create-connection.png " ")
+5.  From the Type dropdown, select **OCI Object Storage**.
 
 6.  From the Region dropdown, select your region.
 
-7.  For Private key configuration, drag-and-drop the private key (.pem) or select it from your local machine.
+    ![GoldenGate in the Oracle Cloud console navigation menu](./images/04-06-objstorageconnection.png " ")
 
-    >**Note**: Refer to the Prerequisites section for instructions on how to obtain a private key.
+7. For User, select **User current tenancy and user**.
 
-8.  Enter the corresponding public key fingerprint you copied from the prerequisite steps. You can also go back to your User settings in the Oracle Cloud console global header to copy it again.
+8.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**, and then select a Private key secret from the dropdown.
 
-9. For Traffic routing method, select **Shared endpoint**.
+9. Optionally, from the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**, and then select a Private key passphrase secret from the dropdown.
 
-10.  Click **Create**.
+10.  Enter the corresponding public key fingerprint you copied from the prerequisite steps. You can also go back to your User settings in the Oracle Cloud console global header to copy it again.
 
-  ![Target details](./images/05-10-objstorageconnection.png " ")
+  ![Target details](./images/04-11-objstorageconnection.png " ")
 
-    The Connection becomes Active after a few minutes.
+11. Click **Advanced options**, and then click **Network connectivity**. Under Traffic routing method, select **Shared endpoint**.
 
-## Task 6: Assign connections to deployments
+12. Click **Create**.
+
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-11-network-connect.png)
+
+    The connection becomes Active after a few minutes. You can proceed with the next task while service creates the connection.
+
+## Task 5: Assign connections to deployments
 
 After your deployments and connections become active, you can assign the connections to the appropriate deployments.
 
@@ -207,13 +203,11 @@ After your deployments and connections become active, you can assign the connect
 
 2.  Select **ATPDeployment** to view its details.
 
-3.  On the ATPDeployment details page, under Resources, click **Assigned connections**.
-
-    ![Deployment details page](./images/06-03-atp-assigned-connections.png " ")
+3.  On the ATPDeployment details page, click **Assigned connections** from the navigation bar.
 
 4.  Under Assigned connections, click **Assign connection**.
 
-    ![Assigned connections](./images/06-04-atp-assign-connection.png " ")
+    ![Assigned connections](./images/05-04-atp-assign-connection.png " ")
 
 5.  In the Assign connection dialog, from the **Connection** dropdown, select **SourceATP**, and then click **Assign connection**.
 
@@ -227,7 +221,7 @@ After your deployments and connections become active, you can assign the connect
 
     ![OBJDeployment details](./images/06-07-obj-bdconnection.png " ")
 
-## Task 7: Create a GoldenGate connection
+## Task 6: Create a GoldenGate connection
 
 Create a GoldenGate connection if your Big Data deployment doesn't have a public endpoint, and then assign it to the source ATP deployment.
 
@@ -235,33 +229,36 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 
     ![Create connection](./images/07-01-create-connection.png " ")
 
-2.  In the Create connection panel, enter a **Name** and optionally, a description.
+2.  The Create connection panel appears. Enter a **Name** and optionally, a description.
 
 3.  For **Compartment**, select the compartment in which to create this connection.
 
 4.  From the **Type** dropdown, under Generic, select **GoldenGate**.
 
-5.  Click **Next**.
+5.  For **GoldenGate deployment**, select **Select GoldenGate deployment**.
 
-    ![Create connection details](./images/07-05-create-connection.png " ")
+    ![Create connection details](./images/06-05-create-connection.png " ")
 
-6.  For Deployment, select the Big Data deployment from the dropdown.
+6. From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**, and then select **OBJDeployment** from the Deployment dropdown.    
 
 7.  For Username, enter `oggadmin`.
 
-8.  Enter the oggadmin password in the Password field. 
-
-    > **NOTE:** If you're using a password secret, you can view the password secret contents from the deployment details page.
-
-9. Click **Create**.
+8.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**, and then select the Password secret from the Deployment dropdown. 
 
     ![Create connection details](./images/07-09-create-connection.png " ")
 
-10. After the connection is active, on its details page, under **Resources**, click **Assigned deployments**.
+9. Click **Advanced options**, and then click **Network connectivity**. Under Traffic routing method, select **Shared endpoint**.
 
-11. Click **Assign deployment**.
+10. Click **Create**.
 
-12. In the Assign deployment dialog, select the source **ATPDeployment**, and then click **Assign deployment**.
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-11-network-connect.png)
+
+
+11. After the connection is active, on its details page, click **Assigned deployments**.
+
+12. Click **Assign deployment**.
+
+13. In the Assign deployment dialog, select the source **ATPDeployment**, and then click **Assign deployment**.
 
     ![Assign deployment](./images/07-12-assign-deployment.png " ")
 
@@ -277,4 +274,4 @@ Create a GoldenGate connection if your Big Data deployment doesn't have a public
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, June 2024
+* **Last Updated By/Date** - Katherine Wardhana, June 2025

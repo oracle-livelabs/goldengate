@@ -73,7 +73,7 @@ To successfully complete this lab in your own tenancy, you must have access to O
 
 	![Select profile](images/03-01-profile.png)
 
-2. On the **User Details** page, under **Resources**, click **API Keys**, and then click **Add API Key**.
+2. On the **User Details** page, on the navigation menu, click **Tokens and keys**, and then click **Add API Key**.
 
 	![Adding the API to OCI web console](images/03-02-user-details.png)
 
@@ -135,8 +135,10 @@ To successfully complete this lab in your own tenancy, you must have access to O
 
 	![Copy and save output results.](images/04-03-zoom-terraform-output.png)
 
-## Task 5: Create a source ATP schema
+## Task 5: Create an ATP instance
+[](include:02-create-atp-instance.md)
 
+## Task 6: Create a source ATP schema
 1.  From the Oracle Cloud Console navigation menu (hamburger icon), click **Oracle Database**, and then select **Autonomous Database**.
 
     ![Autonomous Database in the Oracle Cloud Console navigation menu](./images/05-01-auto-db.png " ")
@@ -272,4 +274,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Madhu Kumar S, Senior Solution Engineer, AppDev and Integration
 * **Contributors** -  Denis Sendil, Database Product Management; Jenny Chan, Consulting User Assistance Developer, Database User Assistance; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, User Assistance Developer, May 2024
+* **Last Updated By/Date** - Katherine Wardhana, User Assistance Developer, June 2025

@@ -57,9 +57,9 @@ This lab assumes you have:
 
     ![Second terminal window](./images/2nd-terminal.png " ")
 
-    This will open a second Terminal window.  Arrange the 4 window in a convenient way to easily navigate between them.
+    This will open a second Terminal window.  Arrange the 4 windows in a convenient way to easily navigate between them.
 
-4. Discovering the scripts at  your disposal: we'll take a look at the various scripts we'll use in the rest of this lab
+4. Discovering the scripts at your disposal: we'll take a look at the various scripts we'll use in the rest of this lab
 
 5. Change directory into the scripts directory
 
@@ -78,7 +78,7 @@ This lab assumes you have:
     Some of the scripts we'll use in this tutorial:
 
     - **load.sh**: a script to generate a continuous flow of inserts into the EMPLOYEES table of the SOURCE_APP schema of the Oracle database
-    - **monitor_oracle.sh**: a script to track the inserts into the the table EMPLOYEES
+    - **monitor_oracledb.sh**: a script to track the inserts into the the table EMPLOYEES
     - **monitor_kafka.sh**: read the kafka topic EMPLOYEES where we'll be inserting the changes coming from the Oracle Database.
     - **demo_reset.sh**: completely reset the lab environment to restart the lab execution.  You can use this script to restart the lab execution with a fresh setup.
 

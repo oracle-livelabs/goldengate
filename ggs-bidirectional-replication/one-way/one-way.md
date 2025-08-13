@@ -196,7 +196,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
     ![Profile menu](./images/05-06-profile.png " ")
 
-7.  On the User Details page, under **Resources**, click **Auth Tokens**, and then click **Generate Token**.
+7.  On the User Details page, click **Tokens and keys**, and then click **Generate Token**.
 
     ![Resources on User Details page](./images/05-07-auth-token.png " ")
 
@@ -303,7 +303,7 @@ END;</copy>
 
 Before importing data to the target database, create a credential in the target database to access the exported data file in Oracle Object Store.
 
-1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle Database**, and then click **Autonomous Data Warehouse**.
+1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle Database**, and then click **Autonomous Database**.
 
     ![Autonomous Data Warehouse in Oracle Cloud navigation menu](./images/06-01-auto-data-w.png " ")
 
@@ -313,7 +313,7 @@ Before importing data to the target database, create a credential in the target 
 
 3. On the **TargetADW Details** page, from the **Database actions** dropdown, select **SQL**.
 
-    ![TargetADW Details page](../../../ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
+    ![TargetADW Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
 
 4. If prompted, log in to Database Actions as ADMIN, and then click **SQL**.
 
@@ -492,7 +492,7 @@ Before importing data to the target database, create a credential in the target 
 
 ## Task 8: Perform Inserts to the Source Database
 
-1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
+1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Database**, and then **SourceATP**.
 
     ![Autonomous Transaction Processing in Oracle Cloud navigation menu](./images/08-01a-auto-trans-process.png " ")
 
@@ -535,4 +535,4 @@ Before importing data to the target database, create a credential in the target 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, October 2024
+* **Last Updated By/Date** - Katherine Wardhana, June 2025

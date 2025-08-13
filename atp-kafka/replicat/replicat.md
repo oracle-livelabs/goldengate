@@ -27,41 +27,29 @@ This lab assumes that you completed all preceding labs.
 
     ![Select Add Replicat](images/01-02-add-replicat.png " ")
 
-3. On the Add Replicat page, for **Replicat Type**, select **Classic Replicat**, and then click **Next**.
+3. The Add Replicat panel consists of four pages. On the Replicat Information page, complete the following fields, and then click **Next**: 
 
-    ![Select Classic Replicat](images/01-03-classic-replicat.png " ")
+    * For Replicat Type, select **Classic Replicat**.
+    * For Process Name, enter `kafkaRep`.
 
-4. On the Replicat Options page, for **Process Name** enter `kafkaRep`.
+    ![Select Classic Replicat and add name](images/01-03-classic-rep.png " ")
 
-5. For **Source**, select **Trail**.
+4. On the Replicat Options page, complete the following fields, and then click **Next**:
 
-6. For **Trail Name**, enter `RT`.
+    * On the Replicat Options page, for Name, enter `RT`.
+    * For Domain, select OracleGoldenGate from the dropdown.
+    * For Alias, select **Kafka** from the dropdown.
+    * For Checkpoint table, select **Kafka** from the dropdown.
 
-7. For **Target**, select **Kafka**
+    ![Replicat Options page](images/01-04-rep-opts.png " ")
 
-8. For **Available aliases**, select the **kafka** connection created in **Lab 3 Task 2**.
+5. On the Managed Options page, leave the fields as they are, and then click **Next**.
 
-9. Click **Next**.
+    ![Replicat Options page](images/01-05-man-opts.png " ")
 
-    ![Basic Information](images/01-09-basic-info.png " ")
+6. On the Parameter File page, leave the fields as they are, and then click **Create and Run**.
 
-10.	On the Parameter File page, review the mappings, and then click **Next**.
-
-    ![Basic Mapping](images/01-10-replicat-table-mapping.png " ")
-
-11. On the Properties Files page, locate gg.handler.kafkahandler.topicMappingTemplate, and set it to “**${FullyQualifiedTableName}**”.
-
-    ```
-    <copy>${FullyQualifiedTableName}</copy> 
-    ``` 
-
-12. Click **Create and Run**.   
-
-    ![Replication creation completes](images/01-12a-click-and-run.png " ")
-
-    You return to the Administration Service Overview page, where you can review the Replicat process.
-
-    ![Replication creation completes](images/01-12b-replicat-green-status.png" ")
+    ![Parameter file page](images/01-06-param-file.png " ")
 
 In this lab, you created a replicat for OCI GoldenGate for Big Data Deployment.
 
@@ -73,4 +61,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Madhu Kumar S, Senior Solution Engineer, AppDev and Integration
 * **Contributors** -  Denis Sendil, Database Product Management; Jenny Chan, Consulting User Assistance Developer, Database User Assistance; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, User Assistance Developer, December 2023
+* **Last Updated By/Date** - Katherine Wardhana, User Assistance Developer, July 2025

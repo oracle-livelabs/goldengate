@@ -105,7 +105,7 @@ Next, create the Replicat on the source (ATP) database.
 
 ## Task 3: Perform Inserts into the target database
 
-1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Data Warehouse**, and then **TargetADW**.
+1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Database**, and then **TargetADW**.
 
     ![Autonomous Transaction Processing in Oracle Cloud navigation menu](./images/03-01-adw.png " ")
 
@@ -148,4 +148,4 @@ Insert into SRCMIRROR_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) value
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, June 2024
+* **Last Updated By/Date** - Katherine Wardhana, June 2025

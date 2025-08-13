@@ -32,7 +32,7 @@ This lab assumes that you completed all preceding labs.
 
 1.  In the Oracle Cloud console, open the **navigation menu,** navigate to **Oracle Database**, and select **GoldenGate**.
 
-    ![GoldenGate in the Oracle Cloud navigation menu](images/01-01-database-goldengate.png " ")
+    ![GoldenGate in the Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
 2.  On the GoldenGate **Overview** page, click **Create deployment**.
 
@@ -42,57 +42,53 @@ This lab assumes that you completed all preceding labs.
 
 4.  In the Create Deployment panel, enter **SourceDeployment** for Name.
 
-5.  From the Compartment dropdown, select **LiveLabCompartment**.
+5.  From the Compartment dropdown, select a compartment.
 
-6.  Select **Development or testing**. The OCPU count autopopulates based on your selection.
+6. For Choose a deployment type, select **Data replication**.
 
-7.  For Subnet, select a subnet. If you're using the workshop environment, select **LiveLabWebSubnet**.
+7. For Select a technology dropdown, select **Oracle Database** from the dropdown.
 
-8.  For License type, select **Bring Your Own License (BYOL)**.
+    ![Completed Create GoldenGate Deployment fields](images/01-07-create-deployment-general-info.png " ")
 
-9. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
+8. Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
-10. Click **Next**.
+    ![Completed Create GoldenGate Deployment fields](images/01-08-create-deployment-general-info.png " ")
 
-    ![Completed Create GoldenGate Deployment fields](images/01-09-create-deployment-general-info.png " ")
+9. For Subnet, select a subnet. If you're using the workshop environment, select **LiveLabWebSubnet**. If located in a different compartment, use the dropdown to change compartments. 
 
-11. For deployment type, select **Data replication**.
+10. For GoldenGate instance name, enter **ggsource**. Take note of the instance name. This helps you identify the source as you switch between deployment consoles. 
 
-12. From a Select a technology dropdown, select **Oracle Database**.
-
-13. For GoldenGate instance name, enter **ggsource**. Take note of the instance name. This helps you identify the source as you switch between deployment consoles. 
-
-14. In an IAM-enabled tenancy, select a Credential Store.
+11. In an IAM-enabled tenancy, select a Credential Store.
 
     * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 2.
     * If you select **GoldenGate**, complete the following steps.
 
-15. For Administrator username, enter **oggadmin**.
+12. For Administrator username, enter **oggadmin**.
 
-16. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
+13. For Password secret in &lt;USER&gt;-COMPARTMENT, click **Create password secret**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-16-passwordsecret.png " ")
+    ![Completed Create GoldenGate Deployment fields](./images/01-13-passwordsecret.png " ")
 
-17. In the Create Secret panel, for Name, enter **LLsecret**.
+14. In the Create Secret panel, for Name, enter **LLsecret**.
 
-18. From the Compartment dropdown, select **LiveLabCompartment**.
+15. From the Compartment dropdown, select **LiveLabCompartment**.
 
-19. From the Vault dropdown, select your vault.
+16. From the Vault dropdown, select your vault.
 
-20. From the Encryption key dropdown, select your encryption key.
+17. From the Encryption key dropdown, select your encryption key.
 
-21. For User Password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
+18. For User Password, enter a password 8 to 30 alphanumeric characters in length, containing at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
 
     > **Note:** The special characters must not be $, ^, or ?.
 
-22. Click **Create**.
+19. Click **Create**.
 
-    ![Completed Create GoldenGate Deployment fields](./images/01-22-password-secret.png " ")
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-21-passwordsecret.png " ")
 
-23. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
+20. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected, and then click **Create**.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 3 and 4 while you wait for the deployment creation to complete.
-    ![Deployment creation completed](./images/01-23-deployment-active-status.png " ")
+    ![Deployment creation completed](./images/01-20-deployment-active-status.png " ")
 
 ## Task 2: Create the target deployment
 
@@ -102,39 +98,34 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 2.  In the Create Deployment panel, enter **OCI GoldenGate Big Data** for Name.
 
-3.  From the Compartment dropdown, select **LiveLabCompartment**.
+3.  From the Compartment dropdown, select a compartment.
 
-4.  Select **Development or testing**. The OCPU count autopopulates based on your selection.
+4. For Choose a deployment type, select **Data replication**.
 
-5.  For Subnet, select a subnet. If you're using the workshop environment, select **LiveLabWebSubnet**.
+5. For Select a technology dropdown, select **Big Data** from the dropdown.
 
-6.  For License type, select **License included**.
+    ![Completed GoldenGate details](images/02-05-create-deployment-bd.png " ")
 
-7.  Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
+6. Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
+    ![Completed Create GoldenGate Deployment fields](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-10-create-deployment-general-info.png " ")
 
-8. Click **Next**.
+7. For Subnet, select a subnet. 
 
-    ![Completed GoldenGate details](images/02-08-create-deployment-click.png " ")
+8. For GoldenGate instance name, enter **ggsource**. Take note of the instance name. This helps you identify the source as you switch between deployment consoles. 
 
-9. For deployment type, select **Data replication**.
+9. In an IAM-enabled tenancy, select a Credential Store.
 
-9. From the Select a technology dropdown, select **Big Data**.
-
-10. For GoldenGate instance name, enter **OCIGGBigData**.
-
-11. In an IAM-enabled tenancy, select a Credential Store.
-
-    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 3.
+    * If you select **OCI Identity and Access Management (OCI IAM)**, click **Create**, and then proceed to Task 2.
     * If you select **GoldenGate**, complete the following steps.
 
-11. For Administrator username, enter **oggadmin**.
+10. For Administrator username, enter **oggadmin**.
 
-12. For Password secret, select **LLsecret** from the dropdown.
+11. For Password secret, select a password secret.
+
+12. Click **Create**.
 
     ![Completed GoldenGate details](images/02-12-goldengate-details.png " ")
-
-13. Click **Create**.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, and 4 while you wait for the deployment creation to complete.
     ![Deployment creation completed](./images/02-13-big-data-deployment-active-status.png " ")
@@ -143,27 +134,41 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 Follow these steps to create a connection to the source Autonomous Transaction Processing (ATP) database.
 
-1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
+1. Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
 
-    ![GoldenGate in Oracle Cloud navigation menu](images/03-01-breadcrumb.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](./images/03-01-breadcrumb.png " ")
 
-2. Click **Connections**.
+2.  Click **Connections**, and then click **Create Connection**.
 
-3.  On the GoldenGate **Connections** page, click **Create connection**.
+    ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
 
-    ![GoldenGate create-connection page](images/03-03-connection-select.png " ")
+3.  The Create connection panel appears. For Name, enter **SourceATP** and optionally, a description.
 
-4.  In the Create connection panel, enter **ATP_Source** for Name.
+4.  From the **Compartment** dropdown, select a compartment.
 
-5.  From the Compartment dropdown, select **LiveLabCompartment**.
+5.  From the a Type dropdown, select **Oracle Autonomous Database**.
 
-6.  For Type, select **Oracle Autonomous Database** and click **Next**.
+6. For Database details, select **Select database**.
 
-    ![GoldenGate create connection creation page](images/03-06-oci-connection-choose.png " ")
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
 
-7.  For Database details, choose **Select database**, and then select the ATP database created in Lab 1. Enter **ggadmin** for Database username, **Or4cl3##2023** for password, and then click  **Create**.
+7.  Select a **Compartment** from the dropdown, and then select the ATP database created in Lab 1. 
 
-    ![ATP database connection created](images/03-07-create-atp-connection.png " ")
+8.  For Database username, enter `ggadmin`.
+
+9.  Select a **Compartment** from the dropdown, and then select a Database user password secret from the dropdown.
+
+    > **NOTE:** This password will be used to unlock `GGADMIN` in a later task.
+
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-09-create-connection-gg-details.png)
+
+10. Click **Advanced options**, and then click **Network connectivity**. Under Traffic routing method, select **Shared endpoint**.
+
+11. Click **Create**.
+
+    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-11-network-connect.png)
+
+    The connection becomes Active after a few minutes. You can proceed with the next task while service creates the connection.
 
 ## Task 4: Create the Apache Kafka connection
 
@@ -171,13 +176,13 @@ Follow the steps below to create a connection to the target  Apache Kafka.
 
 1.  On back to the GoldenGate **Connections** page, click **Create connection**.
 
-    ![GoldenGate create-connection page](images/04-01-connection-select.png " ")
+    ![GoldenGate create-connection page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-02-connections.png " ")
 
 2.  In the Create connection panel, enter **kafka** for Name.
 
 3.  From the Compartment dropdown, select **LiveLabCompartment**.
 
-4.  For Type, select **Apache Kafka**, and then click **Next**.
+4.  For Type, select **Apache Kafka**.
 
     ![Connection type selected as Apache Kafka](images/04-04-kafka-connection-choose.png " ")
 
@@ -185,17 +190,25 @@ Follow the steps below to create a connection to the target  Apache Kafka.
 
 6.  For Port, enter **9092**.
 
-7.  For Security protocol, select **Plaintext**, and then click **Create**.
+7.  For Security protocol, select **Plaintext** from the dropdown.
 
     ![Public IP of bootstrap server](images/04-07-bootstrap-server-details.png " ")
 
+8. Click **Advanced options**, and then click **Network connectivity**. Under Traffic routing method, select **Shared endpoint**.
+
+9. Click **Create**.
+
+    ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-11-network-connect.png)
+
+    The source and target databases appear in the list of Connections. The connection becomes Active after a few minutes.
+
 ## Task 5: Assign connections to deployments
 
-1. On the Connections page, select **ATP_Source**.
+1. On the Connections page, select **SourceATP**.
 
     ![Select ATP Source connection](images/05-01-connection-page.png " ")
 
-2. On the Connection details page, under Resources, click **Assigned deployments**, and then click **Assign deployment**.
+2. On the Connection details page, click **Assigned deployments**, and then click **Assign deployment**.
 
     ![Select Assign deployment](images/05-02-assign-deployment-oracle.png " ")
 
@@ -216,5 +229,5 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Madhu Kumar S, Senior Solution Engineer, AppDev and Integration
 * **Contributors** -  Denis Sendil, Database Product Management; Jenny Chan, Consulting User Assistance Developer, Database User Assistance; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, User Assistance Developer, December 2023
+* **Last Updated By/Date** - Katherine Wardhana, User Assistance Developer, July 2025
 

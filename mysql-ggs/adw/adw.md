@@ -25,9 +25,7 @@ This lab assumes you completed all preceding labs successfully.
 
 1.  In the target ADW OCI GoldenGate deployment console (**adw_instance**), click **Administration Server**.
 
-2.  Open the navigation menu, and then click **Configuration**.
-
-    ![Click Configuration in Administration Service navigation menu](./images/01-02-config.png " ")
+2.  Open the navigation menu, and then click **DB Connections**.
 
 3.  For the TargetADW database, click **Connect to database TargetADW**.
 
@@ -39,6 +37,8 @@ This lab assumes you completed all preceding labs successfully.
 
 6.  For Checkpoint table, enter `SRCMIRROR_OCIGGLL.CHECKTABLE`, and then click **Submit**. The checkpoint table is added to the list.
 
+    ![Checkpoint Table panel](./images/01-05-checkpoint-panel.png " ")
+
 7.  In the navigation menu, click **Overview** to return to the Administration Service Overview page.
 
 ## Task 2: Create a Replicat for Initial Load
@@ -47,32 +47,39 @@ This lab assumes you completed all preceding labs successfully.
 
     ![Click Add Replicat on Administration Service Overview page](./images/02-01-add-replicat.png " ")
 
-2.  On the Add Replicat screen, for Replicat Type, select **Nonintegrated Replicat**, and then click **Next**.
+2. The Add Replicat panel consists of four pages. On the Replicat Information page, complete the following fields, and then click **Next**:
 
-    ![Select Nonintegrated Replicat for Replicat type](./images/02-02-replicat-type.png " ")
-
-3.  On the Replicat Options page, complete the fields as follows, and then click **Next**:
+    * For **Replicat Type**, select **Nonintegrated Replicat**.
     * For **Process Name**, enter a name for this process. For example, `RIL`.
-    * For **Credential Domain**, select the domain for the Autonomous Database connection.
-    * For **Credential Alias**, select the alias for the Autonomous Database connection.
-    * For **Trail Name**, enter the name of the trail from the previous lab, Task 4 (`I1`).
+
+  ![Source Options page](./images/02-02-replicat-type.png " ")
+
+3. On the Replicat Options page, complete the following fields, and then click **Next**:
+
+    * For Replicat Trail **Name**, enter the name of the trail from the previous lab (`I1`). 
+    * For **Domain**, select the domain for the Autonomous Database connection.
+    * For **Alias**, select the alias for the Autonomous Database connection.
     * For **Checkpoint Table**, select the checkpoint table created in Task 1.
 
     ![Replicat options](./images/02-03-replicat-options.png " ")
 
-4.  On the Parameter Files page, replace `MAP *.*, TARGET *.*;` with the following mapping, and then click **Create and Run**:
+4. On the Managed Options page, leave the fields as they are, and then click **Next**.
+
+    ![Managed Options page](./images/02-04-man-opts.png " ")
+
+5.  On the Parameter Files page, replace `MAP *.*, TARGET *.*;` with the following mapping, and then click **Create and Run**:
 
     ```
     <copy>MAP SRC_OCIGGLL.*, TARGET SRCMIRROR_OCIGGLL.*;</copy>
     ```
 
-    ![Replicat Parameter File](./images/02-04-params.png " ")
+    ![Replicat Parameter File](./images/02-05-params.png " ")
 
     You're returned to the Overview page where you can review the Replicat details.
 
-5.  Select the RIL Replicat and view its details.
+6.  Select the RIL Replicat and view its details.
 
-6.  Click **Statistics**. Review the number of inserts, then refresh the page.
+7.  Click **Statistics**. Review the number of inserts, then refresh the page.
     * If the number of Inserts doesn't change, then all the records from the Initial Load have been loaded and you can stop the Replicat (RIL)
     * If the number of Inserts continues to increase, then keep refreshing the page until the Initial Load records are all loaded before continuing.
 
@@ -82,13 +89,16 @@ Click **Administration Service** to return to the Overview page.
 
 1.  On the Administration Service Overview page, click **Add Replicat** (plus icon).
 
-2.  On the Add Replicat screen, for Replicat Type, select **Nonintegrated Replicat**, and then click **Next**.
+2. The Add Replicat panel consists of four pages. On the Replicat Information page, complete the following fields, and then click **Next**:
 
-3.  On the Replicat Options page, complete the fields as follows, and then click **Next**:
+    * For **Replicat Type**, select **Classic Replicat**.
     * For **Process Name**, enter a name for this process. For example, `RCDC`.
-    * For **Credential Domain**, select the domain for the Autonomous Database connection.
-    * For **Credential Alias**, select the alias for the Autonomous Database connection.
-    * For **Trail Name**, enter the name of the trail from the previous lab, Task 4 (`C1`).
+
+3. On the Replicat Options page, complete the following fields, and then click **Next**:
+
+    * For Replicat Trail **Name**, enter the name of the trail from the previous lab (`C1`). 
+    * For **Domain**, select the domain for the Autonomous Database connection.
+    * For **Alias**, select the alias for the Autonomous Database connection.
     * For **Checkpoint Table**, select the checkpoint table created in Task 1.
 
 4.  On the Parameter Files page, add the following mapping:
@@ -116,4 +126,4 @@ Click **Administration Service** to return to the Overview page.
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2023
+* **Last Updated By/Date** - Katherine Wardhana, June 2025

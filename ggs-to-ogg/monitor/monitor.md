@@ -24,7 +24,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 [](include:01-perform-inserts-source-db.md)
 
-7.  In the Oracle GoldenGate Marketplace Distribution Server, verify the Distribution Path is running.
+8.  In the Oracle GoldenGate Marketplace Distribution Server, verify the Distribution Path is running.
 
     ![Distribution Server Overview page](images/04-00.png " ")
 
@@ -48,4 +48,4 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, April 2024
+* **Last Updated By/Date** - Katherine Wardhana, December 2024

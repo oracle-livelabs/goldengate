@@ -56,5 +56,5 @@ This lab assumes you have completed the following labs:
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
 - **Contributors** - Katherine Wardhana, User Assistance Developer
-- **Last Updated by** - Katherine Wardhana, May 2024
+- **Last Updated by** - Katherine Wardhana, June 2025
 - **PAR Expiration date** - February 2030

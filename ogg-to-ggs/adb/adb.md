@@ -77,5 +77,5 @@ This lab assumes you completed the Get started lab.
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Katherine Wardhana, May 2024
+- **Last Updated By/Date** - Katherine Wardhana, June 2025
 - **PAR Expiration date** - February 2030

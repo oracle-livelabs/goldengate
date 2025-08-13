@@ -6,7 +6,7 @@
 -->
 Oracle Autonomous Databases come with a GGADMIN user that is locked by default. The following steps guide you through how to unlock the GGADMIN user.
 
-1.  From the Oracle Cloud Console navigation menu, click **Oracle Database**, and then select **Autonomous Transaction Processing**.
+1.  From the Oracle Cloud Console navigation menu, click **Oracle Database**, and then select **Autonomous Database**.
 
 	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-atp.png " ")
 
@@ -54,7 +54,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
     </copy>
     ```
 
-    The Script Output panel displays eight tables whose Support_Mode is **FULL**.
+    The Script Output panel displays six tables whose Support_Mode is **FULL**.
 
     ![Script Output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-09-sql-script-return.png " ")
 

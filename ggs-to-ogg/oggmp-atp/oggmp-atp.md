@@ -37,7 +37,7 @@ In this lab, you will:
 4.  In the Download Wallet dialog, enter the Target Autonomous Data Warehouse Admin password twice, and then click **Download**.
 
     <if type="livelabs">
-    >**NOTE**: If running this lab in a LiveLab Sandbox environment, you can find the Admin password in View Login Info.
+    >**NOTE**: If running this lab in a LiveLab Sandbox environment, you can find the Admin password in View Login Info under OCI GoldenGate Admin Password.
     </if>
 
     ![Download Wallet page](./images/01-04-download-wallet.png " ")
@@ -164,46 +164,64 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
 
 ## Task 4: Add the Target Autonomous Data Warehouse Credential in the Oracle GoldenGate Administration Server
 
-1.  Launch the OCI GoldenGate deployment console.
+1. On the deployment details page, click **Launch Console**.
 
-2.  Open the OCI GoldenGate deployment console navigation menu (hamburger icon) and then click **Configuration**.
+    ![Launch Console](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/07-01-launchconsole.png " ") 
+
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name, enter the password, and then click **Sign In**. 
+
+    ![GoldenGate deployment console sign in](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin-23ai.png " ")
+
+    > **NOTE:** If using the LiveLab Sandbox environment, copy the OCI GoldenGate Admin Password from the Terraform output section of **View Login Info**.
+
+    ![View Login info](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02a-view-login-info.png " ")
+
+    ![Terraform values](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02b-terraform-values.png " ")
+
+After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
+
+3.  Open the OCI GoldenGate deployment console navigation menu (hamburger icon) and then click **DB Connections**.
 
     ![Click Configuration in the OCI GoldenGate deployment console navigation menu](./images/04-02-configuration.png " ")
 
-3.  Copy the TargetADW connection string in the User ID column, and then paste it into a text editor.
+4.  Copy the TargetADW connection string in the User ID column, and then paste it into a text editor.
 
     ![Copy the target database's connection string and paste it into a text editor](./images/04-03-configuration-targetadw.png " ")
 
-4.  Edit the TargetADW connection string, replacing the value for **MY\_WALLET\_DIRECTORY** with the location where you unzipped the wallet_ADW.zip. For example, **/home/opc/wallet\_ADW**.
+5.  Edit the TargetADW connection string, replacing the value for **MY\_WALLET\_DIRECTORY** with the location where you unzipped the wallet_ADW.zip. For example, **/home/opc/wallet\_ADW**.
 
     ![Replace the existing value for MY_WALLET_DIRECTORY with the path to the wallet files](./images/04-04-wallet-zip.png " ")
 
-5.  In a new browser tab or window, use the compute instance's Public IP and port 443 (**https://&lt;public-ip&gt;:443**) to open the Service Manager.
+6.  In a new browser tab or window, use the compute instance's Public IP and port 443 (**https://&lt;public-ip&gt;:443**) to open the Service Manager.
 
-6.  Log in to the Service Manager using the **oggadmin** credentials found in **/home/opc/ogg-credentials.json**.
+7.  Log in to the Service Manager using the **oggadmin** credentials found in **/home/opc/ogg-credentials.json**.
 
-7.  In the Service Manager, under **Services**, click the port number (9011) associated with the Administration Server. The Administration Server opens in a new browser tab. If you're prompted to log in again, use the same oggadmin credentials.
+8. In the Service Manager console, under Deployment, click **Marketplace**.
 
-    ![Services pages on the Service Manager](./images/04-07-services.png " ")
+    ![Service Manager console](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-06-service-mngr.png " ")
 
-8.  In the Administration Server, open the navigation menu (hamburger icon), and then select **Configuration**.
+9. Under Marketplace, click **Administration Server**. The Administration Server opens in a new browser tab. If you're prompted to log in again, use the same oggadmin credentials.
 
-    ![Click Configuration in the Administration Server's navigation menu](./images/04-08-configuration.png " ")
+    ![Marketplace page on the Service Manager](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-07-marketplace.png " ")
 
-9.  Click **Add Credential**.
+10.  In the Administration Server, open the navigation menu (hamburger icon), and then select **DB Connections**.
 
-    ![Click Add Credential on the Credentials page](./images/04-09-add-credential.png " ")
+    ![Click DB Connections in the Administration Server's navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-06.png " ")
 
-10. Enter the following information, and then click **Submit**:
+11.  Click **Add DB Connection**.
+
+    ![Click Add Path Connection](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-09.png " ")
+
+12. Enter the following information, and then click **Submit**:
 
     * For **Credential Domain**, enter **OracleGoldenGate**.
     * For **Credential Alias**, enter **TargetADW**.
-    * For **User ID**, paste the Autonomous Data Warehouse connection string from step 4.
+    * For **User ID**, paste the Autonomous Data Warehouse connection string from step 5.
     * For **Password**, enter the ggadmin password provided when you created the TargetADW connection.
 
-    ![Add a credential for atp_low](./images/04-10-submit-credential.png " ")
+    ![Add a credential for atp_low](./images/04-11-submit-credential.png " ")
 
-11. To test the connection, click **Connect to database** under Actions. Your connection credentials are correct if you see Checkpoint and TRANDATA options appear. If incorrect, you should check the connection string and ggadmin password.
+13. To test the connection, click **Connect to database**. Your connection credentials are correct if you see Checkpoint and TRANDATA options appear. If incorrect, you should check the connection string and ggadmin password.
 
 In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target Autonomous Data Warehouse database. You may now **proceed to the next lab**.
 
@@ -211,4 +229,4 @@ In this lab, you created a connection from the Oracle GoldenGate Marketplace ins
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, June 2023
+* **Last Updated By/Date** - Katherine Wardhana, June 2025
