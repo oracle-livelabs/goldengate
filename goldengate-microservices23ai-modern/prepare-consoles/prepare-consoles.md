@@ -9,25 +9,41 @@ Estimated time: 20 minutes
 
 ### Objectives
 
-In this lab, you will:
+In this lab, you:
 * Log in to the Oracle GoldenGate 23ai Microservices WebUI
 * Create a Connection to the East and West databases
 * Add Trandata and the heartbeat tables to the West database
 * Add a checkpoint table and the heartbeat tables to the East database
 
+### Before you begin
+
+Ensure that you can access the **password_file.txt** that contains the credentials you'll use throughout the workshop.
+
+1. In your VNC environment, click **Activities**.
+
+    ![Activities highlighted in VNC environment](./images/00-01-vnc-activities.png " ")
+
+2. In the Applications bar, select the **Text editor**.
+
+    ![Select the text editor from the applications bar](./images/00-02-text-editor.png " ")
+
+3. In the text editor, click **Open**, and then select **password_file.txt**.
+
+    ![Open password file](./images/00-03-open-pw-file.png)
+
 ## Task 1: Add DB Connection to East database
 
 ### About DB Connections
 
-DB Connections allow you to create and manage the login credentials needed to connect to your databases and manage Checkpoint tables, supplemental logging (TRANDATA), and Heartbeat tables.
+DB Connections let you to create and manage the login credentials needed to connect to your databases and manage Checkpoint tables, supplemental logging (TRANDATA), and Heartbeat tables.
 
-1. In your VNC environment, select the **Admin Service Sign In** tab. Enter **oggadmin** for Username, enter **x** for Password, and click **Sign In**.
+1. In your VNC environment, select the **Admin Service Sign In** tab. Enter **oggadmin** for Username, enter the Password copied from **password_file.txt**, and click **Sign In**.
 
     > **Note**: If prompted by your browser to save the username and password, decline the offer. Storing these credentials may lead to incorrect autofill entries in later lab steps. 
 
     ![GoldenGate deployment console sign in](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin-23ai.png " ")
 
-2. After you've logged in, select **DB Connections** from the navigation menu.
+2. After you log in, select **DB Connections** from the navigation menu.
 
     ![Administration Service navigation menu](./images/01-02-add-db-connec.png " ")
 
@@ -35,14 +51,14 @@ DB Connections allow you to create and manage the login credentials needed to co
 
     ![Add DB Connection](./images/01-03-add-db-connec.png " ")
 
-4. A Credentials panel will appear, complete the following fields, and then click **Submit**:
+4. In the Credentials panel, complete the following fields, and then click **Submit**:
     * For Credential Alias, enter **EAST**.
     * For User ID, enter **ggadmin@localhost:1521/East**. 
-    * For Password, enter **x**. Verify the password. 
+    * For Password, enter the Password copied from **password_file.txt**. Verify the password. 
 
     ![Credentials panel](./images/01-04-credentials.png " ")
 
-5. Click **Connect to database**. If successful, you are directed to the Checkpoint page. 
+5. Click **Connect to database**. If successful, the Checkpoint page opens. 
 
     ![Connect to database](./images/01-05-connect-to-db.png " ")
 
@@ -50,25 +66,25 @@ DB Connections allow you to create and manage the login credentials needed to co
 
 ### About Checkpoint table and Trandata
 
-A Checkpoint table is created in the target database to provide fault tolerance for the Replicat process. Trandata enables the unconditional logging of primary keys and the conditional supplemental logging of all unique and foreign keys for the specified table. Adding Trandata is required for the source database.
+Create a Checkpoint table in the target database to provide fault tolerance for the Replicat process. Trandata enables the unconditional logging of primary keys and the conditional supplemental logging of all unique and foreign keys for the specified table. Adding Trandata is required for the source database.
 
-1. In the navigation menu, click **Checkpoint**. In the Checkpoint page, click **Add Checkpoint** (plus icon).
+1. In the navigation menu, under the EAST connection, select **Checkpoint**. On the Checkpoint page, click **Add Checkpoint** (plus icon).
 
     ![Add checkpoint](./images/02-01-add-checkpoint.png " ")
 
-2. A Checkpoint Table panel appears. For Checkpoint Table, enter **ggadmin.checkpointtable**, and then click **Submit**.
+2. In the Checkpoint Table panel, for Checkpoint Table, enter **ggadmin.checkpointtable**, and then click **Submit**.
 
-    ![Checkpoint Table](./images/02-02-checkpoint-table.png " ")
+    ![Checkpoint Table panel](./images/02-02-checkpoint-table.png " ")
 
-3. The new Checkpoint table appears in the list.
+3. The new Checkpoint table appears in the Checkpoint Table list.
 
-    ![Trandata](./images/02-03-trandata.png " ")
+    ![Checkpoint page](./images/02-03-checkpoint-page.png " ")
 
-4. In the navigation menu, click **Heartbeat**. Click **Add Heartbeat** (plus icon).
+4. In the navigation menu, select **Heartbeat**. On the Heartbeat page, click **Add Heartbeat** (plus icon).
 
     ![Add Heartbeat](./images/02-04-add-heartbeat.png " ")
 
-5. An Add Heartbeat Table panel appears. Enable the **Target Only** option for the EAST database connection and keep the remaining fields as they are, and then click **Submit**.
+5. In the Add Heartbeat Table panel, enable the **Target Only** for the EAST database connection, and then click **Submit**.
 
     ![Add Heartbeat Table](./images/02-05-add-heartbeat-table.png " ")
 
@@ -78,42 +94,42 @@ A Checkpoint table is created in the target database to provide fault tolerance 
 
 ## Task 3: Add DB connection to West database
 
-1. In the navigation menu and click **DB Connections**, and click **Add DB Connection** (plus icon) to add the West database connection.
+1. In the navigation menu, click **DB Connections**. On the DB Connections page, click **Add DB Connection** (plus icon) to add the West database connection.
 
     ![Add DB Connection](./images/03-01-add-db-connec.png " ")
 
-2. A Credentials panel will appear, complete the following fields, and then click **Submit**:
+2. In the Credentials panel, complete the following fields, and then click **Submit**:
     * For Credential Alias, enter **WEST**.
     * For User ID, enter **ggadmin@localhost:1521/West**. 
-    * For Password, enter **x**. Verify the password.
+    * For Password, enter the Password copied from **password_file.txt**. Verify the password.
 
-    ![Credentials panel](./images/03-02-credentials-west.png " ")
+    ![Credentials panel with WEST connection details](./images/03-02-credentials-west.png " ")
 
-3. Click **Connect to database**. If successful, you are directed to the Checkpoint menu.
+3. On the DB Connections page, for the WEST connection, click **Connect to database**. If successful, the Checkpoint page loads.
 
-    ![Connect to database](./images/03-03-connect-db-west.png " ")
+    ![Connect to WEST database](./images/03-03-connect-db-west.png " ")
 
 ## Task 4: Add Trandata information and a Heartbeat table
 
-The West database will be used as the source database and no Checkpoint table is required. However, Trandata is required and you will create the Heartbeat tables.
+The West database serves as the source database and no Checkpoint table is required. However, Trandata is required and you will create the Heartbeat tables.
 
-1. In the navigation menu, click **Trandata**, and then click **Add TRANDATA** (plus icon).
+1. In the navigation menu, under the WEST connection, click **Trandata**. On the TRANDATA Information page, click **Add TRANDATA** (plus icon).
 
     ![Add Trandata](./images/04-01-add-trandata.png " ")
 
-2. For Schema Name, enter **HR**.  Leave the other fields as they are, and then click **Submit**.
+2. In the Trandata panel, for Schema Name, enter **HR**, and then click **Submit**.
 
     ![Trandata panel](./images/04-02-trandata.png " ")
 
-3. To verify, enter **HR** into the Search field and click **Search**. The HR schema appears in the search results.
+3. To verify, on the TRANDATA Information page, enter **HR** into the Search field, and click **Search**. The HR schema appears in the search results.
 
     ![Search Trandata](./images/04-03-search-trandata.png " ")
 
-4. In the navigation menu, click **Heartbeat**. Click **Add Heartbeat** (plus icon).
+4. In the navigation menu, under the WEST connection, click **Heartbeat**. On the Heartbeat page, click **Add Heartbeat** (plus icon).
 
     ![Select Add Heartbeat Table](./images/04-04-add-heartbeat.png " ")
 
-5. An Add Heartbeat Table panel appears. Keep the fields as they are, and then click **Submit**.
+5. In the Add Heartbeat Table panel, leave the default settings, and then click **Submit**.
 
     ![Submit Heartbeat Table](./images/04-05a-submit-heartbeat.png " ")
 

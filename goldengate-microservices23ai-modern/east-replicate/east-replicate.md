@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab you will create and run an Initial Load Extract and Replicat pair to seed the East database from the West database. You will also configure a Change Data Capture Extract (CDC) and Replicat pair to process the ongoing DML transactions. 
+In this lab, you create and run an Initial Load Extract and Replicat pair to seed the East database from the West database. You also configure a Change Data Capture Extract (CDC) and Replicat pair to process the ongoing DML transactions. 
 
-The current System Change Number (SCN) from the West database will be used by the Initial Load Extract to retrieve only those records that exist ‘as of’ that SCN. The CDC Extract will be positioned to start capturing records after the SCN, ensuring that no duplicate records are replicated to the target database. This allows the West database to remain online without the need for an application outage.
+The Initial Load Extract uses the current System Change Number (SCN) from the West database to retrieve only those records that exist ‘as of’ that SCN. To ensure that the target database doesn't replicate duplicate records, position the CDC Extract to start capturing records after the current SCN. This keeps the West database online without the need for an application outage.
 
 Estimated time: 20 minutes
 
@@ -12,7 +12,7 @@ Estimated time: 20 minutes
 
 ### Objectives
 
-In this lab, you will:
+In this lab, you:
 * Query the West database to determine the positioning SCN for both the Initial Load Extract and the Change Data Extract
 * Create an Initial Load Extract for the West database that selects records from the HR tables up to a given SCN
 * Create a Parallel Replicat to deliver the initial load data to the East database
@@ -21,19 +21,19 @@ In this lab, you will:
 
 ## Task 1:  Determine Current SCN from West database
 
-In this task, you will use `sqlplus` to connect to the West database and retrieve the current database SCN. This SCN will serve two purposes: it will be supplied to the Initial Load Extract to capture all records up to and including that SCN, and it will also be used to position the Change Data Extract to begin capturing active DML operations from that SCN onward.
+Use `sqlplus` to connect to the West database and retrieve the current database SCN. This SCN serves two purposes, for the Initial Load Extract to capture all records up to and including that SCN, and to position the Change Data Extract to begin capturing active DML operations from that SCN onward.
 
-1. Select **Activities** from the upper left of the console and then select the **Terminal** icon at the bottom center.
+1. In your VNC environment, select **Activities** from the upper left of the console and then select **Terminal** from the Applications bar.
 
     ![Open terminal](./images/01-01-open-terminal.png " ")
 
-2. In the VCN Terminal, enter the following command to view the menu options:
+2. In the Terminal, enter the following command to view the menu options:
 
     ```
     <copy>menu</copy>
     ```
 
-3. When prompted to enter your choice, enter `1` to access the Oracle DB 19c Home Environment.
+3. When prompted, enter `1` to access the Oracle DB 19c Home Environment.
 
     ![Access Oracle DB 19c Home Environment](./images/01-03-oracle-db-19c.png " ")
 
@@ -43,13 +43,13 @@ In this task, you will use `sqlplus` to connect to the West database and retriev
     <copy>sqlplus "ggadmin/Welcome##123@localhost:1521/west" @get_current_scn.sql</copy>
     ```
 
-    Make sure to record the value of the current database, as it will be required for upcoming tasks.
+5. Record the value of the **current database SCN**, as it will be required for upcoming tasks.
 
     ![Terminal interact with Oracle Database](./images/01-04-oracle-db.png " ")
 
 ## Task 2: Create an Initial Load Extract for the West database
 
-In this task, you will create an Initial Load Extract (EINIT) that reads records from the **HR** tables in the West database, up to the SCN identified in Task 1. The records are then written to a series of files (EXTFILE), which will then be read by a Replicat (RINIT) and inserted into the target East database, completing the initial load process.
+Create an Initial Load Extract (EINIT) that reads records from the **HR** tables in the West database, up to the SCN identified in Task 1. The records are then written to a series of files (EXTFILE), which is then read by a Replicat (RINIT) and inserted into the target East database, completing the initial load process.
 
 ### About Extracts and Replicats
 
@@ -59,9 +59,9 @@ There are two primary types of Extracts for the Oracle Database:
 * Initial Load Extract, which selects records directly from the base tables.
 * Integrated Extract, which captures change data from the redo logs.
 
-As for Replicats, Oracle offers numerous options, each with their own advantages depending on the use case. In this, lab we will use a Parallel Replicat for both the Initial Load Replicat and the Change Data Replicat.
+As for Replicats, Oracle offers numerous options, each with their own advantages depending on the use case. In this, lab we use a Parallel Replicat for both the Initial Load Replicat and the Change Data Replicat.
 
-1. In the navigation menu, click **Extracts**. Click **Add Extract** (plus icon). 
+1. In the navigation menu, click **Extracts**. On the Extracts page, click **Add Extract** (plus icon). 
 
     ![Add Extract](./images/02-01-add-extract.png " ")
 
@@ -71,7 +71,7 @@ As for Replicats, Oracle offers numerous options, each with their own advantages
 
     ![Extract Information page](./images/02-02-extract-info.png " ")
 
-3. On the Parameter File page, in the text area, add a new line to the existing text, enter the following, and replace the placeholder with the SCN from the previous task:
+3. On the Parameter File page, add a new line to the text area and enter the following. Replace `<insert SCN>` with the SCN recorded from Task 1, step 5:
 
     ```
     <copy>EXTRACT EINIT
@@ -89,9 +89,9 @@ As for Replicats, Oracle offers numerous options, each with their own advantages
     ![Running extract](./images/02-04b-running-ext.png " ")
 
 ## Task 3: Create an Initial Load Replicat for the East database
-This task creates a Parallel Replicat that will deliver the Initial Load records from the **EINIT** Extract, to the East database.
+This task creates a Parallel Replicat that delivers the Initial Load records from the **EINIT** Extract, to the East database.
 
-1. In the navigation menu, click **Replicats**, and then click **Add Replicat** (plus sign). 
+1. In the navigation menu, click **Replicats**. On the Replicats page, click **Add Replicat** (plus sign). 
 
     ![Add Replicat](./images/03-01-add-replicat.png " ")
 
@@ -128,7 +128,7 @@ This task creates a Parallel Replicat that will deliver the Initial Load records
 
     ![RINIT Extract running](./images/03-06b-running-ext.png " ")
 
-7. In the navigation menu, click **Extracts** and verify that the **EINIT** Extract has updated to a **Stopped** status. Ensure that the Initial Load Replicat has processed all records captured by the Extract.
+7. In the navigation menu, click **Extracts** and verify that the **EINIT** Extract status is **Stopped**. Ensure that the Initial Load Replicat has processed all records captured by the Extract.
 
     > **Note:** The Initial Load Extract will stop automatically once it has completed. However, the Initial Load Replicat will continue to run.
 
@@ -136,7 +136,7 @@ This task creates a Parallel Replicat that will deliver the Initial Load records
 
 8. In the navigation menu, click **Replicats**, expand the **RINIT** Replicat, and select **Checkpoint**. 
 
-    Note the value of the Offset in the row **Current**, and then click **Refresh**. If the Replicat has finished processing all rows from the trail, the **Offset** value will remain unchanged after several refreshes. This typically indicates that the initial load process is complete.
+    Note the value of the Offset in the row **Current**, and then click **Refresh**. When the **Offset** value  remains unchanged after several refreshes, this indicates that the Replicat has finished processing all rows from the trail and the initial load process is complete.
 
     ![Replicat Checkpoint](./images/03-08-rep-checkpoint.png " ")
 
@@ -146,13 +146,13 @@ This task creates a Parallel Replicat that will deliver the Initial Load records
 
 ## Task 4: Create a Change Data Extract for the West database
 
-In this task, you will create a change data Extract to read new transactions from the West database that have occurred after the SCN that was used by the Initial Load Extract. The records are written to a series of trail files which will then be read by a Replicat and delivered into the target East database. 
+Create a change data Extract to read new transactions from the West database that occurred after the SCN that was used by the Initial Load Extract. The records are written to a series of trail files which the Replicat will read and deliver to the target East database. 
 
-1. In the navigation menu, click **Extracts**, and then click **Add Extract** (plus icon).
+1. In the navigation menu, click **Extracts**. On the Extracts page, click **Add Extract** (plus icon).
 
     ![Click Add Extract](./images/04-01-add-cd-ext.png " ")
 
-2. The Add Extract panel consists of four pages. On the Extract information page, complete the following fields, and then click **Next**:
+2. On the Extract information page, complete the following fields, and then click **Next**:
 
     * For Extract Type, select **Integrated Extract**.
     * For Process Name, enter **EWEST**, and optionally add a description. 
@@ -176,19 +176,17 @@ In this task, you will create a change data Extract to read new transactions fro
     <copy>TABLE HR.*;</copy>
     ```
 
-6. Click **Create**.
-
-    > **NOTE:** Do **not** click **Create and Run**.
+6. Click **Create**. Do **not** click **Create and Run**.
 
     ![Parameter File page](./images/04-06-param-file.png " ")
 
-7. Once the Extract has been created, click the **Actions** button for the **EWEST** Extract, and then select **Start with Options**.
+7. On the Extracts page, for the **EWEST** Extract process, click **More actions** (ellipsis icon), and then select **Start with Options**.
 
     ![Start with Options](./images/04-07-start-opts.png " ")
 
-8. On the Start Extract with Options panel, complete the following fields, and then click **Submit**:
+8. In the Start Extract with Options panel, complete the following fields, and then click **Submit**:
     * For Start Point, select **After CSN** from the dropdown.
-    * For CSN, enter the value of the SCN value derived from Task 1.
+    * For CSN, enter the value of the SCN value derived from Task 1, step 5.
 
     ![Start Extract with Options panel](./images/04-08a-start-ext-opts-panel.png " ")
 
@@ -198,11 +196,11 @@ In this task, you will create a change data Extract to read new transactions fro
 
 ## Task 5: Create a Change Data Replicat for the East database
 
-1. In the navigation menu, click **Replicats**, and then click **Add Replicat** (plus icon).
+1. In the navigation menu, click **Replicats**. On the Replicats page, click **Add Replicat** (plus icon).
 
     ![Replicat page](./images/05-01-add-rep.png " ")
 
-2. The Add Replicat panel consists of four pages. On the Replicat Information page, complete the following fields, and then click **Next**:
+2. On the Replicat Information page, complete the following fields, and then click **Next**:
     * For Replicat Type, select **Parallel Replicat**.
     * For Parallel Replicat Type, select **Nonintegrated**.
     * For Process Name, enter **REAST**.
@@ -234,7 +232,7 @@ In this task, you will create a change data Extract to read new transactions fro
     The status updates to Running.
     ![Running extract](./images/05-06b-running-ext.png " ")
 
-7. In the navigation menu, click **Replicats**, expand the REAST Replicat, and select **Statistics**. You should see table records being continually processed. By clicking the **Refresh** icon, you can observe the record counts updating as new data is being replicated from the West to East database.
+7. In the navigation menu, click **Replicats**, expand the **REAST Replicat**, and select **Statistics**. As you click **Refresh**, you can observe the record counts updating as new data is being replicated from the West to East database.
 
     ![Replicat Statistics](./images/05-07-rep-statistics.png " ")
 

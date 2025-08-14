@@ -4,7 +4,7 @@
 
 GoldenGate Data Streams provides a REST-based, language-agnostic streaming interface that enables any client application, regardless of programming language or platform, to subscribe to real-time change data. With GoldenGate 23ai, you can easily create a data stream from your database capture process, then build subscriber applications that consume, display, and process change events in JSON events.
 
-In this lab, you'll use Oracle GoldenGate Data Streams to capture change events directly from an Oracle Database and deliver them as JSON-formatted messages over a Publish/Subscribe (Pub/Sub) interface defined by AsyncAPI.
+In this lab, you use Oracle GoldenGate Data Streams to capture change events directly from an Oracle Database and deliver them as JSON-formatted messages over a Publish/Subscribe (Pub/Sub) interface defined by AsyncAPI.
 
    ![GoldenGate Data Streams with AsyncAPI ](./images/gg-ds-asyncapi.png " ")
 
@@ -12,7 +12,7 @@ Estimated time: 10 minutes
 
 ### Objectives
 
-In this lab, you will:
+In this lab, you:
 * Create a GoldenGate Data Stream from a running database capture.
 * Implement a web-based subscriber tool to connect to the stream via WebSocket.
 * Visualize and simulate real-time JSON event consumption in a browser.
@@ -20,9 +20,9 @@ In this lab, you will:
 
 ## Task 1: Create the Publisher Stream
 
-1. In the GoldenGate deployment console service menu bar, click **Distribution Service**.
+1. In the GoldenGate console service menubar, click **Distribution Service**.
 
-2. In the navigation menu, click **Data Streams**, and then click **Add Data Stream** (plus-icon).
+2. In the navigation menu, click **Data Streams**. On the Data Streams page, click **Add Data Stream** (plus-icon).
 
     ![Add Data Stream](./images/01-02-add-data-stream.png " ")
 
