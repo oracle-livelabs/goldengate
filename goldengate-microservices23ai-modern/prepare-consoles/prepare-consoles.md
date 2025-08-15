@@ -64,9 +64,9 @@ DB Connections let you to create and manage the login credentials needed to conn
 
 ## Task 2: Add a Checkpoint table and Heartbeat table
 
-### About Checkpoint table and Trandata
+### About Checkpoint and Heartbeat tables
 
-Create a Checkpoint table in the target database to provide fault tolerance for the Replicat process. Trandata enables the unconditional logging of primary keys and the conditional supplemental logging of all unique and foreign keys for the specified table. Adding Trandata is required for the source database.
+A Checkpoint table created in the target database adds fault tolerance for the Replicat process. Heartbeat tables monitor lag throughout the data replication cycle. Each source database sends automatic heartbeats into the replication streams by updating heartbeat seed table and heartbeat table records, constructing a heartbeat history record. 
 
 1. In the navigation menu, under the EAST connection, select **Checkpoint**. On the Checkpoint page, click **Add Checkpoint** (plus icon).
 
@@ -110,6 +110,8 @@ Create a Checkpoint table in the target database to provide fault tolerance for 
     ![Connect to WEST database](./images/03-03-connect-db-west.png " ")
 
 ## Task 4: Add Trandata information and a Heartbeat table
+
+Trandata enables the unconditional logging of primary keys and the conditional supplemental logging of all unique and foreign keys for the specified table. Adding Trandata is required for the source database.
 
 The West database serves as the source database and no Checkpoint table is required. However, Trandata is required and you will create the Heartbeat tables.
 
