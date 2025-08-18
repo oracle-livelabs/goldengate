@@ -224,13 +224,14 @@ After you run this script, you would be able to continue to run the scripts succ
    
             </copy>
            
-           If your DBLOGIN USERIDALIAS ggwest command fails, then check that the `DBWEST` PDB is `OPEN`. If it is not open, then you need to open the PDB. Use the following commands to check and open the `DBWEST` PDB, if required:
+          If your DBLOGIN USERIDALIAS ggwest command fails, then check that the `DBWEST` PDB is `OPEN`. If it is not open, then you need to open the PDB. Use the following commands to check and open the `DBWEST` PDB, if required:
 
-           <copy>
-              sqlplus / as sysdba
-
-              show PDBs
-           <copy>
+            <copy>
+ 
+               sqlplus / as sysdba
+               show PDBs
+ 
+           </copy>
 
            If you see an output similar to the following, then you will need to open the `DBWEST` PDB:
 
@@ -264,20 +265,22 @@ After you run this script, you would be able to continue to run the scripts succ
           </copy>
    
 ## Task 2: Add DML to DBNORTH PDBs
-    Adding DML to the source PDB, DBNORTH, would allow you to test that the data is captured from DBNORTH. In the following steps, you will run the `source_dml_operations` script to perform DML transactions on DBNORTH:
+   
+   Adding DML to the source PDB, DBNORTH, would allow you to test that the data is captured from DBNORTH. In the following steps, you will run the `source_dml_operations` script to perform DML transactions on DBNORTH:
     
-       1. Navigate to the `scripts/UseCases/03_Cascading` directory and run the `ls` command. You should be able to see the `source_dml_operations` script.
+   
+   1. Navigate to the `scripts/UseCases/03_Cascading` directory and run the `ls` command. You should be able to see the `source_dml_operations` script.
     
-       2. Run the `source_dml_operations` script:
+   2. Run the `source_dml_operations` script:
     
-          ```
+          
              <copy>
                 
                 ./source_dml_operations
     
              </copy>
           
-          ``` 
+           
       
    This script commits transactions to the `hr.employees` table on `DBNORTH`.
 
