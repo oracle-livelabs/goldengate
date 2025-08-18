@@ -1,19 +1,15 @@
-# Set Up a One to Many Replication Environment Using Admin Client
+# Set Up a Many to One Replication Environment Using Admin Client
 
 
 ## Introduction
-A data distribution configuration is a one-to-many configuration. Oracle GoldenGate supports synchronization of a source database to any number of target systems. Oracle GoldenGate supports like-to-like or heterogeneous transfer of data, with capabilities for filtering and conversion on any system in the configuration although support varies by database platform.
 
-Broadcast topologies can include a mix of unidirectional use cases, including offloading of reporting, replication to a data warehouse, or sending data to a lower level environment. In most cases, administrators configure a single Extract process that writes to multiple trail files. Each trail file is used for a different target database. This reduces the overhead on the source database, and allows each target platform to receive just the data that it requires.
 
-In the following use case, a trail file is replicated across different destinations with the following conditions:
-
-* One trail file is used to replicate across multiple destinations.
-* Multiple Distribution Paths are configured to send the trail data with filtered options to specify which tables will be replicated on to a particular destination.
+* 
+* 
 
 
 
-### One to Many Configuration in this Lab
+### Many to One Configuration in this Lab
 
 Test.  
 
