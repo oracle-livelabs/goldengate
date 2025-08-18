@@ -2,7 +2,7 @@
 
 
 ## Introduction
-Test
+
 
 ![This image shows the Cascading topology.](./images/cascading.png)
 

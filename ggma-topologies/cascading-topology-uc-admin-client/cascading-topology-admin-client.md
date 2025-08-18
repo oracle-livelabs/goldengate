@@ -91,16 +91,14 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
       
       b. Run the following command to know the status of all the deployments:
          
-      ```
+      
          <copy>
            
            STATUS DEPLOYMENT *
 
          </copy>
          
-      ```
-         
-   The output should be similar to the following:
+       The output should be similar to the following:
 
 ![Check the status of the deployment by running the status deployment command. The output of this command displayed in this image](./images/cascade_checkdeplstatus.png)
 
@@ -109,16 +107,14 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
       a. Connect to `depl_north` deployment and check that the processes are running.      
 
           
-          <copy>
+         <copy>
           
-            CONNECT https://north:9001 DEPLOYMENT depl_north AS ggma PASSWORD GGma_23ai !
-            
-            DBLOGIN USERIDALIAS ggnorth
-            
-            INFO ALL
-            
-            INFO DISTPATH ALL
-          </copy>
+           CONNECT https://north:9001 DEPLOYMENT depl_north AS ggma PASSWORD GGma_23ai!
+           DBLOGIN USERIDALIAS ggnorth
+           INFO ALL
+           INFO DISTPATH ALL
+          
+         </copy>
         
                   
          

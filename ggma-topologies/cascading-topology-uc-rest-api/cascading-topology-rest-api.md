@@ -103,9 +103,9 @@ After you run this script, you would be able to continue to run the scripts succ
    
             </copy>
    
-            The output should be similar to the following:
+          The output should be similar to the following:
    
-            ![Check the status of the deployment by running the status deployment command. The output of this command displayed in this image](./images/cascade_checkdeplstatus.png)
+      ![Check the status of the deployment by running the status deployment command. The output of this command displayed in this image](./images/cascade_checkdeplstatus.png)
    
       5. Check that the Extract, Replicat, and DISTPATH processes are running successfully for each deployment, using the following commands:
    
