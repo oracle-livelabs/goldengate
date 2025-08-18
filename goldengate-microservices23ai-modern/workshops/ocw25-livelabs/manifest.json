@@ -4,12 +4,12 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
-            "filename": "../../introduction/gb-intro.md"
+            "description": "Learn about this workshop",
+            "filename": "../../introduction/intro.md"
         },
         {
             "title": "Get Started",
-            "description": "Prerequisites to connection to the lab environment.",
+            "description": "Learn to connect to the lab environment.",
             "filename": "../../get-started/get-started.md"
         },
         {
