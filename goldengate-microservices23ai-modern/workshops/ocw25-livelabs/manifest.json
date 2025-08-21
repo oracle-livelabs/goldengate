@@ -1,0 +1,41 @@
+{
+    "workshoptitle": "GoldenGate 23ai Microservices for Modern Real-Time Data Fabric Solutions",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Learn about this workshop",
+            "filename": "../../introduction/intro.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "Learn to connect to the lab environment.",
+            "filename": "../../get-started/get-started.md"
+        },
+        {
+            "title": "Lab 1: Connect and prepare databases",
+            "filename": "../../prepare-consoles/prepare-consoles.md"
+        },
+        {
+            "title": "Lab 2: Replicate data from West to East",
+            "filename": "../../east-replicate/east-replicate.md"
+        },
+        {
+            "title": "Lab 3: Use Oracle GoldenGate REST API commands",
+            "filename": "../../rest-api/rest-api.md"
+        },
+        {
+            "title": "Lab 4: Create an AsyncAPI Workflow",
+            "filename": "../../asyncapi/asyncapi.md"
+        },
+        {
+            "title": "Lab 5: Patch Oracle GoldenGate",
+            "filename": "../../patching/patching.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

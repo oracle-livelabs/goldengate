@@ -28,6 +28,8 @@ The following table provides a snapshot of the available environment:
 |                   | SOUTH | south.livelabs.oraclevcn.com
 |                   | WEST  | west.livelabs.oraclevcn.com
 | Database Type | Oracle Database 23.5 Free Edition | Contains 1 CDB and 3 PDBs
+|                   | WEST  | west.livelabs.oraclevcn.com
+| Database Type | Oracle Database 23.5 Free Edition | Contains 1 CDB and 3 PDBs
 | CDB Name   | FREE | CDB login details: 
 |            |      |    Username/Password: sys/oracle4GG
 | PDB Name   | DBNORTH | PDB login details: 
@@ -59,6 +61,7 @@ This lab contains the following tasks:
     
        ```
        <copy>
+        source /usr/local/bin/.set-env-db.sh
         source /usr/local/bin/.set-env-db.sh
        </copy>
 
@@ -183,4 +186,5 @@ You may witness the error "ORA-65162: Password of the common database user has e
 ## Acknowledgements
 * **Author** - Preeti Shukla
 * **Contributors** - Preeti Shukla, Volker Kuhr
+* **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, June 2025
 * **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, June 2025

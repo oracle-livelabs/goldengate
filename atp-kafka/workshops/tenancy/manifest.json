@@ -1,6 +1,10 @@
 {
     "workshoptitle": "Replicate data from Autonomous Transaction Processing to Apache Kafka",
     "help": "livelabs-help-db_us@oracle.com",
+    "include": { 
+        "02-create-atp-instance.md":"../../../ggs-common/building-blocks/tasks/adb/02-create-atp-instance.md",
+        "01-create-source-connection.md":"../../../ggs-common/building-blocks/tasks/create/01-create-source-connection.md"
+    },
     "tutorials": [
         {
             "title": "Introduction",

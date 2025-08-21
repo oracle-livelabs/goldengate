@@ -22,31 +22,35 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 ## Task 1: View the Extract and Replicat details
 
-1. In the source OCI GoldenGate (ggsource) deployment console, on the Administration Service Overview page, click **EXTATP** to view its details.
+1. In the source OCI GoldenGate (ggsource) deployment console, on the Home page, click **Extracts**. 
 
-2. On the EXTATP (Integrated) page, click **Statistics**. Verify that there are zero (0) transaction statistics in the table.
+2. On the Extracts page, click **EXTATP** to view its details.
 
-     ![Extract click on replicat](images/01-02a-click-on-replicat.png " ")
+     ![Extract page click on EXTATP](images/01-02-click-on-extract.png " ")
 
-     ![Extract statistics](images/01-02b-extract-statistics-pre-status.png " ") 
+3. On the EXTATP (Integrated) page, click **Statistics**. Verify that there are zero (0) transaction statistics in the table.
 
-3. In the target OCI GoldenGate for Big Data (OCIGGBigData) deployment console, on the Administration Service Overview page, click **KAFKAREP** to view its details.
+     ![Extract statistics](images/01-03-extract-statistics-pre-status.png " ") 
 
-    ![OCI GoldenGate Big Data deploymen Home Page](images/01-03a-replicat-home.png " ")
+4. In the target OCI GoldenGate for Big Data (OCIGGBigData) deployment console, on the Home page, click **Replicats**.
 
-    ![OCI GoldenGate Big Data deploymen Home Page](images/01-03b-replicat-pre-stats.png " ")
+5. On the Replicats page, click **kafkaRep** to view its details.
 
-4. On the KAFKAREP (CLASSIC APPLY) page, click **Statistics**. Verify that there are no records displayed.
+    ![Replicat page click on kafkaRep](images/01-05-click-on-replicat.png " ")
+
+6. On the KAFKAREP (CLASSIC APPLY) page, click **Statistics**. Verify that there are no records displayed.
+
+    ![Replicat statistics](images/01-06-replicat-statistics-pre-status.png " ")
 
 ## Task 2: Load data into the source database
 
-1. In the Oracle Cloud console, open the navigation menu, click **Oracle Database**, and then click **Autonomous Transaction Processing**.
+1. In the Oracle Cloud console, open the navigation menu, click **Oracle Database**, and then click **Autonomous Databases**.
 
-2. On the Autonomous Transaction Processing page, select the **ATP_Source** database to view its details.
+2. On the Autonomous Databases page, select the **SourceATP** database to view its details.
 
     ![Select your Autonomous Database instance](./images/02-02-atp-source-page.png " ")
 
-3. On the **ATP_Source** Database Details page, click **Database actions**, and select **SQL** from the dropdown.
+3. On the **SourceATP** Database Details page, click **Database actions**, and select **SQL** from the dropdown.
 
     ![DB Actions log in page](./images/02-03-atp-db-options.png " ")
 
@@ -82,22 +86,22 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 ## Task 3: Statistics of the extract and replicat, post data loading to the ATP
 
-1. In the source OCI GoldenGate (ggsource) deployment console, click **EXTATP** to view its details.
+1. In the source OCI GoldenGate (ggsource) deployment console, on the Home page, click **Extracts**. 
 
-2. On the EXTATP (Integrated) page, click **Statistics**, and then verify that each row displays 3 inserts.
+2. On the Extracts page, click **EXTATP** to view its details.
 
-    ![OCI GoldenGate Oracle deployment Home Page](images/01-02a-click-on-replicat.png " ") 
+     ![Extract page click on EXTATP](images/01-02-click-on-extract.png " ")
 
-    ![OCI ggs-statistics](images/03-02b-extract-status-post.png " ")  
+3. On the EXTATP (Integrated) page, click **Statistics**, and then verify that each row displays 3 inserts.
 
-3. In the target OCI GoldenGate for Big Data (OCIGGBigData) deployment console, click **KAFKAREP** to view its details.
+4. In the target OCI GoldenGate for Big Data (OCIGGBigData) deployment console, on the Home page, click **Replicats**.
 
-4. On the KAFKAREP (CLASSIC APPLY) page, click **Statistics**, and then verify that each row displays 3 inserts.
+5. On the Replicats page, click **kafkaRep** to view its details.
 
-    ![OCI GoldenGate Big Data deployment Home Page](images/01-03a-replicat-home.png " ")
-    
-    ![OCI GoldenGate Big Data deployment Home Page](images/03-04b-replicat-post-stats.png " ")
-    
+    ![Replicat page click on kafkaRep](images/01-05-click-on-replicat.png " ")
+
+6. On the KAFKAREP (CLASSIC APPLY) page, click **Statistics**, and then verify that each row displays 3 inserts.
+
 
 ## Task 4: (Optional) Verify the Kafka topic content
 
@@ -126,4 +130,4 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 ## Acknowledgements
 * **Author** - Madhu Kumar S, Senior Solution Engineer, AppDev and Integration
 * **Contributors** -  Denis Sendil, Database Product Management; Jenny Chan, Consulting User Assistance Developer, Database User Assistance; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, User Assistance Developer, December 2023
+* **Last Updated By/Date** - Katherine Wardhana, User Assistance Developer, July 2025

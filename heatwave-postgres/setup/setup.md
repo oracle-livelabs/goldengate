@@ -140,31 +140,37 @@ In this section, you will provision a VCN and subnet, MySQL and OCI PostgreSQL i
 
 8.  After the bastion is Active, select it to view its details.
 
-9.  On the bastion details page, click **Create session**.
+9.  On the **BastionMySQL** page, click **Sessions** from the navigation bar. 
 
-	![Click Create session on the bastion details page](./images/03-08-create-session.png " ")
+10. On the Sessions page, click **Create session**.
 
-10.  In the Create session panel, for **Session type**, select **SSH port forwarding session**
+	![Click Create session on the bastion details page](./images/03-10-create-session.png " ")
 
-11. For IP address, paste the private IP address copied from the SourceMySQL database details page in Task 2 Step 11.
+11.  In the Create session panel, for **Session type**, select **SSH port forwarding session** from the dropdown.
 
-12. For port, enter `3306`.
+12. For **Session name**, enter a name.
 
-13. Under Add SSH Key, you can upload an existing key or generate a new SSH key pair.
+13. For **Connect to target host by using**, select **IP address**.
+
+14. For IP address, paste the private IP address copied from the SourceMySQL database details page in Task 2 Step 11.
+
+15. For port, enter `3306`.
+
+	![Enter the details and click Create session](./images/03-15-session-type.png " ")
+
+16. Under Add SSH Key, you can upload an existing key or generate a new SSH key pair.
 
 	>**Note:** If you select **Generate SSH key pair**, ensure that you download and save the private key.
 
-14. Click **Create session**. The session takes a few minutes to become Active.
+17. Click **Create session**. The session takes a few minutes to become Active.
 
-	![Enter the details and click Create session](./images/03-09-session-type.png " ")
+18. After the session is Active, select **Copy SSH command** from the session's Action (three dots) menu.
 
-15. After the session is Active, select **Copy SSH command** from the session's Action (three dots) menu.
-
-	![Click the three dots and then select Copy SSH command](./images/03-14-copy-ssh-cmd.png " ")
+	![Click the three dots and then select Copy SSH command](./images/03-18-copy-ssh-cmd.png " ")
 
 ## Task 3B: Using CloudShell to connect to the private network
 
-If working within the same Home region for OCI GoldenGate and MySQL Heatwave, then you can use CloudShell to connect to the private network.
+If you're working within the same Home region for OCI GoldenGate and MySQL Heatwave, then you can use CloudShell to connect to the private network.
 
 1.  After your OCI MySQL DB system becomes active, click **Developer tools** in the Oracle Cloud console global header, and then select **Cloud Shell**.
 
@@ -182,11 +188,16 @@ If working within the same Home region for OCI GoldenGate and MySQL Heatwave, th
 
 		<copy>mysqlsh admin@<mysql-db-privateIP>:3306 --sql</copy>
 
+	Verify following binary log startup options and system variables are configured correctly on Heatwave MysQL required by Oracle GoldenGate for MySQL.
+
+	![Binary log startup options](./images/03b-4-binary-log.png " ")
+
+
 ## Task 4: Load data into the MySQL DB System
 
 1. Download and run the sample data script.
 
-	 [seedSRCOCIGGL_MySQL.sql](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/seedSRCOCIGGL_MySQL.sql)
+	 [seedSRCOCIGGL_MySQL.sql](https://objectstorage.us-phoenix-1.oraclecloud.com/n/axvzt5deuijx/b/LiveLab_Bidirectional_MySQL_PostgreSQL/o/seedSRCMIRROROCIGGL_PostgreSQL.sql)
 
 2. Copy and paste the sample data script from `seedSRCOCIGGL_MySQL.sql` into Cloud Shell.
 
@@ -301,5 +312,5 @@ You may now **proceed to the next lab.**
 
 - **Author** - Katherine Wardhana, User Assistance Developer
 - **Contributors** -  Shrinidhi Kulkarni, GoldenGate Product Manager
-- **Last Updated by** - Katherine Wardhana, June 2025
+- **Last Updated by** - Katherine Wardhana, August 2025
 - **PAR Expiration date** - February 2030

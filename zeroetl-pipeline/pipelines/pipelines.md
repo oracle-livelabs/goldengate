@@ -17,6 +17,11 @@ In this lab, you will:
 * Enable logging
 * Start the pipeline
 
+### Prerequisites
+
+To successfully complete this lab, you must:
+* This lab assumes that you completed all preceding labs
+
 ## Task 1: Create the pipeline
 
 1. Click **Pipelines** and then click **Create pipeline**.
@@ -97,9 +102,9 @@ In this lab, you will:
 
     ![Initialization](./images/04-03-initialization.png)
 
-4. On the pipeline's details page, click **Runtime**. 
+4. On the pipeline's details page, click **Runtime** to view the state and latency of the Capture and Apply processes.
 
-5. 
+    ![Initialization](./images/04-04-runtime.png)
 
 ## Learn more
 
@@ -109,4 +114,4 @@ In this lab, you will:
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, June 2025
+* **Last Updated By/Date** - Katherine Wardhana, July 2025

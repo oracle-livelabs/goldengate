@@ -19,6 +19,11 @@ In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
 * Create the source and target connections
 
+### Prerequisites
+
+To successfully complete this lab, you must:
+* Review [Minimum recommended policies](https://docs.oracle.com/en/cloud/paas/goldengate-service/rmrrr/#GUID-3E101995-8630-4D58-93DF-0AE94041B031).
+
 ## Task 1: Create the source connection
 
 1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
@@ -107,7 +112,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![Script Output](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-08-sql-script-return.png " ")
 
-9.  Replace the supplemental logging script with the following statemet, and then click **Run Statement**:
+9.  Replace the supplemental logging script with the following statement, and then click **Run Statement**:
 
     ```
     <copy>GRANT DWROLE TO GGADMIN;
@@ -174,4 +179,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, June 2025
+* **Last Updated By/Date** - Katherine Wardhana, July 2025

@@ -34,43 +34,39 @@ This lab assumes that you completed all preceding labs.
 
     > **NOTE**: If using OCI IAM, you must click **Allow** when prompted to give the application access to `get_groups`.
 
-    ![OCI GoldenGate Deployment Console Sign In](images/01-04-login-page.png " ")
+    ![OCI GoldenGate Deployment Console Sign In](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin-23ai.png " ")
 
     You're brought to the OCI GoldenGate Deployment Console Home page after successfully signing in.
 
-5. In the target OCI GoldenGate for Big Data deployment (OCIGGBigData), open the navigation menu, and then click **Administrator**.
+5. In the target OCI GoldenGate for Big Data deployment (OCIGGBigData), on the navigation menu, click **User Administration**.
 
-6. On the Users page, click **Add User** (plus icon).
+6. On the Users page, click **Add New User** (plus icon).
 
     ![Add a New user](images/01-06-add-new-user.png " ")
 
-7. For **Username**, enter  `DistUser`.
+7. In the Create new User panel, complete the following fields, and then click **Submit**:
 
-8. For **Role**, select **Operator**.
+    * For the Authenticated By dropdown, select **Password**.
+    * For the Role dropdown, select **Operator**.
+    * For Username, enter `DistUser`.
+    * For Password, enter a password for the DistUser. Verify the password.
 
-9. For **Type**, select **Password**.
-
-10. For **Password**, enter a password for the DistUser.
-
-11. Verify your password and the click **Submit**. 
-
-    ![Add a New user submit](images/01-11-add-new-user-submit.png " ")
+    ![Add a New user submit](images/01-07-add-new-user-submit.png " ")
 
 ## Task 2: Add a Credential to the source deployment
 
-1. In the source OCI GoldenGate deployment (ggsource), open the navigation menu, and then click **Configuration**.
+1. In the source OCI GoldenGate deployment (ggsource), in the navigation menu, click **DB Connections**.
 
-2. On the Credentials page, click **Add Credential** (plus icon).
+2. On the DB Connection page, click **Add DB Connections** (plus icon).
 
-3. For **Credential Domain**, enter **Distribution**.
+    ![Add a DB connection](images/02-02-add-db-connect.png " ")
 
-4. For **Credential Alias**, enter **ociggbd**.
+3. In the Path Connection panel, complete the following fields, and then click Submit:
 
-5. For **User ID**, enter **DistUser**.
-
-6. For **Password** and **Verify Password**, enter the DistUser password from Task 1, Step 7.
-
-7. Click **Submit**.
+    * For Credential Domain, enter **Distribution**.
+    * For Credential Alias, enter **ociggbd**.
+    * For User ID, enter **DistUser**.
+    * For **Password** and **Verify Password**, enter the DistUser password from Task 1, Step 7.
 
     ![Add a New user submit](images/02-07-distribution-credential-add-at-source.png " ")
 
@@ -82,39 +78,47 @@ This lab assumes that you completed all preceding labs.
 
     ![Add a New Path](images/03-02-add-path-home.png " ")
 
-3. On the Add Path page, for **Name**, enter `Dist_Path`.
+3. The Add Path panel consists of seven pages. On the Path Information page, for **Name**, enter `Dist_Path`, and then click **Next**.
 
-4. For **Source**, select **EXTATP**.
+    ![Path Information page](images/03-03-path-info.png " ")
 
-5. For **Trail Name**, enter `AE`.
+4. On the Source Options page, complete the following fields, and then click **Next**:
 
-6. For **Target Authentication Method**, select **UserID Alias**.
+    * For **Source Extract**, select **EXTATP** from the dropdown.
+    * For **Trail Name**, `AE` should automatically populate the field.
 
-7. For **Target**, select **wss** from the dropdown.
+    ![Source Information page](images/03-04-source-info.png " ")
 
-8. For **Target Host**, enter the OCI GoldenGate for Big Data hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
+5. On the Target Options page, complete the following fields, and then click **Next**:
 
-    > **NOTE:** You can also copy this from the OCI GoldenGate for Big Data deployment console url from your browser address bar. Ensure that it is the target Big Data deployment console you're copying from, and remove the https://.
+    * For **Target Protocol**, select **wss** from the dropdown.
+    * For **Target Host**, enter the OCI GoldenGate for Big Data hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
-9. For **Port Number**, enter `443`.
+        > **NOTE:** You can also copy this from the OCI GoldenGate for Big Data deployment console url from your browser address bar. Ensure that it is the target Big Data deployment console you're copying from, and remove the https://.
 
-10. For **Trail Name**, enter `RT`.
+    * For **Port Number**, enter `443`.
+    * For **Trail Name**, enter `RT`.
+    * For **Alias**, enter enter the User ID created in **Task 2, Step 3**. For example, `ociggbd`.
 
-11. For **Domain**, enter the domain created in **Task 2, Step 2**. For example, `Distribution`.
+    ![Target Options page](images/03-05-target-opts.png " ")
 
-12. For **Alias**, enter the User ID created in **Task 2, Step 4**. For example, `ociggbd`.
+6. On the Advanced Options page, leave the fields as they are, and click **Next**.
 
-    ![Provide all the info to create a path](images/03-12-distribution-path-useridalias.png " ")
+    ![Advanced Options page](images/03-06-adv-opts.png " ")
 
-13.	Click **Create and Run**.  You return to the Paths page. If successful, the Distribution Path changes from a yellow exclamation point to a green checkmark.
+7. On the Filtering Options page, leave the fields as they are, and click **Next**.
 
-    ![Click on Create and Run button](images/03-13a-distribution-path-submit.png " ")
+    ![Filtering Options page](images/03-07-filt-opts.png " ")
 
-    ![GoldenGate Deployment Console](images/03-13b-path-status.png " ")
+8. On the Managed Options page, leave the fields as they are, and click **Create Path and Run**. You return to the Paths page. If successful, the Distribution Path changes from a yellow exclamation point to a green checkmark.
+
+    ![Click on Create and Run button](images/03-08a-distribution-path-submit.png " ")
+
+    ![GoldenGate Deployment Console](images/03-08b-path-status.png " ")
 
 14.	This Distribution Path also creates a Receiver Path in the target deployment. In the OCI GoldenGate for Big Data deployment console, click **Receiver Service**. You should see Dist_Path on the Paths page. 
 
-    ![GoldenGate Deployment Console](images/03-14-recv-status.png " ")
+    ![GoldenGate Deployment Console](images/03-09-recv-status.png " ")
 
 In this lab, you created a distribution path from source OCI GoldenGate Deployment to OCI GoldenGate for Big Data Deployment.
 
@@ -127,4 +131,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Madhu Kumar S, Senior Solution Engineer, AppDev and Integration
 * **Contributors** -  Denis Sendil, Database Product Management; Jenny Chan, Consulting User Assistance Developer, Database User Assistance; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, User Assistance Developer, December 2023
+* **Last Updated By/Date** - Katherine Wardhana, User Assistance Developer, July 2025

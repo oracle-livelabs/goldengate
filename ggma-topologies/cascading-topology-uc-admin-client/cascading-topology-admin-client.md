@@ -1,6 +1,8 @@
 # Set Up a Cascading Replication Environment Using Admin Client
+# Set Up a Cascading Replication Environment Using Admin Client
 
 
+## Introduction
 ## Introduction
 Oracle GoldenGate supports cascading synchronization, which means that Oracle GoldenGate propagates data changes from one database to a second transitional database, and then on to a third database.
 
@@ -43,7 +45,10 @@ The objective of this tutorial is to:
 * Test the output to show replication across the environment connected using a Cascading topology configuration.
 
 
+
 ### Prerequisites
+
+This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>. 
 
 This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>. 
 
@@ -51,6 +56,7 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
 ## Task 1: Set Up Oracle GoldenGate Processes Across Multiple Deployments on Different Databases
 
    To set up the Extract, Replicat, Distribution Path, and Receiver Path processes across deployments, follow these steps:
+
 
 
    1. Navigate to the `scripts/UseCases/03_Cascading/AdminClient` directory. You will see the script `add_replication_cascading_admin-client.sh`.
@@ -281,7 +287,9 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
       ```
          <copy>
             
+            
             ./source_dml_operations
+
 
          </copy>
       
@@ -304,6 +312,7 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
         <copy>
            
            ./check_replication_cascading.sh
+      
       
         </copy>
       ```

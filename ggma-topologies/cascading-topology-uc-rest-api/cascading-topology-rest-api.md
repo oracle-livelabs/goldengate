@@ -28,6 +28,7 @@ From this diagram, you can deduce the following:
 * The `depl_north` deployment captures from `DBNORTH` and connects to the `depl_south` deployment on another intermediate host machine. 
 * The Replicat process on `depl_south`, replicates to the `DBSOUTH` database.  
 * The Replicat process on `depl_south`, replicates to the `DBSOUTH` database.  
+* The Replicat process on `depl_south`, replicates to the `DBSOUTH` database.  
 * The Extract process, EXTS, in `depl_south` captures the replicated data and writes it to the local trail and transfer to the Replicat `REPS` on the `depl_west` deployment.  
 
 
@@ -45,6 +46,7 @@ The objective of this tutorial is to:
 
 ### Prerequisites
 
+This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>. 
 This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracle GoldenGate and Database Environment"</b> in <b>Lab 3: Initialize Environment</b>. 
 
 ### Tip

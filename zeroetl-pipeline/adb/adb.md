@@ -19,6 +19,7 @@ To successfully complete this lab, you must:
 * Have completed the Get Started lab and sign up for Free Tier/Log in to Oracle Cloud.
 * For IAM-enabled tenancies, ensure that you [configure Identity domains for OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/mkmbs/#GUID-DD9C1BF8-69FE-4C9A-A2D1-74C73550ED65).
 * For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault). [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
+* Review [Minimum recommended policies](https://docs.oracle.com/en/cloud/paas/goldengate-service/rmrrr/#GUID-3E101995-8630-4D58-93DF-0AE94041B031).
 
 > **Notes:** 
 
@@ -57,5 +58,5 @@ You may now **proceed to the next lab.**
 
 * **Author** - Katherine Wardhana, User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated by** - Katherine Wardhana, June 2025
+* **Last Updated by** - Katherine Wardhana, July 2025
 * **PAR Expiration date** - February 2030
