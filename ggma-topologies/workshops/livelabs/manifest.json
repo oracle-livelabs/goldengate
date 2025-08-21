@@ -70,16 +70,6 @@
       "filename": "../../onetomany-topology-uc-admin-client/onetomany-topology-admin-client.md"
     },
     {
-      "title": "Lab 12: Set Up Data Replication in a Consolidated Environment Using Admin Client",
-      "description": "Replicate data in a consolidated environment using the automation scripts containing Admin Client OBEY scripts.",
-      "filename": "../../manytoone-topology-uc-admin-client/manytoone-topology-admin-client.md"
-    },
-    {
-      "title": "Lab 13: Set Up Data Replication in a Consolidated Environment Using REST API",
-      "description": "Replicate data in a consolidated environment using the automation scripts containing REST API cURL commands.",
-      "filename": "../../manytoone-topology-uc-rest-api/manytoone-topology-rest-api.md"
-    },
-    {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
