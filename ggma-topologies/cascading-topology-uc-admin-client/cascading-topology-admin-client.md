@@ -230,25 +230,26 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
         
        
    f. Check the parameter file for the Replicat `REPS` is set up. In case, it is not set up, then create the `REPS.prm` file using the `EDIT PARAMS REPS.prm` command:
+
+      ```  
+        <copy>         
+          REPLICAT reps
+          USERIDALIAS ggwest DOMAIN OracleGoldenGate
+
+
+         DDLOPTIONS REPORT
+         DDLERROR DEFAULT, DISCARD
+         
+         REPORTCOUNT EVERY 10 MINUTES, RATE
+         
+         REPERROR (DEFAULT, DISCARD)
+         MAP hr.*, TARGET hr.*;
+         
+        </copy> 
        
-         
-         <copy>
-         
-           REPLICAT reps
-           USERIDALIAS ggwest DOMAIN OracleGoldenGate
-         
-           DDLOPTIONS REPORT
-           DDLERROR DEFAULT, DISCARD
-         
-           REPORTCOUNT EVERY 10 MINUTES, RATE
-         
-           REPERROR (DEFAULT, DISCARD)
-           MAP hr.*, TARGET hr.*;
-      
-         </copy> 
-       
+       ``` 
           
-      b. Run the `INFO ALL` and `INFO DISTPATH ALL` commands: 
+   g. Run the `INFO ALL` and `INFO DISTPATH ALL` commands: 
          
               
          <copy>
@@ -259,16 +260,16 @@ This lab assumes that you have completed the tasks in <b>"Task 1: Load the Oracl
          
           
         
-       Make sure that the `EXTN` process is in `RUNNING` state.
-        
-        
-          
+      Make sure that the `EXTN` process is in `RUNNING` state.
+
+      ```  
          <copy>
         
            INFO DISTPATH ALL   
         
          </copy>
-        
+      
+      ```  
           
        Make sure that the `DPNS` process is in `RUNNING` state.
 
