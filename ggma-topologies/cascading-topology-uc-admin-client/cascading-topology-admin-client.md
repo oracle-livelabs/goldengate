@@ -1,8 +1,5 @@
 # Set Up a Cascading Replication Environment Using Admin Client
-# Set Up a Cascading Replication Environment Using Admin Client
 
-
-## Introduction
 ## Introduction
 Oracle GoldenGate supports cascading synchronization, which means that Oracle GoldenGate propagates data changes from one database to a second transitional database, and then on to a third database.
 
