@@ -132,7 +132,7 @@ In this task, you will run the script that performs DML operations on the source
 
 After this script runs successfully, the DML operation would be comitted to the DBNORTH source database.
 
-## Task 3: Check Distribution Path Statistics from `depl_north` Deployment
+## Task 3: Check Distribution Path Statistics from the `depl_north` Deployment
 
 In this task, you will check the status of the distribution paths to determine that the trail data is being broadcast across the two target deployments:
 
