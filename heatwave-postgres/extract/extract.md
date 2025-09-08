@@ -22,7 +22,7 @@ To successfully complete this lab, you need:
 * The oggadmin password for the source MySQL OCI GoldenGate deployment (Lab 1, Task 1, Step 15)
 * The oggadmin password for the target OCI PostgreSQL OCI GoldenGate deployment (Lab 1, Task 2, Step 11) 
 
-## Task 1: Create the Integrated Extract
+## Task 1: Create the Change Data Capture Extract
 
 1.  On the Deployments page, select the source MySQL deployment to view its details.
 
@@ -173,7 +173,7 @@ In this task, you create a user in the target deployment for the Distribution Pa
 
     The credential appears in the Credentials list.
 
-## Task 4: Create the Distribution Path for the Initial Load Extract
+## Task 4: Create the Distribution Path for the Change Data Capture Extract
 
 1.  In the source MySQL OCI GoldenGate deployment console, click **Distribution Service**.
 
@@ -188,7 +188,7 @@ In this task, you create a user in the target deployment for the Distribution Pa
 4. On the Source Options page, complete the following fields, and then click **Next**:
 
     * For **Source Extract**, select **CDCEXT** from the dropdown.
-    * For **Trail Name**, `I1` should automatically populate the field.
+    * For **Trail Name**, `C1` should automatically populate the field.
 
   ![Source Options page](./images/04-04-source-opts.png " ")
 
@@ -218,7 +218,9 @@ In this task, you create a user in the target deployment for the Distribution Pa
 
     You return to the Distribution Service Overview page where you can review the path created.
 
-4.  In the target ADW OCI GoldenGate deployment console (**adw_instance**), click **Receiver Service** to review the Receiver Path created as a result of creating the `ILDP` Distribution Path.
+9.  In the target ADW OCI GoldenGate deployment console (**adw_instance**), click **Receiver Service** to review the Receiver Path created as a result of creating the `ILDP` Distribution Path.
+
+10. Repeat this task to create a Distribution Path for the Initial Load Extract.
 
 You may now **proceed to the next lab.**
 

@@ -21,7 +21,7 @@ In this lab, you will:
 
 In order to complete this lab, you should have completed the preceding labs.
 
-## Task 1: Perform inserts to the source database
+## Task 1: Perform inserts to the source database to validate on target
 
 1.  Return to the Oracle Cloud console and use the navigation menu (hamburger icon) to navigate back to **Databases**, **DB Systems**, and then **SourceMySQL**.
 
@@ -84,7 +84,7 @@ commit;</copy>
 
     ![Extract Process Information - Statistics](./images/01-16-ext-stats.png " ")
 
-17.  Go back to the Overview screen, click the **Replicat name (RCDC)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+17.  In the PostgreSQL deployment, go back to the Overview screen, click the **Replicat name (RCDC)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Replicat Process Information - Statistics](./images/01-17-ext-stats.png " ")
 
