@@ -1,0 +1,47 @@
+
+# Introduction
+
+Create the Oracle Cloud Infrastructure GoldenGate pipeline
+
+Estimated Lab Time: -- 20 minutes
+
+**About**
+
+In this lab, you will set up and run an OCI GoldenGate ZeroETL pipeline to replicate operational data from a source Autonomous Transaction Processing database directly into Autonomous Data Warehouse (ADW) in real time. This ZeroETL approach eliminates the need for intermediate staging or manual ETL jobs, ensuring that the target always reflects the latest transactional changes with minimal latency.
+
+Once the replication is in place, you will integrate the live data with an AI Agent capable of answering natural language queries. This agent will be able to provide:
+- **Business insights** into the shopping cart orders data (e.g., sales trends, order details, customer behavior).
+- **Operational intelligence** about GoldenGate itself, including process status, metrics, and performance indicators.
+
+By the end of this lab, you will have a fully functional real-time data replication setup and an AI-driven conversational interface that bridges the gap between live operational data and intelligent analytics.
+
+
+**Workshop Architecture**
+    ![Architecture](./images/architecture.png " ")
+
+### Objective
+
+In this lab, you will:
+
+Create the pipeline
+Enable logging
+Start the pipeline
+
+### Prerequisites (Optional)
+
+To successfully complete this lab, you must have an Oracle Cloud account.
+
+
+You may now proceed to the next lab.
+
+## Learn More
+
+*(optional - include links to docs, white papers, blogs, etc)*
+
+* [URL text 1](http://docs.oracle.com)
+* [URL text 2](http://docs.oracle.com)
+
+## Acknowledgements
+* **Author** - <Name, Title, Group>
+* **Contributors** -  <Name, Group> -- optional
+* **Last Updated By/Date** - <Name, Month Year>
