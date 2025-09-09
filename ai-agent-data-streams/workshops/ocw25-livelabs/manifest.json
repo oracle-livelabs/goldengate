@@ -20,27 +20,27 @@
     {
       "title": "Lab 1: Create the OCI GoldenGate ZeroETL",
       "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-      "filename": "../../prepare-setup/prepare-setup.md"
+      "filename": "../../create-zeroetl/create-zeroetl.md"
     },
     {
       "title": "Lab 2: Review OCI GoldenGate resources",
-      "filename": "../../Lab2/lab2.md"
+      "filename": "../../review-resources/lab2.md"
     },
     {
       "title": "Lab 3: Create the AI Hub Database Resources",
-      "filename": "../../Lab3/lab3.md"
+      "filename": "../../create-aihub/lab3.md"
     },
     {
       "title": "Lab 4: Create the GoldenGate Extract and Data Stream processes",
-      "filename": "../../Lab4/lab4.md"
+      "filename": "../../extract-datastream/lab4.md"
     },
     {
       "title": "Lab 5: Review OCI Gen AI Service – Chat Playground",
-      "filename": "../../Lab5/lab5.md"
+      "filename": "../../review-gen-ai/lab5.md"
     },
     {
       "title": "Lab 6: Demo: End to End Real-time Powered AI Point of Sale and AI enabled Ops Chat",
-      "filename": "../../Lab6/lab6.md"
+      "filename": "../../demo/lab6.md"
     }  
         
     ]
