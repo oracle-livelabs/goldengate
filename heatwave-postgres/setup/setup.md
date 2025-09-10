@@ -114,7 +114,7 @@ In this section, you will provision a VCN and subnet, MySQL and OCI PostgreSQL i
 
 	![Copy the Private IP](./images/02-13-private-ip.png " ")
 
-## Task 3A: Create a bastion and session
+## Task 3A: Create a bastion and session to connect using a Database client
 
 > **Note:** Create a bastion and session only if your OCI GoldenGate deployment and MySQL Heatwave system are **not** located in the same region. If they're in the same Home region, skip to Task 3B.
 
@@ -168,6 +168,16 @@ In this section, you will provision a VCN and subnet, MySQL and OCI PostgreSQL i
 
 	![Click the three dots and then select Copy SSH command](./images/03-18-copy-ssh-cmd.png " ")
 
+19. Paste the command into a text editor. Ensure that you replace `<privateKey>` with the full path to the key, and `<localPost>` with the local port of the machine from which you plan to connect. You can use any available port number. 
+
+	> **Note:** On Mac or Linux, open a terminal window and run the command. On Windows, use PowerShell. If prompted to continue connecting, type `yes`, and then press **Enter**.
+
+20. Open your Database client (for example, MySQL Workbench), and configure the connection. Verify that the following binary log startup options and system variables are configured correctly on HeatWave MySQL, as required by Oracle GoldenGate for MySQL.
+
+	```
+	<copy>SHOW VARIABLES LIKE ‘%bin%’;</copy>
+	```
+
 ## Task 3B: Using CloudShell to connect to the private network
 
 If you're working within the same Home region for OCI GoldenGate and MySQL Heatwave, then you can use CloudShell to connect to the private network.
@@ -188,7 +198,7 @@ If you're working within the same Home region for OCI GoldenGate and MySQL Heatw
 
 		<copy>mysqlsh admin@<mysql-db-privateIP>:3306 --sql</copy>
 
-	Verify following binary log startup options and system variables are configured correctly on Heatwave MysQL required by Oracle GoldenGate for MySQL.
+	Verify the following binary log startup options and system variables are configured correctly on Heatwave MysQL, as required by Oracle GoldenGate for MySQL.
 
 	![Binary log startup options](./images/03b-4-binary-log.png " ")
 
@@ -206,7 +216,7 @@ If you're working within the same Home region for OCI GoldenGate and MySQL Heatw
 4. Create the ggadmin user using the following script. Ensure that you replace &lt;`ggadmin-password`&gt; with a valid password:
 
     ```
-    <copy>CREATE USER 'oggdmin' IDENTIFIED BY '<ggadmin-password>';
+    <copy>CREATE USER 'ggdmin' IDENTIFIED BY '<ggadmin-password>';
 	GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT, SHOW VIEW, CREATE, CREATE VIEW EVENT, INSERT, UPDATE, DROP,EXECUTE, DELETE ON *.* TO 'oggadmin';  </copy>
     ```
 
@@ -260,6 +270,10 @@ If you're working within the same Home region for OCI GoldenGate and MySQL Heatw
 		* max\_wal\_size = 102400
 	* For **PostgreSQL extensions**, select **vector**.
 
+	> **Note:**
+	* To enable logical replication from PostgreSQL for the next lab, which is necessary for capturing changes from PostgreSQL, the wal\_level parameter in your PostgreSQL instance must be set to logical.
+	* (Optional) For use of vectors, under PostgreSQL extensions, select **vector**.
+	
 	![Create configurations](./images/05-13-create-config-1.png " ")
 
 	![Create configurations](./images/05-16-create-config-2.png " ")
