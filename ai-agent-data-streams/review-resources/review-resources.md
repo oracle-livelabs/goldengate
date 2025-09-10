@@ -11,7 +11,7 @@ In this lab, you will review the key resources provisioned for this workshop. Yo
 1. Login to OCI Console 
     - Open the View Login Info and click on Launch OCI to open the OCI Console.
     - Log in using your OCI workshop credentials provided in the View Login Info page. (Username: ADMIN)
-    ![Image alt text](images/view_login_info.png) 
+    ![Image alt text](images/01-01-view-login-info.png) 
     - Verify that you are in the correct compartment for the lab resources.  
 
 2. Review POS Source Data – ATP
@@ -31,23 +31,23 @@ In this lab, you will review the key resources provisioned for this workshop. Yo
 3. Review POS AI Hub – ADW 
     - In the OCI Console, go to **Oracle Database → Autonomous Data Warehouse**.  
     - Open the ADW instance provisioned as the **target AI Hub database**. 
-    ![Image alt text](images/ADW_Landing.png)  
+    ![Image alt text](images/01-03-adw.png)  
     - Verify connectivity and note the database service name for later steps.  
    
 4. Review OCI GoldenGate Deployment
     - In the OCI Console, navigate to **Oracle Database → GoldenGate**.  
     - Select the GoldenGate deployment (GG-AI-Demo) created for this workshop.  
     - Confirm the deployment status is **Active**. 
-    ![Image alt text](images/GGS_Landing.png)  
+    ![Image alt text](images/01-04-ggs.png)  
     - Note the **deployment Console URL** for later use. 
-    ![Image alt text](images/GGS_Console_URL.png)  
+    ![Image alt text](images/01-05-console-url.png)  
 
 5. Test OCI GoldenGate Connections  
     - On the deployment details page, click **Assigned connections**.
-    ![Image alt text](images/GGS_Test_Connection.png)    
+    ![Image alt text](images/01-05-test-connection.png)    
     - In the list of Assigned connections, from the Actions menu for the connection you want to test, select **Test connection**. 
     - Confirm both **ATP (source)** and **ADW (target)** connections return a **successful status**. 
-    ![Image alt text](images/GGS_Test_Success.png) 
+    ![Image alt text](images/01-05-test-success.png) 
     -  If an error message appears, then return to the connection and your settings.
     - Click **Close**.
 
@@ -61,7 +61,7 @@ In this lab, you will review the key resources provisioned for this workshop. Yo
      - **Target (ADW)** – ADW\_AI\_Mirror\_Target\_Connection.  
 
     You can optionally test connectivity using the synced connections within the GoldenGate deployment console as well. Click on the login (first icon) under Actions to test datbaase login into Source ATP and Target ADW from GoldenGate console.
-    ![Image alt text](images/GGS_Login_DB.png) 
+    ![Image alt text](images/01-06-login-db.png) 
 
 ## Outcomes
 By the end of this lab, you will be able to:
@@ -74,4 +74,4 @@ By the end of this lab, you will be able to:
 ## Acknowledgements
 * **Author** - Shrinidhi Kulkarni, GoldenGate Product Manager
 * **Reviewed By**  - Denis Gray,  Vice President, GoldenGate Product Management
-* **Last Updated By/Date** - Shrinidhi Kulkarni, August 2025
+* **Last Updated By/Date** - Jenny Chan, September 2025

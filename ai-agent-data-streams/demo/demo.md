@@ -37,7 +37,7 @@ By completing this lab, you will be able to:
           - Ops Panel – shows agentic AI activity (Data Stream events, LLM prompts, responses).
          
          - Ops Chat – query operational data using natural language. 
-         ![Image alt text](images/GGS_AI_App.png) 
+         ![Image alt text](images/01-01-gen-ai-app.png) 
 
 2. Generate Dynamic AI-Driven FOMO Descriptions
 
@@ -52,7 +52,7 @@ By completing this lab, you will be able to:
           - Locate the data stream for:
               YAN\_POS.DYNAMIC\_PRODUCT\_DESCRIPTION\_OUTBOX
           - Confirm that a new message event appears.
-          ![Image alt text](images/GGS_AI_Search_Product.png)
+          ![Image alt text](images/01-02-ai-search-product.png)
      - Observe the LLM Request
           - Inspect the event details in the outbox.
           - Verify that the original product description is sent to the LLM with a request to rewrite the copy with FOMO language.
@@ -98,7 +98,7 @@ By completing this lab, you will be able to:
              - First non-matching product identified.
              - Prompt generated for the LLM to create a recommendation.
              - LLM response returned to the Customer Text App.
-             ![Image alt text](images/AI_App_Checkout1.png)
+             ![Image alt text](images/01-03a-ai-app-checkout.png)
 
      
       Scenario 2: Without Cart Preview
@@ -118,7 +118,7 @@ By completing this lab, you will be able to:
          - First non-matching product identified.
          - Prompt generated for the LLM to create a recommendation.
          - LLM response returned to the Customer Text App.
-         ![Image alt text](images/AI_App_Checkout.png)
+         ![Image alt text](images/01-03b-ai-app-checkout.png)
 
 4.  GoldenGate Operations via Chat
       Use chat to retrieve real-time GoldenGate statistics.
@@ -132,7 +132,7 @@ By completing this lab, you will be able to:
      - Get the configuration for the data stream named "AiAgentStream". Summarize source trail, target connection, filters, and error policy.
      - Get data stream yaml AiAgentStream
      - Get the YAML for the data stream named "AiAgentStream".
-     ![Image alt text](images/AI_App_GGS.png)
+     ![Image alt text](images/01-04-ai-app-ggs.png)
 
 
 5. Data Operations via Chat
@@ -143,7 +143,7 @@ By completing this lab, you will be able to:
          - "Is there a table with orders?" (RAG add schema metadata to prompt)
          - "Show me the schema for POS_ORDER / ORDERITEM / FULLORDERVIEW."
          - "Does a data product exist for FULLORDERVIEW?"
-     ![Image alt text](images/AI_App_ER.png)
+     ![Image alt text](images/01-05-ai-app-er.png)
 
 ## Outcomes
   By the end of this lab, you will be able to:
@@ -158,4 +158,4 @@ By completing this lab, you will be able to:
 ## Acknowledgements
 * **Author** - Shrinidhi Kulkarni, GoldenGate Product Manager
 * **Reviewed By**  - Denis Gray,  Vice President, GoldenGate Product Management
-* **Last Updated By/Date** - Shrinidhi Kulkarni, August 2025
+* **Last Updated By/Date** - Jenny Chan, September 2025

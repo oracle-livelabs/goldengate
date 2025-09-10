@@ -31,7 +31,7 @@ By the end of this lab, you will be able to:
     - Log in using your GoldenGate administrator credentials displayed in View Login Info. 
        Username: oggadmin
        Password: Same as ADB ADMIN user password 
-    ![Image alt text](images/GG_Login_console.png) 
+    ![Image alt text](images/01-01-ggs-console-login.png) 
 
 2. Enable and Verify Trandata 
        GoldenGate requires supplemental logging (trandata) to capture row-level changes from the ADW database. Follow these steps:
@@ -44,10 +44,10 @@ By the end of this lab, you will be able to:
     - From the Trandata screen:
        Enable trandata for the YAN\_POS schema.
        Click Submit.
-       ![Image alt text](images/GG_Add_trandata_ADW.png) 
+       ![Image alt text](images/01-02a-add-trandata.png) 
        Confirm that the all the table objects are listed and supplemental logging is enabled.
        Ensure all columns are included in logging.
-       ![Image alt text](images/GG_Search_trandata_ADW.png)
+       ![Image alt text](images/01-02b-search-trandata.png)
     
 3. Create Extract for AI Hub ADW 
     - The Extract process captures changes from the ADW database.
@@ -71,7 +71,7 @@ By the end of this lab, you will be able to:
        
         Viewing the Statistics tab for heartbeat and captured operations. 
        
-        ![Image alt text](images/GG_Extract_report.png)
+        ![Image alt text](images/01-03-extract-report.png)
 
 4. Create Data Stream for AI Hub
     - The Data Stream delivers changes from the Extract trail into AI Hub.
@@ -90,11 +90,11 @@ By the end of this lab, you will be able to:
 
           Click Add.
          
-          ![Image alt text](images/GG_DS_Rule.png)
+          ![Image alt text](images/01-04-data-stream-rule.png)
     
     - Click Create Data Stream.
     - Verify the Data Stream is active by checking its status and configuration YAML.
-    ![Image alt text](images/GG_DS_YAML.png)
+    ![Image alt text](images/01-04-data-stream-yaml.png)
 
 
 5. Test Data Capture with an Insert 
@@ -151,4 +151,4 @@ At the end of this lab, you will have:
 ## Acknowledgements
 * **Author** - Shrinidhi Kulkarni, GoldenGate Product Manager
 * **Reviewed By**  - Denis Gray,  Vice President, GoldenGate Product Management
-* **Last Updated By/Date** - Shrinidhi Kulkarni, August 2025
+* **Last Updated By/Date** - Jenny Chan, September 2025

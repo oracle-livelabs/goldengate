@@ -28,15 +28,15 @@ A Oracle Cloud Infrastructure GoldenGate pipeline lets you configure real time d
    * For **Source connection**, select **ATP POS Source Connection** from the dropdown.
    * For **Target connection**, select **ADW AI Mirror Target Connection** from the dropdown.
 
-  ![Create ZeroETL Mirror pipline page](images/01-05-create-pipeline.png " ")
+  ![Create ZeroETL Mirror pipeline page](images/01-05-create-pipeline.png " ")
 
 ## Task 2: Check Source and Target
 
-1. After the pipeline is Active, select the piplien to open the its details page.
+1. After the pipeline is **Active**, select the pipeline to open the its details page.
 
 2. On the details page, locate the Source and Target Connection section.
 
-  ![Image alt text](images/02-02-details-src-tgt.png " ")
+  ![Pipeline details page](images/02-02-details-src-tgt.png " ")
 
 3. Click Test Connection. Both source and target tests should display Success.
 
@@ -169,4 +169,4 @@ By the end of this lab, you will be able to:
 ## Acknowledgements
 * **Author** - Shrinidhi Kulkarni, GoldenGate Product Manager
 * **Reviewed By**  - Denis Gray,  Vice President, GoldenGate Product Management
-* **Last Updated By/Date** - Shrinidhi Kulkarni, August 2025
+* **Last Updated By/Date** - Jenny Chan, September 2025

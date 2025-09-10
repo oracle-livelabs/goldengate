@@ -28,7 +28,7 @@ By completing this lab, you will learn how to:
        Note: Username is ADMIN and Password can be Copied from View Login Info section
      
      
-    ![Image alt text](images/ADW_AI_HUB_SQL.png) 
+    ![Image alt text](images/01-01-adw-ai-hub-sql.png) 
      
 
 2. Create Vector Stores 
@@ -350,4 +350,4 @@ By completing this lab, you will learn how to:
 ## Acknowledgements
 * **Author** - Shrinidhi Kulkarni, GoldenGate Product Manager
 * **Reviewed By**  - Denis Gray,  Vice President, GoldenGate Product Management
-* **Last Updated By/Date** - Shrinidhi Kulkarni, August 2025
+* **Last Updated By/Date** - Jenny Chan, September 2025
