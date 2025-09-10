@@ -1,13 +1,22 @@
-# Lab 1: Create the OCI GoldenGate ZeroETL
+# Create the OCI GoldenGate ZeroETL
 
 ## Introduction
 In this lab, you learn to create an Oracle Cloud Infrastructure (OCI) GoldenGate pipeline.
 
 Estimated time: 20 minutes
 
-**About Oracle Cloud Infrastructure GoldenGate pipelines**
+### About Oracle Cloud Infrastructure GoldenGate pipelines
 
 A Oracle Cloud Infrastructure GoldenGate pipeline lets you configure real time data replication flows that support mission critical use cases such as analytics, operational reporting, and hybrid cloud integrations. You can create a pipeline to stream data directly from operational databases to analytical environments without traditional extract, transform, load (ETL) processes. For example, you can set up a pipeline to directly replicate data from Autonomous Transaction Processing to Autonomous Data Warehouse with minimal configuration.
+
+### Objectives
+
+In this lab, you:
+
+  * Navigate the OCI GoldenGate console and identify the ZeroETL pipeline interface.  
+  * Create, map, and initialize a ZeroETL pipeline between YAN_POS Orders and ADW.  
+  * Monitor replication processes, metrics, and troubleshoot replication lag or errors.  
+  * Confirm that replicated schemas and data are available in the target ADW for downstream use. 
 
 ## Task 1: Create the pipeline
 
@@ -34,88 +43,106 @@ A Oracle Cloud Infrastructure GoldenGate pipeline lets you configure real time d
 
 1. After the pipeline is **Active**, select the pipeline to open the its details page.
 
-2. On the details page, locate the Source and Target Connection section.
+2. On the details page, click **Test connection** for both **Source connection** and **Target connection**.
 
   ![Pipeline details page](images/02-02-details-src-tgt.png " ")
 
-3. Click Test Connection. Both source and target tests should display Success.
+3. The Test connection dialog for both source and target tests should return **Success**.
 
-  ![Image alt text](images/02-03-test-conn.png " ")
+  ![Test connection success dialog message](images/02-03-test-conn.png " ")
 
-  If either fails, check credentials, networking, and endpoint configuration before retrying.
+  If either test fails, check the credentials, networking, and endpoint configuration of the connection before you retry.
 
     > **Note:** The test connection may fail the first time with a timeout error (e.g., “Cause: Failed to connect to adb.me-dubai-1.oraclecloud.com:1522, reason: curl: (28) Resolving timed out after 5000 milliseconds”). This is expected behavior. Running the test a second time typically returns a Success result.
 
-4. Once both connections are tested successfully, navigate to the ATP (source) and ADW (target) by clicking on the respective connection names from the pipeline Details page.
+4. After both connection tests are successful, click the source connection name to view the source connection's details.
 
-5. For each (ATP and ADW), click on Actions → SQL.
+  > **Tip:** Open the source and target database details in a new browser tab because you'll need them later.
 
-6. Run the following SQL command on **both the source (ATP)** and the **target (ADW)** to check the row count for the `POS_ORDER` table:  
+5. On the source connection's details page, from the **Actions** menu, select **SQL**. 
 
-    <pre> SELECT COUNT(*) FROM YAN_POS.POS_ORDER; </pre>
+6. To check the row count for the `POS_ORDER` table, paste the follow command into the SQL worksheet and then click **Run script**.
+
+    ```
+    <copy>SELECT COUNT(*) FROM YAN_POS.POS_ORDER;</copy>
+    ```
+
+7. Repeat **steps 4 to 6** for the target connection.
 
 ## Task 3: Add mapping rules
 
-1. In the Pipelines page, select the pipeline.
+1. Return to the GoldenGate Pipelines page. 
 
-2. Update Mapping Rule:
- 
-   On the **Pipeline Details** page, click on the **Mapping rules** tab.  
-   Locate the default `Include` rule (`*.* → *.*`).  
-   Click the **three dots (⋮)** menu on the right and select **Edit**. 
-   ![Image alt text](images/03-02a-mapping-rules.png " ") 
-   Change the default rule to YAN_POS.*: 
-   ![Image alt text](images/03-02b-yan-pos.png " ") 
+2. Select the **AIW-Pipeline** pipeline.
 
+3. On the AIW-Pipeline details page, click **Mapping rules**. 
 
-3. After saving, the pipeline status will briefly change to **Updating**. Wait a few seconds until it returns to **Active** with the updated mapping rule. Then Click Preview.
-![Image alt text](images/03-03-pipeline-active.png " ") 
+4. For the `Include` rule, select **Edit** from its **Actions** menu.  
 
-4. In the Preview mapping dialog, expand the YAN_POS Orders schema and review the list of related tables that are going to be replicated. Select Cancel to close the dialog. 
+   ![Select edit from Include Actions menu](images/03-02a-mapping-rules.png " ") 
 
+5. In the Edit mapping rule panel, change the default rule to `YAN_POS.*` for both the **Source** and **Target** fields, and then click **Update**.
+
+   ![Edit source and target fields](images/03-02b-yan-pos.png " ") 
+
+6. You return to the AIW-Pipeline Mapping rules page. The pipeline status changes to **Updating**. After the pipeline is **Active** again, click **Preview**.
+
+  ![Updated mapping rules on pipeline details page](images/03-03-pipeline-active.png " ") 
+
+7. In the Preview mapping panel, expand **YAN_POS** Source schema Orders schema and review the list of related tables to replicate. Click **Cancel** to close the dialog. 
+
+  ![Preview mapping](images/03-07-pipeline-preview.png " ") 
 
 ## Task 4: Start the pipeline
 
-1. In the pipelines details page, expand the Actions menu, and then click Start.
-![Image alt text](images/04-01-pipeline-actions.png " ") 
+1. On the pipelines details page, from the pipeline's **Actions** menu, select **Start**.
 
-2. In the Start pipeline dialog, click Start.
-![Image alt text](images/04-02-pipeline-start.png " ") 
+  ![Pipeline Actions menu](images/04-01-pipeline-actions.png " ") 
 
-3. On the pipeline's details page, click Initialization. The Initialization steps displays the current status of the pipeline steps. For each step, you can select View details from its Actions menu and review corresponding messages.
-![Image alt text](images/04-03-initialization.png " ") 
+2. In the Start pipeline dialog, click **Start**.
 
-4. On the pipeline's details page, click Runtime to view the state and latency of the Capture and Apply processes.
-![Image alt text](images/04-04-pipeline-runtime.png " ") 
+  ![Start pipeline dialog](images/04-02-start-pipeline.png " ") 
 
-## Task 5: Review Processes and Metrics Once Started
-1. Once the pipeline is running, open the **Runtime** section.  
-2. Check process state, latency, and Last Updated metrics.
-![Image alt text](images/05-02-pipeline-metrics.png " ") 
-3. Insert sample product rows into the source database, then validate that the changes are replicated to the target database through SQL Developer.    
+3. On the pipeline's details page, click **Initialization**. The Initialization page displays the status of the pipeline steps. For each step, you can select **View details** from its **Actions** menu and review corresponding messages.
 
-   i.   Connect to the Source ATP Database -> SQL Web Developer.
-   ![Image alt text](images/05-03a-sql-dev.png " ") 
+  ![Pipeline initialization page](images/04-03-pipeline-initialization.png " ") 
+
+4. On the pipeline's details page, click **Runtime** to view the state and latency of the Capture and Apply processes.
+
+  ![Pipeline runtime page](images/04-04-pipeline-runtime.png " ")
+
+## Task 5: Verify replication from source to target
+
+Insert sample product rows into the source database, then validate that the changes are replicated to the target database through SQL Developer.    
+
+1.  Return to the **Source ATP database** details page. 
+
+2.  On the database details page, from the **Actions** menu, select **SQL**.
+
+    ![Image alt text](images/05-03a-sql-dev.png " ") 
    
-   ii.  Use ADMIN user credentials from the View login info screen.
+3.  Use the ADMIN user credentials from the **View login info** panel of your workshop instructions to log in.
    
-   iii. Expand the schema YAN_POS and verify that the PRODUCT table exists.
+4.  In the left navigation, expand the schema **YAN_POS** and verify that the PRODUCT table exists.
 
-   Run these on Source and Target to record current row counts before inserting:
-   
-    -- Source ATP
-     <pre> SELECT COUNT(*) AS src_count_before FROM YAN_POS.PRODUCT; </pre>
+5.  Run the following script to record the current row count:
 
-     -- Target ADW
-     <pre> SELECT COUNT(*) AS tgt_count_before FROM YAN_POS.PRODUCT; </pre>
+     ```
+     <copy> SELECT COUNT(*) AS src_count_before FROM YAN_POS.PRODUCT;</copy>
+     ```
 
+6.  Repeat **steps 1 to 4** for the **Target ADW database**.
+
+7.  Run the following script to record the current row count:
+
+     ```
+     <copy> SELECT COUNT(*) AS tgt_count_before FROM YAN_POS.PRODUCT;</copy>
+     ```
   
-      iv.  Run Insert Statements on Source ATP
+8.  In the Source ATP SQL Worksheet, copy and paste the following statements:
 
-    Copy and paste the following SQL statements into a worksheet connected to the Source ATP:
-   
-
-     <pre> 
+    ```
+    <copy> 
     INSERT INTO YAN_POS.PRODUCT (PRODUCT_ID, PRODUCT_NAME, PRODUCT_DESCRIPTION, PRICE, COST, ACTIVE) VALUES
     (2000, '4K Ultra HD Monitor - 27 inch', 'IPS panel with 3840x2160 resolution, HDR10, 144Hz refresh rate, and USB-C connectivity.', 399.99, 245.00, 'Y');
 
@@ -146,25 +173,21 @@ A Oracle Cloud Infrastructure GoldenGate pipeline lets you configure real time d
    INSERT INTO YAN_POS.PRODUCT (PRODUCT_ID, PRODUCT_NAME, PRODUCT_DESCRIPTION, PRICE, COST, ACTIVE) VALUES
    (11000, '27W GaN Fast Charger', 'Compact wall charger with USB-C PD and foldable prongs.', 34.99, 12.60, 'Y');
 
-   -- Commit if your environment is not autocommit
    COMMIT;
-   </pre>
+   </copy>
+   ```
 
-4. Ensure there are no errors in the replication flow.  
-5. Review Source and Target Schemas  
-  a. Connect to both the source and target databases.  
-  b. Verify that the schemas and tables are correctly created and populated.  
+9.  Ensure there are no errors in the replication flow.  How?
+
+10. Review Source and Target Schemas  
+  a. Connect to both the source and target databases.  How? SQL developer?
+  b. Verify that the schemas and tables are correctly created and populated.  In the schema/table menu again?
   c. Ensure data changes in the source are reflected in the target in real time.
-     <pre>
-     SELECT COUNT(*) AS tgt_count_before FROM YAN_POS.PRODUCT; 
-     SELECT * FROM YAN_POS.PRODUCT WHERE PRODUCT_ID BETWEEN 2000 AND 11000; </pre>
 
-## Outcomes
-By the end of this lab, you will be able to:
-* Navigate the OCI GoldenGate console and identify the ZeroETL pipeline interface.  
-* Create, map, and initialize a ZeroETL pipeline between YAN_POS Orders and ADW.  
-* Monitor replication processes, metrics, and troubleshoot replication lag or errors.  
-* Confirm that replicated schemas and data are available in the target ADW for downstream use.  
+    ```
+     <copy>SELECT COUNT(*) AS tgt_count_before FROM YAN_POS.PRODUCT; 
+     SELECT * FROM YAN_POS.PRODUCT WHERE PRODUCT_ID BETWEEN 2000 AND 11000;</copy> 
+    ```
 
 ## Acknowledgements
 * **Author** - Shrinidhi Kulkarni, GoldenGate Product Manager
