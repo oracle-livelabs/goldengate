@@ -63,11 +63,11 @@ In this lab, you:
     ```
     <copy>ps -ef | grep streamlit</copy>
     ```
+
+    The output returns a list of numbers. Copy the first number and then run the following command:
+
     ```
     <copy>kill -9 170787</copy>
-    ```
-    ```
-    <copy>python3 asyncapi_consumer.py</copy>
     ```
 
 You may now **proceed to the next lab**.
@@ -75,4 +75,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** - Mack Bell, Senior Principal Product Manager & Alex Lima, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, August 2025
+* **Last Updated By/Date** - Jenny Chan, September 2025

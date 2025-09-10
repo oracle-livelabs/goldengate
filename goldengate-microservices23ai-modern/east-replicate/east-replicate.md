@@ -61,7 +61,7 @@ There are two primary types of Extracts for the Oracle Database:
 
 As for Replicats, Oracle offers numerous options, each with their own advantages depending on the use case. In this, lab we use a Parallel Replicat for both the Initial Load Replicat and the Change Data Replicat.
 
-1. In the navigation menu, click **Extracts**. On the Extracts page, click **Add Extract** (plus icon). 
+1. Back in the WebUI, in the navigation menu, click **Extracts**. On the Extracts page, click **Add Extract** (plus icon). 
 
     ![Add Extract](./images/02-01-add-extract.png " ")
 
@@ -74,8 +74,7 @@ As for Replicats, Oracle offers numerous options, each with their own advantages
 3. On the Parameter File page, add a new line to the text area and enter the following. Replace `<insert SCN>` with the SCN recorded from Task 1, step 5:
 
     ```
-    <copy>EXTRACT EINIT
-    USERIDALIAS WEST DOMAIN OracleGoldenGate
+    <copy>USERIDALIAS WEST DOMAIN OracleGoldenGate
     EXTFILE ei MEGABYTES 250 PURGE
     TABLEEXCLUDE HR.EMP_DETAILS_VIEW
     TABLE HR.*; SQLPREDICATE "AS OF SCN <insert SCN>"; </copy>
@@ -247,4 +246,4 @@ Create a change data Extract to read new transactions from the West database tha
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** - Mack Bell, Senior Principal Product Manager & Alex Lima, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, August 2025
+* **Last Updated By/Date** - Jenny Chan, September 2025

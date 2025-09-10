@@ -17,7 +17,7 @@ A Oracle Cloud Infrastructure GoldenGate pipeline lets you configure real time d
 
 3. On the Data fabric pipelines page, for **Applied filters**, select the correct compartment in which to create the pipeline.
 
-	![GoldenGate Data fabric pipelines page](images/ZeroETL_Pipeline_1.png " ")
+	![GoldenGate Data fabric pipelines page](images/01-03-pipelines-page.png " ")
 
 4. Click **Create pipeline**. The Create ZeroETL Mirror pipeline page appears. 
 
@@ -28,7 +28,7 @@ A Oracle Cloud Infrastructure GoldenGate pipeline lets you configure real time d
    * For **Source connection**, select **ATP POS Source Connection** from the dropdown.
    * For **Target connection**, select **ADW AI Mirror Target Connection** from the dropdown.
 
-  ![Create ZeroETL Mirror pipline page](images/ZeroETL_Pipeline_2.png " ")
+  ![Create ZeroETL Mirror pipline page](images/01-05-create-pipeline.png " ")
 
 ## Task 2: Check Source and Target
 
@@ -36,11 +36,11 @@ A Oracle Cloud Infrastructure GoldenGate pipeline lets you configure real time d
 
 2. On the details page, locate the Source and Target Connection section.
 
-  ![Image alt text](images/ZeroETL_Pipeline_3.png)
+  ![Image alt text](images/02-02-details-src-tgt.png " ")
 
 3. Click Test Connection. Both source and target tests should display Success.
 
-  ![Image alt text](images/ZeroETL_Pipeline_4.png)
+  ![Image alt text](images/02-03-test-conn.png " ")
 
   If either fails, check credentials, networking, and endpoint configuration before retrying.
 
@@ -63,13 +63,13 @@ A Oracle Cloud Infrastructure GoldenGate pipeline lets you configure real time d
    On the **Pipeline Details** page, click on the **Mapping rules** tab.  
    Locate the default `Include` rule (`*.* → *.*`).  
    Click the **three dots (⋮)** menu on the right and select **Edit**. 
-   ![Image alt text](images/ZeroETL_Pipeline_5.png) 
+   ![Image alt text](images/03-02a-mapping-rules.png " ") 
    Change the default rule to YAN_POS.*: 
-   ![Image alt text](images/ZeroETL_Pipeline_6.png) 
+   ![Image alt text](images/03-02b-yan-pos.png " ") 
 
 
 3. After saving, the pipeline status will briefly change to **Updating**. Wait a few seconds until it returns to **Active** with the updated mapping rule. Then Click Preview.
-![Image alt text](images/ZeroETL_Pipeline_7.png) 
+![Image alt text](images/03-03-pipeline-active.png " ") 
 
 4. In the Preview mapping dialog, expand the YAN_POS Orders schema and review the list of related tables that are going to be replicated. Select Cancel to close the dialog. 
 
@@ -77,25 +77,25 @@ A Oracle Cloud Infrastructure GoldenGate pipeline lets you configure real time d
 ## Task 4: Start the pipeline
 
 1. In the pipelines details page, expand the Actions menu, and then click Start.
-![Image alt text](images/ZeroETL_Pipeline_9.png) 
+![Image alt text](images/04-01-pipeline-actions.png " ") 
 
 2. In the Start pipeline dialog, click Start.
-![Image alt text](images/ZeroETL_Pipeline_10.png) 
+![Image alt text](images/04-02-pipeline-start.png " ") 
 
 3. On the pipeline's details page, click Initialization. The Initialization steps displays the current status of the pipeline steps. For each step, you can select View details from its Actions menu and review corresponding messages.
-![Image alt text](images/ZeroETL_Pipeline_11.png) 
+![Image alt text](images/04-03-initialization.png " ") 
 
 4. On the pipeline's details page, click Runtime to view the state and latency of the Capture and Apply processes.
-![Image alt text](images/ZeroETL_Pipeline_12.png) 
+![Image alt text](images/04-04-pipeline-runtime.png " ") 
 
-## Task 5:Review Processes and Metrics Once Started
+## Task 5: Review Processes and Metrics Once Started
 1. Once the pipeline is running, open the **Runtime** section.  
 2. Check process state, latency, and Last Updated metrics.
-![Image alt text](images/ZeroETL_Pipeline_Runtime.png) 
+![Image alt text](images/05-02-pipeline-metrics.png " ") 
 3. Insert sample product rows into the source database, then validate that the changes are replicated to the target database through SQL Developer.    
 
    i.   Connect to the Source ATP Database -> SQL Web Developer.
-   ![Image alt text](images/ZeroETL_Pipeline_13.png) 
+   ![Image alt text](images/05-03a-sql-dev.png " ") 
    
    ii.  Use ADMIN user credentials from the View login info screen.
    
