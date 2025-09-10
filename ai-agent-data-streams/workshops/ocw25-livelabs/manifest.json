@@ -24,23 +24,23 @@
     },
     {
       "title": "Lab 2: Review OCI GoldenGate resources",
-      "filename": "../../review-resources/lab2.md"
+      "filename": "../../review-resources/review-resources.md"
     },
     {
       "title": "Lab 3: Create the AI Hub Database Resources",
-      "filename": "../../create-aihub/lab3.md"
+      "filename": "../../create-aihub/create-aihub.md"
     },
     {
       "title": "Lab 4: Create the GoldenGate Extract and Data Stream processes",
-      "filename": "../../extract-datastream/lab4.md"
+      "filename": "../../extract-datastream/extract-datastream.md"
     },
     {
       "title": "Lab 5: Review OCI Gen AI Service – Chat Playground",
-      "filename": "../../review-gen-ai/lab5.md"
+      "filename": "../../review-gen-ai/review-gen-ai.md"
     },
     {
       "title": "Lab 6: Demo: End to End Real-time Powered AI Point of Sale and AI enabled Ops Chat",
-      "filename": "../../demo/lab6.md"
+      "filename": "../../demo/demo.md"
     }  
         
     ]

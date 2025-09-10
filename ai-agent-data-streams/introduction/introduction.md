@@ -4,6 +4,8 @@ In this session, you learn how to combine **real-time data replication**, **mode
 
 Using the **YAN_POS Orders** dataset as our case study, you experience how transactional data from a point-of-sale (POS) system can be replicated in real time, transformed into Orace Database JSON Duality Views, and queried through a conversational AI agent that can answer both **business** and **operational** questions.
 
+**Estimated time:** 90 minutes
+
 **Workshop Architecture**
     ![Architecture](./images/architecture.png " ")
 
