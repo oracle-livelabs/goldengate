@@ -27,4 +27,4 @@ Oracle GoldenGate Free provides all features of the licensed GoldenGate product 
 
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** -  Alex Lima, Database Product Management & Jenny Chan, Consulting User Assistance Developer, Database User Assistance 
-* **Last Updated By/Date** - Katherine Wardhana, September 2023
+* **Last Updated By/Date** - Jenny Chan, September 2025
