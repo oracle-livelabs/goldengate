@@ -179,7 +179,7 @@ Create a change data Extract to read new transactions from the West database tha
 
     ![Parameter File page](./images/04-06-param-file.png " ")
 
-7. On the Extracts page, for the **EWEST** Extract process, click **More actions** (ellipsis icon), and then select **Start with Options**.
+7. On the Extracts page, for the **EWEST** Extract process, click **Actions for EWEST** (ellipsis icon), and then select **Start with Options**.
 
     ![Start with Options](./images/04-07-start-opts.png " ")
 
