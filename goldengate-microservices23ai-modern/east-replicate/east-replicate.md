@@ -242,6 +242,8 @@ Create a change data Extract to read new transactions from the West database tha
 
     ![Replicat Statistics](./images/05-07-rep-statistics.png " ")
 
+You may no proceed to the next lab. 
+
 ## Learn more
 
 * [Before Adding Extract and Replicat Processes](https://docs.oracle.com/en/middleware/goldengate/core/23/coredoc/configure-ogg-adding-extract-and-replicat.html#GUID-C1044A4D-945E-4080-B79C-74FA9D004143)

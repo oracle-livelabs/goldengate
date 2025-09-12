@@ -20,11 +20,13 @@ At this stage in the workshop, you used the Oracle GoldenGate WebUI to create pr
 
 1. Select **Activities** from the upper left of the console and then select **Terminal** from the Applications bar.
 
-2. When you open the Terminal, a preset terminal is presented which has four options to choose. Enter option `2`.
+2. In the Terminal, enter `menu` to view the menu options. 
 
     ![Menu options on Terminal](./images/01-02-menu-terminal.png " ")
 
-3. The following `curl` commands provide status information, process lag, table statistics, and other relevant data. Enter each command into the terminal one by one:
+3. When prompted, enter option `2` for the the Oracle GoldenGate 23.7 environment.
+
+4. The following `curl` commands provide status information, process lag, table statistics, and other relevant data. Enter each command into the terminal one by one:
 
     * Service Status: The “status” field of the output shows the current status of the services.
     ```
