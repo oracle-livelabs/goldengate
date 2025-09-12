@@ -3,9 +3,9 @@
 ## Introduction
 The livelab environment set up includes the following:
 
-* A single database (free edition) with 2 PDBs.
+* A single database (free edition) with 3 PDBs.
 * One Oracle GoldenGate installation setup.
-* The Service Manager manages two deployments: North and South.
+* The Service Manager manages  deployments: North and South.
 * All services, including database, database listener, and Oracle GoldenGate instances, which start when you start the LiveLab environment and run the given scripts.
 * Scripts to set up complete data replication using cURL commands.
 * Scripts to set up complete data replication using OBEY commands.
@@ -18,11 +18,7 @@ The livelab environment set up includes the following:
 
 ### Lab Configuration
 
-This lab environment consists of 1 container database instance and two pluggable database instances. 
-
-The following diagram shows a standard unidirectional replication in Oracle GoldenGate. In the standard Oracle GoldenGate configuration, an Extract sends captured data using the Distribution Service over TCP/IP to a trail on the target system, where it is received by the Receiver Service and stored until processed by the Replicat.
-
-  ![MA Components and Replication Process](./images/data_replication.png " ")
+This lab environment consists of 1 container database instance and three pluggable database instances. 
 
 The following table provides a snapshot of the available environment:
 
@@ -30,23 +26,27 @@ The following table provides a snapshot of the available environment:
  -----------| ------- | -------------
 | Server Names      | NORTH | north.livelabs.oraclevcn.com
 |                   | SOUTH | south.livelabs.oraclevcn.com
-| Database Type     | Oracle Database 23.5 Free Edition | Contains 1 CDB and 2 PDBs
+|                   | WEST  | west.livelabs.oraclevcn.com
+| Database Type | Oracle Database 23.5 Free Edition | Contains 1 CDB and 3 PDBs
+|                   | WEST  | west.livelabs.oraclevcn.com
+| Database Type | Oracle Database 23.5 Free Edition | Contains 1 CDB and 3 PDBs
 | CDB Name   | FREE | CDB login details: 
 |            |      |    Username/Password: sys/oracle4GG
 | PDB Name   | DBNORTH | PDB login details: 
 |            |      |   Username/Password: sys/oracle4GG
-|PDB Name    | DBSOUTH | Login Details:  
-|            |       |   Username/Password: sys/oracle4GG
-Database Connections| | For DBNORTH: Username/Password: ggadmin@dbnorth/ggadmin 
-|                   | | For DBSOUTH Username/Password: ggadmin@dbsouth/ggadmin
+| PDB Name   | DBSOUTH | Login Details:  
+|            |        |   Username/Password: sys/oracle4GG
+| PDB Name   | DBWEST | Login Details: Username/Password: sys/oracle4GG
+Database Connections| For DBNORTH | Username/Password: ggadmin@dbnorth/ggadmin 
+|                   | For DBSOUTH | Username/Password: ggadmin@dbsouth/ggadmin
+|                   | For DBWEST  | Username/Password: ggadmin@dbwest/ggadmin
 |Oracle GoldenGate | Service Manager | Port: 9000 
-| ||Login Credentials:
 | | | Username/Password: ggma/GGma_23ai
-|Oracle GoldenGate | Deployment Name: depl_north | Port: 9000 to 9004 <br> </br> Login details: ggma/GGma_23ai 
-| | Deployment Name: depl_south | Port: : 9100 to 9104 <br> </br> Login details: ggma/GGma_23ai
-|
+|Oracle GoldenGate | Deployment Name: depl_north | Port: 9000 to 9004 <br> </br> Username/Password: ggma/GGma_23ai 
+| | Deployment Name: depl_south | Port: : 9100 to 9104 <br> </br> Username/Password: ggma/GGma_23ai
+| | Deployment Name: depl_west | Port: 9201 to 9204 <br></br> Username/Password: ggma/GGma_23ai
 
-To set up unidirectional replication, the CDB contains DBNORTH (source) and DBSOUTH (target) pluggable databases.  
+
 
 ### Prerequisites
 This lab contains the following tasks:
@@ -61,7 +61,8 @@ This lab contains the following tasks:
     
        ```
        <copy>
-       source /usr/local/bin/.set-env-db.sh
+        source /usr/local/bin/.set-env-db.sh
+        source /usr/local/bin/.set-env-db.sh
        </copy>
 
        ```
@@ -108,6 +109,75 @@ In this lab, you will be able to view the directories mentioned in this table:
 
 You may now **proceed to the next lab** to run cURL scripts to set up data replication and test for standard reporting.
 
+## Task 3: Prevent the Database Password from Expiring
+
+You may witness the error "ORA-65162: Password of the common database user has expired", while accessing the PDBs for various tasks during the labs. To avoid the password from expiring, perform the following steps to increase the validity of the password:
+
+1. From the terminal, load the environment variables using the command: 
+   
+   <copy>
+     
+     source /usr/local/bin/.set-env-db.sh
+
+   </copy>
+
+2. From the command prompt, log in to SQL Server:
+   
+   ```
+    <copy>
+
+      sqlplus / as sysdba
+   
+    </copy>
+   
+   ```
+
+2. On the SQL prompt, run the following commands to set the password validity for the PDBs:
+   
+   `DBNORTH`
+
+   ```
+    <copy>
+      
+      alter session set container = DBNORTH;
+      create profile ggprofile limit password_life_time unlimited;
+      alter user ggadmin profile ggprofile;
+      
+      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
+    
+    </copy>
+         
+   ```
+
+   `DBSOUTH`
+
+   ```
+    <copy>
+      
+      alter session set container = DBSOUTH;
+      create profile ggprofile limit password_life_time unlimitedd;
+      alter user ggadmin profile ggprofile;
+      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
+    
+    </copy>
+    
+   ```
+   
+   `DBWEST`
+   
+   ```
+    <copy>
+      
+      alter session set container = DBWEST;
+      create profile ggprofile limit password_life_time unlimitedd;
+      alter user ggadmin profile ggprofile;
+      
+      select username, expiry_date from DBA_USERS where username = 'GGADMIN';
+    
+    </copy>
+    
+   ```
+
 ## Learn More
 
 * [Oracle GoldenGate Microservices REST APIs](https://docs.oracle.com/en/middleware/goldengate/core/23/oggra/)
@@ -116,4 +186,5 @@ You may now **proceed to the next lab** to run cURL scripts to set up data repli
 ## Acknowledgements
 * **Author** - Preeti Shukla
 * **Contributors** - Preeti Shukla, Volker Kuhr
-* **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, November 2024
+* **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, June 2025
+* **Last Updated By/Date** - Preeti Shukla, Oracle GoldenGate, Principal UAD, June 2025

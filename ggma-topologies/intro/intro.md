@@ -5,8 +5,10 @@ The labs in this workshop are designed to test the standard reporting feature av
 
 The scripts allow you to use two approaches for configuring Oracle GoldenGate data replication and generate standard business reports:
 
-•	Using cURL
-•	Using OBEY Commands from the Admin Client
+*	Using REST API cURL scripts
+
+*	Using Admin Client with OBEY Commands
+
 
 Estimated Workshop Time: 2 hour
 
@@ -20,17 +22,15 @@ There are many different topologies in real world scenarios and various combinat
 
 ### Objectives
 
-In this workshop, you will:
+In this workshop, you will use automation scripts to set up different topologies with cURL commands and OBEY scripts, for the following use cases:
   
-  * Run cURL commands using an automation script to set up unidirectional data replication.
-  * Access the Standard Business Reports based on preloaded data.
-  * Delete the data replication environment using cURL commands in another automation script.
-  * Run the OBEY commands using an automation script to set up unidirectional data replication.
-  * Access View the Standard Business Reports
-  * Delete the data replication environment using OBEY commands in another automation script
+  * Generate and view standard reports in a unidirectional replication environment.
+  * Configure bidirectional replication and check for replicated transactions between different PDBs.
+  * Configure a cascading replication topology across three PDBs.
   
 
 ### Prerequisites
+
 The following are required to complete this lab:
 
 * Prior knowledge of using cURL commands 
@@ -52,4 +52,4 @@ Use these links to get more information about Oracle GoldenGate 23ai:
 ## Acknowledgements
 * **Author** - Preeti Shukla, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** - Volker Kuhr
-* **Last Updated By/Date** - Preeti Shukla, October 2024
+* **Last Updated By/Date** - Preeti Shukla, October 2025

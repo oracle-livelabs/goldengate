@@ -196,4 +196,4 @@ In order to complete this lab, you should have completed the preceding lab and h
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer 
 * **Contributors** -  Alex Lima, Database Product Management & Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Last Updated By/Date** - Katherine Wardhana, September 2023
+* **Last Updated By/Date** - Jenny Chan, September 2025

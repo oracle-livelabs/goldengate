@@ -8,7 +8,7 @@
 
     ![Autonomous in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/00-01-database-auto-db.png " ")
 
-2. You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment.
+2. You may need to select a compartment. From the Compartment dropdown, select the compartment.
 
     ![Select the correct compartment](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/00-02-select-compartment.png " ")
 
