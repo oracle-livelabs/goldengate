@@ -44,7 +44,7 @@ In this lab, you:
 
 ## Task 2: Create the Subscriber
 
-1. Open the Terminal and enter option `2`.
+1. Open the Terminal.
 
     ![Terminal](./images/02-01-terminal-home-enviro.png " ")
 

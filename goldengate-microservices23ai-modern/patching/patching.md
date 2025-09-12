@@ -41,7 +41,7 @@ For this lab, a complete patched version of Oracle GoldenGate 23.8 has been inst
 
 2. Expand the **Deployments** navigation menu, and select the **HUB_23ai** deployment.  
 
-3. On the Deployment Detail page, select **Alter Deployment** (pencil icon).
+3. On the Deployment **Details** page, select **Alter Deployment** (pencil icon).
 
     ![Alter Deployment](./images/03-03-deployment-details.png " ")
 
@@ -51,7 +51,7 @@ For this lab, a complete patched version of Oracle GoldenGate 23.8 has been inst
 
 5. Expand the **Deployments** navigation menu again, and select the **ServiceManager** deployment.
 
-6. On the Deployment Detail page, select **Alter Deployment** (pencil icon).  
+6. On the Deployment **Details** page, select **Alter Deployment** (pencil icon).  
 
     ![Edit ServiceManager Deployment Detail](./images/03-06-sm-deployment-detail.png " ")
 
@@ -83,7 +83,7 @@ For this lab, a complete patched version of Oracle GoldenGate 23.8 has been inst
 
     ![Open Administration Service](./images/03-14-admin-service.png " ")
 
-15. If prompted, log in as oggadmin and copy from the password_file.txt.
+15. If prompted, log in as oggadmin and provide the password from password_file.txt.
 
 16. Once connected, restart the **EWEST** Extract and the **REAST** Replicat.  
 
@@ -96,4 +96,4 @@ The GoldenGate Service Manager and HUB_23ai deployment were both successfully pa
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** - Mack Bell, Senior Principal Product Manager & Alex Lima, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, August 2025
+* **Last Updated By/Date** - Jenny Chan, September 2025
