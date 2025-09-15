@@ -80,12 +80,17 @@ As for Replicats, Oracle offers numerous options, each with their own advantages
     TABLE HR.*; SQLPREDICATE "AS OF SCN <insert SCN>"; </copy>
     ```
 
-4. Click **Create and Run**. You return to the Extracts page, where you can find your newly created UAEXT Extract after a few moments.
+4. Click **Create and Run**. You return to the Extracts page, where you can find your newly created EINIT Extract after a few moments.
 
     ![Parameter file page](./images/02-04a-param-file.png " ")
 
-    The status updates to Running.
-    ![Running extract](./images/02-04b-running-ext.png " ")
+    The ENIT Extract will run and then stop.
+
+5. In the left navigation, expand the EINIT Extract, and then select **Report**. Review the report output to confirm the Inital Load completed successfully. 
+
+    ![Extract report - Initial Load running](./images/02-05a-einit-report.png " ")
+
+    ![Extract report - Runtime statistics](./images/02-05b-einit-report.png " ")
 
 ## Task 3: Create an Initial Load Replicat for the East database
 This task creates a Parallel Replicat that delivers the Initial Load records from the **EINIT** Extract, to the East database.
@@ -133,13 +138,15 @@ This task creates a Parallel Replicat that delivers the Initial Load records fro
 
     ![RINIT Extract stopped](./images/03-07-stopped-ext.png " ")
 
-8. In the navigation menu, click **Replicats**, expand the **RINIT** Replicat, and select **Checkpoint**. 
+8. In the navigation menu, click **Replicats**, expand the **RNIT** Replicat, and select **Checkpoint**. 
 
     Note the value of the Offset in the row **Current**, and then click **Refresh**. When the **Offset** value  remains unchanged after several refreshes, this indicates that the Replicat has finished processing all rows from the trail and the initial load process is complete.
 
     ![Replicat Checkpoint](./images/03-08-rep-checkpoint.png " ")
 
-9. Return to the **Replicats** page, and **Stop** the **RINIT** Replicat.
+9. In the navigation menu, under **RNIT**, select **Statistics**. The number of inserts should match the EINIT Extract report output.
+
+10. Return to the **Replicats** page, and **Stop** the **RNIT** Replicat.
 
     ![Stop Replicat](./images/03-09-pause-rep.png " ")
 
@@ -234,6 +241,8 @@ Create a change data Extract to read new transactions from the West database tha
 7. In the navigation menu, click **Replicats**, expand the **REAST Replicat**, and select **Statistics**. As you click **Refresh**, you can observe the record counts updating as new data is being replicated from the West to East database.
 
     ![Replicat Statistics](./images/05-07-rep-statistics.png " ")
+
+You may no proceed to the next lab. 
 
 ## Learn more
 
