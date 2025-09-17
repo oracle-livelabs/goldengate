@@ -84,7 +84,7 @@ As for Replicats, Oracle offers numerous options, each with their own advantages
 
     ![Parameter file page](./images/02-04a-param-file.png " ")
 
-    The ENIT Extract will run and then stop.
+    The EINIT Extract will run and then stop.
 
 5. In the left navigation, expand the EINIT Extract, and then select **Report**. Review the report output to confirm the Inital Load completed successfully. 
 
@@ -242,7 +242,7 @@ Create a change data Extract to read new transactions from the West database tha
 
     ![Replicat Statistics](./images/05-07-rep-statistics.png " ")
 
-You may no proceed to the next lab. 
+You may now **proceed to the next lab**. 
 
 ## Learn more
 
