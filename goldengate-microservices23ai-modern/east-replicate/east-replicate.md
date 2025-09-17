@@ -138,7 +138,7 @@ This task creates a Parallel Replicat that delivers the Initial Load records fro
 
     ![RINIT Extract stopped](./images/03-07-stopped-ext.png " ")
 
-8. In the navigation menu, click **Replicats**, expand the **RNIT** Replicat, and select **Checkpoint**. 
+8. In the navigation menu, click **Replicats**, expand the **RINIT** Replicat, and select **Checkpoint**. 
 
     Note the value of the Offset in the row **Current**, and then click **Refresh**. When the **Offset** value  remains unchanged after several refreshes, this indicates that the Replicat has finished processing all rows from the trail and the initial load process is complete.
 
@@ -146,7 +146,7 @@ This task creates a Parallel Replicat that delivers the Initial Load records fro
 
 9. In the navigation menu, under **RNIT**, select **Statistics**. The number of inserts should match the EINIT Extract report output.
 
-10. Return to the **Replicats** page, and **Stop** the **RNIT** Replicat.
+10. Return to the **Replicats** page, and **Stop** the **RINIT** Replicat.
 
     ![Stop Replicat](./images/03-09-pause-rep.png " ")
 
