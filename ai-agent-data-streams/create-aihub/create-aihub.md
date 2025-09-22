@@ -5,35 +5,35 @@
 ## Introduction
 In this lab, you will work within the **AI Hub Autonomous Data Warehouse (ADW)** to set up the foundational resources needed for AI-driven data exploration. You’ll create vector stores for embedding-based semantic search, load the YAN_POS Orders dataset, and design a JSON Duality View. These steps will enable both relational and JSON-style access, preparing the data for natural language and AI-powered queries.
 
-Learning Objectives :
+### Objectives:
 
-By completing this lab, you will learn how to:
+In this lab, you:
 
 * Access and use SQL Web Developer in AI Hub ADW.
-
 * Create vector stores to support AI-driven semantic search.
-
 * Initialize and validate the YAN_POS Orders dataset.
-
 * Build a JSON Duality View to expose data for both relational and JSON-native access.  
 
-## Tasks
+### Prerequisites
 
-1. Open SQL Web Developer in AI Hub (ADW)
-    - In the OCI Console, navigate to Oracle Database → Autonomous Data Warehouse.
-    - Select the ADW instance provisioned as your AI Hub.
-    - Launch Database Actions and open SQL Web Developer.
-    - Log in using the provided workshop database credentials.
+Ensure that you've successfully completed all preceding labs.
+
+## Task 1: Create vector stores in AI Hub (ADW)
+
+1.  In the Oracle Cloud console navigation menu, select **Oracle Database**, then **Autonomous Data Warehouse**.
+
+2.  On the Autonomous Data Warehouse page, select the ADW instance provisioned as your AI Hub.
+
+3.  On your database details page, from the **Actions** menu, select **SQL**.
+
+4.  Log in using the provided workshop database credentials.
      
-       Note: Username is ADMIN and Password can be Copied from View Login Info section
-     
+       Note: Username is ADMIN and Password can be Copied from the Reservation Information panel.
      
     ![Image alt text](images/01-01-adw-ai-hub-sql.png) 
      
-
-2. Create Vector Stores 
-    - In SQL Web Developer, create a new table to store vector embeddings
-    - These embeddings will power semantic search across orders and items.
+5.  In the SQL worksheet, create a new table to store vector embeddings. These embeddings power semantic search across orders and items.
+    
     - Example SQL (adjust table name/columns if needed):
     
       ```sql
@@ -158,10 +158,11 @@ By completing this lab, you will learn how to:
           TABLESPACE "DATA" ;</copy>
 
      ```
-     - This vector store will later be populated with embeddings generated from order and item descriptions.  
+     This vector store will later be populated with embeddings generated from order and item descriptions.  
 
-3. Initialize Data
-     - Load the YAN_POS Orders Dataset.
+## Task 2: Initialize Data
+
+1.  Load the YAN_POS Orders Dataset.
      - Initialize the YAN_POS Orders dataset in your ADW instance.
      - Verify that the data has been correctly loaded and is available for queries.
 
@@ -281,8 +282,8 @@ By completing this lab, you will learn how to:
      ```
      *(Function call will vary depending on integration with OCI Generative AI service.)*  
 
-4. **Create JSON Duality View** 
-     - Build a JSON Duality View over the `ORDER` and `ORDERITEMS` tables.
+## Task 3: Create JSON Duality View
+1.  Build a JSON Duality View over the `ORDER` and `ORDERITEMS` tables.
      - This will simplify AI-driven queries and allow access in both relational and JSON formats. 
      - Run this SQL on both Source ATP and ADW to create the view after reviewing:  
      ```sql
@@ -339,12 +340,7 @@ By completing this lab, you will learn how to:
      <copy>SELECT * FROM YAN_POS.FULLORDERVIEW FETCH FIRST 5 ROWS ONLY;</copy>
      ```  
 
-## Outcomes
-  After completing this lab, you will be able to:
-   - Navigate and manage AI Hub ADW using SQL Web Developer.
-   - Create and populate vector stores for semantic search.
-   - Validate and work with the YAN_POS Orders dataset.
-   - Query data through a JSON Duality View to enable flexible, AI-powered access.
+You may now **proceed to the next lab**.
 
 
 ## Acknowledgements
