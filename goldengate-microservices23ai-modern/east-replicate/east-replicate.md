@@ -102,7 +102,7 @@ This task creates a Parallel Replicat that delivers the Initial Load records fro
 2. The Add Replicat panel consists of four pages. On the Replicat Information page, complete the following fields, and then click **Next**:
     * For Replicat Type, select **Parallel Replicat**.
     * For Parallel Replicat Type, select **Nonintegrated**.
-    * For Process Name, enter **RNIT**, and optionally add a description.
+    * For Process Name, enter **RINIT**, and optionally add a description.
 
     ![Replicat Information](./images/03-02-add-replicat.png " ")
 
@@ -144,7 +144,7 @@ This task creates a Parallel Replicat that delivers the Initial Load records fro
 
     ![Replicat Checkpoint](./images/03-08-rep-checkpoint.png " ")
 
-9. In the navigation menu, under **RNIT**, select **Statistics**. The number of inserts should match the EINIT Extract report output.
+9. In the navigation menu, under **RINIT**, select **Statistics**. The number of inserts should match the EINIT Extract report output.
 
 10. Return to the **Replicats** page, and **Stop** the **RINIT** Replicat.
 
