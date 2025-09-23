@@ -38,7 +38,7 @@ In this lab, you:
 
 5. In the Create ZeroETL Mirror pipeline page, complete the fields as follows, and then click **Create pipeline**.
 
-   * For **Name**, enter AIW-Pipeline and optionally, a description.
+   * For **Name**, enter `AIW-Pipeline` and optionally, a description.
    * For **Choose a license type**, select **Licenses included**.
    * For **Source connection**, select **ATP POS Source Connection** from the dropdown.
    * For **Target connection**, select **ADW AI Mirror Target Connection** from the dropdown.
@@ -63,19 +63,19 @@ You're brought to the AIW-Pipeline details page, where the pipeline's status is 
 
 3. After both connection tests are successful, click the source connection name to view the source connection's details.
 
-  ![Select source connection name](./images/02-03-source-conn-details.png " ")
+   ![Select source connection name](./images/02-03-source-conn-details.png " ")
+
+    > **Tip:** Open the source and target database details in a new browser tab or window because you'll need them later.
 
 4. On the **ATP POS Source Connection** details page, under **Connection information**, click the **Database** name.
 
-  > **Tip:** Open the source and target database details in a new browser tab or window because you'll need them later.
+   ![Open ADB details](./images/02-04-adb-details.png " ")
 
-  ![Open ADB details](./images/02-04-adb-details.png " ")
+5. On the source ATP database details page, from the **Database actions** menu, select **SQL**. 
 
-5. On the source connection's details page, from the **Database actions** menu, select **SQL**. 
+   ![Select SQL from DB Actions menu](./images/02-05-db-actions-sql.png " ")
 
-  ![Select SQL from DB Actions menu](./images/02-05-db-actions-sql.png " ")
-
-6. In the SQL Worksheet, enter the following command to check the row count for the `POS_ORDER` table, and then click **Run statement**.
+6. In the SQL Worksheet, enter the following command to check the row count for the `POS_ORDER` table, and then click **Run script**.
 
     ```
     <copy>SELECT COUNT(*) FROM YAN_POS.POS_ORDER;</copy>
@@ -95,7 +95,7 @@ You're brought to the AIW-Pipeline details page, where the pipeline's status is 
 
    ![Click Mapping Rules](./images/03-02-mapping-rules.png " ")
 
-3. On the Mapping rules page, for the `Include` rule, select **Edit** from its **Actions** menu.  
+3. On the Mapping rules page, for the **Include** rule, select **Edit** from its **Actions** menu.  
 
    ![Select edit from Include Actions menu](images/03-03-edit-include.png " ") 
 
@@ -139,7 +139,7 @@ Insert sample product rows into the source database, then validate that the chan
 
    ![ATP SQL Schemas](./images/05-04-check-schema.png " ")
 
-3.  In the SQL Worksheet, paste the following script to record the current row count, and then click **Run statement**:
+3.  In the SQL Worksheet, paste the following script to record the current row count, and then click **Run script**:
 
      ```
      <copy> SELECT COUNT(*) AS src_count_before FROM YAN_POS.PRODUCT;</copy>
@@ -147,7 +147,7 @@ Insert sample product rows into the source database, then validate that the chan
 
      The row count returned should be 109.
 
-4.  In the Target ADW SQL tool, paste the following script to record the current row count, and then click **Run statement**:
+4.  In the Target ADW SQL tool, paste the following script to record the current row count, and then click **Run script**:
 
      ```
      <copy> SELECT COUNT(*) AS tgt_count_before FROM YAN_POS.PRODUCT;</copy>
@@ -197,8 +197,8 @@ Insert sample product rows into the source database, then validate that the chan
 
 7. Review Source and Target Schemas  
 
-  * Connect to both the source and target databases.  How? SQL developer?
-  * Verify that the schemas and tables are correctly created and populated.  In the schema/table menu again?
+  * Connect to both the source and target databases.
+  * Verify that the schemas and tables are correctly created and populated.
   * Ensure data changes in the source are reflected in the target in real time.
 
     ```
