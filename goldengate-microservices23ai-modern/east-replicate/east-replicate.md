@@ -27,23 +27,17 @@ Use `sqlplus` to connect to the West database and retrieve the current database 
 
     ![Open terminal](./images/01-01-open-terminal.png " ")
 
-2. In the Terminal, enter the following command to view the menu options:
-
-    ```
-    <copy>menu</copy>
-    ```
-
-3. When prompted, enter `1` to access the Oracle DB 19c Home Environment.
+2. When prompted, enter `2` to access the Oracle GoldenGate 23.7 environment.
 
     ![Access Oracle DB 19c Home Environment](./images/01-03-oracle-db-19c.png " ")
 
-4. Enter the following command to interact with the Oracle Database:
+3. Enter the following command to interact with the Oracle Database:
 
     ```
     <copy>sqlplus "ggadmin/Welcome##123@localhost:1521/west" @get_current_scn.sql</copy>
     ```
 
-5. Record the value of the **current database SCN**, as it will be required for upcoming tasks.
+4. Record the value of the **current database SCN**, as it will be required for upcoming tasks.
 
     ![Terminal interact with Oracle Database](./images/01-04-oracle-db.png " ")
 
