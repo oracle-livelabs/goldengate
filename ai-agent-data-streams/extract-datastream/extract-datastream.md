@@ -6,6 +6,7 @@
 In this lab, you will configure OCI GoldenGate depoloyment to capture transactional changes from the POS ADW database and stream them into the AI Hub environment. This setup enables a live data feed, ensuring that AI-driven queries work on real-time data.
 
 ### Objectives
+
 In this lab, you:
 
  - Add trandata for source tables in ADW.
@@ -16,83 +17,98 @@ In this lab, you:
 
 ## Task 1: Add trandata for source tables in ADW
 
-1. Open the GoldenGate Deployment Console
-    - In the OCI Console, navigate to:
-    ☰ Menu → Oracle Database → GoldenGate.
-    - Select your GoldenGate deployment.
-    - From the deployment details page, click Launch Console to launch the  GoldenGate Deployment Console.
-    - Log in using your GoldenGate administrator credentials displayed in View Login Info. 
-       Username: oggadmin
-       Password: Same as ADB ADMIN user password 
+GoldenGate requires supplemental logging (trandata) to capture row-level changes from the ADW database.
+
+1.  Return to the GoldenGate deployment console. Follow the steps below to log back in if you were logged out or closed the window previously.
+
+  * In the Oracle Cloud navigation menu, select **Oracle Database**, and then **GoldenGate**.
+  * In the GoldenGate menu, click **Deployments**. 
+  *  On the Deployments page, select your GoldenGate deployment.
+  * On the deployment details page, click **Launch Console**.
+  * On the GoldenGate sign in page, enter `oggadmin` for User Name. 
+  * For Password, copy and paste the GG Password from your Reservation Information panel.
+
     ![Image alt text](images/01-01-ggs-console-login.png) 
 
-2. Enable and Verify Trandata 
-       GoldenGate requires supplemental logging (trandata) to capture row-level changes from the ADW database. Follow these steps:
-    - In the Deployment Console, look at the left-hand side menu and click on DB Connections.
-    - From the list of available connections, locate the source connection:
-      ADW\_AI\_MIRROR\_Target\_Connection.
-    - In the Actions column, click the login icon (->]) for this connection.
-    - Once successfully connected, the connection name will show as active.
-    - In the left-hand side menu, expand the connection options and click Trandata.
-    - From the Trandata screen:
-       Enable trandata for the YAN\_POS schema.
-       Click Submit.
-       ![Image alt text](images/01-02a-add-trandata.png) 
-       Confirm that the all the table objects are listed and supplemental logging is enabled.
-       Ensure all columns are included in logging.
-       ![Image alt text](images/01-02b-search-trandata.png)
+2.  In the GoldenGate deployment console navigation menu, click **DB Connections**.
+
+3.  On the DB Connections page, in the Actions column for **ADW\_AI\_MIRROR\_Target\_Connection**, click **Connect**. If successfully connected, the connection name will show as active.
+
+4.  In the navigation menu, expand the connection options and then click **Trandata**.
+
+5.  On the Trandata page, click **Add Trandata** (plus icon).
+
+6.  In the Trandata panel, for Schema, enter `YAN_POS`, and then click **Submit**.
+
+    ![Image alt text](images/01-02a-add-trandata.png) 
+
+7.  To verify, enter `YAN_POS` in the search field, and then click **Search**. Confirm that the all the table objects are listed and supplemental logging is enabled.
+
+    ![Image alt text](images/01-02b-search-trandata.png)
     
 ## Task 2: Create an Extract
 
 The Extract process captures changes from the ADW database.
 
-1.  In the Deployment Console, navigate to Extracts → + Create Extract
+1.  In the GoldenGate deployment console navigation menu, click **Extracts**.
 
-2.  Provide the following details:
+2.  On the Extracts page, click **Add Extract** (plus icon).
+
+3.  The Add Extract panel consists of four pages. On the Extract Information page, complete the fields as follows, and then click **Next**:
             
-           Process Name: EXT_POSA (or similar convention)
-           Type: Integrated Extract
-           Domain: OracleGoldenGate
-           Alias: TP_POS_Source_Connection
-           Trail File Prefix: PO
-           Click Next with Default values.
-           Paramater file section: TABLE YAN_POS.*; 
+    * For **Type**, select **Integrated Extract**.
+    * For **Process Name**, enter `EXT_POSA`.
 
-            
+4.  On the Extract Options page, complete the fields as follows, and then click **Next**.
 
-    - Click on Create and Run.
+    * For **Domain**, select **OracleGoldenGate**.
+    * For **Alias**, enter `TP_POS_Source_Connection`.
+    * For **Trail File**, enter `PO`.
+ 
+4.  On the Managed Options page, click **Next**.
 
-3.  Verify the Extract is running:
+5.  On the Parameter File page, copy and paste the following, and then click **Create and Run**:
+
+    ```
+    <copy>TABLE YAN_POS.*;</copy>
+    ```
+
+6.  After the Extract's status is **Running**, expand the Extract in the navigation menu, and then select **Report**. Review the messages in the report file.
        
-        Checking the Report File for status messages.
+7.  In the navigation menu, under **EXT\_POSA**, select **Statistics** to view heartbeat and captured operations. 
        
-        Viewing the Statistics tab for heartbeat and captured operations. 
-       
-        ![Image alt text](images/01-03-extract-report.png)
+    ![Image alt text](images/01-03-extract-report.png)
 
 ## Task 4: Create Data Stream for AI Hub
 
 The Data Stream delivers changes from the Extract trail into AI Hub.
 
-1.  In the Deployment Console, go to Distributioon Service → + Create Data Stream.
+1.  In the GoldenGate deployment console, click **Distribution Service**.
 
-2.  Provide the following details:
-        Name: AiAgentStream
-        
-        Source Trail: PO (from the Extract).Click Next.
-        
-        Provide a Description. Select Include under Rule Action and Object Names from 
-        Filter Type dropdown. Define table inclusion rules by providing below table name in Object Names text box:
-          YAN\_POS.FULLORDERVIEW
-          
-           YAN\_POS.DYNAMIC\_PRODUCT\_DESCRIPTION\_OUTBOX
-          
+2.  In the Distribution Service navigation menu, click **Data Streams**.
 
-          Click Add.
+3.  On the Data Streams page, click **Add Data Stream** (plus icon).
+
+4.  The Add Data Stream panel consists of three pages. On the Data Stream Information page, enter `AiAgentStream` for **Name**, and then click **Next**.
+
+5.  On the Source Options page, enter `PO` for **Source Trail**, and then click **Next**.
+
+6.  On the Filtering Options page, complete the fields as follows:
+
+    * Enter a **Description**. 
+    * For **Rule Action**, select **Include**.
+    * For **Filter Type**, select **Object Names**
+    * Enter the following table names, and then click **Add**: 
+    ```
+    <copy>YAN_POS.FULLORDERVIEW</copy>
+    ```
+    ```
+    <copy>YAN_POS.DYNAMIC_PRODUCT_DESCRIPTION_OUTBOX</copy>
+    ```
          
-          ![Image alt text](images/01-04-data-stream-rule.png)
+    ![Image alt text](images/01-04-data-stream-rule.png)
     
-    - Click Create Data Stream.
+7.  Click **Create Data Stream**.
     
 3.  Verify the Data Stream is active by checking its status and configuration YAML.
     
@@ -141,12 +157,15 @@ The Data Stream delivers changes from the Extract trail into AI Hub.
 
 3.  Verify that the Extract show DML captured (records captured and delivered).  
 
-4. In ADW, query the replicated `ORDERS` table to confirm the new order appears:  
+4.  In ADW, query the replicated `ORDERS` table to confirm the new order appears:  
    
     ```
     <copy>SELECT * FROM YAN_POS.POS_ORDER WHERE order_id = 331;</copy>
-     ```
-   
+    ```
+
+5.  Check your environment status. All tiles should now be green.
+
+    ![Environment status](./images/06-05-check-status.png " ")
 
 You may now **proceed to the next lab.**
 

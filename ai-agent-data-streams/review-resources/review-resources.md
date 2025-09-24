@@ -12,7 +12,8 @@ In this lab, you:
 * Log in to the Oracle Cloud console and locate your ATP source and ADW target databases.  
 * Verify that the YAS_POS Orders dataset is available in the ATP source.  
 * Locate the GoldenGate deployment and confirm its status.  
-* Verify GoldenGate connections to both source and target databases are configured and working.  
+* Verify GoldenGate connections to both source and target databases are configured and working.
+* Check the status of your lab envionment as you work through each lab.
 
 ### Prerequisites
 
@@ -86,6 +87,18 @@ Ensure that you've successfully completed all tasks in the preceding lab.
     You can also test connectivity for these connections. In the Actions column for each connection, click Connect. If the connection is successful, the page displays Checkpoint tables.
 
     ![Image alt text](images/01-06-login-db.png) 
+
+## Task 3: Check your lab environment status
+
+1.  In your lab instructions, click **View Login Info**.
+
+2.  In the Reservation Information panel, copy the URL for Environment Validation, and paste it into a web browser tab.
+
+3.  Review the status of your lab environment.
+
+    ![Environment validation](./images/03-03-status.png " ")
+
+    You can check the status of your environment as you progress through the rest of this workshop. 
 
 You may now **proceed to the next lab**.
 
