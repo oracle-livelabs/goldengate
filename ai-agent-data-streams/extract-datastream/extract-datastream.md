@@ -32,7 +32,7 @@ GoldenGate requires supplemental logging (trandata) to capture row-level changes
 
 2.  In the GoldenGate deployment console navigation menu, click **DB Connections**.
 
-3.  On the DB Connections page, in the Actions column for **ADW\_AI\_MIRROR\_Target\_Connection**, click **Connect to database**. If successfully connected, you're brought to the connection's Checkpoints page.
+3.  On the DB Connections page, in the Actions column for **ADW\_AI\_MIRROR\_Target\_Connection**, click **Connect to database**. If successfully connected, you're brought to the connection's Checkpoint page.
 
     ![Connect to Database](./images/01-03-db-connect.png " ")
 
@@ -75,7 +75,7 @@ The Extract process captures changes from the ADW database.
 
     ![Extract Options](./images/02-04-ext-opts.png " ")
 
-5.  On the Managed Options page, select **Custom** from **Profiles**, and then click **Next**.
+5.  On the Managed Options page, select **Custom** from **Profile Name**, and then click **Next**.
 
     ![Managed Options](./images/02-05-mgd-opts.png " ")
 
@@ -98,6 +98,10 @@ The Extract process captures changes from the ADW database.
        
     ![Extract Statistics](./images/02-08-ext-stats.png " ")
 
+9.  Check the status of your lab environment. **Refresh** the GoldenGate LiveLab Status page, or click **Restart Validation**. The GoldenGate Extract tile should now be green.
+
+    ![Check environment status](./images/02-09-checkstatus.png " ")
+
 ## Task 3: Create Data Stream for AI Hub
 
 The Data Stream delivers changes from the Extract trail into AI Hub.
@@ -116,7 +120,10 @@ The Data Stream delivers changes from the Extract trail into AI Hub.
 
     ![Add Data Stream](./images/03-04-ds-info.png " ")
 
-5.  On the Source Options page, select `PO` from **Available Trails**, and then click **Next**.
+5.  On the Source Options page, make the following selections, and then click **Next**:
+
+    * Select `PO` from **Available Trails**.
+    * Select **CloudEvents Format**.
 
     ![Data Stream Source Options](./images/03-05-ds-opts.png " ")
 
@@ -137,11 +144,15 @@ The Data Stream delivers changes from the Extract trail into AI Hub.
     
 7.  Click **Create Data Stream**.
     
-3.  Verify the Data Stream is active by checking its status and configuration YAML.
+8.  Verify the Data Stream is active by checking its status and configuration YAML.
     
-    ![Image alt text](images/01-04-data-stream-yaml.png)
+    ![YAML config](images/01-04-data-stream-yaml.png)
 
-## Task 5: Test Data Capture with an Insert 
+9.  Check the status of your lab environment. **Refresh** the GoldenGate LiveLab Status page, or click **Restart Validation**. All tiles should now be green.
+
+    ![Check Data Stream status](./images/04-09-checkstatus.png " ")
+
+## Task 4: Test Data Capture with an Insert 
 
  Now, insert a new record into the POS_Order and ORDERITEM tables and confirm GoldenGate captures it.
 
@@ -157,7 +168,7 @@ The Data Stream delivers changes from the Extract trail into AI Hub.
      
     INSERT INTO YAN_POS.POS_ORDER (ORDER_ID, CUSTOMER_ID, ORDER_TIME, TOTAL_AMOUNT) VALUES (333, 3, SYSTIMESTAMP, 560.00);
 
-    Sample Inserts for YAN_POS.ORDERITEM
+    -- Sample Inserts for YAN_POS.ORDERITEM
     -- Items for order 301
     INSERT INTO YAN_POS.ORDERITEM (ORDER_ITEM_ID, ORDER_ID, PRODUCT_ID, QUANTITY, UNIT_PRICE, DISCOUNT_APPLIED) VALUES (5001, 301, 4, 1, 249.99, 0);
      
@@ -176,11 +187,11 @@ The Data Stream delivers changes from the Extract trail into AI Hub.
 
     This record should be captured by the Extract and delivered via the Data Stream.  
 
-## Task 6: Verify GoldenGate Statistics
+## Task 5: Verify GoldenGate Statistics
 
 1.  Return to the Deployment Console and select the Administration Service.
 
-2.  In the navigation menu, click **Extracts**, then **EXT\_POSA**, then **Statistics**.
+2.  In the navigation menu, click **Extracts**, then **EXTPOSA**, then **Statistics**.
 
 3.  Verify that the Extract show DML captured (records captured and delivered).  
 
@@ -190,9 +201,7 @@ The Data Stream delivers changes from the Extract trail into AI Hub.
     <copy>SELECT * FROM YAN_POS.POS_ORDER WHERE order_id = 331;</copy>
     ```
 
-5.  Check your environment status. All tiles should now be green.
-
-    ![Environment status](./images/06-05-check-status.png " ")
+    ![Check Orders](./images/05-03-checkorder.png " ")
 
 You may now **proceed to the next lab.**
 

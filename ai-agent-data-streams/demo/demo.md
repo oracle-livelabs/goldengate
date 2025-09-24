@@ -145,15 +145,6 @@ By completing this lab, you will be able to:
          - "Does a data product exist for FULLORDERVIEW?"
      ![Image alt text](images/01-05-ai-app-er.png)
 
-## Outcomes
-  By the end of this lab, you will be able to:
-  * Demonstrate real-time replication: POS orders flow from ATP → GoldenGate → ADW (via JDV).
-  * Confirm the AI Agent creates vector embeddings for each new order and performs similarity search.
-  * Use a single AI chat interface to answer both business questions (orders, sales, recommendations) and operational questions (Extracts, Streams, lag, configs, ERDs). 
-  * Retrieve a specific order (e.g., Order 1008), find similar orders, and generate recommendations.
-  * Request schema diagrams and metadata through natural-language prompts.
-  * Validate key objects exist (ORDERS, FULLORDERVIEW) across both ADW and GoldenGate.
-
 
 ## Acknowledgements
 * **Author** - Shrinidhi Kulkarni, GoldenGate Product Manager
