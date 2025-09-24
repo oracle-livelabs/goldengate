@@ -5,71 +5,104 @@
 ## Introduction
 In this lab, you will review the key resources provisioned for this workshop. You will validate access to the source and target databases, confirm the GoldenGate deployment is running, and test the GoldenGate connections. This step ensures your environment is ready before configuring replication pipelines.
 
+### Objectives 
 
-## Task
+In this lab, you:
 
-1. Login to OCI Console 
-    - Open the View Login Info and click on Launch OCI to open the OCI Console.
-    - Log in using your OCI workshop credentials provided in the View Login Info page. (Username: ADMIN)
-    ![Image alt text](images/01-01-view-login-info.png) 
-    - Verify that you are in the correct compartment for the lab resources.  
+* Log in to the Oracle Cloud console and locate your ATP source and ADW target databases.  
+* Verify that the YAS_POS Orders dataset is available in the ATP source.  
+* Locate the GoldenGate deployment and confirm its status.  
+* Verify GoldenGate connections to both source and target databases are configured and working.
+* Check the status of your lab envionment as you work through each lab.
 
-2. Review POS Source Data – ATP
-    - In the OCI Console, go to **Oracle Database → Autonomous Transaction Processing**.  
-    - Open the ATP instance provisioned as your POS **source database**.  
-    - Verify that the **YAN_POS Orders dataset** schema exists (tables `POS_ORDER` and `ORDERITEM`).  
-    - Optionally, open the **Database Actions → SQL Worksheet** and run:  
-     
-     
-         ```sql 
-         <copy> SELECT COUNT(*) FROM YAN_POS.POS_ORDER;
-         SELECT COUNT(*) FROM YAN_POS.ORDERITEM;</copy>
+### Prerequisites
+
+Ensure that you've successfully completed all tasks in the preceding lab. 
+
+## Task 1: Review POS source and target databases
+
+1.  Return to the Oracle Cloud console. Use the Launch OCI button in your Reservation Information panel if you closed the window or were logged out. 
+
+2.  In the Oracle Cloud navigation menu, select **Oracle Database**, then **Autonomous Transaction Processing**.  
+
+3.  On the Autonomous Transaction Processing page, select the source **AIATP** instance.
+
+4.  On the AIATP details page, from the **Database Actions** menu, select **SQL**.
+
+5.  Copy and paste the following script to verify that the **YAN_POS Orders dataset** schema exists, and then click **Run script**.
+    
+     ``` 
+     <copy> SELECT COUNT(*) FROM YAN_POS.POS_ORDER;
+     SELECT COUNT(*) FROM YAN_POS.ORDERITEM;</copy>
      ```
      
      This confirms sample data is loaded.  
 
-3. Review POS AI Hub – ADW 
-    - In the OCI Console, go to **Oracle Database → Autonomous Data Warehouse**.  
-    - Open the ADW instance provisioned as the **target AI Hub database**. 
+6.  In the Oracle Cloud console navigation menu, select **Oracle Database**, then **Autonomous Data Warehouse**.
+
+7.  On the Autonomous Data Warehouse page, select Target **AIADW** Hub.
+
     ![Image alt text](images/01-03-adw.png)  
-    - Verify connectivity and note the database service name for later steps.  
+
+## Task 2: Test assigned connections
    
-4. Review OCI GoldenGate Deployment
-    - In the OCI Console, navigate to **Oracle Database → GoldenGate**.  
-    - Select the GoldenGate deployment (GG-AI-Demo) created for this workshop.  
-    - Confirm the deployment status is **Active**. 
+1.  In the Oracle Cloud console navigation menu, select **Oracle Database**, then **GoldenGate**.
+
+2.  In the GoldenGate menu, select **Deployments**.
+
+3.  On the Deployments page, select **GG-AI-Demo**.
+
+4.  On the deployment details page, verify that the deployment status is **Active**. 
+
     ![Image alt text](images/01-04-ggs.png)  
-    - Note the **deployment Console URL** for later use. 
+
+5.  Take note of the **Deployment console URL** for later use.
+
     ![Image alt text](images/01-05-console-url.png)  
 
-5. Test OCI GoldenGate Connections  
-    - On the deployment details page, click **Assigned connections**.
+6.  Click **Assigned connections**.
+    
     ![Image alt text](images/01-05-test-connection.png)    
-    - In the list of Assigned connections, from the Actions menu for the connection you want to test, select **Test connection**. 
-    - Confirm both **ATP (source)** and **ADW (target)** connections return a **successful status**. 
+    
+7.  On the Assigned connections page, from the Actions menu for **ATP POS Source Connection**, select **Test connection**. 
+
+8.  Repeat step 7 for **ADW AI Mirror Target Connection**.
+
     ![Image alt text](images/01-05-test-success.png) 
-    -  If an error message appears, then return to the connection and your settings.
-    - Click **Close**.
 
-6. Review OCI GoldenGate Connections 
-    - Click Launch Console to login into the GoldenGate deployment console.
-    ( Username: oggadmin  
-     password: same as ADB ADMIN user password) 
-    - Click on **Administration Service → DB Connections**.  
-    - You should see two connections already provisioned:  
-     - **Source (ATP)** – ATP\_POS\_Source\_Connection.  
-     - **Target (ADW)** – ADW\_AI\_Mirror\_Target\_Connection.  
+    > **Note:** If an error message appears, then return to the connection details and check your settings.
 
-    You can optionally test connectivity using the synced connections within the GoldenGate deployment console as well. Click on the login (first icon) under Actions to test datbaase login into Source ATP and Target ADW from GoldenGate console.
-    ![Image alt text](images/01-06-login-db.png) 
+9.  At the top of the deployment details page, click **Launch Console**.
 
-## Outcomes
-By the end of this lab, you will be able to:
-* Navigate the OCI Console to locate your ATP source and ADW target databases.  
-* Confirm that the YAS_POS Orders dataset is available in the ATP source.  
-* Identify the GoldenGate deployment and confirm its status.  
-* Verify GoldenGate connections to both source and target databases are configured and working.  
+    ![Launch console](./images/02-09-launch-console.png " ")
 
+10. On the GoldenGate sign in page, enter `oggadmin` for **Username**, then copy and paste the **GoldenGate password** from the Reservation Information panel for Password.
+
+11. In the GoldenGate deployment console from the  **Administration Service** navigation menu, select **DB Connections**.
+    
+    You should see two connections already created:  
+    * **Source (ATP)** – ATP\_POS\_Source\_Connection
+    * **Target (ADW)** – ADW\_AI\_Mirror\_Target\_Connection
+
+    ![DB Connections](./images/02-11-db-connections.png " ")
+
+    You can also test connectivity for these connections. In the Actions column for each connection, click Connect. If the connection is successful, the page displays Checkpoint tables.
+
+    ![Image alt text](./images/02-12-connect-db.png " ") 
+
+## Task 3: Check your lab environment status
+
+1.  In your lab instructions, click **View Login Info**.
+
+2.  In the Reservation Information panel, select the **AI URL** in the Terraform Values section. 
+
+3.  Review the GoldenGate LiveLabs status page. 
+
+    ![Environment validation](./images/03-03-status.png " ")
+
+    You can refresh this page to check the status of your environment as you progress through the rest of this workshop. 
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Shrinidhi Kulkarni, GoldenGate Product Manager
