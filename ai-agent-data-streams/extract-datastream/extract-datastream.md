@@ -21,24 +21,30 @@ GoldenGate requires supplemental logging (trandata) to capture row-level changes
 
 1.  Return to the GoldenGate deployment console. Follow the steps below to log back in if you were logged out or closed the window previously.
 
-  * In the Oracle Cloud navigation menu, select **Oracle Database**, and then **GoldenGate**.
-  * In the GoldenGate menu, click **Deployments**. 
-  *  On the Deployments page, select your GoldenGate deployment.
-  * On the deployment details page, click **Launch Console**.
-  * On the GoldenGate sign in page, enter `oggadmin` for User Name. 
-  * For Password, copy and paste the GG Password from your Reservation Information panel.
+    * In the Oracle Cloud navigation menu, select **Oracle Database**, and then **GoldenGate**.
+    * In the GoldenGate menu, click **Deployments**. 
+    * On the Deployments page, select your GoldenGate deployment.
+    * On the deployment details page, click **Launch Console**.
+    * On the GoldenGate sign in page, enter `oggadmin` for User Name. 
+    * For Password, copy and paste the **GoldenGate Password** from your Reservation Information panel.
 
     ![Image alt text](images/01-01-ggs-console-login.png) 
 
 2.  In the GoldenGate deployment console navigation menu, click **DB Connections**.
 
-3.  On the DB Connections page, in the Actions column for **ADW\_AI\_MIRROR\_Target\_Connection**, click **Connect**. If successfully connected, the connection name will show as active.
+3.  On the DB Connections page, in the Actions column for **ADW\_AI\_MIRROR\_Target\_Connection**, click **Connect to database**. If successfully connected, you're brought to the connection's Checkpoints page.
+
+    ![Connect to Database](./images/01-03-db-connect.png " ")
 
 4.  In the navigation menu, expand the connection options and then click **Trandata**.
 
+    ![Trandata](./images/01-04-trandata.png " ")
+
 5.  On the Trandata page, click **Add Trandata** (plus icon).
 
-6.  In the Trandata panel, for Schema, enter `YAN_POS`, and then click **Submit**.
+    ![Add Trandata](./images/01-05-add-trandata.png " ")
+
+6.  In the Trandata panel, enter `YAN_POS` for **Schema**, and select **All Columns** for **Supplemental Logging Options**, and then click **Submit**.
 
     ![Image alt text](images/01-02a-add-trandata.png) 
 
@@ -57,48 +63,69 @@ The Extract process captures changes from the ADW database.
 3.  The Add Extract panel consists of four pages. On the Extract Information page, complete the fields as follows, and then click **Next**:
             
     * For **Type**, select **Integrated Extract**.
-    * For **Process Name**, enter `EXT_POSA`.
+    * For **Process Name**, enter `EXTPOSA`.
+
+    ![Extract Inforamtion](./images/02-03-ext-info.png " ")
 
 4.  On the Extract Options page, complete the fields as follows, and then click **Next**.
 
     * For **Domain**, select **OracleGoldenGate**.
-    * For **Alias**, enter `TP_POS_Source_Connection`.
+    * For **Alias**, enter `ATP_POS_Source_Connection`.
     * For **Trail File**, enter `PO`.
- 
-4.  On the Managed Options page, click **Next**.
 
-5.  On the Parameter File page, copy and paste the following, and then click **Create and Run**:
+    ![Extract Options](./images/02-04-ext-opts.png " ")
+
+5.  On the Managed Options page, select **Custom** from **Profiles**, and then click **Next**.
+
+    ![Managed Options](./images/02-05-mgd-opts.png " ")
+
+6.  On the Parameter File page, copy and paste the following, and then click **Create and Run**:
 
     ```
-    <copy>TABLE YAN_POS.*;</copy>
+    <copy>TABLE YAN_POS.*;
+    TABLE YAN_POS.FULLORDERVIEW;</copy>
     ```
 
-6.  After the Extract's status is **Running**, expand the Extract in the navigation menu, and then select **Report**. Review the messages in the report file.
-       
-7.  In the navigation menu, under **EXT\_POSA**, select **Statistics** to view heartbeat and captured operations. 
-       
-    ![Image alt text](images/01-03-extract-report.png)
+    ![Parameter files](./images/02-06-param-files.png " ")
 
-## Task 4: Create Data Stream for AI Hub
+    You return to the Extracts page where your Extract appears after a few moments. 
+
+7.  After the Extract's status is **Running**, expand the Extract in the navigation menu, and then select **Report**. Review the messages in the report file.
+
+    ![Extract Report](./images/02-07-ext-report.png " ")
+       
+8.  In the navigation menu, under **EXTPOSA**, select **Statistics** to view heartbeat and captured operations. 
+       
+    ![Extract Statistics](./images/02-08-ext-stats.png " ")
+
+## Task 3: Create Data Stream for AI Hub
 
 The Data Stream delivers changes from the Extract trail into AI Hub.
 
 1.  In the GoldenGate deployment console, click **Distribution Service**.
 
+    ![Distribution Service](./images/03-01-dist-srvc.png " ")
+
 2.  In the Distribution Service navigation menu, click **Data Streams**.
 
 3.  On the Data Streams page, click **Add Data Stream** (plus icon).
 
+    ![Data Streams](./images/03-02-data-streams.png " ")
+
 4.  The Add Data Stream panel consists of three pages. On the Data Stream Information page, enter `AiAgentStream` for **Name**, and then click **Next**.
 
-5.  On the Source Options page, enter `PO` for **Source Trail**, and then click **Next**.
+    ![Add Data Stream](./images/03-04-ds-info.png " ")
+
+5.  On the Source Options page, select `PO` from **Available Trails**, and then click **Next**.
+
+    ![Data Stream Source Options](./images/03-05-ds-opts.png " ")
 
 6.  On the Filtering Options page, complete the fields as follows:
 
     * Enter a **Description**. 
     * For **Rule Action**, select **Include**.
     * For **Filter Type**, select **Object Names**
-    * Enter the following table names, and then click **Add**: 
+    * Enter the following table names, pressing enter after each, and then click **Add**: 
     ```
     <copy>YAN_POS.FULLORDERVIEW</copy>
     ```
@@ -106,7 +133,7 @@ The Data Stream delivers changes from the Extract trail into AI Hub.
     <copy>YAN_POS.DYNAMIC_PRODUCT_DESCRIPTION_OUTBOX</copy>
     ```
          
-    ![Image alt text](images/01-04-data-stream-rule.png)
+    ![Filtering Options](images/01-04-data-stream-rule.png)
     
 7.  Click **Create Data Stream**.
     
@@ -151,9 +178,9 @@ The Data Stream delivers changes from the Extract trail into AI Hub.
 
 ## Task 6: Verify GoldenGate Statistics
 
-1.  Return to the Deployment Console.  
+1.  Return to the Deployment Console and select the Administration Service.
 
-2.  Open the **Monitoring → Statistics** tab.  
+2.  In the navigation menu, click **Extracts**, then **EXT\_POSA**, then **Statistics**.
 
 3.  Verify that the Extract show DML captured (records captured and delivered).  
 

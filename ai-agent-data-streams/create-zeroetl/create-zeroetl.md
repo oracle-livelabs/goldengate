@@ -33,9 +33,11 @@ In this lab, you:
 
   ![](./images/01-02-goldengate-menu-pipelines.png " ")
 
-3. On the Data fabric pipelines page, for **Applied filters**, select the LiveLabs compartment that you were assigned. Refer to the Reservation Information panel to check your assigned compartment.
+3. On the Data fabric pipelines page, for **Applied filters**, select the LiveLabs compartment that you were assigned. 
 
-	![GoldenGate Data fabric pipelines page](images/01-03-pipelines-page.png " ")
+    > **NOTE:** Refer to the Reservation Information panel to check your assigned compartment. If you don't choose the correct compartment, you won't be able to create a pipeline. 
+
+	  ![GoldenGate Data fabric pipelines page](images/01-03-pipelines-page.png " ")
 
 4. Click **Create pipeline**. The Create ZeroETL Mirror pipeline page opens. 
 
