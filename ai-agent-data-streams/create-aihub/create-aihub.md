@@ -148,22 +148,11 @@ Use the following steps to reconnect to the target ADW SQL Developer if you were
      
     This vector store will later be populated with embeddings generated from order and item descriptions.  
 
-## Task 3: Initialize Data
+## Task 3: Initialize Vector Store Data (ADW)
 
-1.  Load the YAN\_POS Orders Dataset. Initialize the YAN_POS Orders dataset in your ADW instance. **how?**
-    
-2.  Verify that the data has been correctly loaded and is available for queries. **how?**
+1.  Clear the ADW SQL Worksheet.
 
-3.  Copy and paste the following script into the SQL Worksheet to ensure the **YAN\_POS Orders dataset** (tables `POS_ORDER` and `ORDERITEM`) was replicated into ADW with the OCI GoldenGate ZeroETL Pipeline, and then click **Run script**:
-
-    ```
-    <copy>SELECT COUNT(*) FROM YAN_POS.pos_order;
-    SELECT COUNT(*) FROM YAN_POS.orderitem;</copy>
-    ```
-
-4.  Confirm row counts match with the source database.  
-
-5.  Copy and paste the following script into the SQL Worksheet to insert initial embeddings into the vector store, and then click **Run script**:  
+2.  Copy and paste the following script into the SQL Worksheet to insert initial embeddings into the vector store, and then click **Run script**:  
 
     ```
       <copy>Insert into YAN_POS.ORDER_VECTORS (ORDER_ID,PRODUCT_IDS_JSON,ORDER_EMBEDDING) values (258,'[79,15,85]',TO_CLOB(q'[[2.08990395E-001,-2.57836014E-001,-6.65510178E-001,3.72304231E-001,-6.01657093E-001,1.01179779E-001,-2.59865552E-001,-1.19958237E-001,9.84913826E-001,7.72194564E-001,2.46216804E-001,1.08588207E+000,4.47982401E-001,-3.86131167E-001,-4.38452423E-001,6.04123294E-001,-3.37328553E-001,-1.83373258E-001,-1.28849164E-001,2.63981938E-001,4.38640684E-001,1.03827441E+000,-8.19189906E-001,-5.12309849E-001,-1.14139163E+000,2.54677415E-001,-6.51798368E-001,-5.70198953E-001,3.0855155E-001,8.28419983E-001,-1.24]')
@@ -270,8 +259,6 @@ Use the following steps to reconnect to the target ADW SQL Developer if you were
       || TO_CLOB(q'[002,-2.89123118E-001,-1.94483489E-001,-3.04898083E-001,7.83174783E-002,-3.32026899E-001,-4.03972954E-001,2.97340035E-001,1.80310711E-001,8.38260293E-001,-5.60232699E-001,6.71681762E-002,-5.81049204E-001,5.91796398E-001,1.48818702E-001,1.02749014E+000,-5.40041983E-001,3.115049E-001,-3.51887256E-001]]'));</copy>
     ```
     
-     Function call will vary depending on integration with OCI Generative AI service.
-
 ## Task 4: Create JSON Duality View
 
 Build a JSON Duality View over the `ORDER` and `ORDERITEMS` tables. This will simplify AI-driven queries and allow access in both relational and JSON formats. 
