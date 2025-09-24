@@ -13,13 +13,14 @@ Estimated time: 20 minutes
 ### Objectives
 
 In this lab, you:
-* Create a change data Integrated Extract for the West database and position it to start capturing data after the given SCN
+* Create a change data Integrated Extract for the West database 
 * Query the West database to determine the positioning SCN for both the Initial Load Extract and the Change Data Extract
 * Create an Initial Load Extract for the West database that selects records from the HR tables up to a given SCN
 * Create a Parallel Replicat to deliver the initial load data to the East database
+* Start the change data Extract capturing data after the given SCN
 * Create a second Parallel Replicat process to deliver the change data to the East database
 
-## Task 2: Create a Change Data Extract for the West database
+## Task 1: Create a Change Data Extract for the West database
 
 Create a change data Extract to read new transactions from the West database that occurred after the SCN that was used by the Initial Load Extract. The records are written to a series of trail files which the Replicat will read and deliver to the target East database. 
 
@@ -43,8 +44,6 @@ Create a change data Extract to read new transactions from the West database tha
 
 4. On the Managed Options page, leave the fields as they are, and then click **Next**.
 
-    ![Managed Options page](./images/04-04-managed-options.png " ")
-    
 5. On the Parameter File page, in the text area, add a new line to the existing text and add the following:
 
     ```
@@ -55,8 +54,30 @@ Create a change data Extract to read new transactions from the West database tha
 
     ![Parameter File page](./images/04-06-param-file.png " ")
 
+## Task 2:  Determine Current SCN from West database
 
-## Task 2: Create an Initial Load Extract for the West database
+Use `sqlplus` to connect to the West database and retrieve the current database SCN. This SCN serves two purposes, for the Initial Load Extract to capture all records up to and including that SCN, and to position the Change Data Extract to begin capturing active DML operations from that SCN onward.
+
+1. In your VNC environment, select **Activities** from the upper left of the console and then select **Terminal** from the Applications bar.
+
+    ![Open terminal](./images/01-01-open-terminal.png " ")
+
+2. When prompted, enter `1` to access the Oracle DB 19c home environment.
+
+    ![Access Oracle DB 19c Home Environment](./images/01-03-oracle-db-19c.png " ")
+
+3. Enter the following command to interact with the Oracle Database:
+
+    ```
+    <copy>sqlplus "ggadmin/Welcome##123@localhost:1521/west" @get_current_scn.sql</copy>
+    ```
+
+4. Record the value of the **current database SCN**, as it will be required for upcoming tasks.
+
+    ![Terminal interact with Oracle Database](./images/01-04-oracle-db.png " ")
+
+
+## Task 3: Create an Initial Load Extract for the West database
 
 Create an Initial Load Extract (EINIT) that reads records from the **HR** tables in the West database, up to the SCN identified in Task 1. The records are then written to a series of files (EXTFILE), which is then read by a Replicat (RINIT) and inserted into the target East database, completing the initial load process.
 
@@ -101,7 +122,8 @@ As for Replicats, Oracle offers numerous options, each with their own advantages
 
     ![Extract report - Runtime statistics](./images/02-05b-einit-report.png " ")
 
-## Task 3: Create an Initial Load Replicat for the East database
+## Task 4: Create an Initial Load Replicat for the East database
+
 This task creates a Parallel Replicat that delivers the Initial Load records from the **EINIT** Extract, to the East database.
 
 1. In the navigation menu, click **Replicats**. On the Replicats page, click **Add Replicat** (plus sign). 
@@ -127,11 +149,9 @@ This task creates a Parallel Replicat that delivers the Initial Load records fro
 
     ![Managed Options](./images/03-04-managed-opts.png " ")
 
-5. On the Parameter File page, in the text area, replace **MAP *\.\*, TARGET \*.\*;** with the following script:
+5. On the Parameter File page, in the text area, replace MAP *\.\*, TARGET \*.\*; with:
 
-    ```
-    <copy>MAP HR.*, TARGET HR.*;</copy>
-    ```
+    `MAP HR.*, TARGET HR.*;`
 
 6. Click **Create and Run**.
 
@@ -159,37 +179,17 @@ This task creates a Parallel Replicat that delivers the Initial Load records fro
 
     ![Stop Replicat](./images/03-09-pause-rep.png " ")
 
-## Task 4:  Determine Current SCN from West database and start Change Data Capture Extract
+## Task 5: Start the EWEST Change Data Capture Extract
 
-Use `sqlplus` to connect to the West database and retrieve the current database SCN. This SCN serves two purposes, for the Initial Load Extract to capture all records up to and including that SCN, and to position the Change Data Extract to begin capturing active DML operations from that SCN onward.
+1. In the navigation menu, click **Extracts**. 
 
-1. In your VNC environment, select **Activities** from the upper left of the console and then select **Terminal** from the Applications bar.
-
-    ![Open terminal](./images/01-01-open-terminal.png " ")
-
-2. When prompted, enter `2` to access the Oracle GoldenGate 23.7 environment.
-
-    ![Access Oracle DB 19c Home Environment](./images/01-03-oracle-db-19c.png " ")
-
-3. Enter the following command to interact with the Oracle Database:
-
-    ```
-    <copy>sqlplus "ggadmin/Welcome##123@localhost:1521/west" @get_current_scn.sql</copy>
-    ```
-
-4. Record the value of the **current database SCN**, as it will be required for upcoming tasks.
-
-    ![Terminal interact with Oracle Database](./images/01-04-oracle-db.png " ")
-
-5. Return to the Administration Service console. In the navigation menu, click **Extracts**. 
-
-6. On the Extracts page, for the **EWEST** Extract process, click **Actions for EWEST** (ellipsis icon), and then select **Start with Options**.
+2. On the Extracts page, for the **EWEST** Extract process, click **Actions for EWEST** (ellipsis icon), and then select **Start with Options**.
 
     ![Start with Options](./images/04-07-start-opts.png " ")
 
-7. In the Start Extract with Options panel, complete the following fields, and then click **Submit**:
+3. In the Start Extract with Options panel, complete the following fields, and then click **Submit**:
     * For Start Point, select **After CSN** from the dropdown.
-    * For CSN, enter the value of the SCN value derived from step 4.
+    * For CSN, enter the value of the SCN value derived from Task 2, Step 4.
 
     ![Start Extract with Options panel](./images/04-08a-start-ext-opts-panel.png " ")
 
@@ -197,7 +197,7 @@ Use `sqlplus` to connect to the West database and retrieve the current database 
 
     ![Both Extracts are running](./images/04-08b-running-exts.png " ")
 
-## Task 5: Create a Change Data Replicat for the East database
+## Task 6: Create a Change Data Replicat for the East database
 
 1. In the navigation menu, click **Replicats**. On the Replicats page, click **Add Replicat** (plus icon).
 
