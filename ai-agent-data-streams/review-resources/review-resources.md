@@ -20,43 +20,34 @@ Ensure that you've successfully completed all tasks in the preceding lab.
 
 ## Task 1: Review POS source and target databases
 
-1.  In your lab instructions, click **View Login Info**.
+1.  Return to the Oracle Cloud console. Use the Launch OCI button in your Reservation Information panel if you closed the window or were logged out. 
 
-2.  In the Reservation Information panel, click **Launch OCI** to open the Oracle Cloud console.
+2.  In the Oracle Cloud navigation menu, select **Oracle Database**, then **Autonomous Transaction Processing**.  
 
-3.  Log in using the workshop credentials found on the Reservation Information panel.
+3.  On the Autonomous Transaction Processing page, select **Source POS**.
 
-    ![Image alt text](images/01-01-view-login-info.png) 
-
-4.  After you log in, verify that you are in the correct compartment for the lab resources.  
-
-5.  In the Oracle Cloud navigation menu, select **Oracle Database**, then **Autonomous Transaction Processing**.  
-
-6.  On the Autonomous Transaction Processing page, select **Source POS**.
-
-7.  On the Source POS details page, verify that the **YAN_POS Orders dataset** schema exists (tables `POS_ORDER` and `ORDERITEM`).
+4.  On the Source POS details page, verify that the **YAN_POS Orders dataset** schema exists (tables `POS_ORDER` and `ORDERITEM`).
 
     Optionally, open the **Database Actions → SQL Worksheet** and run:  
      
-     
-         ```sql 
-         <copy> SELECT COUNT(*) FROM YAN_POS.POS_ORDER;
-         SELECT COUNT(*) FROM YAN_POS.ORDERITEM;</copy>
+     ``` 
+     <copy> SELECT COUNT(*) FROM YAN_POS.POS_ORDER;
+     SELECT COUNT(*) FROM YAN_POS.ORDERITEM;</copy>
      ```
      
      This confirms sample data is loaded.  
 
-8.  In the Oracle Cloud console navigation menu, select **Oracle Database**, then **Autonomous Data Warehouse**.
+5.  In the Oracle Cloud console navigation menu, select **Oracle Database**, then **Autonomous Data Warehouse**.
 
-9.  On the Autonomous Data Warehouse page, select **Target AI Hub**.
+6.  On the Autonomous Data Warehouse page, select **Target AI Hub**.
 
     ![Image alt text](images/01-03-adw.png)  
 
-10. Verify connectivity and note the database service name for later steps.  
+7. Verify connectivity and note the database service name for later steps.  
 
 ## Task 2: Test assigned connections
    
-1.  In the Oracle Cloud console, select **Oracle Database**, then **GoldenGate**.
+1.  In the Oracle Cloud console navigation menu, select **Oracle Database**, then **GoldenGate**.
 
 2.  In the GoldenGate menu, select **Deployments**.
 
@@ -66,7 +57,7 @@ Ensure that you've successfully completed all tasks in the preceding lab.
 
     ![Image alt text](images/01-04-ggs.png)  
 
-5.  Take note of the **deployment Console URL** for later use.
+5.  Take note of the **Deployment console URL** for later use.
 
     ![Image alt text](images/01-05-console-url.png)  
 
@@ -80,18 +71,20 @@ Ensure that you've successfully completed all tasks in the preceding lab.
 
     ![Image alt text](images/01-05-test-success.png) 
 
-    > **Note:** If an error message appears, then return to the connection and check your settings.
+    > **Note:** If an error message appears, then return to the connection details and check your settings.
 
-9.  On the deployment details page, click **Launch Console**.
+9.  Click **Launch Console**.
 
-10. On the sign in page, enter `oggadmin` for Username, then copy and paste the ADM ADMIN password from the Reservation Information panel for Password.
+10. On the GoldenGate sign in page, enter `oggadmin` for **Username**, then copy and paste the **GoldenGate password** from the Reservation Information panel for Password.
 
-11. In the deployment console, **Administration Service** navigation menu, select **DB Connections**.
-    - You should see two connections already provisioned:  
-     - **Source (ATP)** – ATP\_POS\_Source\_Connection.  
-     - **Target (ADW)** – ADW\_AI\_Mirror\_Target\_Connection.  
+11. In the GoldenGate deployment console from the  **Administration Service** navigation menu, select **DB Connections**.
+    
+    You should see two connections already provisioned:  
+    * **Source (ATP)** – ATP\_POS\_Source\_Connection.  
+    * **Target (ADW)** – ADW\_AI\_Mirror\_Target\_Connection.  
 
-    You can optionally test connectivity using the synced connections within the GoldenGate deployment console as well. Click on the login (first icon) under Actions to test datbaase login into Source ATP and Target ADW from GoldenGate console.
+    You can also test connectivity for these connections. In the Actions column for each connection, click Connect. If the connection is successful, the page displays Checkpoint tables.
+
     ![Image alt text](images/01-06-login-db.png) 
 
 You may now **proceed to the next lab**.

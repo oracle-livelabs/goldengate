@@ -18,6 +18,11 @@ In this lab, you:
   * Monitor replication processes, metrics, and troubleshoot replication lag or errors.  
   * Confirm that replicated schemas and data are available in the target ADW for downstream use. 
 
+> **Tips:** 
+
+  * Ensure that you enter names and values as directed.
+  * When using SQL Developer, always click **Run script**, not Run statement, to ensure that you run the entire script.
+
 ## Task 1: Create the pipeline
 
 1. In the Oracle Cloud console navigation menu, select **Oracle Database**, and then **GoldenGate**. 
@@ -59,13 +64,13 @@ You're brought to the AIW-Pipeline details page, where the pipeline's status is 
 
   If either test fails, check the credentials, networking, and endpoint configuration of the connection before you retry.
 
-    > **Note:** The test connection may fail the first time with a timeout error (e.g., “Cause: Failed to connect to adb.<region>.com:1522, reason: curl: (28) Resolving timed out after 5000 milliseconds”). This is expected behavior. Running the test a second time typically returns a Success result.
+    > **Note:** The test connection may fail the first time with the timeout error: “Failed to connect to adb.<region>.com:1522, reason: curl: (28) Resolving timed out after 5000 milliseconds”. This is expected behavior. Running the test a second time typically returns a Success result.
 
 3. After both connection tests are successful, click the source connection name to view the source connection's details.
 
    ![Select source connection name](./images/02-03-source-conn-details.png " ")
 
-    > **Tip:** Open the source and target database details in a new browser tab or window because you'll need them later.
+    > **Tip:** Open the source and target connection details in a new browser tab or window because you'll need them later.
 
 4. On the **ATP POS Source Connection** details page, under **Connection information**, click the **Database** name.
 
@@ -75,7 +80,7 @@ You're brought to the AIW-Pipeline details page, where the pipeline's status is 
 
    ![Select SQL from DB Actions menu](./images/02-05-db-actions-sql.png " ")
 
-6. In the SQL Worksheet, enter the following command to check the row count for the `POS_ORDER` table, and then click **Run script**.
+6. Copy and paste the following command into SQL Developer to check the row count for the `POS_ORDER` table, and then click **Run script**.
 
     ```
     <copy>SELECT COUNT(*) FROM YAN_POS.POS_ORDER;</copy>
@@ -85,7 +90,7 @@ You're brought to the AIW-Pipeline details page, where the pipeline's status is 
 
 7. Repeat **steps 3 to 6** for the target connection.
 
-   The Query Result returned should say the table does not exist.
+   The Query Result returned should return an error saying the table does not exist.
 
 ## Task 3: Add mapping rules
 
@@ -139,7 +144,7 @@ Insert sample product rows into the source database, then validate that the chan
 
    ![ATP SQL Schemas](./images/05-04-check-schema.png " ")
 
-3.  In the SQL Worksheet, paste the following script to record the current row count, and then click **Run script**:
+3.  In the SQL Worksheet, copy and paste the following script to record the current row count, and then click **Run script**:
 
      ```
      <copy> SELECT COUNT(*) AS src_count_before FROM YAN_POS.PRODUCT;</copy>
@@ -147,7 +152,7 @@ Insert sample product rows into the source database, then validate that the chan
 
      The row count returned should be 109.
 
-4.  In the Target ADW SQL tool, paste the following script to record the current row count, and then click **Run script**:
+4.  In the Target ADW SQL tool, copy and paste the following script to record the current row count, and then click **Run script**:
 
      ```
      <copy> SELECT COUNT(*) AS tgt_count_before FROM YAN_POS.PRODUCT;</copy>
@@ -197,9 +202,9 @@ Insert sample product rows into the source database, then validate that the chan
 
 7. Review Source and Target Schemas  
 
-  * Connect to both the source and target databases.
+  * Connect to both the source and target databases using SQL Developer.
   * Verify that the schemas and tables are correctly created and populated.
-  * Ensure data changes in the source are reflected in the target in real time.
+  * Copy and paste the following script into SQL Developer to ensure data changes in the source are reflected in the target in real time:
 
     ```
      <copy>SELECT COUNT(*) AS tgt_count_before FROM YAN_POS.PRODUCT; 

@@ -4,24 +4,17 @@
 
 ## Introduction
 In this lab, you will configure OCI GoldenGate depoloyment to capture transactional changes from the POS ADW database and stream them into the AI Hub environment. This setup enables a live data feed, ensuring that AI-driven queries work on real-time data.
-You will:
- - Enable transaction data capture (trandata) on source tables.
- - Create an Extract process to capture changes from ADW.
- - Configure a Data Stream process to stream changes into the AI Hub application.
- - Insert and test new POS records.
- - Monitor GoldenGate statistics to verify that the replication pipeline is active.
 
-Objectives
-By the end of this lab, you will be able to:
+### Objectives
+In this lab, you:
 
- - Navigate the GoldenGate Deployment Console.
- - Enable trandata for source tables in ADW.
+ - Add trandata for source tables in ADW.
  - Create an Extract process to capture transactional changes.
  - Build and run a Data Stream process.
  - Test replication by inserting data into source tables.
  - Monitor GoldenGate statistics for process health.
 
-## Tasks
+## Task 1: Add trandata for source tables in ADW
 
 1. Open the GoldenGate Deployment Console
     - In the OCI Console, navigate to:
@@ -49,10 +42,13 @@ By the end of this lab, you will be able to:
        Ensure all columns are included in logging.
        ![Image alt text](images/01-02b-search-trandata.png)
     
-3. Create Extract for AI Hub ADW 
-    - The Extract process captures changes from the ADW database.
-    - In the Deployment Console, navigate to Extracts → + Create Extract
-    - Provide the following details:
+## Task 2: Create an Extract
+
+The Extract process captures changes from the ADW database.
+
+1.  In the Deployment Console, navigate to Extracts → + Create Extract
+
+2.  Provide the following details:
             
            Process Name: EXT_POSA (or similar convention)
            Type: Integrated Extract
@@ -65,7 +61,8 @@ By the end of this lab, you will be able to:
             
 
     - Click on Create and Run.
-    - Verify the Extract is running by:
+
+3.  Verify the Extract is running:
        
         Checking the Report File for status messages.
        
@@ -73,10 +70,13 @@ By the end of this lab, you will be able to:
        
         ![Image alt text](images/01-03-extract-report.png)
 
-4. Create Data Stream for AI Hub
-    - The Data Stream delivers changes from the Extract trail into AI Hub.
-    - In the Deployment Console, go to Distributioon Service → + Create Data Stream.
-    - Provide the following details:
+## Task 4: Create Data Stream for AI Hub
+
+The Data Stream delivers changes from the Extract trail into AI Hub.
+
+1.  In the Deployment Console, go to Distributioon Service → + Create Data Stream.
+
+2.  Provide the following details:
         Name: AiAgentStream
         
         Source Trail: PO (from the Extract).Click Next.
@@ -93,60 +93,62 @@ By the end of this lab, you will be able to:
           ![Image alt text](images/01-04-data-stream-rule.png)
     
     - Click Create Data Stream.
-    - Verify the Data Stream is active by checking its status and configuration YAML.
+    
+3.  Verify the Data Stream is active by checking its status and configuration YAML.
+    
     ![Image alt text](images/01-04-data-stream-yaml.png)
 
+## Task 5: Test Data Capture with an Insert 
 
-5. Test Data Capture with an Insert 
-    - Now, insert a new record into the POS_Order and ORDERITEM tables and confirm GoldenGate captures it.
-    - Connect to the ADW database using SQL Developer Web or SQL*Plus.
+ Now, insert a new record into the POS_Order and ORDERITEM tables and confirm GoldenGate captures it.
 
-       Run the following SQL to insert a new order and item: 
-       ```sql
-       <copy> -- Insert a new order into POS_ORDER
-       INSERT INTO YAN_POS.POS_ORDER (ORDER_ID, CUSTOMER_ID, ORDER_TIME, TOTAL_AMOUNT) VALUES (331, 1, SYSTIMESTAMP, 249.99);
-     
-       INSERT INTO YAN_POS.POS_ORDER (ORDER_ID, CUSTOMER_ID, ORDER_TIME, TOTAL_AMOUNT) VALUES (332, 2, SYSTIMESTAMP, 89.50);
-     
-       INSERT INTO YAN_POS.POS_ORDER (ORDER_ID, CUSTOMER_ID, ORDER_TIME, TOTAL_AMOUNT) VALUES (333, 3, SYSTIMESTAMP, 560.00);
+1.  Connect to the ADW database using SQL Developer Web or SQL*Plus.
 
-       Sample Inserts for YAN_POS.ORDERITEM
-        -- Items for order 301
-       INSERT INTO YAN_POS.ORDERITEM (ORDER_ITEM_ID, ORDER_ID, PRODUCT_ID, QUANTITY, UNIT_PRICE, DISCOUNT_APPLIED) VALUES (5001, 301, 4, 1, 249.99, 0);
+2.  Run the following SQL to insert a new order and item: 
+    
+    ```
+    <copy> -- Insert a new order into POS_ORDER
+    INSERT INTO YAN_POS.POS_ORDER (ORDER_ID, CUSTOMER_ID, ORDER_TIME, TOTAL_AMOUNT) VALUES (331, 1, SYSTIMESTAMP, 249.99);
      
-       -- Items for order 302
-       INSERT INTO YAN_POS.ORDERITEM (ORDER_ITEM_ID, ORDER_ID, PRODUCT_ID, QUANTITY, UNIT_PRICE, DISCOUNT_APPLIED) VALUES (5002, 302, 5, 2, 45.00, 0.50);
+    INSERT INTO YAN_POS.POS_ORDER (ORDER_ID, CUSTOMER_ID, ORDER_TIME, TOTAL_AMOUNT) VALUES (332, 2, SYSTIMESTAMP, 89.50);
      
-       -- Items for order 303 (multiple items)
-       INSERT INTO YAN_POS.ORDERITEM (ORDER_ITEM_ID, ORDER_ID, PRODUCT_ID, QUANTITY, UNIT_PRICE, DISCOUNT_APPLIED) VALUES (5003, 303, 6, 1, 300.00, 0);
+    INSERT INTO YAN_POS.POS_ORDER (ORDER_ID, CUSTOMER_ID, ORDER_TIME, TOTAL_AMOUNT) VALUES (333, 3, SYSTIMESTAMP, 560.00);
+
+    Sample Inserts for YAN_POS.ORDERITEM
+    -- Items for order 301
+    INSERT INTO YAN_POS.ORDERITEM (ORDER_ITEM_ID, ORDER_ID, PRODUCT_ID, QUANTITY, UNIT_PRICE, DISCOUNT_APPLIED) VALUES (5001, 301, 4, 1, 249.99, 0);
      
-       -- Items for order 5004 (multiple items)
-       INSERT INTO YAN_POS.ORDERITEM (ORDER_ITEM_ID, ORDER_ID, PRODUCT_ID, QUANTITY, UNIT_PRICE, DISCOUNT_APPLIED) VALUES (5004, 303, 7, 2, 130.00, 0);
+    -- Items for order 302
+    INSERT INTO YAN_POS.ORDERITEM (ORDER_ITEM_ID, ORDER_ID, PRODUCT_ID, QUANTITY, UNIT_PRICE, DISCOUNT_APPLIED) VALUES (5002, 302, 5, 2, 45.00, 0.50);
+     
+    -- Items for order 303 (multiple items)
+    INSERT INTO YAN_POS.ORDERITEM (ORDER_ITEM_ID, ORDER_ID, PRODUCT_ID, QUANTITY, UNIT_PRICE, DISCOUNT_APPLIED) VALUES (5003, 303, 6, 1, 300.00, 0);
+     
+    -- Items for order 5004 (multiple items)
+    INSERT INTO YAN_POS.ORDERITEM (ORDER_ITEM_ID, ORDER_ID, PRODUCT_ID, QUANTITY, UNIT_PRICE, DISCOUNT_APPLIED) VALUES (5004, 303, 7, 2, 130.00, 0);
 
 
-       COMMIT;</copy>
+    COMMIT;</copy>
+    ```
+
+    This record should be captured by the Extract and delivered via the Data Stream.  
+
+## Task 6: Verify GoldenGate Statistics
+
+1.  Return to the Deployment Console.  
+
+2.  Open the **Monitoring → Statistics** tab.  
+
+3.  Verify that the Extract show DML captured (records captured and delivered).  
+
+4. In ADW, query the replicated `ORDERS` table to confirm the new order appears:  
+   
+    ```
+    <copy>SELECT * FROM YAN_POS.POS_ORDER WHERE order_id = 331;</copy>
      ```
-       - This record should be captured by the Extract and delivered via the Data Stream.  
-
-6. Verify GoldenGate Statistics
-
-     - Return to the Deployment Console.  
-     - Open the **Monitoring → Statistics** tab.  
-     - Verify that the Extract show DML captured (records captured and delivered).  
-     - In ADW, query the replicated `ORDERS` table to confirm the new order appears:  
-      ```sql
-      <copy>SELECT * FROM YAN_POS.POS_ORDER WHERE order_id = 331;</copy>
-      ```
    
 
-## Outcomes
-At the end of this lab, you will have:
-  * Enabled trandata for POS source tables to capture row-level changes.
-  * Created and started an Extract process in GoldenGate.
-  * Configured and verified a Data Stream delivering captured data.
-  * Tested replication by inserting data into the ADW database.
-  * Validated replication activity through GoldenGate statistics.
-
+You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** - Shrinidhi Kulkarni, GoldenGate Product Manager
