@@ -38,11 +38,15 @@ Ensure that you've successfully completed all tasks in the preceding lab.
 5.  Copy and paste the following script to verify that the **YAN_POS Orders dataset** schema exists, and then click **Run script**.
     
      ``` 
-     <copy> SELECT COUNT(*) FROM YAN_POS.POS_ORDER;
-     SELECT COUNT(*) FROM YAN_POS.ORDERITEM;</copy>
+    <copy>SELECT 
+        (SELECT COUNT(*) FROM YAN_POS.POS_ORDER)   AS pos_order_count,
+        (SELECT COUNT(*) FROM YAN_POS.ORDERITEM)   AS orderitem_count
+    FROM dual;</copy>
      ```
      
      This confirms sample data is loaded.  
+
+     ![Dataset count](./images/01-05-counts.png " ")
 
 6.  In the Oracle Cloud console navigation menu, select **Oracle Database**, then **Autonomous Data Warehouse**.
 
