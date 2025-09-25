@@ -19,9 +19,16 @@ In this lab, you:
   * Confirm that replicated schemas and data are available in the target ADW for downstream use. 
 
 > **Tips:** 
+>
+> * Ensure that you enter names and values as directed.
+>  * When using SQL Developer, always click **Run script**, not Run statement, to ensure that you run the entire script.
 
-  * Ensure that you enter names and values as directed.
-  * When using SQL Developer, always click **Run script**, not Run statement, to ensure that you run the entire script.
+### Prerequisites
+
+Before you begin this lab:
+
+* Ensure that you have followed the instructions in the Get Started lab to log in to the workshop environment. You can ignore multifactor authentication, but do reset your password when prompted.
+* Check that you're logged in to the correct region. Refer to the Reservation Information panel to check your assigned region, then change regions in the Oracle Cloud console if needed.
 
 ## Task 1: Create the pipeline
 
@@ -31,9 +38,9 @@ In this lab, you:
 
 2. On the GoldenGate Overview page, in the **GoldenGate** menu, click **Pipelines**.
 
-  ![](./images/01-02-goldengate-menu-pipelines.png " ")
+  ![Select Pipelines](./images/01-02-goldengate-menu-pipelines.png " ")
 
-3. On the Data fabric pipelines page, for **Applied filters**, select the LiveLabs compartment that you were assigned. 
+3. On the Data fabric pipelines page, for **Applied filters**, select the LiveLabs compartment that you were assigned from the dropdown. Workshop compartments are located under LiveLabs, or you can use the search field. 
 
     > **NOTE:** Refer to the Reservation Information panel to check your assigned compartment. If you don't choose the correct compartment, you won't be able to create a pipeline. 
 
@@ -152,7 +159,7 @@ Insert sample product rows into the source database, then validate that the chan
      <copy> SELECT COUNT(*) AS src_count_before FROM YAN_POS.PRODUCT;</copy>
      ```
 
-     The row count returned should be 109.
+     Note the row count.
 
 4.  In the Target ADW SQL tool, copy and paste the following script to record the current row count, and then click **Run script**:
 
@@ -202,19 +209,24 @@ Insert sample product rows into the source database, then validate that the chan
 
 6.  Return to your AIW-Pipeline details page to ensure there are no errors in the replication flow.
 
-7. Review Source and Target Schemas  
-
-  * Connect to both the source and target databases using SQL Developer.
-  * Verify that the schemas and tables are correctly created and populated.
-  * Copy and paste the following script into SQL Developer to ensure data changes in the source are reflected in the target in real time:
+7.  In the Source ATP SQL Developer worksheet, copy and paste the following script to ensure YAN_POS tables and data were replicated into ADW with the AIW-Pipeline, and then click **Run script**:
 
     ```
-     <copy>SELECT COUNT(*) AS tgt_count_before FROM YAN_POS.PRODUCT; 
-     SELECT * FROM YAN_POS.PRODUCT WHERE PRODUCT_ID BETWEEN 2000 AND 11000;</copy> 
+    <copy>SELECT 
+      (SELECT COUNT(*) 
+        FROM user_tables 
+        WHERE table_name LIKE 'YAN_POS%') AS user_tables_count,
+      (SELECT COUNT(*) FROM YAN_POS.pos_order) AS pos_order_count,
+      (SELECT COUNT(*) FROM YAN_POS.Customer)  AS customer_count,
+      (SELECT COUNT(*) FROM YAN_POS.Product)   AS product_count
+    FROM dual;</copy>
     ```
 
-    ![Verify target SQL](./images/05-10-check-target.png " ")
+8.  Take note of the record counts.
 
+    ![Table counts](./images/05-08-tables.png " ")
+
+9.  Repeat step 7 in the ADW SQL Developer worksheet, and compare record counts to the Source ATP. They should match.
 
 You may now **proceed to the next lab**.
 
