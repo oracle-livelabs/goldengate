@@ -101,7 +101,7 @@ As for Replicats, Oracle offers numerous options, each with their own advantages
 
     ![Extract Information page](./images/02-02-extract-info.png " ")
 
-3. On the Parameter File page, add a new line to the text area and enter the following. Replace `<insert SCN>` with the SCN recorded from Task 1, step 5:
+3. On the Parameter File page, add a new line to the text area and enter the following. Replace `<insert SCN>` with the SCN recorded from Task 2, step 4:
 
     ```
     <copy>USERIDALIAS WEST DOMAIN OracleGoldenGate
@@ -116,7 +116,7 @@ As for Replicats, Oracle offers numerous options, each with their own advantages
 
     The EINIT Extract will run and then stop.
 
-5. In the left navigation, expand the EINIT Extract, and then select **Report**. Review the report output to confirm the Inital Load completed successfully. 
+5. In the left navigation, expand the EINIT Extract, and then select **Report**. Review the report output to confirm the Initial Load completed successfully. 
 
     ![Extract report - Initial Load running](./images/02-05a-einit-report.png " ")
 
