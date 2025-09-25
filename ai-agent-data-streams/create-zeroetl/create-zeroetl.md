@@ -212,32 +212,21 @@ Insert sample product rows into the source database, then validate that the chan
 7.  In the Source ATP SQL Developer worksheet, copy and paste the following script to ensure YAN_POS tables and data were replicated into ADW with the AIW-Pipeline, and then click **Run script**:
 
     ```
-    <copy>SELECT count(*) FROM user_tables WHERE table_name LIKE 'YAN_POS%';
-    SELECT COUNT(*) FROM YAN_POS.pos_order;
-    SELECT COUNT(*) FROM YAN_POS.Customer;
-    SELECT COUNT(*) FROM YAN_POS.Product;</copy>
+    <copy>SELECT 
+      (SELECT COUNT(*) 
+        FROM user_tables 
+        WHERE table_name LIKE 'YAN_POS%') AS user_tables_count,
+      (SELECT COUNT(*) FROM YAN_POS.pos_order) AS pos_order_count,
+      (SELECT COUNT(*) FROM YAN_POS.Customer)  AS customer_count,
+      (SELECT COUNT(*) FROM YAN_POS.Product)   AS product_count
+    FROM dual;</copy>
     ```
 
 8.  Take note of the record counts.
 
+    ![Table counts](./images/05-08-tables.png " ")
+
 9.  Repeat step 7 in the ADW SQL Developer worksheet, and compare record counts to the Source ATP. They should match.
-
-You may now **proceed to the next lab**.
-6.  Return to your AIW-Pipeline details page to ensure there are no errors in the replication flow.
-
-7. Review Source and Target Schemas  
-
-  * Connect to both the source and target databases using SQL Developer.
-  * Verify that the schemas and tables are correctly created and populated.
-  * Copy and paste the following script into SQL Developer to ensure data changes in the source are reflected in the target in real time:
-
-    ```
-     <copy>SELECT COUNT(*) AS tgt_count_before FROM YAN_POS.PRODUCT; 
-     SELECT * FROM YAN_POS.PRODUCT WHERE PRODUCT_ID BETWEEN 2000 AND 11000;</copy> 
-    ```
-
-    ![Verify target SQL](./images/05-10-check-target.png " ")
-
 
 You may now **proceed to the next lab**.
 

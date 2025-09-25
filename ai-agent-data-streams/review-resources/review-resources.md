@@ -23,11 +23,17 @@ Ensure that you've successfully completed all tasks in the preceding lab.
 
 1.  Return to the Oracle Cloud console. Use the Launch OCI button in your Reservation Information panel if you closed the window or were logged out. 
 
-2.  In the Oracle Cloud navigation menu, select **Oracle Database**, then **Autonomous Transaction Processing**.  
+2.  In the Oracle Cloud navigation menu, select **Oracle Database**, then **Autonomous Database**.  
 
-3.  On the Autonomous Transaction Processing page, select the source **AIATP** instance.
+    ![Autonomous Database](./images/01-02-adb.png " ")
+
+3.  On the Autonomous Database page, select the source **AIATP** instance.
+
+    ![Select AIATP](./images/01-03-atp.png " ")
 
 4.  On the AIATP details page, from the **Database Actions** menu, select **SQL**.
+
+    ![Database Actions](./images/01-04-db-actions.png " ")
 
 5.  Copy and paste the following script to verify that the **YAN_POS Orders dataset** schema exists, and then click **Run script**.
     
