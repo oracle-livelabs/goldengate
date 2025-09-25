@@ -70,7 +70,7 @@ The Extract process captures changes from the ADW database.
 4.  On the Extract Options page, complete the fields as follows, and then click **Next**.
 
     * For **Domain**, select **OracleGoldenGate**.
-    * For **Alias**, enter `ATP_POS_Source_Connection`.
+    * For **Alias**, enter `ADW_AI_MIRROR_Target_Connection`.
     * For **Trail File**, enter `PO`.
 
     ![Extract Options](./images/02-04-ext-opts.png " ")
@@ -148,7 +148,7 @@ The Data Stream delivers changes from the Extract trail into AI Hub.
     
     ![YAML config](images/01-04-data-stream-yaml.png)
 
-9.  Check the status of your lab environment. **Refresh** the GoldenGate LiveLab Status page, or click **Restart Validation**. All tiles should now be green.
+9.  Check the status of your lab environment. **Refresh** the GoldenGate LiveLab Status page, or click **Restart Validation**. All tiles should now be green. Keep this window open.
 
     ![Check Data Stream status](./images/04-09-checkstatus.png " ")
 
