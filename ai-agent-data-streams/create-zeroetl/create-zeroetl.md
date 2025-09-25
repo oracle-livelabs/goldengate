@@ -40,7 +40,7 @@ Before you begin this lab:
 
   ![Select Pipelines](./images/01-02-goldengate-menu-pipelines.png " ")
 
-3. On the Data fabric pipelines page, for **Applied filters**, select the LiveLabs compartment that you were assigned. 
+3. On the Data fabric pipelines page, for **Applied filters**, select the LiveLabs compartment that you were assigned from the dropdown. Workshop compartments are located under LiveLabs, or you can . 
 
     > **NOTE:** Refer to the Reservation Information panel to check your assigned compartment. If you don't choose the correct compartment, you won't be able to create a pipeline. 
 

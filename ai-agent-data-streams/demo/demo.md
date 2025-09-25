@@ -246,6 +246,7 @@ Use Ops AI Chat to explore the schema and query order data. Enter the following 
 7. Enter the prompt, `Does a data product exist for FULLORDERVIEW`.
 
     ![Product exists](./images/05-07-product-exists.png " ")
+    
 
 ## Acknowledgements
 * **Author** - Shrinidhi Kulkarni, GoldenGate Product Manager
