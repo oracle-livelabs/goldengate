@@ -200,9 +200,15 @@ Use the Ops AI Chat to retrieve real-time GoldenGate statistics. Enter the follo
      
  * List data streams
 
+    ![List Data Streams](./images/04-03-data-streams.png " ")
+
  * Get data stream config AiAgentStream
 
+    ![Data Stream configuration](./images/04-04-ds-config.png " ")
+
  * Get data stream yaml AiAgentStream
+
+    ![Get Data Stream yaml](./images/04-05-stream-yaml.png " ")
 
 ## Task 5: Data Operations via Chat
 
@@ -210,22 +216,36 @@ Use Ops AI Chat to explore the schema and query order data. Enter the following 
 
 1.  Using the order number from Task 3 step 4, enter `Show order <order-number-here>`. 
 
+    ![Show order](./images/05-01-show-order.png " ")
+
 2.  Next, enter the prompt, `Show schema ER diagram`.
 
+    ![Show ER Diagram](./images/05-02-er-diagram.png " ")
+
+    The response returns a diagram and SVG file you can download.
+
 3.  Enter the prompt, `Is there a table with orders`.
+
+    ![Order table](./images/05-03-order-table.png " ")
 
 4.  Enter the prompt, `Show schema for table POS_ORDER`. 
 
     * The LLM realizes there is no connection and prompts you for a connection. Enter `yes` to accept the connection.
     * Retry the original prompt, `Show schema for table POS_ORDER`.
 
+    ![Table schema](./images/05-04-table-schema.png " ")
+
 5. Enter the prompt, `Show schema for ORDERITEM`.
 
-6. Enter the prompt, `Show schema for table FULLORDERVIEW`
+    ![OrderItem schema](./images/05-05-orderitem.png " ")
 
-7. Enter the prompt, `Show schema for table FULLORDERVIEW`
+6. Enter the prompt, `Show schema for table FULLORDERVIEW`.
 
+    ![FullOrderView](./images/05-06-fullorderview.png " ")
 
+7. Enter the prompt, `Does a data product exist for FULLORDERVIEW`.
+
+    ![Product exists](./images/05-07-product-exists.png " ")
 
 ## Acknowledgements
 * **Author** - Shrinidhi Kulkarni, GoldenGate Product Manager
