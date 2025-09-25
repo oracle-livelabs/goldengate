@@ -19,9 +19,16 @@ In this lab, you:
   * Confirm that replicated schemas and data are available in the target ADW for downstream use. 
 
 > **Tips:** 
+>
+> * Ensure that you enter names and values as directed.
+>  * When using SQL Developer, always click **Run script**, not Run statement, to ensure that you run the entire script.
 
-  * Ensure that you enter names and values as directed.
-  * When using SQL Developer, always click **Run script**, not Run statement, to ensure that you run the entire script.
+### Prerequisites
+
+Before you begin this lab:
+
+* Ensure that you have followed the instructions in the Get Started lab to log in to the workshop environment. You can ignore multifactor authentication, but do reset your password when prompted.
+* Check that you're logged in to the correct region. Refer to the Reservation Information panel to check your assigned region, then change regions in the Oracle Cloud console if needed.
 
 ## Task 1: Create the pipeline
 
@@ -31,7 +38,7 @@ In this lab, you:
 
 2. On the GoldenGate Overview page, in the **GoldenGate** menu, click **Pipelines**.
 
-  ![](./images/01-02-goldengate-menu-pipelines.png " ")
+  ![Select Pipelines](./images/01-02-goldengate-menu-pipelines.png " ")
 
 3. On the Data fabric pipelines page, for **Applied filters**, select the LiveLabs compartment that you were assigned. 
 
