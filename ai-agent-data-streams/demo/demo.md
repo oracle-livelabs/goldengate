@@ -110,6 +110,8 @@ Verify that the AI Agent generates a vector embedding row for each new order.
 
         📥 Received GoldenGate Data Stream: [{"specversion":"1.0","type":"com.oracle.goldengate.datastream","source":"uri:inst-prod-mzfyrudwt6gc::u01:ogg:bin:EXTPOSA","id":"OGG-74","data":{"qual_table":"YAN_POS.FULLORDERVIEW","op_type":"INSERT","op_ts":"2025-09-25T17:08:52.000000Z","pos":"G-AAAAAFcnAwAAAAAABAAAAAAAAAAOABUAAA==455855867788441763996588.10.4.33120","xid":"1763996588.10.4.33120","after":{"_ID":"608","DATA":"{\"_id\":608,\"_metadata\":{\"etag\":{\"$binary\":\"FqveXmjX8HDeBIWvgtdd/A==\"},\"asof\":{\"$binary\":\"AAApdbi08tc=\"}},\"order_time\":{\"$oracleTimestamp\":\"2025-09-25T17:08:52\"},\"total_amount\":933.75,\"Customer\":{\"customer_id\":1,\"first_name\":\"Diana\",\"last_name\":\"Smith\",\"email\":\"diana.smith1@example.com\",\"phone_number\":\"555-6585\",\"loyalty_level\":\"Bronze\"},\"Items\":[{\"order_item_id\":60800,\"order_id\":608,\"quantity\":1,\"unit_price\":421.25,\"discount_applied\":0,\"Product\":[{\"product_id\":46,\"product_name\":\"Pet Tracker\",\"product_description\":\"GPS pet tracker collar with real-time location updates.\",\"price\":421.25,\"active\":\"Y\"}]},{\"order_item_id\":60801,\"order_id\":608,\"quantity\":1,\"unit_price\":83,\"discount_applied\":0,\"Product\":[{\"product_id\":5,\"product_name\":\"Bluetooth Speaker\",\"product_description\":\"Portable Bluetooth speaker with deep bass and waterproof design.\",\"price\":83,\"active\":\"Y\"}]},{\"order_item_id\":60802,\"order_id\":608,\"quantity\":1,\"unit_price\":429.5,\"discount_applied\":0,\"Product\":[{\"product_id\":47,\"product_name\":\"Voice Assistant Speaker\",\"product_description\":\"Smart speaker with built-in voice assistant support.\",\"price\":429.5,\"active\":\"Y\"}]}]}"}}}]
         ```
+
+        ![Data Stream entry](./images/03-05a-stream-entry.png " ")
     
     * Vector embedding created and sample displayed.
 
@@ -131,6 +133,8 @@ Verify that the AI Agent generates a vector embedding row for each new order.
         ✅ Inserted vector for order_id 608
 
         ```
+
+        ![New order](./images/03-05b-new-order.png " ")
     
     * Similarity search performed against all past carts. Three similar carts returned.
 
@@ -158,6 +162,8 @@ Verify that the AI Agent generates a vector embedding row for each new order.
         - Voice Assistant Speaker (ID: 47)
         ```
 
+        ![Similar items](./images/03-05c-similar-items.png " ")
+
     * First non-matching product identified. Prompt generated for the LLM to create a recommendation.
 
         ```
@@ -180,33 +186,45 @@ Verify that the AI Agent generates a vector embedding row for each new order.
      
 6.  Perform another product search, add items to cart, and then checkout without preview. Observe the Monitor Backend Panel and Customer Text App. 
      
-## Task 4: GoldenGate Operations via Chat
+## Task 4: GoldenGate Operations using Ops AI Chat
 
-Use chat to retrieve real-time GoldenGate statistics. Enter the following prompts into the Ops AI Chat and observe the responses.
+Use the Ops AI Chat to retrieve real-time GoldenGate statistics. Enter the following prompts into the Ops AI Chat and observe the responses.
 
  * List Extracts
+    
+    ![List Extracts](./images/04-01-list-extracts.png " ")
 
- * List GoldenGate extracts. For each, include name, status, checkpoint SCN/CSN, and current lag.
-     - Show goldengate statistics. ----- (RAG add stats to prompt)
-     - Show overall GoldenGate statistics and list all data streams with status, last delivered time, and record counts.
-     - List data streams
-     - Get te data streams
-     - Get data stream config AiAgentStream
-     - Get the configuration for the data stream named "AiAgentStream". Summarize source trail, target connection, filters, and error policy.
-     - Get data stream yaml AiAgentStream
-     - Get the YAML for the data stream named "AiAgentStream".
-     ![Image alt text](images/01-04-ai-app-ggs.png)
+ * Show goldengate statistics
 
+    ![GG Statistics](./images/04-02-show-stats.png " ")
+     
+ * List data streams
 
-5. Data Operations via Chat
-     - Use chat to explore the schema and query order data.
-     - Try prompts like:
-         - "Show me the details for Order 483." (RAG similarity search).
-         - "Generate the schema ER diagram for this database."
-         - "Is there a table with orders?" (RAG add schema metadata to prompt)
-         - "Show me the schema for POS_ORDER / ORDERITEM / FULLORDERVIEW."
-         - "Does a data product exist for FULLORDERVIEW?"
-     ![Image alt text](images/01-05-ai-app-er.png)
+ * Get data stream config AiAgentStream
+
+ * Get data stream yaml AiAgentStream
+
+## Task 5: Data Operations via Chat
+
+Use Ops AI Chat to explore the schema and query order data. Enter the following prompts into the Ops AI Chat and observe the responses.
+
+1.  Using the order number from Task 3 step 4, enter `Show order <order-number-here>`. 
+
+2.  Next, enter the prompt, `Show schema ER diagram`.
+
+3.  Enter the prompt, `Is there a table with orders`.
+
+4.  Enter the prompt, `Show schema for table POS_ORDER`. 
+
+    * The LLM realizes there is no connection and prompts you for a connection. Enter `yes` to accept the connection.
+    * Retry the original prompt, `Show schema for table POS_ORDER`.
+
+5. Enter the prompt, `Show schema for ORDERITEM`.
+
+6. Enter the prompt, `Show schema for table FULLORDERVIEW`
+
+7. Enter the prompt, `Show schema for table FULLORDERVIEW`
+
 
 
 ## Acknowledgements
