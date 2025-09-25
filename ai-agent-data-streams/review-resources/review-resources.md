@@ -44,6 +44,10 @@ Ensure that you've successfully completed all tasks in the preceding lab.
 
     ![Image alt text](images/01-03-adw.png)  
 
+8.  On the AIADW details page, from the **Datebase Actions** menu, select **SQL**.
+
+9.  Repeat step 5, verifying the row counts match.
+
 ## Task 2: Test assigned connections
    
 1.  In the Oracle Cloud console navigation menu, select **Oracle Database**, then **GoldenGate**.

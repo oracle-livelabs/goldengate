@@ -40,7 +40,7 @@ Before you begin this lab:
 
   ![Select Pipelines](./images/01-02-goldengate-menu-pipelines.png " ")
 
-3. On the Data fabric pipelines page, for **Applied filters**, select the LiveLabs compartment that you were assigned from the dropdown. Workshop compartments are located under LiveLabs, or you can . 
+3. On the Data fabric pipelines page, for **Applied filters**, select the LiveLabs compartment that you were assigned from the dropdown. Workshop compartments are located under LiveLabs, or you can use the search field. 
 
     > **NOTE:** Refer to the Reservation Information panel to check your assigned compartment. If you don't choose the correct compartment, you won't be able to create a pipeline. 
 
@@ -159,7 +159,7 @@ Insert sample product rows into the source database, then validate that the chan
      <copy> SELECT COUNT(*) AS src_count_before FROM YAN_POS.PRODUCT;</copy>
      ```
 
-     The row count returned should be 109.
+     Note the row count.
 
 4.  In the Target ADW SQL tool, copy and paste the following script to record the current row count, and then click **Run script**:
 
