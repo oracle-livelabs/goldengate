@@ -14,7 +14,7 @@ This lab assumes you have:
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 
-    - [ggma-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VgL2QHr9vMH-jcbKRue0sjdeHfsNavtrOmVD8orLKPoz3JgpYWKIE-obrUL_GlSr/n/c4u02/b/hosted_workshops/o/stacks/ggma-mkplc-freetier.zip)
+    - [ggma-mkplc-freetier.zip](https://c4u02.objectstorage.us-ashburn-1.oci.customer-oci.com/p/tfC_fKB7HB5Wo1pvpYu1fHifVw-E7MZruSx9l5J6ebjhGZOwsFawUiJlJhzgR7Hy/n/c4u02/b/hosted_workshops/o/stacks/ggma-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
