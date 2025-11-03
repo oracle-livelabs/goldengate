@@ -47,7 +47,7 @@ In this lab, you learn to:
 
     ![SRC_OCIGGLL entered in search field and search results returned](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-05-trandata-23ai.png " ")
 
-6.  In the left navigation menu, click to connect to **TargetADW**.
+6.  In the left navigation menu, click to connect to **TargetALK**.
 
     ![Credentials list with Connect to database TargetALK highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-06-connect-targetadw-23ai.png " ")
 
