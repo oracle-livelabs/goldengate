@@ -26,7 +26,7 @@
 
 8.  For Database username, enter `ggadmin`.
 
-9.  For **Database user password in compartment**, select the compartment in which the user password resides, and then select the **LiveLab_Secret** from the dropdown.
+9.  For **Database user password in compartment**, select the compartment in which the user password resides, and then select the password secret from the dropdown.
 
     > **NOTE:** You use this password secret to unlock `GGADMIN` in a later task.
 

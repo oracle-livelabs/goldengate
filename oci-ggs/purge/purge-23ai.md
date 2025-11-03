@@ -29,6 +29,6 @@ This lab assumes you completed all preceding labs.
 
 ## Acknowledgements
 
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
+* **Author** - Jenny Chan, Manager, GoldenGate & Essbase User Assistance Development
 * **Contributors** -  Denis Gray, Database Product Management, & Katherine Wardhana, User Assistance Developer
 * **Last Updated By/Date** - Jenny Chan, July 2024

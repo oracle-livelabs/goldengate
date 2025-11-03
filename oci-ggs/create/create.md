@@ -77,6 +77,6 @@ You may now **proceed to the next lab.**
 * [Assign a connection to a deployment](https://docs.oracle.com/en/cloud/paas/goldengate-service/llyhq/#GUID-69F7C944-DD31-40FA-8589-4CB5113E74D0)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
+* **Author** - Jenny Chan, Manager, GoldenGate & Essbase User Assistance Development
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
 * **Last Updated By/Date** - Jenny Chan, November 2025

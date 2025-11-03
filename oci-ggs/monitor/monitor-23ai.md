@@ -44,6 +44,6 @@ In order to complete this lab:
 * [Monitor performance using the Oracle Cloud console](https://docs.oracle.com/en/cloud/paas/goldengate-service/vddvk/index.html#articletitle)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
+* **Author** - Jenny Chan, Manager, GoldenGate & Essbase User Assistance Development
 * **Contributors** -  Denis Gray, Database Product Management & Katherine Wardhana, User Assistance Developer
 * **Last Updated By/Date** - Jenny Chan, November 2025
