@@ -25,7 +25,7 @@ In this lab, you will:
 
 ## Task 1: Review the deployment
 
-1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
+1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle AI Database**, and then select **GoldenGate**.
 
     ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
