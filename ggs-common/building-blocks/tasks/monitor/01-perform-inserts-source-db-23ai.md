@@ -4,7 +4,7 @@
         "description":"Perform inserts to the source database"
     }
 -->
-1.  Return to the Oracle Cloud console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
+1.  Return to the Oracle Cloud console and use the navigation menu (hamburger icon) to navigate back to **Oracle AI Database**, **Autonomous AI Transaction Processing**, and then **SourceATP**.
 
 2.  On the SourceATP Details page, click **Tools**, and then **Database Actions**.
 

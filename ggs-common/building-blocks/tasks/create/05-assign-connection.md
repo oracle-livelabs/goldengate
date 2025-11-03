@@ -4,9 +4,9 @@
         "description":"Assign connections to the deployment"
     }
 -->
-1. Use the Oracle Cloud Console breadcrumb to navigate back to the Connections page.
+1. From the GoldenGate menu, select **Connections**.
 
-    ![Breadcrumb](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-01-connections-breadcrumb.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-breadcrumb-deployment.png " ")
 
 2. Click **Deployments**, and then select the **OCI GoldenGate Deployment**.
 

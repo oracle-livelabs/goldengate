@@ -5,9 +5,6 @@ This lab instructs you to use the OCI GoldenGate deployment console to add trans
 
 Estimated time: 25 minutes
 
-Watch the video below for a quick walk through of the lab.
-[Watch the video](videohub:1_j398evq1)
-
 ### About the Extract process
 An Extract is a process that extracts, or captures, data from a source database.
 
@@ -52,7 +49,7 @@ In this lab, you learn to:
 
 6.  In the left navigation menu, click to connect to **TargetADW**.
 
-    ![Credentials list with Connect to database TargetADW highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-06-connect-targetadw-23ai.png " ")
+    ![Credentials list with Connect to database TargetALK highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-06-connect-targetadw-23ai.png " ")
 
 7.  Next to Checkpoint, click **Add Checkpoint** (plus icon).
 
@@ -299,4 +296,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, October 2024
+* **Last Updated By/Date** - Jenny Chan, November 2025

@@ -65,7 +65,7 @@ You can perform the following actions on the deployment details page:
 
 [](include:03-create-target-connection.md)
 
-13. Repeat Task 3, steps 1-6, to unlock the GGADMIN user for the TargetADW database.
+13. Repeat Task 3, steps 1-6, to unlock the GGADMIN user for the TargetALK database.
 
 ## Task 5: Assign connections to the deployment
 
@@ -82,4 +82,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, June 2025
+* **Last Updated By/Date** - Jenny Chan, November 2025
