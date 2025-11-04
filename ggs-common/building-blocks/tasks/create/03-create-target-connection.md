@@ -4,7 +4,7 @@
         "description":"Create the target connection and unlock the GGADMIN user"
     }
 -->
-Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) instance.
+Follow the steps below to connect the target Autonomous AI Lakehouse \(ALK\) instance.
 
 1.  Use the Oracle Cloud Console navigation menu to navigate back to **GoldenGate**.
 
@@ -12,23 +12,23 @@ Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) i
 
     ![Create Connection in GoldenGate menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-02-connections.png " ")
 
-3.  The Create connection panel appears. For Name, enter **TargetADW** and optionally, a description.
+3.  The Create connection panel appears. For Name, enter **TargetALK** and optionally, a description.
 
 4.  From the **Compartment** dropdown, select a compartment.
 
-5.  From the a Type dropdown, select **Oracle Autonomous Database**.
-
-6.  For Database details, select **Select database**.
+5.  From the a Type dropdown, select **Oracle Autonomous AI Database**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-06-create-connec-general-info.png " ")
 
-7. Select a **Compartment** from the dropdown, and then select **TargetADW-&lt;numbers&gt;** from the dropdown. 
+6.  For Database details, select **Select database**.
 
-8. For Database username, enter `ggadmin`.
+7.  For **Database in compartment**, confirm the compartment selection, and then select **TargetALK-&lt;numbers&gt;** from the dropdown. 
 
-9. Select a **Compartment** from the dropdown, and then select a Database user password secret from the dropdown.
+8.  For Database username, enter `ggadmin`.
 
-    > **NOTE:** This password will be used to unlock `GGADMIN` in a later task.
+9.  For **Database user password secret in compartment** select the compartment in which the password secret resides, and then select a Database user password secret from the dropdown.
+
+    > **NOTE:** You use this password secret to unlock `GGADMIN` in a later task.
 
     ![Target Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-09-create-connec-details.png)
 

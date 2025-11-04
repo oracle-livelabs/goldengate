@@ -4,7 +4,7 @@
         "description":"Create a purge task"
     }
 -->
-1.  When the deployment is active, click **Launch Console**.
+1.  On the deployment details page, click **Launch Console**.
 
     ![Deployment launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-01-launchconsole.png " ")
 
