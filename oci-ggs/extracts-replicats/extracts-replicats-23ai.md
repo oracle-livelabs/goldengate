@@ -30,7 +30,7 @@ Before importing data to the target database, create a credential in the target 
 
 1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle AI Database**, and then click **Autonomous AI Databases**.
 
-2. In the list of Autonomous Databases, click **TargetADW**.
+2. In the list of Autonomous AI Databases, click **TargetALK**.
 
     ![Autonomous AI Lakehouse page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-02-targetadw.png " ")
 
@@ -40,7 +40,7 @@ Before importing data to the target database, create a credential in the target 
 
     > **Note:** (Optional) Close the SQL Help dialogs.
 
-4. Enter the following script and then click **Run Statement** to create a credential in ADW:
+4. Enter the following script and then click **Run Statement** to create a credential in ALK:
 
     ```
     <copy>BEGIN
@@ -225,6 +225,6 @@ You may now **proceed to the next lab.**
 * [Add a Replicat for Oracle Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/cress/index.html)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Manager, GoldenGate & Essbase User Assistance Development
+* **Author** - Jenny Chan, Manager, Data Integration & Essbase User Assistance Development
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, November 2025
+* **Last Updated By/Date** - Jenny Chan, December 2025

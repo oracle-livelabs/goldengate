@@ -28,6 +28,8 @@ In this lab, you will:
 
 2. If you're prompted to take a tour, you can choose to continue with the tour or close it.
 
+    ![Guided tour](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-tour.png " ")
+
 3. On the GoldenGate **Overview** page, if you encounter a "Failed to load" error about your resources, select your assigned **Compartment** from the **Applied filters** dropdown. 
 
     > **NOTE**: If you're using the LiveLab Sandbox environment, you can find your compartment number in the Reservation Information panel (View Login Info) of the workshop instructions.
@@ -37,6 +39,8 @@ In this lab, you will:
 4. In the GoldenGate menu page, click **Deployments**.
 
     ![GoldenGate Overview - Deployments](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
+
+    > **NOTE**: If using the LiveLab Sandbox environment, select your LiveLab compartment from the Applied filters dropdown.
 
 5. Select **OCI GoldenGate Deployment** in the Deployments list.
 
@@ -81,6 +85,6 @@ You may now **proceed to the next lab.**
 * [Assign a connection to a deployment](https://docs.oracle.com/en/cloud/paas/goldengate-service/llyhq/#GUID-69F7C944-DD31-40FA-8589-4CB5113E74D0)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Manager, GoldenGate & Essbase User Assistance Development
+* **Author** - Jenny Chan, Manager, Data Integration & Essbase User Assistance Development
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, November 2025
+* **Last Updated By/Date** - Jenny Chan, December 2025
