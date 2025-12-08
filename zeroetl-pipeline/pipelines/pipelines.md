@@ -1,64 +1,39 @@
-# Create the Oracle Cloud Infrastructure GoldenGate pipeline
+# Configure and start the pipeline
 
 ## Introduction
 
-In this lab, you learn to create an Oracle Cloud Infrastructure (OCI) GoldenGate pipeline.
+In this lab, you review mapping rules, enable logging, and then start the pipeline.
 
 Estimated time: 20 minutes
 
-### About Oracle Cloud Infrastructure GoldenGate pipelines
-
-A Oracle Cloud Infrastructure GoldenGate pipeline lets you configure real time data replication flows that support mission critical use cases such as analytics, operational reporting, and hybrid cloud integrations. You can create a pipeline to stream data directly from operational databases to analytical environments without traditional extract, transform, load (ETL) processes. For example, you can set up a pipeline to directly replicate data from Autonomous Transaction Processing to Autonomous Data Warehouse with minimal configuration.
-
 ### Objectives
 
-In this lab, you will:
-* Create the pipeline
+In this lab, you:
+* Review mapping rules
 * Enable logging
 * Start the pipeline
 
 ### Prerequisites
 
-To successfully complete this lab, you must:
-* This lab assumes that you completed all preceding labs
+To successfully complete this lab, you must have completed all preceding labs.
 
-## Task 1: Create the pipeline
+## Task 1: Review mapping rules
 
-1. Click **Pipelines** and then click **Create pipeline**.
+1. On the Pipeline details page, click **Mapping rules**.
 
-    ![Pipelines page](./images/01-01-create-pipeline.png)
-
-2.  The Create ZeroETL Mirror pipeline panel appears. For Name, enter **test-pipeline** and optionally, a description.
-
-3.  For Choose a license type, select **Licenses included**.
-
-4.  For Source connection, select **SourceATP** from the dropdown.
-
-5.  For Target connection, select **TargetADW** from the dropdown.
-
-6. Click **Create pipeline**.
-
-    ![Source Database details](./images/01-06-create-pipeline.png)
-
-## Task 2: Add mapping rules
-
-1. In the Pipelines page, select the pipeline.
-
-2. On the Pipeline details page, click **Mapping rules**.
-
-3. Click **Preview**.
+2. Click **Preview**.
 
     ![Pipeline details](./images/02-03-pipeline-details.png)
 
-4. In the Preview mapping dialog, expand the **SRC_OCIGGLL** source schema and review the list of schemas and tables that are going to be replicated. Select **Cancel** to close the dialog.
+3. In the Preview mapping dialog, expand the **SRC_OCIGGLL** source schema and review the list of schemas and tables that are going to be replicated. Select **Cancel** to close the dialog.
 
     ![Preview mapping](./images/02-04-preview-mapping.png)
 
-## Task 3: Enable logging
+## Task 2: Enable logging
 
 1. On the pipeline details page, click **Logs**.
 
-2. In the Logs list, click the three dots icon for your object, and then select **Enable log**.
+2. In the Logs list, select **Enable log** from the **Actions** menu (ellipsis icon).
 
     ![Enable log](./images/03-02-click-enable-log.png)
 
@@ -90,7 +65,7 @@ To successfully complete this lab, you must:
 
 ## Task 4: Start the pipeline
 
-1. In the pipelines details page, expand the **Actions** menu, and then click **Start**.
+1. In the pipelines details page, from the **Actions** menu, and then select **Start**.
 
     ![Start pipeline](./images/04-01-start-pipeline.png)
 
@@ -108,10 +83,10 @@ To successfully complete this lab, you must:
 
 ## Learn more
 
-* [About pipelines](https://docs.oracle.com/en/cloud/paas/goldengate-service/jppjs/)
-* [Create pipeline resources](https://docs.oracle.com/en/cloud/paas/goldengate-service/crylk/)
+* [Add mapping rules](https://docs.oracle.com/en/cloud/paas/goldengate-service/crylk/#GUID-84F2AECB-C067-411F-8F63-50BDBBF8CFB6)
+* [Enable pipeline logs](https://docs.oracle.com/en/cloud/paas/goldengate-service/crylk/#GUID-A24B9F27-F666-4B6F-973E-D98158CAAD00)
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, July 2025
+* **Last Updated By/Date** - Jenny Chan, December 2025

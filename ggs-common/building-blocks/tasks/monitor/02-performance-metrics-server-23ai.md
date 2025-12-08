@@ -10,7 +10,7 @@
 
     > **Note:** You can also view performance details for the Microservices, Distribution, and Receiver Service Paths, as well as any other processes created.
 
-2.  On the Extracts page, select the Extract (UAEXT). 
+2.  On the Extracts page, select the **Extract (UAEXT)**. 
 
     ![Select Extract](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/02-02-extract.png " ")
 
