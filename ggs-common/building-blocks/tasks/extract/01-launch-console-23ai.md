@@ -14,7 +14,7 @@
 
     > **NOTE:** If using the LiveLab Sandbox environment, copy the OCI GoldenGate Admin Password from the Terraform output section of **View Login Info**.
 
-    ![View Login info](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02a-view-login-info.png " ")
+    ![View Login info](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/00-03-login-info.png " ")
 
     ![Terraform values](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02b-terraform-values.png " ")
 

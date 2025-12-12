@@ -32,7 +32,7 @@
             "filename": "../../create/create.md"
         },
         {
-            "title": "Lab 2: Connect Oracle GoldenGate to Autonomous Transaction Processing ",
+            "title": "Lab 2: Connect Oracle GoldenGate to Autonomous AI Transaction Processing ",
             "description": "Connect Oracle GoldenGate to its Source Database",
             "filename": "../../oggmp-atp/oggmp-atp.md"
         },
