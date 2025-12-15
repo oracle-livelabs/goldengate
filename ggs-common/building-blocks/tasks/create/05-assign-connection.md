@@ -6,7 +6,7 @@
 -->
 1. From the GoldenGate menu, select **Deployments**.
 
-2. On the Deployments page, select the OCI GoldenGate Deployment.
+2. On the Deployments page, select the **OCI GoldenGate Deployment**.
 
 3. On the deployment details page, from the navigation menu, click **Assigned connections**.
 
