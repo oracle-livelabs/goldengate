@@ -10,7 +10,7 @@ Estimated time: 20 minutes
 
 -  Provision a VCN and subnet
 -  Provision, connect, and load data into an Autonomous Transaction Processing (ATP) instance
--  Provision, connect, and load data into an Autonomous Data Warehouse (ADW) instance
+-  Provision, connect, and load data into an Autonomous AI Lakehouse (ADW) instance
 
 ### Prerequisites
 
@@ -32,17 +32,17 @@ This lab assumes you completed the Get started lab.
 
 [](include:03-load-atp-schema.md)
 
-## Task 4: Create an ADW Instance
+## Task 4: Create an ALK Instance
 
 [](include:04-create-adw-instance.md)
 
-## Task 5: Load the ADW schema
+## Task 5: Load the ALK schema
 
-1.  Select your ADW instance from the Autonomous Databases list to view its details and access tools.
+1.  Select your ALK instance from the Autonomous Databases list to view its details and access tools.
 
     ![List of Autonomous Databases](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/05-01-adw.png " ")
 
-2. On the TargetADW Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions**, and then select **SQL** from the Database actions page.
+2. On the TargetALK Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions**, and then select **SQL** from the Database actions page.
 
 	![TargetADW database details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/05-02-db-actions.png " ")
 
@@ -76,6 +76,7 @@ This lab assumes you completed the Get started lab.
 
 ## Acknowledgements
 
-- **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Katherine Wardhana, June 2025
+- **Author** - Jenny Chan, Manager, Data Integration & Essbase User Assistance
+- **Contributors** - Katherine Wardana, User Assistance Developer
+- **Last Updated By/Date** - Jenny Chan, December 2025
 - **PAR Expiration date** - February 2030

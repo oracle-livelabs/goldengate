@@ -43,7 +43,7 @@
             "filename": "../../create/create.md"
         },
         {
-            "title": "Lab 3: Connect Oracle GoldenGate to Autonomous Data Warehouse ",
+            "title": "Lab 3: Connect Oracle GoldenGate to Autonomous AI Lakehouse ",
             "description": "Connect Oracle GoldenGate to its target database",
             "filename": "../../oggmp-atp/oggmp-atp.md"
         },
