@@ -76,7 +76,7 @@ In this lab, you will:
     <copy>chmod 600 <private-SSH-key></copy>
     ```
 
-8.  On the Instances in <compartment-name> page, copy the compute instance's **Public IP Address**.
+8.  On the Instances <compartment-name> page, copy the compute instance's **Public IP Address**.
 
     ![Public IP Address on the Instance Details](./images/02-08-public-ip.png " ")
 
