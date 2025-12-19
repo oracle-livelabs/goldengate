@@ -63,11 +63,11 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
     ![Search icon highlighted](./images/01-08-search-schema.png " ")
 
-9.  In the navigation menu, click **TargetADW**, then **Checkpoint**.
+9.  In the navigation menu, click **TargetALK**, then **Checkpoint**.
 
 10. On the Checkpoint page, click **Add Checkpoint**.
 
-    ![Connect to TargetADW](./images/01-09-targetadw.png " ")
+    ![Connect to TargetALK](./images/01-09-targetadw.png " ")
 
 11. For **Checkpoint Table**, enter `"SRCMIRROR_OCIGGLL"."CHECKTABLE"`, and then click **Submit**.
 
@@ -182,7 +182,15 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 4.  From the list of buckets, click the bucket you created. You're brought to the bucket Details page.
 
-5.  Using the bucket details, take note of your bucket URI:
+5.  To find your bucket URI, create and **upload** a text file to the newly created bucket.
+
+6.  After the file is uploaded, on the Bucket Details page, click **Objects**, and then text file's Actions menu, select **View item details**. 
+
+    ![View object details](./images/05-06-view-object-details.png " ")
+
+7.  Take note of the URI, without the text file name:
+
+    ![Object URI](./images/05-07-uri.png)
 
     ```
     <copy>https://objectstorage.&lt;region&gt;.oraclecloud.com/n/&lt;namespace&gt;/b/&lt;bucket-name&gt;/o/</copy>
