@@ -46,23 +46,21 @@ In this lab, you will:
 
     ![Instances in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-01-compute.png " ")
 
-2.  Under **List Scope**, ensure that the correct **Compartment** is selected for your workshop. You can find your compartment information in the Workshop Details of this LiveLab.
-
-3.  In the Oracle Cloud Console global header, click **Developer tools**, and then **Cloud Shell**. The Cloud Shell drawer opens at the bottom of your screen.
+2.  In the Oracle Cloud Console global header, click **Developer tools**, and then **Cloud Shell**. The Cloud Shell drawer opens at the bottom of your screen.
 
     >**NOTE**: Cloud Shell takes a few moments to connect the first time it's opened during a session. When prompted, enter N to exit the Cloud Shell tutorial.
 
     ![Instances page](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-03-cloud-shell.png " ")
 
-4.  From the Cloud Shell drawer menu (gear icon) select **Upload**.
+3.  From the Cloud Shell menu (gear icon) select **Upload**.
 
     ![Cloud Shell drawer menu](./images/02-04-cs-upload.png " ")
 
-5.  In the File Upload to your Home Directory dialog, drag and drop or select the TargetALK wallet file you downloaded in Task 1, and then click **Upload**.
+4.  In the File Upload to your Home Directory dialog, drag and drop or select the TargetALK wallet file you downloaded in Task 1, and then click **Upload**.
 
     ![Upload a file on Cloud Shell](./images/02-05-upload.png " ")
 
-6.  Repeat step 5 to upload your SSH private key. Click **Hide** to close the File Transfers dialog.
+5.  Repeat step 5 to upload your SSH private key. Click **Hide** to close the File Transfers dialog.
 
     ![Files uploaded on Cloud Shell](./images/02-06-hide.png " ")
 
@@ -70,17 +68,17 @@ In this lab, you will:
     >**Note:** Ensure the private key you upload here is the match of the public key you provided when you reserved this lab.
     </if>
 
-7.  To ensure the SSH key permissions are valid, enter the following command in Cloud Shell: (Remember to replace the `<private-SSH-key>` placeholder with the name of your private key.)
+6.  To ensure the SSH key permissions are valid, enter the following command in Cloud Shell: (Remember to replace the `<private-SSH-key>` placeholder with the name of your private key.)
 
     ```
     <copy>chmod 600 <private-SSH-key></copy>
     ```
 
-8.  On the Instances <compartment-name> page, copy the compute instance's **Public IP Address**.
+7.  On the Instances <compartment-name> page, copy the compute instance's **Public IP Address**.
 
     ![Public IP Address on the Instance Details](./images/02-08-public-ip.png " ")
 
-9.  In Cloud Shell, enter the following to connect to the Marketplace Oracle GoldenGate compute instance: (Remember to replace the placeholders with their actual values.)
+8.  In Cloud Shell, enter the following to connect to the Marketplace Oracle GoldenGate compute instance: (Remember to replace the placeholders with their actual values.)
 
     ```
     <copy>sftp -i <private-SSH-key> opc@<ip-address></copy>
@@ -90,42 +88,42 @@ In this lab, you will:
     > **Note:** If you get a *Permission Denied* error, double check that the private SSH key matches the public SSH key.
     </if>
 
-10. Enter the following `put` command to upload wallet\_ALK.zip to `/home/opc`.
+9.  Enter the following `put` command to upload wallet\_ALK.zip to `/home/opc`.
 
     ```
     <copy>put Wallet_ALK.zip</copy>
     ```
 
-11. Enter `exit` to close the sftp connection.
+10. Enter `exit` to close the sftp connection.
 
     ![Cloud Shell script](./images/02-11-cloud-shell.png " ")
 
-12. SSH to the compute instance.
+11. SSH to the compute instance.
 
     ```
     <copy>ssh -i <private-SSH-key> opc@<ip-address></copy>
     ```
 
-13. Enter `ls` to list the contents in the current directory. You should see two files, `ogg-credentials.json` and your wallet file.
+12. Use the list command (`ls`) to list the contents in the current directory. You should your wallet file.
 
-14. Make a new directory called **wallet\_ALK**, and then extract the contents of the wallet\_ALK.zip to a new directory.
+13. Make a new directory called **wallet\_ALK**, and then extract the contents of the wallet\_ALK.zip to a new directory.
 
     ```
     <copy>mkdir wallet_ALK
 unzip Wallet_ALK.zip -d wallet_ALK</copy>
     ```
 
-15. Change directories to wallet_ALK.
+14. Change directories to wallet_ALK.
 
     ```
     <copy>cd wallet_ALK</copy>
     ```
 
-16. Enter `pwd`, and then copy the full path to the wallet files to be used in a later Task.
+15. Enter `pwd`, and then copy the full path to the wallet files to be used in a later Task.
 
     ![Cloud Shell script](./images/02-16-cloud-shell.png " ")
 
-17. Change directories back to the Home directory.
+16. Change directories back to the Home directory.
 
     ```
     <copy>cd ..</copy>
@@ -133,28 +131,7 @@ unzip Wallet_ALK.zip -d wallet_ALK</copy>
 
 > **Note:** Leave Cloud Shell open.
 
-## Task 3: Get the Marketplace Oracle GoldenGate oggadmin Credentials
-
-1.  If you previously closed the Cloud Shell connection, open Cloud Shell once more and SSH to the compute instance.
-
-    ```
-    <copy>ssh -i <private-SSH-key> opc@<ip-address></copy>
-    ```
-
-2. Enter `ls` to list the contents of the current directory.
-
-3. Open `ogg-credentials.json` and copy the output to a text editor.
-
-    ```
-    <copy>cat ogg-credentials.json</copy>
-    ```
-    ![Cloud Shell script](./images/03-03-cloud-shell.png " ")
-
-4.  Exit Cloud Shell.
-
-    ![Exit Cloud Shell](./images/03-04-exit-cloud-shell.png " ")
-
-## Task 4: Add the Target Autonomous AI Lakehouse Credential in the Oracle GoldenGate Administration Server
+## Task 3: Add the Target Autonomous AI Lakehouse Credential in the Oracle GoldenGate Administration Server
 
 1. On the deployment details page, click **Launch Console**.
 
@@ -172,7 +149,7 @@ unzip Wallet_ALK.zip -d wallet_ALK</copy>
 
 After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
 
-3.  Open the OCI GoldenGate deployment console navigation menu (hamburger icon) and then click **DB Connections**.
+3.  In the OCI GoldenGate deployment console navigation menu select **DB Connections**.
 
     ![Click Configuration in the OCI GoldenGate deployment console navigation menu](./images/04-02-configuration.png " ")
 
