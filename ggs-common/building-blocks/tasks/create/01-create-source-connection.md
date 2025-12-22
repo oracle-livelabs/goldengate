@@ -4,11 +4,11 @@
         "description":"Create the source connection"
     }
 -->
-1. Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
+1. From the GoldenGate menu, select **Connections**.
 
     ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-breadcrumb-deployment.png " ")
 
-2.  Click **Connections**, and then click **Create Connection**.
+2.  On the Connections page, click **Create Connection**.
 
     ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
 
@@ -16,19 +16,19 @@
 
 4.  From the **Compartment** dropdown, select a compartment.
 
-5.  From the a Type dropdown, select **Oracle Autonomous Database**.
-
-6. For Database details, select **Select database**.
+5.  From the a Type dropdown, select **Oracle Autonomous AI Database**.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
 
-7.  Select a **Compartment** from the dropdown, and then select **SourceATP-&lt;numbers&gt;** from the dropdown. 
+6.  For Database details, choose **Select database**.
+
+7.  For **Database in Compartment** confirm the compartment selection, and then select **SourceATP-&lt;numbers&gt;** from the dropdown. 
 
 8.  For Database username, enter `ggadmin`.
 
-9.  Select a **Compartment** from the dropdown, and then select a Database user password secret from the dropdown.
+9.  For **Database user password in compartment**, select the compartment in which the user password resides, and then select the password secret from the dropdown.
 
-    > **NOTE:** This password will be used to unlock `GGADMIN` in a later task.
+    > **NOTE:** You use this password secret to unlock `GGADMIN` in a later task.
 
     ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-09-create-connection-gg-details.png)
 

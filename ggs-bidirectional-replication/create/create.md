@@ -17,7 +17,7 @@ Database Registrations capture source and target credential information. A datab
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
 * Create a OCI GoldenGate deployment
-* Create database registrations for the source and target Autonomous Databases
+* Create database registrations for the source and target Autonomous AI Databases
 * Review the OCI GoldenGate deployment details
 * Access the OCI GoldenGate deployment console
 
@@ -59,7 +59,7 @@ You can perform the following actions on the deployment details page:
 
 ## Task 2: Create the source connection
 
-Follow the steps below to connect the source Oracle Autonomous Transaction Processing \(ATP\) Database.
+Follow the steps below to connect the source Oracle Autonomous AI Transaction Processing \(ATP\) Database.
 
 [](include:01-create-source-connection.md)
 
@@ -71,7 +71,7 @@ Follow the steps below to connect the source Oracle Autonomous Transaction Proce
 
 [](include:03-create-target-connection.md)
 
-13.  Repeat Task 3 to unlock the GGADMIN user, enable supplemental logging, and check support mode on the TargetADW database.
+13.  Repeat Task 3 to unlock the GGADMIN user, enable supplemental logging, and check support mode on the TargetALK database.
 
 ## Task 5: Assign connections to the deployment
 
@@ -84,6 +84,6 @@ Follow the steps below to connect the source Oracle Autonomous Transaction Proce
 * [Assign a connection to a deployment](https://docs.oracle.com/en/cloud/paas/goldengate-service/llyhq/#GUID-69F7C944-DD31-40FA-8589-4CB5113E74D0)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
+* **Author** - Jenny Chan, Manager, Data Integration & Essbase User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, June 2025
+* **Last Updated By/Date** - Jenny Chan, December 2025

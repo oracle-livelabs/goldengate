@@ -18,70 +18,102 @@ In this lab, you:
   * Monitor replication processes, metrics, and troubleshoot replication lag or errors.  
   * Confirm that replicated schemas and data are available in the target ADW for downstream use. 
 
+> **Tips:** 
+>
+> * Ensure that you enter names and values as directed.
+>  * When using SQL Developer, always click **Run script**, not Run statement, to ensure that you run the entire script.
+
+### Prerequisites
+
+Before you begin this lab:
+
+* Ensure that you have followed the instructions in the Get Started lab to log in to the workshop environment. You can ignore multifactor authentication, but do reset your password when prompted.
+* Check that you're logged in to the correct region. Refer to the Reservation Information panel to check your assigned region, then change regions in the Oracle Cloud console if needed.
+
 ## Task 1: Create the pipeline
 
 1. In the Oracle Cloud console navigation menu, select **Oracle Database**, and then **GoldenGate**. 
 
+  ![Select GoldenGate from OCI Menu](./images/01-01-nav-menu-goldengate.png " ")
+
 2. On the GoldenGate Overview page, in the **GoldenGate** menu, click **Pipelines**.
 
-3. On the Data fabric pipelines page, for **Applied filters**, select the correct compartment in which to create the pipeline.
+  ![Select Pipelines](./images/01-02-goldengate-menu-pipelines.png " ")
 
-	![GoldenGate Data fabric pipelines page](images/01-03-pipelines-page.png " ")
+3. On the Data fabric pipelines page, for **Applied filters**, select the LiveLabs compartment that you were assigned from the dropdown. Workshop compartments are located under LiveLabs, or you can use the search field. 
 
-4. Click **Create pipeline**. The Create ZeroETL Mirror pipeline page appears. 
+    > **NOTE:** Refer to the Reservation Information panel to check your assigned compartment. If you don't choose the correct compartment, you won't be able to create a pipeline. 
+
+	  ![GoldenGate Data fabric pipelines page](images/01-03-pipelines-page.png " ")
+
+4. Click **Create pipeline**. The Create ZeroETL Mirror pipeline page opens. 
+
+  ![Create pipeline](./images/01-04-create-pipeline.png " ")
 
 5. In the Create ZeroETL Mirror pipeline page, complete the fields as follows, and then click **Create pipeline**.
 
-   * For **Name**, enter AIW-Pipeline and optionally, a description.
+   * For **Name**, enter `AIW-Pipeline` and optionally, a description.
    * For **Choose a license type**, select **Licenses included**.
    * For **Source connection**, select **ATP POS Source Connection** from the dropdown.
    * For **Target connection**, select **ADW AI Mirror Target Connection** from the dropdown.
 
   ![Create ZeroETL Mirror pipeline page](images/01-05-create-pipeline.png " ")
 
+You're brought to the AIW-Pipeline details page, where the pipeline's status is **Creating**. It will take a few moments for it to become **Active**. You may need to refresh the page to view its updated status.
+
 ## Task 2: Check Source and Target
 
-1. After the pipeline is **Active**, select the pipeline to open the its details page.
-
-2. On the details page, click **Test connection** for both **Source connection** and **Target connection**.
+1. On the AIW-Pipeline details page, click **Test connection** for both **Source connection** and **Target connection**.
 
   ![Pipeline details page](images/02-02-details-src-tgt.png " ")
 
-3. The Test connection dialog for both source and target tests should return **Success**.
+2. The Test connection dialog for both source and target tests should return **Success**.
 
   ![Test connection success dialog message](images/02-03-test-conn.png " ")
 
   If either test fails, check the credentials, networking, and endpoint configuration of the connection before you retry.
 
-    > **Note:** The test connection may fail the first time with a timeout error (e.g., “Cause: Failed to connect to adb.me-dubai-1.oraclecloud.com:1522, reason: curl: (28) Resolving timed out after 5000 milliseconds”). This is expected behavior. Running the test a second time typically returns a Success result.
+    > **Note:** The test connection may fail the first time with the timeout error: “Failed to connect to adb.<region>.com:1522, reason: curl: (28) Resolving timed out after 5000 milliseconds”. This is expected behavior. Running the test a second time typically returns a Success result.
 
-4. After both connection tests are successful, click the source connection name to view the source connection's details.
+3. After both connection tests are successful, click the source connection name to view the source connection's details.
 
-  > **Tip:** Open the source and target database details in a new browser tab because you'll need them later.
+   ![Select source connection name](./images/02-03-source-conn-details.png " ")
 
-5. On the source connection's details page, from the **Actions** menu, select **SQL**. 
+    > **Tip:** Open the source and target connection details in a new browser tab or window because you'll need them later.
 
-6. To check the row count for the `POS_ORDER` table, paste the follow command into the SQL worksheet and then click **Run script**.
+4. On the **ATP POS Source Connection** details page, under **Connection information**, click the **Database** name.
+
+   ![Open ADB details](./images/02-04-adb-details.png " ")
+
+5. On the source ATP database details page, from the **Database actions** menu, select **SQL**. 
+
+   ![Select SQL from DB Actions menu](./images/02-05-db-actions-sql.png " ")
+
+6. Copy and paste the following command into SQL Developer to check the row count for the `POS_ORDER` table, and then click **Run script**.
 
     ```
     <copy>SELECT COUNT(*) FROM YAN_POS.POS_ORDER;</copy>
     ```
 
-7. Repeat **steps 4 to 6** for the target connection.
+   The total table count returned should be 22.
+
+7. Repeat **steps 3 to 6** for the target connection.
+
+   The Query Result returned should return an error saying the table does not exist.
 
 ## Task 3: Add mapping rules
 
-1. Return to the GoldenGate Pipelines page. 
+1. In your web browser, return to the GoldenGate Pipelines page and select the **AIW-Pipeline** pipeline.
 
-2. Select the **AIW-Pipeline** pipeline.
+2. On the AIW-Pipeline details page, click **Mapping rules**. 
 
-3. On the AIW-Pipeline details page, click **Mapping rules**. 
+   ![Click Mapping Rules](./images/03-02-mapping-rules.png " ")
 
-4. For the `Include` rule, select **Edit** from its **Actions** menu.  
+3. On the Mapping rules page, for the **Include** rule, select **Edit** from its **Actions** menu.  
 
-   ![Select edit from Include Actions menu](images/03-02a-mapping-rules.png " ") 
+   ![Select edit from Include Actions menu](images/03-03-edit-include.png " ") 
 
-5. In the Edit mapping rule panel, change the default rule to `YAN_POS.*` for both the **Source** and **Target** fields, and then click **Update**.
+4. In the Edit mapping rule panel, change the default rule to `YAN_POS.*` for both the **Source** and **Target** fields, and then click **Update**.
 
    ![Edit source and target fields](images/03-02b-yan-pos.png " ") 
 
@@ -101,7 +133,7 @@ In this lab, you:
 
 2. In the Start pipeline dialog, click **Start**.
 
-  ![Start pipeline dialog](images/04-02-start-pipeline.png " ") 
+  ![Start pipeline dialog](images/04-02-pipeline-start.png " ") 
 
 3. On the pipeline's details page, click **Initialization**. The Initialization page displays the status of the pipeline steps. For each step, you can select **View details** from its **Actions** menu and review corresponding messages.
 
@@ -115,31 +147,29 @@ In this lab, you:
 
 Insert sample product rows into the source database, then validate that the changes are replicated to the target database through SQL Developer.    
 
-1.  Return to the **Source ATP database** details page. 
-
-2.  On the database details page, from the **Actions** menu, select **SQL**.
-
-    ![Image alt text](images/05-03a-sql-dev.png " ") 
+1.  Return to the Source ATP SQL tool. 
    
-3.  Use the ADMIN user credentials from the **View login info** panel of your workshop instructions to log in.
-   
-4.  In the left navigation, expand the schema **YAN_POS** and verify that the PRODUCT table exists.
+2.  In the left navigation, expand the schema **YAN_POS** and verify that the PRODUCT table exists.
 
-5.  Run the following script to record the current row count:
+   ![ATP SQL Schemas](./images/05-04-check-schema.png " ")
+
+3.  In the SQL Worksheet, copy and paste the following script to record the current row count, and then click **Run script**:
 
      ```
      <copy> SELECT COUNT(*) AS src_count_before FROM YAN_POS.PRODUCT;</copy>
      ```
 
-6.  Repeat **steps 1 to 4** for the **Target ADW database**.
+     Note the row count.
 
-7.  Run the following script to record the current row count:
+4.  In the Target ADW SQL tool, copy and paste the following script to record the current row count, and then click **Run script**:
 
      ```
      <copy> SELECT COUNT(*) AS tgt_count_before FROM YAN_POS.PRODUCT;</copy>
      ```
   
-8.  In the Source ATP SQL Worksheet, copy and paste the following statements:
+    The row count returned should match that of the source.
+
+5.  In the Source ATP SQL Worksheet, clear the worksheet, paste the following statements, and then click **Run script**:
 
     ```
     <copy> 
@@ -177,17 +207,28 @@ Insert sample product rows into the source database, then validate that the chan
    </copy>
    ```
 
-9.  Ensure there are no errors in the replication flow.  How?
+6.  Return to your AIW-Pipeline details page to ensure there are no errors in the replication flow.
 
-10. Review Source and Target Schemas  
-  a. Connect to both the source and target databases.  How? SQL developer?
-  b. Verify that the schemas and tables are correctly created and populated.  In the schema/table menu again?
-  c. Ensure data changes in the source are reflected in the target in real time.
+7.  In the Source ATP SQL Developer worksheet, copy and paste the following script to ensure YAN_POS tables and data were replicated into ADW with the AIW-Pipeline, and then click **Run script**:
 
     ```
-     <copy>SELECT COUNT(*) AS tgt_count_before FROM YAN_POS.PRODUCT; 
-     SELECT * FROM YAN_POS.PRODUCT WHERE PRODUCT_ID BETWEEN 2000 AND 11000;</copy> 
+    <copy>SELECT 
+      (SELECT COUNT(*) 
+        FROM user_tables 
+        WHERE table_name LIKE 'YAN_POS%') AS user_tables_count,
+      (SELECT COUNT(*) FROM YAN_POS.pos_order) AS pos_order_count,
+      (SELECT COUNT(*) FROM YAN_POS.Customer)  AS customer_count,
+      (SELECT COUNT(*) FROM YAN_POS.Product)   AS product_count
+    FROM dual;</copy>
     ```
+
+8.  Take note of the record counts.
+
+    ![Table counts](./images/05-08-tables.png " ")
+
+9.  Repeat step 7 in the ADW SQL Developer worksheet, and compare record counts to the Source ATP. They should match.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Shrinidhi Kulkarni, GoldenGate Product Manager

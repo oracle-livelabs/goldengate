@@ -17,11 +17,11 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
-            "title": "Lab 1: Create the connections",
+            "title": "Lab 1: Create the OCI GoldenGate resources",
             "filename": "../../create/create.md"
         },
         {
-            "title": "Lab 2: Create the pipeline",
+            "title": "Lab 2: Configure and start the pipeline",
             "filename": "../../pipelines/pipelines.md"
         },
         {

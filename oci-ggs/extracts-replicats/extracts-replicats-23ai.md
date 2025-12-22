@@ -28,19 +28,19 @@ In this lab, you will:
 
 Before importing data to the target database, create a credential in the target database to access the exported data file in Oracle Object Store.
 
-1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle Database**, and then click **Autonomous Databases**.
+1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle AI Database**, and then click **Autonomous AI Databases**.
 
-2. In the list of Autonomous Databases, click **TargetADW**.
+2. In the list of Autonomous AI Databases, click **TargetALK**.
 
-    ![Autonomous Data Warehouse page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-02-targetadw.png " ")
+    ![Autonomous AI Lakehouse page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-02-targetadw.png " ")
 
-3. On the **TargetADW Details** page, click **Database actions**, and then select **SQL** from the dropdown.
+3. On the **TargetALK Details** page, click **Database actions**, and then select **SQL** from the dropdown.
 
-    ![TargetADW Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
+    ![TargetALK Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
 
     > **Note:** (Optional) Close the SQL Help dialogs.
 
-4. Enter the following script and then click **Run Statement** to create a credential in ADW:
+4. Enter the following script and then click **Run Statement** to create a credential in ALK:
 
     ```
     <copy>BEGIN
@@ -165,7 +165,7 @@ Before importing data to the target database, create a credential in the target 
 
 4.  On the Replicat Options page, for Replicat Trail **Name**, enter `E1`.
 
-5.  For Target Credentials, from the **Domain** dropdown, select **OracleGoldenGate**, and then select **TargetADW** for **Alias**.
+5.  For Target Credentials, from the **Domain** dropdown, select **OracleGoldenGate**, and then select **TargetALK** for **Alias**.
 
 6.  For **Checkpoint Table**, select **"SRCMIRROR\_OCIGGLL","CHECKTABLE"**, and then click **Next**.
 
@@ -225,6 +225,6 @@ You may now **proceed to the next lab.**
 * [Add a Replicat for Oracle Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/cress/index.html)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
+* **Author** - Jenny Chan, Manager, Data Integration & Essbase User Assistance Development
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, October 2024
+* **Last Updated By/Date** - Jenny Chan, December 2025

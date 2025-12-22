@@ -12,7 +12,7 @@ Estimated time: 20 minutes
 
 -  Provision a VCN and subnet
 -  Provision, connect, and load data into an Autonomous Transaction Processing (ATP) instance
--  Provision, connect, and load data into an Autonomous Data Warehouse (ADW) instance
+-  Provision, connect, and load data into an Autonomous AI Lakehouse (ALK) instance
 
 ### Prerequisites
 
@@ -32,17 +32,17 @@ This lab assumes you have completed the Get started lab.
 
 [](include:03-load-atp-schema.md)
 
-## Task 4: Create an Autonomous Data Warehouse instance
+## Task 4: Create an Autonomous AI Lakehouse instance
 
 [](include:04-create-adw-instance.md)
 
-## Task 5: Load the Autonomous Data Warehouse schema
+## Task 5: Load the Autonomous AI Lakehouse schema
 
-1.  Select your Autonomous Data Warehouse instance from the Autonomous Databases list to view its details and access tools.
+1.  Select your Autonomous AI Lakehouse instance from the Autonomous Databases list to view its details and access tools.
 
     ![Autonomous Database list](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/05-01-adw.png " ")
 
-2.  On the TargetADW Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions**, and then select **SQL** from the Database actions page. 
+2.  On the TargetALK Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions**, and then select **SQL** from the Database actions page. 
 
     ![Autonomous Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/05-02-db-actions.png " ")
 
@@ -72,6 +72,7 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Katherine Wardhana, June 2025
+- **Author** - Jenny Chan, Manager, Data Integration & Essbase User Assistance
+- **Contributors** - Katherine Wardhana, User Assistance Developer
+- **Last Updated By/Date** - Jenny Chan, December 2025
 - **PAR Expiration date** - February 2030

@@ -6,9 +6,6 @@ In this lab, you learn to create an Oracle Cloud Infrastructure (OCI) GoldenGate
 
 Estimated time: 20 minutes
 
-Watch the video below for a quick walk through of the lab.
-[Watch the video](videohub:1_hz7gsiin)
-
 ### About Oracle Cloud Infrastructure GoldenGate deployments and connections
 
 A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
@@ -25,19 +22,27 @@ In this lab, you will:
 
 ## Task 1: Review the deployment
 
-1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
+1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle AI Database**, and then select **GoldenGate**.
 
     ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
-2. On the GoldenGate **Overview** page, click **Deployments**.
+2. If you're prompted to take a tour, you can choose to continue with the tour or close it.
 
-    ![GoldenGate Overview - Deployments](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
+    ![Guided tour](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-tour.png " ")
 
-3. On the Deployments page, select your compartment from the **Compartment** dropdown.
+3. On the GoldenGate **Overview** page, if you encounter a "Failed to load" error about your resources, select your assigned **Compartment** from the **Applied filters** dropdown. 
 
     > **NOTE**: If you're using the LiveLab Sandbox environment, you can find your compartment number in the Reservation Information panel (View Login Info) of the workshop instructions.
 
-4. Select **OCI GoldenGate Deployment** in the Deployments list.
+    ![GoldenGate resource error](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-resource-error.png " ")
+
+4. In the GoldenGate menu page, click **Deployments**.
+
+    ![GoldenGate Overview - Deployments](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-overview.png " ")
+
+    > **NOTE**: If using the LiveLab Sandbox environment, select your LiveLab compartment from the Applied filters dropdown.
+
+5. Select **OCI GoldenGate Deployment** in the Deployments list.
 
     ![Select OCI GoldenGate Deployment](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-ggs-deployments.png " ")
 
@@ -65,7 +70,7 @@ You can perform the following actions on the deployment details page:
 
 [](include:03-create-target-connection.md)
 
-13. Repeat Task 3, steps 1-6, to unlock the GGADMIN user for the TargetADW database.
+13. Repeat Task 3, steps 1-6, to unlock the GGADMIN user for the TargetALK database.
 
 ## Task 5: Assign connections to the deployment
 
@@ -76,10 +81,10 @@ You may now **proceed to the next lab.**
 ## Learn more
 
 * [Create a data replication deployment](https://docs.oracle.com/en/cloud/paas/goldengate-service/llyhq/#GUID-899C1348-58CA-43EE-B775-EAD3B365A7A9)
-* [Connect to Oracle Autonomous Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/tqrlh/)
+* [Connect to Oracle Autonomous AI Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/tqrlh/)
 * [Assign a connection to a deployment](https://docs.oracle.com/en/cloud/paas/goldengate-service/llyhq/#GUID-69F7C944-DD31-40FA-8589-4CB5113E74D0)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
+* **Author** - Jenny Chan, Manager, Data Integration & Essbase User Assistance Development
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, June 2025
+* **Last Updated By/Date** - Jenny Chan, December 2025

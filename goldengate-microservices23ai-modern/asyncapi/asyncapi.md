@@ -44,9 +44,7 @@ In this lab, you:
 
 ## Task 2: Create the Subscriber
 
-1. Open the Terminal and enter option `2`.
-
-    ![Terminal](./images/02-01-terminal-home-enviro.png " ")
+1. Open the Terminal.
 
 2. Enter the following command prompt to send the output to a webpage, allowing you to view real-time change events as they occur live:
 

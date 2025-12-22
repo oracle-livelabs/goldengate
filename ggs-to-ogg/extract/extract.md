@@ -18,7 +18,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes that you completed all preceding labs. For the purposes of this lab, the source database used in this lab is Oracle Autonomous Transaction Processing and the target database is Oracle Autonomous Data Warehouse.
+This lab assumes that you completed all preceding labs. For the purposes of this lab, the source database used in this lab is Oracle Autonomous Transaction Processing and the target database is Oracle Autonomous AI Lakehouse.
 
 ## Task 1: Add Transaction Data
 
@@ -151,9 +151,9 @@ In this lab, you created and ran a Path on your on premises Oracle GoldenGate Re
 
     ![Select Configration from the Administration Service navigation menu](./images/04-01-configuration.png " ")
 
-2.  For target Autonomous Data Warehouse database, click **Connect to Database**.
+2.  For the target Autonomous AI Lakehouse database, click **Connect to Database**.
 
-    ![Connect to TargetADW on the Configuration page](./images/04-02-connect-db.png " ")
+    ![Connect to TargetALK on the Configuration page](./images/04-02-connect-db.png " ")
 
 3.  Next to Checkpoint, click **Add Checkpoint**.
 
@@ -183,7 +183,7 @@ This Replicat process consumes the trail file sent from OCI GoldenGate.
 
     *  For **Replicat Trail Name**, enter **T1**.
     *  For **Domain**, select **OracleGoldenGate**.
-    *  For **Alias**, select **TargetADW**.
+    *  For **Alias**, select **TargetALK**.
     *  For **Checkpoint Table**, select **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**.
 
     ![Replicat Options page](./images/05-03-rep-options.png " ")

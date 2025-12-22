@@ -41,31 +41,31 @@ For this lab, a complete patched version of Oracle GoldenGate 23.8 has been inst
 
 2. Expand the **Deployments** navigation menu, and select the **HUB_23ai** deployment.  
 
-3. On the Deployment Detail page, select **Alter Deployment** (pencil icon).
+3. On the **Deployment Details** page, select **Alter Deployment** (pencil icon).
 
     ![Alter Deployment](./images/03-03-deployment-details.png " ")
 
-4. The Edit Deployment Detail dialog window appears. For GoldenGate Home, enter **/u01/ogg/23.8**, and then click **Submit**.
+4. In the **Edit Deployment Detail** panel, for GoldenGate Home, enter **/u01/ogg/23.8**, and then click **Submit**.
 
     ![Edit Deployment Detail](./images/03-04-edit-deployment-detail.png " ")
 
-5. Expand the **Deployments** navigation menu again, and select the **ServiceManager** deployment.
+5. In the navigation menu, expand the **Deployments**, **ServiceManager**, and then select **Details**.
 
-6. On the Deployment Detail page, select **Alter Deployment** (pencil icon).  
+6. On the **Deployment Details** page, select **Alter Deployment** (pencil icon).  
 
     ![Edit ServiceManager Deployment Detail](./images/03-06-sm-deployment-detail.png " ")
 
-7. The Edit Deployment Detail dialog window appears. For GoldenGate Home, enter **/u01/ogg/23.8**, and then click **Submit**.
+7. In the **Edit Deployment Detail** panel, for GoldenGate Home, enter **/u01/ogg/23.8**, and then click **Submit**.
 
     ![Edit ServiceManager Deployment Detail](./images/03-07-sm-edit-deployment-detail.png " ")
 
 8. In the navigation menu, click **Home**.
 
-9. In the **HUB_23ai** deployment Action menu, select **Stop**.
+9. On the Deployments page, in the **HUB_23ai** deployment **Actions** column, click **Stop**. 
 
     ![Stop Deployment](./images/03-09-pause-deployment.png " ")
 
-10. After the **HUB_23ai** deployment status changes to **Stopped**, in the Service Manager deployment Action menu, click **Restart**.
+10. After the **HUB_23ai** deployment status changes to **Stopped**, in the **ServiceManager** deployment **Actions** column, click **Restart**.
 
     ![Restart Deployment](./images/03-10-restart-deployment.png " ")
 
@@ -73,7 +73,7 @@ For this lab, a complete patched version of Oracle GoldenGate 23.8 has been inst
 
     ![Reload page](./images/03-11-reload-page.png " ")
 
-12. In the **HUB_23ai** deployment Action menu, select **Start**. In the Confirm Action dialog, click **OK**.
+12. In the **HUB_23ai** deployment Actions menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
     ![Start HUB_23ai deployment again](./images/03-12-start-dep-again.png " ")
 
@@ -83,7 +83,7 @@ For this lab, a complete patched version of Oracle GoldenGate 23.8 has been inst
 
     ![Open Administration Service](./images/03-14-admin-service.png " ")
 
-15. If prompted, log in as oggadmin and copy from the password_file.txt.
+15. If prompted, log in as oggadmin and provide the password from password_file.txt.
 
 16. Once connected, restart the **EWEST** Extract and the **REAST** Replicat.  
 
@@ -96,4 +96,4 @@ The GoldenGate Service Manager and HUB_23ai deployment were both successfully pa
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer
 * **Contributors** - Mack Bell, Senior Principal Product Manager & Alex Lima, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, August 2025
+* **Last Updated By/Date** - Jenny Chan, September 2025

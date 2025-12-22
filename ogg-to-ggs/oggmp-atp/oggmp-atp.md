@@ -1,8 +1,8 @@
-# Connect Oracle GoldenGate to Autonomous Transaction Processing
+# Connect Oracle GoldenGate to Autonomous AI Transaction Processing
 
 ## Introduction
 
-For the purposes of this workshop, Oracle Autonomous Transaction Processing (ATP) serves as the source database for your Oracle GoldenGate Marketplace deployment. In this lab, you learn how to connect your Oracle GoldenGate Marketplace deployment to ATP.
+For the purposes of this workshop, Oracle Autonomous AI Transaction Processing (ATP) serves as the source database for your Oracle GoldenGate Marketplace deployment. In this lab, you learn how to connect your Oracle GoldenGate Marketplace deployment to ATP.
 
 Estimated time: 10 minutes
 
@@ -25,11 +25,11 @@ In this lab, you will:
 
 ## Task 1: Download the Source ATP client credentials
 
-1.  Navigate back to the Source ATP Autonomous Database Details page, and then click **Database connection**.
+1.  Navigate back to the Source ATP Autonomous AI Database Details page, and then click **Database connection**.
 
     ![Click Database Connection on the source ATP database details page](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-01.png " ")
 
-2.  In the DB Connection panel, click **Download wallet**.
+2.  In the Database connection panel, under Download client credentials (wallet), click **Download wallet**.
 
     ![Click Download wallet in DB Connection panel](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-02.png " ")
 
@@ -41,11 +41,11 @@ In this lab, you will:
 
 ## Task 2: Upload the Source ATP credentials to Oracle GoldenGate
 
-1.  From the Oracle Cloud Console navigation menu, click **Compute**, and then click **Instances**.
+1.  From the Oracle Cloud Console navigation menu, select **Compute**, and then click **Instances**.
 
     ![Click Instances in the Oracle Cloud console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-01-compute.png " ")
 
-2.  Under **List Scope**, ensure that you select the correct **Compartment** for this workshop. You should then see **Oracle GoldenGate 21.1.0.0.1 Microservices Edition for Oracle** in the list of Instances.
+2.  Ensure that you select the correct **Compartment** for this workshop. You should then see **Oracle GoldenGate 21.1.0.0.1 Microservices Edition for Oracle** in the list of Instances.
 
     > **Note:** For Sandbox workshop users, you can find your compartment information in the Workshop Details of this LiveLab.
 
@@ -215,6 +215,6 @@ In this lab, you created a connection from the Oracle GoldenGate Marketplace ins
 
 ## Acknowledgements
 
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, May 2024
+* **Author** - Jenny Chan, Manager, Data Integration & Essbase User Assistance
+* **Contributors** -  Denis Gray, Database Product Management, Katherine Wardana, User Assistance Developer
+* **Last Updated By/Date** - Jenny Chan, December 2025

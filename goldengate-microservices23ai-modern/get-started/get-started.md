@@ -28,17 +28,13 @@ In this lab, you:
 
     ![Click Activities on VCN](./images/01-02-activities.png " ")
 
-2.  In the Activities toolbar, select **Terminal** to open a new Terminal session.
-
-    ![Open Terminal](./images/01-03-open-terminal.png " ")
-
-3.  A preset script has been loaded in the Terminal to configure the correct environment for this workshop. Enter option `2`, to select Oracle GoldenGate 23.7 as a Home Environment, then press **Enter** to begin.
-
-    ![Select Oracle Home Environment](./images/01-04-home-environment.png " ")
-
-    Your lab instructions, the GoldenGate Service Manager, and Admin Service are now available to you in Remote Desktop. 
+2.  In the Activities toolbar, select **Terminal** to open a new Terminal session. 
 
     ![Tabs open to access lab instructions](./images/01-05-lab-instructions.png " ")
+
+3.  A preset script has been loaded in the Terminal which launches the lab instructions and a browser window with the GoldenGate Administration Service and Service Manager open in two separate tabs.
+
+    > **NOTE:** When instructed to copy and paste content, you can do so from the instructions provided in the Remote Desktop.
 
 You may now **proceed to the next lab.**
 

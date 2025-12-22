@@ -1,4 +1,4 @@
-# Create the Oracle Cloud Infrastructure GoldenGate connections
+# Create the Oracle Cloud Infrastructure GoldenGate resources
 
 ## Introduction
 
@@ -6,73 +6,27 @@ In this lab, you learn to create an Oracle Cloud Infrastructure (OCI) GoldenGate
 
 Estimated time: 20 minutes
 
-Watch the video below for a quick walk through of the lab.
-[Watch the video](videohub:1_hz7gsiin)
+### About Oracle Cloud Infrastructure GoldenGate (OCI) pipelines
 
-### About Oracle Cloud Infrastructure GoldenGate connections
-
-A Oracle Cloud Infrastructure GoldenGate connections store the source and target credential information for OCI GoldenGate. A connection also enables networking between the Oracle Cloud Infrastructure (OCI) GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
+OCI GoldenGate pipelines let you configure real time data replication flows that support mission critical use cases such as analytics, operational reporting, and hybrid cloud integrations. You can create a pipeline to stream data directly from operational databases to analytical environments without traditional extract, transform, load (ETL) processes. 
 
 ### Objectives
 
 In this lab, you will:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
-* Create the source and target connections
+* Create the pipeline, source and target connections
+* Unlock the GGADMIN user in the source and target databases
 
 ### Prerequisites
 
 To successfully complete this lab, you must:
 * Review [Minimum recommended policies](https://docs.oracle.com/en/cloud/paas/goldengate-service/rmrrr/#GUID-3E101995-8630-4D58-93DF-0AE94041B031).
 
-## Task 1: Create the source connection
+## Task 1: Unlock the GGADMIN user and enable supplemental logging
 
-1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
+Oracle Autonomous AI Databases come with a GGADMIN user that is locked by default. The following steps guide you through how to unlock the GGADMIN user before you use the source and target databases.
 
-    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
-
-2.  Click **Connections** and then click **Create Connection**.
-
-    ![Connections page](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-03-create-connection.png " ")
-
-3.  The Create connection panel appears. For Name, enter **SourceATP** and optionally, a description.
-
-4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
-
-5.  From the a Type dropdown, select **Oracle Autonomous Database**.
-
-6. For Database details, select **Select database**.
-
-    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/02-06-create-connection-general-info.png)
-
-7.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**, and then select **SourceATP-&lt;numbers&gt;** from the dropdown. 
-
-8.  For Database username, enter `ggadmin`.
-
-9.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**, and then select a Database user password secret from the dropdown.
-
-    > **NOTE:** This password will be used to unlock `GGADMIN` in a later task.
-
-    ![Source Database details](./images/01-09-create-connection-gg-details.png)
-
-10. Expand the **Advanced options**, and then expand **Network connectivity**.
-
-11. For **Traffic routing method**, select **Dedicated endpoint**.
-
-    > **Note:** Ensure that you select **Dedicated endpoint** as the **Traffic routing method**, as **Shared endpoint** is not supported. 
-
-12. From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**, and then select **&lt;USER&gt;-COMPARTMENT-SUBNET-PRIVATE** from the dropdown.
-
-13. Click **Create**.
-
-    ![Source Database details](./images/01-13-advanced-options.png)
-
-    The connection becomes Active after a few minutes. You can proceed with the next task while service creates the connection.
-
-## Task 2: Unlock the GGADMIN user and enable supplemental logging for the source database
-
-Oracle Autonomous Databases come with a GGADMIN user that is locked by default. The following steps guide you through how to unlock the GGADMIN user.
-
-1.  From the Oracle Cloud Console navigation menu, click **Oracle Database**, and then select **Autonomous Database**.
+1.  From the Oracle Cloud Console navigation menu, click **Oracle AI Database**, and then select **Autonomous AI Database**.
 
 	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-atp.png " ")
 
@@ -88,7 +42,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![ATP Database actions log in](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-04-login.png " ")
 
-5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
+5.  From the list of users, locate **GGADMIN**, and then select **Edit** from its **Menu** (ellipsis icon).
 
     ![Database users](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/03-05-ggadmin.png " ")
 
@@ -104,7 +58,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     > **Note:**  (Optional) Close the SQL Help dialogs. 
 
-8.  Enter the following into the Worksheet, and then click **Run Statement**.
+8.  Enter the following into the Worksheet, and then click **Run Script**.
 
     ```
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
@@ -124,59 +78,89 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![Script Output](./images/02-08-sql-script.png " ")
 
-    You can leave the SQL window open and continue with the next Task.
 
-## Task 3: Create the target connection
+10. Repeat the steps above to unlock the GGADMIN user and run the SQL scripts for the TargetALK database.
 
-Follow the steps below to connect the target Autonomous Data Warehouse \(ADW\) instance.
+## Task 2: Create the pipeline
 
-1.  Use the Oracle Cloud Console navigation menu to navigate back to **GoldenGate**.
+This task guides you through the steps to create a pipeline and its source and target connections.
 
-2.  Click **Connections** and then **Create Connection**.
+1. In the Oracle Cloud console, open the **navigation menu**, navigate to **Oracle Database**, and then select **GoldenGate**.
 
-    ![Create Connection in GoldenGate menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-02-connections.png " ")
+    ![GoldenGate in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/database-goldengate.png " ")
 
-3.  The Create connection panel appears. For Name, enter **TargetADW** and optionally, a description.
+2.  If you're prompted to take a tour, you can choose to continue with the tour or close it.
 
-4.  From the **Compartment** dropdown, select a compartment.
+    ![GoldenGate tour](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-ggs-tour.png " ")
 
-5.  From the a Type dropdown, select **Oracle Autonomous Database**.
+3.  On the GoldenGate **Overview** page, if you encounter a "Failed to load" error about your resources, select your assigned **Compartment** from the **Applied filters** dropdown. 
 
-6.  For Database details, select **Select database**.
+    > **NOTE**: If you're using the LiveLab Sandbox environment, you can find your compartment number in the Reservation Information panel (View Login Info) of the workshop instructions.
 
-    ![Source Database details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/04-06-create-connec-general-info.png " ")
+    ![GoldenGate resource error](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-02-resource-error.png " ")
 
-7. For **Database in &lt;compartment-name&gt;**, select **TargetADW-&lt;numbers&gt;** from the dropdown. 
+4.  In the GoldenGate menu, click **Pipelines**. 
 
-8. For Database username, enter `ggadmin`.
+    ![Select pipelines from GoldenGate menu](./images/01-04-pipelines.png " ")
 
-9. From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**, and then select a Database user password secret from the dropdown.
+5.  On the Pipelines page, click **Create pipeline**.
 
-    ![Source Database details](./images/03-09-create-connection-gg-details.png)
+    ![Create pipeline](./images/01-05-create-pipeline.png " ")
 
-10. Expand the **Advanced options**, and then expand **Network connectivity**.
+6.  On the **Create ZeroETL Mirror pipeline** page, complete the fields as follows:
 
-11. For **Traffic routing method**, select **Dedicated endpoint**.
+    * Enter a **Name** for the pipeline.
+    * (Optional) Enter a **Description** for the pipeline.
+    * Select a **Compartment** in which to create the pipeline.
+    * For **Choose a license type**, select **License included**. 
+    * Click **Create connection** to create the source connection.
 
-    > **Note:** Ensure that you select **Dedicated endpoint** as the **Traffic routing method**, as **Shared endpoint** is not supported. 
+    ![Create ZeroETL Pipeline - part 1](./images/01-06-create-pipeline.png " ")
 
-12. From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**, and then select **&lt;USER&gt;-COMPARTMENT-SUBNET-PRIVATE** from the dropdown.
+7.  In the Create connection panel, complete the fields as follows, and then click **Create**:
 
-13. Click **Create**.
+    * For **Name**, enter `SourceATP`.
+    * (Optional) Enter a **Descroption**.
+    * From the **Type** dropdown, select **Oracle Autonomous AI Database**
+    * From the **Database** dropdown, select **SourceATP**.
+    * From the **Database user password secret** dropdown, select **LiveLab_Secret**.
 
-    ![Source Database details](./images/01-13-advanced-options.png)
+    ![Create source connection](./images/01-07-create-sourceatp.png " ")
 
-    The source and target databases appear in the list of Connections. The connection becomes Active after a few minutes.
+    The Source connection dropdown should automatically populate with the SourceATP connection.
 
-14. Repeat Task 2, steps 1-9, to unlock the GGADMIN user and run the SQL script for the TargetADW database.
+8.  Click **Create connection** to create the target connection.
+
+    ![Create connection for target](./images/01-08-create-target.png)
+
+9.  In the Create connection panel, complete the fields as follows, and then click **Create**:
+
+    * For **Name**, enter `TargetALK`.
+    * (Optional) Enter a **Descroption**.
+    * From the **Type** dropdown, select **Oracle Autonomous AI Database**
+    * From the **Database** dropdown, select **TargetALK**.
+    * From the **Database user password secret** dropdown, select **LiveLab_Secret**.
+
+    The Target connection dropdown should automatically populate with the TargetALK connection.
+
+10. Back on the Create ZeroETL Mirror pipeline page, from the **Subnet** dropdown, select the private subnet.
+
+    ![Select pipeline subnet](./images/01-10-subnet.png)
+
+11. Click **Create**.
+
+You're brought to the pipeline details page. The pipeline takes a few minutes to create. The pipeline status updates to Active when it's ready to use.
+
 
 You may now **proceed to the next lab.**
 
 ## Learn more
 
-* [Connect to Oracle Autonomous Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/tqrlh/)
+* [About pipelines](https://docs.oracle.com/en/cloud/paas/goldengate-service/jppjs/)
+* [Create pipeline resources](https://docs.oracle.com/en/cloud/paas/goldengate-service/crylk/)
+* [Connect to Oracle Autonomous AI Database](https://docs.oracle.com/en/cloud/paas/goldengate-service/tqrlh/)
 
 ## Acknowledgements
 * **Author** - Katherine Wardhana, User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, July 2025
+* **Last Updated By/Date** - Jenny Chan, December 2025
