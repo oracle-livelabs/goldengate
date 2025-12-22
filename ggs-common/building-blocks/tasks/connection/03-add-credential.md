@@ -11,7 +11,7 @@
 
 2.  Click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. Enter the following values:
 
-    * For **Autheticated By**, select **Password** from the dropdown.
+    * For **Authenticated By**, select **Password** from the dropdown.
     * For **Role**, select **Operator** from the dropdown.
     * For **Username**, enter **ggsnet**.
     * For **Password** and **Verify Password**, enter a password.

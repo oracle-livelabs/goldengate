@@ -22,7 +22,7 @@ Follow the steps below to connect the target Autonomous AI Lakehouse \(ALK\) ins
 
 6.  For Database details, select **Select database**.
 
-7.  For **Database in compartment**, confirm the compartment selection, and then select **TargetALK-&lt;numbers&gt;** from the dropdown. 
+7.  For **Database in compartment**, confirm the compartment selection, and then select **Target-&lt;numbers&gt;** from the dropdown. 
 
 8.  For Database username, enter `ggadmin`.
 
