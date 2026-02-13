@@ -4,4 +4,3 @@
 **/*.bin
 *.patch
 env.sh
-heatwave-postgres/setup/images/03b-01-open-cloudshell.png
