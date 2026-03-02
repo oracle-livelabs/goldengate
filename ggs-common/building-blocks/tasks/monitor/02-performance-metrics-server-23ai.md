@@ -1,21 +1,13 @@
 <!--
     {
-        "name":"Using the Performance Metrics Service",
-        "description":"Using the Performance Metrics Service"
+        "name":"View process performace",
+        "description":"View process performance in the deployment console."
     }
 -->
-1.  In the GoldenGate deployment console service menu bar, click **Performance Metrics Service**, and then click **Extracts**.
+1.  In the GoldenGate deployment left navigation, click **Extracts**, **UAEXT** and then click **Metrics**.
 
-    ![Performance Metrics Service page - EXT highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/02-01-pm-extracts.png " ")
+    ![UAEXT process performance](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/02-01-pm-extracts.png " ")
 
-    > **Note:** You can also view performance details for the Microservices, Distribution, and Receiver Service Paths, as well as any other processes created.
+2.  Similarly, you can select **Replicats** in the left navigation, then **REP**, and then click **Metrics** to view performance metrics for the Replicat. 
 
-2.  On the Extracts page, select the **Extract (UAEXT)**. 
-
-    ![Select Extract](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/02-02-extract.png " ")
-
-2.  Click **Database Statistics**.
-
-    ![Database Statistics page](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/02-03-db-stats.png " ")
-
-    Here, you can view the real time database statistics, such as Inserts, Updates, Deletes, and so on.
+    ![REP process performance](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/02-02-replicat.png " ")

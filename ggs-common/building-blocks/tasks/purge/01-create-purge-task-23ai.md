@@ -4,7 +4,7 @@
         "description":"Create a purge task"
     }
 -->
-1.  In the OCI GoldenGate deployment console service menu bar, select **Administration Service**, and then in the left navigation, select **Tasks**, and then **Purge Trail**.
+1.  In the OCI GoldenGate deployment navigation menu, select select **Tasks**, and then **Purge Trail**.
 
     ![Admin service and Tasks](https://oracle-livelabs.github.io/goldengate/ggs-common/purge/images/01-01-admin-tasks.png " ")
 

@@ -40,7 +40,7 @@ Before importing data to the target database, create a credential in the target 
 
     > **Note:** (Optional) Close the SQL Help dialogs.
 
-4. Enter the following script and then click **Run Statement** to create a credential in ALK:
+4. Enter the following script and then click **Run Script** to create a credential in ALK:
 
     ```
     <copy>BEGIN
@@ -57,7 +57,7 @@ Before importing data to the target database, create a credential in the target 
 
     ![Script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-05-sql-script.png " ")
 
-5.  Enter the following script and then click **Run Statement** to import data using ImpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI**: 
+5.  Enter the following script and then click **Run Script** to import data using ImpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI**: 
 
     ```
     <copy>DECLARE
@@ -142,8 +142,6 @@ Before importing data to the target database, create a credential in the target 
     dbms_datapump.detach(h1);
     END;</copy>
     ```
-
-    ![Run script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-06-sql-script.png " ")
 
     > **Note:** The Script Output displays what looks like an error, but it reports "Job has completed successfully." You can also review the **DBMS Output** tab to see the same message displayed.
 

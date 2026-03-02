@@ -29,15 +29,23 @@ In this lab, you learn to:
 
 > **NOTE:** Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.
 
-1.  In the left navigation menu, click to expand **DB Connections**, then **SourceATP**, and then finally, **Trandata**.
+1.  In the left navigation menu, click to expand **DB Connections**.
+
+2.  On the DB Connection page, for SourceATP, click **Connect to database: SourceATP**.
+
+    ![Connect to SourceATP](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-connect-sourceatp.png " ")
+
+    If connected successfully, the page reloads to show the SourceATP connection and its Checkpoint Table.
+
+3.  In the left navigation menu, under DB Connection, expand SourceATP, and then select **Trandata**.
 
     ![Administration Service navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-01-nav-config-dbconnections.png " ")
 
-3.  Next to **TRANDATA Information** click **Add TRANDATA** (plus icon).
+4.  Next to **TRANDATA Information** click **Add TRANDATA** (plus icon).
 
     ![Add TRANDATA](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-03-trandata-23ai.png " ")
 
-4.  In the Trandata panel, for **Schema Name**, enter `SRC_OCIGGLL`, and then click **Submit**.
+5.  In the Trandata panel, for **Schema Name**, enter `SRC_OCIGGLL`, and then click **Submit**.
 
     ![Schema Name field populated with SRC_OCIGGLL](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-04-schema-name-23ai.png " ")
 
@@ -47,11 +55,11 @@ In this lab, you learn to:
 
     ![SRC_OCIGGLL entered in search field and search results returned](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-05-trandata-23ai.png " ")
 
-6.  In the left navigation menu, click to connect to **TargetALK**.
+6.  In the left navigation menu, click **DB Connection**, and then on the DB Connection page, connect to **TargetALK**.
 
     ![Credentials list with Connect to database TargetALK highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-06-connect-targetadw-23ai.png " ")
 
-7.  Next to Checkpoint, click **Add Checkpoint** (plus icon).
+7.  On the TargetALK page, next to Checkpoint, click **Add Checkpoint** (plus icon).
 
     ![Add Checkpoint highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-07-add-checkpoint-23ai.png " ")
 
@@ -90,7 +98,7 @@ In this lab, you learn to:
 
     ![Critical to deployment health highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-07-dephealth-23ai.png " ")
 
-8.  On the Parameter File page, in the text area, add a new line to the existing text and add the following:
+8.  On the Parameter File page, in the text area, add the following:
 
     ```
     <copy>-- Capture DDL operations for listed schema tables
@@ -154,7 +162,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 4.  From the list of buckets, click the bucket you created. You're brought to the bucket Details page.
 
-5.  On the bucket details page, under Objects, click **Upload**.
+5.  On the bucket details page, click **Objects**, and then click **Upload**.
 
 6.  Enter a prefix, select a file (a simple text file will do), and then click **Upload**.
 
@@ -194,7 +202,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
     ![Copy highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-13-copy-token.png " ")
 
-14. In the source database SQL window, enter the following script, replace the placeholders with your user name (UPPERCASE) and token value, and then click **Run Statement**:
+14. In the source database SQL window, enter the following script, replace the placeholders with your user name (UPPERCASE) and token value, and then click **Run Script**:
 
     ```
     <copy>BEGIN
@@ -296,4 +304,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Manager, GoldenGate & Essbase User Assistance Development
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, November 2025
+* **Last Updated By/Date** - Jenny Chan, March 2026

@@ -18,6 +18,6 @@
 
     ![Terraform values](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02b-terraform-values.png " ")
 
-    After you log in successfully, you're brought to the GoldenGate 23ai deployment console home page. Here, you can access the GoldenGate Administration, Distribution and Receiver Services, Performance Metrics Service, as well as add Extracts and Replicats for your data replication tasks.
+    After you log in successfully, you're brought to the GoldenGate 26ai deployment console home page. Here, you can access the GoldenGate Administration, Distribution and Receiver Services, Performance Metrics Service, as well as add Extracts and Replicats for your data replication tasks.
 
     ![GoldenGate 23ai deployment console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-03-webui-23ai.png " ")
