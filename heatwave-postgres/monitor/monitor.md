@@ -63,7 +63,7 @@ In order to complete this lab, you should have completed the preceding labs.
     <copy>mysqlsh admin@localhost:3306 --sql</copy>
     ```
 
-15.  Enter the following inserts:
+15. Enter the following inserts:
 
     ```
     <copy>use SRC_OCIGGLL;

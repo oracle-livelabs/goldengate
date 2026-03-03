@@ -170,7 +170,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
 8. In the Objects list, click the three dots icon for your object, and then select **View Object Details**.
 
-   ![View Object Details](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-08-view-details.png)
+    ![View Object Details](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-08-view-details.png)
 
 9. In the Object Details panel, copy the URL Path (URI) up the object name and paste it into a text editor.
 

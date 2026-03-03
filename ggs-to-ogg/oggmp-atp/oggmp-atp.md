@@ -20,15 +20,15 @@ In this lab, you will:
 
 ## Task 1: Download the Target Autonomous AI Lakehouse Client Credentials
 
-1.  On the **TargetALK** database details page, click **Database connection**.
+1. On the **TargetALK** database details page, click **Database connection**.
 
     ![Target Autonomous AI Lakehouse Details page](./images/01-02-db-connection.png " ")
 
-3.  In the Database connection panel, click **Download Wallet**.
+3. In the Database connection panel, click **Download Wallet**.
 
     ![Database Connection page](./images/01-03-download-wallet.png " ")
 
-4.  In the Download Wallet dialog, enter the Target Autonomous AI Lakehouse Admin password twice, and then click **Download**.
+4. In the Download Wallet dialog, enter the Target Autonomous AI Lakehouse Admin password twice, and then click **Download**.
 
     <if type="livelabs">
     >**NOTE**: If running this lab in a LiveLab Sandbox environment, you can find the Admin password in View Login Info under OCI GoldenGate Admin Password.
@@ -36,31 +36,31 @@ In this lab, you will:
 
     ![Download Wallet page](./images/01-04-download-wallet.png " ")
 
-5.  Save the wallet zip to your local machine.
+5. Save the wallet zip to your local machine.
 
-6.  Click **Cancel** to close the Database connection panel.
+6. Click **Cancel** to close the Database connection panel.
 
 ## Task 2: Upload the Target Autonomous AI Lakehouse Credentials to Oracle GoldenGate
 
-1.  In the Oracle Cloud Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
+1. In the Oracle Cloud Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
 
     ![Instances in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-01-compute.png " ")
 
-2.  In the Oracle Cloud Console global header, click **Developer tools**, and then **Cloud Shell**. The Cloud Shell drawer opens at the bottom of your screen.
+2. In the Oracle Cloud Console global header, click **Developer tools**, and then **Cloud Shell**. The Cloud Shell drawer opens at the bottom of your screen.
 
     >**NOTE**: Cloud Shell takes a few moments to connect the first time it's opened during a session. When prompted, enter N to exit the Cloud Shell tutorial.
 
     ![Instances page](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/02-03-cloud-shell.png " ")
 
-3.  From the Cloud Shell menu (gear icon) select **Upload**.
+3. From the Cloud Shell menu (gear icon) select **Upload**.
 
     ![Cloud Shell drawer menu](./images/02-04-cs-upload.png " ")
 
-4.  In the File Upload to your Home Directory dialog, drag and drop or select the TargetALK wallet file you downloaded in Task 1, and then click **Upload**.
+4. In the File Upload to your Home Directory dialog, drag and drop or select the TargetALK wallet file you downloaded in Task 1, and then click **Upload**.
 
     ![Upload a file on Cloud Shell](./images/02-05-upload.png " ")
 
-5.  Repeat step 5 to upload your SSH private key. Click **Hide** to close the File Transfers dialog.
+5. Repeat step 5 to upload your SSH private key. Click **Hide** to close the File Transfers dialog.
 
     ![Files uploaded on Cloud Shell](./images/02-06-hide.png " ")
 
@@ -68,17 +68,17 @@ In this lab, you will:
     >**Note:** Ensure the private key you upload here is the match of the public key you provided when you reserved this lab.
     </if>
 
-6.  To ensure the SSH key permissions are valid, enter the following command in Cloud Shell: (Remember to replace the `<private-SSH-key>` placeholder with the name of your private key.)
+6. To ensure the SSH key permissions are valid, enter the following command in Cloud Shell: (Remember to replace the `<private-SSH-key>` placeholder with the name of your private key.)
 
     ```
     <copy>chmod 600 <private-SSH-key></copy>
     ```
 
-7.  On the Instances <compartment-name> page, copy the compute instance's **Public IP Address**.
+7. On the Instances <compartment-name> page, copy the compute instance's **Public IP Address**.
 
     ![Public IP Address on the Instance Details](./images/02-08-public-ip.png " ")
 
-8.  In Cloud Shell, enter the following to connect to the Marketplace Oracle GoldenGate compute instance: (Remember to replace the placeholders with their actual values.)
+8. In Cloud Shell, enter the following to connect to the Marketplace Oracle GoldenGate compute instance: (Remember to replace the placeholders with their actual values.)
 
     ```
     <copy>sftp -i <private-SSH-key> opc@<ip-address></copy>
@@ -88,7 +88,7 @@ In this lab, you will:
     > **Note:** If you get a *Permission Denied* error, double check that the private SSH key matches the public SSH key.
     </if>
 
-9.  Enter the following `put` command to upload wallet\_ALK.zip to `/home/opc`.
+9. Enter the following `put` command to upload wallet\_ALK.zip to `/home/opc`.
 
     ```
     <copy>put Wallet_ALK.zip</copy>

@@ -304,4 +304,4 @@ The Oracle GoldenGate connection type allows you to establish connections to oth
 
 - **Author** - Katherine Wardhana, User Assistance Developer
 - **Contributors** -  Shrinidhi Kulkarni, GoldenGate Product Manager
-- **Last Updated by** - Katherine Wardhana, June 2025
+- **Last Updated by** - Jenny Chan, March 2026

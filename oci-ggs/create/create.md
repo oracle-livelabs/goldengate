@@ -46,15 +46,15 @@ In this lab, you will:
 
     ![Select OCI GoldenGate Deployment](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-ggs-deployments.png " ")
 
-You can perform the following actions on the deployment details page:
+    You can perform the following actions on the deployment details page:
 
-* Review the deployment's status
-* Launch the GoldenGate service deployment console
-* Edit the deployment's name or description
-* Stop and start the deployment
-* Move the deployment to a different compartment
-* Review the deployment resource information
-* Add tags
+    * Review the deployment's status
+    * Launch the GoldenGate service deployment console
+    * Edit the deployment's name or description
+    * Stop and start the deployment
+    * Move the deployment to a different compartment
+    * Review the deployment resource information
+    * Add tags
 
     ![Deployment Details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-01-deployment-details.png " ")
 
