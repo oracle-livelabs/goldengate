@@ -129,7 +129,7 @@ unzip Wallet_ALK.zip -d wallet_ALK</copy>
     <copy>cd ..</copy>
     ```
 
-> **Note:** Leave Cloud Shell open.
+    > **Note:** Leave Cloud Shell open.
 
 ## Task 3: Add the Target Autonomous AI Lakehouse Credential in the Oracle GoldenGate Administration Service
 
@@ -143,23 +143,23 @@ unzip Wallet_ALK.zip -d wallet_ALK</copy>
 
     ![GoldenGate deployment console sign in](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin-23ai.png " ")
 
-After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
+    After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
 
-4.  In the OCI GoldenGate deployment console navigation menu select **DB Connections**.
+4. In the OCI GoldenGate deployment console navigation menu select **DB Connections**.
 
     ![Click Configuration in the OCI GoldenGate deployment console navigation menu](./images/04-02-configuration.png " ")
 
-5.  Copy the TargetALK connection string in the User ID column, and then paste it into a text editor.
+5. Copy the TargetALK connection string in the User ID column, and then paste it into a text editor.
 
     ![Copy the target database's connection string and paste it into a text editor](./images/04-03-configuration-targetadw.png " ")
 
-6.  Edit the TargetALK connection string, replacing the value for **MY\_WALLET\_DIRECTORY** with the location where you unzipped the wallet_ALK.zip. For example, **/home/opc/wallet\_ALK**.
+6. Edit the TargetALK connection string, replacing the value for **MY\_WALLET\_DIRECTORY** with the location where you unzipped the wallet_ALK.zip. For example, **/home/opc/wallet\_ALK**.
 
     ![Replace the existing value for MY_WALLET_DIRECTORY with the path to the wallet files](./images/04-04-wallet-zip.png " ")
 
-7.  In a new browser tab or window, use the compute instance's Public IP and port 443 (**https://&lt;public-ip&gt;:443**) to open the Service Manager.
+7. In a new browser tab or window, use the compute instance's Public IP and port 443 (**https://&lt;public-ip&gt;:443**) to open the Service Manager.
 
-8.  Log in to the Service Manager using the **oggadmin** credentials found in **/home/opc/ogg-credentials.json**.
+8. Log in to the Service Manager using the **oggadmin** credentials found in **/home/opc/ogg-credentials.json**.
 
 9. In the Service Manager console, under Deployment, click **Marketplace**.
 
@@ -169,11 +169,11 @@ After you log in successfully, you're brought to the GoldenGate deployment conso
 
     ![Marketplace page on the Service Manager](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/04-07-marketplace.png " ")
 
-11.  In the Administration Server, open the navigation menu (hamburger icon), and then select **DB Connections**.
+11. In the Administration Server, open the navigation menu (hamburger icon), and then select **DB Connections**.
 
     ![Click DB Connections in the Administration Server's navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-06.png " ")
 
-12.  Click **Add DB Connection**.
+12. Click **Add DB Connection**.
 
     ![Click Add Path Connection](https://oracle-livelabs.github.io/goldengate/ggs-common/oggmp-atp/images/03-09.png " ")
 
@@ -188,10 +188,10 @@ After you log in successfully, you're brought to the GoldenGate deployment conso
 
 14. To test the connection, click **Connect to database**. Your connection credentials are correct if you see Checkpoint and TRANDATA options appear. If incorrect, you should check the connection string and ggadmin password.
 
-In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target Autonomous AI Lakehouse database. You may now **proceed to the next lab**.
+    In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target Autonomous AI Lakehouse database. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Jenny Chan, Manager, Data Integration & Essbase User Assistance
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, December 2025
+* **Last Updated By/Date** - Jenny Chan, March 2026

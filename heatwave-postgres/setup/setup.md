@@ -26,23 +26,23 @@ To successfully complete this workshop, you must have:
 
 ## Task 1: Create a VCN and subnet
 
-1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
+1. Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
 	![Virtual Cloud Networks in Oracle Cloud navigation menu](./images/networking-vcn.png " ")
 
-2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Actions**, and then select **Start VCN Wizard** from the dropdown.
+2. On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Actions**, and then select **Start VCN Wizard** from the dropdown.
 
 	![Virtual Cloud Networks page](./images/01-02-start-vcn-wizard.png " ")
 
-3.  In the Start VCN Wizard panel, select **Create VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
+3. In the Start VCN Wizard panel, select **Create VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
     ![Virtual Cloud Networks page](./images/01-03-vcn-wizard.png " ")
 
-4.  In the Create VCN with internet connectivity panel, on the Configuration page, enter a name for the VCN, select a compartment, and then click **Next**.
+4. In the Create VCN with internet connectivity panel, on the Configuration page, enter a name for the VCN, select a compartment, and then click **Next**.
 
     ![Enter VCN details](./images/01-04-vcn-details.png " ")
 
-5.  Verify the configuration, and then click **Create**.
+5. Verify the configuration, and then click **Create**.
 
     ![Verify configuration details](./images/01-05-create-vcn.png " ")
 
@@ -56,7 +56,7 @@ To successfully complete this workshop, you must have:
 
     ![Default security list](./images/01-08-default-security-list.png " ")
 
-9.	On the Default Security List page, click **Add Ingress Rules**.
+9. On the Default Security List page, click **Add Ingress Rules**.
 
     ![Add ingress rule](./images/01-09-add-ingress-rule.png " ")
 
@@ -78,27 +78,27 @@ To successfully complete this workshop, you must have:
 
 	![DB Systems in Oracle Cloud navigation menu](./images/db-sys-vcn.png " ")
 
-2.  On the MySQL DB Systems page, click **Create DB System**.
+2. On the MySQL DB Systems page, click **Create DB System**.
 
 	![Click Create DB System](./images/02-02-create-dbsystem.png " ")
 
 3. On the Create DB system page, select **Development or testing**
 
-4.  For **Create in Compartment**, select a compartment in which to create the MySQL DB system.
+4. For **Create in Compartment**, select a compartment in which to create the MySQL DB system.
 
-5.  For **Name**, leave the default, or replace the default with a name of your choice. For example, `SourceMySQL`.
+5. For **Name**, leave the default, or replace the default with a name of your choice. For example, `SourceMySQL`.
 
-6.  (Optional) For Description, enter a description for the MySQL DB system.
+6. (Optional) For Description, enter a description for the MySQL DB system.
 
 	![Example MySQL DB System options](./images/02-06-create-dbsys-1.png " ")
 
-7.  Under **Create administrator credentials**, for Username, enter `ggadmin`, and then enter a password for the admin user. Take note of this password.
+7. Under **Create administrator credentials**, for Username, enter `ggadmin`, and then enter a password for the admin user. Take note of this password.
 
-8.  Select **Standalone**.
+8. Select **Standalone**.
 
-9.  Under **Configure networking**, select the **VCN** and **Subnet** created in Task 1.
+9. Under **Configure networking**, select the **VCN** and **Subnet** created in Task 1.
 
-10.  Click **Create**.
+10. Click **Create**.
 
 	![Example MySQL DB System options](./images/02-10-create-dbsys-2.png " ")
 
@@ -118,35 +118,35 @@ To successfully complete this workshop, you must have:
 
 > **Note:** Create a bastion and session only if your OCI GoldenGate deployment and MySQL Heatwave system are **not** located in the same region. If they're in the same Home region, skip to Task 3B.
 
-1.  In the Oracle Cloud console navigation menu, click **Identity & Security**, and then click **Bastion**.
+1. In the Oracle Cloud console navigation menu, click **Identity & Security**, and then click **Bastion**.
 
 	![Click Bastion under Identity & Security in the Oracle Cloud console navigation menu](./images/03-01-bastion.png " ")
 
-2.  On the Bastions page, click **Create bastion**.
+2. On the Bastions page, click **Create bastion**.
 
 	![Click Create bastion on Bastions page](./images/03-02-create-bastion.png " ")
 
-3.  In the Create bastion panel, for **Name**, leave the default or replace the default with the name of your choice.
+3. In the Create bastion panel, for **Name**, leave the default or replace the default with the name of your choice.
 
-4.  Under **Configure networking**, select the VCN and subnet in which your MySQL DB system resides.
+4. Under **Configure networking**, select the VCN and subnet in which your MySQL DB system resides.
 
-5.  For **CIDR block allowlist**, enter `0.0.0.0/0` and then select **Add to list** in the dropdown menu to add it.
+5. For **CIDR block allowlist**, enter `0.0.0.0/0` and then select **Add to list** in the dropdown menu to add it.
 
 6. Select **Enable FQDN and SOCKS5**. It is required to connect to the OCI PostgreSQL database instance.
 
-7.  Click **Create bastion**. The bastion appears in the Bastion list and takes a few minutes to become Active.
+7. Click **Create bastion**. The bastion appears in the Bastion list and takes a few minutes to become Active.
 
 	![CIDR block allowlist](./images/03-07-cidr.png " ")
 
-8.  After the bastion is Active, select it to view its details.
+8. After the bastion is Active, select it to view its details.
 
-9.  On the **BastionMySQL** page, click **Sessions** from the navigation bar. 
+9. On the **BastionMySQL** page, click **Sessions** from the navigation bar. 
 
 10. On the Sessions page, click **Create session**.
 
 	![Click Create session on the bastion details page](./images/03-10-create-session.png " ")
 
-11.  In the Create session panel, for **Session type**, select **SSH port forwarding session** from the dropdown.
+11. In the Create session panel, for **Session type**, select **SSH port forwarding session** from the dropdown.
 
 12. For **Session name**, enter a name.
 
@@ -177,26 +177,27 @@ To successfully complete this workshop, you must have:
 	```
 	<copy>SHOW VARIABLES LIKE ‘%bin%’;</copy>
 	```
-
 ## Task 3B: Using CloudShell to connect to the private network
 
 If you're working within the same Home region for OCI GoldenGate and MySQL Heatwave, then you can use CloudShell to connect to the private network.
 
-1.  After your OCI MySQL DB system becomes active, click **Developer tools** in the Oracle Cloud console global header, and then select **Cloud Shell**.
+1. After your OCI MySQL DB system becomes active, click **Developer tools** in the Oracle Cloud console global header, and then select **Cloud Shell**.
 
 	![Open Cloud Shell](./images/03b-01-open-cloudshell.png " ")
 
-2.  After Cloud Shell opens and initializes, click **Network: Public**, and then select **Ephemeral Private Network Setup**.
+2. After Cloud Shell opens and initializes, click **Network: Public**, and then select **Ephemeral Private Network Setup**.
 
 	![Cloud Shell Network](./images/03b-02-cloudshell.png " ")
 
-3.  Select the VCN and Subnet your OCI MySQL DB system uses, and then click **Use as active network**.
+3. Select the VCN and Subnet your OCI MySQL DB system uses, and then click **Use as active network**.
 
-4.  After Cloud Shell is connected to the private network, enter the following command to connect to the MySQL database:
+4. After Cloud Shell is connected to the private network, enter the following command to connect to the MySQL database:
 
 	> **Note:** Ensure that you replace `<mysql-db-privateIP>` with the private IP of your MySQL database.
 
-		<copy>mysqlsh admin@<mysql-db-privateIP>:3306 --sql</copy>
+	```
+	<copy>mysqlsh admin@<mysql-db-privateIP>:3306 --sql</copy>
+	```
 
 	Verify the following binary log startup options and system variables are configured correctly on Heatwave MysQL, as required by Oracle GoldenGate for MySQL.
 
@@ -228,7 +229,7 @@ If you're working within the same Home region for OCI GoldenGate and MySQL Heatw
 
 	![DB Systems in Oracle Cloud navigation menu](./images/db-sys-postgres-vcn.png " ")
 
-2.  On the PostgreSQL DB Systems page, click **Create PostgreSQL Database system**.
+2. On the PostgreSQL DB Systems page, click **Create PostgreSQL Database system**.
 
 	![Click Create DB System](./images/05-02-create-dbsystem.png " ")
 
@@ -317,10 +318,10 @@ If you're working within the same Home region for OCI GoldenGate and MySQL Heatw
 23. Run the following command to confirm the list of tables created for the SRCMIRROR\_OCIGGLL schema:
 
     ```
-    <copy>SELECT * FROM information_schema.tables WHERE table_schema = 'srcmirror_ociggll';  </copy>
+    <copy>SELECT * FROM information_schema.tables WHERE table_schema = 'srcmirror_ociggll';</copy>
     ```
 
-You may now **proceed to the next lab.**
+	You may now **proceed to the next lab.**
 
 ## Acknowledgements
 

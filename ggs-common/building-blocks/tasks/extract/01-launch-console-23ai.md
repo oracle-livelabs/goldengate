@@ -4,11 +4,11 @@
         "description":"Create a purge task"
     }
 -->
-1.  On the deployment details page, click **Launch Console**.
+1. On the deployment details page, click **Launch Console**.
 
     ![Deployment launch console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-01-launchconsole.png " ")
 
-2.  To log in to the GoldenGate deployment console, enter **oggadmin** for User name, enter the password, and then click **Sign In**. 
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User name, enter the password, and then click **Sign In**. 
 
     ![GoldenGate deployment console sign in](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin-23ai.png " ")
 

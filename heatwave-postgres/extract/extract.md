@@ -24,13 +24,13 @@ To successfully complete this lab, you need:
 
 ## Task 1: Create the Change Data Capture Extract
 
-1.  On the Deployments page, select the source MySQL deployment to view its details.
+1. On the Deployments page, select the source MySQL deployment to view its details.
 
-2.  On the Deployment details page, click **Launch console**.
+2. On the Deployment details page, click **Launch console**.
 
     ![Deployment launch console](./images/02-01-launchconsole.png " ")
 
-3.  To log in to the GoldenGate deployment console, enter **oggadmin** for User name, enter the password, and then click **Sign In**. 
+3. To log in to the GoldenGate deployment console, enter **oggadmin** for User name, enter the password, and then click **Sign In**. 
 
     ![GoldenGate deployment console sign in](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin-23ai.png " ")
 
@@ -44,21 +44,21 @@ To successfully complete this lab, you need:
 
     ![GoldenGate 23ai deployment console](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-03-webui-23ai.png " ")
 
-4.  Open the navigation menu, and then click **DB Connections**.
+4. Open the navigation menu, and then click **DB Connections**.
 
     ![Select DB Connections from the navigation menu](./images/01-04-db-connections.png " ")
 
-5.  On the Credentials page, locate **SourceMySQL**, and then take note of its **Domain** and **Alias**.
+5. On the Credentials page, locate **SourceMySQL**, and then take note of its **Domain** and **Alias**.
 
     ![Note the Domain and Alias of the SourceMySQL credential](./images/01-05-credentials.png " ")
 
-6.  Click **Connect to database SourceMySQL** to test the connection.
+6. Click **Connect to database SourceMySQL** to test the connection.
 
     ![Click Connect to database SourceMySQL](./images/01-06-connect.png " ")
 
     If the connection is successful, then Checkpoint and Heartbeat appear. If the connection is unsuccessful, return to the MySQL connection in the Oracle Cloud console to review the connection settings.
 
-7.  On the Home page, click **Add Extract** (plus icon).
+7. On the Home page, click **Add Extract** (plus icon).
 
     ![Add Extract](./images/01-07-add-ext.png " ")
 
@@ -97,13 +97,13 @@ To successfully complete this lab, you need:
 
 ## Task 2: Create the Initial Load Extract
 
-1.  In the navigation menu, click **Overview**.
+1. In the navigation menu, click **Overview**.
 
-2.  On the Overview page, click **Add Extract** (plus icon)
+2. On the Overview page, click **Add Extract** (plus icon)
 
     ![Click Add Extract on Administration Service Overview page](./images/02-02-add-extract.png " ")
 
-3.  In the Add Extract panel, on the Extract Information page,  on the Extract Information page, complete the following fields, and then click **Next**: 
+3. In the Add Extract panel, on the Extract Information page,  on the Extract Information page, complete the following fields, and then click **Next**: 
 
     * For **Extract Type**, select **Initial Load Extract**.
     * For **Process Name**, enter `ILEXT`.
@@ -118,7 +118,7 @@ To successfully complete this lab, you need:
 
     ![Extract Options page](./images/02-04-ext-opts.png " ")
 
-5.  On the Parameter File page, in the text area, add a new line to the existing text, add the following, and then click **Create and Run**:
+5. On the Parameter File page, in the text area, add a new line to the existing text, add the following, and then click **Create and Run**:
 
     ```
     <copy>TABLE SRC_OCIGGLL.*;</copy>
@@ -133,23 +133,23 @@ To successfully complete this lab, you need:
 ## Task 3: Create an OCI GoldenGate user for the Distribution Paths
 In this task, you create a user in the target deployment for the Distribution Paths to use to send data.
 
-1.  In the Oracle Cloud console, on the **Deployments** page, select the target PostgreSQL deployment to view its details.
+1. In the Oracle Cloud console, on the **Deployments** page, select the target PostgreSQL deployment to view its details.
 
-2.  On the deployment details page, click **Launch console**.
+2. On the deployment details page, click **Launch console**.
 
-3.  On the OCI GoldenGate deployment console sign in page, enter `oggadmin` for User Name, enter the password, and then click **Sign In**.
+3. On the OCI GoldenGate deployment console sign in page, enter `oggadmin` for User Name, enter the password, and then click **Sign In**.
 
     ![GoldenGate deployment console sign in](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin-23ai.png " ")
 
     > **NOTE:** If using the LiveLab Sandbox environment, copy the OCI GoldenGate Admin Password from the Terraform output section of **View Login Info**.
 
-4.  Open the navigation menu, and then click **User Administration**.
+4. Open the navigation menu, and then click **User Administration**.
 
-5.  Click **Add New User** (plus icon).
+5. Click **Add New User** (plus icon).
 
     ![Click Add New User on the Users page](./images/03-05-add-user.png " ")
 
-6.  Complete the fields as follows, and then click **Submit**:
+6. Complete the fields as follows, and then click **Submit**:
     * For **Authenticated By**, select **Password**.
     * For **Role**, select **Operator**.
     * For **Username**, enter `ggsnet`.
@@ -159,11 +159,11 @@ In this task, you create a user in the target deployment for the Distribution Pa
 
     The `ggsnet` user appears in the Users list.
 
-7.  In the source MySQL OCI GoldenGate deployment console, open the navigation menu and then click **Path Connections**.
+7. In the source MySQL OCI GoldenGate deployment console, open the navigation menu and then click **Path Connections**.
 
-8.  On the DB Connections page, click **Add Credential** (plus icon).
+8. On the DB Connections page, click **Add Credential** (plus icon).
 
-9.  Complete the fields as follows, and then click **Submit**:
+9. Complete the fields as follows, and then click **Submit**:
     * For **Credential Alias**, enter `dpuser`.
     * For **User ID**, enter `ggsnet`.
     * For **Password**, enter the password from Step 6.
@@ -174,22 +174,22 @@ In this task, you create a user in the target deployment for the Distribution Pa
 
 ## Task 4: Create the Distribution Path for the Change Data Capture Extract
 
-1.  In the source MySQL OCI GoldenGate deployment console, click **Distribution Service**.
+1. In the source MySQL OCI GoldenGate deployment console, click **Distribution Service**.
 
-2.  On the Distribution Service Overview page, click **Add Distribution Path** (plus icon).
+2. On the Distribution Service Overview page, click **Add Distribution Path** (plus icon).
 
     ![Click Add Path on source deployment Distribution Service](./images/04-02-add-path.png " ")
 
 3. The Add Path panel consists of seven pages. On the Path Information page, for **Name**, enter `ILDP`, and then click **Next**.
 
-  ![Path Information page](./images/04-03-path-info.png " ")
+    ![Path Information page](./images/04-03-path-info.png " ")
 
 4. On the Source Options page, complete the following fields, and then click **Next**:
 
     * For **Source Extract**, select **CDCEXT** from the dropdown.
     * For **Trail Name**, `C1` should automatically populate the field.
 
-  ![Source Options page](./images/04-04-source-opts.png " ")
+    ![Source Options page](./images/04-04-source-opts.png " ")
 
 5. On the Target Options page, complete the following fields, and then click **Next**:
 
@@ -217,11 +217,11 @@ In this task, you create a user in the target deployment for the Distribution Pa
 
     You return to the Distribution Service Overview page where you can review the path created.
 
-9.  In the target PostgreSQL deployment console (**OCIPG\_instance**), click **Receiver Service** to review the Receiver Path created as a result of creating the `ILDP` Distribution Path.
+9. In the target PostgreSQL deployment console (**OCIPG\_instance**), click **Receiver Service** to review the Receiver Path created as a result of creating the `ILDP` Distribution Path.
 
 10. Repeat this task to create a Distribution Path for the Initial Load Extract.
 
-You may now **proceed to the next lab.**
+    You may now **proceed to the next lab.**
 
 ## Learn more
 
@@ -230,4 +230,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 - **Author** - Katherine Wardhana, User Assistance Developer
 - **Contributors** -  Shrinidhi Kulkarni, GoldenGate Product Manager
-- **Last Updated by** - Jenny Chan, January 2026
+- **Last Updated by** - Jenny Chan, March 2026
