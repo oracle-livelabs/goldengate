@@ -14,7 +14,7 @@ Connections capture source and target credential information. A connection also 
 
 ### Objectives
 
-In this lab, you will:
+In this lab, you:
 * Locate Oracle Cloud Infrastructure GoldenGate in the Console
 * Create an OCI GoldenGate deployment for HeatWave MySQL
 * Create an OCI GoldenGate deployment for OCI PostgreSQL
@@ -30,21 +30,21 @@ To successfully complete this lab in your own tenancy:
 * For non-IAM enabled tenancies, ensure that you ensure that you first [set up your Vault](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingvaults_topic-To_create_a_new_vault.htm#createnewvault). [Learn more about Vault service](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
 * Add an API key in your profile settings to be used in Task 3:
 
-1.  Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **User settings**.
+1. Oracle Cloud console global navigation bar, click **Profile** (user icon), and then select **User settings**.
 
     ![Oracle Cloud console User menu](images/00-01-profile.png " ")
 
-2.  On the user details page, click **Tokens and keys**.
+2. On the user details page, click **Tokens and keys**.
 
-3.  Click **Add API Key**.
+3. Click **Add API Key**.
 
     ![Resources on User details page](images/00-03-apikey.png " ")
 
-4.  In the Add API Key dialog, select **Generate API key pair**, click **Download Private Key** to download the key, and then click **Add**.
+4. In the Add API Key dialog, select **Generate API key pair**, click **Download Private Key** to download the key, and then click **Add**.
 
     ![Download Private key](images/00-04-privatekey.png " ")
 
-5.  In the Configuration File Preview dialog, copy the fingerprint to a text editor, and then click **Close**.
+5. In the Configuration File Preview dialog, copy the fingerprint to a text editor, and then click **Close**.
 
 > **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
@@ -54,21 +54,21 @@ To successfully complete this lab in your own tenancy:
 
     ![GoldenGate in Oracle Cloud navigation menu](./images/database-goldengate.png " ")
 
-2.  On the GoldenGate **Overview** page, click **Deployments**.
+2. On the GoldenGate **Overview** page, click **Deployments**.
 
     ![GoldenGate Overview page](./images/01-02-ggs-overview.png " ")
 
-3.  You may need to select a compartment.
+3. You may need to select a compartment.
 
     > **Note:** If you're running this workshop in a LiveLabs sandbox, then under List Scope, from the Compartment dropdown, expand the root compartment, and select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
 
-4.  On the Deployments page, click **Create Deployment**.
+4. On the Deployments page, click **Create Deployment**.
 
     ![Deployments page](./images/01-04-create-deployment.png "")
 
-5.  In the Create Deployment panel, enter `MySQLDeployment` for **Name**.
+5. In the Create Deployment panel, enter `MySQLDeployment` for **Name**.
 
-6.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
+6. From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
 7. For Choose a deployment type, select **Data replication**.
 
@@ -76,13 +76,13 @@ To successfully complete this lab in your own tenancy:
 
     ![Completed Create GoldenGate Deployment fields](./images/01-08-create-deployment.png " ")
 
-9.  Select **Development or testing**. OCPU Count updates based on your selection.
+9. Select **Development or testing**. OCPU Count updates based on your selection.
 
     ![Completed Create GoldenGate Deployment fields](./images/01-09-create-deployment.png " ")
 
 10. Select a **Compartment** from the dropdown. For **Subnet**, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
-11.  For License type, select **Bring Your Own License (BYOL)**.
+11. For License type, select **Bring Your Own License (BYOL)**.
 
 12. For GoldenGate Instance Name, enter **ggsinstance**
 
@@ -94,7 +94,7 @@ To successfully complete this lab in your own tenancy:
 
 15. Select **Create password secret**
 
-  ![Example create deployment options](./images/01-15-create-deployment-gg-details.png " ")
+    ![Example create deployment options](./images/01-15-create-deployment-gg-details.png " ")
 
 16. In the Create Secret dialog, for **Name**, enter **LLsecret**.
 
@@ -110,7 +110,7 @@ To successfully complete this lab in your own tenancy:
 
 21. Confirm the password, and then click **Create**.
 
-  ![Create MySQLDeployment deployment](./images/01-21-passwordsecret.png " ")
+    ![Create MySQLDeployment deployment](./images/01-21-passwordsecret.png " ")
 
 22. Back in the Create deployment panel, for Password secret, ensure **LLsecret** is selected.
 
@@ -120,17 +120,17 @@ To successfully complete this lab in your own tenancy:
 
 25. Click **Create**.
 
-  ![Create MySQLDeployment deployment](./images/01-25-create-deployment.png " ")
+    ![Create MySQLDeployment deployment](./images/01-25-create-deployment.png " ")
 
-You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, and 4 while you wait for the deployment creation to complete.
+    You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status changes from CREATING to ACTIVE when it's ready for you to use. You can continue with Tasks 2, 3, and 4 while you wait for the deployment creation to complete.
 
 ## Task 2: Create a deployment for OCI PostgreSQL
 
-1.  On the Deployments page, click **Create Deployment**.
+1. On the Deployments page, click **Create Deployment**.
 
-2.  In the Create Deployment panel, enter `OCIPGDeployment` for **Name**.
+2. In the Create Deployment panel, enter `OCIPGDeployment` for **Name**.
 
-3.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
+3. From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
 4. For Choose a deployment type, select **Data replication**.
 
@@ -138,15 +138,15 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
     
     > **Note:** Select the latest available 23ai version available.
 
-  ![Example create ADW deployment options](./images/02-05-postgresql-deployment.png " ")
+    ![Example create ADW deployment options](./images/02-05-postgresql-deployment.png " ")
 
-6.  Select **Development or testing**. OCPU Count updates based on your selection.
+6. Select **Development or testing**. OCPU Count updates based on your selection.
 
     ![Completed Create GoldenGate Deployment fields](./images/01-09-create-deployment.png " ")
 
 7. For **Subnet**, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
-8.  For License type, select **Bring Your Own License (BYOL)**.
+8. For License type, select **Bring Your Own License (BYOL)**.
 
 9. For GoldenGate Instance Name, enter **ggsinstance**
 
@@ -158,7 +158,7 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 12. Select a **Compartment** from the dropdown. For Password secret select **LLSecret** from the dropdown.
 
-  ![Example create deployment options](./images/02-12-create-deployment-gg-details.png " ")
+    ![Example create deployment options](./images/02-12-create-deployment-gg-details.png " ")
 
 13. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 
@@ -166,21 +166,21 @@ You're brought to the Deployment Details page. It takes a few minutes for the de
 
 15. Click **Create**.
 
-  ![Create MySQLDeployment deployment](./images/01-25-create-deployment.png " ")
+    ![Create MySQLDeployment deployment](./images/01-25-create-deployment.png " ")
 
-You're brought to the deployment details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
+    You're brought to the deployment details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
 ## Task 3: Create a connection to the source MySQL database
 
-1.  Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
+1. Use the Oracle Cloud Console breadcrumb to navigate back to the Deployments page.
 
-2.  In the GoldenGate menu, click **Connections**.
+2. In the GoldenGate menu, click **Connections**.
 
-3.  Click **Create Connection**.
+3. Click **Create Connection**.
 
     ![Connections page](./images/03-03-create-connection.png " ")
 
-4.  In the Create Connection panel, for Name, enter `SourceMySQL`.
+4. In the Create Connection panel, for Name, enter `SourceMySQL`.
 
 5. From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
@@ -192,11 +192,11 @@ You're brought to the deployment details page. It takes a few minutes for the de
 
 8. Select a **Compartment** from the dropdown. Select the source MySQL Database system (SourceMySQL) from the Database system dropdown.
 
-9.  For Database name, enter `SRC_OCIGGLL`.
+9. For Database name, enter `SRC_OCIGGLL`.
 
-    >**Note:** If running this lab on your own tenancy using the sample scripts provided, this is the name of the database table created in the environment setup lab.
+    > **Note:** If running this lab on your own tenancy using the sample scripts provided, this is the name of the database table created in the environment setup lab.
 
-10.  For Database username, enter `oggadmin`.
+10. For Database username, enter `oggadmin`.
 
 11. Select a **Compartment** from the dropdown. For Database user password secret select **LLSecret** from the dropdown.
 
@@ -206,15 +206,15 @@ You're brought to the deployment details page. It takes a few minutes for the de
 
     ![MySQL connection details](./images/03-13-create-mysql-conn.png " ")
 
-The connection becomes Active after a few minutes. Return to the Connections page.
+    The connection becomes Active after a few minutes. Return to the Connections page.
 
 ## Task 4: Create a connection to the target OCI PostgreSQL
 
-1.  On the Connections page, Click **Create Connection**.
+1. On the Connections page, Click **Create Connection**.
 
     ![Connections page](./images/04-01-create-connection.png " ")
 
-2.  In the Create Connection panel, for Name, enter `OCIPGSQL`.
+2. In the Create Connection panel, for Name, enter `OCIPGSQL`.
 
 3. From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
@@ -228,7 +228,7 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
 7. For **Database name**, enter `postgresql`.
 
-8.  For **Database username**, enter `oggadmin`.
+8. For **Database username**, enter `oggadmin`.
 
 9. Select a **Compartment** from the dropdown. For Database user password secret select **LLSecret** from the dropdown.
 
@@ -240,11 +240,11 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
 ## Task 5: Assign connections to the deployment
 
-1.	In the GoldenGate menu, click **Deployments**.
+1. In the GoldenGate menu, click **Deployments**.
 
-2.	Select **MySQLDeployment** to view its details.
+2. Select **MySQLDeployment** to view its details.
 
-3.	On the MySQLDeployment details page, under Resources, click **Assigned connections**.
+3. On the MySQLDeployment details page, under Resources, click **Assigned connections**.
 
 4. Under Assigned connections, click **Assign connection**.
 
@@ -266,23 +266,23 @@ The connection becomes Active after a few minutes. Return to the Connections pag
 
 The Oracle GoldenGate connection type allows you to establish connections to other Oracle GoldenGate deployments. In this case, create a connection to the Oracle GoldenGate deployment that initiates the replication i.e. the source MySQL deployment. The connection is essential to enable connectivity between deployments.
 
-1.	In the GoldenGate menu, click **Deployments**.
+1. In the GoldenGate menu, click **Deployments**.
 
-2.  In the Create connection panel, enter a **Name**, and optionally, a **Description**.
+2. In the Create connection panel, enter a **Name**, and optionally, a **Description**.
 
-3.	For **Compartment**, select the compartment in which to create this connection.
+3. For **Compartment**, select the compartment in which to create this connection.
 
-4.	For Type, select **GoldenGate**.
+4. For Type, select **GoldenGate**.
 
-5.  Under **GoldenGate deployment**, choose **Select GoldenGate deployment**.
+5. Under **GoldenGate deployment**, choose **Select GoldenGate deployment**.
 
-6.	For Deployment, select **OCIPGDeployment**.
+6. For Deployment, select **OCIPGDeployment**.
 
-7.	For Database username, enter **oggadmin**.
+7. For Database username, enter **oggadmin**.
 
-8.	For Database user password secret, select the same password secret used earlier.
+8. For Database user password secret, select the same password secret used earlier.
 
-9.	Click **Create**.
+9. Click **Create**.
 
     ![Create GoldenGate connection](./images/06-09-create-gg-conn.png " ")
 
@@ -292,7 +292,7 @@ The Oracle GoldenGate connection type allows you to establish connections to oth
 
 12.	In the Assign deployment dialog, select the source **MySQLDeployment**, and then click **Assign deployment**.
 
-You may now **proceed to the next lab.**
+    You may now **proceed to the next lab.**
 
 ## Learn more
 
@@ -304,4 +304,4 @@ You may now **proceed to the next lab.**
 
 - **Author** - Katherine Wardhana, User Assistance Developer
 - **Contributors** -  Shrinidhi Kulkarni, GoldenGate Product Manager
-- **Last Updated by** - Katherine Wardhana, June 2025
+- **Last Updated by** - Jenny Chan, March 2026
