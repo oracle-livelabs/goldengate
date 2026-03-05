@@ -21,7 +21,7 @@ In this lab, you will:
 * Add and run an Extract
 * Instantiate the target database using Oracle Data Pump
 * Add and run a Replicat
-* Verify the replication process from Autonomous Transaction Processing to Autonomous Data Warehouse.
+* Verify the replication process from Autonomous AI Transaction Processing to Autonomous AI Lakehouse.
 
 ### Prerequisites
 
@@ -77,7 +77,7 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
     ![Checkpoint table refreshed](./images/01-11b-checktable.png " ")
 
-12. In the navigation menu, under **TargetADW**, click **Trandata**.
+12. In the navigation menu, under **TargetALK**, click **Trandata**.
 
 13. On the TRANDATA Information page, click **Add TRANDATA**. 
 
@@ -305,23 +305,21 @@ END;</copy>
 END;</copy>
     ```
 
-    ![SQL worksheet Run Script highlighted](./images/05-11-run-script.png " ")
-
 ## Task 6: Import data using Oracle Data Pump (ImpDP)
 
 Before importing data to the target database, create a credential in the target database to access the exported data file in Oracle Object Store.
 
-1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle Database**, and then click **Autonomous Database**.
+1. In the **Oracle Cloud Console** navigation menu , select **Oracle AI Database**, and then click **Autonomous AI Database**.
 
     ![Autonomous Data Warehouse in Oracle Cloud navigation menu](./images/06-01-auto-data-w.png " ")
 
-2. In the list of Autonomous Data Warehouses, click **TargetADW**.
+2. In the list of Autonomous AI Databases, select **TargetALK**.
 
-    ![Autonomous Data Warehouse page](./images/06-02-targetadw.png " ")
+    ![Autonomous Data Warehouse page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-05-sql-script.png " ")
 
-3. On the **TargetADW Details** page, from the **Database actions** dropdown, select **SQL**.
+3. On the **TargetALK Details** page, from the **Database actions** dropdown, select **SQL**.
 
-    ![TargetADW Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
+    ![TargetALK Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
 
 4. If prompted, log in to Database Actions as ADMIN, and then click **SQL**.
 
@@ -342,7 +340,7 @@ Before importing data to the target database, create a credential in the target 
 
     > **Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
 
-    ![Script in SQL Worksheet](./images/06-05-sql-script-return.png " ")
+    ![Script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-06-sql-script.png " ")
 
 6. Enter the following script and then click **Run Statement** to import data using ImpDP:
 
@@ -430,8 +428,6 @@ Before importing data to the target database, create a credential in the target 
     END;</copy>
     ```
 
-    ![Run script highlighted](./images/06-06-sql-script-return.png " ")
-
 ## Task 7: Add and run the Replicat
 
 1. In the navigation menu, click **Replicats**. 
@@ -448,7 +444,7 @@ Before importing data to the target database, create a credential in the target 
 
     * For **Replicat Trail Name**, enter `E1`.
     * For **Domain**, select **OracleGoldenGate**.
-    * For **Alias**, select **TargetADW**.
+    * For **Alias**, select **TargetALK**.
     * For **Checkpoint Table**, select **"SRCMIRROR_OCIGGLL","CHECKTABLE"**.
 
     ![Add Replicat - Replicat Options](./images/07-03-rep-opts.png " ")
@@ -500,9 +496,7 @@ Before importing data to the target database, create a credential in the target 
 
 ## Task 8: Perform Inserts to the Source Database
 
-1. Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Database**, and then **SourceATP**.
-
-    ![Autonomous Transaction Processing in Oracle Cloud navigation menu](./images/08-01a-auto-trans-process.png " ")
+1. Return to the Oracle Cloud Console and use the navigation menu to navigate back to **Oracle AI Database**, **Autonomous AI Database**, and then **SourceATP**.
 
     ![Autonomous Transaction Processing page](./images/08-01b-sourceatp.png " ")
 
@@ -543,4 +537,4 @@ Before importing data to the target database, create a credential in the target 
 ## Acknowledgements
 * **Author** - Jenny Chan, User Assistance Development Manager
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, June 2026
+* **Last Updated By/Date** - Jenny Chan, March 2026

@@ -143,7 +143,7 @@ unzip Wallet_ALK.zip -d wallet_ALK</copy>
 
     ![GoldenGate deployment console sign in](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-oggadmin-23ai.png " ")
 
-    After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
+    After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can create and manage data replication processes such as Extracts and Replicats.
 
 4. In the OCI GoldenGate deployment console navigation menu select **DB Connections**.
 

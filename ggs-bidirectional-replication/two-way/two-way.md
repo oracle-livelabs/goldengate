@@ -15,7 +15,7 @@ An Extract is a process that extracts, or captures, data from a source database.
 In this lab, you will:
 * Add and run an Extract
 * Add and run a Replicat
-* Verify the replication from Autonomous Data Warehouse to Autonomous Transaction Processing
+* Verify the replication from Autonomous AI Lakehouse (ALK) to Autonomous AI Transaction Processing (ATP)
 
 ### Prerequisites
 
@@ -23,7 +23,7 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 ## Task 1: Add and run an Extract
 
-First, create the Extract for the target (ADW) database.
+First, create the Extract for the target (ALK) database.
 
 1.  In the navigation menu, click **Extracts**.
 
@@ -105,9 +105,7 @@ Next, create the Replicat on the source (ATP) database.
 
 ## Task 3: Perform Inserts into the target database
 
-1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Database**, and then **TargetADW**.
-
-    ![Autonomous Transaction Processing in Oracle Cloud navigation menu](./images/03-01-adw.png " ")
+1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle AI Database**, **Autonomous AI Database**, and then **TargetADW**.
 
     ![Autonomous Transaction Processing page](./images/03-01b-target.png " ")
 
@@ -146,6 +144,6 @@ Insert into SRCMIRROR_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) value
 * [Add a Replicat](https://docs.oracle.com/en/cloud/paas/goldengate-service/cress/index.html)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
+* **Author** - Jenny Chan, User Assistance Development Manager
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, June 2025
+* **Last Updated By/Date** - Jenny Chan, March 2026
