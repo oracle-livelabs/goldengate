@@ -46,6 +46,6 @@ In this lab, you learned to monitor performance in the OCI GoldenGate deployment
 * [Monitor performance in the deployment console](https://docs.oracle.com/en/cloud/paas/goldengate-service/alllr/index.html)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Katherine Wardhana, December 2024
+* **Author** - Jenny Chan, User Assistance Development Manager
+* **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
+* **Last Updated By/Date** - Jenny Chan, March 2026
