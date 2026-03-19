@@ -4,13 +4,13 @@
         "description":"Perform inserts to the source database"
     }
 -->
-1.  Return to the Oracle Cloud console and use the navigation menu to navigate back to **Oracle AI Database**, **Autonomous AI Transaction Processing**, and then **SourceATP**.
+1. Return to the Oracle Cloud console and use the navigation menu to navigate back to **Oracle AI Database**, **Autonomous AI Transaction Processing**, and then **SourceATP**.
 
-2.  On the SourceATP Details page, click **Tools**, and then **Database Actions**.
+2. On the SourceATP Details page, click **Tools**, and then **Database Actions**.
 
-3.  Use the SourceATP database credentials in the Workshop details to log in to Database Actions, and then click **SQL**.
+3. Use the SourceATP database credentials in the Workshop details to log in to Database Actions, and then click **SQL**.
 
-4.  Enter the following inserts, and then click **Run Script**:
+4. Enter the following inserts, and then click **Run Script**:
 
     ```
     <copy>Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1000,'Houston',20,743113);
@@ -26,10 +26,10 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 commit;</copy>
     ```
 
-5.  In the OCI GoldenGate deployment console navigation menu, click **Extracts**, then **Extract name (UAEXT)**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+5. In the OCI GoldenGate deployment console navigation menu, click **Extracts**, then **Extract name (UAEXT)**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Extract Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-05-extract-stats.png " ")
 
-6.  In the navigation menu, click **Replicats** and then **Replicat name (REP)**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+6. In the navigation menu, click **Replicats** and then **Replicat name (REP)**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Replicat Process Information - Statistics](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/01-06-replicat-stats.png " ")

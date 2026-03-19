@@ -24,7 +24,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 [](include:01-perform-inserts-source-db.md)
 
-8.  In the Oracle GoldenGate Marketplace Distribution Server, verify the Distribution Path is running.
+8. In the Oracle GoldenGate Marketplace Distribution Server, verify the Distribution Path is running.
 
     ![Distribution Server Overview page](images/04-00.png " ")
 
@@ -32,7 +32,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 [](include:02-performance-metrics-server.md)
 
-3.  You can view the Performance Metrics Service for the OCI GoldenGate deployment console to view the Replicat's database statistics.
+3. You can view the Performance Metrics Service for the OCI GoldenGate deployment console to view the Replicat's database statistics.
 
 ## Task 3: Viewing GoldenGate Metrics in the Oracle Cloud console
 

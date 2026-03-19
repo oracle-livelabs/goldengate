@@ -56,14 +56,14 @@ This Extract process captures data from the source database to send to Oracle Go
 
     ![Add Extract](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-02-add-extract-23ai " ")
 
-2. The Add Extract panel consists of five pages. On the Extract Information page, complete the following fields, and then click **Next**:
+3. The Add Extract panel consists of five pages. On the Extract Information page, complete the following fields, and then click **Next**:
 
     *  For **Extract Type**, select **Integrated Extract**.
     *  For **Process Name**, enter a name for this Extract process, such as UAEXT.
 
     ![Extract Information page](./images/02-02-add-extract.png " ")
 
-3. On the Extract Options page, complete the following fields, and then click **Next**:
+4. On the Extract Options page, complete the following fields, and then click **Next**:
 
     *  For **Domain**, select **OracleGoldenGate** from the dropdown.
     *  For **Alias**, select the Credential Alias for the source Autonomous Transaction Processing database (SourceATP).
@@ -71,11 +71,11 @@ This Extract process captures data from the source database to send to Oracle Go
 
     ![Extract Options page](./images/02-03-extract-options.png " ")
 
-4. On the Managed Options page, leave the fields as they are, and click **Next**.
+5. On the Managed Options page, leave the fields as they are, and click **Next**.
 
     ![Managed Options page](./images/02-04-managed-options.png " ")
 
-5. In the Parameter File page, add a new line, paste the following to the text area, and then click **Create and Run**:
+6. In the Parameter File page, add a new line, paste the following to the text area, and then click **Create and Run**:
 
     ```
     <copy>Table SRC_OCIGGLL.*;</copy>
@@ -186,14 +186,14 @@ This Replicat process consumes the trail file sent from OCI GoldenGate.
 
     ![Click Add Replicat on Administration Service Overview page](./images/05-01-add-rep.png " ")
 
-2. The Add Replicat panel consists of four pages. On the Replicat Information page, complete the following fields, and then click **Next**:
+3. The Add Replicat panel consists of four pages. On the Replicat Information page, complete the following fields, and then click **Next**:
 
     *  For **Replicat Type**, select **Nonintegrated Extract**.
     *  For **Process Name**, enter a name for this Extract process, such as REP.
 
     ![Select Nonintegration Replicat on the Replicat types page](./images/05-02-rep-info-page.png " ")
 
-3.  On the Replicat Options page, complete the following fields, and then click **Next**:
+4. On the Replicat Options page, complete the following fields, and then click **Next**:
 
     *  For **Replicat Trail Name**, enter **T1**.
     *  For **Domain**, select **OracleGoldenGate**.
@@ -202,31 +202,21 @@ This Replicat process consumes the trail file sent from OCI GoldenGate.
 
     ![Replicat Options page](./images/05-03-rep-options.png " ")
 
-4. On the Managed Options page, leave the fields as they are, and click **Next**.
+5. On the Managed Options page, leave the fields as they are, and click **Next**.
 
     ![Managed Options page](./images/05-04-managed-options.png " ")
 
-5. On the Parameter File page, in the text area, replace  **MAP \*.\*, TARGET \*.\*;** with the following script:
+6. On the Parameter File page, in the text area, replace  **MAP \*.\*, TARGET \*.\*;** with the following script:
 
     ```
     <copy>MAP SRC_OCIGGLL.*, TARGET SRCMIRROR_OCIGGLL.*;</copy>
     ```
 
-6.  Click **Create**.
-
-    ![Parameter File page](./images/05-06-param-file.png " ")
-
-7. The REP Replicat appears. In the REP **Action** menu, select **Start**. In the Confirm Action dialog, click **OK**.
-
-    ![Start Replicat](./images/05-07a-start-rep.png " ")
+7. Click **Create and Run**.
 
     ![Running Replicat](./images/05-07b-running-rep.png " ") 
 
-8. Return to the OCI Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
-
-## Task 6: Confirm the Target-initiated path is running
-
-1.  In the Oracle GoldenGate Marketplace Receiver Server, verify the Receiver Path is running.
+8. In the Oracle GoldenGate Marketplace Receiver Server, verify the Receiver Path is running.
 
     ![Active Receiver Path on the racle GoldenGate Marketplace Receiver Server](./images/06-01-receiver-server.png " ")
 
@@ -241,4 +231,4 @@ In this lab, you created an Extract, a Receiver Path, and a Replicat, and you ve
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, January 2025
+* **Last Updated By/Date** - Jenny Chan, March 2026

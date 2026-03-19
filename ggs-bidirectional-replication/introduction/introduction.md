@@ -9,6 +9,13 @@ Estimated Workshop Time: 2 hours
 ### About Oracle Cloud Infrastructure GoldenGate
 Oracle Cloud Infrastructure GoldenGate is a fully-managed service that uses Oracle GoldenGate Microservices to help you replicate data in real time, at scale, in the cloud. It processes data as it moves from one or more data management systems to target databases in Oracle Cloud Infrastructure.
 
+### Objectives
+
+In this workshop, you:
+* Learn to create and assign connections to an OCI GoldenGate deployment
+* Add Extracts and Replicats to create a two-way replication between two databases
+* Monitor performance
+
 ### Prerequisites
 
 * Experience with Oracle Database
