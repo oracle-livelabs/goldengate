@@ -38,7 +38,7 @@ First, create the Extract for the target (ALK) database.
 4. On the Extract Options page, complete the following fields and then click **Next**: 
 
     * From the **Domain** dropdown, select **OracleGoldenGate**.
-    * From the **Alias** dropdown, select **TargetADW**.
+    * From the **Alias** dropdown, select **TargetALK**.
     * For Extract **Trail Name**, enter `E2` 
 
     ![Extract options page](./images/01-06-extract-options.png " ")
@@ -47,7 +47,7 @@ First, create the Extract for the target (ALK) database.
 
     ![Managed options page](./images/01-08-crit-deploy-health.png " ")
 
-6. On the Parameter File page, in the text area, add a new line under EXTTRAIL E2, and then add the following:
+6. On the Parameter File page, in the text area, add the following:
 
     ```
     <copy>-- Table list for capture
@@ -105,13 +105,13 @@ Next, create the Replicat on the source (ATP) database.
 
 ## Task 3: Perform Inserts into the target database
 
-1. Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle AI Database**, **Autonomous AI Database**, and then **TargetADW**.
+1. Return to the Oracle Cloud Console and use the navigation menu to navigate back to **Oracle AI Database**, **Autonomous AI Database**, and then **TargetALK**.
 
     ![Autonomous Transaction Processing page](./images/03-01b-target.png " ")
 
-2. On the Target ADW Details page, click **Database Actions**, then **SQL**.
+2. On the Target ALK Details page, click **Database Actions**, then **SQL**.
 
-    ![TargetADW Database Details page](./images/03-02-db-actions.png)
+    ![TargetALK Database Details page](./images/03-02-db-actions.png)
 
 3. Enter the following inserts, and then click **Run Script**:
 

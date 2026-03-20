@@ -22,21 +22,15 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 ## Task 1: Use the Performance Metrics Server
 
-1.  In the GoldenGate deployment console service menu bar, click **Performance Metrics Service**, and then click **Extracts**.
+1. In the GoldenGate deployment console navigation menu, expand **Services**, then **Performance Metrics Service**.
 
     ![Performance Metrics Service page - EXT highlighted](./images/01-01-perf-metric-serv.png " ")
 
-    > **Note:** You can also view performance details for the Microservices, Distribution, and Receiver Service Paths, as well as any other processes created.
+    > **Note:** You can also view performance details for the Administration, Distribution, and Receiver Services, as well as any other processes created.
 
-2.  On the Extracts page, select the Extract (EXTA). 
+2. On the Metrics page, you can view real time Process and Thread Performance, Status and Configuration, and Performance Metrics Statistics.
 
-    ![Select Extract](./images/01-02-extract.png " ")
-
-3.  Click **Database Statistics**.
-
-    ![Database Statistics page](./images/01-03-db-stats.png " ")
-
-    Here, you can view the real time database statistics, such as Inserts, Updates, Deletes, and so on.
+    ![Performance Metrics Service](./images/01-02--stats.png " ")
 
 
 ## Task 2: View GoldenGate Metrics in the Oracle Cloud console
@@ -49,6 +43,6 @@ In order to complete this lab, you should have completed the preceding lab and h
 * [Monitor performance in the Oracle Cloud console](https://docs.oracle.com/en/cloud/paas/goldengate-service/vddvk/)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
+* **Author** - Jenny Chan, User Assistance Development Manager
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, February 2025
+* **Last Updated By/Date** - Jenny Chan, March 2026
