@@ -5,11 +5,11 @@
     }
 -->
 
-1.  Launch the OCI GoldenGate Deployment Console, and then use the Navigation menu (hamburger icon) to open the Administration Server's **User Administration** page. 
+1. Launch the OCI GoldenGate Deployment Console, select **User Administration** in the navigation menu. 
 
     ![Click Administrator in the OCI Goldengate deployment console navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/03-01-user-admin.png " ")
 
-2.  Click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. Enter the following values:
+2. On the User Administration page, click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. Enter the following values:
 
     * For **Authenticated By**, select **Password** from the dropdown.
     * For **Role**, select **Operator** from the dropdown.
@@ -20,13 +20,13 @@
 
     ![Add a ggsnet user with the Operator role](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/03-02b-create-new-user.png " ")
 
-3.  Back in the Oracle GoldenGate Marketplace Administration Server, use the Navigation menu to open the **DB Connections** screen.
+3. Back in the Oracle GoldenGate Marketplace Administration Service, use the Navigation menu to open the **DB Connections** screen.
 
 4. Click **Add DB Connection** (plus icon).
 
     ![DB Connection page](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/03-04-add-db.png " ")
 
-5.  A Credentials panel will appear, complete the following fields, and then click **Submit**:
+5. A Credentials panel will appear, complete the following fields, and then click **Submit**:
     * For **Credential Alias**,  enter a name, such as **ggs2ogg**.
     * For **User ID**, enter the user name of the user you created in step 2 (ggsnet).
     * For **Password** and **Verify Password**, enter the password from step 2.
@@ -36,3 +36,19 @@
     You should now have two credentials in the Marketplace Oracle GoldenGate instance, one to connect to OCI GoldenGate, and one for the target database.
 
     ![The Credentials page displays the new credential](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/03-05b-credentials-list.png " ")
+
+6. In the Oracle GoldenGate Marketplace Administration Service navigation menu, select **Path connections**.
+
+    ![Select Path connections](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/03-06-path-connection.png " ")
+
+7. On the Path connections page, click **Add Path connection** (plus icon).
+
+    ![Add a Path connection](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/03-07-add-path-connection.png " ")
+
+8. In the Add Path Connection panel, complete the fields as follows, and then click **Submit**:
+
+    * For **Credential Alias**, enter `ggs2ogg`.
+    * For **User ID**, enter `ggsnet`.
+    * For **Password** and **Verify Password**, enter the same password from Steps 2 and 5. 
+
+    ![Add path connection panel](https://oracle-livelabs.github.io/goldengate/ggs-common/connection/images/03-08-add-path-panel.png " ")

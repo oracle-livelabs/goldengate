@@ -27,3 +27,11 @@
     The two connections should now appear in the Assigned connections list. 
 
     ![Assigned connections list](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-06b-assigned-connections-list.png " ")
+
+8. Open the SourceATP connection's **Actions** menu, and then select **Test connection**.
+
+    ![Test assigned connection](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-08-test-connection.png " ")
+
+9. The Test connection dialog should return "Connectivity test passed successfully." If it doesn't, try again. If it continues to fail, check that the connection's credentials were entered correctly, and try again.
+
+    ![Test connection success](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/06-09-test-success.png " ")

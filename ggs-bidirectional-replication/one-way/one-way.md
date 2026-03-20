@@ -21,7 +21,7 @@ In this lab, you will:
 * Add and run an Extract
 * Instantiate the target database using Oracle Data Pump
 * Add and run a Replicat
-* Verify the replication process from Autonomous Transaction Processing to Autonomous Data Warehouse.
+* Verify the replication process from Autonomous AI Transaction Processing to Autonomous AI Lakehouse.
 
 ### Prerequisites
 
@@ -33,37 +33,37 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 ## Task 2: Add a Checkpoint Table and Transaction information
 
-1.  In the navigation menu, click **DB Connections**.
+1. In the navigation menu, click **DB Connections**.
 
     ![Administration Service navigation menu](./images/01-01-nav-dbconn.png " ")
 
-2.  On the **DB Connections** page, click **Connect to database SourceATP** in the Actions column.
+2. On the **DB Connections** page, click **Connect to database: SourceATP** in the Actions column.
 
     ![Credentials list with Connect to database SourceATP highlighted](./images/01-02-connect-source.png " ")
 
-3.  On the Checkpoint page, click **Add Checkpoint** (plus icon).
+3. On the Checkpoint page, click **Add Checkpoint** (plus icon).
 
     ![Add Checkpoint table](./images/01-03-add-checkpoint.png " ")
 
-4.  For **Checkpoint Table**, enter **"SRC\_OCIGGLL"."ATP\_CHECKTABLE"**, and then click **Submit**.
+4. For **Checkpoint Table**, enter **"SRC\_OCIGGLL"."ATP\_CHECKTABLE"**, and then click **Submit**.
 
     ![Add checkpoint to source](./images/01-04-src-checkpoint.png " ")
 
-5.  In the navigation menu, under **SourceATP**, click **Trandata**.
+5. In the navigation menu, under **SourceATP**, click **Trandata**.
 
-6.  On the TRANDATA Information page, click **Add TRANDATA** (plus icon). 
+6. On the TRANDATA Information page, click **Add TRANDATA** (plus icon). 
 
     ![Click Trandata](./images/01-05-trandata.png)
 
-7.  In the Trandata panel, enter `SRC_OCIGGLL` and then click **Submit**.
+7. In the Trandata panel, enter `SRC_OCIGGLL` and then click **Submit**.
 
     ![Schema Name field populated with SRC_OCIGGLL](./images/01-06-schema-name.png " ")
 
-8.  To verify, enter **SRC\_OCIGGLL** into the Search for Schema field and click **Search**. SRC_OCIGGLL is returned and 8 tables are prepared for instantiation.
+8. To verify, enter **SRC\_OCIGGLL** into the Search for Schema field and click **Search**. SRC_OCIGGLL is returned and 8 tables are prepared for instantiation.
 
     ![Search icon highlighted](./images/01-08-search-schema.png " ")
 
-9.  In the navigation menu, click **TargetALK**, then **Checkpoint**.
+9. In the navigation menu, click **DB Connections**, then click **Connect to database: TargetALK**.
 
 10. On the Checkpoint page, click **Add Checkpoint**.
 
@@ -77,7 +77,7 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
     ![Checkpoint table refreshed](./images/01-11b-checktable.png " ")
 
-12. In the navigation menu, under **TargetADW**, click **Trandata**.
+12. In the navigation menu, under **TargetALK**, click **Trandata**.
 
 13. On the TRANDATA Information page, click **Add TRANDATA**. 
 
@@ -93,17 +93,17 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 ## Task 3: Add and run an Extract
 
-1.  In the navigation menu, click **Extracts**.
+1. In the navigation menu, click **Extracts**.
 
-2.  On the Extracts page, click **Add Extract** (plus icon). 
+2. On the Extracts page, click **Add Extract** (plus icon). 
 
     ![Add Extract page with Integrated Extract highlighted](./images/02-02-extracts.png " ")
 
-3.  In the Add Extract panel, select Integrated Extract, enter `EXTA` for **Process Name**, and then click **Next**.
+3. In the Add Extract panel, select Integrated Extract, enter `EXTA` for **Process Name**, and then click **Next**.
 
     ![Extract Information page](./images/02-02-integrated-extract.png " ")
 
-4.  On the Extract Options page, complete the following fields, and then click **Next**:
+4. On the Extract Options page, complete the following fields, and then click **Next**:
 
     * For **Domain**, select **OracleGoldenGate**.
     * For **Alias**, select **SourceATP**.
@@ -111,11 +111,11 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
     ![Add Extract - Basic Information](./images/02-04-ggs-basic-info.png " ")
 
-5.  On the Managed Options page, enable **Critical to deployment health**.
+5. On the Managed Options page, enable **Critical to deployment health**.
 
     ![Critical to deployment health highlighted](./images/02-07-crit-deploy-health.png " ")
 
-6.  On the Parameter File page, in the text area, add a new line to the existing text and add the following:
+6. On the Parameter File page, in the text area, add a new line to the existing text and add the following:
 
     ```
     <copy>-- Capture DDL operations for listed schema tables
@@ -148,13 +148,13 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
     > **Note:** 'tranlogoptions excludeuser ggadmin' avoids recapturing transactions applied by 'ggadmin' in bidirectional replication scenarios.
 
-7.  Click **Create and Run**. The Extract appears after a few moments.
+7. Click **Create and Run**. The Extract appears after a few moments.
 
     ![Extract started](./images/02-10-ggs-extract-started.png)
 
 ## Task 4: Check for long running transactions
 
-1.  In the source database SQL window, enter the following script, and then click **Run Statement**:
+1. In the source database SQL window, enter the following script, and then click **Run Statement**:
 
     ```
     <copy>select start_scn, start_time from gv$transaction where start_scn < (select max(start_scn) from dba_capture);</copy>
@@ -168,27 +168,27 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 Before using Oracle Data Pump to export data from the source database, first create an Oracle Object Store bucket, then create yourself a Credential Token, and then use these resources to create a credential in ATP.
 
-1.  From the Oracle Cloud Console navigation menu (hamburger icon), click **Storage**, and then **Buckets**.
+1. From the Oracle Cloud Console navigation menu (hamburger icon), click **Storage**, and then **Buckets**.
 
     ![Object Storage bucket in Oracle Cloud navigation menu](./images/05-01-storage-buckets.png " ")
 
-2.  On the **Buckets in &lt;compartment-name&gt;** page, click **Create Bucket**.
+2. On the **Buckets in &lt;compartment-name&gt;** page, click **Create Bucket**.
 
     ![Buckets in compartment page](./images/05-02-create-bucket.png " ")
 
-3.  In the **Create Bucket** panel, enter a name, and then click **Create**.
+3. In the **Create Bucket** panel, enter a name, and then click **Create**.
 
     ![Create Bucket panel](./images/05-03-bucket.png " ")
 
-4.  From the list of buckets, click the bucket you created. You're brought to the bucket Details page.
+4. From the list of buckets, click the bucket you created. You're brought to the bucket Details page.
 
-5.  To find your bucket URI, create and **upload** a text file to the newly created bucket.
+5. To find your bucket URI, create and **upload** a text file to the newly created bucket.
 
-6.  After the file is uploaded, on the Bucket Details page, click **Objects**, and then text file's Actions menu, select **View item details**. 
+6. After the file is uploaded, on the Bucket Details page, click **Objects**, and then text file's Actions menu, select **View item details**. 
 
     ![View object details](./images/05-06-view-object-details.png " ")
 
-7.  Take note of the URI, without the text file name:
+7. Take note of the URI, without the text file name:
 
     ![Object URI](./images/05-07-uri.png)
 
@@ -200,19 +200,19 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
     > **NOTE:** Ignore the URL deprecation notice. DataPump doesn't yet support the new URL syntax.
 
-6.  In the Oracle Cloud Console global header, click **Profile** (user icon), and then select your username.
+6. In the Oracle Cloud Console global header, click **Profile** (user icon), and then select your username.
 
     ![Profile menu](./images/05-06-profile.png " ")
 
-7.  On the User Details page, click **Tokens and keys**, and then click **Generate Token**.
+7. On the User Details page, click **Tokens and keys**, and then click **Generate Token**.
 
     ![Resources on User Details page](./images/05-07-auth-token.png " ")
 
-8.  In the Generate Token dialog, enter a description, and then click **Generate Token**.
+8. In the Generate Token dialog, enter a description, and then click **Generate Token**.
 
     ![Generate Token dialog](./images/05-08-generate-token.png " ")
 
-9.  Click **Copy**, and then click **Close**.
+9. Click **Copy**, and then click **Close**.
 
     > **Note:** Paste the token to a text editor for use in the next step.
 
@@ -305,23 +305,21 @@ END;</copy>
 END;</copy>
     ```
 
-    ![SQL worksheet Run Script highlighted](./images/05-11-run-script.png " ")
-
 ## Task 6: Import data using Oracle Data Pump (ImpDP)
 
 Before importing data to the target database, create a credential in the target database to access the exported data file in Oracle Object Store.
 
-1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle Database**, and then click **Autonomous Database**.
+1. In the **Oracle Cloud Console** navigation menu , select **Oracle AI Database**, and then click **Autonomous AI Database**.
 
     ![Autonomous Data Warehouse in Oracle Cloud navigation menu](./images/06-01-auto-data-w.png " ")
 
-2. In the list of Autonomous Data Warehouses, click **TargetADW**.
+2. In the list of Autonomous AI Databases, select **TargetALK**.
 
-    ![Autonomous Data Warehouse page](./images/06-02-targetadw.png " ")
+    ![Autonomous Data Warehouse page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-05-sql-script.png " ")
 
-3. On the **TargetADW Details** page, from the **Database actions** dropdown, select **SQL**.
+3. On the **TargetALK Details** page, from the **Database actions** dropdown, select **SQL**.
 
-    ![TargetADW Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
+    ![TargetALK Details page](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-03-db-actions.png " ")
 
 4. If prompted, log in to Database Actions as ADMIN, and then click **SQL**.
 
@@ -342,9 +340,9 @@ Before importing data to the target database, create a credential in the target 
 
     > **Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
 
-    ![Script in SQL Worksheet](./images/06-05-sql-script-return.png " ")
+    ![Script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/extracts-replicats/images/01-06-sql-script.png " ")
 
-6.  Enter the following script and then click **Run Statement** to import data using ImpDP:
+6. Enter the following script and then click **Run Statement** to import data using ImpDP:
 
     ```
     <copy>DECLARE
@@ -430,34 +428,32 @@ Before importing data to the target database, create a credential in the target 
     END;</copy>
     ```
 
-    ![Run script highlighted](./images/06-06-sql-script-return.png " ")
-
 ## Task 7: Add and run the Replicat
 
-1.  In the navigation menu, click **Replicats**. 
+1. In the navigation menu, click **Replicats**. 
 
-2.  On the Replicats page, click **Add Replicat** (plus icon).
+2. On the Replicats page, click **Add Replicat** (plus icon).
 
     ![GoldenGate Deployment Console Home page](./images/07-01-ggs-add-replicat.png)
 
-3.  In the Add Replicat panel, select **Nonintegrated Replicat**, enter `REPA` **Process Name**, and then click **Next**.
+3. In the Add Replicat panel, select **Nonintegrated Replicat**, enter `REPA` **Process Name**, and then click **Next**.
 
     ![Add Replicat page](./images/07-02-nonintegrated-rep.png " ")
 
-3.  On the Replicat Options page, complete the following fields, and then click **Next**: 
+4. On the Replicat Options page, complete the following fields, and then click **Next**: 
 
     * For **Replicat Trail Name**, enter `E1`.
     * For **Domain**, select **OracleGoldenGate**.
-    * For **Alias**, select **TargetADW**.
+    * For **Alias**, select **TargetALK**.
     * For **Checkpoint Table**, select **"SRCMIRROR_OCIGGLL","CHECKTABLE"**.
 
     ![Add Replicat - Replicat Options](./images/07-03-rep-opts.png " ")
 
-4.  On the **Managed Options** page, enable **Critical to deployment health**, and then click **Next**.
+5. On the **Managed Options** page, enable **Critical to deployment health**, and then click **Next**.
 
     ![Critical to deployment health highlighted](./images/07-04-dep-health.png " ")
 
-5.  On the **Parameter File** page, in the text area, replace **MAP \*.\*, TARGET \*.\*;** with the following script:
+6. On the **Parameter File** page, in the text area, replace **MAP \*.\*, TARGET \*.\*;** with the following script:
 
     ```
     <copy>-- Capture DDL operations for listed schema tables
@@ -494,22 +490,20 @@ Before importing data to the target database, create a credential in the target 
 
     > **Note:** 'DBOPTIONS ENABLE\_INSTATIATION\_FILTERING' enables CSN filtering on tables imported using Oracle Data Pump. For more information, see [DBOPTIONS Reference](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service/using&id=GWURF-GUID-BA8C0CED-D87F-4106-862E-4AD22D910160).
 
-6.  Click **Create and Run**. Your Replicat appears after a few moments.
+7. Click **Create and Run**. Your Replicat appears after a few moments.
 
     ![Checkmark next to the replicat](./images/07-06-replicats.png " ")
 
 ## Task 8: Perform Inserts to the Source Database
 
-1.  Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Database**, and then **SourceATP**.
-
-    ![Autonomous Transaction Processing in Oracle Cloud navigation menu](./images/08-01a-auto-trans-process.png " ")
+1. Return to the Oracle Cloud Console and use the navigation menu to navigate back to **Oracle AI Database**, **Autonomous AI Database**, and then **SourceATP**.
 
     ![Autonomous Transaction Processing page](./images/08-01b-sourceatp.png " ")
 
-2.  On the Source ATP Details page, click **Database Actions**, then **SQL**.
+2. On the Source ATP Details page, click **Database Actions**, then **SQL**.
     ![SourceATP Database Details page](./images/08-02-db-actions.png " ")
 
-3.  Enter the following inserts, and then click **Run Script**:
+3. Enter the following inserts, and then click **Run Script**:
 
     ```
     <copy>Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1000,'Houston',20,743113);
@@ -526,11 +520,11 @@ Before importing data to the target database, create a credential in the target 
 
     ![SQL Return](./images/08-04-sql-script-return.png " ")
 
-5.  In the OCI GoldenGate deployment console navigation menu, click **Extracts**, then **Extract name (EXTA)**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+4. In the OCI GoldenGate deployment console navigation menu, click **Extracts**, then **Extract name (EXTA)**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Extract Process Information - Statistics](./images/08-05-ext-statistics.png " ")
 
-6.  In the navigation menu, click **Replicats**, then **Replicat name (REPA)**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+5. In the navigation menu, click **Replicats**, then **Replicat name (REPA)**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Replicat Process Information - Statistics](./images/08-06-rep-statistics.png " ")
 
@@ -541,6 +535,6 @@ Before importing data to the target database, create a credential in the target 
 * [Add a Replicat](https://docs.oracle.com/en/cloud/paas/goldengate-service/cress/)
 
 ## Acknowledgements
-* **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
+* **Author** - Jenny Chan, User Assistance Development Manager
 * **Contributors** -  Julien Testut, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Katherine Wardhana, June 2025
+* **Last Updated By/Date** - Jenny Chan, March 2026

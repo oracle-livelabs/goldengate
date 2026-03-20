@@ -71,7 +71,7 @@ Follow the steps below to connect the source Oracle Autonomous AI Transaction Pr
 
 [](include:03-create-target-connection.md)
 
-13.  Repeat Task 3 to unlock the GGADMIN user, enable supplemental logging, and check support mode on the TargetALK database.
+13. Repeat Task 3 to unlock the GGADMIN user, enable supplemental logging, and check support mode on the TargetALK database.
 
 ## Task 5: Assign connections to the deployment
 
@@ -86,4 +86,4 @@ Follow the steps below to connect the source Oracle Autonomous AI Transaction Pr
 ## Acknowledgements
 * **Author** - Jenny Chan, Manager, Data Integration & Essbase User Assistance
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, December 2025
+* **Last Updated By/Date** - Jenny Chan, March 2026
