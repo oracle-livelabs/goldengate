@@ -19,11 +19,13 @@ To successfully complete this lab, you must have completed all preceding labs.
 
 ## Task 1: Review mapping rules
 
-1. On the Pipeline details page, click **Mapping rules**.
+1. After the pipeline is in an Active (Stopped) state, on the Pipeline details page, click **Mapping rules**.
 
-2. Click **Preview**.
+    ![Active pipeline](./images/01-01-pipeline-details.png " ")
 
-    ![Pipeline details](./images/02-03-pipeline-details.png)
+2. On the Mapping rules page, click **Preview**.
+
+    ![Preview mapping rules](./images/02-03-pipeline-details.png)
 
 3. In the Preview mapping dialog, expand the **SRC_OCIGGLL** source schema and review the list of schemas and tables that are going to be replicated. Select **Cancel** to close the dialog.
 
