@@ -14,7 +14,7 @@ Oracle Cloud Infrastructure GoldenGate is a fully-managed service that uses Orac
 
 In this lab, you will:
 
-* Create OCI GoldenGate connections, and assign them to a deployment
+* Prepare the Oracle Autonomous AI Databases for use as source and target connections in the pipeline
 * Create, configure, and run a ZeroETL pipeline
 
 ### Prerequisites

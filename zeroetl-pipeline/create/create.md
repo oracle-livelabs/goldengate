@@ -37,7 +37,7 @@ First locate GoldenGate in Oracle Cloud Infrastructure, and then check that you'
 
 ## Task 2: Unlock the GGADMIN user and enable supplemental logging
 
-Oracle Autonomous AI Databases come with a GGADMIN user that is locked by default. The following steps guide you through how to unlock the GGADMIN user before you use the source and target databases.
+Before creating a pipeline, ensure that you unlock the GGADMIN user that comes with Oracle Autonomous AI Databases. The following steps guide you through how to unlock the GGADMIN user before you use the source and target databases.
 
 1.  From the Oracle Cloud Console navigation menu, click **Oracle AI Database**, and then select **Autonomous AI Database**.
 
@@ -123,7 +123,7 @@ This task guides you through the steps to create a pipeline and its source and t
 5. In the Create connection panel, complete the fields as follows, and then click **Create**:
 
     * For **Name**, enter `SourceATP`.
-    * (Optional) Enter a **Descroption**.
+    * (Optional) Enter a **Description**.
     * From the **Type** dropdown, select **Oracle Autonomous AI Database**
     * From the **Database** dropdown, select **SourceATP**.
     * From the **Database user password secret** dropdown, select **LiveLab_Secret**.
@@ -139,7 +139,7 @@ This task guides you through the steps to create a pipeline and its source and t
 7. In the Create connection panel, complete the fields as follows, and then click **Create**:
 
     * For **Name**, enter `TargetALK`.
-    * (Optional) Enter a **Descroption**.
+    * (Optional) Enter a **Description**.
     * From the **Type** dropdown, select **Oracle Autonomous AI Database**
     * From the **Database** dropdown, select **TargetALK**.
     * From the **Database user password secret** dropdown, select **LiveLab_Secret**.
