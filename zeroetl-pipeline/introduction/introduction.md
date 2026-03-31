@@ -4,7 +4,7 @@
 
 Oracle GoldenGate, the industry-leading data replication and integration software, is now available as a fully-managed, cloud native service on Oracle Cloud Infrastructure (OCI). This workshop guides you create and start a data replication using ZeroETL pipelines in OCI GoldenGate.
 
-Estimated workshop time: 1 hour
+Estimated Workshop Time: 1 hour
 
 ### About Oracle Cloud Infrastructure GoldenGate
 
