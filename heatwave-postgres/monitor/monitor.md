@@ -23,35 +23,35 @@ In order to complete this lab, you should have completed the preceding labs.
 
 ## Task 1: Perform inserts to the source database to validate on target
 
-1.  Return to the Oracle Cloud console and use the navigation menu (hamburger icon) to navigate back to **Databases**, **DB Systems**, and then **SourceMySQL**.
+1. Return to the Oracle Cloud console and use the navigation menu (hamburger icon) to navigate back to **Databases**, **DB Systems**, and then **SourceMySQL**.
 
-2.  On the SourceMySQL details page, copy the **Private IP Address**.
+2. On the SourceMySQL details page, copy the **Private IP Address**.
 
-3.  Open the Oracle Cloud console navigation menu and navigate to **Identity & Security**, and then click **Bastion**.
+3. Open the Oracle Cloud console navigation menu and navigate to **Identity & Security**, and then click **Bastion**.
 
-4.  On the **Bastions** page, select your Bastion to view its details.
+4. On the **Bastions** page, select your Bastion to view its details.
 
-5.  Under **Sessions**, click **Create session**.
+5. Under **Sessions**, click **Create session**.
 
     >**NOTE:** If you already have a session running for your SourceMySQL DB system, you can skip to step 14.
 
-6.  In the Create session panel, select **SSH port forwarding session** from the session type dropdown.
+6. In the Create session panel, select **SSH port forwarding session** from the session type dropdown.
 
-7.  For **IP address**, paste the Private IP Address you copied from the SourceMySQL details page.
+7. For **IP address**, paste the Private IP Address you copied from the SourceMySQL details page.
 
-8.  For **Port**, change the value to `3306`.
+8. For **Port**, change the value to `3306`.
 
-8. For SSH key, you can either upload an existing SSH public key, or generate a new SSH key pair.
+9. For SSH key, you can either upload an existing SSH public key, or generate a new SSH key pair.
 
 10. Click **Create session**.
 
 11. After the session is Active, select Copy SSH command from the **Action** menu.
 
-12. Click on the Developer Tools menu on the navigation bar, and select **Cloud Shell**.
+12. Paste the command into a text editor. Ensure that you replace `<privateKey>` with the full path to the key, and `<localPost>` with the local port of the machine from which you plan to connect. You can use any available port number.
 
-    ![Open cloud shell](./images/01-12-cloud-shell.png " ")
+    > **NOTE:** On Mac or Linux, open a terminal window and run the command. On Windows, use PowerShell. If prompted to continue connecting, type `yes`, and then press **Enter**.
 
-13. After the cloud shell session is active, paste the SSH command from your bastion session. Ensure that you replace the `<privateKey` and `<localPort>` values.
+13. To use Cloud Shell, open the Developer Tools menu in the navigation bar, and then select **Cloud Shell**. Select the VCN and Subnet your OCI MySQL DB system uses, and then click **Use as active network**. 
 
     >**NOTE:** If you generated a new SSH key pair in step 10, you must first upload your private key to Cloud Shell using the Cloud Shell Settings menu, and change the permission on the key (`chmod 600 <privateKey>`).
 
@@ -63,7 +63,7 @@ In order to complete this lab, you should have completed the preceding labs.
     <copy>mysqlsh admin@localhost:3306 --sql</copy>
     ```
 
-15.  Enter the following inserts:
+15. Enter the following inserts:
 
     ```
     <copy>use SRC_OCIGGLL;
@@ -80,11 +80,11 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 commit;</copy>
     ```
 
-16.  In the MySQLDeployment console, click the **Extract name (CDCEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+16. In the MySQLDeployment console, click the **Extract name (CDCEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![Extract Process Information - Statistics](./images/01-16-ext-stats.png " ")
 
-17.  In the PostgreSQL deployment, go back to the Overview screen, click the **Replicat name (RCDC)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+17. In the PostgreSQL deployment, go back to the Overview screen, click the **Replicat name (RCDC)**, and then click **Statistics**. 
 
     ![Replicat Process Information - Statistics](./images/01-17-ext-stats.png " ")
 
@@ -101,29 +101,29 @@ commit;</copy>
 
 ## Task 2: Using the Performance Metrics Server
 
-1.  In the MySQLDeployment console, click **Performance Metrics Server**, and then click **CDCEXT**.
+1. In the MySQLDeployment console, click **Performance Metrics Server**, and then click **CDCEXT**.
 
     ![Performance Metrics Service page - EXT highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-01-perf-serv.png)
 
     > **Note:** You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.
 
-2.  Click **Database Statistics**.
+2. Click **Database Statistics**.
 
     ![Database Statistics page](https://oracle-livelabs.github.io/goldengate/ggs-common/monitor/images/05-03-db-stats.png)
 
     Here, you can view the real time database statistics, such as Inserts, Updates, Deletes, and so on.
 
-4.  Repeat steps 1-3 in ADWDeployment to view a snapshot of the Replicat's (named **Rep** in our lab) Database Statistics.
+3. Repeat steps 1-3 in PostgreSQL deployment to view a snapshot of the Replicat's (named **Rep** in our lab) Database Statistics.
 
 ## Task 3: Create a Purge task
 
-1.  In the MySQLDeployment console, on the left navigation menu click **Tasks**.
+1. In the MySQLDeployment console, on the left navigation menu click **Tasks**.
 
-2.  On the **Configuration** screen, click **Tasks**, and then click **Add Purge Trail Task** (plus icon). The **Create a new Purge Trials task** form appears.
+2. On the **Configuration** screen, click **Tasks**, and then click **Add Purge Trail Task** (plus icon). The **Create a new Purge Trials task** form appears.
 
     ![Create a new Purge Trails task on Tasks page](./images/03-02-add-purge-trails.png " ")
 
-3.  On the Create a new Purge Trails task dialog page, complete the following fields, and then click **Submit**:
+3. On the Create a new Purge Trails task dialog page, complete the following fields, and then click **Submit**:
     * For **Name**, enter a name.
     * For **Trail**, enter the name of a Trail file, and then press **ENTER**. For example, in this workshop, our Extract Trail file is called C1.
     * For **Keep Rule**, select **Number of Files** from the dropdown, and then enter `1`. This indicates that one Trail file will be kept, while all others are purged.
@@ -131,7 +131,7 @@ commit;</copy>
 
     ![Keep Rule and Purge Frequency fields highlighted](./images/03-03-purge-trails-task.png " ")
 
-You may now **proceed to the next lab.**
+    You may now **proceed to the next lab.**
 
 ## Learn more
 
@@ -140,4 +140,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 - **Author** - Katherine Wardhana, User Assistance Developer
 - **Contributors** -  Shrinidhi Kulkarni, GoldenGate Product Manager
-- **Last Updated by** - Katherine Wardhana, June 2025
+- **Last Updated by** - Jenny Chan, March 2026

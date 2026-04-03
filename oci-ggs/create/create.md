@@ -46,15 +46,15 @@ In this lab, you will:
 
     ![Select OCI GoldenGate Deployment](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/01-04-ggs-deployments.png " ")
 
-You can perform the following actions on the deployment details page:
+    You can perform the following actions on the deployment details page:
 
-* Review the deployment's status
-* Launch the GoldenGate service deployment console
-* Edit the deployment's name or description
-* Stop and start the deployment
-* Move the deployment to a different compartment
-* Review the deployment resource information
-* Add tags
+    * Review the deployment's status
+    * Launch the GoldenGate service deployment console
+    * Edit the deployment's name or description
+    * Stop and start the deployment
+    * Move the deployment to a different compartment
+    * Review the deployment resource information
+    * Add tags
 
     ![Deployment Details](https://oracle-livelabs.github.io/goldengate/ggs-common/create/images/05-01-deployment-details.png " ")
 
@@ -70,7 +70,7 @@ You can perform the following actions on the deployment details page:
 
 [](include:03-create-target-connection.md)
 
-13. Repeat Task 3, steps 1-6, to unlock the GGADMIN user for the TargetALK database.
+13. Repeat Task 3, steps 1-5, to unlock the GGADMIN user for the TargetALK database.
 
 ## Task 5: Assign connections to the deployment
 

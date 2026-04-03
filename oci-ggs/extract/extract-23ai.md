@@ -29,33 +29,41 @@ In this lab, you learn to:
 
 > **NOTE:** Ensure that you enable supplemental logging before adding an Extract or you may encounter errors. If you encounter errors, delete and add the Extract before trying again.
 
-1.  In the left navigation menu, click to expand **DB Connections**, then **SourceATP**, and then finally, **Trandata**.
+1. In the left navigation menu, click to expand **DB Connections**.
+
+2. On the DB Connection page, for SourceATP, click **Connect to database: SourceATP**.
+
+    ![Connect to SourceATP](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/02-02-connect-sourceatp.png " ")
+
+    If connected successfully, the page reloads to show the SourceATP connection and its Checkpoint Table.
+
+3. In the left navigation menu, under DB Connection, expand SourceATP, and then select **Trandata**.
 
     ![Administration Service navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-01-nav-config-dbconnections.png " ")
 
-3.  Next to **TRANDATA Information** click **Add TRANDATA** (plus icon).
+4. Next to **TRANDATA Information** click **Add TRANDATA** (plus icon).
 
     ![Add TRANDATA](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-03-trandata-23ai.png " ")
 
-4.  In the Trandata panel, for **Schema Name**, enter `SRC_OCIGGLL`, and then click **Submit**.
+5. In the Trandata panel, for **Schema Name**, enter `SRC_OCIGGLL`, and then click **Submit**.
 
     ![Schema Name field populated with SRC_OCIGGLL](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-04-schema-name-23ai.png " ")
 
-5.  To verify, enter `SRC_OCIGGLL` into the **Search for Schema** field and click **Search TRANDATA** (magnifying glass icon).
+6. To verify, enter `SRC_OCIGGLL` into the **Search for Schema** field and click **Search TRANDATA** (magnifying glass icon).
 
     ![Search icon highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-05-search-23ai.png " ")
 
     ![SRC_OCIGGLL entered in search field and search results returned](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-05-trandata-23ai.png " ")
 
-6.  In the left navigation menu, click to connect to **TargetALK**.
+7. In the left navigation menu, click **DB Connection**, and then on the DB Connection page, connect to **TargetALK**.
 
     ![Credentials list with Connect to database TargetALK highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-06-connect-targetadw-23ai.png " ")
 
-7.  Next to Checkpoint, click **Add Checkpoint** (plus icon).
+8. On the TargetALK page, next to Checkpoint, click **Add Checkpoint** (plus icon).
 
     ![Add Checkpoint highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-07-add-checkpoint-23ai.png " ")
 
-8.  In the Checkpoint Table panel, for **Checkpoint Table**, enter `"SRCMIRROR_OCIGGLL"."CHECKTABLE"`, and then click **Submit**.
+9. In the Checkpoint Table panel, for **Checkpoint Table**, enter `"SRCMIRROR_OCIGGLL"."CHECKTABLE"`, and then click **Submit**.
 
     ![Populated Checkpoint table field and submit button highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/03-08-checktable-23ai.png " ")
 
@@ -66,31 +74,31 @@ In this lab, you learn to:
 
 ## Task 3: Add and run an Extract
 
-1.  In the navigation menu, click **Extracts**.
+1. In the navigation menu, click **Extracts**.
 
     ![Click Extracts in left menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-01-extracts-23ai.png " ")
 
-2.  On the Extracts page, click **Add Extract** (plus icon). 
+2. On the Extracts page, click **Add Extract** (plus icon). 
 
     ![Click Add Extract](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-02-add-extract-23ai.png " ")
 
-3.  In the Add Extract panel, on the Extract Information page, for **Extract Type**, select **Integrated Extract**.
+3. In the Add Extract panel, on the Extract Information page, for **Extract Type**, select **Integrated Extract**.
 
-4.  For **Process Name**, enter `UAEXT`, and then click **Next**.
+4. For **Process Name**, enter `UAEXT`, and then click **Next**.
 
     ![Extract Information](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-03-int-extract-23ai.png " ")
 
-5.  On the Extract Options page, for Source Credentials **Domain**, select **OracleGoldenGate**, and for **Alias**, select **SourceATP**. 
+5. On the Extract Options page, for Source Credentials **Domain**, select **OracleGoldenGate**, and for **Alias**, select **SourceATP**. 
 
-6.  For Extract Trail **Name**, enter `E1`, and then click **Next**.
+6. For Extract Trail **Name**, enter `E1`, and then click **Next**.
 
     ![Extract Options](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-06-extract-options-23ai.png " ")
 
-7.  On the Managed Options page, enable **Critical to deployment health**, and then click **Next**.
+7. On the Managed Options page, enable **Critical to deployment health**, and then click **Next**.
 
     ![Critical to deployment health highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-07-dephealth-23ai.png " ")
 
-8.  On the Parameter File page, in the text area, add a new line to the existing text and add the following:
+8. On the Parameter File page, in the text area, add the following:
 
     ```
     <copy>-- Capture DDL operations for listed schema tables
@@ -118,7 +126,7 @@ In this lab, you learn to:
 
     ![Copied and pasted script on the parameter file page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/04-08-paramfile.png " ")
 
-10. Click **Create and Run**. You return to the Extracts page, where you can find your newly created **UAEXT** Extract after a few moments.
+9. Click **Create and Run**. You return to the Extracts page, where you can find your newly created **UAEXT** Extract after a few moments.
 
     The status updates to **Running**.
 
@@ -126,7 +134,7 @@ In this lab, you learn to:
 
 ## Task 4: Check for long running transactions
 
-1.  In the source database SQL window, enter the following script, and then click **Run Statement**:
+1. In the source database SQL window, enter the following script, and then click **Run Statement**:
 
     ```
     <copy>select start_scn, start_time from gv$transaction where start_scn < (select max(start_scn) from dba_capture);</copy>
@@ -140,35 +148,35 @@ In this lab, you learn to:
 
 Before using Oracle Data Pump to export data from the source database, first create an Oracle Object Store bucket, then create yourself a Credential Token, and then use these resources to create a credential in ATP.
 
-1.  From the Oracle Cloud Console navigation menu (hamburger icon), click **Storage**, and then **Buckets**.
+1. From the Oracle Cloud Console navigation menu (hamburger icon), click **Storage**, and then **Buckets**.
 
     ![Object Storage bucket in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-01-storage-buckets.png " ")
 
-2.  On the **Buckets in &lt;compartment-name&gt;** page, click **Create Bucket**.
+2. On the **Buckets in &lt;compartment-name&gt;** page, click **Create Bucket**.
 
     ![Buckets in compartment page](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-02-create-bucket.png " ")
 
-3.  In the **Create Bucket** panel, enter a unique name, such as `Bucket-<user>,` and then click **Create**.
+3. In the **Create Bucket** panel, enter a unique name, such as `Bucket-<user>,` and then click **Create**.
 
     ![Create Bucket panel](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-03-bucket.png " ")
 
-4.  From the list of buckets, click the bucket you created. You're brought to the bucket Details page.
+4. From the list of buckets, click the bucket you created. You're brought to the bucket Details page.
 
-5.  On the bucket details page, under Objects, click **Upload**.
+5. On the bucket details page, click **Objects**, and then click **Upload**.
 
-6.  Enter a prefix, select a file (a simple text file will do), and then click **Upload**.
+6. Enter a prefix, select a file (a simple text file will do), and then click **Upload**.
 
-7.  Close the panel. The object you uploaded appears in the Objects list.
+7. Close the panel. The object you uploaded appears in the Objects list.
 
-8.  In the Objects list, click the three dots icon for your object, and then select **View Object Details**.
+8. In the Objects list, click the three dots icon for your object, and then select **View Object Details**.
 
-  ![View Object Details](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-08-view-details.png)
+    ![View Object Details](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-08-view-details.png)
 
-9.  In the Object Details panel, copy the URL Path (URI) up the object name and paste it into a text editor.
+9. In the Object Details panel, copy the URL Path (URI) up the object name and paste it into a text editor.
 
     > **Note:** Ignore the URL deprecation notice shown on the Object Details page. DataPump does not yet support the new URL syntax.
 
-  ![Object URL Path](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-09-url-path.png)
+    ![Object URL Path](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-09-url-path.png)
 
     The bucket URI should match the following syntax:
 
@@ -194,7 +202,7 @@ Before using Oracle Data Pump to export data from the source database, first cre
 
     ![Copy highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-13-copy-token.png " ")
 
-14. In the source database SQL window, enter the following script, replace the placeholders with your user name (UPPERCASE) and token value, and then click **Run Statement**:
+14. In the source database SQL window, enter the following script, replace the placeholders with your user name (UPPERCASE) and token value, and then click **Run Script**:
 
     ```
     <copy>BEGIN
@@ -285,9 +293,9 @@ END;</copy>
 
     ![SQL worksheet Run Script highlighted](https://oracle-livelabs.github.io/goldengate/ggs-common/extract/images/06-15-sql-return.png " ")
 
-> **Note:** The Script Output displays what looks like an error, but it reports "Job has completed successfully." You can also review the **DBMS Output** tab to see the same message displayed.
+    > **Note:** The Script Output displays what looks like an error, but it reports "Job has completed successfully." You can also review the **DBMS Output** tab to see the same message displayed.
 
-You may now **proceed to the next lab.**
+    You may now **proceed to the next lab.**
 
 ## Learn more
 
@@ -296,4 +304,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** - Jenny Chan, Manager, GoldenGate & Essbase User Assistance Development
 * **Contributors** -  Denis Gray, Database Product Management; Katherine Wardhana, User Assistance Developer
-* **Last Updated By/Date** - Jenny Chan, November 2025
+* **Last Updated By/Date** - Jenny Chan, March 2026
