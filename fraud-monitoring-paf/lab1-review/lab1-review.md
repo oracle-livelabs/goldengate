@@ -31,13 +31,13 @@ In this lab, you learn to:
 
 3. On the GoldenGate __Overview__ page, if you encounter a "Failed to load" error about your resources, select your assigned __Compartment__ from the __Applied filters__ dropdown.
 
-__NOTE__: If you're using the LiveLab Sandbox environment, you can find your compartment number in the Reservation Information panel (View Login Info) of the workshop instructions.
+    __NOTE__: If you're using the LiveLab Sandbox environment, you can find your compartment number in the Reservation Information panel (View Login Info) of the workshop instructions.
 
 4. In the GoldenGate menu page, click __Deployments__.
 
     ![GoldenGate menu showing Deployments](images/task1-step4.png)
 
-__NOTE__: If using the LiveLab Sandbox environment, select your LiveLab compartment from the Applied filters dropdown.
+    __NOTE__: If using the LiveLab Sandbox environment, select your LiveLab compartment from the Applied filters dropdown.
 
 5. Select __OCI-GoldenGate-Deployment__ in the Deployments list.
 
@@ -47,7 +47,7 @@ __NOTE__: If using the LiveLab Sandbox environment, select your LiveLab compartm
 
     ![GoldenGate deployment details page](images/task1-step5-1.png)
 
-Confirm that the GoldenGate deployment is assigned to the Autonomous AI Database source connection.
+    Confirm that the GoldenGate deployment is assigned to the Autonomous AI Database source connection.
 
 6. Click __Assigned connections__.
 
@@ -79,11 +79,11 @@ You can also access the deployment console directly using the URL provided on th
 
 4. You will use the __GoldenGate MCP + PAF Chat__ panel to interact with OCI GoldenGate using the GoldenGate MCP server.
 
-   The above image shows the Enterprise Fraud Monitoring Console connected to the Data Stream target case store, with the GoldenGate MCP + PAF Chat panel available.
+    The above image shows the Enterprise Fraud Monitoring Console connected to the Data Stream target case store, with the GoldenGate MCP + PAF Chat panel available.
 
 5. Type `List GoldenGate extracts and replicats.` and click __Send__ to ask the MCP server to return the current list of Extracts and Replicats.
 
-   In a new lab environment, the response should indicate that no GoldenGate Extracts or Replicats are currently configured. This confirms that the next lab starts from a clean GoldenGate process state.
+    In a new lab environment, the response should indicate that no GoldenGate Extracts or Replicats are currently configured. This confirms that the next lab starts from a clean GoldenGate process state.
     ![GoldenGate MCP and PAF Chat prompt for listing extracts and replicats](images/task2-step5.png)
 
 

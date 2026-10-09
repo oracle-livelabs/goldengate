@@ -37,7 +37,7 @@ In this lab, you will:
 5. Locate the published `goldengate-ops - Runtime Published` flow and click **Edit**.
     ![PAF My Custom Flows page](images/task1-step4.png)
 
-The `goldengate-ops - Runtime Published` flow powers the GoldenGate MCP + PAF Chat panel used in earlier labs. It routes natural-language GoldenGate requests to the registered GoldenGate MCP server.
+    The `goldengate-ops - Runtime Published` flow powers the GoldenGate MCP + PAF Chat panel used in earlier labs. It routes natural-language GoldenGate requests to the registered GoldenGate MCP server.
 
 6. Review the connections in the canvas:
 
@@ -53,7 +53,7 @@ The `goldengate-ops - Runtime Published` flow powers the GoldenGate MCP + PAF Ch
 9. Go back to **My Custom Flows** under **AGENT_FACTORY** and click **Edit** next to the published fraud analyst flow, called `fraud-analyst-bridge - Runtime Published`. Click **Continue without saving** as many times as needed if prompted.
     ![PAF My Custom Flows fraud analyst flow edit action](images/task2-step9.png)
 
-The `fraud-analyst-bridge - Runtime Published` flow generates analyst-ready explanations for fraud monitoring events. The dashboard displays the stored response for the selected transaction.
+    The `fraud-analyst-bridge - Runtime Published` flow generates analyst-ready explanations for fraud monitoring events. The dashboard displays the stored response for the selected transaction.
 
 10. Review its **Prompt**, the selected OCI model for the Agent, and published integration configuration.
     ![PAF fraud analyst bridge flow configuration](images/task2-step10.png)
@@ -69,7 +69,7 @@ The `fraud-analyst-bridge - Runtime Published` flow generates analyst-ready expl
 3. Click **Test connection** to review the connection status and click **Cancel**.
     ![PAF MCP server test connection result](images/task2-step3.png)
 
-The test should complete successfully. This confirms that PAF can reach the GoldenGate MCP server running in the lab environment.
+    The test should complete successfully. This confirms that PAF can reach the GoldenGate MCP server running in the lab environment.
 
 4. Open **Model Management** under **SETTINGS** and inspect the model selected by the agent: SpaceXAI Grok. Click the **Actions** menu and select **Edit details** to review the Model ID, OCI Generative AI endpoint, authentication configuration, and model availability.
     ![PAF Model Management model list](images/task2-step4-0.png)
@@ -82,7 +82,7 @@ The test should complete successfully. This confirms that PAF can reach the Gold
 1. Return to the Oracle Cloud console and use the navigation menu to navigate back to **Oracle AI Database**, **Autonomous AI Database**, and click **AIATP&lt;LiveLab ID&gt;**.
 2. On the **AIATP&lt;LiveLab ID&gt;** Details page, click **Database actions**, and then **SQL**.
 
-   **NOTE**: Use the **AIATP&lt;LiveLab ID&gt;** database credentials in the Workshop details to log in to Database actions if needed, and then click **SQL**.
+    **NOTE**: Use the **AIATP&lt;LiveLab ID&gt;** database credentials in the Workshop details to log in to Database actions if needed, and then click **SQL**.
 
 3. Enter the following select statement (replace the example transaction_id with one from previous labs), and then click **Run Script**:
     ![Database Actions SQL result showing stored AI analyst brief](images/task3-step3.png)

@@ -84,7 +84,7 @@ In this lab, you learn to:
 
     ![GoldenGate MCP request to list extracts](images/task3-step1.png)
 
-In a brand new environment, it should return `No GoldenGate Extracts are configured.`
+    In a brand new environment, it should return `No GoldenGate Extracts are configured.`
 
 2. Create the Extract using the following prompt.
 
@@ -94,9 +94,9 @@ In a brand new environment, it should return `No GoldenGate Extracts are configu
 
     ![GoldenGate MCP prompt to create the EXFRAUD Extract](images/task3-step2.png)
 
-The response should confirm that Extract `EXFRAUD` was created. If the operations flow asks for confirmation, missing table details, or connection details, provide the values shown in the prompt and continue.
+    The response should confirm that Extract `EXFRAUD` was created. If the operations flow asks for confirmation, missing table details, or connection details, provide the values shown in the prompt and continue.
 
-Wait until the Extract ``EXFRAUD`` is created successfully before issuing another request. If the operations flow requests confirmation or missing parameters, provide them for this Extract.
+    Wait until the Extract ``EXFRAUD`` is created successfully before issuing another request. If the operations flow requests confirmation or missing parameters, provide them for this Extract.
 
 ## Task 4: Start and monitor the Extract
 
@@ -116,13 +116,13 @@ Wait until the Extract ``EXFRAUD`` is created successfully before issuing anothe
 
     ![GoldenGate MCP response showing EXFRAUD status](images/task4-step1-1.png)
 
-The Extract should be started successfully. The status should be `RUNNING`.
+    The Extract should be started successfully. The status should be `RUNNING`.
 
-Confirm that the configured trail is `ft` and that the table statement refers to `YAN_POS.PAYMENT_TRANSACTION`.
+    Confirm that the configured trail is `ft` and that the table statement refers to `YAN_POS.PAYMENT_TRANSACTION`.
 
-These values confirm that `EXFRAUD` is capturing the payment transaction source table and writing captured changes to trail `ft`, which is used by the Data Stream in the next lab.
+    These values confirm that `EXFRAUD` is capturing the payment transaction source table and writing captured changes to trail `ft`, which is used by the Data Stream in the next lab.
 
-If the Extract stops or abends, submit `Show extract report for EXFRAUD.` and review the actual error before restarting.
+    If the Extract stops or abends, submit `Show extract report for EXFRAUD.` and review the actual error before restarting.
 
 3. Go back to the OCI GoldenGate deployment in the OCI Console, click **Launch Console**.
 

@@ -22,8 +22,8 @@ In this lab, you will:
 ## Task 1: Perform inserts to the source database
 
 1. Access the **Enterprise Fraud Monitoring** backend.
-   - Find the noVNC URL on the __LiveLabs Sandbox login page__.
-   - Copy and paste it in your laptop browser to access the Compute instance.
+    - Find the noVNC URL on the __LiveLabs Sandbox login page__.
+    - Copy and paste it in your laptop browser to access the Compute instance.
 
 2. The noVNC session opens up and shows the Terminal. Type the following command and press Enter:
 
@@ -33,7 +33,7 @@ In this lab, you will:
 
     ![noVNC terminal with run_fraud_sql_events.sh ready to run](images/task1-step2.png)
 
-The script inserts demonstration payment transactions into `YAN_POS.PAYMENT_TRANSACTION`. Successful output should include generated transaction IDs that begin with `TXN-HOL-`.
+    The script inserts demonstration payment transactions into `YAN_POS.PAYMENT_TRANSACTION`. Successful output should include generated transaction IDs that begin with `TXN-HOL-`.
 
 3. Wait for the command to complete.
 4. Record the generated transaction IDs. In this workshop, they are expected to begin with `TXN-HOL-`.
@@ -50,13 +50,13 @@ The script inserts demonstration payment transactions into `YAN_POS.PAYMENT_TRAN
     ![Autonomous AI Database details page](images/task2-step1-1.png)
 
 
-__NOTE__: If you're using the LiveLab Sandbox environment, you can find your compartment number in the Reservation Information panel (View Login Info) of the workshop instructions.
+    __NOTE__: If you're using the LiveLab Sandbox environment, you can find your compartment number in the Reservation Information panel (View Login Info) of the workshop instructions.
 
 2. On the **AIATP&lt;LiveLab ID&gt;** Details page, click **Database actions**, and then select **SQL**.
     ![Database actions menu with SQL selected](images/task2-step2.png)
 
 
-**NOTE**: Use the **AIATP&lt;LiveLab ID&gt;** database credentials in the Workshop details to log in to Database actions if needed, and then click **SQL**.
+    **NOTE**: Use the **AIATP&lt;LiveLab ID&gt;** database credentials in the Workshop details to log in to Database actions if needed, and then click **SQL**.
 
 3. Enter the following select statement, and then click **Run Script**:
     ![SQL worksheet showing the source transaction query result](images/task2-step3.png)

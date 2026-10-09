@@ -30,7 +30,7 @@ In this lab, you will:
 
 1. Go back to the OCI GoldenGate Console. 
 
-**NOTE**: If needed, open the deployment details in the OCI Console and click **Launch Console**. If prompted, enter the username and password found on the __LiveLabs Sandbox login page__, then click **Sign In**
+    **NOTE**: If needed, open the deployment details in the OCI Console and click **Launch Console**. If prompted, enter the username and password found on the __LiveLabs Sandbox login page__, then click **Sign In**
 
 2. Click **Extracts**, then click **EXFRAUD**
     ![GoldenGate console showing EXFRAUD in the Extracts list](images/task1-step1-0.png)
@@ -40,7 +40,7 @@ In this lab, you will:
 3. Click **Statistics** and review the number of Inserts that were processed by the Extract
     ![EXFRAUD statistics showing processed inserts](images/task1-step3.png)
 
-The insert count should be greater than zero after you generate transactions in Lab 4. Counts may include earlier workshop activity, so use them as operational evidence rather than fixed expected numbers.
+    The insert count should be greater than zero after you generate transactions in Lab 4. Counts may include earlier workshop activity, so use them as operational evidence rather than fixed expected numbers.
 
 4. Click **Metrics** and review the charts and statistics for the Extract. Click **Database Statistics** to review more information about the database activity.
     ![EXFRAUD metrics and database statistics](images/task1-step4.png)

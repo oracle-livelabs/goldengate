@@ -71,7 +71,7 @@ In this lab, you will:
     ## Why It Is Suspicious or Normal
     ```
 
-   followed by:
+    followed by:
 
     ```text
     ## Evidence Summary
@@ -89,7 +89,7 @@ In this lab, you will:
 
 3. Watch for the new transaction IDs without manually reloading the page.
 
-   New transactions may take 30-90 seconds to appear, depending on Extract, Data Stream, bridge, and AI response timing.
+    New transactions may take 30-90 seconds to appear, depending on Extract, Data Stream, bridge, and AI response timing.
 
 4. Verify that the selected case and displayed brief continue to refer to the same transaction.
 
