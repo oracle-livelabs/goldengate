@@ -1,0 +1,56 @@
+{
+  "workshoptitle": "Real-Time AI Fraud Monitoring with OCI GoldenGate and Oracle AI Database Private Agent Factory",
+  "help": "livelabs-help_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Get Started",
+      "description": "Sign in to your LiveLabs Sandbox and locate the reservation details.",
+      "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Review the fraud monitoring scenario, objectives, and prerequisites.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Review and access the environment resources",
+      "description": "Review the provisioned GoldenGate deployment, connection, and fraud monitoring console.",
+      "filename": "../../lab1-review/lab1-review.md"
+    },
+    {
+      "title": "Lab 2: Create and start the GoldenGate Extract process",
+      "description": "Use GoldenGate MCP through PAF to create and start the payment transaction Extract.",
+      "filename": "../../lab2-extract/lab2-extract.md"
+    },
+    {
+      "title": "Lab 3: Create the GoldenGate Data Stream process",
+      "description": "Create and inspect a Data Stream that distributes captured payment changes.",
+      "filename": "../../lab3-data-stream/lab3-data-stream.md"
+    },
+    {
+      "title": "Lab 4: Generate source payment transactions",
+      "description": "Insert sample payment transactions and verify them in the source database.",
+      "filename": "../../lab4-generate-transactions/lab4-generate-transactions.md"
+    },
+    {
+      "title": "Lab 5: Verify the complete fraud monitoring pipeline",
+      "description": "Trace a transaction through capture, streaming, risk scoring, and PAF analysis.",
+      "filename": "../../lab5-verify-pipeline/lab5-verify-pipeline.md"
+    },
+    {
+      "title": "Lab 6: Monitor GoldenGate and query operational evidence",
+      "description": "Review GoldenGate performance and query live process evidence through MCP.",
+      "filename": "../../lab6-monitor/lab6-monitor.md"
+    },
+    {
+      "title": "Lab 7: Review the AI Agents configuration in Private Agent Factory",
+      "description": "Inspect the published GoldenGate and fraud analyst agent flows and their MCP configuration.",
+      "filename": "../../lab7-paf-agents/lab7-paf-agents.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to common problems and directions for receiving LiveLabs support.",
+      "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
