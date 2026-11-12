@@ -38,7 +38,7 @@ To successfully complete this lab, you must:
 
 1.  Download the database schema:
 
-    [scripts.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/goldengate-library/scripts.zip)
+    [scripts.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/goldengate-library/scripts.zip)
 
 2.  Save `scripts.zip` to a download directory, and then unzip the file.
 
