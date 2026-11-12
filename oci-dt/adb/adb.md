@@ -36,29 +36,29 @@ To successfully complete this lab, you must:
 
 ## Task 3: Load the ATP schema and enable supplemental logging
 
-1.  Download the database schema:
+1. Download the database schema:
 
     [scripts.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/goldengate-library/scripts.zip)
 
-2.  Save `scripts.zip` to a download directory, and then unzip the file.
+2. Save `scripts.zip` to a download directory, and then unzip the file.
 
-3.  Back in the Oracle Cloud console, select your ATP instance from the Autonomous Databases page to view its details and access tools.
+3. Back in the Oracle Cloud console, select your ATP instance from the Autonomous Databases page to view its details and access tools.
 
     ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-03-atp.png " ")
 
-4.  On the SourceATP Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions** directly, and then select **SQL** from the Database actions page.
+4. On the SourceATP Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions** directly, and then select **SQL** from the Database actions page.
 
     ![ATP details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images//03-04-dbdetails.png)
 
-5.  If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
+5. If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
 
     ![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
 
-6.  (Optional) Close the Help dialog.
+6. (Optional) Close the Help dialog.
 
-7.  Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** into the SQL Worksheet
+7. Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** into the SQL Worksheet
 
-8.  Click **Run Script**. The Script Output tab displays confirmation messages.
+8. Click **Run Script**. The Script Output tab displays confirmation messages.
 
     ![Pasted script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-08-atp-sql.png " ")
 
@@ -68,7 +68,7 @@ To successfully complete this lab, you must:
 
 10. Click **Run Script**. The Script Output tab displays confirmation messages.
 
-	> **Note:** If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.
+    	> **Note:** If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.
 
 11. Close the SQL window and then reopen it from Database Actions again.
 
@@ -92,7 +92,7 @@ To successfully complete this lab, you must:
 
 14. Copy and paste the script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** into the SQL worksheet, and then click **Run Script**.
 
-	![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
+    	![Pasted script in SQL worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/04-05-adw.png " ")
 
 15. Log out of Database actions.
 
@@ -104,25 +104,25 @@ To successfully complete this lab, you must:
 
 > **Note:** Compartment names in the screenshots may differ from values that appear in your environment.
 
-1.  Use the breadcrumb to navigate back to the **Deployments** page.
+1. Use the breadcrumb to navigate back to the **Deployments** page.
 
-2.  On the Deployments page, click **Create deployment**.
+2. On the Deployments page, click **Create deployment**.
 
     ![Deployments page](./images/06-02-create-deployment.png " ")
 
-3.  In the Create Deployment panel, enter **DTDeployment** for Name.
+3. In the Create Deployment panel, enter **DTDeployment** for Name.
 
-4.  From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
+4. From the Compartment dropdown, select **&lt;USER&gt;-COMPARTMENT**.
 
-5.  Select **Development or testing**. The OCPU count is autopopulated based on your selection.
+5. Select **Development or testing**. The OCPU count is autopopulated based on your selection.
 
 6. Select **Auto scaling**.
 
-7.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
+7. For Subnet, select a subnet. If you're using the workshop environment, select **&lt;USER&gt;-SUBNET-PRIVATE**.
 
     ![Completed Create GoldenGate Deployment fields](./images/06-07-create-deployment-general-info.png " ")
 
-8.  For License type, select **Bring Your Own License (BYOL)**.
+8. For License type, select **Bring Your Own License (BYOL)**.
 
 9. Click **Show advanced options**, and then select **Enable GoldenGate console public access**.
 

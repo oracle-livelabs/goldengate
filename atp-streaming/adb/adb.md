@@ -26,23 +26,23 @@ In this section, you will provision a VCN and subnet, an ATP instance, and load 
 
 ## Task 1: Create a VCN and subnet
 
-1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
+1. Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
+    	![Virtual Cloud Networks in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
 
-2.  On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
+2. On the **Virtual Cloud Networks in &lt;compartment-name&gt;** page, click **Start VCN Wizard**.
 
-	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02.png " ")
+    	![Virtual Cloud Networks page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02.png " ")
 
-3.  In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
+3. In the Start VCN Wizard dialog, select **VCN with Internet Connectivity**, and then click **Start VCN Wizard.**
 
     ![Start VCN Wizard dialog](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-03-vcn-wizard.png " ")
 
-4.  Enter a name for the VCN, select a compartment, and then click **Next**.
+4. Enter a name for the VCN, select a compartment, and then click **Next**.
 
     ![Enter VCN details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-04.png " ")
 
-5.  Verify the configuration, and then click **Create**.
+5. Verify the configuration, and then click **Create**.
 
     ![Verify configuration details](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/00-05.png " ")
 
@@ -50,11 +50,11 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 ## Task 2: Create an ATP instance
 
-1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
+1. Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
-	![Autonomous Transaction Processing in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/database-atp.png " ")
+    	![Autonomous Transaction Processing in Oracle Cloud navigation menu](https://oracle-livelabs.github.io/common/images/console/database-atp.png " ")
 
-2.  On the **Autonomous Database &lt;compartment-name&gt;** page, click **Create Autonomous Database**.
+2. On the **Autonomous Database &lt;compartment-name&gt;** page, click **Create Autonomous Database**.
 
     ![Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-02-create-adb.png " ")
 
@@ -62,56 +62,56 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Create Autonomous Database page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-03-compartment.png " ")
 
-4.  Under **Choose a workload type**, select **Transaction Processing**.
+4. Under **Choose a workload type**, select **Transaction Processing**.
 
     ![Workload type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-04-workload.png " ")
 
-5.  Under **Choose a deployment type**, select **Shared Infrastructure**.
+5. Under **Choose a deployment type**, select **Shared Infrastructure**.
 
     ![Deployment type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-05-deployment.png " ")
 
-6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
+6. Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
 
-7.  Add a password. Take note of the password, you will need it later in this lab.
+7. Add a password. Take note of the password, you will need it later in this lab.
 
     ![Password field](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-07-pw.png " ")
 
-8.  Under **Choose a license type**, select **License Included**.
+8. Under **Choose a license type**, select **License Included**.
 
     ![License type options](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/01-08-license.png " ")
 
-9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
+9. Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 
 ## Task 3: Load the ATP schema
 
-1.  Click the following link to download the database schema.
+1. Click the following link to download the database schema.
 
     [Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/Archive.zip)
 
-2.  Save `Archive.zip` to a download directory, and then unzip the file.
+2. Save `Archive.zip` to a download directory, and then unzip the file.
 
-3.  Back in the OCI Console, select your ATP instance from the Autonomous Databases page to view its details and access tools.
+3. Back in the OCI Console, select your ATP instance from the Autonomous Databases page to view its details and access tools.
 
     ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-03-atp.png " ")
 
-4.  Click **Open DB Actions**.
+4. Click **Open DB Actions**.
 
-5.  If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
+5. If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
 
     ![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-05-login.png " ")
 
-6.  From the Database Actions menu, under **Development**, select **SQL**.
+6. From the Database Actions menu, under **Development**, select **SQL**.
 
     ![Database Actions page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-06-db-actions.png " ")
 
-7.  (Optional) Click **X** to close the Help dialog.
+7. (Optional) Click **X** to close the Help dialog.
 
-8.  Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** into the SQL Worksheet.
+8. Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** into the SQL Worksheet.
 
     ![Pasted script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/02-08-atp-sql.png " ")
 
-9.  Click **Run Script**. The Script Output tab displays confirmation messages.
+9. Click **Run Script**. The Script Output tab displays confirmation messages.
 
 10. Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SRC\_USER\_SEED\_DATA.sql** a new SQL Worksheet.
 
@@ -119,7 +119,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 11. Click **Run Script**. The Script Output tab displays confirmation messages.
 
-	>**Note:** *If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.*
+    	>**Note:** *If you find that running the entire script does not create the tables, then try running each table creation and insert statements one at a time until all the tables are created. You may also need to relaunch SQL to continue running the scripts until all tables are created and populated.*
 
 12. Close the SQL window and then open DB Actions from the database details page again.
 
@@ -135,21 +135,21 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 ## Task 4: Create an OCI Stream
 
-1.  In the Oracle Cloud console, open the navigation menu and click **Analytics & AI**. Under **Messaging**, click **Streaming**.
+1. In the Oracle Cloud console, open the navigation menu and click **Analytics & AI**. Under **Messaging**, click **Streaming**.
 
-	![Select Streaming from Oracle Cloud console menu](images/05-01-streaming.png " ")
+    	![Select Streaming from Oracle Cloud console menu](images/05-01-streaming.png " ")
 
-2.  Click **Create Stream**.
+2. Click **Create Stream**.
 
-	![Click Create Stream](images/05-02-create-stream.png " ")
+    	![Click Create Stream](images/05-02-create-stream.png " ")
 
-3.  On the Create Stream page, enter a **Stream Name**.
+3. On the Create Stream page, enter a **Stream Name**.
 
-4.  Select a **Compartment**.
+4. Select a **Compartment**.
 
-5.  Select a **Stream Pool**, or create a new one, to contain your stream.
+5. Select a **Stream Pool**, or create a new one, to contain your stream.
 
-6.  Click **Create**.
+6. Click **Create**.
 
 	![Create Stream details](images/05-06-create-stream-details.png " ")
 

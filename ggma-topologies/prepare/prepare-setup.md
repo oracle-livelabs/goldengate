@@ -15,11 +15,11 @@ This lab assumes you have:
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
+1. Click on the link below to download the Resource Manager zip file you need to build your environment:
 
     - [ll-orm-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/goldengate-library/ll-orm-23aigg-topologies-freetier.zip)
      
-2.  Save in the downloads folder.
+2. Save in the downloads folder.
 
  We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Task 3* to follow our recommendations. If you would rather use an existing VCN then proceed to the next task to update your existing VCN with the required Ingress rules.
 
@@ -45,12 +45,12 @@ This workshop requires a certain number of ports to be available, a requirement 
 {: title="List of Optional Network Security Rules (Ingress)"}
 -->
 
-1.  Go to *Networking >> Virtual Cloud Networks*
-2.  Choose your network
-3.  Under Resources, select Security Lists
-4.  Click on Default Security Lists under the Create Security List button
-5.  Click *Add Ingress Rules* button
-6.  Create a rule for each entry in the *Ingress* table(s) above.  
+1. Go to *Networking >> Virtual Cloud Networks*
+2. Choose your network
+3. Under Resources, select Security Lists
+4. Click on Default Security Lists under the Create Security List button
+5. Click *Add Ingress Rules* button
+6. Create a rule for each entry in the *Ingress* table(s) above.  
     - Stateless: Leave unchecked (Default)
     - Source Type: CIDR
     - Source CIDR: 0.0.0.0/0
@@ -59,7 +59,7 @@ This workshop requires a certain number of ports to be available, a requirement 
     - Destination Port Range: *Select from the above table(s)*
     - Description: *Select the corresponding description from the above table(s)*
 7. Click *+Another Ingress Rule* and repeat step [6] until a rule is created for each port listed in the *Ingress* tables
-8.  Click the Add Ingress Rules button
+8. Click the Add Ingress Rules button
 
 ### **(2) Egress Rules**
 
@@ -79,9 +79,9 @@ This workshop requires a certain number of ports to be available, a requirement 
 {: title="List of Optional Network Security Rules (Egress)"}
 -->
 
-1.  Select *Egress Rule* from the left pannel
-2.  Click Add Egress Rule button
-3.  Create a rule for each entry in the *Egress* table(s) above:  
+1. Select *Egress Rule* from the left pannel
+2. Click Add Egress Rule button
+3. Create a rule for each entry in the *Egress* table(s) above:  
     - Stateless: Leave unchecked (Default)
     - Source Type: CIDR
     - Destination CIDR: 0.0.0.0/0
@@ -90,7 +90,7 @@ This workshop requires a certain number of ports to be available, a requirement 
     - Destination Port Range: *Select from the above table(s)*
     - Description: *Select the corresponding description from the above table(s)*
 4. Click *+Another Egress Rule* and repeat step [3] until a rule is created for each port listed in the *Egress* tables
-5.  Click the Add Egress Rules button
+5. Click the Add Egress Rules button
 
 ## Task 3: Setup Compute   
 Using the details from the two Tasks above, proceed to the lab *Environment Setup* to set up your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
