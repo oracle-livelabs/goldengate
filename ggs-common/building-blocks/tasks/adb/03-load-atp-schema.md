@@ -4,29 +4,29 @@
         "description":"Load the ATP schema"
     }
 -->
-1.  Download the database schema:
+1. Download the database schema:
 
-    [Archive.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/Archive.zip)
+    [Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/Archive.zip)
 
-2.  Save `Archive.zip` to a download directory, and then unzip the file.
+2. Save `Archive.zip` to a download directory, and then unzip the file.
 
-3.  Back in the Oracle Cloud console, select your ATP instance from the Autonomous Databases page to view its details and access tools.
+3. Back in the Oracle Cloud console, select your ATP instance from the Autonomous Databases page to view its details and access tools.
 
     ![Select your Autonomous Database instance](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-03-atp.png " ")
 
-4.  On the SourceATP Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions** directly, and then select **SQL** from the Database actions page.
+4. On the SourceATP Database Details page, click **Database actions**, and then select **SQL** from the dropdown. If the Database actions menu takes too long to load, you can click **View all database actions** directly, and then select **SQL** from the Database actions page.
 
     ![ATP details page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images//03-04-dbdetails.png)
 
-5.  If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
+5. If prompted, log in with the ADMIN user and password provided when you created the ATP instance.
 
     ![DB Actions log in page](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-05-login.png " ")
 
-6.  (Optional) Close the Help dialog.
+6. (Optional) Close the Help dialog.
 
-7.  Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** into the SQL Worksheet
+7. Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ATP.sql** into the SQL Worksheet
 
-8.  Click **Run Script**. The Script Output tab displays confirmation messages.
+8. Click **Run Script**. The Script Output tab displays confirmation messages.
 
     ![Pasted script in SQL Worksheet](https://oracle-livelabs.github.io/goldengate/ggs-common/adb/images/03-08-atp-sql.png " ")
 
