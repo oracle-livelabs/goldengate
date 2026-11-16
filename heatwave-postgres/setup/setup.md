@@ -60,15 +60,15 @@ To successfully complete this workshop, you must have:
 
     ![Add ingress rule](./images/01-09-add-ingress-rule.png " ")
 
-10.	In the **Add Ingress Rules** panel, select **CIDR** for **Source Type**.
+10. In the **Add Ingress Rules** panel, select **CIDR** for **Source Type**.
 
-11.	Enter `0.0.0.0/0` for **Source CIDR**.
+11. Enter `0.0.0.0/0` for **Source CIDR**.
 
-12.	For IP Protocol, select **TCP**.
+12. For IP Protocol, select **TCP**.
 
-13.	For Destination Port Range, enter `3306`.
+13. For Destination Port Range, enter `3306`.
 
-14.	For Description, enter `For MySQL access`, and then click **Add Ingress Rules**.
+14. For Description, enter `For MySQL access`, and then click **Add Ingress Rules**.
 
     ![Add ingress rule](./images/01-14-ingress-rule.png " ")
 
@@ -209,7 +209,7 @@ If you're working within the same Home region for OCI GoldenGate and MySQL Heatw
 
 1. Download and run the sample data script.
 
-    [seedSRCOCIGGL_MySQL.sql](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/data-management-library-files/seedSRCOCIGGL_MySQL.sql)
+    [seedSRCOCIGGL_MySQL.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4Au3jJ-t8Wtw3LWyYsDMqQk2FdlXDvXCb1MYRS0J6P4QS-GCrv2YNOolWdtFMLZq/n/c4u04/b/livelabsfiles/o/data-management-library-files/seedSRCOCIGGL_MySQL.sql)
 
 2. Copy and paste the sample data script from `seedSRCOCIGGL_MySQL.sql` into Cloud Shell.
 
@@ -260,22 +260,22 @@ If you're working within the same Home region for OCI GoldenGate and MySQL Heatw
 
 11. On the Create configuration dialog, enter the following, and then click **Create**: 
 
-	* For **Name**, enter **OCIPG15**.
-	* For **PostgreSQL major version**, select **15**.
-	* For **Configuration shape type**, select **Flex**.
-	* For **Shape series**, select **Intel**.
-	* For **Shape name**, select **PostgreSQL.VM.Standard3.Flex**.
-	* For **User variables**, select these Variable name and Variable values:
-		* wal_level = logical
-		* max\_wal\_senders = 1  
-		* track\_commit\_timestamp = 1
-		* max\_wal\_size = 102400
-	* For **PostgreSQL extensions**, select **vector**.
+    	* For **Name**, enter **OCIPG15**.
+    	* For **PostgreSQL major version**, select **15**.
+    	* For **Configuration shape type**, select **Flex**.
+    	* For **Shape series**, select **Intel**.
+    	* For **Shape name**, select **PostgreSQL.VM.Standard3.Flex**.
+    	* For **User variables**, select these Variable name and Variable values:
+    		* wal_level = logical
+    		* max\_wal\_senders = 1  
+    		* track\_commit\_timestamp = 1
+    		* max\_wal\_size = 102400
+    	* For **PostgreSQL extensions**, select **vector**.
 
-	> **Notes:**
-	* To enable logical replication from PostgreSQL for the next lab, which is necessary for capturing changes from PostgreSQL, the wal\_level parameter in your PostgreSQL instance must be set to logical.
-	* (Optional) For use of vectors, under PostgreSQL extensions, select **vector**.
-	
+    	> **Notes:**
+    	* To enable logical replication from PostgreSQL for the next lab, which is necessary for capturing changes from PostgreSQL, the wal\_level parameter in your PostgreSQL instance must be set to logical.
+    	* (Optional) For use of vectors, under PostgreSQL extensions, select **vector**.
+    	
     ![Create configurations](./images/05-13-create-config-1.png " ")
 
     ![Create configurations](./images/05-16-create-config-2.png " ")
